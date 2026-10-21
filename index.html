@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Magical Family Clock — development fixture</title
+  ><style>
+    body {
+      margin: 0;
+      background: #101e25;
+      color: #eee;
+      font-family: system-ui;
+    }
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    h1 {
+      font: 36px Georgia;
+    }
+    section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    button {
+      padding: 10px;
+      background: #c3a56b;
+      border: 0;
+      border-radius: 6px;
+    }
+    aside {
+      max-width: 650px;
+      margin: 30px auto;
+    }
+    ha-card {
+      display: block;
+    }
+  </style>
+  <main>
+    <header>
+      <h1>Magical Family Clock</h1>
+      <p>
+        Development fixture · fictional people · simulated Home Assistant states
+      </p>
+      <button id="move">Move household</button
+      ><button id="edit">Open visual editor</button>
+    </header>
+    <section></section>
+    <aside></aside>
+  </main>
+  <script type="module">
+    await import(
+      /* @vite-ignore */ new URLSearchParams(location.search).has("production")
+        ? "./magical-family-clock.js"
+        : "./src/card.js"
+    );
+    import { demo, THEMES, demoStates } from "./src/engine.js";
+    const states = demoStates();
+    const cards = [];
+    THEMES.forEach((theme) => {
+      const card = document.createElement("magical-family-clock-card");
+      const c = demo();
+      c.theme = theme;
+      c.demo = false;
+      card.setConfig(c);
+      card.hass = { states };
+      document.querySelector("section").append(card);
+      cards.push(card);
+    });
+    let away = false;
+    document.querySelector("#move").onclick = () => {
+      away = !away;
+      Object.values(states).forEach(
+        (s) => (s.state = away ? "not_home" : "home"),
+      );
+      cards.forEach((card) => (card.hass = { states }));
+    };
+    document.querySelector("#edit").onclick = () => {
+      const e = document.createElement("magical-family-clock-card-editor");
+      e.setConfig(cards[0]._config);
+      e.hass = { states };
+      e.addEventListener("config-changed", (ev) =>
+        cards[0].setConfig(ev.detail.config),
+      );
+      document.querySelector("aside").replaceChildren(e);
+    };
+  </script>
+</html>
