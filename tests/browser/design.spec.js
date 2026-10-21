@@ -414,11 +414,21 @@ test("failed image has a retry action that recovers without changing configurati
   await card.evaluate((c) =>
     c.setConfig({ ...c._config, face_image: "/recover-face.svg" }),
   );
+  const before = await card.evaluate((c) => c._baseConfig);
+  await expect(card.locator(".face-image")).toBeHidden();
+  await expect(card.locator(".image-status")).toContainText(
+    "Face image could not load",
+  );
+  expect(attempts).toBe(1);
   await card.getByRole("button", { name: "Retry images", exact: true }).click();
   await expect(card.locator(".face-image")).toHaveAttribute(
     "href",
     "/recover-face.svg",
   );
   await expect(card.locator(".face-image")).toBeVisible();
-  expect(attempts).toBe(2);
+  await expect(card.locator(".image-status")).toBeHidden();
+  expect(await card.evaluate((c) => c._baseConfig)).toEqual(before);
+  // The retry must issue a fresh request. Some Chromium versions also fetch
+  // again when the preloaded image is assigned to SVG, independently of retries.
+  expect(attempts).toBeGreaterThanOrEqual(2);
 });
