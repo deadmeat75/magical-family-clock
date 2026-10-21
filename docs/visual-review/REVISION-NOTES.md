@@ -6,11 +6,11 @@
 
 ## Recorded decisions
 
-Approved: **C01, C02, C03, C04, C05, C06, C07, C12, X01, X02, L01, F04, F05**.
+Approved: **C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C12, X01, X02, L01, F04, F05**.
 
 Omitted from the proposed artwork set: **C13, C14, C15, C16**. These examples remain in repository history for reference and are excluded from the new artwork selection.
 
-Revised proposals awaiting approval: **C08–C11, L02–L08, F01–F03, H01–H12**. Other items remain pending. The gallery links to revision 1; the original examples remain unchanged for comparison.
+Revised proposals awaiting approval: **C11, L02–L08, F01–F03, H01–H12**. Other items remain pending. The gallery links to revision 1; the original examples remain unchanged for comparison.
 
 ## Characters must inhabit their environment
 

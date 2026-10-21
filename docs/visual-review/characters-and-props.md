@@ -4,7 +4,7 @@
 
 **Release held. Decisions below reflect your individual approvals and revision requests.**
 
-C04 and C07 revision 1 artwork is approved. The revised C08–C11 artwork is ready for review. C12 retains its required water placement and natural-motion conditions. C13–C16 are omitted. These images are illustration proposals; final environment-aware character animation has not been approved or integrated into HACS.
+The revised C04 and C07–C10 artwork is approved. The revised C11 artwork is ready for review. C12 retains its required water placement and natural-motion conditions. C13–C16 are omitted. These images are illustration proposals; final environment-aware character animation has not been approved or integrated into HACS.
 
 | **[C01 · Swallow](items/C01.png)** | **[C02 · Barn owl](items/C02.png)** |
 | --- | --- |
@@ -26,7 +26,7 @@ C04: Cleanly isolated wizard; the neighboring broom fragment is removed without 
 | **[C07 · Pixie](items/C07-r1.png)** | **[C08 · Lake serpent](items/C08-r1.png)** |
 | --- | --- |
 | [![C07 Pixie](items/C07-r1.png)](items/C07-r1.png) | [![C08 Lake serpent](items/C08-r1.png)](items/C08-r1.png) |
-| Approved | Revised r1 · awaiting approval |
+| Approved | Approved |
 
 C07: More monstrous blue pixie, shown enlarged for detail and at about 4.5% clock width in a foreground placement study. Small creatures belong in the foreground.
 
@@ -35,7 +35,7 @@ C08: All body frills removed; smooth, snake-like neck and tapering tail.
 | **[C09 · Mermaid](items/C09-r1.png)** | **[C10 · Merman](items/C10-r1.png)** |
 | --- | --- |
 | [![C09 Mermaid](items/C09-r1.png)](items/C09-r1.png) | [![C10 Merman](items/C10-r1.png)](items/C10-r1.png) |
-| Revised r1 · awaiting approval | Revised r1 · awaiting approval |
+| Approved | Approved |
 
 C09: Traditional scallop-shell top replaces the corset.
 

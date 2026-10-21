@@ -96,28 +96,34 @@
       "id": "C08",
       "element": "Lake serpent",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Remove the body frills and make the neck more snake-like. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 lake serpent artwork explicitly approved by the user in chat, with body frills removed and a more snake-like neck.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C08-r1.png",
+      "approved_example_sha256": "48bf1af150cf49847f0f0e74f0e0a0567f24fc20d75c6c3511e12224de4de997"
     },
     {
       "id": "C09",
       "element": "Mermaid",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Replace the current top with a traditional shell-bra style top. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 mermaid artwork explicitly approved by the user in chat, with the traditional shell-bra top.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C09-r1.png",
+      "approved_example_sha256": "47425cda8d687d3943da943899bca35a1bb234428b7022ac569cd2bc0c624a1d"
     },
     {
       "id": "C10",
       "element": "Merman",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Remove the vest entirely. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 merman artwork explicitly approved by the user in chat, with the vest removed entirely.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C10-r1.png",
+      "approved_example_sha256": "7b256c6695685a4c02d77a13ec85f065648781eb3f38f89c1878e0a86d52ae14"
     },
     {
       "id": "C11",

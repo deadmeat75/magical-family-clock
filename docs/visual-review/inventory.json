@@ -1310,7 +1310,7 @@
     "name": "Lake serpent",
     "category": "Characters and props",
     "image": "items/C08-r1.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/serpent-c08-r1.png",
     "sourceRect": [
@@ -1332,7 +1332,7 @@
     "name": "Mermaid",
     "category": "Characters and props",
     "image": "items/C09-r1.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/mermaid-c09-r1.png",
     "sourceRect": [
@@ -1354,7 +1354,7 @@
     "name": "Merman",
     "category": "Characters and props",
     "image": "items/C10-r1.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/merman-c10-r1.png",
     "sourceRect": [

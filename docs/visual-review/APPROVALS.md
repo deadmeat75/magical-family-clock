@@ -1,6 +1,6 @@
 # Individual visual approvals
 
-[Open the visual gallery](README.md). 13 approved; 26 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review. Release remains on hold. Reply with an ID and Approve, Revise or Omit.
+[Open the visual gallery](README.md). 16 approved; 23 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review. Release remains on hold. Reply with an ID and Approve, Revise or Omit.
 
 ## Characters and props
 
@@ -11,9 +11,9 @@
 - [x] [C05 · Dragon](items/C05.png) — approved
 - [x] [C06 · Phoenix](items/C06.png) — approved
 - [x] [C07 · Pixie](items/C07-r1.png) — approved
-- [ ] [C08 · Lake serpent](items/C08-r1.png) — revised r1 · awaiting approval
-- [ ] [C09 · Mermaid](items/C09-r1.png) — revised r1 · awaiting approval
-- [ ] [C10 · Merman](items/C10-r1.png) — revised r1 · awaiting approval
+- [x] [C08 · Lake serpent](items/C08-r1.png) — approved
+- [x] [C09 · Mermaid](items/C09-r1.png) — approved
+- [x] [C10 · Merman](items/C10-r1.png) — approved
 - [ ] [C11 · Unicorn](items/C11-r1.png) — revised r1 · awaiting approval
 - [x] [C12 · Sailing boat](items/C12.png) — approved
 - [ ] [C13 · Floating lantern](items/C13.png) — omitted
