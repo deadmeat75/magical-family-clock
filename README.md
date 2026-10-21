@@ -1,6 +1,8 @@
 # Magical Family Clock
 
-**Version 0.2.0** adds image uploads, saved clocks, richer faces, animated weather, sensor rules and optional hand data. See [features and validation](docs/NEXT-VERSION.md) and the detailed [user guide](docs/USER-GUIDE.md). Install and update through HACS using this repository as a Dashboard custom repository.
+**Version 0.3.0 — Design Studio:** save people once and reuse them across clocks, customize dimensional hands and fitted lettering, animate meshing gears and sharper castle scenes, add an information bezel, move and style text, and swipe between faces. The live editor preview includes clearer guidance and image recovery. See the [detailed Design Studio guide](docs/DESIGN-STUDIO.md).
+
+Image uploads, saved clocks, animated weather, sensor rules and optional hand data remain included. Install and update through HACS using this repository as a Dashboard custom repository. Start with the [installation and user guide](docs/USER-GUIDE.md); [0.2.0 notes](docs/NEXT-VERSION.md) describe the previous release.
 
 An original Home Assistant dashboard card showing your household’s whereabouts on an enchanted clock. Each card has independent people, locations, and appearance.
 
@@ -24,7 +26,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 ## HACS installation
 
-The [v0.2.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.2.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
+The [v0.3.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** repository.
@@ -40,13 +42,15 @@ HACS normally registers the resource. No npm, SSH, manual copying, or YAML is ne
 
 **General:** choose theme, title, maximum size, transparency, and reduced motion. The optional fictional demonstration uses Rowan, Sage, Robin, and Ash. Disable demonstration states before tracking actual entities. No personal household is prepopulated.
 
-**People:** add a person, select a location entity, and optionally select a travelling sensor. Ordinary `person` and `device_tracker` states need no attribute or helper. Add an attribute only when your sensor stores its location there. Choose colors, hand length, display priority, nickname, and portrait settings. Reorder, disable, or remove people without affecting another clock.
+**People:** add a person, select a location entity, and optionally select a travelling sensor. Ordinary `person` and `device_tracker` states need no attribute or helper. Add an attribute only when your sensor stores its location there. Save reusable people profiles in your Home Assistant account. Choose materials, shapes, width, length, lettering placement/direction/rotation, priority and portraits. Blank lettering stays blank. Reorder, disable, or remove people without affecting another clock.
 
 **Locations:** enter custom names and exact matching states, one per line. `home` and `not_home` are typical person states. Custom zones usually produce their friendly names; never assume they produce a literal ID such as `zone.office`. Selecting a zone adds its friendly name to matching; explicitly list a zone ID only if the source entity actually returns it. Per-person mappings take precedence. Drag dots around the dial, use arrow keys, or distribute evenly. Zero degrees points right; −90 points up.
 
 **Portraits:** use the visual PNG/JPEG/WebP upload control, or an existing accessible image URL such as `/local/portraits/person.jpg`. Uploads are optimized and embedded in the card configuration. Adjust crop position, zoom, shape, frame and rotation. Initials provide a fallback. Protected `media-source://` links are not resolved. Images are never uploaded to a third party by this card.
 
-**Appearance:** choose **Use layered castle artwork** for a transparent gold/stained-glass frame and sixteen bundled castle scenes: four seasons × dawn/day/dusk/night. This applies the six reference locations and raised pivot while preserving people and colors. Manual season/time controls preview every scene. Automatic mode uses Home Assistant’s timezone, location and sun events, retaining recent events across timestamp rollover. Dawn/dusk cover ±30 minutes; calculated solar times provide a reload fallback and can differ slightly from Home Assistant’s exact astronomy. Missing solar data has a stable day fallback. Images preload before crossfading, and failed custom images retain the previous scene. The frame stays fixed and hands keep their state. Editing the castle layout’s location names or angles switches to the customizable vector dial; its generic weather/time/season skies remain available.
+**Appearance:** choose **Use layered castle artwork** for a scalable gold/stained-glass frame, full-size castle sources, sixteen season/time combinations and moving scenery. This applies the six reference locations and raised pivot while preserving people and colors. The labels and layout remain editable on the castle. Manual season/time controls preview each combination. Automatic mode uses Home Assistant’s timezone, location and sun events, retaining recent events across timestamp rollover. Dawn/dusk cover ±30 minutes; calculated solar times provide a reload fallback and can differ slightly from Home Assistant’s exact astronomy. Missing solar data has a stable day fallback. Images preload before crossfading, and failed custom images retain the previous scene.
+
+**Design Studio:** **Labels & effects** positions/styles titles and captions and adjusts shadows, bevels, reflection, glare, patina and wear. **Locations** supports fixed or sensor-driven labels with independent typography and positions. **Bezel** adds sensor/time/date/text readouts. **Face cycling** switches templates by swipe, click, keyboard or an optional timer while retaining the same household data. See the [step-by-step guide](docs/DESIGN-STUDIO.md).
 
 **Behavior:** select hand duration, separation, fan/stack arrangement, and fallback locations for unknown and travelling states. Very large groups can still become crowded. The safeguard is 250 people and 250 locations per clock; smaller groups are recommended for readable portraits.
 

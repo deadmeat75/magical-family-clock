@@ -10,5 +10,5 @@ test("HACS manifest points to self-contained matching compiled bundle", () => {
   assert.ok(code.includes("magical-family-clock-card-editor"));
   parse(code, { ecmaVersion: 2018, sourceType: "script" });
   assert.ok(!code.includes("crypto.randomUUID"));
-  assert.ok(!/\b(?:import|export)\s/.test(code));
+  // Script-mode parsing above rejects module declarations; help text may legitimately contain the words import/export.
 });

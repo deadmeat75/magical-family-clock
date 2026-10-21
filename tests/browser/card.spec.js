@@ -64,7 +64,7 @@ test("reference face loads independently, aligns the selected pivot and preserve
   );
   await expect(card.locator(".hand")).toHaveCount(4);
   await expect(card.locator(".along-label")).toHaveCount(4);
-  await expect(card.locator(".hand > g").first()).toBeHidden();
+  await expect(card.locator(".hand-head").first()).toBeHidden();
 });
 test("broken reference face retains the bundled artwork and labels", async ({
   page,
@@ -147,7 +147,7 @@ test("portraits remain clipped and upright, stacking recomputes on state changes
   const old = await card
     .locator(".hand")
     .nth(1)
-    .locator(":scope > g:not(.along-label)")
+    .locator(":scope > .hand-head")
     .getAttribute("transform");
   await page.evaluate(() => {
     const card = document.querySelector("magical-family-clock-card");
@@ -158,7 +158,7 @@ test("portraits remain clipped and upright, stacking recomputes on state changes
     card.hass = { states };
   });
   await expect(
-    card.locator(".hand").nth(1).locator(":scope > g:not(.along-label)"),
+    card.locator(".hand").nth(1).locator(":scope > .hand-head"),
   ).not.toHaveAttribute("transform", old);
   expect(
     await card
@@ -202,6 +202,12 @@ test("appearance presets save and load without changing household configuration"
 test("background changes retain hands and use configured fade opacity", async ({
   page,
 }) => {
+  await page.route("**/night.svg", (route) =>
+    route.fulfill({
+      contentType: "image/svg+xml",
+      body: '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="navy"/></svg>',
+    }),
+  );
   await page.goto("/");
   await page.waitForSelector("section magical-family-clock-card");
   await page.evaluate(() => {
@@ -462,7 +468,7 @@ test("editor uses HA selector contract and preserves entity changes", async ({
   ).toContain("person");
 });
 
-test("layered castle loads sixteen scene cells beneath a fixed frame and keeps hands", async ({
+test("layered castle renders sixteen high-resolution seasonal scenes beneath a fixed scalable frame", async ({
   page,
 }) => {
   await page.goto("/");
@@ -483,7 +489,7 @@ test("layered castle loads sixteen scene cells beneath a fixed frame and keeps h
   const card = page.locator("section magical-family-clock-card").first();
   const artwork = card.locator(".castle-artwork");
   await expect(artwork).toBeVisible();
-  const frame = await card.locator(".castle-frame").getAttribute("href");
+  const frame = await card.locator(".scalable-castle-frame").innerHTML();
   for (const season of ["spring", "summer", "autumn", "winter"])
     for (const period of ["dawn", "day", "dusk", "night"]) {
       await card.evaluate(
@@ -499,7 +505,11 @@ test("layered castle loads sixteen scene cells beneath a fixed frame and keeps h
         season + "-" + period,
       );
     }
-  expect(await card.locator(".castle-frame").getAttribute("href")).toBe(frame);
+  expect(await card.locator(".scalable-castle-frame").innerHTML()).toBe(frame);
+  await expect(card.locator(".hd-scene").last()).toHaveAttribute(
+    "data-source-resolution",
+    "1254",
+  );
   expect(
     await page.evaluate(
       () =>

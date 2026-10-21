@@ -1,3 +1,13 @@
+import { palettes } from "./themes.js";
+import { FONTS, HAND_STYLES, MATERIALS } from "./design.js";
+import { settingHelp } from "./help.js";
+import {
+  letteringEditor,
+  bezelEditor,
+  carouselEditor,
+  savedPeopleEditor,
+  savePersonAction,
+} from "./editor-design.js";
 import { uploadImage } from "./images.js";
 import { ClockLibrary } from "./library.js";
 import { discoveredLocations } from "./data.js";
@@ -22,6 +32,10 @@ const sections = [
   "Behavior",
   "Presets",
   "Saved clocks",
+  "Labels & effects",
+  "Bezel",
+  "Face cycling",
+  "Saved people",
 ];
 const node = (tag, text) => {
   const e = document.createElement(tag);
@@ -62,6 +76,8 @@ export class ClockEditor extends HTMLElement {
     this.wizard = false;
   }
   setConfig(config) {
+    const key = JSON.stringify(config);
+    if (key === this._emittedKey || key === JSON.stringify(this.config)) return;
     this.config = normalize(config);
     this.render();
   }
@@ -74,6 +90,8 @@ export class ClockEditor extends HTMLElement {
     if (preview) preview.hass = hass;
   }
   emit() {
+    this._emittedKey = JSON.stringify(this.config);
+    this.updatePreview();
     this.dispatchEvent(
       new CustomEvent("config-changed", {
         detail: { config: clone(this.config) },
@@ -84,13 +102,7 @@ export class ClockEditor extends HTMLElement {
     this.updatePreview();
   }
   change(fn, render = false) {
-    const previousLocations = JSON.stringify(this.config.locations);
     fn();
-    if (
-      this.config.artwork === "castle" &&
-      previousLocations !== JSON.stringify(this.config.locations)
-    )
-      this.config.artwork = "vector";
     this.emit();
     if (render) {
       this.config = normalize(this.config);
@@ -99,6 +111,7 @@ export class ClockEditor extends HTMLElement {
   }
   button(parent, label, fn) {
     const b = node("button", label);
+    b.title = label;
     b.type = "button";
     b.onclick = fn;
     parent.appendChild(b);
@@ -123,16 +136,29 @@ export class ClockEditor extends HTMLElement {
       });
     if (type === "checkbox") e.checked = !!obj[key];
     else e.value = obj[key] == null ? "" : String(obj[key]);
+    if (type === "color" && !obj[key])
+      e.value =
+        (key === "title_color" || key === "caption_color") &&
+        this.config.artwork === "castle"
+          ? "#f4dfb1"
+          : palettes[this.config.theme]?.[key] ||
+            palettes[this.config.theme]?.ink ||
+            "#b58b4b";
     e.setAttribute("aria-label", label);
-    e.onchange = () =>
-      this.change(() => {
-        obj[key] =
-          type === "checkbox"
-            ? e.checked
-            : type === "number" || type === "range"
-              ? Number(e.value)
-              : e.value;
-      });
+    e.onchange = () => {
+      const value =
+        type === "checkbox"
+          ? e.checked
+          : type === "number" || type === "range"
+            ? e.value === ""
+              ? null
+              : Number(e.value)
+            : e.value;
+      if (value === obj[key]) return;
+      this.change(() => (obj[key] = value));
+    };
+    if (!["checkbox", "select"].includes(type)) e.oninput = e.onchange;
+    this.controlHelp(row, e, settingHelp(key, label, type, options));
     row.appendChild(e);
     parent.appendChild(row);
     return e;
@@ -149,6 +175,7 @@ export class ClockEditor extends HTMLElement {
       if (ev.detail && ev.detail.value !== obj[key])
         this.change(() => (obj[key] = ev.detail.value || ""));
     });
+    this.controlHelp(row, e, settingHelp(key, label, "entity"));
     row.appendChild(e);
     parent.appendChild(row);
     if (!customElements.get("ha-selector")) {
@@ -168,10 +195,21 @@ export class ClockEditor extends HTMLElement {
     e.value = (obj[key] || []).join("\n");
     e.setAttribute("aria-label", label);
     e.placeholder = "One exact state per line";
+    this.controlHelp(row, e, settingHelp(key, label, "textarea"));
     e.onchange = () =>
       this.change(() => (obj[key] = e.value.split("\n").filter(Boolean)));
     row.appendChild(e);
     parent.appendChild(row);
+  }
+  controlHelp(row, control, message) {
+    const help = node("small", message);
+    help.className = "field-help";
+    help.id = "help-" + uid();
+    row.appendChild(help);
+    control.setAttribute("aria-describedby", help.id);
+  }
+  disconnectedCallback() {
+    cancelAnimationFrame(this._previewFrame);
   }
   box(parent, title) {
     const box = node("fieldset");
@@ -186,7 +224,21 @@ export class ClockEditor extends HTMLElement {
   }
   render() {
     if (!this.config) return;
-    this.shadowRoot.innerHTML = "<style>" + css + "</style>";
+    const open = new Set(
+      [...this.shadowRoot.querySelectorAll("details[open]")].map(
+        (e) =>
+          (e.closest("[data-person]")?.dataset.person || "") +
+          "|" +
+          e.querySelector("summary")?.textContent,
+      ),
+    );
+    this._preview ||= node("magical-family-clock-card");
+    if (this._preview.isConnected) this._preview.remove();
+    this.shadowRoot.innerHTML =
+      "<style>" +
+      css +
+      `.field-help{grid-column:1/-1;display:block;color:var(--secondary-text-color,#aebdbb);font-size:12px;line-height:1.5;margin-top:-3px;order:3}.preview-shell{position:sticky;top:0;z-index:4;background:var(--card-background-color,#14242a);border:1px solid #a98b5855;border-radius:14px;padding:8px 12px;box-shadow:0 8px 30px #0003}.preview-shell summary{cursor:pointer;font-weight:600}.preview{max-width:310px;max-height:340px;margin:auto}.preview-status{font-size:12px;color:var(--secondary-text-color,#b5c8c9);margin:4px}nav button{font-size:12px;padding:8px 10px}label{border-bottom:1px solid #829aa018;padding-bottom:10px}.actions button:first-child{background:#94713f;color:#fff4d6}@media(max-width:500px){.preview{max-width:220px}label{grid-template-columns:1fr}nav{gap:4px}}` +
+      "</style>";
     const root = node("div");
     this.shadowRoot.appendChild(root);
     const c = this.config;
@@ -209,6 +261,30 @@ export class ClockEditor extends HTMLElement {
       this.render();
     });
     root.appendChild(quick);
+    const previewBox = node("details");
+    previewBox.className = "preview-shell";
+    previewBox.open = true;
+    previewBox.appendChild(node("summary", "Live clock preview"));
+    this._preview.className = "preview";
+    previewBox.appendChild(this._preview);
+    const previewStatus = node("p", "Ready — changes appear as you type.");
+    previewStatus.className = "preview-status";
+    previewStatus.setAttribute("role", "status");
+    previewBox.appendChild(previewStatus);
+    if (!this._previewStatusBound) {
+      this._preview.addEventListener("clock-render-status", (event) => {
+        const status = this.shadowRoot.querySelector(".preview-status");
+        if (status) {
+          status.textContent =
+            event.detail.status === "ready"
+              ? "Preview ready."
+              : event.detail.message;
+          status.classList.toggle("error", event.detail.status === "error");
+        }
+      });
+      this._previewStatusBound = true;
+    }
+    root.appendChild(previewBox);
     this.note(
       root,
       "Choose a face, add people, and select their location entities. Changes appear in the preview. Use Home Assistant’s Save button to keep dashboard changes.",
@@ -289,8 +365,59 @@ export class ClockEditor extends HTMLElement {
       );
     }
     if (this.tab === "People") {
+      this.button(root, "Use saved person", () => {
+        this.tab = "Saved people";
+        this.render();
+      });
       c.members.forEach((m, i) => {
-        const box = this.box(root, m.name);
+        const box = this.box(root, m.editor_label || m.name || "Unnamed hand");
+        box.dataset.person = m.id;
+        this.field(box, "Editor label", m, "editor_label");
+        const handLabel = this.field(
+          box,
+          "Hand lettering (blank for none)",
+          m,
+          "hand_label",
+        );
+        handLabel.value =
+          m.hand_label === undefined ? m.nickname || m.name : m.hand_label;
+        this.button(box, "Remove hand lettering", () =>
+          this.change(() => {
+            m.hand_label = "";
+            m.name = "";
+            m.nickname = "";
+          }, true),
+        );
+        savePersonAction.call(this, box, m);
+        this.field(box, "Lettering position", m, "name_position", "select", [
+          ["stem", "Along the stem"],
+          ["tip", "At the spoon / pointer tip"],
+        ]);
+        this.field(
+          box,
+          "Lettering direction",
+          m,
+          "name_orientation",
+          "select",
+          [
+            ["parallel", "Parallel to the hand"],
+            ["perpendicular", "Perpendicular to the hand"],
+          ],
+        );
+        this.field(
+          box,
+          "Lettering rotation (degrees)",
+          m,
+          "name_rotation",
+          "number",
+        );
+        this.field(
+          box,
+          "Keep lettering upright",
+          m,
+          "name_upright",
+          "checkbox",
+        );
         this.field(box, "Display name", m, "name");
         this.field(box, "Nickname", m, "nickname");
         this.field(box, "Enabled", m, "enabled", "checkbox");
@@ -311,23 +438,15 @@ export class ClockEditor extends HTMLElement {
         this.field(box, "Text color", m, "text_color", "color");
         this.field(box, "Length (0.5–1.1)", m, "length", "number");
         this.field(box, "Hand width (0.5–2.5)", m, "width", "number");
-        this.field(box, "Spoon material", m, "material", "select", [
-          "color",
-          "brass",
-          "copper",
-          "silver",
+        this.field(box, "Hand material", m, "material", "select", MATERIALS);
+        this.field(box, "Hand finish", m, "finish", "select", [
+          "polished",
+          "brushed",
+          "aged",
         ]);
+        this.field(box, "Hand edge depth", m, "relief", "number");
         this.field(box, "Movement duration (ms)", m, "duration", "number");
-        this.field(box, "Hand design", m, "hand_design", "select", [
-          "theme",
-          "spoon",
-          "classic",
-          "legacy-curved",
-          "standalone-pointed",
-          "arrow",
-          "leaf",
-          "sword",
-        ]);
+        this.field(box, "Hand design", m, "hand_design", "select", HAND_STYLES);
         this.field(box, "Display priority", m, "priority", "number");
         this.field(box, "Show name", m, "show_name", "checkbox");
         this.field(box, "Show portrait", m, "show_portrait", "checkbox");
@@ -439,6 +558,10 @@ export class ClockEditor extends HTMLElement {
             (e) =>
               e.tagName === "LABEL" &&
               ![
+                "Editor label",
+                "Hand lettering (blank for none)",
+                "Lettering position",
+                "Lettering direction",
                 "Display name",
                 "Nickname",
                 "Enabled",
@@ -469,7 +592,6 @@ export class ClockEditor extends HTMLElement {
       dynamic.onchange = () =>
         this.change(() => {
           c.dynamic_locations = dynamic.checked;
-          if (dynamic.checked) c.artwork = "vector";
         }, true);
       this.note(
         root,
@@ -497,6 +619,51 @@ export class ClockEditor extends HTMLElement {
       c.locations.forEach((l, i) => {
         const box = this.box(root, l.name);
         this.field(box, "Location name", l, "name");
+        this.field(box, "Location label source", l, "label_mode", "select", [
+          ["fixed", "Fixed name"],
+          ["sensor", "Sensor state or attribute"],
+        ]);
+        this.selector(box, "Location label entity", l, "label_entity");
+        this.field(box, "Location label attribute", l, "label_attribute");
+        this.field(box, "Unavailable location label", l, "label_fallback");
+        this.field(box, "Location label font", l, "font", "select", [
+          ["", "Follow clock font"],
+          ...FONTS,
+        ]);
+        this.field(box, "Location label size", l, "size", "number");
+        this.field(box, "Location label opacity", l, "opacity", "number");
+        this.field(
+          box,
+          "Location label horizontal position (%)",
+          l,
+          "x",
+          "number",
+        );
+        this.field(
+          box,
+          "Location label vertical position (%)",
+          l,
+          "y",
+          "number",
+        );
+        this.field(box, "Location label radius", l, "radius", "number");
+        this.field(box, "Location label rotation", l, "rotation", "number");
+        this.button(box, "Use clock label style", () =>
+          this.change(() => {
+            l.font = "";
+            l.size = null;
+            l.color = "";
+            l.opacity = 1;
+          }, true),
+        );
+        this.button(box, "Reset location label position", () =>
+          this.change(() => {
+            l.x = null;
+            l.y = null;
+            l.radius = 213;
+            l.rotation = 0;
+          }, true),
+        );
         this.field(box, "Angle in degrees", l, "angle", "number");
         this.list(box, "Matching states", l, "states");
         this.list(box, "Additional aliases", l, "aliases");
@@ -538,13 +705,10 @@ export class ClockEditor extends HTMLElement {
     }
     if (this.tab === "Appearance") {
       const applyCastle = () => {
-        const preset = legacyLayout();
         this.config = normalize(
           Object.assign({}, c, {
             artwork: "castle",
             theme: "living-magical",
-            locations: preset.locations,
-            separation: preset.separation,
             pivot_x: 50,
             pivot_y: 47,
             face_image: "",
@@ -563,7 +727,7 @@ export class ClockEditor extends HTMLElement {
         "select",
         [
           ["vector", "Customizable dial"],
-          ["castle", "Castle glass — six locations"],
+          ["castle", "Animated castle — editable labels"],
         ],
       );
       artworkChoice.onchange = () => {
@@ -606,7 +770,7 @@ export class ClockEditor extends HTMLElement {
       ]);
       this.note(
         root,
-        "Castle glass uses a separate transparent frame and 16 seasonal scenes. Editing location labels or angles switches to the customizable dial. Scene images preload before fading; a broken image keeps the last scene.",
+        "The castle uses sharp full-size scenery, independent motion and a scalable frame. Your people, location names and angles are preserved. Season/time lighting offers sixteen combinations. Images preload before fading; a broken image keeps the last scene.",
       );
 
       this.field(root, "Background mode", c, "background_mode", "select", [
@@ -635,6 +799,15 @@ export class ClockEditor extends HTMLElement {
       ]);
       this.field(root, "Brightness (0.15–1.5)", c, "brightness", "number");
       this.field(root, "Animate gears", c, "gears", "checkbox");
+      this.field(root, "Animate castle scenery", c, "scene_motion", "checkbox");
+      this.field(
+        root,
+        "Castle motion intensity",
+        c,
+        "scene_intensity",
+        "number",
+      );
+      this.field(root, "Decorative motion speed", c, "motion_speed", "number");
       this.field(root, "Gear revolution (seconds)", c, "gear_speed", "number");
       this.field(
         root,
@@ -820,6 +993,10 @@ export class ClockEditor extends HTMLElement {
         )
         .forEach((e) => advanced.appendChild(e));
     }
+    if (this.tab === "Labels & effects") letteringEditor.call(this, root);
+    if (this.tab === "Bezel") bezelEditor.call(this, root);
+    if (this.tab === "Face cycling") carouselEditor.call(this, root);
+    if (this.tab === "Saved people") savedPeopleEditor.call(this, root);
     if (this.tab === "Presets") this.presets(root);
     if (this.tab === "Saved clocks") this.savedClocks(root);
     if (this.wizard) {
@@ -842,12 +1019,13 @@ export class ClockEditor extends HTMLElement {
         },
       );
     }
-    const details = node("details");
-    details.appendChild(node("summary", "Local live preview"));
-    const preview = node("magical-family-clock-card");
-    preview.className = "preview";
-    details.appendChild(preview);
-    root.appendChild(details);
+    [...this.shadowRoot.querySelectorAll("details")].forEach((e) => {
+      const key =
+        (e.closest("[data-person]")?.dataset.person || "") +
+        "|" +
+        e.querySelector("summary")?.textContent;
+      if (open.has(key)) e.open = true;
+    });
     this.updatePreview();
   }
   imageField(parent, label, obj, key, portrait = false) {
@@ -860,6 +1038,11 @@ export class ClockEditor extends HTMLElement {
     file.type = "file";
     file.accept = "image/png,image/jpeg,image/webp";
     file.setAttribute("aria-label", "Upload " + label);
+    this.controlHelp(
+      box,
+      file,
+      "Select a PNG, JPEG or WebP file from your device, up to 10 MB. It is optimized and stored with this clock; no external image host is needed.",
+    );
     box.appendChild(file);
     const status = node("p");
     status.setAttribute("role", "status");
@@ -1002,6 +1185,11 @@ export class ClockEditor extends HTMLElement {
     const name = node("input");
     name.setAttribute("aria-label", "Saved clock name");
     name.placeholder = "For example: Hallway family clock";
+    this.controlHelp(
+      root,
+      name,
+      "Name for the complete clock in your Home Assistant account library. It does not alter the title drawn on the clock.",
+    );
     root.appendChild(name);
     const status = node("p");
     status.setAttribute("role", "status");
@@ -1038,7 +1226,10 @@ export class ClockEditor extends HTMLElement {
           box.appendChild(preview);
         });
         this.button(box, "Load independent copy", () => {
-          this.config = normalize(clone(clock.config));
+          this.config = normalize({
+            ...clone(clock.config),
+            instance_id: uid(),
+          });
           this.emit();
           this.tab = "General";
           this.render();
@@ -1049,6 +1240,11 @@ export class ClockEditor extends HTMLElement {
         const rename = node("input");
         rename.value = clock.name;
         rename.setAttribute("aria-label", "Rename " + clock.name);
+        this.controlHelp(
+          box,
+          rename,
+          "New name for this saved library entry. It does not rename dashboard cards already loaded from it.",
+        );
         box.appendChild(rename);
         this.button(box, "Rename clock", () =>
           run(() => library.rename(clock.id, rename.value)),
@@ -1075,11 +1271,24 @@ export class ClockEditor extends HTMLElement {
     });
   }
   updatePreview() {
-    const p = this.shadowRoot.querySelector("magical-family-clock-card");
-    if (p && p.setConfig) {
-      p.setConfig(this.config);
-      p.hass = this._hass;
-    }
+    cancelAnimationFrame(this._previewFrame);
+    this._previewFrame = requestAnimationFrame(() => {
+      const p = this._preview;
+      if (!p?.setConfig) return;
+      try {
+        p.setConfig(this.config);
+        p.hass = this._hass;
+        const message = this.shadowRoot.querySelector(".preview-status");
+        if (message && !message.classList.contains("error"))
+          message.textContent = "Preview updated.";
+      } catch (e) {
+        const message = this.shadowRoot.querySelector(".preview-status");
+        if (message) {
+          message.textContent = e.message;
+          message.classList.add("error");
+        }
+      }
+    });
   }
   dial(parent) {
     const ns = "http://www.w3.org/2000/svg";
@@ -1177,6 +1386,11 @@ export class ClockEditor extends HTMLElement {
     const text = node("textarea");
     text.setAttribute("aria-label", "Configuration JSON");
     text.placeholder = "Paste exported JSON here to import";
+    this.controlHelp(
+      root,
+      text,
+      "Paste a full exported clock configuration to restore it with Import configuration. Personal backups contain sensor IDs and images; review before sharing.",
+    );
     root.appendChild(text);
     const error = node("p");
     error.className = "error";
@@ -1222,9 +1436,19 @@ export class ClockEditor extends HTMLElement {
     const name = node("input");
     name.setAttribute("aria-label", "Preset name");
     name.placeholder = "Preset name";
+    this.controlHelp(
+      presetBox,
+      name,
+      "Name for an appearance-only preset stored in this browser. Use Saved clocks for a full reusable clock across devices.",
+    );
     presetBox.appendChild(name);
     const picker = node("select");
     picker.setAttribute("aria-label", "Saved appearance preset");
+    this.controlHelp(
+      presetBox,
+      picker,
+      "Choose an appearance preset previously saved in this browser, then choose Load appearance preset. People and sensors remain unchanged.",
+    );
     presetBox.appendChild(picker);
     const read = () => {
       try {

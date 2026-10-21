@@ -1,3 +1,4 @@
+import { gearTrain } from "./motion.js";
 import whimsicalURL from "./assets/whimsical-workshop-dial.png";
 import agedBrassURL from "./assets/aged-brass-dial.png";
 // Original vector artwork; no remote fonts, images, or runtime libraries.
@@ -68,7 +69,7 @@ export function face(theme) {
     }
   const aged = theme === "brass-clockwork";
   if (aged)
-    return `<image class="material-art" href="${agedBrassURL}" x="12" y="12" width="576" height="576"/><g class="gears" style="opacity:.08">${gears}</g>`;
+    return `<defs><mask id="clockwork-rim"><circle cx="300" cy="300" r="300" fill="white"/><circle cx="300" cy="300" r="201" fill="black"/></mask></defs><circle cx="300" cy="300" r="280" fill="#131f22"/><image class="material-art" href="${agedBrassURL}" x="12" y="12" width="576" height="576" mask="url(#clockwork-rim)"/>${gearTrain()}`;
   return `<circle cx="300" cy="300" r="288" class="outer" style="${aged ? "fill:url(#aged-brass);filter:url(#metal-grain)" : ""}"/><circle cx="300" cy="300" r="273" class="dial" style="${aged ? "fill:url(#aged-dial);filter:url(#metal-grain)" : ""}"/><g class="filigree">${filigree}</g><circle cx="300" cy="300" r="260" class="ring"/><g class="ticks">${marks}</g><g class="gears" style="${aged ? "opacity:.65;fill:url(#aged-brass);stroke:#dab778;filter:url(#metal-grain)" : ""}">${gears}</g><circle cx="300" cy="300" r="168" class="ring inner"/>`;
 }
 export function landscape() {

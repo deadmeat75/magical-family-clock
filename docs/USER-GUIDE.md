@@ -1,6 +1,8 @@
 # Magical Family Clock: installation and user guide
 
-This guide covers **version 0.2.0**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
+The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.
+
+This guide covers **version 0.3.0 — Design Studio**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
 
 The card shows **where people are**, rather than hours and minutes. Each person has a hand pointing to a location. Several people can share a location, and several independent clocks can use the same Home Assistant entities.
 
@@ -30,6 +32,13 @@ The card shows **where people are**, rather than hours and minutes. Each person 
 22. [Sensor rules and dynamic locations](#22-use-sensor-rules-and-automatic-locations)
 23. [Optional hand data](#23-add-optional-data-to-a-hand)
 24. [New-feature troubleshooting](#24-troubleshoot-the-new-controls)
+25. [Save reusable people](DESIGN-STUDIO.md#save-a-person-once-and-reuse-them)
+26. [Place and rotate hand lettering](DESIGN-STUDIO.md#place-and-rotate-lettering-on-a-hand)
+27. [Move and style face text](DESIGN-STUDIO.md#position-and-style-titlecaption-text-on-any-face)
+28. [Customize location labels](DESIGN-STUDIO.md#customize-fixed-and-sensor-driven-location-labels)
+29. [Add an information bezel](DESIGN-STUDIO.md#add-an-information-bezel)
+30. [Choose effects and animation](DESIGN-STUDIO.md#select-and-combine-visual-effects)
+31. [Swipe between faces](DESIGN-STUDIO.md#swipe-or-click-between-faces)
 
 ## 1. Before installing
 
@@ -37,7 +46,7 @@ You need Home Assistant, HACS configured with its GitHub connection, and permiss
 
 For a first test, use a separate dashboard or add a separate card. Keep the old clock resource and any existing standalone page in place.
 
-The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.2.0). The automated HACS check passed 6 of 8 checks; the remaining repository-owner tasks are an About description and topics. See [publishing status](PUBLISHING-STATUS.md) for exact settings. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
+The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0). The automated HACS check passed 6 of 8 checks; the remaining repository-owner tasks are an About description and topics. See [publishing status](PUBLISHING-STATUS.md) for exact settings. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
 
 If you are only installing the card, repository metadata is the repository owner’s task. Do not change your working Home Assistant configuration to try to fix a GitHub metadata error.
 
@@ -48,7 +57,7 @@ If you are only installing the card, repository metadata is the repository owner
 3. Enter `https://github.com/deadmeat75/magical-family-clock`.
 4. Choose **Dashboard** as the category and add the repository.
 5. Find **Magical Family Clock** and open its download/install dialog.
-6. Select version **0.2.0** (or a newer published version). This release does not require enabling prereleases.
+6. Select version **0.3.0** (or a newer published version). This release does not require enabling prereleases.
 7. Download, then reload the Home Assistant frontend when prompted.
 
 HACS normally manages the JavaScript resource. Routine installation should not require copying a JavaScript file or registering a resource manually. If HACS does not register it, first check the troubleshooting section and your HACS installation status.
@@ -61,7 +70,7 @@ Do not copy the new bundle over `/local/magical-clock/magical-family-clock.js` o
 2. Enter dashboard **Edit** mode and choose **Add card**.
 3. Select **Magical Family Clock (HACS)**. This distinguishes the new card from an older clock entry with a similar name.
 4. Choose **Guided setup** for your own household, or **Try demonstration** to inspect fictional people first.
-5. Work through the editor sections: **General**, **People**, **Locations**, **Appearance**, **Behavior**, **Presets**, **Saved clocks**.
+5. Work through the editor sections: **General**, **People**, **Locations**, **Appearance**, **Labels & effects**, **Bezel**, **Face cycling**, **Behavior**, **Presets**, **Saved clocks** and **Saved people**.
 6. Use the preview while changing settings.
 7. Finish with Home Assistant’s **Save** action. If dashboard edit mode has a separate **Done** action, finish that too.
 
@@ -88,7 +97,7 @@ For the stained-glass castle style, open **Appearance** and choose **Use layered
 
 ![Layered castle artwork](layered-castle.png)
 
-The castle frame contains six fixed labels. Editing its location names or angles switches to the customizable vector dial so that the rendered labels can follow your layout. For arbitrary household locations, use the customizable dial.
+The bundled castle frame has editable vector labels. Change location names, typography, angles or positions without leaving the castle. See [location label instructions](DESIGN-STUDIO.md#customize-fixed-and-sensor-driven-location-labels). Lettering already painted into a custom uploaded image remains part of that image.
 
 Switching ordinary themes keeps the household configuration. An explicit layout-preset button also changes the layout settings described by that preset.
 
@@ -96,13 +105,14 @@ Switching ordinary themes keeps the household configuration. An explicit layout-
 
 Open **People → Add person**. For each person:
 
-1. Enter a **Display name**. A nickname is optional.
+1. Enter a **Display name**, or use **Editor label** to identify a hand whose visible name should stay blank. A nickname is optional.
 2. Use **Location entity** to choose their existing person, device tracker or location sensor. Use the entity picker rather than typing an entity ID.
 3. Leave **State attribute** empty for normal `person` and `device_tracker` entities. Set it only if your chosen sensor stores its location in an attribute instead of its state.
 4. Choose **Hand color** and **Text color** with enough contrast against each other and the dial.
 5. Start with length `1` so everyone has equal-length hands.
 6. Leave **Hand design** on `theme` to follow the theme, or select a specific shape.
-7. Use **Show name**, **Show portrait**, nickname and portrait settings as needed.
+7. Use **Show name**, **Show portrait**, nickname and portrait settings as needed. Clear **Hand lettering (blank for none)** to remove lettering completely. Choose stem/tip placement and parallel/perpendicular direction; advanced controls add an independent lettering angle and upright flipping. See [lettering instructions](DESIGN-STUDIO.md#place-and-rotate-lettering-on-a-hand).
+8. Choose **Save person profile** to reuse the sensors and appearance on another clock. Use **Saved people → Add person to this clock** for an independent copy, then save the dashboard.
 
 **Move up**, **Move down**, and **Display priority** control ordering. Higher numeric priority draws later, on top. Disable **Enabled** to temporarily hide a person without deleting their settings. **Remove person** removes that entry from this card only; it does not remove a Home Assistant entity or affect another clock.
 
@@ -145,7 +155,7 @@ Angles use this convention:
 
 For one person’s exception, open that person’s **Personal state overrides**, enter the actual state, choose **Display as location**, and select **Add personal mapping**. Personal overrides take precedence over shared aliases. A selected active travelling sensor takes precedence over both.
 
-Changing state aliases on the current castle layout also switches to the customizable dial in this candidate, because location edits are treated as custom-layout edits.
+Location aliases and matching rules remain independent of display labels. A label may show a fixed name or an existing sensor state/attribute, with its own font, color, position and rotation. Editing these settings preserves the castle frame. See [dynamic label instructions](DESIGN-STUDIO.md#customize-fixed-and-sensor-driven-location-labels).
 
 ## 7. Set up travelling and unknown states
 
@@ -194,9 +204,9 @@ Automatic mode uses Home Assistant’s timezone, location and selected sun entit
 
 Use **Background crossfade (ms)** to adjust transition duration; zero makes switching immediate. Reduced-motion settings also reduce transitions. Incoming images preload before fading, and failed custom scenes retain the previous scene rather than blanking the clock.
 
-The generic vector dial has separate **Background mode**, **Manual background**, **Seasonal backgrounds**, sun and optional weather controls. Those generic controls are separate from the castle’s Scene season/time controls. Weather effects now overlay both generic vector skies and the sixteen castle tiles; see [weather combinations](#21-combine-weather-seasons-and-time).
+The generic vector dial has separate **Background mode**, **Manual background**, **Seasonal backgrounds**, sun and optional weather controls. Those generic controls are separate from the castle’s Scene season/time controls. Weather effects overlay both generic vector skies and the sixteen castle season/time combinations; see [weather combinations](#21-combine-weather-seasons-and-time).
 
-**Complete clock-face image URL** is for a single image containing its own face and scenery. An opaque image covers moving scenery beneath it. Use the layered castle option when you want the changing castle scenes. The bundled transparent frame is a generated derivative of the supplied reference, not a pixel-identical extraction; see [artwork notes](ARTWORK.md).
+**Complete clock-face image URL** is for a single image containing its own face and scenery. An opaque image covers moving scenery beneath it. Use the layered castle option when you want the changing castle scenes. The bundled frame is scalable original SVG with separate editable text; see [artwork notes](ARTWORK.md).
 
 Use the season/time/weather override controls to upload a background for a specific combination. See [weather combinations](#21-combine-weather-seasons-and-time).
 
@@ -212,7 +222,7 @@ If several people occupy one location:
 4. Adjust display priority if one hand should draw above another.
 5. Split people into separate clocks if a small screen remains crowded.
 
-**Maximum size** is a width limit, not a command to overflow a narrow dashboard column. Start with aspect ratio `1` for a square clock. For a dimmer display, adjust **Brightness**. **Animate gears** and **Gear revolution (seconds)** apply to Brass Clockwork.
+**Maximum size** is a width limit, not a command to overflow a narrow dashboard column. Start with aspect ratio `1` for a square clock. For a dimmer display, adjust **Brightness**. **Animate gears** and **Gear revolution (seconds)** apply to Brass Clockwork. The 40-tooth driver sets the period; connected 24-tooth neighbors counter-rotate in 60% of that time. Lettering shrinks to fit solid hand material, so a short name or wider hand can improve readability. Use **Labels & effects** controls as described in the [Design Studio guide](DESIGN-STUDIO.md).
 
 ## 11. Create another independent clock
 
@@ -293,7 +303,7 @@ To uninstall, remove the new cards you no longer want, then remove this new pack
 | A person is absent | Enabled setting and whether the person was added to this card; unknown states should retain enabled hands |
 | Portrait missing | Existing accessible image path, HTTPS/local URL, current browser’s access and portrait visibility |
 | Castle scene does not change | Scene season/time overrides, sun entity, hemisphere, and whether a complete opaque face is covering the layers |
-| Castle labels change back to a plain dial | Editing castle location settings intentionally switches to the customizable dial |
+| Custom face lettering cannot be changed | Bundled castle labels are editable; lettering painted into an uploaded image cannot be removed by overlay controls |
 | Weather does not appear | Check the selected weather entity, effect override, motion setting and system reduced-motion preference |
 | Names overlap | Separation, head size, nicknames, priority and number of people on the small dial |
 | Settings disappear after reload | Complete Home Assistant’s card Save and dashboard Done actions |
@@ -304,7 +314,7 @@ When reporting a problem, include the card version, Home Assistant/HACS/browser 
 
 ## 17. What has been verified
 
-The published candidate passed 25 unit/packaging checks and 17 Chromium browser checks. Version 0.2.0 passed 31 unit/packaging checks and 22 Chromium browser checks, plus account-storage and upload persistence validation; see [version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. The published bundle was downloaded and matched against the tested artifact.
+Version 0.3.0 passed **44 unit/packaging checks and 37 Chromium browser checks**, including fitted/rotated lettering, meshing gear geometry and phase, live preview recovery, saved people, bezel and template switching. See [Design Studio acceptance](DESIGN-STUDIO-ACCEPTANCE.json). Version 0.2.0 account-storage and image-upload persistence checks remain covered by the regression suite; see [previous version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. The published bundle was downloaded and matched against the tested artifact.
 
 HACS 2.0.5 was installed in that disposable instance and its setup form loaded. Authenticated custom-repository installation/update remains unverified. No existing user installation was modified. The latest outstanding repository-owner tasks and workflow results are recorded in [publishing status](PUBLISHING-STATUS.md), with further detail in [validation](VALIDATION.md).
 
@@ -370,7 +380,7 @@ To supply your own scene for a combination, open **Season, time and weather imag
 
 **Locations → Add discovered locations** imports available Home Assistant zone names and the current location states of selected people as editable dial entries. Review the names, matching states and angles afterward. Discovery reads states already available to your browser; it does not invent locations or query phone history.
 
-For ongoing discovery, enable **Automatically add detected locations**. The card temporarily adds up to 24 unconfigured names and distributes all labels evenly. These runtime additions do not rewrite the dashboard configuration. Names can disappear when the corresponding source data disappears. Use fixed locations when hand angles must remain stable. Editing locations switches the fixed six-location castle artwork to the customizable dial.
+For ongoing discovery, enable **Automatically add detected locations**. The card temporarily adds up to 24 unconfigured names and distributes all labels evenly. These runtime additions do not rewrite the dashboard configuration. Names can disappear when the corresponding source data disappears. Use fixed locations when hand angles must remain stable. Castle labels remain editable on the scalable frame.
 
 For conditional location matching, open a person’s **Optional hand information and location rules** and choose **Add location rule**. Select a source entity, optional attribute, comparison, value and destination. Leave the source entity empty to use that person’s configured location entity.
 

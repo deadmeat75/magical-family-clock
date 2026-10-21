@@ -1,3 +1,14 @@
+import { fitEngraving, letteringRotation } from "./engraving.js";
+import {
+  handName,
+  locationName,
+  labelPosition,
+  textPosition,
+  presentationFor,
+} from "./design.js";
+import { finishDefs, materialFill, surfaceMarkup } from "./finish.js";
+import { motionCSS, sceneMotionMarkup } from "./motion.js";
+import { bezelText } from "./bezel.js";
 import { metricText, runtimeConfig } from "./data.js";
 import { weatherFor, weatherMarkup, weatherCSS } from "./weather.js";
 import {
@@ -12,17 +23,12 @@ import { palettes, skies, face, landscape, metalDefs } from "./themes.js";
 import "./editor.js";
 import { sceneFor } from "./scenes.js";
 import {
-  frameURL,
+  castleFrame,
   atlasMarkup,
   preloadImage,
   preloadArtwork,
 } from "./artwork.js";
-import {
-  handStyle,
-  handRadius,
-  handPath,
-  legacyTextRotation,
-} from "./hands.js";
+import { handStyle, handRadius, handPath } from "./hands.js";
 const NS = "http://www.w3.org/2000/svg";
 function svg(tag, attrs = {}, text) {
   const e = document.createElementNS(NS, tag);
@@ -30,7 +36,7 @@ function svg(tag, attrs = {}, text) {
   if (text !== undefined) e.textContent = text;
   return e;
 }
-const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:bold;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}.legacy-hand{filter:drop-shadow(3.43px 3.43px 8.57px #0008)}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.gears-off .gear,.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}.expanded .frame{width:95vw;max-width:95vh;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
+const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:500;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.gears-off .gear,.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}.expanded .frame{width:95vw;max-width:95vh;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
 export class MagicalFamilyClock extends HTMLElement {
   constructor() {
     super();
@@ -39,6 +45,8 @@ export class MagicalFamilyClock extends HTMLElement {
     this._angles = new Map();
     this._solarHistory = [];
     this._sceneToken = 0;
+    this._visible = true;
+    this._templateIndex = null;
   }
   static getConfigElement() {
     return document.createElement("magical-family-clock-card-editor");
@@ -53,7 +61,25 @@ export class MagicalFamilyClock extends HTMLElement {
     return { columns: 12, rows: 8, min_columns: 4, min_rows: 4 };
   }
   setConfig(config) {
-    this._config = normalize(config);
+    const base = normalize(config);
+    const same = JSON.stringify(base) === this._baseKey;
+    if (same) return;
+    this._baseKey = JSON.stringify(base);
+    const priorIdentity = this._baseConfig?.instance_id;
+    this._baseConfig = base;
+    if (priorIdentity !== base.instance_id || this._templateIndex == null) {
+      this._templateIndex = 0;
+      if (base.carousel.enabled && base.carousel.remember)
+        try {
+          this._templateIndex =
+            Number(localStorage.getItem(this._templateStorageKey())) || 0;
+        } catch {}
+    }
+    this._templateIndex = Math.min(
+      Math.max(0, this._templateIndex),
+      Math.max(0, base.carousel.templates.length - 1),
+    );
+    this._config = normalize(presentationFor(base, this._templateIndex));
     this._render();
   }
   set hass(hass) {
@@ -62,18 +88,55 @@ export class MagicalFamilyClock extends HTMLElement {
   }
   connectedCallback() {
     if (!this._config) this.setConfig(defaults());
+    if (this._needsReconnectRender) {
+      this._needsReconnectRender = false;
+      this._render();
+    }
     if (window.IntersectionObserver) {
       this._observer = new IntersectionObserver((entries) => {
+        this._visible = entries[0].isIntersecting;
+        if (this._visible) this._update();
         this.shadowRoot
           .querySelector("ha-card")
           .classList.toggle("paused", !entries[0].isIntersecting);
       });
       this._observer.observe(this);
     }
-    this._timer = window.setInterval(() => this._update(), 60000);
+    clearInterval(this._timer);
+    this._timer = window.setInterval(() => {
+      if (!this._visible) return;
+      this._updateBezel();
+      if (Date.now() - (this._lastSceneTick || 0) > 60000) {
+        this._lastSceneTick = Date.now();
+        this._update();
+      }
+      const carousel = this._baseConfig?.carousel;
+      if (
+        carousel?.enabled &&
+        carousel.auto &&
+        !this._hover &&
+        !this._hasFocus &&
+        !this._reduced() &&
+        Date.now() - this._lastSwitch >= carousel.interval * 1000
+      )
+        this._switchTemplate(1);
+    }, 1000);
     this._update();
+    if (document.fonts?.ready)
+      document.fonts.ready.then(() => {
+        if (!this.isConnected) return;
+        this._hands.forEach((hand) => {
+          if (hand.name) {
+            hand.fitPending = true;
+            this._fitHandName(hand);
+          }
+        });
+      });
   }
   disconnectedCallback() {
+    this._needsReconnectRender = true;
+    this._imageToken = (this._imageToken || 0) + 1;
+    this._faceToken = (this._faceToken || 0) + 1;
     this._sceneToken++;
     this._sceneRequest = null;
     if (this._observer) this._observer.disconnect();
@@ -100,13 +163,26 @@ export class MagicalFamilyClock extends HTMLElement {
     this._sceneLoaded = false;
     this._hands.clear();
     this._imageURL = null;
+    this._imageRequest = null;
+    this._bezelKey = null;
+    this._faceToken = (this._faceToken || 0) + 1;
+    this._imageToken = (this._imageToken || 0) + 1;
     this._weatherKey = null;
     this._locationKey = null;
-    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.6px;filter:drop-shadow(0px 1px .25px #fff5);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="190"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><image class="castle-frame" x="0" y="0" width="600" height="600"/></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="var(--metal)" stroke="var(--rim)" stroke-width="4"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="var(--paper)"/></svg><div class="empty" hidden></div></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
+    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}${motionCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.25px;filter:drop-shadow(0px .35px .1px #fff7);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}.image-status{position:absolute;left:12px;bottom:8px;max-width:65%;font:12px system-ui;background:#101c29e8;color:#eddcb9;padding:5px 9px;border-radius:8px}.template-navigation{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 140px 12px 12px;min-height:56px}.template-name{font:14px system-ui}.template-navigation button{font-size:20px}.frame{touch-action:pan-y}.bezel-value{paint-order:stroke;stroke:#101b20;stroke-width:1.5px;stroke-linejoin:round}.portrait-surface{filter:url(#effect-portraits)}.face{filter:url(#effect-face)}.hands{filter:url(#effect-hands)}.bezel{filter:url(#effect-bezel)}.castle-frame,.frame-finish{filter:url(#effect-frame)}.frame-glare{pointer-events:none}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}${finishDefs(c.effects)}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="190"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><g class="castle-frame"></g><g class="scene-animation"></g></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="var(--metal)" stroke="var(--rim)" stroke-width="4"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="var(--paper)"/></svg><div class="empty" hidden></div><div class="image-status" role="status" hidden></div></div><div class="template-navigation" hidden><button class="template-previous" aria-label="Previous clock face">‹</button><span class="template-name" aria-live="polite"></span><button class="template-next" aria-label="Next clock face">›</button></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
     const card = this.shadowRoot.querySelector("ha-card");
     Object.keys(p).forEach((k) => card.style.setProperty("--" + k, p[k]));
     card.style.setProperty("--duration", c.duration + "ms");
     card.style.setProperty("--gear-speed", c.gear_speed + "s");
+    card.style.setProperty("--motion-speed", c.motion_speed);
+    card.style.setProperty("--scene-intensity", c.scene_intensity);
+    card.style.setProperty(
+      "--template-transition",
+      c.carousel.transition + "ms",
+    );
+    card.classList.toggle("scene-off", !c.scene_motion);
+    card.classList.toggle("paused", !this._visible);
+    card.classList.add("template-enter");
     card.style.setProperty("--font", c.font);
     for (const key of ["caption", "location", "name"]) {
       card.style.setProperty("--" + key + "-font", c[key + "_font"] || c.font);
@@ -137,6 +213,22 @@ export class MagicalFamilyClock extends HTMLElement {
           : `0 ${300 - 300 / c.aspect_ratio} 600 ${600 / c.aspect_ratio}`,
       );
     this.shadowRoot.querySelector(".title").textContent = c.title;
+    for (const kind of ["title", "caption"]) {
+      const label = this.shadowRoot.querySelector("." + kind),
+        pos = textPosition(c, kind);
+      label.setAttribute("x", pos.x);
+      label.setAttribute("y", pos.y);
+      label.style.fontFamily = c[kind + "_font"];
+      label.style.fontSize = c[kind + "_size"] + "px";
+      label.style.fill =
+        c[kind + "_color"] ||
+        (c.artwork === "castle" ? "#f4dfb1" : "var(--ink)");
+      label.style.opacity = c[kind + "_opacity"];
+      label.style.display = c.show_branding ? "" : "none";
+    }
+    this._renderBezel();
+    this._setupTemplates();
+    this._renderEffects();
     this.shadowRoot
       .querySelector(".center-image")
       .setAttribute("href", c.center_image || "");
@@ -150,44 +242,32 @@ export class MagicalFamilyClock extends HTMLElement {
       e.setAttribute("cy", 300 + dy);
     });
     if (c.face_image) {
-      const loader = new Image();
-      this._faceLoad = loader;
-      loader.onload = () => {
-        if (this._faceLoad !== loader) return;
-        const face = this.shadowRoot.querySelector(".face-image");
-        face.setAttribute("href", c.face_image);
-        face.style.display = "";
-        this.shadowRoot.querySelector(".locations").style.display =
-          c.show_location_labels ? "" : "none";
-        this.shadowRoot
-          .querySelectorAll(".caption,.title")
-          .forEach((e) => (e.style.display = c.show_branding ? "" : "none"));
-      };
-      loader.onerror = () => {
-        if (this._faceLoad !== loader) return;
-        this.shadowRoot.querySelector(".face-image").style.display = "none";
-      };
-      loader.src = c.face_image;
+      const token = ++this._faceToken;
+      this._status("loading", "Loading clock face…");
+      preloadImage(c.face_image)
+        .then(() => {
+          if (token !== this._faceToken) return;
+          const image = this.shadowRoot.querySelector(".face-image");
+          image.setAttribute("href", c.face_image);
+          image.style.display = "";
+          this.shadowRoot.querySelector(".locations").style.display =
+            c.show_location_labels ? "" : "none";
+          this._status("ready");
+        })
+        .catch(() => {
+          if (token === this._faceToken)
+            this._status(
+              "error",
+              "Face image could not load. Showing the bundled face.",
+            );
+        });
     }
     const locations = this.shadowRoot.querySelector(".locations");
-    c.locations.forEach((l) => {
-      const a = (l.angle * Math.PI) / 180;
-      const x = 300 + Math.cos(a) * 213,
-        y = 300 + Math.sin(a) * 213;
-      const label = svg(
-        "text",
-        {
-          x,
-          y,
-          "text-anchor": "middle",
-          "dominant-baseline": "middle",
-          class: "label",
-        },
-        l.name,
-      );
-      if (l.color) label.style.fill = l.color;
-      locations.appendChild(label);
-    });
+    locations.style.display = c.face_image
+      ? ""
+      : c.show_location_labels
+        ? ""
+        : "none";
     if (!c.members.length) {
       const empty = this.shadowRoot.querySelector(".empty");
       empty.hidden = false;
@@ -232,10 +312,8 @@ export class MagicalFamilyClock extends HTMLElement {
     const r = handRadius(m, c, p.radius);
     const path = svg("path", {
       d: handPath(design, r),
-      fill:
-        c.theme === "brass-clockwork" || m.material === "brass"
-          ? "url(#aged-brass)"
-          : m.color,
+      fill: materialFill(m.material, m.color),
+      "fill-rule": "evenodd",
       stroke: legacy ? "none" : "#382c22",
       "stroke-width": 2,
       class: legacy ? "legacy-hand" : "",
@@ -244,10 +322,19 @@ export class MagicalFamilyClock extends HTMLElement {
       "transform",
       `translate(300 0) scale(${m.width} 1) translate(-300 0)`,
     );
-    if (c.theme === "brass-clockwork") path.style.filter = "url(#metal-grain)";
+
     g.appendChild(path);
-    const head = svg("g", { transform: `translate(300 ${300 - r})` });
-    const counter = svg("g", { class: "counter" });
+    const surface = svg("g", {
+      class: "hand-surfaces",
+      transform: path.getAttribute("transform"),
+    });
+    surface.innerHTML = surfaceMarkup(handPath(design, r), m, c.effects.hands);
+    g.appendChild(surface);
+    const head = svg("g", {
+      class: "hand-head",
+      transform: `translate(300 ${300 - r})`,
+    });
+    const counter = svg("g", { class: "counter portrait-surface" });
     head.appendChild(counter);
     g.appendChild(head);
     const size = 23 * m.head_size;
@@ -256,10 +343,7 @@ export class MagicalFamilyClock extends HTMLElement {
       svg("ellipse", {
         rx: size,
         ry,
-        fill:
-          { brass: "#c49a52", copper: "#b87853", silver: "#b5c2c5" }[
-            m.material
-          ] || m.color,
+        fill: materialFill(m.material, m.color),
         stroke: m.portrait_frame === "none" ? m.color : "#ecd097",
         "stroke-width": m.portrait_frame === "none" ? 0 : 3,
       }),
@@ -292,19 +376,55 @@ export class MagicalFamilyClock extends HTMLElement {
             "font-size": 17,
             "font-family": "Georgia",
           },
-          m.name
-            .split(/\s+/)
-            .map((s) => s[0])
-            .slice(0, 2)
-            .join(""),
+          m.show_name && m.name_position !== "tip"
+            ? handName(m)
+                .split(/\s+/)
+                .map((s) => s[0] || "")
+                .slice(0, 2)
+                .join("")
+            : "",
         ),
       );
-    if (legacy && (!m.show_portrait || !m.portrait))
+    const portraitEffects = c.effects.portraits;
+    for (const [kind, fill, strength] of [
+      [
+        "reflection",
+        "url(#glass-glare)",
+        portraitEffects.reflection + portraitEffects.glare,
+      ],
+      ["wear", "url(#wear-marks)", portraitEffects.wear],
+      ["patina", "url(#patina-marks)", portraitEffects.patina],
+    ])
+      counter.appendChild(
+        svg("ellipse", {
+          class: "portrait-" + kind,
+          rx: size,
+          ry,
+          fill,
+          opacity: strength * 0.5,
+          "pointer-events": "none",
+        }),
+      );
+    counter.appendChild(
+      svg("ellipse", {
+        rx: size,
+        ry,
+        fill: "none",
+        stroke: "url(#material-silver)",
+        "stroke-width": portraitEffects.bevel * 2,
+        opacity: portraitEffects.bevel,
+      }),
+    );
+    if (m.name_position === "tip" && design === "spoon")
+      head.style.display = "";
+    else if (!m.show_portrait || (legacy && !m.portrait))
       head.style.display = "none";
-    let nameGroup = null;
-    if (m.show_name) {
+    let nameGroup = null,
+      name = null,
+      engravingClipPath = null;
+    if (m.show_name && handName(m)) {
       nameGroup = svg("g", { class: "along-label" });
-      const name = svg(
+      name = svg(
         "text",
         {
           class: "legacy-name engraved",
@@ -313,18 +433,35 @@ export class MagicalFamilyClock extends HTMLElement {
               ? "#3d2915"
               : m.text_color,
         },
-        m.nickname || m.name,
+        handName(m),
       );
-      const size = Math.max(
-        (12 * 6) / 7,
-        Math.min(
-          (24 * 6) / 7,
-          (r * 0.57) / Math.max(1, (m.nickname || m.name).length * 0.62),
-        ),
-      );
-      name.style.fontSize = Math.min((size * c.name_size) / 13, 26) + "px";
+      name.style.fontSize = c.name_size + "px";
+      nameGroup.style.visibility = "hidden";
       nameGroup.appendChild(name);
-      g.appendChild(nameGroup);
+      const clipId = "engraving-" + m.id.replace(/[^a-zA-Z0-9_-]/g, "");
+      const clip = svg("clipPath", {
+        id: clipId,
+        clipPathUnits: "userSpaceOnUse",
+      });
+      engravingClipPath =
+        m.name_position === "tip" && design === "spoon"
+          ? svg("circle", { cx: 300, cy: 300 - r, r: size - 2 })
+          : svg("path", {
+              d: handPath(design, r),
+              transform: path.getAttribute("transform"),
+              "clip-rule": "evenodd",
+              "fill-rule": "evenodd",
+            });
+      clip.appendChild(engravingClipPath);
+      g.appendChild(clip);
+      const lettering = svg("g", {
+        class: "hand-lettering",
+        "data-name-position": m.name_position,
+        "data-name-orientation": m.name_orientation,
+        "clip-path": `url(#${clipId})`,
+      });
+      lettering.appendChild(nameGroup);
+      g.appendChild(lettering);
     }
     const metrics = svg("g", { class: "hand-data" });
     counter.appendChild(metrics);
@@ -358,13 +495,22 @@ export class MagicalFamilyClock extends HTMLElement {
       counter,
       title,
       path,
+      surface,
       head,
       r,
       design,
       nameGroup,
+      name,
+      engravingClipPath,
+      member: m,
+      bowlRadius:
+        m.name_position === "tip" && design === "spoon" ? size - 2 : 0,
+      fitPending: !!name,
       metricNodes,
     });
-    return this._hands.get(m.id);
+    const hand = this._hands.get(m.id);
+    this._fitHandName(hand);
+    return hand;
   }
   _update() {
     if (!this._config || !this.shadowRoot.querySelector("svg")) return;
@@ -372,25 +518,43 @@ export class MagicalFamilyClock extends HTMLElement {
     const states = c.demo ? demoStates() : (this._hass || {}).states || {};
     const runtime = runtimeConfig(c, states);
     const locationKey = JSON.stringify(
-      runtime.locations.map((l) => [l.id, l.name, l.angle]),
+      runtime.locations.map((l) => [
+        l.id,
+        locationName(l, states),
+        l.angle,
+        l.x,
+        l.y,
+        l.radius,
+        l.font,
+        l.size,
+        l.color,
+        l.opacity,
+        l.rotation,
+      ]),
     );
     if (locationKey !== this._locationKey) {
       this._locationKey = locationKey;
       const group = this.shadowRoot.querySelector(".locations");
       group.textContent = "";
       runtime.locations.forEach((l) => {
-        const a = (l.angle * Math.PI) / 180;
+        const pos = labelPosition(l);
         const label = svg(
           "text",
           {
-            x: 300 + Math.cos(a) * 213,
-            y: 300 + Math.sin(a) * 213,
+            x: pos.x,
+            y: pos.y,
             class: "label",
+            "data-location": l.id,
             "text-anchor": "middle",
+            "dominant-baseline": "middle",
+            opacity: l.opacity,
+            transform: `rotate(${l.rotation || 0} ${pos.x} ${pos.y})`,
           },
-          l.name,
+          locationName(l, states),
         );
         if (l.color) label.style.fill = l.color;
+        if (l.font) label.style.fontFamily = l.font;
+        if (l.size) label.style.fontSize = l.size + "px";
         group.appendChild(label);
       });
     }
@@ -442,22 +606,33 @@ export class MagicalFamilyClock extends HTMLElement {
       this._updateCastle(scene);
     }
     const imageURL = safeImage((c.background_images || {})[background]);
-    if (imageURL !== this._imageURL) {
-      const layers = this.shadowRoot.querySelectorAll(".background-image");
-      layers[1].setAttribute("href", this._imageURL || "");
-      layers[1].style.opacity = this._imageURL ? c.background_opacity : 0;
-      layers[0].style.opacity = 0;
-      layers[0].setAttribute("href", imageURL);
-      this._imageURL = imageURL;
-      const token = imageURL;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (this._imageURL !== token) return;
+    if (imageURL !== this._imageRequest) {
+      this._imageRequest = imageURL;
+      const token = ++this._imageToken;
+      if (imageURL) this._status("loading", "Loading background…");
+      (imageURL ? preloadImage(imageURL) : Promise.resolve())
+        .then(() => {
+          if (token !== this._imageToken) return;
+          const layers = this.shadowRoot.querySelectorAll(".background-image");
+          layers[1].setAttribute("href", this._imageURL || "");
+          layers[1].style.opacity = this._imageURL ? c.background_opacity : 0;
+          layers[0].setAttribute("href", imageURL);
           layers[0].style.opacity = imageURL ? c.background_opacity : 0;
-          layers[1].style.opacity = 0;
+          requestAnimationFrame(() => {
+            if (token === this._imageToken) layers[1].style.opacity = 0;
+          });
+          this._imageURL = imageURL;
+          if (imageURL) this._status("ready");
+        })
+        .catch(() => {
+          if (token === this._imageToken)
+            this._status(
+              "error",
+              "Background could not load. Keeping the previous image.",
+            );
         });
-      });
     }
+    this._updateBezel();
     let changedLegacy = false,
       maxDuration = 0;
     positions(c, states).forEach((p) => {
@@ -466,8 +641,22 @@ export class MagicalFamilyClock extends HTMLElement {
       if (r !== hand.r) {
         hand.head.setAttribute("transform", `translate(300 ${300 - r})`);
         hand.path.setAttribute("d", handPath(hand.design, r));
+        hand.surface.innerHTML = surfaceMarkup(
+          handPath(hand.design, r),
+          p.member,
+          c.effects.hands,
+        );
         hand.r = r;
+        if (hand.engravingClipPath) {
+          if (hand.bowlRadius)
+            hand.engravingClipPath.setAttribute("cy", 300 - r);
+          else
+            hand.engravingClipPath.setAttribute("d", handPath(hand.design, r));
+        }
+        hand.fitPending = !!hand.name;
       }
+      hand.artworkAngle = p.angle;
+      if (hand.fitPending) this._fitHandName(hand);
       const target = p.angle + 90;
       const prev = this._angles.get(p.member.id);
       const angle =
@@ -484,7 +673,7 @@ export class MagicalFamilyClock extends HTMLElement {
         }
         hand.nameGroup.setAttribute(
           "transform",
-          `translate(300 ${300 - r * (hand.design === "standalone-pointed" ? 139 / 258 : 0.52)}) rotate(${legacyTextRotation(p.angle)})`,
+          `translate(${hand.engraving?.x ?? 300} ${hand.engraving?.y ?? 300 - r * 0.52}) rotate(${letteringRotation(hand.member, p.angle)})`,
         );
       }
       this._angles.set(p.member.id, angle);
@@ -499,7 +688,9 @@ export class MagicalFamilyClock extends HTMLElement {
           )),
       );
       hand.title.textContent =
-        p.member.name + ": " + (p.location ? p.location.name : "Unknown");
+        (p.member.editor_label || p.member.name || "Hand") +
+        ": " +
+        (p.location ? locationName(p.location, states) : "Unknown");
     });
     if (changedLegacy) this._trackLegacyLabels(maxDuration);
   }
@@ -517,8 +708,9 @@ export class MagicalFamilyClock extends HTMLElement {
     if (this._sceneRequest === request) return;
     this._sceneRequest = request;
     const token = ++this._sceneToken;
+    this._status("loading", "Loading sharp castle scene…");
     Promise.all([
-      preloadArtwork(),
+      preloadArtwork(scene),
       source ? preloadImage(source) : Promise.resolve(),
     ])
       .then(() => {
@@ -545,17 +737,17 @@ export class MagicalFamilyClock extends HTMLElement {
             }),
           );
         else layer.innerHTML = atlasMarkup(scene);
-        parent.querySelector(".castle-frame").setAttribute("href", frameURL);
+        const frame = parent.querySelector(".castle-frame");
+        if (!frame.firstChild) frame.innerHTML = castleFrame();
+        parent.querySelector(".scene-animation").innerHTML = sceneMotionMarkup(
+          scene.season,
+          scene.period,
+        );
         parent.style.display = "";
         parent.setAttribute("data-scene", scene.key);
         this.shadowRoot.querySelector(".face").style.visibility = "hidden";
-        this.shadowRoot.querySelector(".locations").style.display = "none";
-        this.shadowRoot.querySelector(".caption").setAttribute("y", "440");
-        this.shadowRoot.querySelector(".title").setAttribute("y", "418");
-        this.shadowRoot.querySelectorAll(".caption,.title").forEach((e) => {
-          e.style.display = c.show_branding ? "" : "none";
-          e.style.fill = "#f3d698";
-        });
+        this.shadowRoot.querySelector(".locations").style.display =
+          c.show_location_labels ? "" : "none";
         const filters = {
           spring: "saturate(1.25) brightness(1.08)",
           summer: "saturate(1.4) brightness(1.14)",
@@ -563,7 +755,7 @@ export class MagicalFamilyClock extends HTMLElement {
           winter: "saturate(.65) brightness(1.12)",
         };
         parent.querySelector(".castle-scenes").style.filter =
-          filters[scene.season] || "";
+          "url(#effect-face) " + (filters[scene.season] || "");
         layer.getBoundingClientRect();
         layer.style.transition = "";
         layer.style.opacity = 1;
@@ -571,12 +763,298 @@ export class MagicalFamilyClock extends HTMLElement {
         this._activeScene = next;
         this._sceneLoaded = true;
         this._sceneError = null;
+        this._status("ready");
       })
       .catch(() => {
-        if (token === this._sceneToken)
+        if (token === this._sceneToken) {
           this._sceneError =
             "Background failed to load; keeping the previous scene.";
+          this._status("error", this._sceneError);
+        }
       });
+  }
+  _status(status, message = "") {
+    const target = this.shadowRoot.querySelector(".image-status");
+    if (target) {
+      target.hidden = status === "ready";
+      target.textContent = message;
+      if (status === "error") {
+        const retry = document.createElement("button");
+        retry.type = "button";
+        retry.textContent = "Retry images";
+        retry.style.marginLeft = "8px";
+        retry.onclick = () => this._render();
+        target.appendChild(retry);
+      }
+    }
+    this.dispatchEvent(
+      new CustomEvent("clock-render-status", {
+        detail: { status, message },
+        bubbles: true,
+        composed: true,
+      }),
+    );
+  }
+  _renderEffects() {
+    const c = this._config,
+      root = this.shadowRoot.querySelector("svg");
+    for (const target of ["face", "frame"]) {
+      const e = c.effects[target],
+        group = svg("g", {
+          class: target + "-finish",
+          "pointer-events": "none",
+        });
+      const shape =
+        target === "face"
+          ? {
+              cx: 300,
+              cy: c.artwork === "castle" ? 282 : 300,
+              r: c.artwork === "castle" ? 187 : 267,
+            }
+          : { cx: 300, cy: 300, r: 280 };
+      for (const [key, paint] of [
+        ["wear", "url(#wear-marks)"],
+        ["patina", "url(#patina-marks)"],
+        ["reflection", "url(#glass-glare)"],
+        ["glare", "url(#glass-glare)"],
+      ]) {
+        group.appendChild(
+          svg("circle", {
+            ...shape,
+            fill: target === "face" ? paint : "none",
+            stroke: target === "frame" ? paint : "none",
+            "stroke-width": target === "frame" ? 18 : 0,
+            opacity: e[key] * 0.65,
+          }),
+        );
+      }
+      group.appendChild(
+        svg("circle", {
+          ...shape,
+          fill: "none",
+          stroke: "url(#material-silver)",
+          "stroke-width": e.bevel * 2,
+          opacity: e.bevel * 0.65,
+        }),
+      );
+      root.insertBefore(group, root.querySelector(".locations"));
+    }
+  }
+  _renderBezel() {
+    const c = this._config,
+      b = c.bezel,
+      root = this.shadowRoot.querySelector("svg");
+    if (!b.enabled) return;
+    const group = svg("g", { class: "bezel" }),
+      radius = 300 + b.width / 2 + 4;
+    group.appendChild(
+      svg("circle", {
+        cx: 300,
+        cy: 300,
+        r: radius,
+        fill: "none",
+        stroke: materialFill(b.material, b.color),
+        "stroke-width": b.width,
+      }),
+    );
+    group.appendChild(
+      svg("circle", {
+        cx: 300,
+        cy: 300,
+        r: radius + b.width / 2,
+        fill: "none",
+        stroke: "#f5d99c",
+        "stroke-width": 1.5,
+        opacity: c.effects.bezel.bevel,
+      }),
+    );
+    b.items.forEach((item) => {
+      const a = (item.angle * Math.PI) / 180;
+      const text = svg("text", {
+        class: "bezel-value",
+        x: 300 + Math.cos(a) * radius,
+        y: 300 + Math.sin(a) * radius,
+        "data-readout": item.id,
+        "text-anchor":
+          Math.cos(a) > 0.5 ? "end" : Math.cos(a) < -0.5 ? "start" : "middle",
+        "dominant-baseline": "middle",
+        fill: item.color,
+        opacity: item.opacity,
+      });
+      text.style.fontFamily = item.font;
+      text.style.fontSize = item.size + "px";
+      group.appendChild(text);
+    });
+    for (const [key, paint] of [
+      ["wear", "url(#wear-marks)"],
+      ["patina", "url(#patina-marks)"],
+      ["reflection", "url(#glass-glare)"],
+      ["glare", "url(#glass-glare)"],
+    ])
+      group.insertBefore(
+        svg("circle", {
+          cx: 300,
+          cy: 300,
+          r: radius,
+          fill: "none",
+          stroke: paint,
+          "stroke-width": b.width,
+          opacity: c.effects.bezel[key] * 0.7,
+        }),
+        group.firstChild.nextSibling,
+      );
+    root.insertBefore(group, root.querySelector(".face"));
+    const margin = b.width + 8;
+    const ratio = c.aspect_ratio;
+    root.setAttribute(
+      "viewBox",
+      ratio >= 1
+        ? `${300 - (300 + margin) * ratio} ${-margin} ${(600 + margin * 2) * ratio} ${600 + margin * 2}`
+        : `${-margin} ${300 - (300 + margin) / ratio} ${600 + margin * 2} ${(600 + margin * 2) / ratio}`,
+    );
+  }
+  _updateBezel() {
+    const c = this._config;
+    if (!c?.bezel.enabled) return;
+    const states = c.demo ? demoStates() : this._hass?.states || {},
+      now = new Date();
+    const labels = this.shadowRoot.querySelectorAll(".bezel-value");
+    c.bezel.items.forEach((item, i) => {
+      if (labels[i])
+        labels[i].textContent = bezelText(
+          item,
+          states,
+          now,
+          this._hass?.locale?.language,
+          this._hass?.config?.time_zone,
+        );
+    });
+  }
+  _reduced() {
+    return (
+      this._config?.reduced_motion ||
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    );
+  }
+  _templateStorageKey() {
+    return (
+      "mfc-face-" +
+      (this._baseConfig.instance_id ||
+        this._baseConfig.title +
+          "-" +
+          this._baseConfig.members.map((m) => m.id).join("-"))
+    );
+  }
+  _switchTemplate(step) {
+    const base = this._baseConfig,
+      list = base.carousel.templates;
+    if (!base.carousel.enabled || list.length < 2) return;
+    this._templateIndex =
+      (this._templateIndex + step + list.length) % list.length;
+    this._lastSwitch = Date.now();
+    if (base.carousel.remember)
+      try {
+        localStorage.setItem(
+          this._templateStorageKey(),
+          String(this._templateIndex),
+        );
+      } catch {}
+    this._config = normalize(presentationFor(base, this._templateIndex));
+    this._render();
+    this.dispatchEvent(
+      new CustomEvent("clock-template-changed", {
+        detail: {
+          index: this._templateIndex,
+          label: list[this._templateIndex].label,
+        },
+        bubbles: true,
+        composed: true,
+      }),
+    );
+  }
+  _setupTemplates() {
+    const nav = this.shadowRoot.querySelector(".template-navigation"),
+      list = this._baseConfig.carousel.templates,
+      enabled = this._baseConfig.carousel.enabled && list.length > 1;
+    nav.hidden = !enabled;
+    if (!enabled) return;
+    this._lastSwitch = Date.now();
+    nav.querySelector(".template-name").textContent =
+      list[this._templateIndex].label;
+    nav.querySelector(".template-previous").onclick = () =>
+      this._switchTemplate(-1);
+    nav.querySelector(".template-next").onclick = () => this._switchTemplate(1);
+    const frame = this.shadowRoot.querySelector(".frame"),
+      card = this.shadowRoot.querySelector("ha-card");
+    card.tabIndex = 0;
+    card.onmouseenter = () => (this._hover = true);
+    card.onmouseleave = () => (this._hover = false);
+    card.onfocusin = () => (this._hasFocus = true);
+    card.onfocusout = () => (this._hasFocus = false);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        this._switchTemplate(e.key === "ArrowRight" ? 1 : -1);
+      }
+    });
+    frame.onpointerdown = (e) => {
+      if (e.isPrimary && e.button === 0)
+        this._swipe = { x: e.clientX, y: e.clientY };
+    };
+    frame.onpointercancel = () => (this._swipe = null);
+    frame.onpointerup = (e) => {
+      if (!this._swipe) return;
+      const dx = e.clientX - this._swipe.x,
+        dy = e.clientY - this._swipe.y;
+      this._swipe = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4)
+        this._switchTemplate(dx < 0 ? 1 : -1);
+    };
+  }
+  _fitHandName(hand) {
+    if (!hand.name || !this.isConnected) return;
+    const text = hand.name,
+      requested = this._config.name_size;
+    text.setAttribute("x", "0");
+    text.setAttribute("y", "0");
+    text.style.fontSize = requested + "px";
+    const box = text.getBBox();
+    if (!box.width || !box.height) return;
+    const point = this.shadowRoot.querySelector("svg").createSVGPoint();
+    const contains = (x, y) => {
+      if (hand.bowlRadius)
+        return Math.hypot(x - 300, y - (300 - hand.r)) <= hand.bowlRadius;
+      point.x = 300 + (x - 300) / hand.member.width;
+      point.y = y;
+      return hand.path.isPointInFill(point);
+    };
+    const fit = fitEngraving({
+      length: hand.r,
+      width: hand.member.width,
+      box,
+      size: requested,
+      contains,
+      position: hand.member.name_position,
+      rotation: letteringRotation(hand.member, -90),
+      bowlRadius: hand.bowlRadius,
+      measure: (fontSize) => {
+        text.style.fontSize = fontSize + "px";
+        return text.getBBox();
+      },
+    });
+    hand.fitPending = false;
+    hand.engraving = fit;
+    hand.nameGroup.style.visibility = fit ? "visible" : "hidden";
+    hand.nameGroup.dataset.fit = fit ? "inside" : "too-narrow";
+    if (!fit) return;
+    text.style.fontSize = fit.fontSize + "px";
+    const fitted = text.getBBox();
+    text.setAttribute("x", -(fitted.x + fitted.width / 2));
+    text.setAttribute("y", -(fitted.y + fitted.height / 2));
+    hand.nameGroup.setAttribute(
+      "transform",
+      `translate(${fit.x} ${fit.y}) rotate(${letteringRotation(hand.member, hand.artworkAngle ?? -90)})`,
+    );
   }
   _trackLegacyLabels(duration) {
     this._labelUntil = performance.now() + duration;
@@ -589,11 +1067,9 @@ export class MagicalFamilyClock extends HTMLElement {
         if (!values) return;
         const parts = values[1].split(",").map(Number);
         const rotation = (Math.atan2(parts[1], parts[0]) * 180) / Math.PI;
-        const fraction =
-          hand.design === "standalone-pointed" ? 139 / 258 : 0.52;
         hand.nameGroup.setAttribute(
           "transform",
-          `translate(300 ${300 - hand.r * fraction}) rotate(${legacyTextRotation(rotation - 90)})`,
+          `translate(${hand.engraving?.x ?? 300} ${hand.engraving?.y ?? 300 - hand.r * 0.52}) rotate(${letteringRotation(hand.member, rotation - 90)})`,
         );
       });
       if (this.isConnected && performance.now() < this._labelUntil)

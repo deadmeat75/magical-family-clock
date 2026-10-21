@@ -40,6 +40,7 @@ test("GUI image upload embeds optimized raster and rejects SVG", async ({
   page,
 }) => {
   await page.goto("/");
+  await page.waitForSelector("section magical-family-clock-card");
   await page.locator("#edit").click();
   await page.waitForSelector("magical-family-clock-card-editor");
   const editor = page.locator("magical-family-clock-card-editor");
@@ -74,6 +75,7 @@ test("saved clocks GUI loads independent copies through Home Assistant storage A
   page,
 }) => {
   await page.goto("/");
+  await page.waitForSelector("section magical-family-clock-card");
   await page.locator("#edit").click();
   await page.waitForSelector("magical-family-clock-card-editor");
   const editor = page.locator("magical-family-clock-card-editor");
@@ -139,6 +141,7 @@ test("GUI exposes hand shapes, width, sensor readings and dynamic location rules
   page,
 }) => {
   await page.goto("/");
+  await page.waitForSelector("section magical-family-clock-card");
   await page.locator("#edit").click();
   const editor = page.locator("magical-family-clock-card-editor");
   await editor.getByRole("button", { name: "People", exact: true }).click();
@@ -166,11 +169,7 @@ test("GUI exposes hand shapes, width, sensor readings and dynamic location rules
     .getByRole("button", { name: "Add hand information", exact: true })
     .first()
     .click();
-  // Adding a row rerenders the editor; reopen that person's disclosure.
-  await editor
-    .getByText("Optional hand information and location rules", { exact: true })
-    .first()
-    .click();
+  // The editor retains open sections when adding a reading.
   await editor.getByLabel("Reading label", { exact: true }).fill("Battery");
   await editor
     .getByLabel("Reading label", { exact: true })

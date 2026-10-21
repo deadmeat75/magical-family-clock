@@ -1,3 +1,4 @@
+import { normalizeDesign, finite, color } from "./design.js";
 import { matchesRule, runtimeConfig } from "./data.js";
 export const THEMES = [
   "enchanted-spoons",
@@ -27,7 +28,26 @@ export function defaults() {
     caption_font: "Georgia, serif",
     location_font: "Georgia, serif",
     name_font: "Georgia, serif",
+    title_font: "Georgia, serif",
     colors: {},
+    scene_motion: true,
+    scene_intensity: 0.65,
+    motion_speed: 1,
+    bezel: {
+      enabled: false,
+      width: 32,
+      material: "brass",
+      color: "#b58b4b",
+      items: [],
+    },
+    carousel: {
+      enabled: false,
+      remember: true,
+      auto: false,
+      interval: 30,
+      transition: 500,
+      templates: [],
+    },
     dynamic_locations: false,
     weather_effect: "auto",
     weather_intensity: 1,
@@ -119,7 +139,15 @@ export function normalize(input) {
     if (!l || typeof l !== "object") throw Error("Invalid location.");
     return Object.assign({}, l, {
       id: String(l.id || uid()),
-      name: String(l.name || "Location"),
+      name: String(l.name ?? "Location"),
+      label_mode: l.label_mode === "sensor" ? "sensor" : "fixed",
+      radius: finite(l.radius, 213, 90, 282),
+      x: finite(l.x, null, 0, 100),
+      y: finite(l.y, null, 0, 100),
+      size: finite(l.size, null, 7, 40),
+      opacity: finite(l.opacity, 1, 0, 1),
+      rotation: finite(l.rotation, 0, -180, 180),
+      color: color(l.color),
       angle: num(l.angle, 0, -360, 360),
       states: Array.isArray(l.states) ? l.states.map(String) : [],
       aliases: Array.isArray(l.aliases) ? l.aliases.map(String) : [],
@@ -137,12 +165,19 @@ export function normalize(input) {
         color: "#d5b46c",
         text_color: "#fff5dc",
         show_name: true,
+        name_position: "stem",
+        name_orientation: "parallel",
+        name_upright: true,
+        name_rotation: 0,
         show_portrait: true,
         portrait_shape: "oval",
         portrait_frame: "brass",
         overrides: {},
         priority: 0,
-        material: "color",
+        material: "brass",
+        editor_label: "",
+        finish: "aged",
+        relief: 0.6,
         hand_design: "theme",
         width: 1,
         metrics: [],
@@ -151,7 +186,13 @@ export function normalize(input) {
       m,
       {
         id: String(m.id || uid()),
-        name: String(m.name || "Person"),
+        name: String(m.name ?? "Person"),
+        editor_label: String(m.editor_label || m.name || "Unnamed hand"),
+        relief: finite(m.relief, 0.6, 0, 1),
+        name_position: m.name_position === "tip" ? "tip" : "stem",
+        name_orientation:
+          m.name_orientation === "perpendicular" ? "perpendicular" : "parallel",
+        name_rotation: finite(m.name_rotation, 0, -180, 180),
         length: num(m.length, 1, 0.5, 1.1),
         width: num(m.width, 1, 0.5, 2.5),
         metrics: Array.isArray(m.metrics)
@@ -221,7 +262,7 @@ export function normalize(input) {
   c.face_image = safeImage(c.face_image);
   c.pivot_x = num(c.pivot_x, 50, 10, 90);
   c.pivot_y = num(c.pivot_y, 50, 10, 90);
-  return c;
+  return normalizeDesign(c);
 }
 export function legacyLayout(variant = "ha") {
   const c = defaults();
@@ -358,11 +399,23 @@ export function exportConfig(c, personal = false) {
     out.background_images = {};
     out.weather_entity = "";
     out.sun_entity = "sun.sun";
+    out.bezel.items = [];
+    out.instance_id = "";
+    out.carousel.templates = out.carousel.templates.map((t) =>
+      Object.fromEntries(
+        Object.entries(t).filter(
+          ([key]) => !["face_image", "center_image", "label"].includes(key),
+        ),
+      ),
+    );
     out.members = out.members.map((m, i) =>
       Object.assign({}, m, {
         id: "person-" + i,
         name: "Person " + (i + 1),
         nickname: "",
+        editor_label: "",
+        hand_label: undefined,
+        saved_profile_id: "",
         entity: "",
         travelling_entity: "",
         attribute: "",
@@ -379,6 +432,10 @@ export function exportConfig(c, personal = false) {
         states: [],
         aliases: [],
         zone: "",
+        label_entity: "",
+        label_attribute: "",
+        label_fallback: "",
+        label_mode: "fixed",
       }),
     );
     out.unknown_location = "";

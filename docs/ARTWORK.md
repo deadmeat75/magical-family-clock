@@ -1,23 +1,31 @@
-# Layered castle artwork
+# Clock artwork and animation
 
-`src/assets/castle-frame.png` is a generated transparent derivative of the clock-face reference supplied by the user. The interior castle scene, center hub and exterior background were removed by the image tool. It preserves the recognizable stained-glass segments, six labels/icons and gold rings, but it is **not a lossless or pixel-identical extraction**. The user’s original image and source files were not altered.
+## Version 0.3.0: high-resolution animated castle
 
-`src/assets/castle-scenes.png` is a newly generated 4×4 atlas. Rows are spring, summer, autumn, winter; columns are dawn, day, dusk, night. All sixteen tiles share a similar castle/lake composition with season and lighting variations. Some small compositional differences remain between generated scenes; they are not claimed to be identical geometry.
+The current renderer embeds `src/assets/castle-day-hd.png` and `castle-winter-hd.png`, each a full **1254×1254** original generated scene based on the earlier castle/lake composition. The older 4×4 sheet provided only about 314 pixels per scene. The new renderer uses coordinated time/season grading and separate moving clouds, water, window lights, seasonal detail and evening fireflies. Winter uses its own snowy source; the other seasons retain the same castle geometry with grading and animated detail.
 
-The two PNG assets are 1254×1254. Atlas cropping happens through SVG viewports, so the original generated files remain intact. The transparent opening is checked before use. Both assets are embedded into the self-contained JavaScript release bundle, requiring no external image host or additional HACS asset paths.
+The frame is original scalable SVG with separate editable location labels, title and caption. The frame, hands, lettering and motion overlays remain sharp as vectors; the central illustrated scene retains its native raster-resolution limit. Editing location labels or angles preserves the castle frame.
 
-In **Appearance**, choose **Use layered castle artwork**. It applies the six reference locations with a pivot at 50% horizontally and 47% vertically, and preserves people/colors. Use manual season/time controls to review every scene. Editing location labels or angles switches back to the customizable vector dial, because this frame has six baked-in labels.
+In **Appearance**, choose **Use layered castle artwork**. The action applies six reference destinations and a 50% horizontal/47% vertical pivot while preserving people/colors. Manual season/time controls preview the sixteen combinations. Weather is a separate layer, and custom uploaded combination backgrounds remain supported. An opaque complete-face upload covers the underlying scene and may contain its own painted-in text.
 
-Incoming artwork preloads before switching. Two scene layers crossfade below one fixed frame. A failed custom scene keeps the previous scene and hands. Requests for obsolete scene changes are ignored; disconnecting invalidates pending work. The frame and hand elements do not rebuild for a scene change.
+Incoming images preload before switching; two scene layers crossfade below the frame. Obsolete loads are ignored, failed custom scenes keep the previous scene, and Retry images recovers after connectivity returns. The frame and hands persist during scene changes.
 
-Automatic season selection respects Home Assistant’s timezone and the configured hemisphere. Dawn/dusk cover ±30 minutes of known solar events; recent events are retained across next-event timestamp rollover. SunCalc provides a local-coordinate fallback after a fresh reload; its computed times can differ slightly from Home Assistant’s astronomy. Missing events/location fall back to a stable scene. Manual controls always take precedence. Generic vector backgrounds retain their separate weather selection.
+Automatic selection uses Home Assistant's timezone and hemisphere. Dawn/dusk cover ±30 minutes of solar events, with retained events across timestamp rollover and a SunCalc local-coordinate fallback after reload. Calculated times can differ slightly from Home Assistant's astronomy. Missing events/location use a stable fallback; manual controls take precedence.
 
-Custom castle images can be configured with `background_images` keys such as `winter-night` or `spring-dawn`, using existing local paths or HTTPS image URLs. A complete opaque `face_image` remains supported as a static face and covers the dynamic layers.
+## Dimensional faces and hands
 
-Source files and project artwork are distributed with the repository license. The bundled SunCalc implementation has its own BSD-2-Clause notice, included in the compiled bundle and `SUNCALC-LICENSE.txt`. The supplied unchanged legacy JavaScript/HTML attachments remain outside this public checkout.
+`aged-brass-dial.png` and `whimsical-workshop-dial.png` are original generated unlettered artwork introduced in 0.2.0. The brass surface includes aged metal, wear and verdigris. The handmade surface combines wood, copper patches, brass fasteners, ivory/parchment panels and botanical detail. Runtime names, locations, titles and captions remain separate editable SVG.
 
-## Version 0.2.0 material faces
+The Clockwork face now has a visible connected vector mechanism with 40/24/40/24 teeth, common module and 20-degree involute profiles. Neighboring wheels counter-rotate at tooth-count-derived ratios; initial phases align teeth with gaps and animations share a timeline. Static illustrated details remain part of their source image; the moving mechanism is rendered separately.
 
-`src/assets/aged-brass-dial.png` and `src/assets/whimsical-workshop-dial.png` are original AI-generated, unlettered dial assets created for this build. They are not extractions from the supplied film/prop references. The brass dial uses aged brushed brass, recessed gearwork, wear and verdigris. The handmade dial combines wood, copper patches, brass fasteners, ivory/parchment panels and botanical decoration. Both preserve a transparent exterior and remain separate from editable SVG names, locations, titles and captions. Runtime hand geometry and lettering remain vector artwork.
+Hands combine vector silhouettes, material gradients, texture, bevel, wear and reflection. Engraving fits the actual solid shape, respects cutouts and clips to the material. Spoon-tip lettering uses an inscribed area within its bowl. Reduced motion pauses decorative layers while data continues updating.
 
-The generated source files are included directly without cropping or altering the user's references. They are embedded in the compiled JavaScript bundle for offline operation. They increase the initial resource size; browser caching avoids repeated downloads, but very slow devices/connections may take longer on the first load. Surface colors in raster artwork do not follow vector palette overrides. Brass illustration gears are part of the artwork; the separately animated gear overlay is subtle.
+## Earlier reference derivatives
+
+`castle-frame.png` is the older generated transparent derivative of the user-supplied face reference, with six baked-in labels/icons. It is not a lossless or pixel-identical extraction. `castle-scenes.png` is the earlier generated 4×4 season/time atlas. These source files remain for provenance but are not imported by the 0.3.0 renderer. Original user attachments were not edited and remain outside the public checkout.
+
+## Packaging and licenses
+
+Artwork is embedded into the self-contained JavaScript release bundle, with no additional HACS asset paths, external image host or runtime service required. The bundle is larger on first load; browser caching avoids repeated downloads. Raster surface colors do not follow vector palette overrides, and glare/reflection controls cannot remove marks painted into a raster source.
+
+Project source and generated artwork use the repository license. SunCalc is BSD-2-Clause, with its notice in the compiled bundle and [license file](SUNCALC-LICENSE.txt). See the [Design Studio guide](DESIGN-STUDIO.md) for appearance controls and [validation](VALIDATION.md) for tested behavior and limits.
