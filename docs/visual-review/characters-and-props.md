@@ -4,7 +4,7 @@
 
 **Release held. Decisions below reflect your individual approvals and revision requests.**
 
-The revised C04 and C07–C10 artwork is approved. The revised C11 artwork is ready for review. C12 retains its required water placement and natural-motion conditions. C13–C16 are omitted. These images are illustration proposals; final environment-aware character animation has not been approved or integrated into HACS.
+All C01–C12 character and boat artwork is approved. C12 retains its required water placement and natural-motion conditions. C13–C16 are omitted. These approved illustrations are not yet integrated into the HACS renderer; final environment-aware character animation still requires review.
 
 | **[C01 · Swallow](items/C01.png)** | **[C02 · Barn owl](items/C02.png)** |
 | --- | --- |
@@ -44,7 +44,7 @@ C10: Vest and chest sash removed entirely.
 | **[C11 · Unicorn](items/C11-r1.png)** | **[C12 · Sailing boat](items/C12.png)** |
 | --- | --- |
 | [![C11 Unicorn](items/C11-r1.png)](items/C11-r1.png) | [![C12 Sailing boat](items/C12.png)](items/C12.png) |
-| Revised r1 · awaiting approval | Approved |
+| Approved | Approved |
 
 C11: Unadorned wild unicorn in a natural grounded walking pose. Final ground contact and articulated gait require animation review.
 

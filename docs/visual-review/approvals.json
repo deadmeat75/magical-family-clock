@@ -129,10 +129,12 @@
       "id": "C11",
       "element": "Unicorn",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Wild unicorn: remove saddle and all adornments. Keep it on suitable ground with natural leg positions and an articulated, weight-bearing gait. Never float it across the scene. Revised artwork and movement require review.",
+      "decision": "approved",
+      "notes": "Revision 1 unadorned wild unicorn artwork explicitly approved by the user in chat. Natural ground contact, articulated weight-bearing leg movement and environment-aware travel remain required; final animation acceptance is pending.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C11-r1.png",
+      "approved_example_sha256": "d1c550f4f884df67a6afcb70a2e0710ce11f4e3dc4048f98fa6e23274d37c9d2"
     },
     {
       "id": "C12",

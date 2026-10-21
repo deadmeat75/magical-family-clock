@@ -6,15 +6,15 @@
 
 ## Recorded decisions
 
-Approved: **C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C12, X01, X02, L01, F04, F05**.
+Approved: **C01–C12, X01, X02, L01, F04, F05**.
 
 Omitted from the proposed artwork set: **C13, C14, C15, C16**. These examples remain in repository history for reference and are excluded from the new artwork selection.
 
-Revised proposals awaiting approval: **C11, L02–L08, F01–F03, H01–H12**. Other items remain pending. The gallery links to revision 1; the original examples remain unchanged for comparison.
+Revised proposals awaiting approval: ** L02–L08, F01–F03, H01–H12**. Other items remain pending. The gallery links to revision 1; the original examples remain unchanged for comparison.
 
 ## Characters must inhabit their environment
 
-The revised character images are visual proposals, not finished animated creatures. Static-image translation is not an acceptable final animation technique.
+C01–C12 artwork is approved. Final environment-aware character animation still requires implementation and review. Static-image translation is not an acceptable final animation technique.
 
 - Small creatures, including the revised C07 pixie, belong in the foreground at a suitably small scale. Its review sheet includes a static placement study at about 4.5% of clock width and enlarged detail views.
 - C11 is a wild unicorn with no saddle, bridle, blanket, chains or other adornments. Its revised pose has natural supporting legs. Travel must follow suitable terrain, with articulated legs, planted hooves, believable weight transfer and a coordinated walk cycle; it must not float or slide across water or open space.
