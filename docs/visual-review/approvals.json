@@ -56,10 +56,12 @@
       "id": "C04",
       "element": "Wizard on broom",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Remove the odd detached artifact just behind the cape. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 explicitly approved by the user in chat after removal of the detached artifact behind the cape.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C04-r1.png",
+      "approved_example_sha256": "21627510862f05fa1d27768cfbc9b62026fae13baa70db5ffc74a0467ffcb157"
     },
     {
       "id": "C05",
@@ -83,10 +85,12 @@
       "id": "C07",
       "element": "Pixie",
       "category": "Characters and props",
-      "decision": "revision_requested",
-      "notes": "Replace the fairy with a smaller, more monstrous Harry Potter-style pixie. Render small creatures in the foreground of the clock. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 pixie artwork explicitly approved by the user in chat. Smaller foreground placement and natural environment-aware creature animation remain required.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/C07-r1.png",
+      "approved_example_sha256": "babd6cebfed40df5f221547bf4c5f3c47a07738d00e9a251ecc3452bee518d25"
     },
     {
       "id": "C08",

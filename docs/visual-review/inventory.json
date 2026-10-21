@@ -1232,7 +1232,7 @@
     "name": "Wizard on broom",
     "category": "Characters and props",
     "image": "items/C04-r1.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/wizard-c04-r1.png",
     "sourceRect": [
@@ -1286,7 +1286,7 @@
     "name": "Pixie",
     "category": "Characters and props",
     "image": "items/C07-r1.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/pixie-c07-r1.png",
     "sourceRect": [

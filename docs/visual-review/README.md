@@ -4,9 +4,9 @@
 
 Start with the **[16 proposed painted characters and props](characters-and-props.md)**, then the **[day/night scene concepts](scene-concepts.md)** and **[eight landscape motion examples](landscape-motion.md)**. The other pages show the existing draft visual options so you can review every element individually.
 
-**Current review:** 11 approved; 28 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review.
+**Current review:** 13 approved; 26 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review.
 
-Approved: **C01, C02, C03, C05, C06, C12, X01, X02, L01, F04 and F05**. Omitted: **C13–C16**. Revised proposals are linked on the character, landscape, face and hand pages. [Requirements and remaining implementation](REVISION-NOTES.md).
+Approved: **C01, C02, C03, C04, C05, C06, C07, C12, X01, X02, L01, F04 and F05**. Omitted: **C13–C16**. Revised proposals are linked on the character, landscape, face and hand pages. [Requirements and remaining implementation](REVISION-NOTES.md).
 
 ## How to approve or request changes
 
