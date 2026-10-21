@@ -1,6 +1,6 @@
-# Magical Family Clock 0.4.0: Design Studio guide
+# Magical Family Clock 0.4.1: Design Studio guide
 
-This guide covers **version 0.4.0 — Living World**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.0**, then reload the Home Assistant frontend. For first installation, add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** custom repository. See the [installation guide](USER-GUIDE.md).
+This guide covers **version 0.4.1 — Living World**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.1**, then reload the Home Assistant frontend. For first installation, add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** custom repository. See the [installation guide](USER-GUIDE.md).
 
 The [Living World guide](WORLD-GUIDE.md) adds fitted destination panels, textured backgrounds, large graphics, animated landscape layers, selectable inhabitants and a live sensor-driven moon. These complement the controls below.
 
@@ -12,7 +12,7 @@ The [Living World guide](WORLD-GUIDE.md) adds fitted destination panels, texture
 2. Choose **Guided setup**, or use **General** to select a face and enter a title/caption.
 3. In **People**, add one person and select their **Location entity**. Use an existing `person`, `device_tracker` or sensor. The card does not track devices by itself.
 4. In **Locations**, list the exact source states for each destination. For example, `home` might point to Home and `Office` to Work. Developer Tools → States shows what your entities actually report.
-5. Watch **Live clock preview** while editing. Text, numbers and colors update as you type; image loading/error messages appear below the preview. Expand the preview’s header if you have collapsed it.
+5. Watch **Home Assistant’s preview on the right** while editing. The settings column has no duplicate sticky clock. Text, numbers and colors update as you type; image loading/error messages appear on the clock.
 6. Save with Home Assistant’s **Save** button. Saving a library entry and saving a dashboard card are separate actions.
 
 Each ordinary control has an explanation beneath it. Advanced settings remain in expandable groups. Open groups stay open when you add a reading or change sections. Device reduced-motion preferences are honored automatically.
@@ -166,8 +166,8 @@ Full clock/person libraries include household sensor IDs, pictures and rules. Th
 
 The schema remains compatible with existing version-1 configurations. The separate original clock files/custom element are unchanged. Current per-image/card/library size limits still apply; see the main guide. The bundle is self-contained for HACS distribution. Existing version-1 configurations remain supported; saving a clock/person library entry is separate from saving the dashboard.
 
-## Verification of version 0.4.0
+## Verification of version 0.4.1
 
-Version 0.4.0 passed **51 unit/packaging tests and 44 Chromium browser tests**, including the existing Design Studio checks below and new [Living World checks](VALIDATION.md). Browser checks verify fitted lettering across twelve hand designs, three widths, both placements/directions and extra rotations; spoon bowl attachment; rendered gear contact clearance, tooth-count speed ratios and synchronized phase; actual gear/cloud motion, reduced-motion pause, face switching by click/swipe with retained data, remembered selection, blank lettering, live sensor labels, bezel output, inline guidance, a slow image losing to a newer preview request, and image retry recovery. The exact supplied legacy card was included in coexistence testing.
+Version 0.4.1 passed **53 unit/packaging tests and 50 Chromium browser tests**, including the existing Design Studio checks below and new [Living World checks](VALIDATION.md). Browser checks verify fitted lettering across twelve hand designs, three widths, both placements/directions and extra rotations; spoon bowl attachment; rendered gear contact clearance, tooth-count speed ratios and synchronized phase; actual gear/cloud motion, reduced-motion pause, face switching by click/swipe with retained data, remembered selection, blank lettering, live sensor labels, bezel output, inline guidance, a slow image losing to a newer preview request, and image retry recovery. The exact supplied legacy card was included in coexistence testing.
 
 In the isolated Home Assistant 2026.10.2 instance, native entity selection, saved people, independent profile additions, blank lettering, title controls, bezel, template changes and dashboard reload passed with **zero frontend exceptions**. Original user reference files retain their recorded checksums. See [acceptance evidence](DESIGN-STUDIO-ACCEPTANCE.json). The user’s live installation was untouched. Authenticated installation/update through a user-connected HACS instance remains unverified; see [publication status](PUBLISHING-STATUS.md) for release and asset verification.

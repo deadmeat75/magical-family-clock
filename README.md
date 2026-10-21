@@ -1,6 +1,8 @@
+> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](docs/visual-review/README.md). HACS remains on 0.4.0.
+
 # Magical Family Clock
 
-**Version 0.4.0 — Living World:** build an animated miniature world inside your clock. Fit large graphics and ornate names into textured destination panels; add dragons, broom riders, lake creatures and props; animate the clouds, trees, water and waterfalls; and follow a Home Assistant moon-phase sensor. Use the placement map and inline instructions to customize it. See the [detailed Living World guide](docs/WORLD-GUIDE.md).
+**Version 0.4.1 — Living World motion correction:** clouds drift continuously, lake reflections undulate, waterfall spray stays fine, and visitors enter/leave through the frame or beneath the lake. Build an animated miniature world inside your clock. Fit large graphics and ornate names into textured destination panels; add dragons, broom riders, lake creatures and props; animate the clouds, trees, water and waterfalls; and follow a Home Assistant moon-phase sensor. Use the placement map and inline instructions to customize it. See the [detailed Living World guide](docs/WORLD-GUIDE.md).
 
 Reusable people and clocks, dimensional hands, meshing gears, sensor rules, image uploads, effects, the information bezel and face switching remain included. Install and update through HACS as a Dashboard custom repository. Start with the [installation guide](docs/USER-GUIDE.md) or the [Design Studio guide](docs/DESIGN-STUDIO.md).
 
@@ -14,7 +16,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 **Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
 
-**Validation:** 51 unit/packaging and 44 Chromium browser checks passed; the downloaded stable-release asset matches the tested bundle byte for byte. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
+**Validation:** 53 unit/packaging and 50 Chromium browser checks passed. Release-download verification is recorded in publication status. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
 | --- | --- | --- |
@@ -32,7 +34,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 ## HACS installation
 
-The [v0.4.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
+The [v0.4.1 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.1) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** repository.

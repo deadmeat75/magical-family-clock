@@ -1,29 +1,30 @@
-# Magical Family Clock 0.4.0 — Living World
+> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](visual-review/README.md). HACS remains on 0.4.0.
 
-Turn the castle face into a miniature animated world, with framed destinations and a population you can arrange in the visual editor.
+# Magical Family Clock 0.4.1 — Natural castle motion
 
-- **Fitted location panels:** ornate names and large graphics stay inside their actual frames. Choose cracked glass, metal, parchment, wood, colors, uploaded graphics/backgrounds and an adjustable opening. A single button repairs old free-position label layouts. Pirata One lettering is embedded.
-- **Moving landscape:** actual cloud regions drift, foliage sways, lake reflections ripple and waterfalls flow with spray. Warm window lights and fireflies appear at dusk/night.
-- **Seventeen creature/prop choices:** birds, owls, broom riders, dragons, phoenixes, fairies, lake serpents, merfolk, boats, lanterns, cottages, mushrooms, crystals, unicorns and custom images. Place up to 32 with individual size, tint, motion, layering and time/season/weather filters.
-- **A placement map:** drag markers or use the keyboard, duplicate/reorder inhabitants and preview an encounter immediately. Surfacing creatures disappear beneath their waterline; sky visitors can pass behind the castle.
-- **A live moon and night sky:** read an existing Home Assistant phase sensor, use local calculation or inspect manual phases. Twinkling stars and occasional meteors add night motion, with tower/cloud occlusion.
-- **Clear controls:** inline help, starter populations, detail levels, independent nature switches and a visible still world when reduced motion or pause is enabled.
+This correction reworks the castle animation following visual feedback on 0.4.0.
 
-Reusable people/clocks, dimensional hands with fitted/rotated engraving, meshing gears, weather, images, dynamic labels, optional hand readings, effects, bezel and face cycling remain included. Existing version-1 configurations and the separate original clock element remain supported.
+- **Visible cloud drift:** two cloud decks move continuously over a separate sky, behind the castle/mountain silhouette. Stationary clouds are no longer left underneath the moving layer.
+- **Quieter lake motion:** small continuous waves distort reflections while the shoreline stays fixed; broad sliding image bands are removed.
+- **Fine waterfall spray:** downward flow threads and tiny short-lived droplets replace the solid oval shapes.
+- **Natural entrances/exits:** flying visitors follow curved paths through the frame edge without fading or resetting in open sky. Lake creatures fully submerge without opacity cuts.
+- **Less repetitive movement:** flap/glide cadence, species-specific timing, subtle tail/cloth movement, quieter props and irregular foliage sway.
+- **Continuous live updates:** moon/weather refreshes retain landscape time and encounter progress. Reduced motion, visibility and removal stop the landscape painter appropriately.
 
-## Install or update with HACS
+**Editor space:** remove the duplicate sticky clock from the settings column and use Home Assistant’s existing preview on the right. Encounter preview actions target that clock.
 
-1. Open **HACS → Magical Family Clock** and download/update to **0.4.0**.
-2. Reload the Home Assistant frontend. Hard-refresh if the older editor remains.
-3. Open **Locations → Fit all names and graphics inside panels** to reset old free-position labels. Open **Living world** to build your population and select a moon sensor.
-4. Finish with Home Assistant's **Save** action.
+All Living World controls, panels, creatures, moon sensor support and existing clock features remain included. The updated recording uses normal-speed playback without encounter seeking.
 
-For first installation, add `https://github.com/deadmeat75/magical-family-clock` through **HACS → Custom repositories**, category **Dashboard**, then select **Magical Family Clock (HACS)** in the card picker. HACS manages the resource; the card type stays `custom:magical-family-clock-card`.
+## Update through HACS
 
-[Detailed Living World guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.0/docs/WORLD-GUIDE.md) · [Installation/user guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.0/docs/USER-GUIDE.md) · [Animation recording](https://github.com/deadmeat75/magical-family-clock/raw/refs/tags/v0.4.0/docs/living-world-preview.mp4)
+1. Open **HACS → Magical Family Clock → Download/update → 0.4.1**.
+2. Reload the Home Assistant frontend; hard-refresh if the older animation remains.
+3. Existing world settings are retained. Flying routes now extend beyond the opening when necessary for natural entry/exit.
 
-## Verification and scope
+[Detailed guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.1/docs/WORLD-GUIDE.md) · [Normal-speed animation](https://github.com/deadmeat75/magical-family-clock/raw/refs/tags/v0.4.1/docs/living-world-preview.mp4)
 
-Passed **51 unit/packaging checks and 44 Chromium browser checks**, including independent rendered-pixel changes for landscape motion, star/meteor visibility, fitted panels, live moon updates, creature placement and the existing hand/gear/editor regression checks. Isolated Home Assistant **2026.10.2** verified native moon selection, live phase changes, world/panel controls, saved-clock storage and dashboard reload with **zero frontend exceptions**. No user's live installation was changed.
+## Verification
 
-The world combines illustrated scenery and layered SVG animation. Photo-aligned landscape motion uses the bundled castle composition; custom scenes support inhabitants and general overlays. Source images are 1254 pixels. Account/card/image limits and device performance still apply. Authenticated HACS installation/update remains unverified; default-store approval is not claimed. See [current publication/HACS status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification and repository metadata tasks.
+53 unit/packaging checks and 50 Chromium browser checks cover route boundaries, visible cloud advection, submersion, pause behavior, live-update continuity and existing card features. Isolated Home Assistant acceptance and release-download verification are recorded in [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+
+Authenticated HACS installation/update remains unverified. The known repository About description/topics tasks remain separate from package publication. The user's live installation is unchanged.

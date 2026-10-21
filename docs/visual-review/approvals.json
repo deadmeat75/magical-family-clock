@@ -1,0 +1,967 @@
+{
+  "release_hold": true,
+  "published_release": "0.4.0",
+  "review_branch": "review-visual-elements",
+  "status": "awaiting individual user approval",
+  "items": [
+    {
+      "id": "B01",
+      "element": "aged-brass information bezel",
+      "category": "Bezel",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "B02",
+      "element": "silver information bezel",
+      "category": "Bezel",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "B03",
+      "element": "wood information bezel",
+      "category": "Bezel",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C01",
+      "element": "Swallow",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C02",
+      "element": "Barn owl",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C03",
+      "element": "Witch on broom",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C04",
+      "element": "Wizard on broom",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C05",
+      "element": "Dragon",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C06",
+      "element": "Phoenix",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C07",
+      "element": "Fairy",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C08",
+      "element": "Lake serpent",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C09",
+      "element": "Mermaid",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C10",
+      "element": "Merman",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C11",
+      "element": "Unicorn",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C12",
+      "element": "Sailing boat",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C13",
+      "element": "Floating lantern",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C14",
+      "element": "Stone cottage",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C15",
+      "element": "Woodland mushrooms",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "C16",
+      "element": "Quartz crystals",
+      "category": "Characters and props",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E01",
+      "element": "shadow at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E02",
+      "element": "bevel at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E03",
+      "element": "reflection at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E04",
+      "element": "glare at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E05",
+      "element": "patina at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "E06",
+      "element": "wear at full strength",
+      "category": "Surface effects",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "F01",
+      "element": "enchanted-spoons",
+      "category": "Faces",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "F02",
+      "element": "brass-clockwork",
+      "category": "Faces",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "F03",
+      "element": "living-magical",
+      "category": "Faces",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "F04",
+      "element": "whimsical-workshop",
+      "category": "Faces",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "F05",
+      "element": "Layered castle and ornate location ring",
+      "category": "Faces",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H01",
+      "element": "spoon",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H02",
+      "element": "classic",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H03",
+      "element": "legacy-curved",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H04",
+      "element": "standalone-pointed",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H05",
+      "element": "arrow",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H06",
+      "element": "leaf",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H07",
+      "element": "sword",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H08",
+      "element": "cathedral",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H09",
+      "element": "filigree",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H10",
+      "element": "skeleton",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H11",
+      "element": "quill",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "H12",
+      "element": "compass",
+      "category": "Hand shapes",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I01",
+      "element": "home",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I02",
+      "element": "work",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I03",
+      "element": "school",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I04",
+      "element": "gym",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I05",
+      "element": "travel",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I06",
+      "element": "away",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I07",
+      "element": "hospital",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I08",
+      "element": "shop",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I09",
+      "element": "family",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I10",
+      "element": "garden",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I11",
+      "element": "bed",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I12",
+      "element": "magic",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "I13",
+      "element": "pin",
+      "category": "Location symbols",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K01",
+      "element": "stem / parallel",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K02",
+      "element": "stem / perpendicular",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K03",
+      "element": "tip / parallel",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K04",
+      "element": "tip / perpendicular",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K05",
+      "element": "No hand lettering",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K06",
+      "element": "oval portrait / brass frame",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K07",
+      "element": "circle portrait / brass frame",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "K08",
+      "element": "oval portrait / none frame",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L01",
+      "element": "Cloud drift",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L02",
+      "element": "Foliage sway",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L03",
+      "element": "Lake reflections",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L04",
+      "element": "Waterfall flow and fine spray",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L05",
+      "element": "Twinkling stars",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L06",
+      "element": "Shooting star",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L07",
+      "element": "Window lights",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "L08",
+      "element": "Fireflies",
+      "category": "Landscape motion",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M01",
+      "element": "color",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M02",
+      "element": "brass",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M03",
+      "element": "aged-brass",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M04",
+      "element": "copper",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M05",
+      "element": "silver",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M06",
+      "element": "steel",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M07",
+      "element": "wood",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M08",
+      "element": "ivory",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M09",
+      "element": "obsidian",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M10",
+      "element": "glass",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M11",
+      "element": "Brass finish: polished",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M12",
+      "element": "Brass finish: brushed",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "M13",
+      "element": "Brass finish: aged",
+      "category": "Materials",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N01",
+      "element": "new_moon",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N02",
+      "element": "waxing_crescent",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N03",
+      "element": "first_quarter",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N04",
+      "element": "waxing_gibbous",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N05",
+      "element": "full_moon",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N06",
+      "element": "waning_gibbous",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N07",
+      "element": "last_quarter",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "N08",
+      "element": "waning_crescent",
+      "category": "Moon phases",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "P01",
+      "element": "cracked-glass",
+      "category": "Location panels",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "P02",
+      "element": "hammered-metal",
+      "category": "Location panels",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "P03",
+      "element": "parchment",
+      "category": "Location panels",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "P04",
+      "element": "wood",
+      "category": "Location panels",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "P05",
+      "element": "plain",
+      "category": "Location panels",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S01",
+      "element": "spring / dawn",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S02",
+      "element": "spring / day",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S03",
+      "element": "spring / dusk",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S04",
+      "element": "spring / night",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S05",
+      "element": "summer / dawn",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S06",
+      "element": "summer / day",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S07",
+      "element": "summer / dusk",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S08",
+      "element": "summer / night",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S09",
+      "element": "autumn / dawn",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S10",
+      "element": "autumn / day",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S11",
+      "element": "autumn / dusk",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S12",
+      "element": "autumn / night",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S13",
+      "element": "winter / dawn",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S14",
+      "element": "winter / day",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S15",
+      "element": "winter / dusk",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "S16",
+      "element": "winter / night",
+      "category": "Seasons and time",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T01",
+      "element": "Pirata One, Georgia, serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T02",
+      "element": "Georgia, serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T03",
+      "element": "Palatino, serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T04",
+      "element": "Garamond, serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T05",
+      "element": "Baskerville, serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T06",
+      "element": "Courier New, monospace",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T07",
+      "element": "Trebuchet MS, sans-serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T08",
+      "element": "Verdana, sans-serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T09",
+      "element": "system-ui, sans-serif",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "T10",
+      "element": "cursive",
+      "category": "Typography",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "U01",
+      "element": "One Home Assistant preview; unobstructed settings",
+      "category": "Editor and fullscreen",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "U02",
+      "element": "Fullscreen layout",
+      "category": "Editor and fullscreen",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W01",
+      "element": "clear",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W02",
+      "element": "clouds",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W03",
+      "element": "light-rain",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W04",
+      "element": "rain",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W05",
+      "element": "snow",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W06",
+      "element": "sleet",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W07",
+      "element": "wind",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W08",
+      "element": "fog",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W09",
+      "element": "ice",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "W10",
+      "element": "lightning",
+      "category": "Weather",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "X01",
+      "element": "Painted inhabitants in the day castle",
+      "category": "Scene concepts",
+      "decision": "pending",
+      "notes": ""
+    },
+    {
+      "id": "X02",
+      "element": "Painted inhabitants in the night castle",
+      "category": "Scene concepts",
+      "decision": "pending",
+      "notes": ""
+    }
+  ]
+}

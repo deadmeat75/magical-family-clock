@@ -107,12 +107,13 @@ test("castle motion and high resolution sources persist across season changes", 
     }),
   );
   await expect(card.locator(".castle-artwork")).toBeVisible();
-  const cloud = card.locator(".scene-cloud").first(),
-    before = await cloud.evaluate((e) => getComputedStyle(e).transform);
-  await page.waitForTimeout(180);
-  expect(await cloud.evaluate((e) => getComputedStyle(e).transform)).not.toBe(
-    before,
-  );
+  const cloud = card.locator(".scene-cloud").first();
+  const canvas = cloud.locator("canvas");
+  await expect(canvas).toHaveAttribute("data-paint-tick", /\d+/);
+  const before = await canvas.getAttribute("data-paint-tick");
+  await expect
+    .poll(() => canvas.getAttribute("data-paint-tick"))
+    .not.toBe(before);
   const resolution = await card
     .locator(".hd-scene image")
     .first()

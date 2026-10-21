@@ -1,14 +1,16 @@
 # Clock artwork and animation
 
-## Version 0.4.0: Living World layers
+## Version 0.4.1: continuous landscape and creature motion
 
-The castle now uses feathered, independently moving regions of the same full-size illustration for clouds, foliage, lake reflections and waterfalls. Shared SVG image references avoid embedding a copy of the raster source for each moving patch. Stream/spray details and warm-window extraction add motion while preserving the castle's composition. Night uses coordinated grading of the same source, with illuminated windows, a separate phase-correct moon and tower-masked sky; it is not a separately painted night base plate.
+Clouds are softly keyed from two tower-free regions of the bundled source into a reusable transparent texture. Two decks move continuously at different wind speeds over a separate sky gradient, so a stationary cloud photograph does not remain underneath. A detailed shared silhouette protects mountains/towers and places the moon, stars and background visitors in the same depth layer. Custom scenes retain their own sky beneath the general cloud overlay.
 
-Sixteen original shaded SVG inhabitant/prop types and a custom-image choice provide articulated wings, cloth, tails, glow and smoke where appropriate. Travel direction follows facing, surfacing figures are clipped at a waterline, and tower masks provide a background layer. These are illustrated animation layers rather than simulated 3D creatures. Uploaded custom props move as complete images. Clouds can pass over moon/star layers. All decorative motion uses pausable browser animations and honors reduced motion and visibility.
+The lake uses fine scanline displacement with smoothly varying wave phase and perspective-scaled amplitude, rather than translating broad rectangular image bands. Its shoreline clip stays fixed. Waterfalls use small downward flow threads and fine ballistic impact droplets; solid spray ellipses and moving copies of rocks have been removed. These layers use Canvas 2D in the SVG scene, with cached source textures, bounded resolution/frame rates and explicit pause/cleanup on reduced motion, visibility and card removal. WebGL and external services are unnecessary.
 
-Location sectors use editable SVG paths with procedural cracked-glass, hammered-metal, parchment or wood patterns, directional shading, brass edges and embossed symbols. Actual rendered names and graphics are fitted to their sector paths. Explicit free-position labels remain an intentional override. Pirata One, an unmodified bundled font by Rodrigo Fuenzalida and Nicolas Massi, is embedded under the [SIL Open Font License](PIRATA-ONE-OFL.txt), also retained in the compiled bundle. Other font choices use the viewing device.
+Flying inhabitants follow sampled curved routes that enter/exit beyond the opening. Their opacity remains constant: the repeat jump occurs outside the clipped scene. Surfacing figures descend fully below their configured waterline, without opacity cuts. Wing motion uses flap/glide cadence, with species-specific timing, gentle tail/cloth motion and quieter drifting props. Live moon/weather refreshes preserve encounter progress and landscape time.
 
-See the [Living World guide](WORLD-GUIDE.md) and [animation recording](living-world-preview.mp4). The recording uses the production bundle with fictional people and simulated sensors.
+Location sectors retain editable procedural glass/metal/parchment/wood textures, directional shading, metallic frames and fitted names/graphics. Pirata One is embedded under the [SIL Open Font License](PIRATA-ONE-OFL.txt), also included in the bundle. Other font choices use the viewing device.
+
+See the [Living World guide](WORLD-GUIDE.md) and [normal-speed recording](living-world-preview.mp4). Screenshots/video use the production bundle, fictional people and simulated sensors. Inhabitants are illustrated SVG animation, not a free-roaming 3D simulation.
 
 ## Version 0.3.0: high-resolution animated castle
 

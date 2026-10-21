@@ -1,0 +1,41 @@
+{
+  "homeAssistantVersion": "2026.10.2",
+  "nativeMoonSelection": true,
+  "canvasLandscapeMotion": true,
+  "liveMoonSensorUpdate": true,
+  "savedClockLibrary": true,
+  "dashboardReload": true,
+  "persisted": {
+    "objects": 6,
+    "moon": "sensor.clock_world_moon",
+    "panelTexture": "hammered-metal",
+    "panels": 4
+  },
+  "frontendErrors": [],
+  "status": "unreleased engineering draft; visual approval required",
+  "releaseVersion": "0.4.1",
+  "unitAndPackagingChecks": 53,
+  "chromiumBrowserChecks": 50,
+  "compiledBundleSHA256": "bf076f87afcebdbc70eda7c4c247cec20b0029302391cb21d1f47bc8d66e5c00",
+  "motionChecks": {
+    "cloudFeatureAdvectionByImageAlignment": true,
+    "fullOffFrameFlightRepeatBoundaries": true,
+    "noActorOpacityCuts": true,
+    "fullWaterlineSubmersion": true,
+    "noSolidWaterfallSprayDiscs": true,
+    "phaseAndPainterTimePreservedOnMoonRefresh": true,
+    "reducedMotionStopsPainter": true,
+    "productionRecordingHasNoEncounterSeeking": true,
+    "nativeAndFallbackFullscreenVisiblePixelsAnimate": true
+  },
+  "originalReferencesUnchanged": true,
+  "releaseHold": true,
+  "nativeEditor": {
+    "homeAssistantVersion": "2026.10.2",
+    "nativeEditorSinglePreview": true,
+    "nativePreviewUpdates": true,
+    "nativeEncounterPreviewAction": true
+  },
+  "illustrationProposals": "visual-review/characters-and-props.md",
+  "illustrationsApproved": false
+}

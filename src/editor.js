@@ -243,8 +243,10 @@ export class ClockEditor extends HTMLElement {
           e.querySelector("summary")?.textContent,
       ),
     );
-    this._preview ||= node("magical-family-clock-card");
-    if (this._preview.isConnected) this._preview.remove();
+    if (this.standalonePreview) {
+      this._preview ||= node("magical-family-clock-card");
+      if (this._preview.isConnected) this._preview.remove();
+    }
     this.shadowRoot.innerHTML =
       "<style>" +
       css +
@@ -272,30 +274,32 @@ export class ClockEditor extends HTMLElement {
       this.render();
     });
     root.appendChild(quick);
-    const previewBox = node("details");
-    previewBox.className = "preview-shell";
-    previewBox.open = true;
-    previewBox.appendChild(node("summary", "Live clock preview"));
-    this._preview.className = "preview";
-    previewBox.appendChild(this._preview);
-    const previewStatus = node("p", "Ready — changes appear as you type.");
-    previewStatus.className = "preview-status";
-    previewStatus.setAttribute("role", "status");
-    previewBox.appendChild(previewStatus);
-    if (!this._previewStatusBound) {
-      this._preview.addEventListener("clock-render-status", (event) => {
-        const status = this.shadowRoot.querySelector(".preview-status");
-        if (status) {
-          status.textContent =
-            event.detail.status === "ready"
-              ? "Preview ready."
-              : event.detail.message;
-          status.classList.toggle("error", event.detail.status === "error");
-        }
-      });
-      this._previewStatusBound = true;
+    if (this.standalonePreview) {
+      const previewBox = node("details");
+      previewBox.className = "preview-shell";
+      previewBox.open = true;
+      previewBox.appendChild(node("summary", "Live clock preview"));
+      this._preview.className = "preview";
+      previewBox.appendChild(this._preview);
+      const previewStatus = node("p", "Ready — changes appear as you type.");
+      previewStatus.className = "preview-status";
+      previewStatus.setAttribute("role", "status");
+      previewBox.appendChild(previewStatus);
+      if (!this._previewStatusBound) {
+        this._preview.addEventListener("clock-render-status", (event) => {
+          const status = this.shadowRoot.querySelector(".preview-status");
+          if (status) {
+            status.textContent =
+              event.detail.status === "ready"
+                ? "Preview ready."
+                : event.detail.message;
+            status.classList.toggle("error", event.detail.status === "error");
+          }
+        });
+        this._previewStatusBound = true;
+      }
+      root.appendChild(previewBox);
     }
-    root.appendChild(previewBox);
     this.note(
       root,
       "Choose a face, add people, and select their location entities. Changes appear in the preview. Use Home Assistant’s Save button to keep dashboard changes.",
@@ -1286,10 +1290,37 @@ export class ClockEditor extends HTMLElement {
       status.className = "error";
     });
   }
+  previewEncounter(id) {
+    if (this.standalonePreview && this._preview?.isConnected)
+      return this._preview.previewWorldEncounter(id);
+    // Home Assistant owns the visible preview. Search the nearest composed
+    // ancestor first, so another dashboard card is never preferred to the
+    // sibling preview inside its editing dialog.
+    const find = (root) => {
+      if (root === this) return null;
+      if (root.localName === "magical-family-clock-card") return root;
+      if (root.shadowRoot) {
+        const found = find(root.shadowRoot);
+        if (found) return found;
+      }
+      for (const child of root.children || []) {
+        const found = find(child);
+        if (found) return found;
+      }
+      return null;
+    };
+    let scope = this.parentNode;
+    while (scope) {
+      const preview = find(scope);
+      if (preview) return preview.previewWorldEncounter(id);
+      scope = scope.parentNode || scope.host;
+    }
+    return false;
+  }
   updatePreview() {
     cancelAnimationFrame(this._previewFrame);
     this._previewFrame = requestAnimationFrame(() => {
-      const p = this._preview;
+      const p = this.standalonePreview ? this._preview : null;
       if (!p?.setConfig) return;
       try {
         p.setConfig(this.config);

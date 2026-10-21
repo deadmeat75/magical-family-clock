@@ -1,12 +1,14 @@
+> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](visual-review/README.md). HACS remains on 0.4.0.
+
 # Living World: detailed setup guide
 
-For **Magical Family Clock 0.4.0**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.0**, then reload the Home Assistant frontend. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+For **Magical Family Clock 0.4.1**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.1**, then reload the Home Assistant frontend. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
 ![Living castle with framed destinations and inhabitants](living-world-day.png)
 
 ## Create your first living world
 
-1. Open your clock's visual editor. Keep a private full backup under **Presets** before replacing a layout or population you have customized.
+1. Open your clock's visual editor. Home Assistant shows the single clock preview on the right; the left column contains the settings. Keep a private full backup under **Presets** before replacing a layout or population you have customized.
 2. For a new clock, choose **Appearance → Use layered castle artwork**. This applies the six reference destinations and raised pivot; it replaces the location layout while keeping people and colors. Configure tracking in **People** and **Locations** as usual.
 3. For an existing customized clock, open **Living world**. If offered, choose **Use the animated castle for this world**. This selects the layered castle and clears an opaque complete-face image while keeping your destinations and tracking rules.
 4. Open **Locations → Location panel design** and choose **Fit all names and graphics inside panels**. This removes old free-position label coordinates/rotation and restores automatic panel fitting. It does not change matching states or destination angles.
@@ -68,7 +70,7 @@ The map shows the current scene and a gold circle for the visible opening. Drag 
 
 Coordinates use the **square scene image**, not the entire clock: 0/0 is the image's top-left and 100/100 its bottom-right. The circular frame clips its corners. Sky routes usually work around 10–30% vertical; the lake is around 72–90%. A creature's full travel path can leave the opening even when its center marker is inside it.
 
-Selecting a marker or choosing **Preview encounter now** brings an active moment into the preview. This changes the preview animation, not the saved configuration. After editing the selected inhabitant, the preview keeps showing an active moment when possible. Filters, tower masking, clipping and reduced motion still apply.
+Selecting a marker or choosing **Preview encounter now** brings an active moment into the preview. This changes the preview animation, not the saved configuration. Editing preserves its current motion phase; choose Preview encounter now again when you want another active moment. Filters, tower masking, clipping and reduced motion still apply.
 
 ![Living-world editor with a placement map and guided controls](living-world-editor.png)
 
@@ -84,13 +86,13 @@ Expand **Edit inhabitant settings**. The first inhabitant starts expanded; other
 | Horizontal/vertical position | Route midpoint, stationary center or surfacing waterline, in scene percentages. |
 | Inhabitant scale | 0.25–3 times the base size. Start at 1. Small figures give a stronger sense of a large castle. |
 | Movement cycle | Full 8–240 second repeat, including quiet time between flying/surfacing appearances. It is not just time on screen. |
-| Travel span | Width of a flying route in scene percentages, centered at the horizontal position. |
+| Travel span | Requested route width in scene percentages. Routes extend beyond the opening when necessary so figures never appear or reset in open sky. |
 | Inhabitant movement | Fly past then rest; surface/linger/submerge; drift back and forth; gently bob; or remain still. |
 | Facing direction | Mirror the figure left/right. Flying visitors travel in that direction. Drifting props move back and forth. |
 | Pass behind the castle | Hide a sky visitor behind the bundled tower silhouette. Disable for foreground routes or custom scene geometry. |
 | Visible at time/in season/in weather | All selected filters must match. Any leaves that filter unrestricted. |
 
-Surfacing creatures disappear below their configured waterline and leave animated rings. Flying figures have articulated wing/cloth details where appropriate. The cottage has chimney smoke, and glowing props have light effects. A custom uploaded prop moves as one image; it does not acquire separately animated limbs.
+Surfacing creatures disappear below their configured waterline and leave animated rings. Flying figures enter and leave beyond the opening along curved routes; they do not fade out in the open sky. Wings use flap/glide cadences, with cloth and tail movement where appropriate. The cottage has chimney smoke, and glowing props have light effects. A custom uploaded prop moves as one image; it does not acquire separately animated limbs.
 
 **Duplicate inhabitant** creates an independent copy with a new ID. **Move inhabitant forward** moves it ahead of the next inhabitant in drawing order; tower masking remains separate. **Remove inhabitant** deletes just that entry. **Remove all inhabitants** keeps the landscape and moon settings.
 
@@ -102,10 +104,10 @@ Expand **Landscape and motion controls**:
 
 - **Show miniature world** enables the world overlays. Turning it off keeps the base illustration and tracking hands.
 - **Animate castle scenery** pauses/resumes the landscape and inhabitants together. A paused world stays visible.
-- **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** animate actual regions of the bundled illustration, with feathered edges, moving reflections, stream detail and spray.
+- **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** use separate drifting cloud decks, restrained foliage sway, continuous small reflection waves and fine flow threads/droplets. Clouds replace the bundled stationary sky beneath them. Waterfall spray has no solid glowing discs.
 - **Warm castle window lights** adds gently changing warm window illumination at dusk/night. **Evening fireflies** is independent of stars and other inhabitants.
 - **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Tower masks place the sky behind the castle; moving clouds can cover the moon/stars. Meteors are brief recurring events, not a permanent trail.
-- **World detail → Rich** uses the most foliage, lake bands and stars. **Balanced** reduces foliage layers. **Light** uses fewer water bands/stars and omits moving foliage regions. Use fewer inhabitants too on slower displays.
+- **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. Use fewer inhabitants too on slower displays.
 - **Scene time** previews dawn/day/dusk/night. Auto uses Home Assistant sun data and local solar calculations. Season and weather remain controlled in Appearance and can be combined with inhabitants' filters.
 
 **Appearance → Decorative motion speed** changes decorative motion speed; inhabitant cycle values remain their base settings. Castle motion intensity controls landscape movement strength. Weather has its own animation switch and effects. Tracking hands still respond to entity state changes independently.
@@ -151,7 +153,7 @@ A full private JSON backup includes custom artwork and sensor IDs. The default p
 
 | Symptom | Action |
 | --- | --- |
-| New controls are missing | Update to 0.4.0 through HACS and reload the frontend. If the old editor remains, hard-refresh/clear the frontend cache. |
+| New controls are missing | Update to 0.4.1 through HACS and reload the frontend. If the old editor remains, hard-refresh/clear the frontend cache. |
 | Landscape is still | Enable world/scenery animation, check General reduced motion and device accessibility preferences, and ensure the clock is visible. Light detail intentionally omits swaying trees. |
 | New world is covered | Clear an opaque Complete clock-face image, or use the animated-castle button. Hide title/caption overlays if they cover visitors. |
 | Creature is absent | Check Show this inhabitant, all three filters, route position, tower mask and quiet interval. Use Preview encounter now. |
@@ -163,4 +165,4 @@ A full private JSON backup includes custom artwork and sensor IDs. The default p
 | Animation is slow | Choose Balanced/Light, reduce the population, and disable expensive landscape/weather layers. |
 | Changes disappear after reload | Finish with Home Assistant's Save action; saving an account-library copy alone does not save the dashboard. |
 
-The world combines high-resolution illustrated scenery with layered SVG animation. It is not a free-roaming 3D game or a physics simulation. The 1254-pixel source retains a raster-resolution limit; frames, names, icons, hands and inhabitants are vectors. See [validation and practical limits](VALIDATION.md) and the [animation recording](living-world-preview.mp4). Screenshots and video use fictional people and simulated sensors.
+The world combines high-resolution illustrated scenery, Canvas 2D landscape animation and layered SVG inhabitants. The recording uses normal-speed playback without seeking encounters. It is not a free-roaming 3D game or a physics simulation. The 1254-pixel source retains a raster-resolution limit; frames, names, icons, hands and inhabitants are vectors. See [validation and practical limits](VALIDATION.md) and the [animation recording](living-world-preview.mp4). Screenshots and video use fictional people and simulated sensors.

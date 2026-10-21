@@ -2,9 +2,10 @@ import { sceneSource, imageGrade } from "./artwork.js";
 import { moonReading, objectActive } from "./world-config.js";
 import { inhabitantArt, creatureDefs } from "./world-art.js";
 import { escapeXML } from "./panels.js";
+import { skyPath, lakePath, flightKeyframes } from "./world-paths.js";
 export const worldCSS = `
-.scene-motion.world-live{opacity:1;pointer-events:none}.world-photo{pointer-events:none}.world-live .scene-cloud{animation:world-clouds calc(24s / var(--motion-speed,1)) ease-in-out infinite alternate;transform-box:view-box;transform-origin:300px 150px}.world-live .water-ripple{animation:world-water calc(3.6s / var(--motion-speed,1)) ease-in-out infinite alternate;transform-box:view-box;transform-origin:300px 400px}.world-tree{animation:world-sway calc(4.2s / var(--motion-speed,1)) ease-in-out infinite alternate;transform-box:view-box}.world-fall-photo{animation:waterfall-texture calc(.9s / var(--motion-speed,1)) linear infinite}.world-fall-stream{stroke-dasharray:14 9 3 19;animation:world-fall calc(.85s / var(--motion-speed,1)) linear infinite}.world-spray{animation:world-spray calc(2.3s / var(--motion-speed,1)) ease-in-out infinite}.world-star{animation:star-twinkle var(--twinkle,4s) ease-in-out infinite alternate}.world-meteor{animation:shooting-star calc(47s / var(--motion-speed,1)) linear infinite;opacity:0}.world-encounter{animation-duration:calc(var(--encounter-seconds,30s) / var(--motion-speed,1));animation-timing-function:linear;animation-iteration-count:infinite;animation-delay:var(--encounter-delay,0s)}.world-encounter.fly{animation-name:creature-flight}.world-encounter.surface{animation-name:creature-surface}.world-encounter.drift{animation-name:creature-drift}.world-encounter.bob{animation-name:creature-bob}.creature-wing{transform-box:view-box;transform-origin:0px -2px;animation:creature-wings calc(.75s / var(--motion-speed,1)) ease-in-out infinite alternate}.far-wing{animation-delay:-.3s}.dragon-near-wing,.dragon-far-wing{animation-duration:1.8s}.rider-cloak,.phoenix-tail{animation:cloth-wave 1.8s ease-in-out infinite alternate;transform-origin:0px 0px}.creature-glow{animation:star-twinkle 2.7s ease-in-out infinite alternate}.chimney-smoke{animation:world-smoke 4.5s linear infinite}.water-encounter-rings{animation:encounter-rings var(--encounter-seconds,40s) ease-out infinite;animation-delay:var(--encounter-delay,0s)}.world-encounter.still *{animation:none!important}.world-night .world-object{filter:brightness(.72) saturate(.85)}.world-surface .world-encounter{transform:translateY(35px)}.scene-off .world-live *{animation-play-state:paused!important}.scene-off .world-encounter,.still .world-encounter{opacity:1!important;transform:none!important}.still .world-star,.scene-off .world-star{opacity:.75!important}
-@keyframes world-clouds{from{transform:translateX(-7px)}to{transform:translateX(calc(14px * var(--scene-intensity,.65)))}}@keyframes world-water{from{transform:translateX(-1.8px) skewX(-.25deg)}to{transform:translateX(1.8px) skewX(.25deg)}}@keyframes world-sway{from{transform:rotate(-2deg)}to{transform:rotate(calc(4deg * var(--scene-intensity,.65)))}}@keyframes waterfall-texture{0%{opacity:0;transform:translateY(-2px)}50%{opacity:.85}100%{opacity:0;transform:translateY(3px)}}@keyframes world-fall{to{stroke-dashoffset:-45}}@keyframes world-spray{0%{opacity:.15;transform:translateY(2px) scaleX(.9)}60%{opacity:.7;transform:translateY(-1px) scaleX(1.1)}100%{opacity:.15;transform:translateY(2px) scaleX(.9)}}@keyframes star-twinkle{from{opacity:.22}to{opacity:1}}@keyframes shooting-star{0%,82%{opacity:0;transform:translate(0,0)}83%{opacity:.95}86%{opacity:0;transform:translate(110px,60px)}100%{opacity:0;transform:translate(110px,60px)}}@keyframes creature-flight{0%,4%{opacity:0;transform:translate(calc(var(--travel-span,280px) * -.5),5px)}8%{opacity:1}28%{transform:translate(calc(var(--travel-span,280px) * -.1),-4px)}52%{opacity:1;transform:translate(calc(var(--travel-span,280px) * .5),3px)}55%,100%{opacity:0;transform:translate(calc(var(--travel-span,280px) * .55),4px)}}@keyframes creature-surface{0%,10%{transform:translateY(42px);opacity:0}18%{opacity:1}28%,48%{transform:translateY(0);opacity:1}60%,100%{transform:translateY(42px);opacity:0}}@keyframes creature-drift{0%{transform:translate(-14px,1px) rotate(-1deg)}50%{transform:translate(14px,-2px) rotate(1deg)}100%{transform:translate(-14px,1px) rotate(-1deg)}}@keyframes creature-bob{0%,100%{transform:translateY(2px) rotate(-1.5deg)}50%{transform:translateY(-2px) rotate(1.5deg)}}@keyframes creature-wings{from{transform:scaleY(.6) rotate(-8deg)}to{transform:scaleY(1) rotate(9deg)}}@keyframes cloth-wave{to{transform:skewY(8deg)}}@keyframes world-smoke{0%{opacity:0;transform:translateY(3px)}25%{opacity:.6}100%{opacity:0;transform:translate(5px,-8px)}}@keyframes encounter-rings{0%,15%,70%,100%{opacity:0;transform:scaleX(.7)}30%,50%{opacity:.65;transform:scaleX(1.2)}}
+.scene-motion.world-live{opacity:1;pointer-events:none}.world-photo{pointer-events:none}.world-live .scene-cloud,.world-live .water-ripple{animation:none;transform:none}.world-paint{width:100%;height:100%;display:block}.world-tree{animation:world-sway var(--sway-period,13s) ease-in-out infinite;transform-box:view-box}.world-star{animation:star-twinkle var(--twinkle,4s) ease-in-out infinite alternate}.world-meteor{animation:shooting-star calc(47s / var(--motion-speed,1)) linear infinite;opacity:0}.world-encounter{animation-duration:calc(var(--encounter-seconds,30s) / var(--motion-speed,1));animation-timing-function:linear;animation-iteration-count:infinite;animation-delay:var(--encounter-delay,0s);opacity:1}.world-encounter.surface{animation-name:creature-surface;animation-timing-function:cubic-bezier(.4,0,.25,1)}.world-encounter.drift{animation-name:creature-drift;animation-timing-function:ease-in-out}.world-encounter.bob{animation-name:creature-bob;animation-timing-function:ease-in-out}.creature-wing{transform-box:view-box;transform-origin:0px -2px;animation:creature-wings calc(var(--wing-cycle,7s) / var(--motion-speed,1)) linear infinite}.far-wing{animation-delay:-.08s}.world-object[data-kind="owl"]{--wing-cycle:9s}.world-object[data-kind="fairy"] .creature-wing{animation:fairy-flutter .18s ease-in-out infinite alternate}.dragon-tail{transform-origin:-18px 5px;animation:dragon-tail-sway 5.3s ease-in-out infinite alternate}.mer-tail{transform-origin:0px -8px;animation:tail-swim 3.7s ease-in-out infinite alternate}.dragon-near-wing,.dragon-far-wing{--wing-cycle:12s}.rider-cloak,.phoenix-tail{animation:cloth-wave 4.7s ease-in-out infinite alternate;transform-origin:0px 0px}.creature-glow{animation:star-twinkle 4.3s ease-in-out infinite alternate}.chimney-smoke{animation:world-smoke 6.5s linear infinite}.water-encounter-rings{transform-box:fill-box;transform-origin:center;animation:encounter-rings var(--encounter-seconds,40s) linear infinite;animation-delay:var(--encounter-delay,0s)}.world-encounter.still *{animation:none!important}.world-night .world-object{filter:brightness(.72) saturate(.85)}.world-surface .world-encounter{transform:translateY(110px)}.scene-off .world-live *{animation-play-state:paused!important}.scene-off .world-encounter,.still .world-encounter{opacity:1!important;transform:none!important}.still .world-star,.scene-off .world-star{opacity:.75!important}
+@keyframes world-sway{0%,100%{transform:skewX(-.12deg)}18%{transform:skewX(.4deg)}37%{transform:skewX(.14deg)}56%{transform:skewX(.62deg)}79%{transform:skewX(-.22deg)}}@keyframes star-twinkle{from{opacity:.22}to{opacity:1}}@keyframes shooting-star{0%,82%{opacity:0;transform:translate(0,0)}83%{opacity:.95}86%{opacity:0;transform:translate(110px,60px)}100%{opacity:0;transform:translate(110px,60px)}}@keyframes creature-surface{0%,8%{transform:translateY(110px)}30%,48%{transform:translateY(0)}72%,100%{transform:translateY(110px)}}@keyframes creature-drift{0%,100%{transform:translate(-4px,.5px) rotate(-.35deg)}47%{transform:translate(4px,-.4px) rotate(.4deg)}}@keyframes creature-bob{0%,100%{transform:translateY(.8px) rotate(-.4deg)}43%{transform:translateY(-.6px) rotate(.3deg)}}@keyframes creature-wings{0%,14%,31%,72%,100%{transform:scaleY(.95) rotate(0deg)}4%,21%,79%,92%{transform:scaleY(.22) rotate(-10deg)}8%,25%,84%,96%{transform:scaleY(1) rotate(3deg)}38%,64%{transform:scaleY(.87) rotate(-2deg)}}@keyframes dragon-tail-sway{from{transform:skewY(-2deg)}to{transform:skewY(2deg)}}@keyframes fairy-flutter{from{transform:scaleX(.35)}to{transform:scaleX(1)}}@keyframes tail-swim{from{transform:skewX(-3deg)}to{transform:skewX(3deg)}}@keyframes cloth-wave{0%{transform:skewY(-1deg)}35%{transform:skewY(2deg)}72%{transform:skewY(.4deg)}100%{transform:skewY(3deg)}}@keyframes world-smoke{0%{opacity:0;transform:translateY(3px)}25%{opacity:.28}100%{opacity:0;transform:translate(5px,-8px)}}@keyframes encounter-rings{0%,12%,70%,100%{opacity:0;transform:scale(.5,.6)}28%{opacity:.2;transform:scale(.85,.8)}47%{opacity:.12;transform:scale(1.2,1.1)}62%{opacity:0;transform:scale(1.5,1.2)}}
 @media(prefers-reduced-motion:reduce){.world-live *{animation-play-state:paused!important}.world-encounter{opacity:1!important;transform:none!important}.world-star{opacity:.75!important}.world-meteor{display:none}}
 `;
 export function litMoonPath(phase, r = 14) {
@@ -42,27 +43,25 @@ function moonMarkup(world, reading, opening = 180) {
 }
 const photo = (grade, cls = "", extra = "") =>
   `<use class="world-photo ${cls}" href="#world-photo-source" style="filter:${grade};${extra}"/>`;
+const paintLayer = (kind, cls, grade) =>
+  `<foreignObject x="108" y="90" width="384" height="384" class="${cls}" style="filter:${grade}"><canvas xmlns="http://www.w3.org/1999/xhtml" class="world-paint" data-world-paint="${kind}" aria-hidden="true"></canvas></foreignObject>`;
+function skyBackground(scene) {
+  const colors = {
+    day: ["#2384e8", "#a4cef0"],
+    night: ["#08152b", "#263d57"],
+    dusk: ["#71527a", "#d39c85"],
+    dawn: ["#536c98", "#e5c5ab"],
+  }[scene.period] || ["#2384e8", "#a4cef0"];
+  return `<defs><linearGradient id="world-clear-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="${colors[0]}"/><stop offset="1" stop-color="${colors[1]}"/></linearGradient></defs><path class="world-sky-base" d="${skyPath()}" fill="url(#world-clear-sky)"/>`;
+}
 function landscapeMotion(c, scene, custom) {
   const w = c.world,
-    url = sceneSource(scene),
-    grade = imageGrade(scene),
-    light = scene.period === "night" ? "#c5d2e9" : "#e5f6f7";
-  let out = `<defs>${!custom ? `<image id="world-photo-source" href="${escapeXML(url)}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice"/>` : ""}<filter id="world-cloud-opacity" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  2 1 0 0 -.8"/></filter><radialGradient id="world-feather"><stop offset=".68" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient></defs>`;
-  if (w.clouds) {
-    if (!custom)
-      out += `<defs><mask id="world-cloud-left" maskUnits="userSpaceOnUse"><ellipse cx="169" cy="151" rx="67" ry="61" fill="url(#world-feather)"/></mask><mask id="world-cloud-right" maskUnits="userSpaceOnUse"><ellipse cx="426" cy="160" rx="67" ry="66" fill="url(#world-feather)"/></mask></defs><g mask="url(#world-cloud-left)">${photo("url(#world-cloud-opacity) " + grade, "scene-cloud")}</g><g mask="url(#world-cloud-right)">${photo("url(#world-cloud-opacity) " + grade, "scene-cloud", "animation-delay:-11s")}</g>`;
-    else
-      out +=
-        '<g fill="#dbe8ee" opacity=".48"><path class="scene-cloud" d="M110 170q18-24 39-9q15-33 43-9q30-7 39 18Z"/><path class="scene-cloud" d="M363 155q21-26 43-13q18-21 39 0q30-5 46 17Z"/></g>';
-  }
-  if (w.water && !custom) {
-    out +=
-      '<defs><clipPath id="world-lake"><path d="M115 356Q270 349 479 358V404L453 450H271L224 426 177 411 145 391Z"/></clipPath></defs><g clip-path="url(#world-lake)">';
-    const count = w.quality === "light" ? 2 : 4;
-    for (let i = 0; i < count; i++)
-      out += `<svg x="108" y="${353 + i * 27}" width="384" height="29" viewBox="108 ${353 + i * 27} 384 29" overflow="hidden">${photo(grade, "water-ripple", `animation-delay:-${i * 0.9}s`)}</svg>`;
-    out += "</g>";
-  }
+    grade = imageGrade(scene);
+  let out = `<defs>${!custom ? `<image id="world-photo-source" href="${escapeXML(sceneSource(scene))}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice"/>` : ""}<clipPath id="world-cloud-sky"><path d="${skyPath()}"/></clipPath><radialGradient id="world-feather"><stop offset=".3" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient></defs>`;
+  if (w.clouds)
+    out += `<g clip-path="url(#world-cloud-sky)">${paintLayer("clouds", "scene-cloud", grade)}</g>`;
+  if (w.water && !custom)
+    out += `<defs><clipPath id="world-lake"><path d="${lakePath}"/></clipPath></defs><g clip-path="url(#world-lake)">${paintLayer("water", "water-ripple", grade)}</g>`;
   if (!custom && w.windows && ["night", "dusk"].includes(scene.period)) {
     out +=
       '<defs><filter id="castle-lit-windows" x="0" y="0" width="100%" height="100%"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  3 0 -3 0 -1.1" result="lights"/><feGaussianBlur in="lights" stdDeviation=".3" result="bloom"/><feMerge><feMergeNode in="bloom"/><feMergeNode in="lights"/></feMerge></filter><clipPath id="castle-lit-area"><path d="M236 308V245H251V202H272V178H300V167H310V140H326V213H344V262H357V309Z"/></clipPath></defs><g clip-path="url(#castle-lit-area)"><use class="window-light" href="#world-photo-source" filter="url(#castle-lit-windows)" opacity=".8"/></g>';
@@ -78,29 +77,15 @@ function landscapeMotion(c, scene, custom) {
     for (let i = 0; i < (w.quality === "balanced" ? 3 : 5); i++) {
       const [x, y, rx, ry] = patches[i],
         id = "world-tree-" + i;
-      out += `<defs><mask id="${id}" maskUnits="userSpaceOnUse"><ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="url(#world-feather)"/></mask></defs><g mask="url(#${id})">${photo(grade, "world-tree", `transform-origin:${x}px ${y + ry}px;animation-delay:-${i * 0.7}s`)}</g>`;
+      out += `<defs><mask id="${id}" maskUnits="userSpaceOnUse"><ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="url(#world-feather)"/></mask></defs><g mask="url(#${id})">${photo(grade, "world-tree", `transform-origin:${x}px ${y + ry}px;--sway-period:${11 + i * 1.7}s;animation-delay:-${i * 2.7}s`)}</g>`;
     }
   }
-  if (w.waterfalls && !custom) {
-    out +=
-      '<defs><clipPath id="world-waterfall-mask"><path d="M202 315L213 316 207 339 197 349 188 350 198 338ZM325 321L339 325 342 348 332 353 324 348 328 337Z"/></clipPath></defs><g class="world-waterfalls" clip-path="url(#world-waterfall-mask)">';
-    out +=
-      photo(grade, "world-fall-photo") +
-      photo(grade, "world-fall-photo", "animation-delay:-.45s");
-    for (let i = 0; i < 12; i++) {
-      const x = i < 6 ? 201 + i * 1.5 : 325 + (i - 6) * 2;
-      out += `<path class="world-fall-stream" d="M${x} 312q6 14 2 25t-4 25" fill="none" stroke="${light}" stroke-width="${0.3 + (i % 3) * 0.2}" opacity=".32" style="animation-delay:-${i * 0.11}s"/>`;
-    }
-    out +=
-      '</g><g class="world-spray" style="transform-origin:333px 351px" fill="' +
-      light +
-      '" opacity=".65"><ellipse cx="333" cy="351" rx="11" ry="2"/><ellipse cx="198" cy="349" rx="8" ry="1.6"/></g>';
-  }
+  if (w.waterfalls && !custom)
+    out += paintLayer("waterfalls", "world-waterfalls", "");
   return out;
 }
 function nightSky(world, reading, opening) {
-  let out =
-    '<defs><mask id="world-night-sky" maskUnits="userSpaceOnUse"><path d="M108 90H290V142H266V190H239V220H108ZM344 90H492V231H375V191H352Z" fill="white"/></mask></defs><g mask="url(#world-night-sky)">';
+  let out = `<defs><mask id="world-night-sky" maskUnits="userSpaceOnUse"><path d="${skyPath()}" fill="white"/></mask></defs><g mask="url(#world-night-sky)">`;
   if (world.stars) {
     const count = world.quality === "light" ? 24 : 64;
     for (let i = 0; i < count; i++) {
@@ -117,7 +102,7 @@ function nightSky(world, reading, opening) {
       '<g class="world-meteor"><path d="M154 110l-29-16" stroke="#e1eeff" stroke-width="1"/><circle cx="154" cy="110" r="1.2" fill="white"/></g><g class="world-meteor" style="animation-delay:-23s"><path d="M371 129l-18-10" stroke="#e1eeff" stroke-width=".8"/><circle cx="371" cy="129" r="1" fill="white"/></g>';
   return out + "</g>" + moonMarkup(world, reading, opening);
 }
-function objectMarkup(o, i) {
+function objectMarkup(o, i, opening) {
   const x = 108 + o.x * 3.84,
     y = 90 + o.y * 3.84,
     scale = o.scale * 0.36,
@@ -131,7 +116,7 @@ function objectMarkup(o, i) {
       (_, key) => `url(#${prefix + key})`,
     ),
     defs = creatureDefs().replace(/id="/g, `id="${prefix}`);
-  return `<g class="world-depth" ${o.behind_castle ? 'mask="url(#world-flight-sky)"' : ""}><g class="world-object ${water ? "world-surface" : ""}" data-world-id="${escapeXML(o.id)}" data-kind="${o.kind}" transform="${local}" style="color:${o.color};fill:currentColor;--encounter-seconds:${o.interval}s;--encounter-delay:${delay}s;--travel-span:${((o.facing === "left" ? -1 : 1) * o.span * 3.84) / scale}px"><title>${escapeXML(o.name)}</title>${defs}${water ? `<defs><clipPath id="${id}-waterline"><rect x="-85" y="-95" width="170" height="95"/></clipPath></defs><g clip-path="url(#${id}-waterline)">` : ""}<g class="world-encounter ${o.motion}" style="transform-origin:0px 0px"><g transform="scale(${o.facing === "left" ? -1 : 1} 1)">${o.kind === "custom" && o.image ? `<image href="${escapeXML(o.image)}" x="-32" y="-32" width="64" height="64" preserveAspectRatio="xMidYMid meet"/>` : art}</g></g>${water ? '</g><ellipse class="water-encounter-rings" rx="42" ry="3" fill="none" stroke="#d3e5e0" stroke-width="1.5"/><ellipse class="water-encounter-rings" rx="28" ry="2" fill="none" stroke="#93bdc2" stroke-width=".8"/>' : ""}</g></g>`;
+  return `<g class="world-depth" ${o.behind_castle ? 'mask="url(#world-flight-sky)"' : ""}><g class="world-object ${water ? "world-surface" : ""}" data-world-id="${escapeXML(o.id)}" data-kind="${o.kind}" transform="${local}" style="color:${o.color};fill:currentColor;--encounter-seconds:${o.interval}s;--encounter-delay:${delay}s;--travel-span:${((o.facing === "left" ? -1 : 1) * o.span * 3.84) / scale}px"><title>${escapeXML(o.name)}</title>${defs}${o.motion === "fly" ? `<style>${flightKeyframes(o, i, opening)}</style>` : ""}${water ? `<defs><clipPath id="${id}-waterline"><rect x="-85" y="-95" width="170" height="95"/></clipPath></defs><g clip-path="url(#${id}-waterline)">` : ""}<g class="world-encounter ${o.motion}" style="transform-origin:0px 0px;${o.motion === "fly" ? `animation-name:world-flight-${i}` : ""}"><g transform="scale(${o.facing === "left" ? -1 : 1} 1)">${o.kind === "custom" && o.image ? `<image href="${escapeXML(o.image)}" x="-32" y="-32" width="64" height="64" preserveAspectRatio="xMidYMid meet"/>` : art}</g></g>${water ? '</g><ellipse class="water-encounter-rings" rx="42" ry="3" fill="none" stroke="#c9d7d9" stroke-width=".7"/><ellipse class="water-encounter-rings" rx="28" ry="2" fill="none" stroke="#93bdc2" stroke-width=".5"/>' : ""}</g></g>`;
 }
 export function worldMarkup(
   c,
@@ -144,7 +129,8 @@ export function worldMarkup(
   if (!c.world.enabled) return "";
   let out =
     `<g class="scene-motion world-live ${scene.period === "night" ? "world-night" : ""}" clip-path="url(#castle-opening)">` +
-    '<defs><mask id="world-flight-sky" maskUnits="userSpaceOnUse"><path d="M108 90H290V142H266V190H239V220H108ZM344 90H492V231H375V191H352Z" fill="white"/></mask></defs>';
+    `<defs><mask id="world-flight-sky" maskUnits="userSpaceOnUse"><path d="${skyPath()}" fill="white"/></mask></defs>`;
+  if (c.world.clouds && !custom) out += skyBackground(scene);
   if (["night", "dusk", "dawn"].includes(scene.period))
     out += nightSky(c.world, reading, c.location_panels.inner_radius);
   out += landscapeMotion(c, scene, custom);
@@ -153,7 +139,7 @@ export function worldMarkup(
       out += `<circle class="firefly" cx="${145 + ((i * 21) % 270)}" cy="${295 + ((i * 13) % 52)}" r=".8" fill="#ffe3a3" style="animation-delay:-${i % 7}s"/>`;
   out += c.world.objects
     .filter((o) => objectActive(o, scene, weather))
-    .map(objectMarkup)
+    .map((o, i) => objectMarkup(o, i, c.location_panels.inner_radius))
     .join("");
   return out + "</g>";
 }

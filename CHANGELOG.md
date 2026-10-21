@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.1 — Unreleased visual review and motion correction
+
+- Replace near-static cloud patches with two continuously drifting cloud decks over a separate sky, sharing a detailed tower/mountain occlusion path.
+- Replace rigid sliding lake bands with small continuous reflection waves, keeping the shoreline fixed.
+- Remove solid waterfall spray ellipses; add fine downward flow threads and short, low-opacity impact droplets.
+- Make flying visitors follow curved routes that begin/end beyond the opening, without fading or resetting in open sky. Lake inhabitants submerge completely without opacity cuts.
+- Add species-appropriate flap/glide cadence, quieter prop motion, gentle tail movement and irregular foliage sway.
+- Preserve world time and creature progress through moon/weather refreshes; honor reduced motion and visibility for the new Canvas 2D landscape layers.
+- Preserve visible animation in native fullscreen and fixed expansion by tracking the actual displayed card.
+- Prepare individually identified painted character/prop proposals and a complete visual gallery; hold publication for user approval.
+- Remove the duplicate sticky preview from the Home Assistant settings column; encounter actions use its existing preview.
+- Replace the preview recording with normal-speed footage without encounter seeking, and add motion-specific regression checks.
+
 ## 0.4.0 — Living World
 
 - Fit destination names and large graphics inside individual raised-center panels, with textured glass, metal, parchment and wood, per-panel images/colors and embedded ornate Pirata One lettering.

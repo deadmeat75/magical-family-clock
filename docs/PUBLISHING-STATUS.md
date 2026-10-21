@@ -1,5 +1,7 @@
 # Publication status
 
+**0.4.1 is an unreleased engineering and visual-review draft. Publication is held for individual user approval.** See the [review gallery](visual-review/README.md). Main and the published HACS release remain on 0.4.0.
+
 Published stable release: [Magical Family Clock v0.4.0 — Living World](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0). It is the latest release, with draft and prerelease flags both false. Enabling prereleases is unnecessary.
 
 The self-contained `magical-family-clock.js` release asset was independently downloaded and matches the tested bundle byte for byte (**17,013,181 bytes**).

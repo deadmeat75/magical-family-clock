@@ -317,7 +317,7 @@ function placementMap(editor, parent) {
       e.preventDefault();
       dragging = true;
       circle.setPointerCapture(e.pointerId);
-      editor._preview.previewWorldEncounter(o.id);
+      editor.previewEncounter(o.id);
     };
     circle.onpointermove = (e) => {
       if (!dragging) return;
@@ -342,7 +342,7 @@ function placementMap(editor, parent) {
         };
       if (!moves[e.key]) return;
       e.preventDefault();
-      editor._preview.previewWorldEncounter(o.id);
+      editor.previewEncounter(o.id);
       update(o.x + moves[e.key][0], o.y + moves[e.key][1]);
     };
   }
@@ -412,7 +412,7 @@ export function worldEditor(root) {
     [
       "clouds",
       "Moving clouds",
-      "Animate visible cloud regions in the bundled sky. Uploaded scenes use moving cloud overlays.",
+      "Cloud layers drift continuously at different wind speeds. The bundled sky replaces its stationary clouds; uploaded scenes retain their own sky beneath the overlay.",
     ],
     [
       "trees",
@@ -422,12 +422,12 @@ export function worldEditor(root) {
     [
       "water",
       "Rippling lake",
-      "Move the actual lake reflection regions in the bundled scene, rather than adding stationary ripple marks.",
+      "Gently distort the lake reflections with continuous small waves. The shoreline stays fixed; no broad image bands slide back and forth.",
     ],
     [
       "waterfalls",
       "Running waterfalls",
-      "Animate streams and spray at the bundled castle waterfalls. These effects are aligned to the supplied castle composition.",
+      "Animate downward flowing threads and fine spray at the bundled falls. Spray stays close to the impact points, without solid glowing discs.",
     ],
     [
       "fireflies",
@@ -463,7 +463,7 @@ export function worldEditor(root) {
       ["balanced", "Balanced"],
       ["light", "Light"],
     ],
-    "Rich adds more foliage regions, water bands and stars. Balanced reduces layer count. Light is intended for smaller or slower displays.",
+    "Rich keeps the most foliage/stars and paints landscape motion at 24 fps. Balanced uses fewer foliage layers and 18 fps. Light uses lower resolution, fewer stars, no moving foliage, and 12 fps.",
   );
   field(
     this,
@@ -671,7 +671,7 @@ export function worldEditor(root) {
       [
         "span",
         "Travel span (%)",
-        "Width of a flying route as a percentage of the scene image. The chosen horizontal position is its midpoint.",
+        "Requested flying-route width as a percentage of the scene image. Routes extend beyond the frame when needed so visitors enter and leave naturally.",
       ],
     ])
       field(this, box, label, o, key, "number", null, help);
@@ -747,7 +747,7 @@ export function worldEditor(root) {
     status.setAttribute("role", "status");
     box.appendChild(status);
     this.button(box, "Preview encounter now", () => {
-      const played = this._preview.previewWorldEncounter(o.id);
+      const played = this.previewEncounter(o.id);
       status.textContent = played
         ? "Showing an active moment."
         : "Enable the world and animation, choose a matching scene/time, and keep this route inside the opening.";

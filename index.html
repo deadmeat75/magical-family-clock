@@ -82,6 +82,8 @@
     };
     document.querySelector("#edit").onclick = () => {
       const e = document.createElement("magical-family-clock-card-editor");
+      // The development fixture has no Home Assistant preview host.
+      e.standalonePreview = true;
       e.setConfig(cards[0]._config);
       e.hass = { states };
       e.addEventListener("config-changed", (ev) =>

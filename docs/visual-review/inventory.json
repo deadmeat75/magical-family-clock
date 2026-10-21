@@ -1,0 +1,1242 @@
+[
+  {
+    "id": "F01",
+    "name": "enchanted-spoons",
+    "category": "Faces",
+    "image": "items/F01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "F02",
+    "name": "brass-clockwork",
+    "category": "Faces",
+    "image": "items/F02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "F03",
+    "name": "living-magical",
+    "category": "Faces",
+    "image": "items/F03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "F04",
+    "name": "whimsical-workshop",
+    "category": "Faces",
+    "image": "items/F04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "F05",
+    "name": "Layered castle and ornate location ring",
+    "category": "Faces",
+    "image": "items/F05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H01",
+    "name": "spoon",
+    "category": "Hand shapes",
+    "image": "items/H01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H02",
+    "name": "classic",
+    "category": "Hand shapes",
+    "image": "items/H02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H03",
+    "name": "legacy-curved",
+    "category": "Hand shapes",
+    "image": "items/H03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H04",
+    "name": "standalone-pointed",
+    "category": "Hand shapes",
+    "image": "items/H04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H05",
+    "name": "arrow",
+    "category": "Hand shapes",
+    "image": "items/H05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H06",
+    "name": "leaf",
+    "category": "Hand shapes",
+    "image": "items/H06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H07",
+    "name": "sword",
+    "category": "Hand shapes",
+    "image": "items/H07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H08",
+    "name": "cathedral",
+    "category": "Hand shapes",
+    "image": "items/H08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H09",
+    "name": "filigree",
+    "category": "Hand shapes",
+    "image": "items/H09.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H10",
+    "name": "skeleton",
+    "category": "Hand shapes",
+    "image": "items/H10.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H11",
+    "name": "quill",
+    "category": "Hand shapes",
+    "image": "items/H11.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "H12",
+    "name": "compass",
+    "category": "Hand shapes",
+    "image": "items/H12.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M01",
+    "name": "color",
+    "category": "Materials",
+    "image": "items/M01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M02",
+    "name": "brass",
+    "category": "Materials",
+    "image": "items/M02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M03",
+    "name": "aged-brass",
+    "category": "Materials",
+    "image": "items/M03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M04",
+    "name": "copper",
+    "category": "Materials",
+    "image": "items/M04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M05",
+    "name": "silver",
+    "category": "Materials",
+    "image": "items/M05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M06",
+    "name": "steel",
+    "category": "Materials",
+    "image": "items/M06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M07",
+    "name": "wood",
+    "category": "Materials",
+    "image": "items/M07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M08",
+    "name": "ivory",
+    "category": "Materials",
+    "image": "items/M08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M09",
+    "name": "obsidian",
+    "category": "Materials",
+    "image": "items/M09.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M10",
+    "name": "glass",
+    "category": "Materials",
+    "image": "items/M10.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M11",
+    "name": "Brass finish: polished",
+    "category": "Materials",
+    "image": "items/M11.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M12",
+    "name": "Brass finish: brushed",
+    "category": "Materials",
+    "image": "items/M12.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "M13",
+    "name": "Brass finish: aged",
+    "category": "Materials",
+    "image": "items/M13.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "P01",
+    "name": "cracked-glass",
+    "category": "Location panels",
+    "image": "items/P01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "P02",
+    "name": "hammered-metal",
+    "category": "Location panels",
+    "image": "items/P02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "P03",
+    "name": "parchment",
+    "category": "Location panels",
+    "image": "items/P03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "P04",
+    "name": "wood",
+    "category": "Location panels",
+    "image": "items/P04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "P05",
+    "name": "plain",
+    "category": "Location panels",
+    "image": "items/P05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I01",
+    "name": "home",
+    "category": "Location symbols",
+    "image": "items/I01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I02",
+    "name": "work",
+    "category": "Location symbols",
+    "image": "items/I02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I03",
+    "name": "school",
+    "category": "Location symbols",
+    "image": "items/I03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I04",
+    "name": "gym",
+    "category": "Location symbols",
+    "image": "items/I04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I05",
+    "name": "travel",
+    "category": "Location symbols",
+    "image": "items/I05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I06",
+    "name": "away",
+    "category": "Location symbols",
+    "image": "items/I06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I07",
+    "name": "hospital",
+    "category": "Location symbols",
+    "image": "items/I07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I08",
+    "name": "shop",
+    "category": "Location symbols",
+    "image": "items/I08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I09",
+    "name": "family",
+    "category": "Location symbols",
+    "image": "items/I09.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I10",
+    "name": "garden",
+    "category": "Location symbols",
+    "image": "items/I10.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I11",
+    "name": "bed",
+    "category": "Location symbols",
+    "image": "items/I11.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I12",
+    "name": "magic",
+    "category": "Location symbols",
+    "image": "items/I12.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "I13",
+    "name": "pin",
+    "category": "Location symbols",
+    "image": "items/I13.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S01",
+    "name": "spring / dawn",
+    "category": "Seasons and time",
+    "image": "items/S01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S02",
+    "name": "spring / day",
+    "category": "Seasons and time",
+    "image": "items/S02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S03",
+    "name": "spring / dusk",
+    "category": "Seasons and time",
+    "image": "items/S03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S04",
+    "name": "spring / night",
+    "category": "Seasons and time",
+    "image": "items/S04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S05",
+    "name": "summer / dawn",
+    "category": "Seasons and time",
+    "image": "items/S05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S06",
+    "name": "summer / day",
+    "category": "Seasons and time",
+    "image": "items/S06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S07",
+    "name": "summer / dusk",
+    "category": "Seasons and time",
+    "image": "items/S07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S08",
+    "name": "summer / night",
+    "category": "Seasons and time",
+    "image": "items/S08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S09",
+    "name": "autumn / dawn",
+    "category": "Seasons and time",
+    "image": "items/S09.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S10",
+    "name": "autumn / day",
+    "category": "Seasons and time",
+    "image": "items/S10.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S11",
+    "name": "autumn / dusk",
+    "category": "Seasons and time",
+    "image": "items/S11.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S12",
+    "name": "autumn / night",
+    "category": "Seasons and time",
+    "image": "items/S12.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S13",
+    "name": "winter / dawn",
+    "category": "Seasons and time",
+    "image": "items/S13.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S14",
+    "name": "winter / day",
+    "category": "Seasons and time",
+    "image": "items/S14.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S15",
+    "name": "winter / dusk",
+    "category": "Seasons and time",
+    "image": "items/S15.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "S16",
+    "name": "winter / night",
+    "category": "Seasons and time",
+    "image": "items/S16.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W01",
+    "name": "clear",
+    "category": "Weather",
+    "image": "items/W01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W02",
+    "name": "clouds",
+    "category": "Weather",
+    "image": "items/W02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W03",
+    "name": "light-rain",
+    "category": "Weather",
+    "image": "items/W03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W04",
+    "name": "rain",
+    "category": "Weather",
+    "image": "items/W04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W05",
+    "name": "snow",
+    "category": "Weather",
+    "image": "items/W05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W06",
+    "name": "sleet",
+    "category": "Weather",
+    "image": "items/W06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W07",
+    "name": "wind",
+    "category": "Weather",
+    "image": "items/W07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W08",
+    "name": "fog",
+    "category": "Weather",
+    "image": "items/W08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W09",
+    "name": "ice",
+    "category": "Weather",
+    "image": "items/W09.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "W10",
+    "name": "lightning",
+    "category": "Weather",
+    "image": "items/W10.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N01",
+    "name": "new_moon",
+    "category": "Moon phases",
+    "image": "items/N01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N02",
+    "name": "waxing_crescent",
+    "category": "Moon phases",
+    "image": "items/N02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N03",
+    "name": "first_quarter",
+    "category": "Moon phases",
+    "image": "items/N03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N04",
+    "name": "waxing_gibbous",
+    "category": "Moon phases",
+    "image": "items/N04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N05",
+    "name": "full_moon",
+    "category": "Moon phases",
+    "image": "items/N05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N06",
+    "name": "waning_gibbous",
+    "category": "Moon phases",
+    "image": "items/N06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N07",
+    "name": "last_quarter",
+    "category": "Moon phases",
+    "image": "items/N07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "N08",
+    "name": "waning_crescent",
+    "category": "Moon phases",
+    "image": "items/N08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "B01",
+    "name": "aged-brass information bezel",
+    "category": "Bezel",
+    "image": "items/B01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "B02",
+    "name": "silver information bezel",
+    "category": "Bezel",
+    "image": "items/B02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "B03",
+    "name": "wood information bezel",
+    "category": "Bezel",
+    "image": "items/B03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E01",
+    "name": "shadow at full strength",
+    "category": "Surface effects",
+    "image": "items/E01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E02",
+    "name": "bevel at full strength",
+    "category": "Surface effects",
+    "image": "items/E02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E03",
+    "name": "reflection at full strength",
+    "category": "Surface effects",
+    "image": "items/E03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E04",
+    "name": "glare at full strength",
+    "category": "Surface effects",
+    "image": "items/E04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E05",
+    "name": "patina at full strength",
+    "category": "Surface effects",
+    "image": "items/E05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "E06",
+    "name": "wear at full strength",
+    "category": "Surface effects",
+    "image": "items/E06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "T01",
+    "name": "Pirata One, Georgia, serif",
+    "category": "Typography",
+    "image": "items/T01.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T02",
+    "name": "Georgia, serif",
+    "category": "Typography",
+    "image": "items/T02.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T03",
+    "name": "Palatino, serif",
+    "category": "Typography",
+    "image": "items/T03.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T04",
+    "name": "Garamond, serif",
+    "category": "Typography",
+    "image": "items/T04.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T05",
+    "name": "Baskerville, serif",
+    "category": "Typography",
+    "image": "items/T05.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T06",
+    "name": "Courier New, monospace",
+    "category": "Typography",
+    "image": "items/T06.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T07",
+    "name": "Trebuchet MS, sans-serif",
+    "category": "Typography",
+    "image": "items/T07.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T08",
+    "name": "Verdana, sans-serif",
+    "category": "Typography",
+    "image": "items/T08.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T09",
+    "name": "system-ui, sans-serif",
+    "category": "Typography",
+    "image": "items/T09.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "T10",
+    "name": "cursive",
+    "category": "Typography",
+    "image": "items/T10.png",
+    "status": "awaiting approval",
+    "kind": "device font example"
+  },
+  {
+    "id": "L01",
+    "name": "Cloud drift",
+    "category": "Landscape motion",
+    "image": "items/L01.png",
+    "animation": "items/L01.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L02",
+    "name": "Foliage sway",
+    "category": "Landscape motion",
+    "image": "items/L02.png",
+    "animation": "items/L02.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L03",
+    "name": "Lake reflections",
+    "category": "Landscape motion",
+    "image": "items/L03.png",
+    "animation": "items/L03.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L04",
+    "name": "Waterfall flow and fine spray",
+    "category": "Landscape motion",
+    "image": "items/L04.png",
+    "animation": "items/L04.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L05",
+    "name": "Twinkling stars",
+    "category": "Landscape motion",
+    "image": "items/L05.png",
+    "animation": "items/L05.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L06",
+    "name": "Shooting star",
+    "category": "Landscape motion",
+    "image": "items/L06.png",
+    "animation": "items/L06.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "Clip starts just before a meteor; normal recurrence is 47 seconds."
+  },
+  {
+    "id": "L07",
+    "name": "Window lights",
+    "category": "Landscape motion",
+    "image": "items/L07.png",
+    "animation": "items/L07.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "L08",
+    "name": "Fireflies",
+    "category": "Landscape motion",
+    "image": "items/L08.png",
+    "animation": "items/L08.gif",
+    "status": "awaiting approval",
+    "kind": "normal-speed motion study",
+    "note": "8-second clip at normal playback speed; no creatures."
+  },
+  {
+    "id": "K01",
+    "name": "stem / parallel",
+    "category": "Lettering and portraits",
+    "image": "items/K01.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K02",
+    "name": "stem / perpendicular",
+    "category": "Lettering and portraits",
+    "image": "items/K02.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K03",
+    "name": "tip / parallel",
+    "category": "Lettering and portraits",
+    "image": "items/K03.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K04",
+    "name": "tip / perpendicular",
+    "category": "Lettering and portraits",
+    "image": "items/K04.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K05",
+    "name": "No hand lettering",
+    "category": "Lettering and portraits",
+    "image": "items/K05.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K06",
+    "name": "oval portrait / brass frame",
+    "category": "Lettering and portraits",
+    "image": "items/K06.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K07",
+    "name": "circle portrait / brass frame",
+    "category": "Lettering and portraits",
+    "image": "items/K07.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "K08",
+    "name": "oval portrait / none frame",
+    "category": "Lettering and portraits",
+    "image": "items/K08.png",
+    "status": "awaiting approval",
+    "kind": "current draft rendering"
+  },
+  {
+    "id": "C01",
+    "name": "Swallow",
+    "category": "Characters and props",
+    "image": "items/C01.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      0,
+      0,
+      680,
+      620
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C02",
+    "name": "Barn owl",
+    "category": "Characters and props",
+    "image": "items/C02.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      690,
+      0,
+      564,
+      620
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C03",
+    "name": "Witch on broom",
+    "category": "Characters and props",
+    "image": "items/C03.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      0,
+      625,
+      645,
+      629
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C04",
+    "name": "Wizard on broom",
+    "category": "Characters and props",
+    "image": "items/C04.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      648,
+      625,
+      606,
+      629
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C05",
+    "name": "Dragon",
+    "category": "Characters and props",
+    "image": "items/C05.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      0,
+      0,
+      700,
+      610
+    ],
+    "sourceClip": "M0 0H650V310L680 355 693 385 685 420 633 442 625 610H0Z"
+  },
+  {
+    "id": "C06",
+    "name": "Phoenix",
+    "category": "Characters and props",
+    "image": "items/C06.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      650,
+      0,
+      604,
+      625
+    ],
+    "sourceClip": "M650 0H1254V625H650V465L700 435V350H670Z"
+  },
+  {
+    "id": "C07",
+    "name": "Fairy",
+    "category": "Characters and props",
+    "image": "items/C07.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      0,
+      625,
+      627,
+      629
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C08",
+    "name": "Lake serpent",
+    "category": "Characters and props",
+    "image": "items/C08.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      630,
+      625,
+      624,
+      629
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C09",
+    "name": "Mermaid",
+    "category": "Characters and props",
+    "image": "items/C09.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/lake-shore.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      590
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C10",
+    "name": "Merman",
+    "category": "Characters and props",
+    "image": "items/C10.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/lake-shore.png",
+    "sourceRect": [
+      630,
+      0,
+      624,
+      590
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C11",
+    "name": "Unicorn",
+    "category": "Characters and props",
+    "image": "items/C11.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/lake-shore.png",
+    "sourceRect": [
+      0,
+      590,
+      700,
+      664
+    ],
+    "sourceClip": "M0 590H700V760L638 780V1254H0Z"
+  },
+  {
+    "id": "C12",
+    "name": "Sailing boat",
+    "category": "Characters and props",
+    "image": "items/C12.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/lake-shore.png",
+    "sourceRect": [
+      645,
+      580,
+      609,
+      674
+    ],
+    "sourceClip": "M730 580H1254V1254H645V840L730 740Z"
+  },
+  {
+    "id": "C13",
+    "name": "Floating lantern",
+    "category": "Characters and props",
+    "image": "items/C13.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/enchanted-props.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C14",
+    "name": "Stone cottage",
+    "category": "Characters and props",
+    "image": "items/C14.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/enchanted-props.png",
+    "sourceRect": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C15",
+    "name": "Woodland mushrooms",
+    "category": "Characters and props",
+    "image": "items/C15.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/enchanted-props.png",
+    "sourceRect": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "C16",
+    "name": "Quartz crystals",
+    "category": "Characters and props",
+    "image": "items/C16.png",
+    "status": "awaiting approval",
+    "kind": "proposed painted illustration",
+    "source": "art/enchanted-props.png",
+    "sourceRect": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "sourceClip": null
+  },
+  {
+    "id": "X01",
+    "name": "Painted inhabitants in the day castle",
+    "category": "Scene concepts",
+    "image": "items/X01.png",
+    "status": "awaiting approval",
+    "kind": "concept composite; new illustration mapping is not final animation"
+  },
+  {
+    "id": "X02",
+    "name": "Painted inhabitants in the night castle",
+    "category": "Scene concepts",
+    "image": "items/X02.png",
+    "status": "awaiting approval",
+    "kind": "concept composite; new illustration mapping is not final animation"
+  },
+  {
+    "id": "U02",
+    "name": "Fullscreen layout",
+    "category": "Editor and fullscreen",
+    "image": "items/U02.png",
+    "status": "awaiting approval",
+    "kind": "draft fullscreen layout; moving scenery retained"
+  },
+  {
+    "id": "U01",
+    "name": "One Home Assistant preview; unobstructed settings",
+    "category": "Editor and fullscreen",
+    "image": "items/U01.png",
+    "status": "awaiting approval",
+    "kind": "actual isolated Home Assistant dialog; layout example"
+  }
+]

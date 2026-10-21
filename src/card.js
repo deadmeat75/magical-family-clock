@@ -1,6 +1,11 @@
 import { ensureFonts } from "./fonts.js";
 import { panelsEnabled, panelMarkup, fitPanelLabels } from "./panels.js";
 import { worldCSS, worldMarkup } from "./world.js";
+import {
+  startWorldPainter,
+  captureWorldAnimations,
+  restoreWorldAnimations,
+} from "./world-painter.js";
 import { moonReading } from "./world-config.js";
 import { fitEngraving, letteringRotation } from "./engraving.js";
 import {
@@ -40,7 +45,7 @@ function svg(tag, attrs = {}, text) {
   if (text !== undefined) e.textContent = text;
   return e;
 }
-const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:500;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.gears-off .gear,.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}.expanded .frame{width:95vw;max-width:95vh;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
+const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:500;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.gears-off .gear,.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}ha-card:fullscreen{width:100vw;height:100vh;border-radius:0;background:#101d23;display:grid;place-items:center}ha-card:fullscreen .frame{width:95vw;max-width:95vh!important;width:min(95vw,95vh)}.expanded .frame{width:95vw;max-width:95vh!important;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
 export class MagicalFamilyClock extends HTMLElement {
   constructor() {
     super();
@@ -50,6 +55,7 @@ export class MagicalFamilyClock extends HTMLElement {
     this._solarHistory = [];
     this._sceneToken = 0;
     this._visible = true;
+    this._fullscreenChanged = () => this._syncVisibility();
     this._templateIndex = null;
   }
   static getConfigElement() {
@@ -98,14 +104,12 @@ export class MagicalFamilyClock extends HTMLElement {
     }
     if (window.IntersectionObserver) {
       this._observer = new IntersectionObserver((entries) => {
-        this._visible = entries[0].isIntersecting;
-        if (this._visible) this._update();
-        this.shadowRoot
-          .querySelector("ha-card")
-          .classList.toggle("paused", !entries[0].isIntersecting);
+        this._intersecting = entries[0].isIntersecting;
+        this._syncVisibility();
       });
-      this._observer.observe(this);
+      this._observer.observe(this.shadowRoot.querySelector("ha-card"));
     }
+    document.addEventListener("fullscreenchange", this._fullscreenChanged);
     clearInterval(this._timer);
     this._timer = window.setInterval(() => {
       if (!this._visible) return;
@@ -138,6 +142,8 @@ export class MagicalFamilyClock extends HTMLElement {
       });
   }
   disconnectedCallback() {
+    document.removeEventListener("fullscreenchange", this._fullscreenChanged);
+    if (this._worldPainter) this._worldElapsed = this._worldPainter.stop();
     this._needsReconnectRender = true;
     this._imageToken = (this._imageToken || 0) + 1;
     this._faceToken = (this._faceToken || 0) + 1;
@@ -153,6 +159,10 @@ export class MagicalFamilyClock extends HTMLElement {
     }
   }
   _render() {
+    this._worldAnimationState = captureWorldAnimations(
+      this.shadowRoot.querySelector(".scene-animation"),
+    );
+    if (this._worldPainter) this._worldElapsed = this._worldPainter.stop();
     const c = this._config,
       p = { ...palettes[c.theme], ...c.colors };
     cancelAnimationFrame(this._labelFrame);
@@ -286,6 +296,7 @@ export class MagicalFamilyClock extends HTMLElement {
       }
       if (card.classList.contains("expanded")) {
         card.classList.remove("expanded");
+        this._syncVisibility();
         return;
       }
       if (card.requestFullscreen) {
@@ -297,11 +308,30 @@ export class MagicalFamilyClock extends HTMLElement {
         }
       }
       card.classList.add("expanded");
+      this._syncVisibility();
     };
     card.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") card.classList.remove("expanded");
+      if (e.key === "Escape") {
+        card.classList.remove("expanded");
+        this._syncVisibility();
+      }
     });
+    if (this._observer) {
+      this._observer.disconnect();
+      this._observer.observe(card);
+    }
     this._update();
+  }
+  _syncVisibility() {
+    const card = this.shadowRoot.querySelector("ha-card");
+    if (!card) return;
+    const expanded =
+      Boolean(this.shadowRoot.fullscreenElement) ||
+      card.classList.contains("expanded");
+    const wasVisible = this._visible;
+    this._visible = expanded || this._intersecting !== false;
+    card.classList.toggle("paused", !this._visible);
+    if (this._visible && !wasVisible) this._update();
   }
   _makeHand(p) {
     const m = p.member,
@@ -787,7 +817,11 @@ export class MagicalFamilyClock extends HTMLElement {
     if (key === this._worldKey) return;
     this._worldKey = key;
     const target = this.shadowRoot.querySelector(".scene-animation");
-    if (target)
+    if (target) {
+      const snapshot = target.firstChild
+        ? captureWorldAnimations(target)
+        : this._worldAnimationState;
+      if (this._worldPainter) this._worldElapsed = this._worldPainter.stop();
       target.innerHTML = worldMarkup(
         c,
         scene,
@@ -796,10 +830,18 @@ export class MagicalFamilyClock extends HTMLElement {
         Boolean(source),
         reading,
       );
-    if (this._worldPreviewId)
-      requestAnimationFrame(() => {
-        if (this.isConnected) this.previewWorldEncounter(this._worldPreviewId);
+      this._worldPainter = startWorldPainter(target, c, scene, {
+        time: this._worldElapsed || 0,
+        paused: () =>
+          this._reduced() ||
+          !c.scene_motion ||
+          !this._visible ||
+          document.hidden,
       });
+      requestAnimationFrame(() => {
+        if (this.isConnected) restoreWorldAnimations(target, snapshot);
+      });
+    }
   }
   previewWorldEncounter(id) {
     if (this._reduced() || !this._config.scene_motion) return false;
@@ -807,7 +849,6 @@ export class MagicalFamilyClock extends HTMLElement {
       (e) => e.dataset.worldId === id,
     );
     if (!node) return false;
-    this._worldPreviewId = id;
     const target = node.querySelector(".world-encounter"),
       animations = target.getAnimations(),
       svgRoot = this.shadowRoot.querySelector("svg"),
