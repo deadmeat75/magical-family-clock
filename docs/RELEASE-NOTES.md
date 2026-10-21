@@ -9,7 +9,7 @@ Initial public release candidate of a customizable Home Assistant dashboard card
 
 The new card type is `custom:magical-family-clock-card`. Existing `magical-family-clock` installations remain separate.
 
-Home Assistant 2026.10.2 was exercised in an isolated test container. Real dashboard saving/reload, state-driven movement and native selector registration passed. Chromium is the supported tested browser target for this candidate; WebKit and older iPad testing are outside release acceptance and compatibility is unverified.
+Home Assistant 2026.10.2 was exercised in an isolated test container. Real dashboard saving/reload, state-driven movement and native selector loading and actual entity selection passed. Chromium is the supported tested browser target for this candidate; WebKit and older iPad testing are outside release acceptance and compatibility is unverified.
 
 HACS 2.0.5 was installed into the isolated test instance and its setup form loaded. End-to-end authenticated GitHub custom-repository installation/update is still pending. This candidate is not approved for the public HACS default store. In HACS, add this public repository as a Dashboard custom repository and choose the candidate/default branch as available.
 

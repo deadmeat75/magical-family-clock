@@ -13,12 +13,12 @@ The original repository had only its title README and initial commit. Home Assis
 - npm audit found zero reported vulnerabilities after updating Vite to 6.4.4. This is a dependency audit result, not an application security certification.
 - HACS root-bundle and filename conventions were checked against the official `hacs/documentation` repository at commit `4f06a5bd11088a21a453fdcb3eda1603353e6c8a`. The online HACS validator has not run here.
 
-Final local run: **25 engine/packaging tests passed; 17 Chromium browser tests passed**, with no skips in those runs. Production build and clean-lockfile installation succeeded; repeat builds produced the same bundle. One attempted WebKit check failed at browser launch because its executable was unavailable, before any card assertions could run. CI workflows are provided but have not executed remotely.
+Final local run: **25 engine/packaging tests passed; 17 Chromium browser tests passed**, with no skips in those runs. Production build and clean-lockfile installation succeeded; repeat builds produced the same bundle. One attempted WebKit check failed at browser launch because its executable was unavailable, before any card assertions could run. The Test and package GitHub Actions workflow also completed successfully: https://github.com/deadmeat75/magical-family-clock/actions/runs/39540729274 . See HA-ACCEPTANCE.json for the separate real Home Assistant results.
 
 ## External blockers
 
 - Playwright browser downloads returned HTTP 403 `Domain forbidden` from `cdn.playwright.dev`. Network additions were saved in the cloud environment draft, but saving a draft does not apply the running network policy. Installed system Chromium is usable; downloaded WebKit is not currently available.
-- A real isolated Home Assistant 2026.10.2 instance verified dashboard save/reload, live state changes and native selector registration with zero frontend exceptions. HACS 2.0.5 was installed and its setup form loaded, but authenticated GitHub repository install/update still needs GitHub authorization. The user’s own Home Assistant instance remains untouched.
+- A real isolated Home Assistant 2026.10.2 instance verified dashboard save/reload, live state changes and native selector loading and actual entity selection changes with zero frontend exceptions. HACS 2.0.5 was installed and its setup form loaded, but authenticated GitHub repository install/update still needs GitHub authorization. The user’s own Home Assistant instance remains untouched.
 - Git read and dry-run push work through platform authentication. Direct GitHub API requests currently return a proxy CONNECT denial. The required api.github.com domain was saved in the environment draft; saving does not apply runtime policy. GitHub Actions provides a separate workflow-token route for release publication. No credential values were printed or committed.
 
 ## Acceptance checks still required
