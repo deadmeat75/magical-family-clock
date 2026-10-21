@@ -25,7 +25,7 @@ export function sceneSource(scene) {
 export function preloadArtwork(scene) {
   return preloadImage(sceneSource(scene));
 }
-export function atlasMarkup(scene) {
+export function imageGrade(scene) {
   const night = scene.period === "night";
   const grades = {
     spring: "saturate(1.05)",
@@ -35,7 +35,12 @@ export function atlasMarkup(scene) {
   };
   const grade =
     (grades[scene.season] || "") +
-    (night ? " brightness(.3) hue-rotate(8deg)" : "");
+    (night ? " brightness(.43) saturate(.8) hue-rotate(8deg)" : "");
+  return grade;
+}
+export function atlasMarkup(scene) {
+  const night = scene.period === "night",
+    grade = imageGrade(scene);
   const tint =
     scene.period === "dawn"
       ? "#ecac9b"
@@ -44,11 +49,10 @@ export function atlasMarkup(scene) {
         : night
           ? "#0e224b"
           : null;
-  return `<g class="hd-scene" data-source-resolution="1254" data-scene-key="${scene.key}"><image href="${sceneSource(scene)}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice" style="filter:${grade}"/>${tint ? `<rect x="108" y="90" width="384" height="384" fill="${tint}" opacity="${night ? 0.2 : 0.2}"/>` : ""}${night ? '<g fill="#e9f2ff"><circle cx="380" cy="132" r="12"/><circle cx="385" cy="128" r="11" fill="#101f3a"/><circle cx="216" cy="139" r="1"/><circle cx="352" cy="177" r="1.2"/><circle cx="265" cy="116" r="1"/></g>' : ""}</g>`;
+  return `<g class="hd-scene" data-source-resolution="1254" data-scene-key="${scene.key}"><image href="${sceneSource(scene)}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice" style="filter:${grade}"/>${tint ? `<rect x="108" y="90" width="384" height="384" fill="${tint}" opacity=".16"/>` : ""}</g>`;
 }
-export function castleFrame() {
-  let out =
-    '<defs><mask id="castle-frame-mask"><rect width="600" height="600" fill="white"/><circle cx="300" cy="282" r="190" fill="black"/></mask></defs><g class="scalable-castle-frame" mask="url(#castle-frame-mask)"><circle cx="300" cy="300" r="285" fill="#102b34"/>';
+export function castleFrame(openingRadius = 180) {
+  let out = `<defs><mask id="castle-frame-mask"><rect width="600" height="600" fill="white"/><circle cx="300" cy="282" r="${openingRadius}" fill="black"/></mask></defs><g class="scalable-castle-frame" mask="url(#castle-frame-mask)"><circle cx="300" cy="300" r="285" fill="#102b34"/>`;
   const hues = [
     "#175877",
     "#244c66",
@@ -68,15 +72,20 @@ export function castleFrame() {
     const a = ((-105 + i * 30) * Math.PI) / 180,
       b = a + Math.PI / 6;
     const point = (r, t) => `${300 + Math.cos(t) * r} ${300 + Math.sin(t) * r}`;
-    out += `<path d="M${point(278, a)} A278 278 0 0 1 ${point(278, b)}L${point(197, b)}A197 197 0 0 0 ${point(197, a)}Z" fill="url(#gem-${i})" stroke="url(#material-brass)" stroke-width="3"/>`;
+    out += `<path d="M${point(278, a)} A278 278 0 0 1 ${point(278, b)}L${point(openingRadius + 7, b)}A${openingRadius + 7} ${openingRadius + 7} 0 0 0 ${point(openingRadius + 7, a)}Z" fill="url(#gem-${i})" stroke="url(#material-brass)" stroke-width="3"/>`;
   }
   // Clear the scene opening; the parent places this frame over the independently rendered scenery.
-  out += '<circle cx="300" cy="282" r="190" fill="#000" style="display:none"/>';
-  out +=
-    '<circle cx="300" cy="300" r="282" fill="none" stroke="url(#material-brass)" stroke-width="12"/><circle cx="300" cy="282" r="194" fill="none" stroke="url(#material-brass)" stroke-width="7"/><circle cx="300" cy="282" r="189" fill="none" stroke="#e7c878" stroke-width="1"/>';
+  out += `<circle cx="300" cy="282" r="${openingRadius}" fill="#000" style="display:none"/>`;
+  out += `<circle cx="300" cy="300" r="282" fill="none" stroke="url(#material-brass)" stroke-width="12"/><circle cx="300" cy="282" r="${openingRadius + 4}" fill="none" stroke="url(#material-brass)" stroke-width="7"/><circle cx="300" cy="282" r="${openingRadius - 1}" fill="none" stroke="#e7c878" stroke-width="1"/>`;
   for (let i = 0; i < 12; i++) {
     const a = (i * Math.PI) / 6;
     out += `<circle cx="${300 + Math.cos(a) * 282}" cy="${300 + Math.sin(a) * 282}" r="4" fill="url(#material-brass)" stroke="#3c281a"/>`;
+  }
+  out +=
+    '<circle cx="300" cy="300" r="286" fill="none" stroke="#fff2b4" stroke-width=".7" opacity=".8"/><circle cx="300" cy="300" r="278.3" fill="none" stroke="#493116" stroke-width=".8"/>';
+  for (let i = 0; i < 120; i++) {
+    const a = (i * Math.PI) / 60;
+    out += `<circle cx="${300 + Math.cos(a) * 282}" cy="${300 + Math.sin(a) * 282}" r=".85" fill="${i % 2 ? "#6c4a1e" : "#ffe9a6"}" opacity=".8"/>`;
   }
   return out + "</g>";
 }

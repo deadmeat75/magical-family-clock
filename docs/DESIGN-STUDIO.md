@@ -1,6 +1,8 @@
-# Magical Family Clock 0.3.0: Design Studio guide
+# Magical Family Clock 0.4.0: Design Studio guide
 
-This guide covers **version 0.3.0 — Design Studio**. Install or update through **HACS → Magical Family Clock → Download/update → 0.3.0**, then reload the Home Assistant frontend. For first installation, add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** custom repository. See the [installation guide](USER-GUIDE.md).
+This guide covers **version 0.4.0 — Living World**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.0**, then reload the Home Assistant frontend. For first installation, add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** custom repository. See the [installation guide](USER-GUIDE.md).
+
+The [Living World guide](WORLD-GUIDE.md) adds fitted destination panels, textured backgrounds, large graphics, animated landscape layers, selectable inhabitants and a live sensor-driven moon. These complement the controls below.
 
 ![Animated castle design with editable labels and information bezel](design-studio-castle.png)
 
@@ -89,7 +91,7 @@ Each location under **Locations** has separate display and matching controls:
 
 **Angle in degrees**, **Matching states**, aliases and zone matching still decide where hands point. A sensor-driven display name does **not** silently rewrite tracking rules. For example, a fixed destination “Room” can keep angle 45 while its label changes between Kitchen and Bedroom from `sensor.alex_room`.
 
-Angle conventions: -90 top, 0 right, 90 bottom, 180 left. Label radius starts at 213 SVG units. Dragging the small location dial changes the destination angle; explicit x/y label coordinates remain independent.
+Angle conventions: -90 top, 0 right, 90 bottom, 180 left. Plain-label radius starts at 213 SVG units. On framed panels, automatic fitting follows the actual sector instead; see [panel placement](WORLD-GUIDE.md#design-the-location-panels). Dragging the small location dial changes the destination angle; explicit x/y label coordinates remain independent.
 
 The scalable castle frame supports editable labels and arbitrary locations; editing a label no longer forces you away from the castle. **Automatically add detected locations** is a separate feature which may redistribute destination angles. Leave it off when positions must stay fixed.
 
@@ -164,8 +166,8 @@ Full clock/person libraries include household sensor IDs, pictures and rules. Th
 
 The schema remains compatible with existing version-1 configurations. The separate original clock files/custom element are unchanged. Current per-image/card/library size limits still apply; see the main guide. The bundle is self-contained for HACS distribution. Existing version-1 configurations remain supported; saving a clock/person library entry is separate from saving the dashboard.
 
-## Verification of version 0.3.0
+## Verification of version 0.4.0
 
-The complete build passed **44 unit/packaging tests and 37 Chromium browser tests**. Browser checks verify fitted lettering across twelve hand designs, three widths, both placements/directions and extra rotations; spoon bowl attachment; rendered gear contact clearance, tooth-count speed ratios and synchronized phase; actual gear/cloud motion, reduced-motion pause, face switching by click/swipe with retained data, remembered selection, blank lettering, live sensor labels, bezel output, inline guidance, a slow image losing to a newer preview request, and image retry recovery. The exact supplied legacy card was included in coexistence testing.
+Version 0.4.0 passed **51 unit/packaging tests and 44 Chromium browser tests**, including the existing Design Studio checks below and new [Living World checks](VALIDATION.md). Browser checks verify fitted lettering across twelve hand designs, three widths, both placements/directions and extra rotations; spoon bowl attachment; rendered gear contact clearance, tooth-count speed ratios and synchronized phase; actual gear/cloud motion, reduced-motion pause, face switching by click/swipe with retained data, remembered selection, blank lettering, live sensor labels, bezel output, inline guidance, a slow image losing to a newer preview request, and image retry recovery. The exact supplied legacy card was included in coexistence testing.
 
 In the isolated Home Assistant 2026.10.2 instance, native entity selection, saved people, independent profile additions, blank lettering, title controls, bezel, template changes and dashboard reload passed with **zero frontend exceptions**. Original user reference files retain their recorded checksums. See [acceptance evidence](DESIGN-STUDIO-ACCEPTANCE.json). The user’s live installation was untouched. Authenticated installation/update through a user-connected HACS instance remains unverified; see [publication status](PUBLISHING-STATUS.md) for release and asset verification.

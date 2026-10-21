@@ -66,7 +66,8 @@ export function weatherMarkup(kind, intensity = 1, night = false) {
   if (kind === "lightning")
     out +=
       '<path class="flash" d="M365 90L310 230H345L290 350L320 205H290Z" fill="#f9f2d6"/>';
-  if (kind === "clear")
-    out = '<circle cx="405" cy="150" r="26" fill="#fff1aa" opacity=".25"/>';
+  if (kind === "clear" && !night)
+    out =
+      '<defs><radialGradient id="weather-sun-glow"><stop stop-color="#fff1aa" stop-opacity=".12"/><stop offset="1" stop-color="#fff1aa" stop-opacity="0"/></radialGradient></defs><circle cx="405" cy="150" r="70" fill="url(#weather-sun-glow)"/>';
   return out;
 }

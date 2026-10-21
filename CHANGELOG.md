@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 — Living World
+
+- Fit destination names and large graphics inside individual raised-center panels, with textured glass, metal, parchment and wood, per-panel images/colors and embedded ornate Pirata One lettering.
+- Add one-action repair of old free-position labels and adjustable castle-opening size while preserving destination matching rules.
+- Animate actual cloud, foliage, lake-reflection and waterfall regions, with flowing streams/spray, warm window lights and evening fireflies.
+- Add seventeen selectable creature/prop types, independent movement, scale, color, layer order and time/season/weather filters; surface lake inhabitants beneath a waterline and mask flying visitors behind towers.
+- Add a draggable, keyboard-accessible placement map and encounter previews that remain useful while editing.
+- Draw the actual lunar phase from an existing Home Assistant sensor or local calculation, with explicit formats/fallback and live source feedback.
+- Add twinkling stars and occasional shooting stars; keep a visible still world when animation is paused or reduced motion is requested.
+- Add detail levels, inline instructions, a detailed Living World guide, production screenshots/video and isolated Home Assistant acceptance evidence.
+
 ## 0.3.0 — Design Studio
 
 - Save reusable people profiles in Home Assistant account storage, with independent additions to clocks and destination remapping.

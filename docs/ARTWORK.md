@@ -1,5 +1,15 @@
 # Clock artwork and animation
 
+## Version 0.4.0: Living World layers
+
+The castle now uses feathered, independently moving regions of the same full-size illustration for clouds, foliage, lake reflections and waterfalls. Shared SVG image references avoid embedding a copy of the raster source for each moving patch. Stream/spray details and warm-window extraction add motion while preserving the castle's composition. Night uses coordinated grading of the same source, with illuminated windows, a separate phase-correct moon and tower-masked sky; it is not a separately painted night base plate.
+
+Sixteen original shaded SVG inhabitant/prop types and a custom-image choice provide articulated wings, cloth, tails, glow and smoke where appropriate. Travel direction follows facing, surfacing figures are clipped at a waterline, and tower masks provide a background layer. These are illustrated animation layers rather than simulated 3D creatures. Uploaded custom props move as complete images. Clouds can pass over moon/star layers. All decorative motion uses pausable browser animations and honors reduced motion and visibility.
+
+Location sectors use editable SVG paths with procedural cracked-glass, hammered-metal, parchment or wood patterns, directional shading, brass edges and embossed symbols. Actual rendered names and graphics are fitted to their sector paths. Explicit free-position labels remain an intentional override. Pirata One, an unmodified bundled font by Rodrigo Fuenzalida and Nicolas Massi, is embedded under the [SIL Open Font License](PIRATA-ONE-OFL.txt), also retained in the compiled bundle. Other font choices use the viewing device.
+
+See the [Living World guide](WORLD-GUIDE.md) and [animation recording](living-world-preview.mp4). The recording uses the production bundle with fictional people and simulated sensors.
+
 ## Version 0.3.0: high-resolution animated castle
 
 The current renderer embeds `src/assets/castle-day-hd.png` and `castle-winter-hd.png`, each a full **1254×1254** original generated scene based on the earlier castle/lake composition. The older 4×4 sheet provided only about 314 pixels per scene. The new renderer uses coordinated time/season grading and separate moving clouds, water, window lights, seasonal detail and evening fireflies. Winter uses its own snowy source; the other seasons retain the same castle geometry with grading and animated detail.
@@ -22,7 +32,7 @@ Hands combine vector silhouettes, material gradients, texture, bevel, wear and r
 
 ## Earlier reference derivatives
 
-`castle-frame.png` is the older generated transparent derivative of the user-supplied face reference, with six baked-in labels/icons. It is not a lossless or pixel-identical extraction. `castle-scenes.png` is the earlier generated 4×4 season/time atlas. These source files remain for provenance but are not imported by the 0.3.0 renderer. Original user attachments were not edited and remain outside the public checkout.
+`castle-frame.png` is the older generated transparent derivative of the user-supplied face reference, with six baked-in labels/icons. It is not a lossless or pixel-identical extraction. `castle-scenes.png` is the earlier generated 4×4 season/time atlas. These source files remain for provenance but are not imported by the current renderer. Original user attachments were not edited and remain outside the public checkout.
 
 ## Packaging and licenses
 

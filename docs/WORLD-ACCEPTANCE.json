@@ -1,0 +1,46 @@
+{
+  "homeAssistantVersion": "2026.10.2",
+  "nativeMoonSelection": true,
+  "liveMoonSensorUpdate": true,
+  "savedClockLibrary": true,
+  "dashboardReload": true,
+  "persisted": {
+    "objects": 6,
+    "moon": "sensor.clock_world_moon",
+    "panelTexture": "hammered-metal",
+    "panels": 4
+  },
+  "frontendErrors": [],
+  "status": "release candidate; publication verification pending",
+  "releaseVersion": "0.4.0",
+  "unitAndPackagingChecks": 51,
+  "chromiumBrowserChecks": 44,
+  "compiledBundleSHA256": "d72e97148b1b6c1a153f792358b45a56dc9844bcc088275c4af2ccb3995dd8cc",
+  "originalReferencesUnchanged": true,
+  "renderedBrowserChecks": {
+    "panelTextAndGraphicsInsideActualPathsAtWidths": [
+      320,
+      760
+    ],
+    "independentRenderedPixelMotion": [
+      "clouds",
+      "trees",
+      "lake",
+      "waterfalls"
+    ],
+    "twinklingStarsAndVisibleShootingStar": true,
+    "liveMoonWithoutBackgroundReload": true,
+    "creatureTimeAndWeatherFilters": true,
+    "facingMatchesFlightDirection": true,
+    "surfacingEncounterActuallyVisible": true,
+    "keyboardAndPointerPlacement": true,
+    "pausedWorldRemainsVisible": true
+  },
+  "scope": {
+    "isolatedInstanceOnly": true,
+    "authenticatedHacsInstallOrUpdateVerified": false,
+    "defaultStoreApprovalClaimed": false,
+    "webKitOrPhysicalOlderIpadTested": false,
+    "productionVideo": "living-world-preview.mp4"
+  }
+}

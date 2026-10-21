@@ -1,5 +1,9 @@
 # Publication status
 
+**0.4.0 — Living World is prepared for publication.** Local acceptance passed 51 unit/packaging and 44 Chromium browser checks; isolated Home Assistant verified live moon updates and saved worlds. The production screenshots/video and [detailed guide](WORLD-GUIDE.md) are included. Remote workflow and release-download verification will be recorded here after publication.
+
+## Previous stable release
+
 Published stable release: [Magical Family Clock v0.3.0 — Design Studio](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0). It is the latest release, with draft and prerelease flags both false, so enabling prereleases is unnecessary.
 
 The self-contained `magical-family-clock.js` asset was independently downloaded and matches the tested bundle byte for byte (**16,875,052 bytes**).

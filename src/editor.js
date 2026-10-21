@@ -1,3 +1,9 @@
+import {
+  panelEditor,
+  slotEditor,
+  worldEditor,
+  updateWorldMoonSummary,
+} from "./editor-world.js";
 import { palettes } from "./themes.js";
 import { FONTS, HAND_STYLES, MATERIALS } from "./design.js";
 import { settingHelp } from "./help.js";
@@ -29,6 +35,7 @@ const sections = [
   "People",
   "Locations",
   "Appearance",
+  "Living world",
   "Behavior",
   "Presets",
   "Saved clocks",
@@ -88,8 +95,10 @@ export class ClockEditor extends HTMLElement {
       .forEach((e) => (e.hass = hass));
     const preview = this.shadowRoot.querySelector("magical-family-clock-card");
     if (preview) preview.hass = hass;
+    updateWorldMoonSummary.call(this);
   }
   emit() {
+    updateWorldMoonSummary.call(this);
     this._emittedKey = JSON.stringify(this.config);
     this.updatePreview();
     this.dispatchEvent(
@@ -227,7 +236,9 @@ export class ClockEditor extends HTMLElement {
     const open = new Set(
       [...this.shadowRoot.querySelectorAll("details[open]")].map(
         (e) =>
-          (e.closest("[data-person]")?.dataset.person || "") +
+          (e.closest("[data-person],[data-world-id]")?.dataset.person ||
+            e.closest("[data-world-id]")?.dataset.worldId ||
+            "") +
           "|" +
           e.querySelector("summary")?.textContent,
       ),
@@ -606,6 +617,7 @@ export class ClockEditor extends HTMLElement {
             c.locations = all;
           }, true),
         );
+      panelEditor.call(this, root);
       this.dial(root);
       this.button(root, "Space locations evenly", () =>
         this.change(
@@ -619,6 +631,7 @@ export class ClockEditor extends HTMLElement {
       c.locations.forEach((l, i) => {
         const box = this.box(root, l.name);
         this.field(box, "Location name", l, "name");
+        slotEditor.call(this, box, l);
         this.field(box, "Location label source", l, "label_mode", "select", [
           ["fixed", "Fixed name"],
           ["sensor", "Sensor state or attribute"],
@@ -703,6 +716,7 @@ export class ClockEditor extends HTMLElement {
         "checkbox",
       );
     }
+    if (this.tab === "Living world") worldEditor.call(this, root);
     if (this.tab === "Appearance") {
       const applyCastle = () => {
         this.config = normalize(
@@ -1021,7 +1035,9 @@ export class ClockEditor extends HTMLElement {
     }
     [...this.shadowRoot.querySelectorAll("details")].forEach((e) => {
       const key =
-        (e.closest("[data-person]")?.dataset.person || "") +
+        (e.closest("[data-person],[data-world-id]")?.dataset.person ||
+          e.closest("[data-world-id]")?.dataset.worldId ||
+          "") +
         "|" +
         e.querySelector("summary")?.textContent;
       if (open.has(key)) e.open = true;

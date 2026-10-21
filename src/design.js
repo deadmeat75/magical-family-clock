@@ -1,4 +1,5 @@
 export const FONTS = [
+  "Pirata One, Georgia, serif",
   "Georgia, serif",
   "Palatino, serif",
   "Garamond, serif",

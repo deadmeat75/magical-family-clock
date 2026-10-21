@@ -1,4 +1,6 @@
 import { normalizeDesign, finite, color } from "./design.js";
+import { normalizePanels, normalizeSlot } from "./panels.js";
+import { normalizeWorld } from "./world-config.js";
 import { matchesRule, runtimeConfig } from "./data.js";
 export const THEMES = [
   "enchanted-spoons",
@@ -140,6 +142,11 @@ export function normalize(input) {
     return Object.assign({}, l, {
       id: String(l.id || uid()),
       name: String(l.name ?? "Location"),
+      slot: {
+        ...normalizeSlot(l.slot),
+        image: safeImage(l.slot?.image),
+        background_image: safeImage(l.slot?.background_image),
+      },
       label_mode: l.label_mode === "sensor" ? "sensor" : "fixed",
       radius: finite(l.radius, 213, 90, 282),
       x: finite(l.x, null, 0, 100),
@@ -262,7 +269,11 @@ export function normalize(input) {
   c.face_image = safeImage(c.face_image);
   c.pivot_x = num(c.pivot_x, 50, 10, 90);
   c.pivot_y = num(c.pivot_y, 50, 10, 90);
-  return normalizeDesign(c);
+  normalizeDesign(c);
+  normalizePanels(c);
+  normalizeWorld(c);
+  c.world.objects.forEach((o) => (o.image = safeImage(o.image)));
+  return c;
 }
 export function legacyLayout(variant = "ha") {
   const c = defaults();
@@ -399,6 +410,10 @@ export function exportConfig(c, personal = false) {
     out.background_images = {};
     out.weather_entity = "";
     out.sun_entity = "sun.sun";
+    out.world.moon.entity = "";
+    out.world.moon.attribute = "";
+    out.world.moon.source = "calculated";
+    out.world.objects = [];
     out.bezel.items = [];
     out.instance_id = "";
     out.carousel.templates = out.carousel.templates.map((t) =>
@@ -436,6 +451,7 @@ export function exportConfig(c, personal = false) {
         label_attribute: "",
         label_fallback: "",
         label_mode: "fixed",
+        slot: { ...l.slot, image: "", background_image: "" },
       }),
     );
     out.unknown_location = "";

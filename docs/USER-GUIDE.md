@@ -1,8 +1,8 @@
 # Magical Family Clock: installation and user guide
 
-The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.
+The [Living World guide](WORLD-GUIDE.md) covers fitted location panels, large graphics and textures, the creature-placement map, moving scenery and the sensor-driven moon. The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.
 
-This guide covers **version 0.3.0 — Design Studio**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
+This guide covers **version 0.4.0 — Living World**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
 
 The card shows **where people are**, rather than hours and minutes. Each person has a hand pointing to a location. Several people can share a location, and several independent clocks can use the same Home Assistant entities.
 
@@ -39,6 +39,9 @@ The card shows **where people are**, rather than hours and minutes. Each person 
 29. [Add an information bezel](DESIGN-STUDIO.md#add-an-information-bezel)
 30. [Choose effects and animation](DESIGN-STUDIO.md#select-and-combine-visual-effects)
 31. [Swipe between faces](DESIGN-STUDIO.md#swipe-or-click-between-faces)
+32. [Create a living world](WORLD-GUIDE.md)
+33. [Fit names, graphics and textures into panels](WORLD-GUIDE.md#design-the-location-panels)
+34. [Use a moon-phase sensor](WORLD-GUIDE.md#match-the-moon-to-a-home-assistant-sensor)
 
 ## 1. Before installing
 
@@ -46,7 +49,7 @@ You need Home Assistant, HACS configured with its GitHub connection, and permiss
 
 For a first test, use a separate dashboard or add a separate card. Keep the old clock resource and any existing standalone page in place.
 
-The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0). The automated HACS check passed 6 of 8 checks; the remaining repository-owner tasks are an About description and topics. See [publishing status](PUBLISHING-STATUS.md) for exact settings. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
+The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0). See [current publishing status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification, HACS results and repository-owner metadata tasks. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
 
 If you are only installing the card, repository metadata is the repository owner’s task. Do not change your working Home Assistant configuration to try to fix a GitHub metadata error.
 
@@ -57,7 +60,7 @@ If you are only installing the card, repository metadata is the repository owner
 3. Enter `https://github.com/deadmeat75/magical-family-clock`.
 4. Choose **Dashboard** as the category and add the repository.
 5. Find **Magical Family Clock** and open its download/install dialog.
-6. Select version **0.3.0** (or a newer published version). This release does not require enabling prereleases.
+6. Select version **0.4.0** (or a newer published version). This release does not require enabling prereleases.
 7. Download, then reload the Home Assistant frontend when prompted.
 
 HACS normally manages the JavaScript resource. Routine installation should not require copying a JavaScript file or registering a resource manually. If HACS does not register it, first check the troubleshooting section and your HACS installation status.
@@ -70,7 +73,7 @@ Do not copy the new bundle over `/local/magical-clock/magical-family-clock.js` o
 2. Enter dashboard **Edit** mode and choose **Add card**.
 3. Select **Magical Family Clock (HACS)**. This distinguishes the new card from an older clock entry with a similar name.
 4. Choose **Guided setup** for your own household, or **Try demonstration** to inspect fictional people first.
-5. Work through the editor sections: **General**, **People**, **Locations**, **Appearance**, **Labels & effects**, **Bezel**, **Face cycling**, **Behavior**, **Presets**, **Saved clocks** and **Saved people**.
+5. Work through the editor sections: **General**, **People**, **Locations**, **Appearance**, **Labels & effects**, **Living world**, **Bezel**, **Face cycling**, **Behavior**, **Presets**, **Saved clocks** and **Saved people**.
 6. Use the preview while changing settings.
 7. Finish with Home Assistant’s **Save** action. If dashboard edit mode has a separate **Done** action, finish that too.
 
@@ -210,6 +213,8 @@ The generic vector dial has separate **Background mode**, **Manual background**,
 
 Use the season/time/weather override controls to upload a background for a specific combination. See [weather combinations](#21-combine-weather-seasons-and-time).
 
+For fitted destination panels, moving landscape layers, selectable inhabitants and a live moon phase, follow the [Living World guide](WORLD-GUIDE.md). Existing free-position location labels can be restored to their panels with **Locations → Fit all names and graphics inside panels**.
+
 ## 10. Adjust hands and readability
 
 In **Behavior**, start with a moderate movement duration and leave reduced motion off unless preferred. The operating system’s reduced-motion preference is respected too.
@@ -314,7 +319,7 @@ When reporting a problem, include the card version, Home Assistant/HACS/browser 
 
 ## 17. What has been verified
 
-Version 0.3.0 passed **44 unit/packaging checks and 37 Chromium browser checks**, including fitted/rotated lettering, meshing gear geometry and phase, live preview recovery, saved people, bezel and template switching. See [Design Studio acceptance](DESIGN-STUDIO-ACCEPTANCE.json). Version 0.2.0 account-storage and image-upload persistence checks remain covered by the regression suite; see [previous version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. The published bundle was downloaded and matched against the tested artifact.
+Version 0.4.0 passed **51 unit/packaging checks and 44 Chromium browser checks**, including actual rendered-pixel motion, panel fitting, live moon phases, creature filters/placement and the existing hand, gear, saved-people, bezel and preview coverage. See [Living World acceptance](WORLD-ACCEPTANCE.json) and the previous [Design Studio acceptance](DESIGN-STUDIO-ACCEPTANCE.json). Version 0.2.0 account-storage and image-upload persistence checks remain covered by the regression suite; see [previous version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. Release-download verification is recorded in [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
 HACS 2.0.5 was installed in that disposable instance and its setup form loaded. Authenticated custom-repository installation/update remains unverified. No existing user installation was modified. The latest outstanding repository-owner tasks and workflow results are recorded in [publishing status](PUBLISHING-STATUS.md), with further detail in [validation](VALIDATION.md).
 
@@ -347,7 +352,7 @@ Choose **General → Clock theme → whimsical-workshop** for an original handma
 
 **General → Clock caption (blank to hide)** changes the “Magical Family Clock” wording on each instance, including the castle artwork. This is separate from **Title**. An empty caption leaves no wording. Text uses editable SVG text rather than being baked into the bundled artwork. A caption already baked into a custom uploaded face cannot be removed by this control; choose an image without lettering.
 
-In **Appearance**, select independent fonts and text sizes for names, location labels and captions. Hand names follow the stem and use inset shading rather than floating over the face. The font menu includes serif, monospace, sans-serif and cursive choices. Fonts come from the viewing device; unavailable named fonts use their listed fallback. Custom paper, ink, metal and rim colors apply to the customizable vector dial. **Restore theme colors** removes those overrides. The realistic brass and handmade face illustrations and castle raster artwork retain their material colors.
+In **Appearance**, select independent fonts and text sizes for names, location labels and captions. Hand names follow the stem and use inset shading rather than floating over the face. The font menu includes serif, monospace, sans-serif and cursive choices. Pirata One is embedded; other fonts come from the viewing device and use their listed fallback when unavailable. Custom paper, ink, metal and rim colors apply to the customizable vector dial. **Restore theme colors** removes those overrides. The realistic brass and handmade face illustrations and castle raster artwork retain their material colors.
 
 For each person, expand **Customize hand and portrait**, adjust **Hand width (0.5–2.5)** and choose spoon, classic, curved, pointed, arrow, leaf or sword. Width changes the stem silhouette without stretching portrait images. Length, material and colors remain independently configurable. Use narrower hands for a large household and short nicknames for readability.
 

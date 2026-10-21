@@ -1,8 +1,10 @@
 # Validation and known limits
 
-## Version 0.3.0 — Design Studio
+## Version 0.4.0 — Living World
 
-The release passed **44 unit/packaging checks and 37 Chromium browser checks**, locally and in the tag-triggered GitHub workflows. The downloaded stable-release asset matches the tested bundle byte for byte. See [Design Studio acceptance evidence](DESIGN-STUDIO-ACCEPTANCE.json), the [Design Studio guide](DESIGN-STUDIO.md), and [publication status](PUBLISHING-STATUS.md) for the verified release artifact and remote workflow results. [Version 0.2.0 notes](NEXT-VERSION.md) preserve the previous release's evidence.
+The release candidate passed **51 unit/packaging checks and 44 Chromium browser checks** locally, with the exact supplied legacy card present. The suite includes the existing Design Studio coverage and seven additional unit/seven browser checks for the living world. See [Living World acceptance evidence](WORLD-ACCEPTANCE.json), the [detailed guide](WORLD-GUIDE.md), and [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for remote workflow results and release-download verification. [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json) preserves version 0.3.0's acceptance.
+
+The added checks inspect actual rendered label/graphic bounds inside panel paths at narrow and wide sizes; independently compare rendered PNGs for cloud, foliage, lake and waterfall movement; verify visible star/meteor changes; test all eight moon phases and numeric formats/fallback; exercise live phase updates without reloading the background; and check creature filters, surfacing previews, facing/travel direction and GUI placement by keyboard/pointer. Reduced motion preserves a still world.
 
 ## Local evidence
 
@@ -20,7 +22,9 @@ Screenshots use fictional people and simulated sensor states. No user source att
 
 ## Isolated Home Assistant evidence
 
-A disposable Home Assistant **2026.10.2** instance verified native entity selection, live state movement, independent clocks, uploaded-image persistence, saved-clock account storage, saved people and independent profile additions, completely blank lettering, title positioning, bezel, template switching and dashboard save/reload. These checks observed **zero frontend exceptions**. Results are recorded in [baseline evidence](HA-ACCEPTANCE.json), [0.2.0 evidence](NEXT-ACCEPTANCE.json) and [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json).
+A disposable Home Assistant **2026.10.2** instance verified native entity selection, live state movement, independent clocks, uploaded-image persistence, saved-clock account storage, saved people and independent profile additions, completely blank lettering, title positioning, bezel, template switching and dashboard save/reload. These checks observed **zero frontend exceptions**. Living World acceptance additionally verified native moon entity selection, real state changes from full moon to waning crescent, panel controls, complete-clock library storage and dashboard reload with the new population and sensor settings. It observed zero frontend exceptions; see [Living World evidence](WORLD-ACCEPTANCE.json).
+
+Earlier results are recorded in [baseline evidence](HA-ACCEPTANCE.json), [0.2.0 evidence](NEXT-ACCEPTANCE.json) and [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json).
 
 The user's live Home Assistant installation, original clock resource, dashboards, helpers and automations were not changed. Saved account entries and dashboards mentioned in acceptance evidence belong only to the isolated instance.
 
@@ -28,7 +32,7 @@ The user's live Home Assistant installation, original clock resource, dashboards
 
 The manifest names the root self-contained `magical-family-clock.js`; the tag-triggered release workflow checks package/tag equality, builds/tests and attaches that file. Publication is confirmed separately by inspecting the stable release and comparing its downloaded asset's SHA-256 against the local bundle. See [publication status](PUBLISHING-STATUS.md).
 
-HACS **2.0.5** was installed in the isolated instance and its setup form loaded. Authenticated GitHub-connected custom-repository installation/update remains unverified. Inclusion in the HACS default store is not claimed. The v0.3.0 remote HACS validation passed six of eight checks; missing repository About description and topics were the only failed checks. The integration can push code and read GitHub APIs, but metadata writes return **HTTP 403: Resource not accessible by integration**. Current release validation results are recorded in publication status without suppressing checks.
+HACS **2.0.5** was installed in the isolated instance and its setup form loaded. Authenticated GitHub-connected custom-repository installation/update remains unverified. Inclusion in the HACS default store is not claimed. The previous v0.3.0 remote HACS validation passed six of eight checks; missing repository About description and topics were the only failed checks. The current release result is recorded in publication status. The integration can push code and read GitHub APIs, but metadata writes return **HTTP 403: Resource not accessible by integration**. Current release validation results are recorded in publication status without suppressing checks.
 
 Install/update using HACS as a **Dashboard** custom repository. Do not replace the separate original resource. WebKit and physical older-iPad testing were removed from release acceptance at the user's request; compatibility remains unverified.
 
@@ -41,4 +45,6 @@ Install/update using HACS as a **Dashboard** custom repository. Do not replace t
 - Castle sources are 1254 pixels, with SVG frame/text/hands. This improves detail over the earlier roughly 314-pixel tiles but does not provide unlimited raster resolution. Seasonal and time grading retain the same subject; only winter has a separate snowy source.
 - Sensor labels/readouts use existing state data. Rules use reported units, and dynamic destination discovery may redistribute angles. Display-label changes remain independent of matching rules.
 - Long bezel readings or nearby positions may overlap; shorten them, reduce font size or spread them around the ring.
-- The card offers fullscreen within a dashboard, without installing a dedicated panel. Fonts depend on availability on the viewing device.
+- The card offers fullscreen within a dashboard, without installing a dedicated panel. Pirata One is embedded; other font choices depend on the viewing device.
+- Living worlds have a 32-inhabitant cap. Rich detail and numerous independent animations can be expensive on small devices; Balanced/Light and fewer inhabitants reduce work. Photo-aligned landscape motion targets the bundled castle; custom scenes use general clouds and configurable inhabitants. Decorative SVG motion is not a free-roaming 3D simulation.
+- Moon phase is read from an existing sensor or calculated locally; its decorative position/orientation is not a sky-altitude simulation. Illuminated percentage alone cannot distinguish waxing from waning.

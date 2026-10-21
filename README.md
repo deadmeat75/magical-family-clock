@@ -1,14 +1,20 @@
 # Magical Family Clock
 
-**Version 0.3.0 — Design Studio:** save people once and reuse them across clocks, customize dimensional hands and fitted lettering, animate meshing gears and sharper castle scenes, add an information bezel, move and style text, and swipe between faces. The live editor preview includes clearer guidance and image recovery. See the [detailed Design Studio guide](docs/DESIGN-STUDIO.md).
+**Version 0.4.0 — Living World:** build an animated miniature world inside your clock. Fit large graphics and ornate names into textured destination panels; add dragons, broom riders, lake creatures and props; animate the clouds, trees, water and waterfalls; and follow a Home Assistant moon-phase sensor. Use the placement map and inline instructions to customize it. See the [detailed Living World guide](docs/WORLD-GUIDE.md).
 
-Image uploads, saved clocks, animated weather, sensor rules and optional hand data remain included. Install and update through HACS using this repository as a Dashboard custom repository. Start with the [installation and user guide](docs/USER-GUIDE.md); [0.2.0 notes](docs/NEXT-VERSION.md) describe the previous release.
+Reusable people and clocks, dimensional hands, meshing gears, sensor rules, image uploads, effects, the information bezel and face switching remain included. Install and update through HACS as a Dashboard custom repository. Start with the [installation guide](docs/USER-GUIDE.md) or the [Design Studio guide](docs/DESIGN-STUDIO.md).
+
+[Watch the animation](https://github.com/deadmeat75/magical-family-clock/raw/refs/heads/main/docs/living-world-preview.mp4)
+
+| Castle by day | Castle by night |
+| --- | --- |
+| ![Living world by day](docs/living-world-day.png) | ![Living world by night](docs/living-world-night.png) |
 
 An original Home Assistant dashboard card showing your household’s whereabouts on an enchanted clock. Each card has independent people, locations, and appearance.
 
 **Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
 
-**Validation:** 44 unit/packaging and 37 Chromium browser checks passed; the stable release asset matches the tested bundle byte for byte. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
+**Validation:** 51 unit/packaging and 44 Chromium browser checks passed. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
 | --- | --- | --- |
@@ -26,7 +32,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 ## HACS installation
 
-The [v0.3.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
+The [v0.4.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** repository.
@@ -36,7 +42,7 @@ The [v0.3.0 release](https://github.com/deadmeat75/magical-family-clock/releases
 
 HACS normally registers the resource. No npm, SSH, manual copying, or YAML is needed for ordinary configuration. If the card does not appear, check resource registration in HACS and reload the browser cache. Keep existing legacy resources unchanged. The new card registers `magical-family-clock-card` and `magical-family-clock-card-editor`, with card type `custom:magical-family-clock-card`. Your supplied existing card keeps `magical-family-clock`. Both can load together without replacing either registration or resource.
 
-![Layered castle artwork](docs/layered-castle.png)
+![Living castle with fitted destination panels](docs/living-world-day.png)
 
 ## Visual configuration
 
@@ -49,6 +55,8 @@ HACS normally registers the resource. No npm, SSH, manual copying, or YAML is ne
 **Portraits:** use the visual PNG/JPEG/WebP upload control, or an existing accessible image URL such as `/local/portraits/person.jpg`. Uploads are optimized and embedded in the card configuration. Adjust crop position, zoom, shape, frame and rotation. Initials provide a fallback. Protected `media-source://` links are not resolved. Images are never uploaded to a third party by this card.
 
 **Appearance:** choose **Use layered castle artwork** for a scalable gold/stained-glass frame, full-size castle sources, sixteen season/time combinations and moving scenery. This applies the six reference locations and raised pivot while preserving people and colors. The labels and layout remain editable on the castle. Manual season/time controls preview each combination. Automatic mode uses Home Assistant’s timezone, location and sun events, retaining recent events across timestamp rollover. Dawn/dusk cover ±30 minutes; calculated solar times provide a reload fallback and can differ slightly from Home Assistant’s exact astronomy. Missing solar data has a stable day fallback. Images preload before crossfading, and failed custom images retain the previous scene.
+
+**Living world:** choose inhabitants, drag their placement markers, preview encounters, filter by time/season/weather, configure natural motion and select a moon-phase sensor. **Locations → Location panel design** controls fitted destination names, large graphics, textured backgrounds and the castle opening. See the [step-by-step guide](docs/WORLD-GUIDE.md).
 
 **Design Studio:** **Labels & effects** positions/styles titles and captions and adjusts shadows, bevels, reflection, glare, patina and wear. **Locations** supports fixed or sensor-driven labels with independent typography and positions. **Bezel** adds sensor/time/date/text readouts. **Face cycling** switches templates by swipe, click, keyboard or an optional timer while retaining the same household data. See the [step-by-step guide](docs/DESIGN-STUDIO.md).
 
@@ -104,4 +112,4 @@ To reuse your existing artwork in a new card, select a reference layout and set 
 
 No live Home Assistant resources, dashboards, helpers, or automations were accessed or modified.
 
-MIT licensed for project source and artwork. SunCalc is bundled under BSD-2-Clause, with its notice in the bundle and [license](docs/SUNCALC-LICENSE.txt). Unchanged supplied source attachments are not part of the public checkout.
+MIT licensed for project source and artwork. Pirata One is embedded under the [SIL Open Font License](docs/PIRATA-ONE-OFL.txt). SunCalc is bundled under BSD-2-Clause, with its notice in the bundle and [license](docs/SUNCALC-LICENSE.txt). Unchanged supplied source attachments are not part of the public checkout.

@@ -1,3 +1,7 @@
+import { ensureFonts } from "./fonts.js";
+import { panelsEnabled, panelMarkup, fitPanelLabels } from "./panels.js";
+import { worldCSS, worldMarkup } from "./world.js";
+import { moonReading } from "./world-config.js";
 import { fitEngraving, letteringRotation } from "./engraving.js";
 import {
   handName,
@@ -7,7 +11,7 @@ import {
   presentationFor,
 } from "./design.js";
 import { finishDefs, materialFill, surfaceMarkup } from "./finish.js";
-import { motionCSS, sceneMotionMarkup } from "./motion.js";
+import { motionCSS } from "./motion.js";
 import { bezelText } from "./bezel.js";
 import { metricText, runtimeConfig } from "./data.js";
 import { weatherFor, weatherMarkup, weatherCSS } from "./weather.js";
@@ -169,7 +173,8 @@ export class MagicalFamilyClock extends HTMLElement {
     this._imageToken = (this._imageToken || 0) + 1;
     this._weatherKey = null;
     this._locationKey = null;
-    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}${motionCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.25px;filter:drop-shadow(0px .35px .1px #fff7);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}.image-status{position:absolute;left:12px;bottom:8px;max-width:65%;font:12px system-ui;background:#101c29e8;color:#eddcb9;padding:5px 9px;border-radius:8px}.template-navigation{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 140px 12px 12px;min-height:56px}.template-name{font:14px system-ui}.template-navigation button{font-size:20px}.frame{touch-action:pan-y}.bezel-value{paint-order:stroke;stroke:#101b20;stroke-width:1.5px;stroke-linejoin:round}.portrait-surface{filter:url(#effect-portraits)}.face{filter:url(#effect-face)}.hands{filter:url(#effect-hands)}.bezel{filter:url(#effect-bezel)}.castle-frame,.frame-finish{filter:url(#effect-frame)}.frame-glare{pointer-events:none}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}${finishDefs(c.effects)}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="190"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><g class="castle-frame"></g><g class="scene-animation"></g></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="var(--metal)" stroke="var(--rim)" stroke-width="4"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="var(--paper)"/></svg><div class="empty" hidden></div><div class="image-status" role="status" hidden></div></div><div class="template-navigation" hidden><button class="template-previous" aria-label="Previous clock face">‹</button><span class="template-name" aria-live="polite"></span><button class="template-next" aria-label="Next clock face">›</button></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
+    this._worldKey = null;
+    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}${motionCSS}${worldCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.25px;filter:drop-shadow(0px .35px .1px #fff7);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}.image-status{position:absolute;left:12px;bottom:8px;max-width:65%;font:12px system-ui;background:#101c29e8;color:#eddcb9;padding:5px 9px;border-radius:8px}.template-navigation{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 140px 12px 12px;min-height:56px}.template-name{font:14px system-ui}.template-navigation button{font-size:20px}.frame{touch-action:pan-y}.bezel-value{paint-order:stroke;stroke:#101b20;stroke-width:1.5px;stroke-linejoin:round}.portrait-surface{filter:url(#effect-portraits)}.face{filter:url(#effect-face)}.hands{filter:url(#effect-hands)}.bezel{filter:url(#effect-bezel)}.castle-frame,.frame-finish{filter:url(#effect-frame)}.frame-glare{pointer-events:none}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}${finishDefs(c.effects)}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="${c.location_panels.inner_radius}"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><g class="castle-frame"></g><g class="scene-animation"></g></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="url(#material-brass)" stroke="url(#material-aged-brass)" stroke-width="2"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="url(#material-aged-brass)" stroke="#ffe1a0" stroke-width=".7"/></svg><div class="empty" hidden></div><div class="image-status" role="status" hidden></div></div><div class="template-navigation" hidden><button class="template-previous" aria-label="Previous clock face">‹</button><span class="template-name" aria-live="polite"></span><button class="template-next" aria-label="Next clock face">›</button></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
     const card = this.shadowRoot.querySelector("ha-card");
     Object.keys(p).forEach((k) => card.style.setProperty("--" + k, p[k]));
     card.style.setProperty("--duration", c.duration + "ms");
@@ -517,46 +522,44 @@ export class MagicalFamilyClock extends HTMLElement {
     const c = this._config;
     const states = c.demo ? demoStates() : (this._hass || {}).states || {};
     const runtime = runtimeConfig(c, states);
-    const locationKey = JSON.stringify(
-      runtime.locations.map((l) => [
-        l.id,
-        locationName(l, states),
-        l.angle,
-        l.x,
-        l.y,
-        l.radius,
-        l.font,
-        l.size,
-        l.color,
-        l.opacity,
-        l.rotation,
-      ]),
-    );
+    const locationKey = JSON.stringify([
+      runtime.locations.map((l) => ({ ...l, text: locationName(l, states) })),
+      c.location_panels,
+      c.artwork,
+      c.face_image,
+    ]);
     if (locationKey !== this._locationKey) {
       this._locationKey = locationKey;
       const group = this.shadowRoot.querySelector(".locations");
       group.textContent = "";
-      runtime.locations.forEach((l) => {
-        const pos = labelPosition(l);
-        const label = svg(
-          "text",
-          {
-            x: pos.x,
-            y: pos.y,
-            class: "label",
-            "data-location": l.id,
-            "text-anchor": "middle",
-            "dominant-baseline": "middle",
-            opacity: l.opacity,
-            transform: `rotate(${l.rotation || 0} ${pos.x} ${pos.y})`,
-          },
-          locationName(l, states),
-        );
-        if (l.color) label.style.fill = l.color;
-        if (l.font) label.style.fontFamily = l.font;
-        if (l.size) label.style.fontSize = l.size + "px";
-        group.appendChild(label);
-      });
+      if (panelsEnabled(c)) {
+        group.innerHTML = panelMarkup(c, runtime.locations, states);
+        fitPanelLabels(group);
+        ensureFonts().then(() => {
+          if (group.isConnected) fitPanelLabels(group);
+        });
+      } else
+        runtime.locations.forEach((l) => {
+          const pos = labelPosition(l);
+          const label = svg(
+            "text",
+            {
+              x: pos.x,
+              y: pos.y,
+              class: "label",
+              "data-location": l.id,
+              "text-anchor": "middle",
+              "dominant-baseline": "middle",
+              opacity: l.opacity,
+              transform: `rotate(${l.rotation || 0} ${pos.x} ${pos.y})`,
+            },
+            locationName(l, states),
+          );
+          if (l.color) label.style.fill = l.color;
+          if (l.font) label.style.fontFamily = l.font;
+          if (l.size) label.style.fontSize = l.size + "px";
+          group.appendChild(label);
+        });
     }
     const kind = weatherFor(c, states),
       night =
@@ -705,7 +708,10 @@ export class MagicalFamilyClock extends HTMLElement {
         (c.background_images || {})[scene.key],
     );
     const request = scene.key + "|" + source;
-    if (this._sceneRequest === request) return;
+    if (this._sceneRequest === request) {
+      this._updateWorld(scene, source, weather);
+      return;
+    }
     this._sceneRequest = request;
     const token = ++this._sceneToken;
     this._status("loading", "Loading sharp castle scene…");
@@ -738,24 +744,16 @@ export class MagicalFamilyClock extends HTMLElement {
           );
         else layer.innerHTML = atlasMarkup(scene);
         const frame = parent.querySelector(".castle-frame");
-        if (!frame.firstChild) frame.innerHTML = castleFrame();
-        parent.querySelector(".scene-animation").innerHTML = sceneMotionMarkup(
-          scene.season,
-          scene.period,
-        );
+        if (!frame.firstChild)
+          frame.innerHTML = castleFrame(c.location_panels.inner_radius);
+        this._updateWorld(scene, source, weather);
         parent.style.display = "";
         parent.setAttribute("data-scene", scene.key);
         this.shadowRoot.querySelector(".face").style.visibility = "hidden";
         this.shadowRoot.querySelector(".locations").style.display =
           c.show_location_labels ? "" : "none";
-        const filters = {
-          spring: "saturate(1.25) brightness(1.08)",
-          summer: "saturate(1.4) brightness(1.14)",
-          autumn: "sepia(.22) saturate(1.25)",
-          winter: "saturate(.65) brightness(1.12)",
-        };
         parent.querySelector(".castle-scenes").style.filter =
-          "url(#effect-face) " + (filters[scene.season] || "");
+          "url(#effect-face)";
         layer.getBoundingClientRect();
         layer.style.transition = "";
         layer.style.opacity = 1;
@@ -773,6 +771,74 @@ export class MagicalFamilyClock extends HTMLElement {
         }
       });
   }
+  _updateWorld(scene, source, weather) {
+    const c = this._config,
+      states = c.demo ? demoStates() : this._hass?.states || {},
+      reading = moonReading(c.world, states);
+    const key = JSON.stringify([
+      c.world,
+      scene.key,
+      source,
+      weather,
+      reading.visible,
+      reading.phase == null ? null : Number(reading.phase.toFixed(3)),
+      reading.source,
+    ]);
+    if (key === this._worldKey) return;
+    this._worldKey = key;
+    const target = this.shadowRoot.querySelector(".scene-animation");
+    if (target)
+      target.innerHTML = worldMarkup(
+        c,
+        scene,
+        states,
+        weather,
+        Boolean(source),
+        reading,
+      );
+    if (this._worldPreviewId)
+      requestAnimationFrame(() => {
+        if (this.isConnected) this.previewWorldEncounter(this._worldPreviewId);
+      });
+  }
+  previewWorldEncounter(id) {
+    if (this._reduced() || !this._config.scene_motion) return false;
+    const node = [...this.shadowRoot.querySelectorAll(".world-object")].find(
+      (e) => e.dataset.worldId === id,
+    );
+    if (!node) return false;
+    this._worldPreviewId = id;
+    const target = node.querySelector(".world-encounter"),
+      animations = target.getAnimations(),
+      svgRoot = this.shadowRoot.querySelector("svg"),
+      mask = this.shadowRoot.querySelector("#world-flight-sky path"),
+      object = this._config.world.objects.find((o) => o.id === id);
+    for (const phase of [0.34, 0.18, 0.42, 0.1, 0.48]) {
+      for (const animation of animations) {
+        const timing = animation.effect.getTiming(),
+          duration = timing.duration;
+        animation.currentTime =
+          (((duration * phase + timing.delay) % duration) + duration) %
+          duration;
+        animation.play();
+      }
+      const box = target.getBBox(),
+        screen = target.getScreenCTM();
+      if (!screen) continue;
+      const point = new DOMPoint(box.x + box.width / 2, box.y + box.height / 2)
+        .matrixTransform(screen)
+        .matrixTransform(svgRoot.getScreenCTM().inverse());
+      if (
+        Number(getComputedStyle(target).opacity) > 0.5 &&
+        Math.hypot(point.x - 300, point.y - 282) <
+          this._config.location_panels.inner_radius - 4 &&
+        (!object.behind_castle || mask.isPointInFill(point))
+      )
+        return true;
+    }
+    return false;
+  }
+
   _status(status, message = "") {
     const target = this.shadowRoot.querySelector(".image-status");
     if (target) {
