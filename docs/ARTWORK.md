@@ -16,7 +16,7 @@ Custom castle images can be configured with `background_images` keys such as `wi
 
 Source files and project artwork are distributed with the repository license. The bundled SunCalc implementation has its own BSD-2-Clause notice, included in the compiled bundle and `SUNCALC-LICENSE.txt`. The supplied unchanged legacy JavaScript/HTML attachments remain outside this public checkout.
 
-## Unpublished next-version material faces
+## Version 0.2.0 material faces
 
 `src/assets/aged-brass-dial.png` and `src/assets/whimsical-workshop-dial.png` are original AI-generated, unlettered dial assets created for this build. They are not extractions from the supplied film/prop references. The brass dial uses aged brushed brass, recessed gearwork, wear and verdigris. The handmade dial combines wood, copper patches, brass fasteners, ivory/parchment panels and botanical decoration. Both preserve a transparent exterior and remain separate from editable SVG names, locations, titles and captions. Runtime hand geometry and lettering remain vector artwork.
 

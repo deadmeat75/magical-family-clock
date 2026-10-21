@@ -6,10 +6,19 @@
   "dashboardSave": true,
   "dashboardReload": true,
   "frontendErrors": [],
-  "status": "validated for v0.2.0 release",
+  "status": "published v0.2.0; release asset verified",
   "unitAndPackagingChecks": 31,
   "chromiumBrowserChecks": 22,
   "homeAssistantVersion": "2026.10.2",
   "originalReferencesUnchanged": true,
-  "authenticatedHacsInstallVerified": false
+  "authenticatedHacsInstallVerified": false,
+  "releaseURL": "https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.2.0",
+  "releaseAssetSHA256": "a6064f84d485287d14a99a6197567a2193e38495fc3d5931684d1d726782b12c",
+  "releaseWorkflow": "success",
+  "hacsValidationPassed": 6,
+  "hacsValidationTotal": 8,
+  "hacsValidationFailures": [
+    "repository description missing",
+    "repository topics missing"
+  ]
 }

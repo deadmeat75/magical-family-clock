@@ -11,6 +11,6 @@ The current package version is 0.2.0. Do not label it production-verified until 
 7. Push a matching `v0.2.0` tag only after acceptance. The release workflow checks version equality, runs tests in Chromium, and attaches `magical-family-clock.js` to the GitHub release using its workflow token.
 8. Test installation and an update through HACS. Public default-store submission is separate and requires HACS review; no approval is implied by custom-repository installation.
 
-The environment’s Git read operation and dry-run push succeeded. Its injected GitHub CLI token failed authentication; no token values were inspected. A release cannot currently be created through that CLI. Do not put tokens into source or setup instructions. Use authorized GitHub credentials or the repository’s GitHub Actions release workflow after acceptance.
+Use the repository's tag-triggered GitHub Actions workflow to publish the self-contained bundle. Git push and GitHub API reads work in this environment. Repository description/topic mutations returned HTTP 403; do not put tokens in source or setup instructions.
 
 The release candidate is published separately from a stable production release. Check the repository release page for the actual workflow result; a local tag or pushed workflow alone does not establish release publication.
