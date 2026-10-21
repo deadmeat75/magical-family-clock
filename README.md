@@ -20,7 +20,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 ## HACS installation
 
-These steps apply once the candidate is pushed to a **public repository** with its bundle on the default branch or a GitHub release. A local checkout does not publish it.
+The [v0.1.0-rc.1 release candidate](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.1.0-rc.1) and its bundle are published. HACS validation still requires the repository owner to set its About description/topics; see [publishing status](docs/PUBLISHING-STATUS.md). This is a prerelease, not a production-verification claim.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** repository.
