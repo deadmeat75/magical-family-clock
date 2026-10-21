@@ -2,6 +2,8 @@
 
 An original Home Assistant dashboard card showing your household’s whereabouts on an enchanted clock. Each card has independent people, locations, and appearance.
 
+**Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
+
 **0.1.0-rc.1 release candidate:** real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
