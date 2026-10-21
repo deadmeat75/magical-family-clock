@@ -11,7 +11,7 @@
     "panels": 4
   },
   "frontendErrors": [],
-  "status": "release candidate; publication verification pending",
+  "status": "published stable release; downloaded asset verified",
   "releaseVersion": "0.4.0",
   "unitAndPackagingChecks": 51,
   "chromiumBrowserChecks": 44,
@@ -42,5 +42,36 @@
     "defaultStoreApprovalClaimed": false,
     "webKitOrPhysicalOlderIpadTested": false,
     "productionVideo": "living-world-preview.mp4"
+  },
+  "publicationVerification": {
+    "version": "0.4.0",
+    "url": "https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0",
+    "releaseId": 420049307,
+    "releaseCommit": "86bf2c4028e8e7a137d2e4328f6293bc6eed7bd3",
+    "publishedAt": "2026-10-21T20:58:04Z",
+    "stable": true,
+    "latest": true,
+    "assetName": "magical-family-clock.js",
+    "assetBytes": 17013181,
+    "downloadedSHA256": "d72e97148b1b6c1a153f792358b45a56dc9844bcc088275c4af2ccb3995dd8cc",
+    "downloadMatchesTestedBundle": true,
+    "guidesAccessible": true,
+    "workflows": {
+      "mainTests": 39674428442,
+      "tagTests": 39674658371,
+      "release": 39674658905,
+      "hacsValidation": 39674658554
+    }
+  },
+  "hacsValidation": {
+    "passed": 6,
+    "failed": 2,
+    "failedChecks": [
+      "description",
+      "topics"
+    ],
+    "workflow": 39674658554,
+    "repositoryMetadataWriteDenied": "HTTP 403: Resource not accessible by integration (previous verified attempt)",
+    "authenticatedInstallOrUpdateVerified": false
   }
 }
