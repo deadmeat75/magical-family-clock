@@ -1,34 +1,73 @@
 [
   {
     "id": "F01",
-    "name": "enchanted-spoons",
+    "name": "Scalloped whereabouts dial",
     "category": "Faces",
-    "image": "items/F01.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/F01-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed face concept; not integrated into the released renderer",
+    "revision": 1,
+    "source": "art/scalloped-face-f01-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "note": "Scalloped aged parchment with separately editable flowing location lettering. [Editable SVG lettering study](concepts/F01-editable-lettering.svg)."
   },
   {
     "id": "F02",
-    "name": "brass-clockwork",
+    "name": "Brass finish range",
     "category": "Faces",
-    "image": "items/F02.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/F02-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed face concept; not integrated into the released renderer",
+    "revision": 1,
+    "source": "art/polished-brass-f02-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "note": "New → lightly aged → antique finish study. Proposed continuous age control, with a shinier default; renderer/editor integration follows artwork approval."
   },
   {
     "id": "F03",
-    "name": "living-magical",
+    "name": "Astronomical scene wheel",
     "category": "Faces",
-    "image": "items/F03.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/F03-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed face concept; not integrated into the released renderer",
+    "revision": 1,
+    "source": "art/astronomical-face-f03-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "note": "Complete astronomical-clock redesign with an ivory dial, painted celestial decoration and landscape aperture. This is a static art-direction concept; separated rotating time/season wheels and live weather are still to implement."
   },
   {
     "id": "F04",
     "name": "whimsical-workshop",
     "category": "Faces",
     "image": "items/F04.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "current draft rendering"
   },
   {
@@ -36,104 +75,260 @@
     "name": "Layered castle and ornate location ring",
     "category": "Faces",
     "image": "items/F05.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "current draft rendering"
   },
   {
     "id": "H01",
     "name": "spoon",
     "category": "Hand shapes",
-    "image": "items/H01.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H01-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H02",
     "name": "classic",
     "category": "Hand shapes",
-    "image": "items/H02.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H02-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H03",
     "name": "legacy-curved",
     "category": "Hand shapes",
-    "image": "items/H03.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H03-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H04",
     "name": "standalone-pointed",
     "category": "Hand shapes",
-    "image": "items/H04.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H04-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H05",
     "name": "arrow",
     "category": "Hand shapes",
-    "image": "items/H05.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H05-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H06",
     "name": "leaf",
     "category": "Hand shapes",
-    "image": "items/H06.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H06-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H07",
     "name": "sword",
     "category": "Hand shapes",
-    "image": "items/H07.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H07-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H08",
     "name": "cathedral",
     "category": "Hand shapes",
-    "image": "items/H08.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H08-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H09",
     "name": "filigree",
     "category": "Hand shapes",
-    "image": "items/H09.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H09-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H10",
     "name": "skeleton",
     "category": "Hand shapes",
-    "image": "items/H10.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H10-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H11",
     "name": "quill",
     "category": "Hand shapes",
-    "image": "items/H11.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H11-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "H12",
     "name": "compass",
     "category": "Hand shapes",
-    "image": "items/H12.png",
-    "status": "awaiting approval",
-    "kind": "current draft rendering"
+    "image": "items/H12-r1.png",
+    "status": "revised; awaiting approval",
+    "kind": "proposed realistic crafted hand; renderer integration and engraved lettering pending approval",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "sourceClip": null,
+    "revision": 1
   },
   {
     "id": "M01",
@@ -813,79 +1008,112 @@
     "category": "Landscape motion",
     "image": "items/L01.png",
     "animation": "items/L01.gif",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "Approved original eight-second cloud study; its image and motion remain unchanged."
   },
   {
     "id": "L02",
     "name": "Foliage sway",
     "category": "Landscape motion",
-    "image": "items/L02.png",
-    "animation": "items/L02.gif",
-    "status": "awaiting approval",
+    "image": "items/L02-r1.png",
+    "animation": "items/L02-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "More visible root-anchored canopy sway. Spring petals and autumn leaves follow the scene season; each clip runs at normal speed.",
+    "revision": 1,
+    "variants": [
+      {
+        "name": "Spring petals",
+        "animation": "items/L02-spring-r1.gif"
+      },
+      {
+        "name": "Autumn leaves",
+        "animation": "items/L02-autumn-r1.gif"
+      }
+    ]
   },
   {
     "id": "L03",
     "name": "Lake reflections",
     "category": "Landscape motion",
-    "image": "items/L03.png",
-    "animation": "items/L03.gif",
-    "status": "awaiting approval",
+    "image": "items/L03-r1.png",
+    "animation": "items/L03-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "Stronger fine reflection displacement with a fixed shoreline; no sliding rectangular water bands.",
+    "revision": 1
   },
   {
     "id": "L04",
     "name": "Waterfall flow and fine spray",
     "category": "Landscape motion",
-    "image": "items/L04.png",
-    "animation": "items/L04.gif",
-    "status": "awaiting approval",
+    "image": "items/L04-r1.png",
+    "animation": "items/L04-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "Stronger downward flow with visible fine droplets close to the impacts; no filled spray discs or spotlights.",
+    "revision": 1
   },
   {
     "id": "L05",
     "name": "Twinkling stars",
     "category": "Landscape motion",
-    "image": "items/L05.png",
-    "animation": "items/L05.gif",
-    "status": "awaiting approval",
+    "image": "items/L05-r1.png",
+    "animation": "items/L05-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "Brighter independent twinkling. Moving cloud coverage erases distant stars; the moon, castle and foreground remain in front.",
+    "revision": 1,
+    "variants": [
+      {
+        "name": "Cloud and moon occlusion",
+        "animation": "items/L05-clouds-r1.gif"
+      }
+    ]
   },
   {
     "id": "L06",
     "name": "Shooting star",
     "category": "Landscape motion",
-    "image": "items/L06.png",
-    "animation": "items/L06.gif",
-    "status": "awaiting approval",
+    "image": "items/L06-r1.png",
+    "animation": "items/L06-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "Clip starts just before a meteor; normal recurrence is 47 seconds."
+    "note": "Session-random sky origins, flight angles and 20–75 second quiet intervals. Meteors remain behind clouds, moon and foreground. The main clip starts just before an encounter.",
+    "revision": 1,
+    "variants": [
+      {
+        "name": "Varied encounters — quiet gaps skipped",
+        "animation": "items/L06-varied-r1.gif"
+      },
+      {
+        "name": "Cloud and moon occlusion",
+        "animation": "items/L06-clouds-r1.gif"
+      }
+    ]
   },
   {
     "id": "L07",
     "name": "Window lights",
     "category": "Landscape motion",
-    "image": "items/L07.png",
-    "animation": "items/L07.gif",
-    "status": "awaiting approval",
+    "image": "items/L07-r1.png",
+    "animation": "items/L07-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "The actual painted window regions have independently varying candle/torch flicker; they no longer breathe together.",
+    "revision": 1
   },
   {
     "id": "L08",
     "name": "Fireflies",
     "category": "Landscape motion",
-    "image": "items/L08.png",
-    "animation": "items/L08.gif",
-    "status": "awaiting approval",
+    "image": "items/L08-r1.png",
+    "animation": "items/L08-r1.gif",
+    "status": "revised; awaiting approval",
     "kind": "normal-speed motion study",
-    "note": "8-second clip at normal playback speed; no creatures."
+    "note": "Greenish bioluminescent fireflies wander and pulse independently near foreground vegetation.",
+    "revision": 1
   },
   {
     "id": "K01",
@@ -956,7 +1184,7 @@
     "name": "Swallow",
     "category": "Characters and props",
     "image": "items/C01.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/avian-riders.png",
     "sourceRect": [
@@ -972,7 +1200,7 @@
     "name": "Barn owl",
     "category": "Characters and props",
     "image": "items/C02.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/avian-riders.png",
     "sourceRect": [
@@ -988,7 +1216,7 @@
     "name": "Witch on broom",
     "category": "Characters and props",
     "image": "items/C03.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/avian-riders.png",
     "sourceRect": [
@@ -1003,24 +1231,30 @@
     "id": "C04",
     "name": "Wizard on broom",
     "category": "Characters and props",
-    "image": "items/C04.png",
-    "status": "awaiting approval",
+    "image": "items/C04-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/avian-riders.png",
+    "source": "art/wizard-c04-r1.png",
     "sourceRect": [
-      648,
-      625,
+      0,
+      0,
       606,
       629
     ],
-    "sourceClip": null
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      606,
+      629
+    ],
+    "note": "Cleanly isolated wizard; the neighboring broom fragment is removed without repainting the wizard."
   },
   {
     "id": "C05",
     "name": "Dragon",
     "category": "Characters and props",
     "image": "items/C05.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/mythical.png",
     "sourceRect": [
@@ -1036,7 +1270,7 @@
     "name": "Phoenix",
     "category": "Characters and props",
     "image": "items/C06.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/mythical.png",
     "sourceRect": [
@@ -1049,90 +1283,122 @@
   },
   {
     "id": "C07",
-    "name": "Fairy",
+    "name": "Pixie",
     "category": "Characters and props",
-    "image": "items/C07.png",
-    "status": "awaiting approval",
+    "image": "items/C07-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/mythical.png",
+    "source": "art/pixie-c07-r1.png",
     "sourceRect": [
       0,
-      625,
-      627,
-      629
+      0,
+      1536,
+      1024
     ],
-    "sourceClip": null
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      1536,
+      1024
+    ],
+    "placement": "foreground",
+    "proposed_clock_diameter_percent": 4.5,
+    "note": "More monstrous blue pixie, shown enlarged for detail and at about 4.5% clock width in a foreground placement study. Small creatures belong in the foreground."
   },
   {
     "id": "C08",
     "name": "Lake serpent",
     "category": "Characters and props",
-    "image": "items/C08.png",
-    "status": "awaiting approval",
+    "image": "items/C08-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/mythical.png",
+    "source": "art/serpent-c08-r1.png",
     "sourceRect": [
-      630,
-      625,
-      624,
-      629
+      0,
+      0,
+      1254,
+      1254
     ],
-    "sourceClip": null
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "note": "All body frills removed; smooth, snake-like neck and tapering tail."
   },
   {
     "id": "C09",
     "name": "Mermaid",
     "category": "Characters and props",
-    "image": "items/C09.png",
-    "status": "awaiting approval",
+    "image": "items/C09-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/lake-shore.png",
+    "source": "art/mermaid-c09-r1.png",
     "sourceRect": [
       0,
       0,
-      627,
-      590
+      1293,
+      1216
     ],
-    "sourceClip": null
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      1293,
+      1216
+    ],
+    "note": "Traditional scallop-shell top replaces the corset."
   },
   {
     "id": "C10",
     "name": "Merman",
     "category": "Characters and props",
-    "image": "items/C10.png",
-    "status": "awaiting approval",
+    "image": "items/C10-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/lake-shore.png",
+    "source": "art/merman-c10-r1.png",
     "sourceRect": [
-      630,
       0,
-      624,
-      590
+      0,
+      1290,
+      1219
     ],
-    "sourceClip": null
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      1290,
+      1219
+    ],
+    "note": "Vest and chest sash removed entirely."
   },
   {
     "id": "C11",
     "name": "Unicorn",
     "category": "Characters and props",
-    "image": "items/C11.png",
-    "status": "awaiting approval",
+    "image": "items/C11-r1.png",
+    "status": "revised; awaiting approval",
     "kind": "proposed painted illustration",
-    "source": "art/lake-shore.png",
+    "source": "art/unicorn-c11-r1.png",
     "sourceRect": [
       0,
-      590,
-      700,
-      664
+      0,
+      1288,
+      1221
     ],
-    "sourceClip": "M0 590H700V760L638 780V1254H0Z"
+    "sourceClip": null,
+    "revision": 1,
+    "sourceSize": [
+      1288,
+      1221
+    ],
+    "note": "Unadorned wild unicorn in a natural grounded walking pose. Final ground contact and articulated gait require animation review."
   },
   {
     "id": "C12",
     "name": "Sailing boat",
     "category": "Characters and props",
     "image": "items/C12.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "proposed painted illustration",
     "source": "art/lake-shore.png",
     "sourceRect": [
@@ -1141,14 +1407,15 @@
       609,
       674
     ],
-    "sourceClip": "M730 580H1254V1254H645V840L730 740Z"
+    "sourceClip": "M730 580H1254V1254H645V840L730 740Z",
+    "note": "Artwork approved with appropriate water placement and natural movement required. The approval does not certify an unfinished boat animation."
   },
   {
     "id": "C13",
     "name": "Floating lantern",
     "category": "Characters and props",
     "image": "items/C13.png",
-    "status": "awaiting approval",
+    "status": "omitted",
     "kind": "proposed painted illustration",
     "source": "art/enchanted-props.png",
     "sourceRect": [
@@ -1164,7 +1431,7 @@
     "name": "Stone cottage",
     "category": "Characters and props",
     "image": "items/C14.png",
-    "status": "awaiting approval",
+    "status": "omitted",
     "kind": "proposed painted illustration",
     "source": "art/enchanted-props.png",
     "sourceRect": [
@@ -1180,7 +1447,7 @@
     "name": "Woodland mushrooms",
     "category": "Characters and props",
     "image": "items/C15.png",
-    "status": "awaiting approval",
+    "status": "omitted",
     "kind": "proposed painted illustration",
     "source": "art/enchanted-props.png",
     "sourceRect": [
@@ -1196,7 +1463,7 @@
     "name": "Quartz crystals",
     "category": "Characters and props",
     "image": "items/C16.png",
-    "status": "awaiting approval",
+    "status": "omitted",
     "kind": "proposed painted illustration",
     "source": "art/enchanted-props.png",
     "sourceRect": [
@@ -1212,7 +1479,7 @@
     "name": "Painted inhabitants in the day castle",
     "category": "Scene concepts",
     "image": "items/X01.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "concept composite; new illustration mapping is not final animation"
   },
   {
@@ -1220,7 +1487,7 @@
     "name": "Painted inhabitants in the night castle",
     "category": "Scene concepts",
     "image": "items/X02.png",
-    "status": "awaiting approval",
+    "status": "approved",
     "kind": "concept composite; new illustration mapping is not final animation"
   },
   {

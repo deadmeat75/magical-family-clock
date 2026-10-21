@@ -832,6 +832,7 @@ export class MagicalFamilyClock extends HTMLElement {
       );
       this._worldPainter = startWorldPainter(target, c, scene, {
         time: this._worldElapsed || 0,
+        meteorSeed: (this._worldMeteorSeed ??= Math.floor(Math.random() * 4294967296)),
         paused: () =>
           this._reduced() ||
           !c.scene_motion ||

@@ -29,113 +29,137 @@
       "id": "C01",
       "element": "Swallow",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/C01.png",
+      "approved_example_sha256": "74c214f25c4e5c2fea8529e6dd92ae7d334cbc79c0529fc7c08564fc01d41ea1"
     },
     {
       "id": "C02",
       "element": "Barn owl",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/C02.png",
+      "approved_example_sha256": "39cd4c5bd9b21316d7f6fdeec154fcb545fac333cc0bd98a79a36d277110cd6e"
     },
     {
       "id": "C03",
       "element": "Witch on broom",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/C03.png",
+      "approved_example_sha256": "846b2e6e46e5b55a4af71eb9faf2e591096ca9fff7563fc1c4c37339486982f4"
     },
     {
       "id": "C04",
       "element": "Wizard on broom",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Remove the odd detached artifact just behind the cape. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C05",
       "element": "Dragon",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/C05.png",
+      "approved_example_sha256": "6ee27a84babbb63b62e9dde196d4af4da4566e721a94c210edadb06aac90e524"
     },
     {
       "id": "C06",
       "element": "Phoenix",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/C06.png",
+      "approved_example_sha256": "c79e7a0773d97f2cf1f7deadcab693eb7b7beac9936c16b28132df8be0bf1fe2"
     },
     {
       "id": "C07",
-      "element": "Fairy",
+      "element": "Pixie",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace the fairy with a smaller, more monstrous Harry Potter-style pixie. Render small creatures in the foreground of the clock. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C08",
       "element": "Lake serpent",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Remove the body frills and make the neck more snake-like. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C09",
       "element": "Mermaid",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace the current top with a traditional shell-bra style top. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C10",
       "element": "Merman",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Remove the vest entirely. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C11",
       "element": "Unicorn",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Wild unicorn: remove saddle and all adornments. Keep it on suitable ground with natural leg positions and an articulated, weight-bearing gait. Never float it across the scene. Revised artwork and movement require review.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "C12",
       "element": "Sailing boat",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Artwork explicitly approved, conditional on appropriate water placement and naturalistic movement through the water. Animation acceptance remains required.",
+      "approved_example": "items/C12.png",
+      "approved_example_sha256": "e1a7449e1391dae9251b0090ab53b8a8273e4ee13c56b644eb0b7fef58ac9c4a"
     },
     {
       "id": "C13",
       "element": "Floating lantern",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "omitted",
+      "notes": "Explicitly omitted by the user; exclude from the next release artwork set."
     },
     {
       "id": "C14",
       "element": "Stone cottage",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "omitted",
+      "notes": "Explicitly omitted by the user; exclude from the next release artwork set."
     },
     {
       "id": "C15",
       "element": "Woodland mushrooms",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "omitted",
+      "notes": "Explicitly omitted by the user; exclude from the next release artwork set."
     },
     {
       "id": "C16",
       "element": "Quartz crystals",
       "category": "Characters and props",
-      "decision": "pending",
-      "notes": ""
+      "decision": "omitted",
+      "notes": "Explicitly omitted by the user; exclude from the next release artwork set."
     },
     {
       "id": "E01",
@@ -181,122 +205,156 @@
     },
     {
       "id": "F01",
-      "element": "enchanted-spoons",
+      "element": "Scalloped whereabouts dial",
       "category": "Faces",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace the plain round face with aged irregular scalloped parchment inspired by the supplied reference. Location names must be editable flowing text following curved paths. Revised concept requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "F02",
-      "element": "brass-clockwork",
+      "element": "Brass finish range",
       "category": "Faces",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Offer a continuous finish/age choice from brand new polished brass to antique; show a slightly shinier default and preserve realistic material detail. Revised concept requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "F03",
-      "element": "living-magical",
+      "element": "Astronomical scene wheel",
       "category": "Faces",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Completely redesign as an antique astronomical clock inspired by the supplied reference, with separate rotating scene layers responding to time, season and weather. Fixed location lettering and tracking hands remain independent. Revised concept requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "F04",
       "element": "whimsical-workshop",
       "category": "Faces",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/F04.png",
+      "approved_example_sha256": "f86879135b365cea6fbf52912dbb0d7015a35539ee02ee4c8ea20bdef96c8781"
     },
     {
       "id": "F05",
       "element": "Layered castle and ornate location ring",
       "category": "Faces",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/F05.png",
+      "approved_example_sha256": "7d3a6e446b379502cd5a5ae537529ca76e34896e2038cbd44102225a4c1aeafd"
     },
     {
       "id": "H01",
       "element": "spoon",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H02",
       "element": "classic",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H03",
       "element": "legacy-curved",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H04",
       "element": "standalone-pointed",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H05",
       "element": "arrow",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H06",
       "element": "leaf",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H07",
       "element": "sword",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H08",
       "element": "cathedral",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H09",
       "element": "filigree",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H10",
       "element": "skeleton",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H11",
       "element": "quill",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "H12",
       "element": "compass",
       "category": "Hand shapes",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "I01",
@@ -449,57 +507,73 @@
       "id": "L01",
       "element": "Cloud drift",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/L01.gif",
+      "approved_example_sha256": "4ee44d06e86ebe4d5c37282df70c095202a3613d76dee94534ab466b9ed78b78"
     },
     {
       "id": "L02",
       "element": "Foliage sway",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L03",
       "element": "Lake reflections",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L04",
       "element": "Waterfall flow and fine spray",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L05",
       "element": "Twinkling stars",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L06",
       "element": "Shooting star",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L07",
       "element": "Window lights",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Each window has an independent irregular candle or torch flicker; remove synchronized breathing. Revised normal-speed preview requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "L08",
       "element": "Fireflies",
       "category": "Landscape motion",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.",
+      "revision": 1,
+      "revision_status": "revised proposal available; awaiting user approval"
     },
     {
       "id": "M01",
@@ -953,15 +1027,44 @@
       "id": "X01",
       "element": "Painted inhabitants in the day castle",
       "category": "Scene concepts",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Scene composition explicitly approved. Character-specific revisions and final naturalistic animation acceptance remain required.",
+      "approved_example": "items/X01.png",
+      "approved_example_sha256": "60bdfcac3ca55646bee7559f69296f725c4085bb4c496a63c0c290b442977850"
     },
     {
       "id": "X02",
       "element": "Painted inhabitants in the night castle",
       "category": "Scene concepts",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Scene composition explicitly approved. Character-specific revisions and final naturalistic animation acceptance remain required.",
+      "approved_example": "items/X02.png",
+      "approved_example_sha256": "bb5b17aec18fa5f3716b56fc5963ad2d49ebe88b8cb63f5730db651536202cb0"
+    }
+  ],
+  "rendering_requirements": [
+    {
+      "scope": "all creatures",
+      "placement": "inhabit a real environment",
+      "movement": "Use appropriate scale, depth, ground/water contact, occlusion, and species-specific movement. Do not slide static pictures across the scene.",
+      "status": "required; final animation acceptance pending"
+    },
+    {
+      "scope": "small creatures",
+      "placement": "foreground of the clock",
+      "status": "required for revised previews and eventual approved implementation"
+    },
+    {
+      "scope": "C11 unicorn",
+      "placement": "walkable ground",
+      "movement": "Natural leg articulation, believable weight transfer and planted hooves during support; no floating, sliding or rearing travel.",
+      "status": "required; final animation acceptance pending"
+    },
+    {
+      "scope": "C12 sailing boat",
+      "placement": "navigable lake water",
+      "movement": "Hull intersects the waterline; restrained buoyancy, coherent travel, reflection and a wake that follows the hull.",
+      "status": "required; final animation acceptance pending"
     }
   ]
 }

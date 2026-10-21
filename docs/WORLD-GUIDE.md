@@ -2,7 +2,7 @@
 
 # Living World: detailed setup guide
 
-For **Magical Family Clock 0.4.1**. Install or update through **HACS → Magical Family Clock → Download/update → 0.4.1**, then reload the Home Assistant frontend. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+For the **unreleased Magical Family Clock 0.4.1 draft**. HACS remains on **0.4.0** while the visual review is in progress. The features below describe the engineering draft; install the next version through HACS only after it is published. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
 ![Living castle with framed destinations and inhabitants](living-world-day.png)
 
@@ -94,6 +94,8 @@ Expand **Edit inhabitant settings**. The first inhabitant starts expanded; other
 
 Surfacing creatures disappear below their configured waterline and leave animated rings. Flying figures enter and leave beyond the opening along curved routes; they do not fade out in the open sky. Wings use flap/glide cadences, with cloth and tail movement where appropriate. The cottage has chimney smoke, and glowing props have light effects. A custom uploaded prop moves as one image; it does not acquire separately animated limbs.
 
+**Visual review:** the revised painted character and hand proposals are not integrated into this renderer yet. Natural environment contact, species-specific animation and the new face controls must be completed and reviewed before release. See the [recorded requirements](visual-review/REVISION-NOTES.md).
+
 **Duplicate inhabitant** creates an independent copy with a new ID. **Move inhabitant forward** moves it ahead of the next inhabitant in drawing order; tower masking remains separate. **Remove inhabitant** deletes just that entry. **Remove all inhabitants** keeps the landscape and moon settings.
 
 Try a dragon with a long cycle, a small swallow with a shorter cycle, and a lake serpent at about 65% horizontal/80% vertical. Use a moderate scale and the preview before adding another visitor. Occasional appearances leave time to notice the moving landscape.
@@ -104,9 +106,10 @@ Expand **Landscape and motion controls**:
 
 - **Show miniature world** enables the world overlays. Turning it off keeps the base illustration and tracking hands.
 - **Animate castle scenery** pauses/resumes the landscape and inhabitants together. A paused world stays visible.
-- **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** use separate drifting cloud decks, restrained foliage sway, continuous small reflection waves and fine flow threads/droplets. Clouds replace the bundled stationary sky beneath them. Waterfall spray has no solid glowing discs.
-- **Warm castle window lights** adds gently changing warm window illumination at dusk/night. **Evening fireflies** is independent of stars and other inhabitants.
-- **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Tower masks place the sky behind the castle; moving clouds can cover the moon/stars. Meteors are brief recurring events, not a permanent trail.
+- **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** use separate drifting cloud decks, visible root-anchored canopy sway, continuous reflection waves and downward flow threads with fine impact spray. Clouds replace the bundled stationary sky beneath them. Waterfall spray has no solid glowing discs.
+- **Seasonal petals and leaves** drifts blossom petals in spring and leaves in autumn, independently of tree sway. Summer and winter add neither. The active season follows Appearance settings.
+- **Warm castle window lights** gives each painted window its own irregular candle or torch flicker at dusk/night. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
+- **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Cloud coverage erases stars and meteors behind it, and the moon, castle and foreground stay in front. Meteors have varied origins and flight angles, with irregular 20–75 second quiet intervals.
 - **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. Use fewer inhabitants too on slower displays.
 - **Scene time** previews dawn/day/dusk/night. Auto uses Home Assistant sun data and local solar calculations. Season and weather remain controlled in Appearance and can be combined with inhabitants' filters.
 

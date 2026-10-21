@@ -14,9 +14,9 @@
   "frontendErrors": [],
   "status": "unreleased engineering draft; visual approval required",
   "releaseVersion": "0.4.1",
-  "unitAndPackagingChecks": 53,
-  "chromiumBrowserChecks": 50,
-  "compiledBundleSHA256": "bf076f87afcebdbc70eda7c4c247cec20b0029302391cb21d1f47bc8d66e5c00",
+  "unitAndPackagingChecks": 54,
+  "chromiumBrowserChecks": 53,
+  "compiledBundleSHA256": "2c871b50a5e31cc60c5912fd55e54d3b257c3ca144cbc382f712328373020f88",
   "motionChecks": {
     "cloudFeatureAdvectionByImageAlignment": true,
     "fullOffFrameFlightRepeatBoundaries": true,
@@ -26,7 +26,13 @@
     "phaseAndPainterTimePreservedOnMoonRefresh": true,
     "reducedMotionStopsPainter": true,
     "productionRecordingHasNoEncounterSeeking": true,
-    "nativeAndFallbackFullscreenVisiblePixelsAnimate": true
+    "nativeAndFallbackFullscreenVisiblePixelsAnimate": true,
+    "seasonalPetalsAndLeaves": true,
+    "fixedTreeRootsAndVisibleCrownMovement": true,
+    "cloudOcclusionOfDistantStars": true,
+    "meteorOriginsAndIntervalsVary": true,
+    "independentCandleSources": true,
+    "greenForegroundFireflies": true
   },
   "originalReferencesUnchanged": true,
   "releaseHold": true,
@@ -37,5 +43,13 @@
     "nativeEncounterPreviewAction": true
   },
   "illustrationProposals": "visual-review/characters-and-props.md",
-  "illustrationsApproved": false
+  "illustrationsApproved": false,
+  "reviewDecisionRecord": "visual-review/approvals.json",
+  "currentValidationScope": "Current revisions: local unit/packaging and Chromium suite. Native Home Assistant editor observations below are retained from the preceding review draft.",
+  "reviewRecordings": {
+    "normalSpeed": true,
+    "meteorClipsStartBeforeEncounter": true,
+    "variedMeteorClipSkipsQuietGaps": true,
+    "reviewedArtworkStillRequiresApproval": true
+  }
 }

@@ -417,7 +417,12 @@ export function worldEditor(root) {
     [
       "trees",
       "Swaying trees",
-      "Gently sway foliage regions in the bundled castle landscape. Light detail mode omits these photo layers.",
+      "Sway tree crowns with irregular gentle gusts while their roots stay fixed. Castle motion intensity controls the strength. Light detail mode omits these photo layers.",
+    ],
+    [
+      "seasonal_debris",
+      "Seasonal petals and leaves",
+      "Drift blossom petals through the foreground in spring and falling leaves in autumn. Uses the clock's current season; summer and winter add neither. Disable this independently of tree sway.",
     ],
     [
       "water",
@@ -432,22 +437,22 @@ export function worldEditor(root) {
     [
       "fireflies",
       "Evening fireflies",
-      "Show gently drifting fireflies around the shore at dusk and night. Turn these off independently of stars and other inhabitants.",
+      "Show small green-glowing fireflies near foreground vegetation at dusk and night. Each follows its own wandering path and light pulse. Turn these off independently of stars and other inhabitants.",
     ],
     [
       "windows",
       "Warm castle window lights",
-      "Illuminate the actual warm window regions at dusk and night, with a gentle flicker. Landscape motion can pause these lights with the rest of the scene.",
+      "Each painted window has its own irregular candle or torch flicker at dusk and night. The lights vary independently rather than brightening together. Landscape motion can pause them.",
     ],
     [
       "stars",
       "Twinkling stars",
-      "Show a varied star field at dawn, dusk and night. Castle silhouettes mask the stars so they appear behind the towers.",
+      "Show brighter, independently twinkling stars at dawn, dusk and night. Clouds obscure them; stars stay behind the moon, towers and all foreground objects.",
     ],
     [
       "shooting_stars",
       "Occasional shooting stars",
-      "Show two brief meteor paths on different recurring cycles in the night sky. Reduced motion hides meteors.",
+      "Show brief meteors at irregular 20–75 second intervals, from varied sky positions and angles. Clouds, the moon and towers hide them. Reduced motion hides meteors.",
     ],
   ])
     field(this, nature, label, w, key, "checkbox", null, help);

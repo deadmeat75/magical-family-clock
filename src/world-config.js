@@ -91,6 +91,7 @@ export function normalizeWorld(c) {
     enabled: true,
     clouds: true,
     trees: true,
+    seasonal_debris: true,
     water: true,
     waterfalls: true,
     windows: true,

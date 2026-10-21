@@ -1,64 +1,64 @@
 # Individual visual approvals
 
-[Open the visual gallery](README.md). All decisions are pending. Reply in chat with the item ID and your decision/change notes.
+[Open the visual gallery](README.md). 11 approved; 28 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review. Release remains on hold. Reply with an ID and Approve, Revise or Omit.
 
 ## Characters and props
 
-- [ ] [C01 · Swallow](items/C01.png) — awaiting approval
-- [ ] [C02 · Barn owl](items/C02.png) — awaiting approval
-- [ ] [C03 · Witch on broom](items/C03.png) — awaiting approval
-- [ ] [C04 · Wizard on broom](items/C04.png) — awaiting approval
-- [ ] [C05 · Dragon](items/C05.png) — awaiting approval
-- [ ] [C06 · Phoenix](items/C06.png) — awaiting approval
-- [ ] [C07 · Fairy](items/C07.png) — awaiting approval
-- [ ] [C08 · Lake serpent](items/C08.png) — awaiting approval
-- [ ] [C09 · Mermaid](items/C09.png) — awaiting approval
-- [ ] [C10 · Merman](items/C10.png) — awaiting approval
-- [ ] [C11 · Unicorn](items/C11.png) — awaiting approval
-- [ ] [C12 · Sailing boat](items/C12.png) — awaiting approval
-- [ ] [C13 · Floating lantern](items/C13.png) — awaiting approval
-- [ ] [C14 · Stone cottage](items/C14.png) — awaiting approval
-- [ ] [C15 · Woodland mushrooms](items/C15.png) — awaiting approval
-- [ ] [C16 · Quartz crystals](items/C16.png) — awaiting approval
+- [x] [C01 · Swallow](items/C01.png) — approved
+- [x] [C02 · Barn owl](items/C02.png) — approved
+- [x] [C03 · Witch on broom](items/C03.png) — approved
+- [ ] [C04 · Wizard on broom](items/C04-r1.png) — revised r1 · awaiting approval
+- [x] [C05 · Dragon](items/C05.png) — approved
+- [x] [C06 · Phoenix](items/C06.png) — approved
+- [ ] [C07 · Pixie](items/C07-r1.png) — revised r1 · awaiting approval
+- [ ] [C08 · Lake serpent](items/C08-r1.png) — revised r1 · awaiting approval
+- [ ] [C09 · Mermaid](items/C09-r1.png) — revised r1 · awaiting approval
+- [ ] [C10 · Merman](items/C10-r1.png) — revised r1 · awaiting approval
+- [ ] [C11 · Unicorn](items/C11-r1.png) — revised r1 · awaiting approval
+- [x] [C12 · Sailing boat](items/C12.png) — approved
+- [ ] [C13 · Floating lantern](items/C13.png) — omitted
+- [ ] [C14 · Stone cottage](items/C14.png) — omitted
+- [ ] [C15 · Woodland mushrooms](items/C15.png) — omitted
+- [ ] [C16 · Quartz crystals](items/C16.png) — omitted
 
 ## Scene concepts
 
-- [ ] [X01 · Painted inhabitants in the day castle](items/X01.png) — awaiting approval
-- [ ] [X02 · Painted inhabitants in the night castle](items/X02.png) — awaiting approval
+- [x] [X01 · Painted inhabitants in the day castle](items/X01.png) — approved
+- [x] [X02 · Painted inhabitants in the night castle](items/X02.png) — approved
 
 ## Landscape motion
 
-- [ ] [L01 · Cloud drift](items/L01.gif) — awaiting approval
-- [ ] [L02 · Foliage sway](items/L02.gif) — awaiting approval
-- [ ] [L03 · Lake reflections](items/L03.gif) — awaiting approval
-- [ ] [L04 · Waterfall flow and fine spray](items/L04.gif) — awaiting approval
-- [ ] [L05 · Twinkling stars](items/L05.gif) — awaiting approval
-- [ ] [L06 · Shooting star](items/L06.gif) — awaiting approval
-- [ ] [L07 · Window lights](items/L07.gif) — awaiting approval
-- [ ] [L08 · Fireflies](items/L08.gif) — awaiting approval
+- [x] [L01 · Cloud drift](items/L01.gif) — approved
+- [ ] [L02 · Foliage sway](items/L02-r1.gif) — revised r1 · awaiting approval
+- [ ] [L03 · Lake reflections](items/L03-r1.gif) — revised r1 · awaiting approval
+- [ ] [L04 · Waterfall flow and fine spray](items/L04-r1.gif) — revised r1 · awaiting approval
+- [ ] [L05 · Twinkling stars](items/L05-r1.gif) — revised r1 · awaiting approval
+- [ ] [L06 · Shooting star](items/L06-r1.gif) — revised r1 · awaiting approval
+- [ ] [L07 · Window lights](items/L07-r1.gif) — revised r1 · awaiting approval
+- [ ] [L08 · Fireflies](items/L08-r1.gif) — revised r1 · awaiting approval
 
 ## Faces
 
-- [ ] [F01 · enchanted-spoons](items/F01.png) — awaiting approval
-- [ ] [F02 · brass-clockwork](items/F02.png) — awaiting approval
-- [ ] [F03 · living-magical](items/F03.png) — awaiting approval
-- [ ] [F04 · whimsical-workshop](items/F04.png) — awaiting approval
-- [ ] [F05 · Layered castle and ornate location ring](items/F05.png) — awaiting approval
+- [ ] [F01 · Scalloped whereabouts dial](items/F01-r1.png) — revised r1 · awaiting approval
+- [ ] [F02 · Brass finish range](items/F02-r1.png) — revised r1 · awaiting approval
+- [ ] [F03 · Astronomical scene wheel](items/F03-r1.png) — revised r1 · awaiting approval
+- [x] [F04 · whimsical-workshop](items/F04.png) — approved
+- [x] [F05 · Layered castle and ornate location ring](items/F05.png) — approved
 
 ## Hand shapes
 
-- [ ] [H01 · spoon](items/H01.png) — awaiting approval
-- [ ] [H02 · classic](items/H02.png) — awaiting approval
-- [ ] [H03 · legacy-curved](items/H03.png) — awaiting approval
-- [ ] [H04 · standalone-pointed](items/H04.png) — awaiting approval
-- [ ] [H05 · arrow](items/H05.png) — awaiting approval
-- [ ] [H06 · leaf](items/H06.png) — awaiting approval
-- [ ] [H07 · sword](items/H07.png) — awaiting approval
-- [ ] [H08 · cathedral](items/H08.png) — awaiting approval
-- [ ] [H09 · filigree](items/H09.png) — awaiting approval
-- [ ] [H10 · skeleton](items/H10.png) — awaiting approval
-- [ ] [H11 · quill](items/H11.png) — awaiting approval
-- [ ] [H12 · compass](items/H12.png) — awaiting approval
+- [ ] [H01 · spoon](items/H01-r1.png) — revised r1 · awaiting approval
+- [ ] [H02 · classic](items/H02-r1.png) — revised r1 · awaiting approval
+- [ ] [H03 · legacy-curved](items/H03-r1.png) — revised r1 · awaiting approval
+- [ ] [H04 · standalone-pointed](items/H04-r1.png) — revised r1 · awaiting approval
+- [ ] [H05 · arrow](items/H05-r1.png) — revised r1 · awaiting approval
+- [ ] [H06 · leaf](items/H06-r1.png) — revised r1 · awaiting approval
+- [ ] [H07 · sword](items/H07-r1.png) — revised r1 · awaiting approval
+- [ ] [H08 · cathedral](items/H08-r1.png) — revised r1 · awaiting approval
+- [ ] [H09 · filigree](items/H09-r1.png) — revised r1 · awaiting approval
+- [ ] [H10 · skeleton](items/H10-r1.png) — revised r1 · awaiting approval
+- [ ] [H11 · quill](items/H11-r1.png) — revised r1 · awaiting approval
+- [ ] [H12 · compass](items/H12-r1.png) — revised r1 · awaiting approval
 
 ## Materials
 
@@ -75,17 +75,6 @@
 - [ ] [M11 · Brass finish: polished](items/M11.png) — awaiting approval
 - [ ] [M12 · Brass finish: brushed](items/M12.png) — awaiting approval
 - [ ] [M13 · Brass finish: aged](items/M13.png) — awaiting approval
-
-## Lettering and portraits
-
-- [ ] [K01 · stem / parallel](items/K01.png) — awaiting approval
-- [ ] [K02 · stem / perpendicular](items/K02.png) — awaiting approval
-- [ ] [K03 · tip / parallel](items/K03.png) — awaiting approval
-- [ ] [K04 · tip / perpendicular](items/K04.png) — awaiting approval
-- [ ] [K05 · No hand lettering](items/K05.png) — awaiting approval
-- [ ] [K06 · oval portrait / brass frame](items/K06.png) — awaiting approval
-- [ ] [K07 · circle portrait / brass frame](items/K07.png) — awaiting approval
-- [ ] [K08 · oval portrait / none frame](items/K08.png) — awaiting approval
 
 ## Location panels
 
@@ -181,6 +170,17 @@
 - [ ] [T08 · Verdana, sans-serif](items/T08.png) — awaiting approval
 - [ ] [T09 · system-ui, sans-serif](items/T09.png) — awaiting approval
 - [ ] [T10 · cursive](items/T10.png) — awaiting approval
+
+## Lettering and portraits
+
+- [ ] [K01 · stem / parallel](items/K01.png) — awaiting approval
+- [ ] [K02 · stem / perpendicular](items/K02.png) — awaiting approval
+- [ ] [K03 · tip / parallel](items/K03.png) — awaiting approval
+- [ ] [K04 · tip / perpendicular](items/K04.png) — awaiting approval
+- [ ] [K05 · No hand lettering](items/K05.png) — awaiting approval
+- [ ] [K06 · oval portrait / brass frame](items/K06.png) — awaiting approval
+- [ ] [K07 · circle portrait / brass frame](items/K07.png) — awaiting approval
+- [ ] [K08 · oval portrait / none frame](items/K08.png) — awaiting approval
 
 ## Editor and fullscreen
 

@@ -335,21 +335,21 @@ test("twinkling stars and occasional meteors produce visible night-sky changes",
     }),
   );
   await page.waitForTimeout(700);
-  const meteor = card.locator(".world-meteor").first();
-  await meteor.evaluate(async (node) => {
-    const a = node.getAnimations()[0];
-    await a.ready;
-    a.pause();
-    a.currentTime = a.effect.getTiming().duration * 0.7;
+  await card.evaluate(async (c) => {
+    await c._worldPainter.ready;
+    c._config.scene_motion = false;
+    c._worldPainter.seek(0);
   });
   const quiet = await card.screenshot();
-  await meteor.evaluate((node) => {
-    const a = node.getAnimations()[0];
-    a.currentTime = a.effect.getTiming().duration * 0.85;
+  const visiblePixels = await card.evaluate(async (c) => {
+    const { createMeteorTimeline } = await import("/src/meteors.js"),
+      event = createMeteorTimeline(c._worldMeteorSeed).at(0);
+    c._worldPainter.seek(event.start + event.duration * 0.5);
+    const canvas = c.shadowRoot.querySelector('canvas[data-world-paint="meteors"]'),
+      data = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height).data;
+    return data.filter((v, i) => i % 4 === 3 && v > 20).length;
   });
-  expect(
-    Number(await meteor.evaluate((node) => getComputedStyle(node).opacity)),
-  ).toBeGreaterThan(0.2);
+  expect(visiblePixels).toBeGreaterThan(10);
   const passing = await card.screenshot();
   expect(
     quiet.equals(passing),

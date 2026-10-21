@@ -4,6 +4,10 @@
 
 Start with the **[16 proposed painted characters and props](characters-and-props.md)**, then the **[day/night scene concepts](scene-concepts.md)** and **[eight landscape motion examples](landscape-motion.md)**. The other pages show the existing draft visual options so you can review every element individually.
 
+**Current review:** 11 approved; 28 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review.
+
+Approved: **C01, C02, C03, C05, C06, C12, X01, X02, L01, F04 and F05**. Omitted: **C13–C16**. Revised proposals are linked on the character, landscape, face and hand pages. [Requirements and remaining implementation](REVISION-NOTES.md).
+
 ## How to approve or request changes
 
 Every example has an ID and a full-size image or animation. Reply in chat using the IDs, for example:
@@ -43,6 +47,6 @@ These are static concept compositions. Character illustrations and final movemen
 | [Typography](typography.md) | 10 | T01, T02, T03, T04, T05, T06, T07, T08, T09, T10 |
 | [Editor and fullscreen](editor-and-fullscreen.md) | 2 | U01, U02 |
 
-The scenery clips use normal playback speed. L06 begins just before a shooting star so you can inspect the event; its normal recurrence is 47 seconds. The character images are original generated artwork proposals. Other samples come from the draft renderer. All example people, states and Home Assistant account data are fictional.
+The scenery clips use normal playback speed. The revised L06 begins just before a shooting star; quiet intervals now vary from 20–75 seconds. The variation study skips quiet gaps while each pass retains its natural speed. The character, face and realistic-hand revisions are original generated artwork proposals. The F01 lettering is editable SVG text. Other samples come from the draft renderer. All example people, states and Home Assistant account data are fictional.
 
 The duplicate editor preview and fullscreen visibility fixes are in the engineering draft. They are being held with the rest of the next release while you review the visuals.
