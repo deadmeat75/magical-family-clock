@@ -1,0 +1,61 @@
+{
+  "homeAssistantVersion": "2026.10.2",
+  "savedPeople": {
+    "copies": 6,
+    "independent": true,
+    "sameSensor": true,
+    "emptyName": true
+  },
+  "controls": {
+    "title_y": 24,
+    "caption_opacity": 0.7,
+    "bezel": true,
+    "templates": 4,
+    "profileCopy": true
+  },
+  "reload": true,
+  "frontendErrors": [],
+  "status": "unpublished local build",
+  "unitAndPackagingChecks": 44,
+  "chromiumBrowserChecks": 37,
+  "compiledBundleSHA256": "563532b706b62372265e3a35b4bae941dd897dc1492c24eba376e534761b04af",
+  "originalReferencesUnchanged": true,
+  "publishedReleaseUnchanged": "v0.2.0",
+  "letteringChecks": {
+    "styles": 12,
+    "widths": [
+      0.5,
+      1,
+      1.8
+    ],
+    "positions": [
+      "stem",
+      "tip"
+    ],
+    "directions": [
+      "parallel",
+      "perpendicular"
+    ],
+    "additionalRotations": [
+      0,
+      30,
+      90
+    ],
+    "actualRenderedBoundsInsideMaterial": true,
+    "independentOfPortraitRotation": true,
+    "spoonBowlConnected": true
+  },
+  "gearChecks": {
+    "teeth": [
+      40,
+      24,
+      40,
+      24
+    ],
+    "connectedContacts": 4,
+    "correctDirectionsAndRatios": true,
+    "synchronizedAnimationTimeline": true,
+    "toothGapPhaseMaintained": true,
+    "renderedProfilesDoNotCollideOverToothCycle": true
+  }
+}
