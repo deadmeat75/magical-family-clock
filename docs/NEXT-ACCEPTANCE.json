@@ -1,0 +1,15 @@
+{
+  "realImageUpload": true,
+  "accountLibrarySave": true,
+  "reloadLibrary": true,
+  "fullCopyLoad": true,
+  "dashboardSave": true,
+  "dashboardReload": true,
+  "frontendErrors": [],
+  "status": "validated for v0.2.0 release",
+  "unitAndPackagingChecks": 31,
+  "chromiumBrowserChecks": 22,
+  "homeAssistantVersion": "2026.10.2",
+  "originalReferencesUnchanged": true,
+  "authenticatedHacsInstallVerified": false
+}

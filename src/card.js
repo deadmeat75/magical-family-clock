@@ -1,3 +1,5 @@
+import { metricText, runtimeConfig } from "./data.js";
+import { weatherFor, weatherMarkup, weatherCSS } from "./weather.js";
 import {
   defaults,
   normalize,
@@ -6,7 +8,7 @@ import {
   safeImage,
   demoStates,
 } from "./engine.js";
-import { palettes, skies, face, landscape } from "./themes.js";
+import { palettes, skies, face, landscape, metalDefs } from "./themes.js";
 import "./editor.js";
 import { sceneFor } from "./scenes.js";
 import {
@@ -28,7 +30,7 @@ function svg(tag, attrs = {}, text) {
   if (text !== undefined) e.textContent = text;
   return e;
 }
-const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:bold;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}.legacy-hand{filter:drop-shadow(3.43px 3.43px 8.57px #0008)}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}.expanded .frame{width:95vw;max-width:95vh;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
+const style = `.scene-layer{transition:opacity var(--fade,1500ms)}@media(prefers-reduced-motion:reduce){.scene-layer{transition:none}}.still .scene-layer{transition:none}.legacy-name{font-weight:bold;font-family:var(--font,Georgia,serif);dominant-baseline:middle;text-anchor:middle}.legacy-hand{filter:drop-shadow(3.43px 3.43px 8.57px #0008)}:host{display:block;color:var(--primary-text-color,#eee)}*{box-sizing:border-box}[hidden]{display:none!important}ha-card{display:block;position:relative;overflow:hidden;background:var(--card-background-color,#172325);border-radius:20px}.frame{margin:auto;width:100%;position:relative}svg{display:block;width:100%;height:auto;overflow:visible}.outer{fill:var(--rim);stroke:var(--metal);stroke-width:3}.dial{fill:var(--paper);stroke:var(--metal);stroke-width:2}.ring{fill:none;stroke:var(--metal);stroke-width:1;opacity:.55}.inner{stroke-dasharray:2 7}.ticks,.filigree{fill:none;stroke:var(--metal);stroke-width:1.5}.gears{fill:var(--metal);stroke:var(--metal);opacity:.25}.gear{animation:turn var(--gear-speed,60s) linear infinite;transform-box:fill-box;transform-origin:center}.gears-off .gear,.paused .gear,.still .gear{animation-play-state:paused}.hand{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1);transform-origin:300px 300px}.counter{transition:transform var(--duration,1000ms) cubic-bezier(.4,0,.2,1)}.label{font:600 17px Georgia,serif;fill:var(--ink);letter-spacing:1px;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}.name{font:600 13px Georgia,serif;paint-order:stroke;stroke:#152326;stroke-width:3px;stroke-linejoin:round}.minimal .filigree,.minimal .inner{display:none}.label,.name,.caption,.title{font-family:var(--font,Georgia,serif)}#sky stop{transition:stop-color var(--fade,1500ms)}.background-image{transition:opacity var(--fade,1500ms)}.caption{font:12px var(--font,Georgia,serif);letter-spacing:4px;fill:var(--ink);opacity:.7}.title{font:italic 23px var(--font,Georgia,serif);fill:var(--ink)}button{border:1px solid #b69657;background:#182a2ee0;color:#f2dfb6;border-radius:24px;padding:8px 12px;cursor:pointer}.fullscreen{position:absolute;right:12px;bottom:12px}.empty{position:absolute;inset:30% 20%;display:flex;align-items:center;text-align:center;color:var(--ink);font:18px Georgia}.expanded{position:fixed!important;inset:0!important;z-index:10000;border-radius:0;background:#101d23!important;display:grid;place-items:center}.expanded .frame{width:95vw;max-width:95vh;width:min(95vw,95vh)}.still .hand,.still .counter,.still .background-image{transition:none}@keyframes turn{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hand,.counter,.background-image,#sky stop{transition:none}.gear{animation:none}}`;
 export class MagicalFamilyClock extends HTMLElement {
   constructor() {
     super();
@@ -64,10 +66,7 @@ export class MagicalFamilyClock extends HTMLElement {
       this._observer = new IntersectionObserver((entries) => {
         this.shadowRoot
           .querySelector("ha-card")
-          .classList.toggle(
-            "paused",
-            !entries[0].isIntersecting || !this._config.gears,
-          );
+          .classList.toggle("paused", !entries[0].isIntersecting);
       });
       this._observer.observe(this);
     }
@@ -88,7 +87,7 @@ export class MagicalFamilyClock extends HTMLElement {
   }
   _render() {
     const c = this._config,
-      p = palettes[c.theme];
+      p = { ...palettes[c.theme], ...c.colors };
     cancelAnimationFrame(this._labelFrame);
     if (this._faceLoad) {
       this._faceLoad.onload = null;
@@ -101,16 +100,32 @@ export class MagicalFamilyClock extends HTMLElement {
     this._sceneLoaded = false;
     this._hands.clear();
     this._imageURL = null;
-    this.shadowRoot.innerHTML = `<style>${style}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs><clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="190"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><image class="castle-frame" x="0" y="0" width="600" height="600"/></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="var(--metal)" stroke="var(--rim)" stroke-width="4"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="var(--paper)"/></svg><div class="empty" hidden></div></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
+    this._weatherKey = null;
+    this._locationKey = null;
+    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.6px;filter:drop-shadow(0px 1px .25px #fff5);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="190"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><image class="castle-frame" x="0" y="0" width="600" height="600"/></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="var(--metal)" stroke="var(--rim)" stroke-width="4"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="var(--paper)"/></svg><div class="empty" hidden></div></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
     const card = this.shadowRoot.querySelector("ha-card");
     Object.keys(p).forEach((k) => card.style.setProperty("--" + k, p[k]));
     card.style.setProperty("--duration", c.duration + "ms");
     card.style.setProperty("--gear-speed", c.gear_speed + "s");
     card.style.setProperty("--font", c.font);
+    for (const key of ["caption", "location", "name"]) {
+      card.style.setProperty("--" + key + "-font", c[key + "_font"] || c.font);
+      card.style.setProperty("--" + key + "-size", c[key + "_size"] + "px");
+    }
+    this.shadowRoot.querySelector(".caption").textContent = c.caption;
+    if (c.caption.length * (c.caption_size * 0.65 + 4) > 300) {
+      this.shadowRoot.querySelector(".caption").setAttribute("textLength", 300);
+      this.shadowRoot
+        .querySelector(".caption")
+        .setAttribute("lengthAdjust", "spacingAndGlyphs");
+    }
+    this.shadowRoot.querySelector(".caption").style.display = c.show_branding
+      ? ""
+      : "none";
     card.style.setProperty("--fade", c.background_transition + "ms");
     card.classList.toggle("minimal", c.detail === "minimal");
     card.classList.toggle("still", !!c.reduced_motion);
-    card.classList.toggle("paused", !c.gears);
+    card.classList.toggle("gears-off", !c.gears);
     if (c.transparent) card.style.background = "transparent";
     this.shadowRoot.querySelector(".frame").style.maxWidth = c.size + "px";
     this.shadowRoot
@@ -217,11 +232,19 @@ export class MagicalFamilyClock extends HTMLElement {
     const r = handRadius(m, c, p.radius);
     const path = svg("path", {
       d: handPath(design, r),
-      fill: m.color,
+      fill:
+        c.theme === "brass-clockwork" || m.material === "brass"
+          ? "url(#aged-brass)"
+          : m.color,
       stroke: legacy ? "none" : "#382c22",
       "stroke-width": 2,
       class: legacy ? "legacy-hand" : "",
     });
+    path.setAttribute(
+      "transform",
+      `translate(300 0) scale(${m.width} 1) translate(-300 0)`,
+    );
+    if (c.theme === "brass-clockwork") path.style.filter = "url(#metal-grain)";
     g.appendChild(path);
     const head = svg("g", { transform: `translate(300 ${300 - r})` });
     const counter = svg("g", { class: "counter" });
@@ -278,25 +301,18 @@ export class MagicalFamilyClock extends HTMLElement {
       );
     if (legacy && (!m.show_portrait || !m.portrait))
       head.style.display = "none";
-    if (m.show_name && !legacy)
-      counter.appendChild(
-        svg(
-          "text",
-          {
-            class: "name",
-            y: ry + 20,
-            "text-anchor": "middle",
-            fill: m.text_color,
-          },
-          m.nickname || m.name,
-        ),
-      );
     let nameGroup = null;
-    if (legacy && m.show_name) {
+    if (m.show_name) {
       nameGroup = svg("g", { class: "along-label" });
       const name = svg(
         "text",
-        { class: "legacy-name", fill: m.text_color },
+        {
+          class: "legacy-name engraved",
+          fill:
+            c.theme === "brass-clockwork" && m.text_color === "#fff5dc"
+              ? "#3d2915"
+              : m.text_color,
+        },
         m.nickname || m.name,
       );
       const size = Math.max(
@@ -306,9 +322,33 @@ export class MagicalFamilyClock extends HTMLElement {
           (r * 0.57) / Math.max(1, (m.nickname || m.name).length * 0.62),
         ),
       );
-      name.style.fontSize = size + "px";
+      name.style.fontSize = Math.min((size * c.name_size) / 13, 26) + "px";
       nameGroup.appendChild(name);
       g.appendChild(nameGroup);
+    }
+    const metrics = svg("g", { class: "hand-data" });
+    counter.appendChild(metrics);
+    const metricNodes = m.metrics.map((metric, i) => {
+      const placement = metric.placement || "below";
+      const text = svg("text", {
+        class: "metric",
+        x: placement === "beside" ? size + 9 : 0,
+        y:
+          placement === "above"
+            ? -ry - 12 - i * 13
+            : placement === "beside"
+              ? i * 13
+              : ry + 20 + i * 13,
+        "text-anchor": placement === "beside" ? "start" : "middle",
+      });
+      metrics.appendChild(text);
+      return text;
+    });
+    if (m.metrics.length && head.style.display === "none") {
+      head.style.display = "";
+      [...counter.children]
+        .filter((e) => e !== metrics)
+        .forEach((e) => (e.style.display = "none"));
     }
     const title = svg("title", {}, "");
     g.appendChild(title);
@@ -322,6 +362,7 @@ export class MagicalFamilyClock extends HTMLElement {
       r,
       design,
       nameGroup,
+      metricNodes,
     });
     return this._hands.get(m.id);
   }
@@ -329,6 +370,47 @@ export class MagicalFamilyClock extends HTMLElement {
     if (!this._config || !this.shadowRoot.querySelector("svg")) return;
     const c = this._config;
     const states = c.demo ? demoStates() : (this._hass || {}).states || {};
+    const runtime = runtimeConfig(c, states);
+    const locationKey = JSON.stringify(
+      runtime.locations.map((l) => [l.id, l.name, l.angle]),
+    );
+    if (locationKey !== this._locationKey) {
+      this._locationKey = locationKey;
+      const group = this.shadowRoot.querySelector(".locations");
+      group.textContent = "";
+      runtime.locations.forEach((l) => {
+        const a = (l.angle * Math.PI) / 180;
+        const label = svg(
+          "text",
+          {
+            x: 300 + Math.cos(a) * 213,
+            y: 300 + Math.sin(a) * 213,
+            class: "label",
+            "text-anchor": "middle",
+          },
+          l.name,
+        );
+        if (l.color) label.style.fill = l.color;
+        group.appendChild(label);
+      });
+    }
+    const kind = weatherFor(c, states),
+      night =
+        c.period_override === "night" ||
+        (c.period_override === "auto" &&
+          states[c.sun_entity]?.state === "below_horizon"),
+      weatherKey = kind + "|" + c.weather_intensity + "|" + night;
+    const weather = this.shadowRoot.querySelector(".weather");
+    weather.classList.toggle("still", !c.weather_motion);
+    weather.setAttribute(
+      "clip-path",
+      c.artwork === "castle" ? "url(#castle-opening)" : "url(#dial-clip)",
+    );
+    if (weatherKey !== this._weatherKey) {
+      weather.innerHTML = weatherMarkup(kind, c.weather_intensity, night);
+      weather.setAttribute("data-weather", kind);
+      this._weatherKey = weatherKey;
+    }
     const background = backgroundFor(c, states);
     const colors = skies[background] || skies.day;
     const stops = this.shadowRoot.querySelectorAll("#sky stop");
@@ -408,6 +490,14 @@ export class MagicalFamilyClock extends HTMLElement {
       this._angles.set(p.member.id, angle);
       hand.g.style.transform = `rotate(${angle}deg)`;
       hand.counter.style.transform = `rotate(${-angle}deg)`;
+      hand.metricNodes.forEach(
+        (node, i) =>
+          (node.textContent = metricText(
+            p.member.metrics[i],
+            states,
+            p.member.entity,
+          )),
+      );
       hand.title.textContent =
         p.member.name + ": " + (p.location ? p.location.name : "Unknown");
     });
@@ -415,7 +505,14 @@ export class MagicalFamilyClock extends HTMLElement {
   }
   _updateCastle(scene) {
     const c = this._config;
-    const source = safeImage((c.background_images || {})[scene.key]);
+    const weather = weatherFor(
+      c,
+      c.demo ? demoStates() : this._hass?.states || {},
+    );
+    const source = safeImage(
+      (c.background_images || {})[scene.key + "-" + weather] ||
+        (c.background_images || {})[scene.key],
+    );
     const request = scene.key + "|" + source;
     if (this._sceneRequest === request) return;
     this._sceneRequest = request;
@@ -453,9 +550,20 @@ export class MagicalFamilyClock extends HTMLElement {
         parent.setAttribute("data-scene", scene.key);
         this.shadowRoot.querySelector(".face").style.visibility = "hidden";
         this.shadowRoot.querySelector(".locations").style.display = "none";
-        this.shadowRoot
-          .querySelectorAll(".caption,.title")
-          .forEach((e) => (e.style.display = "none"));
+        this.shadowRoot.querySelector(".caption").setAttribute("y", "440");
+        this.shadowRoot.querySelector(".title").setAttribute("y", "418");
+        this.shadowRoot.querySelectorAll(".caption,.title").forEach((e) => {
+          e.style.display = c.show_branding ? "" : "none";
+          e.style.fill = "#f3d698";
+        });
+        const filters = {
+          spring: "saturate(1.25) brightness(1.08)",
+          summer: "saturate(1.4) brightness(1.14)",
+          autumn: "sepia(.22) saturate(1.25)",
+          winter: "saturate(.65) brightness(1.12)",
+        };
+        parent.querySelector(".castle-scenes").style.filter =
+          filters[scene.season] || "";
         layer.getBoundingClientRect();
         layer.style.transition = "";
         layer.style.opacity = 1;

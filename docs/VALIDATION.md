@@ -1,5 +1,7 @@
 # Validation and known limits
 
+**Next build:** see [version 0.2.0 feature and validation notes](NEXT-VERSION.md). Statements below describe the published 0.1.0-rc.1 baseline unless specified otherwise.
+
 ## Scope and provenance
 
 The original repository had only its title README and initial commit. Home Assistant JavaScript, standalone HTML, a checksum list, an earlier implementation plan, and visual clock references were subsequently supplied and inspected. The JavaScript checksum matches. A separate disposable Home Assistant 2026.10.2 instance was subsequently created for acceptance; the user’s own instance was not accessed. All screenshots use fictional people and simulated states. No existing Home Assistant file, entity, dashboard, helper, automation, integration, or standalone clock was modified.

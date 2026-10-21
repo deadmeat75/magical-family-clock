@@ -1,3 +1,7 @@
+import { uploadImage } from "./images.js";
+import { ClockLibrary } from "./library.js";
+import { discoveredLocations } from "./data.js";
+import { WEATHER } from "./weather.js";
 import {
   defaults,
   normalize,
@@ -17,6 +21,7 @@ const sections = [
   "Appearance",
   "Behavior",
   "Presets",
+  "Saved clocks",
 ];
 const node = (tag, text) => {
   const e = document.createElement(tag);
@@ -105,7 +110,10 @@ export class ClockEditor extends HTMLElement {
     const e = node(
       type === "select" ? "select" : type === "textarea" ? "textarea" : "input",
     );
-    if (e.tagName === "INPUT") e.type = type;
+    if (e.tagName === "INPUT") {
+      e.type = type;
+      if (type === "number") e.step = "any";
+    }
     if (options)
       options.forEach((o) => {
         const pair = Array.isArray(o) ? o : [o, o];
@@ -182,6 +190,29 @@ export class ClockEditor extends HTMLElement {
     const root = node("div");
     this.shadowRoot.appendChild(root);
     const c = this.config;
+    const quick = node("div");
+    quick.className = "actions";
+    if (this.tab !== "People")
+      this.button(quick, "Add person", () => {
+        this.tab = "People";
+        this.change(() => {
+          c.demo = false;
+          c.members.push({ id: uid(), name: "New person" });
+        }, true);
+      });
+    this.button(quick, "Save clock", () => {
+      this.tab = "Saved clocks";
+      this.render();
+    });
+    this.button(quick, "Use saved clock", () => {
+      this.tab = "Saved clocks";
+      this.render();
+    });
+    root.appendChild(quick);
+    this.note(
+      root,
+      "Choose a face, add people, and select their location entities. Changes appear in the preview. Use Home Assistant’s Save button to keep dashboard changes.",
+    );
     if (!c.members.length && !this.wizard) {
       this.note(
         root,
@@ -211,6 +242,7 @@ export class ClockEditor extends HTMLElement {
     root.appendChild(node("h3", this.tab));
     if (this.tab === "General") {
       this.field(root, "Title", c, "title");
+      this.field(root, "Clock caption (blank to hide)", c, "caption");
       this.field(root, "Clock theme", c, "theme", "select", THEMES);
       for (const [variant, label] of [
         ["ha", "Use supplied Home Assistant layout"],
@@ -278,6 +310,7 @@ export class ClockEditor extends HTMLElement {
         this.field(box, "Hand color", m, "color", "color");
         this.field(box, "Text color", m, "text_color", "color");
         this.field(box, "Length (0.5–1.1)", m, "length", "number");
+        this.field(box, "Hand width (0.5–2.5)", m, "width", "number");
         this.field(box, "Spoon material", m, "material", "select", [
           "color",
           "brass",
@@ -291,11 +324,14 @@ export class ClockEditor extends HTMLElement {
           "classic",
           "legacy-curved",
           "standalone-pointed",
+          "arrow",
+          "leaf",
+          "sword",
         ]);
         this.field(box, "Display priority", m, "priority", "number");
         this.field(box, "Show name", m, "show_name", "checkbox");
         this.field(box, "Show portrait", m, "show_portrait", "checkbox");
-        this.field(box, "Portrait URL or /local/ path", m, "portrait");
+        this.imageField(box, "Portrait", m, "portrait", true);
         if (m.portrait) {
           const img = node("img");
           img.src = m.portrait;
@@ -327,7 +363,11 @@ export class ClockEditor extends HTMLElement {
         );
         this.field(box, "Portrait rotation", m, "portrait_rotation", "number");
         this.field(box, "Head size (0.6–1.5)", m, "head_size", "number");
-        const mappings = this.box(box, "Personal state overrides");
+        this.personData(box, m);
+        const advanced = node("details");
+        advanced.appendChild(node("summary", "Advanced location matching"));
+        box.appendChild(advanced);
+        const mappings = this.box(advanced, "Personal state overrides");
         Object.keys(m.overrides || {}).forEach((state) => {
           const row = node("div");
           row.appendChild(
@@ -389,6 +429,23 @@ export class ClockEditor extends HTMLElement {
           this.change(() => c.members.splice(i, 1), true),
         );
         box.appendChild(actions);
+        const advancedStyle = node("details");
+        advancedStyle.appendChild(
+          node("summary", "Customize hand and portrait"),
+        );
+        box.appendChild(advancedStyle);
+        [...box.children]
+          .filter(
+            (e) =>
+              e.tagName === "LABEL" &&
+              ![
+                "Display name",
+                "Nickname",
+                "Enabled",
+                "Location entity",
+              ].includes(e.firstChild?.textContent),
+          )
+          .forEach((e) => advancedStyle.appendChild(e));
       });
       this.button(root, "Add person", () =>
         this.change(() => {
@@ -398,10 +455,35 @@ export class ClockEditor extends HTMLElement {
       );
       this.note(
         root,
-        "Portraits stay on your chosen host. Use an existing Home Assistant /local/ image or an accessible image URL. This card does not upload files or resolve protected media-source URLs.",
+        "Upload a portrait from your device. Images are optimized and saved inside this dashboard configuration. Advanced image links remain available. Optional hand data never changes location tracking.",
       );
     }
     if (this.tab === "Locations") {
+      const dynamic = this.field(
+        root,
+        "Automatically add detected locations",
+        c,
+        "dynamic_locations",
+        "checkbox",
+      );
+      dynamic.onchange = () =>
+        this.change(() => {
+          c.dynamic_locations = dynamic.checked;
+          if (dynamic.checked) c.artwork = "vector";
+        }, true);
+      this.note(
+        root,
+        "Automatic locations use available zone names and the current states of selected people. Labels are spaced evenly at runtime. For fixed positions, leave this off and add discovered locations below.",
+      );
+      const discovered = discoveredLocations(c, this._hass?.states || {});
+      if (discovered.length)
+        this.button(root, "Add discovered locations", () =>
+          this.change(() => {
+            const all = [...c.locations, ...discovered];
+            all.forEach((l, i) => (l.angle = -90 + (i * 360) / all.length));
+            c.locations = all;
+          }, true),
+        );
       this.dial(root);
       this.button(root, "Space locations evenly", () =>
         this.change(
@@ -488,6 +570,26 @@ export class ClockEditor extends HTMLElement {
         if (artworkChoice.value === "castle") applyCastle();
         else this.change(() => (c.artwork = "vector"), true);
       };
+      this.field(
+        root,
+        "Weather effect",
+        c,
+        "weather_effect",
+        "select",
+        WEATHER,
+      );
+      this.field(
+        root,
+        "Weather intensity (0.2–2)",
+        c,
+        "weather_intensity",
+        "number",
+      );
+      this.field(root, "Animate weather", c, "weather_motion", "checkbox");
+      this.note(
+        root,
+        "Auto follows your weather entity. Rain, snow, fog, wind, ice and lightning work with every season and time. Reduced motion keeps a static atmosphere.",
+      );
       this.field(root, "Scene season", c, "season_override", "select", [
         "auto",
         "spring",
@@ -552,13 +654,34 @@ export class ClockEditor extends HTMLElement {
         "rich",
         "minimal",
       ]);
+      const fonts = [
+        "Georgia, serif",
+        "Palatino, serif",
+        "Garamond, serif",
+        "Baskerville, serif",
+        "Courier New, monospace",
+        "Trebuchet MS, sans-serif",
+        "Verdana, sans-serif",
+        "system-ui, sans-serif",
+        "cursive",
+      ];
+      for (const part of ["name", "location", "caption"]) {
+        this.field(root, part + " font", c, part + "_font", "select", fonts);
+        this.field(root, part + " text size", c, part + "_size", "number");
+      }
+      const palette = this.box(root, "Custom colors");
+      for (const key of ["paper", "ink", "metal", "rim"])
+        this.field(palette, key + " color", c.colors, key, "color");
+      this.button(palette, "Restore theme colors", () =>
+        this.change(() => (c.colors = {}), true),
+      );
       this.field(root, "Typography", c, "font", "select", [
         "Georgia, serif",
         "Palatino, serif",
         "system-ui, sans-serif",
       ]);
-      this.field(root, "Center illustration URL", c, "center_image");
-      this.field(root, "Complete clock-face image URL", c, "face_image");
+      this.imageField(root, "Center illustration", c, "center_image");
+      this.imageField(root, "Complete clock face", c, "face_image");
       this.field(
         root,
         "Show extra location labels on custom face",
@@ -599,8 +722,37 @@ export class ClockEditor extends HTMLElement {
         "winter",
         "rain",
       ].forEach((key) =>
-        this.field(box, key + " image URL", c.background_images, key),
+        this.imageField(box, key + " background", c.background_images, key),
       );
+      const combinations = this.box(
+        root,
+        "Season, time and weather image override",
+      );
+      const combo = { season: "winter", time: "night", weather: "snow" };
+      this.field(combinations, "Override season", combo, "season", "select", [
+        "spring",
+        "summer",
+        "autumn",
+        "winter",
+      ]);
+      this.field(combinations, "Override time", combo, "time", "select", [
+        "dawn",
+        "day",
+        "dusk",
+        "night",
+      ]);
+      this.field(
+        combinations,
+        "Override weather",
+        combo,
+        "weather",
+        "select",
+        WEATHER.filter((x) => x !== "auto"),
+      );
+      this.button(combinations, "Configure this combination", () => {
+        const key = combo.season + "-" + combo.time + "-" + combo.weather;
+        this.imageField(combinations, key, c.background_images, key);
+      });
       this.note(
         root,
         "Automatic mode prioritizes weather, night, sunrise/sunset, then the season. Bundled vector landscapes require no internet.",
@@ -638,7 +790,38 @@ export class ClockEditor extends HTMLElement {
         "Missing or unexpected entity states use the selected unknown location. Hands use shortest-path rotation. Reduced motion also follows your device preference. At very large household sizes, reduce portrait size or use separate clocks for readability.",
       );
     }
+    if (this.tab === "General" || this.tab === "Appearance") {
+      const advanced = node("details");
+      advanced.appendChild(node("summary", "Advanced layout and rendering"));
+      root.appendChild(advanced);
+      const labels = [
+        "Maximum size (pixels)",
+        "Aspect ratio (width / height)",
+        "Transparent card",
+        "Demonstration states",
+        "Background mode",
+        "Manual background",
+        "Seasonal backgrounds",
+        "Gear revolution (seconds)",
+        "Background opacity (0–1)",
+        "Background crossfade (ms)",
+        "Decorative detail",
+        "Typography",
+        "Show extra location labels on custom face",
+        "Show title on custom face",
+        "Pivot horizontal position (%)",
+        "Pivot vertical position (%)",
+        "Living Magical hand design",
+      ];
+      [...root.children]
+        .filter(
+          (e) =>
+            e.tagName === "LABEL" && labels.includes(e.firstChild?.textContent),
+        )
+        .forEach((e) => advanced.appendChild(e));
+    }
     if (this.tab === "Presets") this.presets(root);
+    if (this.tab === "Saved clocks") this.savedClocks(root);
     if (this.wizard) {
       const index = sections.indexOf(this.tab);
       this.note(
@@ -666,6 +849,230 @@ export class ClockEditor extends HTMLElement {
     details.appendChild(preview);
     root.appendChild(details);
     this.updatePreview();
+  }
+  imageField(parent, label, obj, key, portrait = false) {
+    const box = this.box(parent, label);
+    this.note(
+      box,
+      "PNG, JPEG or WebP, up to 10 MB. Stored with your clock; no image hosting needed.",
+    );
+    const file = node("input");
+    file.type = "file";
+    file.accept = "image/png,image/jpeg,image/webp";
+    file.setAttribute("aria-label", "Upload " + label);
+    box.appendChild(file);
+    const status = node("p");
+    status.setAttribute("role", "status");
+    box.appendChild(status);
+    file.onchange = async () => {
+      file.disabled = true;
+      status.textContent = "Optimizing image…";
+      try {
+        const data = await uploadImage(file.files[0], portrait);
+        if (
+          new TextEncoder().encode(JSON.stringify(this.config)).length +
+            data.length -
+            (obj[key]?.length || 0) >
+          2500000
+        )
+          throw Error(
+            "This clock is too large. Remove or reduce another uploaded image first.",
+          );
+        this.change(() => (obj[key] = data), true);
+      } catch (error) {
+        status.textContent = error.message;
+        status.className = "error";
+        file.disabled = false;
+      }
+    };
+    if (obj[key]) {
+      const preview = node("img");
+      preview.src = obj[key];
+      preview.alt = label + " preview";
+      box.appendChild(preview);
+      this.button(box, "Remove " + label, () =>
+        this.change(() => (obj[key] = ""), true),
+      );
+    }
+    const advanced = node("details");
+    advanced.appendChild(node("summary", "Use an image URL or /local/ path"));
+    box.appendChild(advanced);
+    this.field(advanced, label + " URL", obj, key);
+  }
+  personData(parent, m) {
+    const details = node("details");
+    details.appendChild(
+      node("summary", "Optional hand information and location rules"),
+    );
+    parent.appendChild(details);
+    this.note(
+      details,
+      "Read another entity or an attribute of this person’s location entity. Missing readings are hidden. Up to four readings fit on a hand.",
+    );
+    m.metrics.forEach((metric, i) => {
+      const box = this.box(details, "Reading " + (i + 1));
+      this.selector(
+        box,
+        "Reading entity (blank uses location entity)",
+        metric,
+        "entity",
+      );
+      this.field(
+        box,
+        "Reading attribute (blank uses state)",
+        metric,
+        "attribute",
+      );
+      this.field(box, "Reading label", metric, "label");
+      this.field(box, "Unit (blank hides unit)", metric, "unit");
+      this.field(box, "Decimal places (0–3)", metric, "decimals", "number");
+      this.field(box, "Reading placement", metric, "placement", "select", [
+        "below",
+        "above",
+        "beside",
+      ]);
+      this.button(box, "Remove reading", () =>
+        this.change(() => m.metrics.splice(i, 1), true),
+      );
+    });
+    if (m.metrics.length < 4)
+      this.button(details, "Add hand information", () =>
+        this.change(
+          () =>
+            m.metrics.push({
+              label: "",
+              entity: "",
+              attribute: "",
+              unit: "",
+              decimals: "",
+            }),
+          true,
+        ),
+      );
+    this.note(
+      details,
+      "Location rules run in order after the travelling override and before ordinary state matching. For example, speed above 5 can point to Travelling; a room sensor equal to Kitchen can point to Kitchen.",
+    );
+    m.rules.forEach((rule, i) => {
+      const box = this.box(details, "Location rule " + (i + 1));
+      this.selector(
+        box,
+        "Rule entity (blank uses location entity)",
+        rule,
+        "entity",
+      );
+      this.field(box, "Rule attribute", rule, "attribute");
+      this.field(box, "Comparison", rule, "operator", "select", [
+        "equals",
+        "above",
+        "below",
+        "contains",
+      ]);
+      this.field(box, "Compare with", rule, "value");
+      this.field(
+        box,
+        "Point to location",
+        rule,
+        "location",
+        "select",
+        this.config.locations.map((l) => [l.id, l.name]),
+      );
+      this.button(box, "Remove rule", () =>
+        this.change(() => m.rules.splice(i, 1), true),
+      );
+    });
+    this.button(details, "Add location rule", () =>
+      this.change(
+        () =>
+          m.rules.push({
+            operator: "equals",
+            value: "",
+            location: this.config.locations[0]?.id || "",
+          }),
+        true,
+      ),
+    );
+  }
+  savedClocks(root) {
+    this.note(
+      root,
+      "Your complete clocks are stored in your Home Assistant account and available on other dashboards and devices signed in as you. Loading creates an independent copy. Images and household details are included. Save the dashboard after loading.",
+    );
+    const library = new ClockLibrary(this._hass);
+    const name = node("input");
+    name.setAttribute("aria-label", "Saved clock name");
+    name.placeholder = "For example: Hallway family clock";
+    root.appendChild(name);
+    const status = node("p");
+    status.setAttribute("role", "status");
+    root.appendChild(status);
+    const list = node("div");
+    root.appendChild(list);
+    const run = async (action) => {
+      try {
+        status.textContent = "Working…";
+        await action();
+        status.textContent = "Saved.";
+        await refresh();
+      } catch (error) {
+        status.textContent =
+          error.message ||
+          "Home Assistant could not save the library. Try again.";
+        status.className = "error";
+      }
+    };
+    const refresh = async () => {
+      const clocks = await library.read();
+      list.textContent = "";
+      if (!clocks.length)
+        this.note(
+          list,
+          "No saved clocks yet. Enter a name and choose Save as new clock.",
+        );
+      clocks.forEach((clock) => {
+        const box = this.box(list, clock.name);
+        this.button(box, "Preview saved clock", () => {
+          const preview = node("magical-family-clock-card");
+          preview.setConfig(clock.config);
+          preview.hass = this._hass;
+          box.appendChild(preview);
+        });
+        this.button(box, "Load independent copy", () => {
+          this.config = normalize(clone(clock.config));
+          this.emit();
+          this.tab = "General";
+          this.render();
+        });
+        this.button(box, "Duplicate saved clock", () =>
+          run(() => library.save(clock.name + " copy", clock.config)),
+        );
+        const rename = node("input");
+        rename.value = clock.name;
+        rename.setAttribute("aria-label", "Rename " + clock.name);
+        box.appendChild(rename);
+        this.button(box, "Rename clock", () =>
+          run(() => library.rename(clock.id, rename.value)),
+        );
+        this.button(box, "Delete saved clock", () => {
+          if (
+            window.confirm(
+              "Delete saved clock “" +
+                clock.name +
+                "”? Existing dashboard copies are kept.",
+            )
+          )
+            run(() => library.remove(clock.id));
+        });
+      });
+    };
+    this.button(root, "Save as new clock", () =>
+      run(() => library.save(name.value, this.config)),
+    );
+    this.button(root, "Refresh saved clocks", () => run(async () => {}));
+    refresh().catch((error) => {
+      status.textContent = error.message;
+      status.className = "error";
+    });
   }
   updatePreview() {
     const p = this.shadowRoot.querySelector("magical-family-clock-card");

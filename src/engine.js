@@ -1,4 +1,10 @@
-export const THEMES = ["enchanted-spoons", "brass-clockwork", "living-magical"];
+import { matchesRule, runtimeConfig } from "./data.js";
+export const THEMES = [
+  "enchanted-spoons",
+  "brass-clockwork",
+  "living-magical",
+  "whimsical-workshop",
+];
 export const clone = (v) => JSON.parse(JSON.stringify(v));
 export const uid = () =>
   "mfc-" +
@@ -14,6 +20,18 @@ export function defaults() {
     type: "custom:magical-family-clock-card",
     version: 1,
     title: "Our whereabouts",
+    caption: "Magical Family Clock",
+    caption_size: 12,
+    location_size: 17,
+    name_size: 13,
+    caption_font: "Georgia, serif",
+    location_font: "Georgia, serif",
+    name_font: "Georgia, serif",
+    colors: {},
+    dynamic_locations: false,
+    weather_effect: "auto",
+    weather_intensity: 1,
+    weather_motion: true,
     theme: THEMES[0],
     members: [],
     locations: [
@@ -68,6 +86,12 @@ export function defaults() {
   };
 }
 export function safeImage(v) {
+  if (
+    typeof v === "string" &&
+    v.length <= 2000000 &&
+    /^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(v)
+  )
+    return v;
   return typeof v === "string" &&
     !/[\u0000-\u0020\\]/.test(v) &&
     /^(https?:\/\/|\/(?!\/))/.test(v)
@@ -79,6 +103,10 @@ export function normalize(input) {
     throw Error("Choose a clock configuration object.");
   if (input.version && input.version !== 1)
     throw Error("Unsupported configuration version.");
+  if (new TextEncoder().encode(JSON.stringify(input)).length > 2500000)
+    throw Error(
+      "Clock configuration exceeds 2.5 MB. Remove or reduce embedded images.",
+    );
   const c = Object.assign(defaults(), clone(input));
   c.type = "custom:magical-family-clock-card";
   c.version = 1;
@@ -116,12 +144,28 @@ export function normalize(input) {
         priority: 0,
         material: "color",
         hand_design: "theme",
+        width: 1,
+        metrics: [],
+        rules: [],
       },
       m,
       {
         id: String(m.id || uid()),
         name: String(m.name || "Person"),
         length: num(m.length, 1, 0.5, 1.1),
+        width: num(m.width, 1, 0.5, 2.5),
+        metrics: Array.isArray(m.metrics)
+          ? m.metrics
+              .slice(0, 4)
+              .filter((x) => x && typeof x === "object")
+              .map((x) => ({ ...x }))
+          : [],
+        rules: Array.isArray(m.rules)
+          ? m.rules
+              .slice(0, 30)
+              .filter((x) => x && typeof x === "object")
+              .map((x) => ({ ...x }))
+          : [],
         portrait: safeImage(m.portrait),
         portrait_zoom: num(m.portrait_zoom, 1, 1, 4),
         portrait_x: num(m.portrait_x, 50, 0, 100),
@@ -151,6 +195,20 @@ export function normalize(input) {
       Array.isArray(m.overrides)
     )
       throw Error("Personal mappings must be an object.");
+  c.caption = String(c.caption ?? "").slice(0, 150);
+  c.caption_size = num(c.caption_size, 12, 6, 32);
+  c.location_size = num(c.location_size, 17, 8, 32);
+  c.name_size = num(c.name_size, 13, 7, 26);
+  c.weather_intensity = num(c.weather_intensity, 1, 0.2, 2);
+  if (!c.colors || typeof c.colors !== "object" || Array.isArray(c.colors))
+    c.colors = {};
+  c.colors = Object.fromEntries(
+    Object.entries(c.colors).filter(
+      ([k, v]) =>
+        ["paper", "ink", "metal", "rim"].includes(k) &&
+        /^#[0-9a-f]{6}$/i.test(v),
+    ),
+  );
   c.duration = num(c.duration, 1000, 0, 10000);
   c.separation = num(c.separation, 18, 0, 25);
   c.size = num(c.size, 640, 200, 2000);
@@ -195,6 +253,12 @@ export function locationFor(m, c, states) {
   const travel = states[m.travelling_entity];
   if (travel && ["on", "true", "moving"].includes(travel.state))
     return c.locations.find((l) => l.id === c.travelling_location);
+  const rule = (m.rules || []).find(
+    (r) =>
+      matchesRule(r, states, m.entity) &&
+      c.locations.some((l) => l.id === r.location),
+  );
+  if (rule) return c.locations.find((l) => l.id === rule.location);
   const source = states[m.entity];
   const raw = source
     ? m.attribute
@@ -220,6 +284,7 @@ export function locationFor(m, c, states) {
   );
 }
 export function positions(c, states) {
+  c = runtimeConfig(c, states);
   const items = c.members
     .filter((m) => m.enabled !== false)
     .slice()
@@ -287,6 +352,7 @@ export function exportConfig(c, personal = false) {
   if (!personal) {
     out.demo = false;
     out.title = "Our whereabouts";
+    out.caption = "Magical Family Clock";
     out.center_image = "";
     out.face_image = "";
     out.background_images = {};
@@ -302,6 +368,8 @@ export function exportConfig(c, personal = false) {
         attribute: "",
         portrait: "",
         overrides: {},
+        metrics: [],
+        rules: [],
       }),
     );
     out.locations = out.locations.map((l, i) =>
@@ -319,7 +387,7 @@ export function exportConfig(c, personal = false) {
   return out;
 }
 export function importConfig(text) {
-  if (text.length > 1000000) throw Error("Configuration too large.");
+  if (text.length > 12000000) throw Error("Configuration too large.");
   return normalize(JSON.parse(text));
 }
 export function demo() {

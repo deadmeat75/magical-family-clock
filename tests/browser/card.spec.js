@@ -147,7 +147,7 @@ test("portraits remain clipped and upright, stacking recomputes on state changes
   const old = await card
     .locator(".hand")
     .nth(1)
-    .locator(":scope > g")
+    .locator(":scope > g:not(.along-label)")
     .getAttribute("transform");
   await page.evaluate(() => {
     const card = document.querySelector("magical-family-clock-card");
@@ -158,7 +158,7 @@ test("portraits remain clipped and upright, stacking recomputes on state changes
     card.hass = { states };
   });
   await expect(
-    card.locator(".hand").nth(1).locator(":scope > g"),
+    card.locator(".hand").nth(1).locator(":scope > g:not(.along-label)"),
   ).not.toHaveAttribute("transform", old);
   expect(
     await card
@@ -239,7 +239,7 @@ test("background changes retain hands and use configured fade opacity", async ({
     ),
   ).toBe(true);
 });
-test("three themes render all four coincident hands and move independently", async ({
+test("four themes render all four coincident hands and move independently", async ({
   page,
 }) => {
   const errors = [];
@@ -247,8 +247,8 @@ test("three themes render all four coincident hands and move independently", asy
   await page.goto("/");
   await page.waitForSelector("section magical-family-clock-card");
   const cards = page.locator("section magical-family-clock-card");
-  await expect(cards).toHaveCount(3);
-  for (let i = 0; i < 3; i++) {
+  await expect(cards).toHaveCount(4);
+  for (let i = 0; i < 4; i++) {
     await expect(cards.nth(i).locator(".hand")).toHaveCount(4);
     await expect(cards.nth(i).locator(".empty")).toBeHidden();
     const transforms = await cards
@@ -284,6 +284,9 @@ test("editor persists consecutive changes, people CRUD and import validation", a
   const editor = page.locator("magical-family-clock-card-editor");
   await editor.getByLabel("Title", { exact: true }).fill("Kitchen");
   await editor.getByLabel("Title", { exact: true }).dispatchEvent("change");
+  await editor
+    .getByText("Advanced layout and rendering", { exact: true })
+    .click();
   await editor.getByLabel("Maximum size (pixels)").fill("550");
   await editor.getByLabel("Maximum size (pixels)").dispatchEvent("change");
   await expect(
@@ -354,6 +357,7 @@ test("screenshots of original themes", async ({ page, browserName }) => {
     "enchanted-spoons",
     "brass-clockwork",
     "living-magical",
+    "whimsical-workshop",
   ].entries())
     await cards
       .nth(i)

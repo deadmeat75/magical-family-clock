@@ -15,3 +15,9 @@ Automatic season selection respects Home Assistant’s timezone and the configur
 Custom castle images can be configured with `background_images` keys such as `winter-night` or `spring-dawn`, using existing local paths or HTTPS image URLs. A complete opaque `face_image` remains supported as a static face and covers the dynamic layers.
 
 Source files and project artwork are distributed with the repository license. The bundled SunCalc implementation has its own BSD-2-Clause notice, included in the compiled bundle and `SUNCALC-LICENSE.txt`. The supplied unchanged legacy JavaScript/HTML attachments remain outside this public checkout.
+
+## Unpublished next-version material faces
+
+`src/assets/aged-brass-dial.png` and `src/assets/whimsical-workshop-dial.png` are original AI-generated, unlettered dial assets created for this build. They are not extractions from the supplied film/prop references. The brass dial uses aged brushed brass, recessed gearwork, wear and verdigris. The handmade dial combines wood, copper patches, brass fasteners, ivory/parchment panels and botanical decoration. Both preserve a transparent exterior and remain separate from editable SVG names, locations, titles and captions. Runtime hand geometry and lettering remain vector artwork.
+
+The generated source files are included directly without cropping or altering the user's references. They are embedded in the compiled JavaScript bundle for offline operation. They increase the initial resource size; browser caching avoids repeated downloads, but very slow devices/connections may take longer on the first load. Surface colors in raster artwork do not follow vector palette overrides. Brass illustration gears are part of the artwork; the separately animated gear overlay is subtle.

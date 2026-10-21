@@ -1,5 +1,13 @@
+import whimsicalURL from "./assets/whimsical-workshop-dial.png";
+import agedBrassURL from "./assets/aged-brass-dial.png";
 // Original vector artwork; no remote fonts, images, or runtime libraries.
 export const palettes = {
+  "whimsical-workshop": {
+    paper: "#baa16c",
+    ink: "#392818",
+    metal: "#bd8a49",
+    rim: "#53402f",
+  },
   "enchanted-spoons": {
     paper: "#dcc79b",
     ink: "#493622",
@@ -30,7 +38,12 @@ export const skies = {
   winter: ["#7397ad", "#d4dfde"],
   rain: ["#3a5369", "#94a5ae"],
 };
+export function metalDefs() {
+  return `<linearGradient id="aged-brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35291a"/><stop offset=".18" stop-color="#b88a43"/><stop offset=".32" stop-color="#f2d18a"/><stop offset=".48" stop-color="#785324"/><stop offset=".64" stop-color="#cfaa61"/><stop offset=".82" stop-color="#5e4829"/><stop offset="1" stop-color="#d0a45c"/></linearGradient><radialGradient id="aged-dial"><stop stop-color="#b39657"/><stop offset=".7" stop-color="#87703e"/><stop offset="1" stop-color="#342d20"/></radialGradient><filter id="metal-grain"><feTurbulence type="fractalNoise" baseFrequency=".9 .025" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".09"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>`;
+}
 export function face(theme) {
+  if (theme === "whimsical-workshop")
+    return `<image class="material-art" href="${whimsicalURL}" x="12" y="12" width="576" height="576"/>`;
   let marks = "";
   for (let i = 0; i < 60; i++) {
     const a = (i * Math.PI) / 30;
@@ -53,7 +66,10 @@ export function face(theme) {
         teeth += `<rect x="-5" y="-${r + 8}" width="10" height="18" transform="rotate(${i * 22.5})"/>`;
       gears += `<g transform="translate(${x} ${y})"><g class="gear">${teeth}<circle r="${r}" fill="none" stroke-width="9"/><circle r="${r * 0.65}" fill="none" stroke-width="3"/><path d="M-${r} 0 H${r} M0 -${r} V${r}" fill="none" stroke-width="8"/><circle r="12"/></g></g>`;
     }
-  return `<circle cx="300" cy="300" r="288" class="outer"/><circle cx="300" cy="300" r="273" class="dial"/><g class="filigree">${filigree}</g><circle cx="300" cy="300" r="260" class="ring"/><g class="ticks">${marks}</g><g class="gears">${gears}</g><circle cx="300" cy="300" r="168" class="ring inner"/>`;
+  const aged = theme === "brass-clockwork";
+  if (aged)
+    return `<image class="material-art" href="${agedBrassURL}" x="12" y="12" width="576" height="576"/><g class="gears" style="opacity:.08">${gears}</g>`;
+  return `<circle cx="300" cy="300" r="288" class="outer" style="${aged ? "fill:url(#aged-brass);filter:url(#metal-grain)" : ""}"/><circle cx="300" cy="300" r="273" class="dial" style="${aged ? "fill:url(#aged-dial);filter:url(#metal-grain)" : ""}"/><g class="filigree">${filigree}</g><circle cx="300" cy="300" r="260" class="ring"/><g class="ticks">${marks}</g><g class="gears" style="${aged ? "opacity:.65;fill:url(#aged-brass);stroke:#dab778;filter:url(#metal-grain)" : ""}">${gears}</g><circle cx="300" cy="300" r="168" class="ring inner"/>`;
 }
 export function landscape() {
   return '<path d="M20 450 Q110 330 230 422 Q340 300 580 440 V580 H20Z" fill="#253e3d" opacity=".5"/><path d="M15 485 Q170 385 310 470 Q450 370 590 490 V590 H15Z" fill="#153033" opacity=".7"/><g fill="#f5e0a4" opacity=".7"><circle cx="165" cy="160" r="2"/><circle cx="420" cy="120" r="3"/><circle cx="385" cy="200" r="2"/><circle cx="200" cy="350" r="2"/></g>';

@@ -1,10 +1,12 @@
 # Magical Family Clock
 
+**Version 0.2.0** adds image uploads, saved clocks, richer faces, animated weather, sensor rules and optional hand data. See [features and validation](docs/NEXT-VERSION.md) and the detailed [user guide](docs/USER-GUIDE.md). Install and update through HACS using this repository as a Dashboard custom repository.
+
 An original Home Assistant dashboard card showing your household’s whereabouts on an enchanted clock. Each card has independent people, locations, and appearance.
 
 **Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
 
-**0.1.0-rc.1 release candidate:** real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
+**Validation:** real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
 | --- | --- | --- |
@@ -16,13 +18,13 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 - Direct person, device tracker, and sensor states, optional travelling sensors and state attributes. No helpers required.
 - Arbitrary locations, aliases, zone-friendly-name matching, and per-person overrides.
 - Center-anchored hands, deterministic separation, upright names and portraits, shortest-path movement, reduced motion.
-- Independent clocks, configuration cloning, privacy-safe exports, browser-local appearance presets.
+- Independent clocks, complete saved-clock library in Home Assistant account storage, configuration cloning, privacy-safe exports and browser-local appearance presets.
 - Original local vector artwork, optional custom images, seasonal/time/weather backgrounds, and fullscreen fallback.
-- No runtime network service, analytics, advertising, remote font, portrait upload, or account.
+- No external runtime service, analytics, advertising, remote font or separate account. Uploaded images stay in the dashboard configuration.
 
 ## HACS installation
 
-The [v0.1.0-rc.1 release candidate](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.1.0-rc.1) and its bundle are published. HACS validation still requires the repository owner to set its About description/topics; see [publishing status](docs/PUBLISHING-STATUS.md). This is a prerelease, not a production-verification claim.
+The [v0.2.0 release](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.2.0) includes the self-contained HACS bundle. See [publishing status](docs/PUBLISHING-STATUS.md) for repository metadata requirements and validation limits.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Add `https://github.com/deadmeat75/magical-family-clock` as a **Dashboard** repository.
@@ -42,13 +44,13 @@ HACS normally registers the resource. No npm, SSH, manual copying, or YAML is ne
 
 **Locations:** enter custom names and exact matching states, one per line. `home` and `not_home` are typical person states. Custom zones usually produce their friendly names; never assume they produce a literal ID such as `zone.office`. Selecting a zone adds its friendly name to matching; explicitly list a zone ID only if the source entity actually returns it. Per-person mappings take precedence. Drag dots around the dial, use arrow keys, or distribute evenly. Zero degrees points right; −90 points up.
 
-**Portraits:** use an existing browser-accessible image URL, such as `/local/portraits/person.jpg`. Adjust crop position, zoom, shape, frame, and rotation. Initials provide a fallback. The card does not upload files or resolve authenticated `media-source://` links. Use Home Assistant’s existing local image workflow. Portraits are never uploaded to a third party by this card.
+**Portraits:** use the visual PNG/JPEG/WebP upload control, or an existing accessible image URL such as `/local/portraits/person.jpg`. Uploads are optimized and embedded in the card configuration. Adjust crop position, zoom, shape, frame and rotation. Initials provide a fallback. Protected `media-source://` links are not resolved. Images are never uploaded to a third party by this card.
 
 **Appearance:** choose **Use layered castle artwork** for a transparent gold/stained-glass frame and sixteen bundled castle scenes: four seasons × dawn/day/dusk/night. This applies the six reference locations and raised pivot while preserving people and colors. Manual season/time controls preview every scene. Automatic mode uses Home Assistant’s timezone, location and sun events, retaining recent events across timestamp rollover. Dawn/dusk cover ±30 minutes; calculated solar times provide a reload fallback and can differ slightly from Home Assistant’s exact astronomy. Missing solar data has a stable day fallback. Images preload before crossfading, and failed custom images retain the previous scene. The frame stays fixed and hands keep their state. Editing the castle layout’s location names or angles switches to the customizable vector dial; its generic weather/time/season skies remain available.
 
 **Behavior:** select hand duration, separation, fan/stack arrangement, and fallback locations for unknown and travelling states. Very large groups can still become crowded. The safeguard is 250 people and 250 locations per clock; smaller groups are recommended for readable portraits.
 
-**Presets:** export/import JSON in the editor. Default exports remove personal names, entity IDs, portraits, custom images, zone mappings, and location names. Explicitly enable personal details only for private backups. Review exports before sharing. Browser-local appearance presets store visual settings only. Use Home Assistant’s duplicate card action or a full configuration clone to create another independent clock.
+**Presets:** export/import JSON in the editor. Default exports remove personal names, entity IDs, portraits, custom images, zone mappings, and location names. Explicitly enable personal details only for private backups. Review exports before sharing. Browser-local appearance presets store visual settings only. Use **Saved clocks** to save complete clocks in your Home Assistant account and load independent copies on other dashboards. The library includes people, rules and images. Home Assistant’s duplicate card action and full JSON clones remain available.
 
 **Fullscreen:** the button enters and exits fullscreen. Browsers without a usable native API get an in-page expanded view with the same exit button. No additional credentials or dedicated panel is needed.
 
