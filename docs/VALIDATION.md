@@ -2,7 +2,7 @@
 
 ## Version 0.3.0 — Design Studio
 
-The release candidate passed **44 unit/packaging checks and 37 Chromium browser checks**. See [Design Studio acceptance evidence](DESIGN-STUDIO-ACCEPTANCE.json), the [Design Studio guide](DESIGN-STUDIO.md), and [publication status](PUBLISHING-STATUS.md) for the verified release artifact and remote workflow results. [Version 0.2.0 notes](NEXT-VERSION.md) preserve the previous release's evidence.
+The release passed **44 unit/packaging checks and 37 Chromium browser checks**, locally and in the tag-triggered GitHub workflows. The downloaded stable-release asset matches the tested bundle byte for byte. See [Design Studio acceptance evidence](DESIGN-STUDIO-ACCEPTANCE.json), the [Design Studio guide](DESIGN-STUDIO.md), and [publication status](PUBLISHING-STATUS.md) for the verified release artifact and remote workflow results. [Version 0.2.0 notes](NEXT-VERSION.md) preserve the previous release's evidence.
 
 ## Local evidence
 
@@ -28,7 +28,7 @@ The user's live Home Assistant installation, original clock resource, dashboards
 
 The manifest names the root self-contained `magical-family-clock.js`; the tag-triggered release workflow checks package/tag equality, builds/tests and attaches that file. Publication is confirmed separately by inspecting the stable release and comparing its downloaded asset's SHA-256 against the local bundle. See [publication status](PUBLISHING-STATUS.md).
 
-HACS **2.0.5** was installed in the isolated instance and its setup form loaded. Authenticated GitHub-connected custom-repository installation/update remains unverified. Inclusion in the HACS default store is not claimed. The previous remote HACS validation passed six of eight checks; missing repository About description and topics were the only failed checks. The integration can push code and read GitHub APIs, but metadata writes return **HTTP 403: Resource not accessible by integration**. Current release validation results are recorded in publication status without suppressing checks.
+HACS **2.0.5** was installed in the isolated instance and its setup form loaded. Authenticated GitHub-connected custom-repository installation/update remains unverified. Inclusion in the HACS default store is not claimed. The v0.3.0 remote HACS validation passed six of eight checks; missing repository About description and topics were the only failed checks. The integration can push code and read GitHub APIs, but metadata writes return **HTTP 403: Resource not accessible by integration**. Current release validation results are recorded in publication status without suppressing checks.
 
 Install/update using HACS as a **Dashboard** custom repository. Do not replace the separate original resource. WebKit and physical older-iPad testing were removed from release acceptance at the user's request; compatibility remains unverified.
 

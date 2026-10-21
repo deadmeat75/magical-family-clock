@@ -15,7 +15,7 @@
   },
   "reload": true,
   "frontendErrors": [],
-  "status": "validated release candidate",
+  "status": "published stable release; downloaded asset verified",
   "unitAndPackagingChecks": 44,
   "chromiumBrowserChecks": 37,
   "compiledBundleSHA256": "563532b706b62372265e3a35b4bae941dd897dc1492c24eba376e534761b04af",
@@ -57,5 +57,36 @@
     "toothGapPhaseMaintained": true,
     "renderedProfilesDoNotCollideOverToothCycle": true
   },
-  "releaseVersion": "0.3.0"
+  "releaseVersion": "0.3.0",
+  "publicationVerification": {
+    "version": "0.3.0",
+    "url": "https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.3.0",
+    "releaseId": 419911866,
+    "releaseCommit": "f3eb48fda93adc030c66308b770e962443e05b17",
+    "publishedAt": "2026-10-21T18:31:06Z",
+    "stable": true,
+    "latest": true,
+    "assetName": "magical-family-clock.js",
+    "assetBytes": 16875052,
+    "downloadedSHA256": "563532b706b62372265e3a35b4bae941dd897dc1492c24eba376e534761b04af",
+    "downloadMatchesTestedBundle": true,
+    "guidesAccessible": true,
+    "workflows": {
+      "mainTests": 39653011254,
+      "tagTests": 39653239837,
+      "release": 39653239797,
+      "hacsValidation": 39653239887
+    }
+  },
+  "hacsValidation": {
+    "passed": 6,
+    "failed": 2,
+    "failedChecks": [
+      "description",
+      "topics"
+    ],
+    "workflow": 39653239887,
+    "repositoryMetadataWriteDenied": "HTTP 403: Resource not accessible by integration",
+    "authenticatedInstallOrUpdateVerified": false
+  }
 }
