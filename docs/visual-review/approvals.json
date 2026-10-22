@@ -8,15 +8,19 @@
       "id": "B01",
       "element": "aged-brass information bezel",
       "category": "Bezel",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "B02",
       "element": "silver information bezel",
       "category": "Bezel",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "B03",
@@ -24,8 +28,8 @@
       "category": "Bezel",
       "decision": "revision_requested",
       "notes": "Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "C01",
@@ -181,8 +185,8 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "E02",
@@ -190,8 +194,8 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "E03",
@@ -199,8 +203,8 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "E04",
@@ -208,8 +212,8 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "E05",
@@ -217,8 +221,8 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "E06",
@@ -226,17 +230,17 @@
       "category": "Surface effects",
       "decision": "revision_requested",
       "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "F01",
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Lettering must more closely match the supplied reference: tall, thin irregular antique serif letters following flowing scalloped arcs, changing orientation around the face; all text remains editable.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "notes": "Keep tall flowing reference-style lettering inside the scalloped face. Fit every glyph, not only the path centerline. Preserve editable text and UI style choices.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "F02",
@@ -254,9 +258,9 @@
       "element": "Astronomical scene wheel",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Old celestial grandfather clock face from a wizarding world. Restrained historical painted colors, aged brass and ivory. No flowers, rainbow palette, airbrushed nebula or modern scientific diagram.",
-      "revision": 5,
-      "revision_status": "new revision in progress; older example is archived"
+      "notes": "Asymmetric overlapping celestial wheels with varied sizes and offset pivots. Preserve restrained old wizarding grandfather-clock style and blank editable destination ring.",
+      "revision": 6,
+      "revision_status": "revision 6 prepared; awaiting individual approval"
     },
     {
       "id": "F04",
@@ -412,118 +416,144 @@
       "id": "I01",
       "element": "home",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I01-r1.png",
+      "approved_example_sha256": "2468b03dc164736ea8d1a387b1a27b2d646cba926b53f8c9613981a4b8de1465"
     },
     {
       "id": "I02",
       "element": "work",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I02-r1.png",
+      "approved_example_sha256": "e19492059b4d8bd5da61b9d5e8c006007c0e3da5e3ca5dd4feab6edc3e33a9e4"
     },
     {
       "id": "I03",
       "element": "school",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I03-r1.png",
+      "approved_example_sha256": "4741de88e9eb52fd8a5ffad15d9cd8aba70507e0ef3bf58b673eaa7cd202c212"
     },
     {
       "id": "I04",
       "element": "gym",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I04-r1.png",
+      "approved_example_sha256": "b066eae0e04143cff680cc0481e98b0b74f512c27fd0b729cb1b71c812fa5353"
     },
     {
       "id": "I05",
       "element": "travel",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I05-r1.png",
+      "approved_example_sha256": "8c810a260774ec630dcf30d438f70a652ad8c6b21920f765ae14498500ee36df"
     },
     {
       "id": "I06",
       "element": "away",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I06-r1.png",
+      "approved_example_sha256": "ae532275df424174b207f47223dd92fc404f0ab20ee1f440d4bf6bfc546f7ca5"
     },
     {
       "id": "I07",
       "element": "hospital",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I07-r1.png",
+      "approved_example_sha256": "49d85d5495c30e2f5f34c87532f75415d74acdb681f3ea4734f306ca2d128a7e"
     },
     {
       "id": "I08",
       "element": "shop",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I08-r1.png",
+      "approved_example_sha256": "1855f7011ade0b82e0332188bccae6fe69e28f4ab7665f3c279d9efbee7dbbc1"
     },
     {
       "id": "I09",
       "element": "family",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I09-r1.png",
+      "approved_example_sha256": "3797b6309d01ccbfcc55b52b20032a5a543a5361b9676c8d7661c11592e8d29d"
     },
     {
       "id": "I10",
       "element": "garden",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I10-r1.png",
+      "approved_example_sha256": "e7825af82582ba4924f649107bc127260ecede9f48d80355810c7da0236466ae"
     },
     {
       "id": "I11",
       "element": "bed",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I11-r1.png",
+      "approved_example_sha256": "d78201ee7f8ff8939b45fc79f0c9c5b5c98981ac688341586488de581e6890d4"
     },
     {
       "id": "I12",
       "element": "magic",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I12-r1.png",
+      "approved_example_sha256": "e3584a804fb5d6bcd9cacbb868b649b4d7cf36dca15279ebe62c28e16a6eb2a0"
     },
     {
       "id": "I13",
       "element": "pin",
       "category": "Location symbols",
-      "decision": "revision_requested",
-      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/I13-r1.png",
+      "approved_example_sha256": "51a98674f3c715d0f97d82c824a543842cea3fdca09df983c13fdd7c39d43abe"
     },
     {
       "id": "K01",
@@ -646,7 +676,7 @@
       "decision": "revision_requested",
       "notes": "Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "L04",
@@ -655,7 +685,7 @@
       "decision": "revision_requested",
       "notes": "Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "L05",
@@ -664,7 +694,7 @@
       "decision": "revision_requested",
       "notes": "Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "L06",
@@ -673,7 +703,7 @@
       "decision": "revision_requested",
       "notes": "Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "L07",
@@ -682,7 +712,7 @@
       "decision": "revision_requested",
       "notes": "Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "L08",
@@ -691,124 +721,150 @@
       "decision": "revision_requested",
       "notes": "Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.",
       "revision": 2,
-      "revision_status": "new revision in progress; older example is archived"
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "M01",
       "element": "color",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M01-r1.png",
+      "approved_example_sha256": "4baa3ebef3a76612004db0a4c622065008901eed3e4e87ce997e545c4cb23bbe"
     },
     {
       "id": "M02",
       "element": "brass",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M02-r1.png",
+      "approved_example_sha256": "b359256fb2b9c7cd7f37ec13ad23980fb03aff6523a1333aad9cf187d871846e"
     },
     {
       "id": "M03",
       "element": "aged-brass",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M03-r1.png",
+      "approved_example_sha256": "4514e2a49c740f4dcfbba400096ee719a4f6ca6aa6773168a987ad333f06bcb6"
     },
     {
       "id": "M04",
       "element": "copper",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M04-r1.png",
+      "approved_example_sha256": "bf738a57d0434c69826571ea007e389f9b8a73da3c7261cd0b44faabe1b58df7"
     },
     {
       "id": "M05",
       "element": "silver",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M05-r1.png",
+      "approved_example_sha256": "18aa1f7f8853f8f21d9ae3ea9ad84b5b448cbedbdb91bff2f59fe395c561f9cf"
     },
     {
       "id": "M06",
       "element": "steel",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M06-r1.png",
+      "approved_example_sha256": "20a6784bd07c430b1c632cb8adc8d98763b64c049a45bfc10242371e4c19c8f3"
     },
     {
       "id": "M07",
       "element": "wood",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M07-r1.png",
+      "approved_example_sha256": "3614a3f1bea34dfda7b6ced12f618b06b88b4cbc22dcf147e7508e32fb298cbb"
     },
     {
       "id": "M08",
       "element": "ivory",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M08-r1.png",
+      "approved_example_sha256": "8f239b4b7390ff704b4a441fecb6a812710a289d8a413e877ecdba30b7f3f0f2"
     },
     {
       "id": "M09",
       "element": "obsidian",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M09-r1.png",
+      "approved_example_sha256": "2814e9346d181aee515889a914779ab05adb02be8b776b0bf5c76dd71574620f"
     },
     {
       "id": "M10",
       "element": "glass",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M10-r1.png",
+      "approved_example_sha256": "a2afacf159e893491baf08763a71183d1bddfbd2346f01b4d08e42eaebf7c858"
     },
     {
       "id": "M11",
       "element": "Brass finish: polished",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M11-r1.png",
+      "approved_example_sha256": "d6636c4e1644284c48621a21cbc42449e154b9883a3c607381cc14c16d5b6bef"
     },
     {
       "id": "M12",
       "element": "Brass finish: brushed",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M12-r1.png",
+      "approved_example_sha256": "c40a410c97f35a11bdca31e66963be33a1d8a2f4a976f9fd9a2fd0a7d763a001"
     },
     {
       "id": "M13",
       "element": "Brass finish: aged",
       "category": "Materials",
-      "decision": "revision_requested",
-      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/M13-r1.png",
+      "approved_example_sha256": "c34bc1cb4628454a7c784fc8152e26224ecb2c4fc670b7b712797c605ab1d657"
     },
     {
       "id": "N01",
@@ -816,8 +872,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N02",
@@ -825,8 +881,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N03",
@@ -834,8 +890,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N04",
@@ -843,8 +899,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N05",
@@ -852,8 +908,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N06",
@@ -861,8 +917,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N07",
@@ -870,8 +926,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "N08",
@@ -879,8 +935,8 @@
       "category": "Moon phases",
       "decision": "revision_requested",
       "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "P01",
@@ -931,145 +987,177 @@
       "id": "S01",
       "element": "spring / dawn",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S01-r1.png",
+      "approved_example_sha256": "d1a87f0db2ec0802a0a048cf8f84f13a32fa7f346f71412df0e0bb2eff6e006e"
     },
     {
       "id": "S02",
       "element": "spring / day",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S02-r1.png",
+      "approved_example_sha256": "b68869fb176644b7829bc216c1d79fcbc2f6820f83ec4de0867f99731b2903b8"
     },
     {
       "id": "S03",
       "element": "spring / dusk",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S03-r1.png",
+      "approved_example_sha256": "12db01695f47a514aa2ea6fd3227cd488b1df26ccb7dd4554bbf8aa5c8c09b45"
     },
     {
       "id": "S04",
       "element": "spring / night",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S04-r1.png",
+      "approved_example_sha256": "43bc66433a6ef961fc353821b22a599f6d38055f6ccaa1bdb0d6f3d733e47186"
     },
     {
       "id": "S05",
       "element": "summer / dawn",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S05-r1.png",
+      "approved_example_sha256": "8c8c36cb82511096bc4c435562d7a752b5861d6b73ee01495dc7414f7c93a015"
     },
     {
       "id": "S06",
       "element": "summer / day",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S06-r1.png",
+      "approved_example_sha256": "1a82ce579a03491ace6d46569cae88a9061b91b68488f39c91d0820235f8f6e4"
     },
     {
       "id": "S07",
       "element": "summer / dusk",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S07-r1.png",
+      "approved_example_sha256": "532565edce5921499f4ad199d516890abb220cbfadb9bc3eb7534a375585418f"
     },
     {
       "id": "S08",
       "element": "summer / night",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S08-r1.png",
+      "approved_example_sha256": "ca76458e3edd2270bc5797253fef59e2689891f086dbf6045b6d04dae44abc93"
     },
     {
       "id": "S09",
       "element": "autumn / dawn",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S09-r1.png",
+      "approved_example_sha256": "232e872bf069fe91d1b84806a575649dc0b17eedccd439912d5177660e022f93"
     },
     {
       "id": "S10",
       "element": "autumn / day",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S10-r1.png",
+      "approved_example_sha256": "aada5e22b1dcb58b926ab60fc8ddb7d5cc33514fe00053a898ec326ec6a6880b"
     },
     {
       "id": "S11",
       "element": "autumn / dusk",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S11-r1.png",
+      "approved_example_sha256": "89436956ef840e37a61d9a2d30fa68910d2cbe83496134121101e04dcd06f016"
     },
     {
       "id": "S12",
       "element": "autumn / night",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S12-r1.png",
+      "approved_example_sha256": "faeb0df8e4f8f29cd66ad924a64a01a6efb40f5450e17aefa4e1756fcb36ca73"
     },
     {
       "id": "S13",
       "element": "winter / dawn",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S13-r1.png",
+      "approved_example_sha256": "bc8592187a8f1c455bf43851ba8037b4138fd63ed7c0b3b755cbd1f9066b795f"
     },
     {
       "id": "S14",
       "element": "winter / day",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S14-r1.png",
+      "approved_example_sha256": "c0b0c1f38027b0de8ac840631e858bd660ea4458f543f12394c1ebb0c87d9989"
     },
     {
       "id": "S15",
       "element": "winter / dusk",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S15-r1.png",
+      "approved_example_sha256": "76995dfde8d446d32eff1fe29cda87d0ab298246ca31392b0e6c846c0d5dc4bd"
     },
     {
       "id": "S16",
       "element": "winter / night",
       "category": "Seasons and time",
-      "decision": "revision_requested",
-      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "decision": "approved",
+      "notes": "Revised example explicitly approved by the user in chat. Preserve this artwork.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/S16-r1.png",
+      "approved_example_sha256": "ad8428e3b416e99bb88db268e81fa89801fbf7134dad1a1d359553432fd0a283"
     },
     {
       "id": "T01",
@@ -1185,15 +1273,17 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W02",
       "element": "clouds",
       "category": "Weather",
       "decision": "pending",
-      "notes": ""
+      "notes": "",
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W03",
@@ -1201,8 +1291,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible gentle animated rain; brighter detailed scene.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W04",
@@ -1210,8 +1300,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible denser animated rain; brighter detailed scene.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W05",
@@ -1219,8 +1309,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible falling snow at normal size; brighter detailed scene.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W06",
@@ -1228,26 +1318,26 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible mixed rain and snow/sleet; brighter detailed scene.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W07",
       "element": "wind",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Visible foliage gusts and loose debris with natural wind paths.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Visible wind: moving loose leaves and gust-bent foliage. Fix leaf trajectories so rotation occurs around the leaf rather than around the scene origin.",
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W08",
       "element": "fog",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Visible drifting layered fog that preserves clock readability.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Fog must visibly drift in natural depth layers while clock data stays readable.",
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W09",
@@ -1255,17 +1345,17 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Completely replace lines with gradually growing fern-like frost on outer watchglass. Restrained translucent highlights; keep all data readable.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "W10",
       "element": "lightning",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Irregular branching lightning with bright cores, restrained glow, variable timing and local scene illumination.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "More irregular branching strikes in different sky positions and both near and distant layers. Lengthen flashes so they can be seen. Keep momentary scene illumination and clock readability.",
+      "revision": 3,
+      "revision_status": "new revision in progress; awaiting individual approval"
     },
     {
       "id": "X01",
@@ -1346,12 +1436,12 @@
     {
       "scope": "materials M01\u2013M13",
       "requirement": "All materials and finishes need realistic physical texture, depth, reflections and appropriate wear. Revised material examples require approval.",
-      "status": "revision requested"
+      "status": "all revised M01\u2013M13 artwork approved; preserve examples; runtime mapping remains"
     },
     {
       "scope": "all season/time scenes",
       "requirement": "Use real differences in sky, seasonal foliage and environmental/window lighting. Preserve fine scene detail and readable contrast. Night must not be simulated by a dark or grey translucent veil.",
-      "status": "all S01\u2013S16 revisions requested; new art direction requires approval"
+      "status": "all revised S01\u2013S16 artwork approved; preserve examples; final scene registration remains"
     }
   ],
   "artwork_approvals": [

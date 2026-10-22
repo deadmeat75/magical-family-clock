@@ -4,15 +4,15 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-F02, F04 and F05 are approved. F01 lettering and F03 are separate art-direction proposals; their final editable production layers follow approval. F03 is being revised again for a more colorful, magical 1800s style without flowers.
+F02, F04 and F05 are approved. F01 lettering and F03 are separate art-direction proposals; their final editable production layers follow approval. F03 revision 6 uses asymmetrical overlapping celestial wheels in a restrained old wizarding grandfather-clock style.
 
 ## F01 · Scalloped whereabouts dial
 
-**Revision 2 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![F01 Scalloped whereabouts dial](items/F01-r2.png)](items/F01-r2.png)
+[![F01 Scalloped whereabouts dial](items/F01-r3.png)](items/F01-r3.png)
 
-Lettering must more closely match the supplied reference: tall, thin irregular antique serif letters following flowing scalloped arcs, changing orientation around the face; all text remains editable.
+Keep tall flowing reference-style lettering inside the scalloped face. Fit every glyph, not only the path centerline. Preserve editable text and UI style choices.
 
 Example: face and editable-lettering proposal; production mapping follows approval.
 
@@ -28,11 +28,11 @@ Example: proposed face concept; not integrated into the released renderer.
 
 ## F03 · Astronomical scene wheel
 
-**Revision in progress.**
+**Revision 6 · awaiting approval.**
 
-[Previous example — archived](items/F03-r3.png)
+[![F03 Astronomical scene wheel](items/F03-r6.png)](items/F03-r6.png)
 
-Old celestial grandfather clock face from a wizarding world. Restrained historical painted colors, aged brass and ivory. No flowers, rainbow palette, airbrushed nebula or modern scientific diagram.
+Asymmetric overlapping celestial wheels with varied sizes and offset pivots. Preserve restrained old wizarding grandfather-clock style and blank editable destination ring.
 
 Example: historical celestial face artwork proposal; separated rotating layers follow approval.
 

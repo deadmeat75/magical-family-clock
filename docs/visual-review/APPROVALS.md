@@ -1,6 +1,6 @@
 # Individual visual approvals
 
-[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md). 52 approved; 78 revision requests awaiting approval; 4 omitted; 7 other items awaiting review. Release remains on hold.
+[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md). 94 approved; 38 revision requests awaiting approval; 4 omitted; 5 other items awaiting review. Release remains on hold.
 
 ## Characters and props
 
@@ -30,18 +30,18 @@
 
 - [x] [L01 · Cloud drift](items/L01.gif) — approved
 - [ ] [L02 · Foliage sway](items/L02-r2.gif) — revision 1 · awaiting approval
-- [ ] [L03 · Lake reflections](items/L03-r1.gif) — revision in progress
-- [ ] [L04 · Waterfall flow and fine spray](items/L04-r1.gif) — revision in progress
-- [ ] [L05 · Twinkling stars](items/L05-r1.gif) — revision in progress
-- [ ] [L06 · Shooting star](items/L06-r1.gif) — revision in progress
-- [ ] [L07 · Window lights](items/L07-r1.gif) — revision in progress
-- [ ] [L08 · Fireflies](items/L08-r1.gif) — revision in progress
+- [ ] [L03 · Lake reflections](items/L03-r2.gif) — revision in progress
+- [ ] [L04 · Waterfall flow and fine spray](items/L04-r2.gif) — revision in progress
+- [ ] [L05 · Twinkling stars](items/L05-r2.gif) — revision in progress
+- [ ] [L06 · Shooting star](items/L06-r2.gif) — revision in progress
+- [ ] [L07 · Window lights](items/L07-r2.gif) — revision in progress
+- [ ] [L08 · Fireflies](items/L08-r2.gif) — revision in progress
 
 ## Faces
 
-- [ ] [F01 · Scalloped whereabouts dial](items/F01-r2.png) — revision 2 · awaiting approval
+- [ ] [F01 · Scalloped whereabouts dial](items/F01-r3.png) — revision 3 · awaiting approval
 - [x] [F02 · Brass finish range](items/F02-r1.png) — approved
-- [ ] [F03 · Astronomical scene wheel](items/F03-r3.png) — revision in progress
+- [ ] [F03 · Astronomical scene wheel](items/F03-r6.png) — revision 6 · awaiting approval
 - [x] [F04 · whimsical-workshop](items/F04.png) — approved
 - [x] [F05 · Layered castle and ornate location ring](items/F05.png) — approved
 
@@ -62,19 +62,19 @@
 
 ## Materials
 
-- [ ] [M01 · color](items/M01-r1.png) — revision 1 · awaiting approval
-- [ ] [M02 · brass](items/M02-r1.png) — revision 1 · awaiting approval
-- [ ] [M03 · aged-brass](items/M03-r1.png) — revision 1 · awaiting approval
-- [ ] [M04 · copper](items/M04-r1.png) — revision 1 · awaiting approval
-- [ ] [M05 · silver](items/M05-r1.png) — revision 1 · awaiting approval
-- [ ] [M06 · steel](items/M06-r1.png) — revision 1 · awaiting approval
-- [ ] [M07 · wood](items/M07-r1.png) — revision 1 · awaiting approval
-- [ ] [M08 · ivory](items/M08-r1.png) — revision 1 · awaiting approval
-- [ ] [M09 · obsidian](items/M09-r1.png) — revision 1 · awaiting approval
-- [ ] [M10 · glass](items/M10-r1.png) — revision 1 · awaiting approval
-- [ ] [M11 · Brass finish: polished](items/M11-r1.png) — revision 1 · awaiting approval
-- [ ] [M12 · Brass finish: brushed](items/M12-r1.png) — revision 1 · awaiting approval
-- [ ] [M13 · Brass finish: aged](items/M13-r1.png) — revision 1 · awaiting approval
+- [x] [M01 · color](items/M01-r1.png) — approved
+- [x] [M02 · brass](items/M02-r1.png) — approved
+- [x] [M03 · aged-brass](items/M03-r1.png) — approved
+- [x] [M04 · copper](items/M04-r1.png) — approved
+- [x] [M05 · silver](items/M05-r1.png) — approved
+- [x] [M06 · steel](items/M06-r1.png) — approved
+- [x] [M07 · wood](items/M07-r1.png) — approved
+- [x] [M08 · ivory](items/M08-r1.png) — approved
+- [x] [M09 · obsidian](items/M09-r1.png) — approved
+- [x] [M10 · glass](items/M10-r1.png) — approved
+- [x] [M11 · Brass finish: polished](items/M11-r1.png) — approved
+- [x] [M12 · Brass finish: brushed](items/M12-r1.png) — approved
+- [x] [M13 · Brass finish: aged](items/M13-r1.png) — approved
 
 ## Lettering and portraits
 
@@ -101,77 +101,77 @@
 
 ## Location symbols
 
-- [ ] [I01 · home](items/I01-r1.png) — revision 1 · awaiting approval
-- [ ] [I02 · work](items/I02-r1.png) — revision 1 · awaiting approval
-- [ ] [I03 · school](items/I03-r1.png) — revision 1 · awaiting approval
-- [ ] [I04 · gym](items/I04-r1.png) — revision 1 · awaiting approval
-- [ ] [I05 · travel](items/I05-r1.png) — revision 1 · awaiting approval
-- [ ] [I06 · away](items/I06-r1.png) — revision 1 · awaiting approval
-- [ ] [I07 · hospital](items/I07-r1.png) — revision 1 · awaiting approval
-- [ ] [I08 · shop](items/I08-r1.png) — revision 1 · awaiting approval
-- [ ] [I09 · family](items/I09-r1.png) — revision 1 · awaiting approval
-- [ ] [I10 · garden](items/I10-r1.png) — revision 1 · awaiting approval
-- [ ] [I11 · bed](items/I11-r1.png) — revision 1 · awaiting approval
-- [ ] [I12 · magic](items/I12-r1.png) — revision 1 · awaiting approval
-- [ ] [I13 · pin](items/I13-r1.png) — revision 1 · awaiting approval
+- [x] [I01 · home](items/I01-r1.png) — approved
+- [x] [I02 · work](items/I02-r1.png) — approved
+- [x] [I03 · school](items/I03-r1.png) — approved
+- [x] [I04 · gym](items/I04-r1.png) — approved
+- [x] [I05 · travel](items/I05-r1.png) — approved
+- [x] [I06 · away](items/I06-r1.png) — approved
+- [x] [I07 · hospital](items/I07-r1.png) — approved
+- [x] [I08 · shop](items/I08-r1.png) — approved
+- [x] [I09 · family](items/I09-r1.png) — approved
+- [x] [I10 · garden](items/I10-r1.png) — approved
+- [x] [I11 · bed](items/I11-r1.png) — approved
+- [x] [I12 · magic](items/I12-r1.png) — approved
+- [x] [I13 · pin](items/I13-r1.png) — approved
 
 ## Seasons and time
 
-- [ ] [S01 · spring / dawn](items/S01-r1.png) — revision 1 · awaiting approval
-- [ ] [S02 · spring / day](items/S02-r1.png) — revision 1 · awaiting approval
-- [ ] [S03 · spring / dusk](items/S03-r1.png) — revision 1 · awaiting approval
-- [ ] [S04 · spring / night](items/S04-r1.png) — revision 1 · awaiting approval
-- [ ] [S05 · summer / dawn](items/S05-r1.png) — revision 1 · awaiting approval
-- [ ] [S06 · summer / day](items/S06-r1.png) — revision 1 · awaiting approval
-- [ ] [S07 · summer / dusk](items/S07-r1.png) — revision 1 · awaiting approval
-- [ ] [S08 · summer / night](items/S08-r1.png) — revision 1 · awaiting approval
-- [ ] [S09 · autumn / dawn](items/S09-r1.png) — revision 1 · awaiting approval
-- [ ] [S10 · autumn / day](items/S10-r1.png) — revision 1 · awaiting approval
-- [ ] [S11 · autumn / dusk](items/S11-r1.png) — revision 1 · awaiting approval
-- [ ] [S12 · autumn / night](items/S12-r1.png) — revision 1 · awaiting approval
-- [ ] [S13 · winter / dawn](items/S13-r1.png) — revision 1 · awaiting approval
-- [ ] [S14 · winter / day](items/S14-r1.png) — revision 1 · awaiting approval
-- [ ] [S15 · winter / dusk](items/S15-r1.png) — revision 1 · awaiting approval
-- [ ] [S16 · winter / night](items/S16-r1.png) — revision 1 · awaiting approval
+- [x] [S01 · spring / dawn](items/S01-r1.png) — approved
+- [x] [S02 · spring / day](items/S02-r1.png) — approved
+- [x] [S03 · spring / dusk](items/S03-r1.png) — approved
+- [x] [S04 · spring / night](items/S04-r1.png) — approved
+- [x] [S05 · summer / dawn](items/S05-r1.png) — approved
+- [x] [S06 · summer / day](items/S06-r1.png) — approved
+- [x] [S07 · summer / dusk](items/S07-r1.png) — approved
+- [x] [S08 · summer / night](items/S08-r1.png) — approved
+- [x] [S09 · autumn / dawn](items/S09-r1.png) — approved
+- [x] [S10 · autumn / day](items/S10-r1.png) — approved
+- [x] [S11 · autumn / dusk](items/S11-r1.png) — approved
+- [x] [S12 · autumn / night](items/S12-r1.png) — approved
+- [x] [S13 · winter / dawn](items/S13-r1.png) — approved
+- [x] [S14 · winter / day](items/S14-r1.png) — approved
+- [x] [S15 · winter / dusk](items/S15-r1.png) — approved
+- [x] [S16 · winter / night](items/S16-r1.png) — approved
 
 ## Weather
 
-- [ ] [W01 · clear](items/W01-r1.png) — revision 1 · awaiting approval
-- [ ] [W02 · clouds](items/W02-r1.gif) — awaiting approval
-- [ ] [W03 · light-rain](items/W03-r1.gif) — revision 1 · awaiting approval
-- [ ] [W04 · rain](items/W04-r1.gif) — revision 1 · awaiting approval
-- [ ] [W05 · snow](items/W05-r1.gif) — revision 1 · awaiting approval
-- [ ] [W06 · sleet](items/W06-r1.gif) — revision 1 · awaiting approval
-- [ ] [W07 · wind](items/W07-r1.gif) — revision 1 · awaiting approval
-- [ ] [W08 · fog](items/W08-r1.gif) — revision 1 · awaiting approval
-- [ ] [W09 · ice](items/W09-r1.gif) — revision 1 · awaiting approval
-- [ ] [W10 · lightning](items/W10-r1.gif) — revision 1 · awaiting approval
+- [ ] [W01 · clear](items/W01-r2.png) — revision in progress
+- [ ] [W02 · clouds](items/W02-r2.gif) — revision in progress
+- [ ] [W03 · light-rain](items/W03-r2.gif) — revision in progress
+- [ ] [W04 · rain](items/W04-r2.gif) — revision in progress
+- [ ] [W05 · snow](items/W05-r2.gif) — revision in progress
+- [ ] [W06 · sleet](items/W06-r2.gif) — revision in progress
+- [ ] [W07 · wind](items/W07-r2.gif) — revision in progress
+- [ ] [W08 · fog](items/W08-r2.gif) — revision in progress
+- [ ] [W09 · ice](items/W09-r2.gif) — revision in progress
+- [ ] [W10 · lightning](items/W10-r2.gif) — revision in progress
 
 ## Moon phases
 
-- [ ] [N01 · new_moon](items/N01-r1.png) — revision 1 · awaiting approval
-- [ ] [N02 · waxing_crescent](items/N02-r1.png) — revision 1 · awaiting approval
-- [ ] [N03 · first_quarter](items/N03-r1.png) — revision 1 · awaiting approval
-- [ ] [N04 · waxing_gibbous](items/N04-r1.png) — revision 1 · awaiting approval
-- [ ] [N05 · full_moon](items/N05-r1.png) — revision 1 · awaiting approval
-- [ ] [N06 · waning_gibbous](items/N06-r1.png) — revision 1 · awaiting approval
-- [ ] [N07 · last_quarter](items/N07-r1.png) — revision 1 · awaiting approval
-- [ ] [N08 · waning_crescent](items/N08-r1.png) — revision 1 · awaiting approval
+- [ ] [N01 · new_moon](items/N01-r2.png) — revision in progress
+- [ ] [N02 · waxing_crescent](items/N02-r2.png) — revision in progress
+- [ ] [N03 · first_quarter](items/N03-r2.png) — revision in progress
+- [ ] [N04 · waxing_gibbous](items/N04-r2.png) — revision in progress
+- [ ] [N05 · full_moon](items/N05-r2.png) — revision in progress
+- [ ] [N06 · waning_gibbous](items/N06-r2.png) — revision in progress
+- [ ] [N07 · last_quarter](items/N07-r2.png) — revision in progress
+- [ ] [N08 · waning_crescent](items/N08-r2.png) — revision in progress
 
 ## Bezel
 
-- [ ] [B01 · aged-brass information bezel](items/B01.png) — awaiting approval
-- [ ] [B02 · silver information bezel](items/B02.png) — awaiting approval
-- [ ] [B03 · wood information bezel](items/B03-r1.png) — revision 1 · awaiting approval
+- [ ] [B01 · aged-brass information bezel](items/B01-r2.png) — revision 2 · awaiting approval
+- [ ] [B02 · silver information bezel](items/B02-r2.png) — revision 2 · awaiting approval
+- [ ] [B03 · wood information bezel](items/B03-r2.png) — revision 2 · awaiting approval
 
 ## Surface effects
 
-- [ ] [E01 · shadow at full strength](items/E01-r1.png) — revision 1 · awaiting approval
-- [ ] [E02 · bevel at full strength](items/E02-r1.png) — revision 1 · awaiting approval
-- [ ] [E03 · reflection at full strength](items/E03-r1.png) — revision 1 · awaiting approval
-- [ ] [E04 · glare at full strength](items/E04-r1.png) — revision 1 · awaiting approval
-- [ ] [E05 · patina at full strength](items/E05-r1.png) — revision 1 · awaiting approval
-- [ ] [E06 · wear at full strength](items/E06-r1.png) — revision 1 · awaiting approval
+- [ ] [E01 · shadow at full strength](items/E01-r2.png) — revision 2 · awaiting approval
+- [ ] [E02 · bevel at full strength](items/E02-r2.png) — revision 2 · awaiting approval
+- [ ] [E03 · reflection at full strength](items/E03-r2.png) — revision 2 · awaiting approval
+- [ ] [E04 · glare at full strength](items/E04-r2.png) — revision 2 · awaiting approval
+- [ ] [E05 · patina at full strength](items/E05-r2.png) — revision 2 · awaiting approval
+- [ ] [E06 · wear at full strength](items/E06-r2.png) — revision 2 · awaiting approval
 
 ## Typography
 
