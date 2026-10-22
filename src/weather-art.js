@@ -6,53 +6,78 @@ const random = (seed) => () => {
   return ((n ^ (n >>> 14)) >>> 0) / 4294967296;
 };
 export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
-  const { x: centerX, y: centerY, r: radius } = opening;
-  const rand = random(919),
-    ferns = [];
-  for (let n = 0; n < Math.round(25 * intensity); n++) {
-    const a = n * 2.399 + rand() * 0.2,
-      r = radius - 3 - rand() * 4,
-      len = 13 + rand() * 21,
-      x = centerX + Math.cos(a) * r,
-      y = centerY + Math.sin(a) * r,
-      angle = a + Math.PI + (rand() - 0.5) * 0.5;
-    const point = (u, v) =>
-      [
-        x + Math.cos(angle) * u - Math.sin(angle) * v,
-        y + Math.sin(angle) * u + Math.cos(angle) * v,
+  const { x: cx, y: cy, r: radius } = opening,
+    rand = random(919),
+    paths = [];
+  // All crystal geometry already exists on the glass. A continuous inward
+  // growth front reveals the attached branches in spatial order, never by
+  // fading complete fern/leaf silhouettes into view.
+  for (let n = 0; n < Math.round(34 * intensity); n++) {
+    const a = n * 2.399 + rand() * 0.13,
+      r = radius - 1 - rand() * 3;
+    const x = cx + Math.cos(a) * r,
+      y = cy + Math.sin(a) * r;
+    const direction = a + Math.PI + (rand() - 0.5) * 0.38,
+      length = 28 + rand() * 40,
+      bend = (rand() - 0.5) * 11;
+    const point = (u, v) => {
+      v += Math.sin((u / length) * Math.PI) * bend;
+      return [
+        x + Math.cos(direction) * u - Math.sin(direction) * v,
+        y + Math.sin(direction) * u + Math.cos(direction) * v,
       ]
         .map((v) => v.toFixed(2))
         .join(" ");
+    };
     let d = "M" + point(0, 0);
-    for (let j = 1; j <= 12; j++)
-      d += "L" + point((len * j) / 12, Math.sin(j * 1.8 + n) * 0.22);
-    for (let j = 2; j < 12; j++)
-      for (const sign of [-1, 1]) {
-        const u = (len * j) / 12,
-          b = (1 - j / 14) * len * (0.2 + rand() * 0.12),
-          v = sign * b;
-        d +=
-          "M" +
-          point(u, 0) +
-          "Q" +
-          point(u + b * 0.12, v * 0.4) +
-          " " +
-          point(u + b * 0.7, v);
-        for (let k = 1; k < 4; k++)
+    for (let j = 1; j <= 20; j++) d += "L" + point((length * j) / 20, 0);
+    for (let j = 1; j < 18; j++)
+      for (const side of [-1, 1]) {
+        const u = (length * j) / 20,
+          branch = (1 - j / 21) * length * (0.17 + rand() * 0.13),
+          slant = 0.48 + rand() * 0.3;
+        d += "M" + point(u, 0) + "L" + point(u + branch * slant, side * branch);
+        for (let k = 1; k <= 5; k++) {
+          const t = k / 6,
+            twig = branch * (1 - t) * (0.22 + rand() * 0.17);
           d +=
             "M" +
-            point(u + (b * 0.7 * k) / 4, (v * k) / 4) +
+            point(u + branch * slant * t, side * branch * t) +
             "L" +
             point(
-              u + (b * 0.7 * k) / 4 + b * 0.23,
-              (v * k) / 4 + sign * b * 0.2,
+              u + branch * slant * t + twig * 0.85,
+              side * (branch * t + twig),
             );
+        }
       }
-    ferns.push(
-      `<path class="frost-crystal" pathLength="1" d="${d}" style="animation-delay:${(rand() * 8).toFixed(2)}s"/>`,
+    paths.push(
+      `<path d="${d}" stroke-width="${(0.25 + rand() * 0.2).toFixed(2)}" opacity="${(0.68 + rand() * 0.3).toFixed(2)}"/>`,
     );
   }
-  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="${centerX}" cy="${centerY}" r="${radius}"><stop offset=".88" stop-color="#d6f0ff" stop-opacity="0"/><stop offset=".96" stop-color="#d6f0ff" stop-opacity=".08"/><stop offset="1" stop-color="#e5f6ff" stop-opacity=".22"/></radialGradient></defs><circle class="frost-film" cx="${centerX}" cy="${centerY}" r="${radius}" fill="url(#frost-glass-edge)"/><g class="watchglass-frost" fill="none" stroke-linecap="round"><g stroke="#346c8c" stroke-width="1.1" opacity=".23">${ferns.join("")}</g><g stroke="#e4f7ff" stroke-width=".42" opacity=".76">${ferns.join("")}</g></g>`;
+  // Six-fold needle crystals add the angular anatomy of real window ice.
+  for (let n = 0; n < 18 * intensity; n++) {
+    const a = rand() * Math.PI * 2,
+      size = 3 + rand() * 7,
+      r = radius - size - 2 - rand() * 30,
+      x = cx + Math.cos(a) * r,
+      y = cy + Math.sin(a) * r;
+    let d = "";
+    for (let arm = 0; arm < 6; arm++) {
+      const angle = a + (arm * Math.PI) / 3,
+        point = (u, v) =>
+          `${x + Math.cos(angle) * u - Math.sin(angle) * v} ${y + Math.sin(angle) * u + Math.cos(angle) * v}`;
+      d += "M" + point(0, 0) + "L" + point(size, 0);
+      for (let k = 1; k < 4; k++)
+        for (const side of [-1, 1])
+          d +=
+            "M" +
+            point((size * k) / 4, 0) +
+            "L" +
+            point((size * k) / 4 + size * 0.17, side * size * 0.17);
+    }
+    paths.push(`<path d="${d}" stroke-width=".19" opacity=".7"/>`);
+  }
+  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="${cx}" cy="${cy}" r="${radius}"><stop offset=".65" stop-color="#e4f1f4" stop-opacity="0"/><stop offset="1" stop-color="#e4f1f4" stop-opacity=".18"/></radialGradient><filter id="frost-front-softness" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.15"/></filter><mask id="frost-growth-mask" maskUnits="userSpaceOnUse" x="${cx - radius}" y="${cy - radius}" width="${radius * 2}" height="${radius * 2}"><circle cx="${cx}" cy="${cy}" r="${radius + 2}" fill="white"/><circle class="frost-growth-front" cx="${cx}" cy="${cy}" r="${radius + 2}" fill="black" filter="url(#frost-front-softness)" style="transform-origin:${cx}px ${cy}px"/></mask></defs><g class="watchglass-frost" mask="url(#frost-growth-mask)"><circle class="frost-film" cx="${cx}" cy="${cy}" r="${radius}" fill="url(#frost-glass-edge)"/><g class="frost-needles" fill="none" stroke="#edfaff" stroke-linecap="round">${paths.join("")}</g></g>`;
 }
 export function lightningMarkup(layer = "near") {
   let out = `<defs><filter id="lightning-halo-${layer}" x="-50%" y="-25%" width="200%" height="150%"><feGaussianBlur stdDeviation="1.5"/></filter></defs>`;

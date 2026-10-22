@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-L01–L06 motion effects are approved. Their exact approved files remain preserved; new context variants below use the corrected shared skyline. L07 and L08 revision 4 still require approval. [Current review round](REVIEW-ROUND-2.md) links the fresh full views and close-ups directly.
+L01–L06 and L08 are approved. L07 revision 5 slows the flicker by 25% and restricts lighting to identified castle panes. A supplemental L06 clip shows four actual seeded passages at natural speed, omitting quiet gaps only. [Current review round](REVIEW-ROUND-3.md).
 
 ## L01 · Cloud drift
 
@@ -118,29 +118,33 @@ Example: implemented runtime animation; normal-speed frames.
 
 [Close-up: approved motion with revised scene registration](items/L06-context-detail-r1.gif)
 
+[Four real meteor passages; quiet waiting intervals omitted](items/L06-context-r2.gif)
+
+[Close-up: four real passages at natural speed](items/L06-context-detail-r2.gif)
+
 [Still image](items/L06-r3.png)
 
 ## L07 · Window lights
 
-**Revision 4 · awaiting approval.**
+**Revision 5 · awaiting approval.**
 
-[![L07 Window lights](items/L07-r4.gif)](items/L07-r4.gif)
+[![L07 Window lights](items/L07-r5.gif)](items/L07-r5.gif)
 
-Make independent candle/torch fluctuations visibly detectable without fast synchronized pulsing. Correct shared skyline glow and cutout.
+Slow the flicker by about 25%. Illuminate actual castle window panes only; exclude all tree foliage.
 
 Example: implemented runtime rendering.
 
-[New close-up, same natural-speed timeline](items/L07-detail-r4.gif)
+[Castle window close-up, 12 seconds at natural speed](items/L07-detail-r5.gif)
 
-[Still image](items/L07-r4.png)
+[Still image](items/L07-r5.png)
 
 ## L08 · Fireflies
 
-**Revision 4 · awaiting approval.**
+**Approved.**
 
 [![L08 Fireflies](items/L08-r4.gif)](items/L08-r4.gif)
 
-Make green foreground firefly movement visibly detectable. Correct shared skyline glow and cutout.
+Revision 4 explicitly approved by the user.
 
 Example: implemented runtime rendering.
 

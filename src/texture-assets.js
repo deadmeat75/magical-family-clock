@@ -4,3 +4,8 @@ export let materialTextureURL = "";
 export function setMaterialTextureURL(url) {
   materialTextureURL = url;
 }
+
+export let solidWoodTextureURL = "";
+export function setSolidWoodTextureURL(url) {
+  solidWoodTextureURL = url;
+}

@@ -1,26 +1,91 @@
 import artwork from "./assets/astronomical-dial.png";
 import { astronomicalReading } from "./astronomical-model.js";
+import { sceneFor } from "./scenes.js";
+import { weatherFor } from "./weather.js";
 import { renderMoons } from "./lunar.js";
-
-const wheels = [
-  ["year", 380, 337, 70, "THE SOLAR YEAR"],
-  ["day", 209, 375, 61, "DAY OF MONTH"],
-  ["weekday", 312, 395, 54, "DAY OF WEEK"],
+import { renderBezelArtwork } from "./bezel-art.js";
+import {
+  periodPicture,
+  seasonPicture,
+  weatherPicture,
+} from "./astronomical-pictures.js";
+const periods = ["dawn", "day", "dusk", "night"],
+  seasons = ["spring", "summer", "autumn", "winter"];
+const weather = [
+  "clear",
+  "clouds",
+  "light-rain",
+  "rain",
+  "snow",
+  "sleet",
+  "wind",
+  "fog",
+  "ice",
+  "lightning",
 ];
-function wheel(name, x, y, r, label) {
-  const clip = "astro-clip-" + name;
-  return `<g class="astronomical-wheel" data-wheel="${name}"><title>${label}</title><defs><clipPath id="${clip}"><circle cx="${x}" cy="${y}" r="${r}"/></clipPath></defs><g clip-path="url(#${clip})"><image class="astro-rotor" data-rotor="${name}" href="${artwork}" width="600" height="600"/></g><circle cx="${x}" cy="${y}" r="${r - 1}" fill="none" stroke="#f0ce86" stroke-width=".8"/><g data-scale="${name}" font-family="Georgia,serif" font-size="7" fill="#ffe6a2" paint-order="stroke" stroke="#0c1d29" stroke-width="2"></g><path d="M${x - 4} ${y - r - 3}L${x} ${y - r + 8}L${x + 4} ${y - r - 3}Z" fill="#ffe1a0" stroke="#392817"/><rect x="${x - r * 0.63}" y="${y + 12}" width="${r * 1.26}" height="15" rx="5" fill="#0e1d2b" stroke="#b68e48" stroke-width=".5"/><text data-reading="${name}" x="${x}" y="${y + 23}" text-anchor="middle" fill="#ffe6aa" font-family="Georgia,serif" font-size="8"/></g>`;
+const discs = [
+  ["period", 247, 212, 82, "DAY / NIGHT", periods],
+  [
+    "moon",
+    391,
+    212,
+    46,
+    "MOON PHASE",
+    Array.from({ length: 8 }, (_, i) => i / 8),
+  ],
+  ["season", 213, 377, 60, "SEASON", seasons],
+  ["weather", 376, 365, 79, "WEATHER", weather],
+];
+function discMarkup([name, x, y, r, label, values]) {
+  const travel = r * Math.max(2.5, 1.06 / Math.sin(Math.PI / values.length)),
+    id = "astro-" + name;
+  const pictures = values
+    .map((value, i) => {
+      const picture =
+        name === "moon"
+          ? `<rect x="-50" y="-50" width="100" height="100" fill="#14293a"/><image data-lunar-phase="${value}" data-moon-cell="${i}" x="-39" y="-39" width="78" height="78"/>`
+          : name === "period"
+            ? periodPicture(value, id + i)
+            : name === "season"
+              ? seasonPicture(value)
+              : weatherPicture(value, id + i);
+      return `<g transform="rotate(${(i * 360) / values.length})"><defs><clipPath id="${id}-picture-${i}"><circle cx="0" cy="${-travel}" r="${r}"/></clipPath></defs><g clip-path="url(#${id}-picture-${i})"><svg x="${-r}" y="${-travel - r}" width="${r * 2}" height="${r * 2}" viewBox="-50 -50 100 100" overflow="hidden">${picture}</svg></g></g>`;
+    })
+    .join("");
+  let plate = `<circle r="${travel + r}" fill="#173042"/>`;
+  for (let i = 0; i < 85; i++) {
+    const a = i * 2.399,
+      d = (travel + r) * Math.sqrt((i + 0.5) / 85);
+    plate += `<circle cx="${Math.cos(a) * d}" cy="${Math.sin(a) * d}" r="${r * 0.006}" fill="#d7b779" opacity=".65"/>`;
+  }
+  return `<g class="astronomical-disc" data-disc-kind="${name}"><title>${label}</title><defs><clipPath id="${id}-aperture"><circle cx="${x}" cy="${y}" r="${r}"/></clipPath></defs><circle cx="${x}" cy="${y}" r="${r + 7}" fill="#9a7339" stroke="#f5d494" stroke-width="1.5"/><g clip-path="url(#${id}-aperture)"><circle cx="${x}" cy="${y}" r="${r}" fill="#14293a"/><g transform="translate(${x} ${y + travel})"><g class="astro-disc-rotor" data-rotor="${name}" data-count="${values.length}">${plate}${pictures}</g></g></g><image class="astro-aperture-frame" x="${x - r - 10}" y="${y - r - 10}" width="${(r + 10) * 2}" height="${(r + 10) * 2}" data-radius="${r + 5}"/><rect x="${x - r * 0.94}" y="${y + r * 0.54}" width="${r * 1.88}" height="${r * 0.47}" rx="4" fill="#142734" stroke="#cfab63" stroke-width=".7"/><text x="${x}" y="${y + r * 0.7}" text-anchor="middle" fill="#cfb776" font-size="${r < 50 ? 5.9 : 7}" font-family="Georgia,serif">${label}</text><text data-reading="${name}" x="${x}" y="${y + r * 0.9}" text-anchor="middle" fill="#fff0c8" font-size="${r < 50 ? 5.8 : 9}" font-family="Georgia,serif"/></g>`;
 }
 export function astronomicalFace() {
-  return `<g class="astronomical-face"><image href="${artwork}" width="600" height="600"/>${wheels.map((w) => wheel(...w)).join("")}<g class="astro-clock" transform="translate(247 212)"><circle r="72" fill="#0b1e2b" fill-opacity=".32"/><g fill="#ffe5a0" stroke="#172333" stroke-width="1.3" paint-order="stroke" font-size="11" font-family="Georgia,serif" text-anchor="middle">${Array.from(
-    { length: 12 },
-    (_, i) => {
-      const a = ((i + 1) * Math.PI) / 6;
-      return `<text x="${Math.sin(a) * 76}" y="${-Math.cos(a) * 76 + 4}">${["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][i]}</text>`;
-    },
-  ).join(
-    "",
-  )}</g><path class="astro-hour" d="M-2 8L-3-36 0-49 3-36 2 8Z" fill="#efcd7e" stroke="#322817"/><path class="astro-minute" d="M-1 9L-2-54 0-68 2-54 1 9Z" fill="#fff0b3" stroke="#57401e" stroke-width=".5"/><circle r="4" fill="#d4a346" stroke="#ffdfa0"/></g><g class="astronomical-moon" transform="translate(391 206)"><circle r="42" fill="#102330"/><image data-lunar-phase=".5" x="-34" y="-34" width="68" height="68"/><text data-reading="moon" y="39" fill="#ffe4a0" font-family="Georgia,serif" font-size="6" text-anchor="middle"/></g></g>`;
+  let stars = "";
+  for (let i = 0; i < 110; i++) {
+    const a = i * 2.399,
+      r = 175 * Math.sqrt((i + 0.5) / 110),
+      x = 300 + Math.cos(a) * r,
+      y = 290 + Math.sin(a) * r;
+    stars += `<circle cx="${x}" cy="${y}" r="${i % 9 === 0 ? 0.8 : 0.35}" fill="#d9b977" opacity="${0.25 + (i % 5) * 0.1}"/>`;
+  }
+  return `<g class="astronomical-face"><style>.astro-disc-rotor{transform-origin:0px 0px;transition:transform 1.8s cubic-bezier(.4,0,.2,1)}@media(prefers-reduced-motion:reduce){.astro-disc-rotor{transition:none!important}}</style><image href="${artwork}" width="600" height="600"/><ellipse cx="300" cy="290" rx="184" ry="184" fill="#102534" stroke="#c6a15e" stroke-width="2"/>${stars}${discs.map(discMarkup).join("")}</g>`;
+}
+function rotateTo(node, index, config) {
+  const count = Number(node.dataset.count),
+    previous = Number(node.dataset.index ?? index);
+  let delta = index - (((previous % count) + count) % count);
+  if (delta > count / 2) delta -= count;
+  if (delta < -count / 2) delta += count;
+  const next = previous + delta;
+  node.style.transition =
+    !node.hasAttribute("data-index") ||
+    config.reduced_motion ||
+    !config.scene_motion
+      ? "none"
+      : "";
+  node.style.transform = `rotate(${(-next * 360) / count}deg)`;
+  node.dataset.index = next;
 }
 export function updateAstronomical(
   root,
@@ -28,93 +93,60 @@ export function updateAstronomical(
   states,
   now = new Date(),
   zone,
+  context = {},
 ) {
   if (!root.querySelector(".astronomical-face")) return;
   const reading = astronomicalReading(config, states, now, zone);
-  for (const [key, angle] of [
-    ["hour", reading.hourAngle],
-    ["minute", reading.minuteAngle],
-  ])
-    root
-      .querySelector(".astro-" + key)
-      .setAttribute("transform", `rotate(${angle})`);
+  const scene = sceneFor(config, states, now, { ...context, time_zone: zone });
+  if (
+    !states[config.sun_entity] &&
+    !(
+      Number.isFinite(context.latitude) && Number.isFinite(context.longitude)
+    ) &&
+    !periods.includes(config.period_override)
+  )
+    scene.period =
+      reading.hour < 6 || reading.hour >= 20
+        ? "night"
+        : reading.hour < 8
+          ? "dawn"
+          : reading.hour >= 18
+            ? "dusk"
+            : "day";
+  const moon = reading.moon,
+    phase = moon.visible ? moon.phase : null,
+    moonIndex = phase == null ? 0 : Math.round(phase * 8) % 8;
+  const kind = weatherFor(config, states);
   const values = {
-    year: [
-      reading.yearAngle,
-      `${reading.year} · ${new Intl.DateTimeFormat("en", { month: "short", timeZone: zone || "UTC" }).format(now)}`,
-    ],
-    day: [reading.dayAngle, `${reading.day} / ${reading.daysInMonth}`],
-    weekday: [
-      reading.weekdayAngle,
-      [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ][reading.weekday],
+    period: [periods.indexOf(scene.period), scene.period],
+    season: [seasons.indexOf(scene.season), scene.season],
+    weather: [weather.indexOf(kind), kind.replaceAll("-", " ")],
+    moon: [
+      moonIndex,
+      phase == null ? "Unavailable" : moon.label.replaceAll("_", " "),
     ],
   };
-  const ns = "http://www.w3.org/2000/svg";
-  for (const [key, x, y, r] of wheels) {
-    const [angle, label] = values[key];
-    root
-      .querySelector(`[data-rotor="${key}"]`)
-      .setAttribute("transform", `rotate(${-angle} ${x} ${y})`);
-    root.querySelector(`[data-reading="${key}"]`).textContent = label;
-    const scale = root.querySelector(`[data-scale="${key}"]`);
-    const labels =
-      key === "year"
-        ? [
-            "JAN",
-            "FEB",
-            "MAR",
-            "APR",
-            "MAY",
-            "JUN",
-            "JUL",
-            "AUG",
-            "SEP",
-            "OCT",
-            "NOV",
-            "DEC",
-          ]
-        : key === "weekday"
-          ? ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
-          : Array.from({ length: reading.daysInMonth }, (_, i) =>
-              String(i + 1),
-            );
-    scale.replaceChildren();
-    labels.forEach((name, i) => {
-      // Month positions use actual calendar boundaries, including leap years.
-      const fraction =
-        key === "year"
-          ? (Date.UTC(reading.year, i, 1) - Date.UTC(reading.year, 0, 1)) /
-            86400000 /
-            reading.daysInYear
-          : i / labels.length;
-      const a = fraction * 360 - angle,
-        radians = (a * Math.PI) / 180;
-      const t = document.createElementNS(ns, "text");
-      t.setAttribute("x", x + Math.sin(radians) * (r - 11));
-      t.setAttribute("y", y - Math.cos(radians) * (r - 11) + 2);
-      t.setAttribute("text-anchor", "middle");
-      if (key === "day") t.setAttribute("font-size", "5.5");
-      t.textContent = name;
-      scale.appendChild(t);
-    });
+  for (const [key, [index, label]] of Object.entries(values)) {
+    rotateTo(root.querySelector(`[data-rotor="${key}"]`), index, config);
+    root.querySelector(`[data-reading="${key}"]`).textContent =
+      label.toUpperCase();
   }
-  const moon = root.querySelector(".astronomical-moon image");
-  const phase = reading.moon.visible ? reading.moon.phase : null;
-  moon.style.visibility = phase == null ? "hidden" : "visible";
-  if (phase != null) moon.dataset.lunarPhase = phase;
-  const moonLabel = root.querySelector('[data-reading="moon"]');
-  moonLabel.textContent =
-    phase == null
-      ? "MOON SENSOR UNAVAILABLE"
-      : `${Math.round((reading.moon.illumination ?? 0) * 100)}% · ${reading.moon.label.replaceAll("_", " ")}`;
-  moonLabel.setAttribute("data-source", reading.moon.source);
-  return renderMoons(root);
+  const moonDisc = root.querySelector('[data-disc-kind="moon"]');
+  moonDisc.dataset.source = moon.source;
+  for (const image of moonDisc.querySelectorAll("image[data-lunar-phase]")) {
+    image.style.visibility = phase == null ? "hidden" : "visible";
+    const cell = Number(image.dataset.moonCell);
+    image.dataset.lunarPhase =
+      cell === moonIndex && phase != null ? phase : cell / 8;
+  }
+  const frames = [...root.querySelectorAll(".astro-aperture-frame")].filter(
+    (n) => !n.dataset.materialReady && !n.dataset.loading,
+  );
+  return Promise.all([
+    renderMoons(root),
+    ...frames.map(async (n) => {
+      n.dataset.loading = "true";
+      await renderBezelArtwork(n, "aged-brass", 10, Number(n.dataset.radius));
+    }),
+  ]);
 }

@@ -1,4 +1,7 @@
-import { materialTextureURL as panelTexturesURL } from "./texture-assets.js";
+import {
+  materialTextureURL as panelTexturesURL,
+  solidWoodTextureURL as solidWood,
+} from "./texture-assets.js";
 import { finite, color, locationName } from "./design.js";
 export const PANEL_TEXTURES = [
   "cracked-glass",
@@ -226,16 +229,18 @@ const graphics = {
 function materialPatterns() {
   // One continuous source crop spans the complete 600-unit dial. No tile
   // boundary or repeated motif can occur within a destination panel.
-  return [
-    ["hammered-metal", 0, 0],
-    ["parchment", 627, 0],
-    ["wood", 0, 627],
-  ]
-    .map(
-      ([id, x, y]) =>
-        `<pattern id="${id}" width="600" height="600" patternUnits="userSpaceOnUse"><svg width="600" height="600" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${panelTexturesURL}" width="1254" height="1254"/></svg></pattern>`,
-    )
-    .join("");
+  return (
+    [
+      ["hammered-metal", 0, 0],
+      ["parchment", 627, 0],
+    ]
+      .map(
+        ([id, x, y]) =>
+          `<pattern id="${id}" width="600" height="600" patternUnits="userSpaceOnUse"><svg width="600" height="600" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${panelTexturesURL}" width="1254" height="1254"/></svg></pattern>`,
+      )
+      .join("") +
+    `<pattern id="wood" width="600" height="600" patternUnits="userSpaceOnUse"><image href="${solidWood}" width="600" height="600" preserveAspectRatio="xMidYMid slice"/></pattern>`
+  );
 }
 export function panelDefs() {
   return `<defs><filter id="panel-grain" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".22" numOctaves="4" seed="7" result="grain"/><feColorMatrix in="grain" type="saturate" values="0"/><feComponentTransfer result="texture"><feFuncR type="linear" slope=".3" intercept=".72"/><feFuncG type="linear" slope=".3" intercept=".72"/><feFuncB type="linear" slope=".3" intercept=".72"/></feComponentTransfer><feBlend in="SourceGraphic" in2="texture" mode="multiply"/></filter><linearGradient id="panel-gold" x2=".8" y2="1"><stop stop-color="#ffecaa"/><stop offset=".25" stop-color="#bd8a32"/><stop offset=".48" stop-color="#ffe7a0"/><stop offset=".65" stop-color="#79501a"/><stop offset="1" stop-color="#efcb72"/></linearGradient><pattern id="cracked-glass" width="32" height="33" patternTransform="scale(.55)" patternUnits="userSpaceOnUse"><path d="M0 3L13 0 25 7 32 4M13 0L17 15 5 22 0 18M25 7L21 25 32 31M5 22L10 33M17 15L21 25 10 33" fill="none" stroke="#030d1d" stroke-width="1.2" opacity=".65"/><path d="M2 5L12 3 15 14 6 19ZM26 10L30 8 30 26 23 24Z" fill="#c5f9ff" opacity=".08"/></pattern>${materialPatterns()}</defs>`;
@@ -294,12 +299,16 @@ export function panelMarkup(c, locations, states) {
           x = l.x == null ? text.x : l.x * 6,
           y = l.y == null ? text.y : l.y * 6;
         let deco = "";
+        const woodProfile =
+          texture === "wood"
+            ? `<defs><radialGradient id="${id}-wood-profile" gradientUnits="userSpaceOnUse" cx="${g.origin.x}" cy="${g.origin.y}" r="${g.inner + g.thickness}"><stop offset="${g.inner / (g.inner + g.thickness)}" stop-color="#160d06" stop-opacity=".55"/><stop offset="${(g.inner + g.thickness * 0.12) / (g.inner + g.thickness)}" stop-color="#fff0bf" stop-opacity=".3"/><stop offset="${(g.inner + g.thickness * 0.36) / (g.inner + g.thickness)}" stop-color="#ffedbb" stop-opacity=".11"/><stop offset="${(g.inner + g.thickness * 0.68) / (g.inner + g.thickness)}" stop-color="#160b04" stop-opacity=".08"/><stop offset="1" stop-color="#100803" stop-opacity=".6"/></radialGradient></defs><path d="${g.path}" fill="url(#${id}-wood-profile)"/>`
+            : "";
         for (let j = 0; j < 5; j++) {
           const p = g.point(g.inner + 8 + (j * (g.thickness - 16)) / 4);
           if (j === 0 || j === 4)
             deco += `<circle cx="${p.x}" cy="${p.y}" r="1.3" fill="#f7dc8f" opacity=".65"/>`;
         }
-        return `<g class="location-panel" data-location="${escapeXML(l.id)}" data-panel-index="${g.index}"><defs><clipPath id="${id}"><path d="${g.path}"/></clipPath><linearGradient id="${id}-icon" x2=".8" y2="1"><stop stop-color="#fff4b6"/><stop offset=".3" stop-color="${s.graphic_color}"/><stop offset=".6" stop-color="${s.graphic_color}"/><stop offset="1" stop-color="#80511c"/></linearGradient><linearGradient id="${id}-light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".18"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/></linearGradient></defs><path class="slot-surface" d="${g.path}" fill="${bg}" stroke="${c.location_panels.frame_color}" stroke-width="3.5"/><g clip-path="url(#${id})"><path d="${g.path}" fill="${bg}" filter="url(#panel-grain)"/>${s.background_image ? `<image href="${escapeXML(s.background_image)}" x="${g.bounds.x}" y="${g.bounds.y}" width="${g.bounds.width}" height="${g.bounds.height}" preserveAspectRatio="xMidYMid slice"/>` : ""}${texture !== "plain" ? `<path d="${g.path}" fill="url(#${texture})" style="mix-blend-mode:luminosity;opacity:.9"/>` : ""}<path d="${g.path}" fill="url(#${id}-light)"/><path d="${g.path}" fill="none" stroke="#fff0b5" stroke-width="7" opacity=".14"/>${deco}${!nameOnly && s.graphic !== "none" ? `<g class="slot-graphic" data-max-scale="${glyphSize / 44}" transform="translate(${icon.x + s.graphic_x} ${icon.y + s.graphic_y}) scale(${glyphSize / 44})" style="color:${s.graphic_color};fill:url(#${id}-icon);filter:drop-shadow(0px 1.5px 1px #0009)">${s.graphic === "custom" && s.image ? `<image href="${escapeXML(s.image)}" x="-22" y="-22" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>` : graphics[graphicFor(l)] || ""}</g>` : ""}</g><text class="label slot-label" data-location="${escapeXML(l.id)}" data-auto-fit="${l.x == null && l.y == null}" data-max-size="${l.size || c.location_panels.font_size}" aria-label="${escapeXML(name)}" x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" transform="rotate(${l.rotation || 0} ${x} ${y})" ${graphicOnly ? 'visibility="hidden"' : ""} style="font-family:${escapeXML(l.font || c.location_panels.font)};font-size:${l.size || c.location_panels.font_size}px;fill:${l.color || "#ffe5a0"};opacity:${l.opacity ?? 1};stroke:#25190f;stroke-width:1.1px;letter-spacing:.2px" ${l.x == null && l.y == null ? `clip-path="url(#${id})"` : ""}>${escapeXML(name)}</text></g>`;
+        return `<g class="location-panel" data-location="${escapeXML(l.id)}" data-panel-index="${g.index}"><defs><clipPath id="${id}"><path d="${g.path}"/></clipPath><linearGradient id="${id}-icon" x2=".8" y2="1"><stop stop-color="#fff4b6"/><stop offset=".3" stop-color="${s.graphic_color}"/><stop offset=".6" stop-color="${s.graphic_color}"/><stop offset="1" stop-color="#80511c"/></linearGradient><linearGradient id="${id}-light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".18"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".58"/></linearGradient></defs><path class="slot-surface" d="${g.path}" fill="${bg}" stroke="${c.location_panels.frame_color}" stroke-width="3.5"/><g clip-path="url(#${id})"><path d="${g.path}" fill="${bg}" filter="url(#panel-grain)"/>${s.background_image ? `<image href="${escapeXML(s.background_image)}" x="${g.bounds.x}" y="${g.bounds.y}" width="${g.bounds.width}" height="${g.bounds.height}" preserveAspectRatio="xMidYMid slice"/>` : ""}${texture !== "plain" ? `<path d="${g.path}" fill="url(#${texture})" style="${texture === "wood" ? "opacity:1" : "mix-blend-mode:luminosity;opacity:.9"}"/>` : ""}<path d="${g.path}" fill="url(#${id}-light)"/><path d="${g.path}" fill="none" stroke="#fff0b5" stroke-width="7" opacity=".14"/>${woodProfile}${texture === "wood" ? `<path d="${g.path}" fill="none" stroke="#29170c" stroke-width="15" opacity=".48"/><path d="${g.path}" fill="none" stroke="#e8c88a" stroke-width="8" opacity=".22"/><path d="${g.path}" fill="none" stroke="#fff5d0" stroke-width="2" opacity=".48"/>` : ""}${deco}${!nameOnly && s.graphic !== "none" ? `<g class="slot-graphic" data-max-scale="${glyphSize / 44}" transform="translate(${icon.x + s.graphic_x} ${icon.y + s.graphic_y}) scale(${glyphSize / 44})" style="color:${s.graphic_color};fill:url(#${id}-icon);filter:drop-shadow(0px 1.5px 1px #0009)">${s.graphic === "custom" && s.image ? `<image href="${escapeXML(s.image)}" x="-22" y="-22" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>` : graphics[graphicFor(l)] || ""}</g>` : ""}</g><text class="label slot-label" data-location="${escapeXML(l.id)}" data-auto-fit="${l.x == null && l.y == null}" data-max-size="${l.size || c.location_panels.font_size}" aria-label="${escapeXML(name)}" x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" transform="rotate(${l.rotation || 0} ${x} ${y})" ${graphicOnly ? 'visibility="hidden"' : ""} style="font-family:${escapeXML(l.font || c.location_panels.font)};font-size:${l.size || c.location_panels.font_size}px;fill:${l.color || "#ffe5a0"};opacity:${l.opacity ?? 1};stroke:#25190f;stroke-width:1.1px;letter-spacing:.2px" ${l.x == null && l.y == null ? `clip-path="url(#${id})"` : ""}>${escapeXML(name)}</text></g>`;
       })
       .join("")
   );

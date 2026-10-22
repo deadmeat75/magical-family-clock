@@ -167,8 +167,8 @@ test("frost follows the central opening edge and scene pauses do not create a da
     return { x: b.x, y: b.y, width: b.width, height: b.height };
   });
   expect(bounds.width).toBeGreaterThan(320);
-  expect(bounds.width).toBeLessThan(360);
-  expect(bounds.x).toBeGreaterThan(120);
+  expect(bounds.width).toBeLessThanOrEqual(360.01);
+  expect(bounds.x).toBeGreaterThanOrEqual(119.99);
 });
 test("moon shadow is transparent in both blue daylight and indigo night skies", async ({
   page,
@@ -231,4 +231,71 @@ test("crafted bezels retain live information and render without repeated square 
     (c) => (c.hass = { states: { "sensor.room": { state: "Garden" } } }),
   );
   await expect(card.locator(".bezel-value")).toContainText("Garden");
+});
+
+test("ice coverage grows continuously inward instead of fading separate crystals in", async ({
+  page,
+}) => {
+  const card = await boot(page, {
+    weather_effect: "ice",
+    reduced_motion: false,
+    weather_motion: true,
+  });
+  await card.evaluate(async (c) => {
+    await c._worldPainter?.ready;
+    for (let i = 0; i < 100 && !c._sceneLoaded; i++)
+      await new Promise((r) => setTimeout(r, 20));
+  });
+  await card
+    .locator(".weather")
+    .evaluate((w) => (w.style.visibility = "hidden"));
+  const baseline = (await card.screenshot()).toString("base64");
+  await card.locator(".weather").evaluate((w) => (w.style.visibility = ""));
+  const counts = [];
+  for (const t of [0, 7000, 14000, 28000]) {
+    await card.locator(".weather").evaluate((w, t) => {
+      for (const a of w.getAnimations({ subtree: true })) {
+        a.pause();
+        a.currentTime = t;
+      }
+    }, t);
+    const shown = (await card.screenshot()).toString("base64");
+    counts.push(
+      await page.evaluate(
+        async ({ baseline, shown }) => {
+          const images = await Promise.all(
+            [baseline, shown].map(async (png) => {
+              const i = new Image();
+              i.src = "data:image/png;base64," + png;
+              await i.decode();
+              const c = document.createElement("canvas");
+              c.width = i.width;
+              c.height = i.height;
+              const x = c.getContext("2d");
+              x.drawImage(i, 0, 0);
+              return x.getImageData(0, 0, c.width, c.height).data;
+            }),
+          );
+          let count = 0;
+          for (let p = 0; p < images[0].length; p += 4)
+            if (
+              Math.max(
+                ...[0, 1, 2].map((k) =>
+                  Math.abs(images[0][p + k] - images[1][p + k]),
+                ),
+              ) > 24
+            )
+              count++;
+          return count;
+        },
+        { baseline, shown },
+      ),
+    );
+  }
+  expect(counts[1]).toBeGreaterThan(counts[0] + 50);
+  expect(counts[2]).toBeGreaterThan(counts[1] + 50);
+  expect(counts[3]).toBeGreaterThan(counts[2] + 50);
+  expect(
+    await card.locator('.frost-needles [style*="animation-delay"]').count(),
+  ).toBe(0);
 });

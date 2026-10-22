@@ -1,3 +1,4 @@
+import { castleWindowPath } from "./castle-windows.js";
 import { registeredSkyPath } from "./sky-registration.js";
 import { skyPath } from "./world-paths.js";
 import { renderMoons } from "./lunar.js";
@@ -17,9 +18,7 @@ function windowSources(image) {
     scale = size / 384,
     texture = canvas(size, size),
     ctx = texture.getContext("2d"),
-    castle = new Path2D(
-      "M236 308V245H251V202H272V178H300V167H310V140H326V213H344V262H357V309Z",
-    );
+    castle = new Path2D(castleWindowPath());
   ctx.drawImage(image, 0, 0, size, size);
   const pixels = ctx.getImageData(0, 0, size, size),
     d = pixels.data,
@@ -199,6 +198,7 @@ function drawStars(ctx, t, quality) {
   ctx.globalAlpha = 1;
 }
 function drawWindows(ctx, lights, t) {
+  t *= 0.75; // 25% slower, with independent lamp phases preserved.
   for (let i = 0; i < lights.length; i++) {
     const light = lights[i],
       phase = i * 2.39996;

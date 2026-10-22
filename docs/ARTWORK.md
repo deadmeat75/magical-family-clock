@@ -1,5 +1,11 @@
 # Clock artwork and animation
 
+## Unreleased round 3 visual review
+
+[Current examples](visual-review/REVIEW-ROUND-3.md) are held for individual approval. `panel-solid-wood-r4.png` is original generated solid-wood material artwork with irregular grain and pores, mapped once across the dial with rounded profile lighting. It replaces only the proposed P04 wood surface; approved hammered metal and parchment assets are unchanged. `astronomical-pictures.png` is a browser-rendered atlas of crops from existing generated sky, seasonal landscape, mountain and antique sun artwork. Four physical image carriers rotate behind fixed apertures; these illustrations do not introduce external assets or runtime services.
+
+The F01 revision 6 lettering remains an independently editable SVG placement proposal. Window lighting is restricted to identified source panes and runs 25% slower than revision 4. Frost uses fine needle geometry revealed by a continuous inward mask. None of these pending visual revisions constitutes a release.
+
 ## Version 0.4.1: continuous landscape and creature motion
 
 Clouds are softly keyed from two tower-free regions of the bundled source into a reusable transparent texture. Two decks move continuously at different wind speeds over a separate sky gradient, so a stationary cloud photograph does not remain underneath. A detailed shared silhouette protects mountains/towers and places the moon, stars and background visitors in the same depth layer. Custom scenes retain their own sky beneath the general cloud overlay.

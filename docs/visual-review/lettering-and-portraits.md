@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-K01–K08 are approved with UI text-color control. K09–K12 revision 2 now use runtime attachment rendering, individual artwork clips and adjustable font, size, ink color, alignment, position and rotation. [Current review round](REVIEW-ROUND-2.md).
+K01–K12 are approved. Runtime attachments have adjustable ink color, font, size, alignment, position and rotation. Approved examples remain preserved.
 
 ## K01 · stem / parallel
 
@@ -88,40 +88,40 @@ Example: current draft rendering.
 
 ## K09 · Affixed parchment slip
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![K09 Affixed parchment slip](items/K09-r2.png)](items/K09-r2.png)
 
-Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment. Handwritten ink on parchment.
+Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.
 
 Example: implemented runtime rendering.
 
 ## K10 · Hanging name tag
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![K10 Hanging name tag](items/K10-r2.png)](items/K10-r2.png)
 
-Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
+Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.
 
 Example: implemented runtime rendering.
 
 ## K11 · Oval name brooch
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![K11 Oval name brooch](items/K11-r2.png)](items/K11-r2.png)
 
-Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
+Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.
 
 Example: implemented runtime rendering.
 
 ## K12 · Framed portrait attachment
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![K12 Framed portrait attachment](items/K12-r2.png)](items/K12-r2.png)
 
-Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
+Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.
 
 Example: implemented runtime rendering.

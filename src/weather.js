@@ -45,20 +45,19 @@ export const weatherCSS = `
 .weather .wind-tumble{animation:wind-tumble 3s ease-in-out infinite;transform-origin:4px 0px}
 @keyframes wind-tumble{0%{transform:rotate(0deg) scaleY(1)}35%{transform:rotate(125deg) scaleY(.3)}70%{transform:rotate(265deg) scaleY(.8)}100%{transform:rotate(360deg) scaleY(1)}}
 .weather .fog-bank{animation:fog-drift 24s ease-in-out infinite alternate;transform-origin:center}
-.weather .frost-film{animation:frost-film 24s ease-out both}.weather .frost-crystal{stroke-dasharray:1;stroke-dashoffset:1;animation:frost-growth 18s ease-out forwards}
+.weather .frost-growth-front{transform:scale(.64);animation:frost-inward 28s linear both}
 .weather .lightning-strike{opacity:0;animation:lightning-discharge 23s linear infinite}
 .weather.still *,.still .weather *,.paused .weather *{animation-play-state:paused!important}
-.weather.still .frost-crystal,.still .weather .frost-crystal{animation:none;stroke-dashoffset:0}
+.weather.still .frost-growth-front,.still .weather .frost-growth-front{animation:none;transform:scale(.64)}
 .weather.still .lightning-strike,.still .weather .lightning-strike{animation:none;opacity:0}
 .weather.still .lightning-strike:first-of-type,.still .weather .lightning-strike:first-of-type{opacity:.65}
 @keyframes weather-fall{from{transform:translate(20px,0)}to{transform:translate(-70px,440px)}}
 @keyframes weather-snow{0%{transform:translate(12px,0)}25%{transform:translate(-2px,110px)}50%{transform:translate(8px,220px)}75%{transform:translate(-16px,330px)}100%{transform:translate(-9px,440px)}}
 @keyframes weather-wind{from{transform:translate(-100px,12px) rotate(0deg)}50%{transform:translate(260px,-17px) rotate(35deg)}to{transform:translate(650px,8px) rotate(-25deg)}}
 @keyframes fog-drift{from{transform:translate(-55px,3px)}to{transform:translate(65px,-5px)}}
-@keyframes frost-film{from{opacity:0}to{opacity:1}}
-@keyframes frost-growth{to{stroke-dashoffset:0}}
+@keyframes frost-inward{from{transform:scale(1.035)}to{transform:scale(.64)}}
 @keyframes lightning-discharge{0%,.12%{opacity:0}.3%{opacity:.95}1%{opacity:.7}1.65%{opacity:.18}1.9%{opacity:.55}2.5%,100%{opacity:0}}
-@media(prefers-reduced-motion:reduce){.weather *{animation-play-state:paused!important}.weather .frost-crystal{animation:none;stroke-dashoffset:0}.weather .lightning-strike{animation:none;opacity:0}}
+@media(prefers-reduced-motion:reduce){.weather *{animation-play-state:paused!important}.weather .frost-growth-front{animation:none;transform:scale(.64)}.weather .lightning-strike{animation:none;opacity:0}}
 `;
 export function weatherMarkup(
   kind,

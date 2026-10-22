@@ -1,3 +1,5 @@
+> Archived review round. [Open the current eight revised examples](REVIEW-ROUND-3.md) for the latest versions and decisions.
+
 # Current revision review
 
 **Unreleased review branch. Published HACS remains v0.4.0.** No release will be published without the remaining visual approvals. Earlier files are retained for comparison; these links point directly to the new examples.

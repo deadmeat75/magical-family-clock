@@ -2,8 +2,13 @@ import { updateAstronomical } from "./astronomical.js";
 import { attachmentMarkup } from "./attachments.js";
 import { renderBezelArtwork } from "./bezel-art.js";
 import materialTexturesURL from "./assets/panel-material-textures-r1.png";
-import { setMaterialTextureURL } from "./texture-assets.js";
+import solidWoodTextureURL from "./assets/panel-solid-wood-r4.png";
+import {
+  setMaterialTextureURL,
+  setSolidWoodTextureURL,
+} from "./texture-assets.js";
 setMaterialTextureURL(materialTexturesURL);
+setSolidWoodTextureURL(solidWoodTextureURL);
 import { ensureFonts } from "./fonts.js";
 import { panelsEnabled, panelMarkup, fitPanelLabels } from "./panels.js";
 import { worldCSS, worldMarkup } from "./world.js";
@@ -623,6 +628,10 @@ export class MagicalFamilyClock extends HTMLElement {
         JSON.stringify(wind);
     const weather = this.shadowRoot.querySelector(".weather");
     weather.classList.toggle("still", !c.weather_motion);
+    weather.style.display =
+      c.theme === "astronomical" && c.artwork !== "castle" && !c.face_image
+        ? "none"
+        : "";
     weather.setAttribute(
       "clip-path",
       c.artwork === "castle" ? "url(#castle-opening)" : "url(#dial-clip)",
@@ -1071,7 +1080,7 @@ export class MagicalFamilyClock extends HTMLElement {
       radius,
     ).catch(() => {});
     b.items.forEach((item, i) => {
-      const arc = bezelArc(item, b.items, radius, b.width);
+      const arc = bezelArc(item, b.items, radius, b.width, b.material);
       const id = "bezel-reading-" + i;
       const defs = svg("defs");
       defs.appendChild(svg("path", { id, d: arc.path }));
@@ -1122,12 +1131,13 @@ export class MagicalFamilyClock extends HTMLElement {
     const c = this._config;
     if (c?.theme !== "astronomical" || c.artwork === "castle" || c.face_image)
       return;
-    updateAstronomical(
+    this._astronomicalReady = updateAstronomical(
       this.shadowRoot,
       c,
       c.demo ? demoStates() : this._hass?.states || {},
       new Date(),
       this._hass?.config?.time_zone,
+      this._hass?.config || {},
     );
   }
   _updateBezel() {

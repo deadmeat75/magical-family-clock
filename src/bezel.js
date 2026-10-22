@@ -25,7 +25,7 @@ export function bezelText(item, states, now = new Date(), locale, zone) {
 }
 
 // Allocate each readout the arc between its neighbours; bottom text reads upright.
-export function bezelArc(item, items, radius, width) {
+export function bezelArc(item, items, radius, width, material = "aged-brass") {
   const normalize = (a) => ((a % 360) + 360) % 360;
   const angle = normalize(item.angle);
   let half = 85;
@@ -37,7 +37,15 @@ export function bezelArc(item, items, radius, width) {
   half = Math.max(1, half);
   const lower = Math.sin((angle * Math.PI) / 180) > 0.15;
   const size = Math.min(item.size, Math.max(6, width * 0.5));
-  const r = radius + (lower ? -size * 0.3 : size * 0.3);
+  // The baseline must account for the full capital height, not just the arc.
+  // Brass retains its accepted lower baseline; silver/wood need a little more
+  // outward clearance from their inner carved border.
+  const r =
+    radius +
+    (lower
+      ? -size * 0.3 +
+        (material === "aged-brass" || material === "brass" ? 0 : width * 0.065)
+      : -size * 0.65);
   const point = (a) =>
     `${300 + r * Math.cos((a * Math.PI) / 180)} ${300 + r * Math.sin((a * Math.PI) / 180)}`;
   return {

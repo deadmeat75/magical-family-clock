@@ -108,7 +108,7 @@ Expand **Landscape and motion controls**:
 - **Animate castle scenery** pauses/resumes the landscape and inhabitants together. A paused world stays visible.
 - **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** use separate drifting cloud decks, visible root-anchored canopy sway, continuous reflection waves and downward flow threads with fine impact spray. Clouds replace the bundled stationary sky beneath them. Waterfall spray has no solid glowing discs.
 - **Seasonal petals and leaves** drifts blossom petals in spring and leaves in autumn, independently of tree sway. Summer and winter add neither. The active season follows Appearance settings.
-- **Warm castle window lights** gives each painted window its own irregular candle or torch flicker at dusk/night. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
+- **Warm castle window lights** gives identified castle panes independent irregular candle or torch flicker at dusk/night. Revision 5 slows the time scale by 25% from revision 4 and excludes surrounding trees. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
 - **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Cloud coverage erases stars and meteors behind it, and the moon, castle and foreground stay in front. Meteors have varied origins and flight angles, with irregular 20–75 second quiet intervals.
 - **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. Use fewer inhabitants too on slower displays.
 - **Scene time** previews dawn/day/dusk/night. Auto uses Home Assistant sun data and local solar calculations. Season and weather remain controlled in Appearance and can be combined with inhabitants' filters.
@@ -177,7 +177,7 @@ The [latest visual review index](visual-review/LATEST-REVISIONS.md) is the place
 1. In **Appearance**, select a **Weather effect** to inspect it. Start with intensity **1**. Return to **Auto** to follow your existing weather entity.
 2. Enable **Weather animation** to see falling rain, snow, sleet, drifting fog and wind-blown leaves. General reduced motion and your device's accessibility preference can pause decorative movement.
 3. **Clear** gives a cloud-free sky. It removes both the photograph's painted clouds and the moving cloud layer. **Moving clouds** still controls cloud animation for other weather conditions.
-4. **Ice** grows fine frost inward from the edge of the central castle opening. It is clipped away from the outer destination ring. Give the growth preview time to develop.
+4. **Ice** reveals fine white branching needles continuously inward from the central glass rim over 28 seconds, then holds the completed frost. A single growth front prevents whole crystals popping in. It is clipped away from the outer destination ring. Reduced motion shows the completed pattern without growth.
 5. **Lightning** combines distant strikes behind clouds with nearer strikes, different positions, branching channels and brief surrounding illumination. Weather can keep moving while castle scenery is paused.
 6. **Wind** moves loose leaves across the opening and increases canopy gusts. **Fog** drifts in layers across the landscape; it does not darken the entire clock.
 
@@ -193,7 +193,7 @@ The approved lunar surface stays the same across every phase. Lighting determine
 
 In **Bezel**, select wood, aged brass or silver for the new crafted rim. Wood has carved ornament and continuous grain around the ring. The metal rims have dimensional chased ornament and quiet inset bands for the information. **Width** changes the ring thickness while retaining the artwork; it does not repeat square texture tiles.
 
-Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Saving the dashboard stores the bezel choices with that clock.
+Readings follow curved paths on the smooth information band. Upper baselines are inset to clear the decorative outer edge; silver and wood lower baselines sit slightly farther outward. Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Saving the dashboard stores the bezel choices with that clock.
 
 ## Review draft: understand the six surface effects
 
@@ -212,17 +212,18 @@ The revised E01–E06 sheets show **effect off** beside **effect at 85%**, with 
 
 Approved face, hand, material, symbol and seasonal artwork remains preserved in the decision record. Some approved art still needs final runtime registration, pivots, animation layers or material mapping. The gallery identifies artwork studies separately from implemented runtime examples; an artwork approval alone does not publish a release.
 
-## Review draft: functional astronomical face (F03)
+## Review draft: functional picture-disc face (F03)
 
-This face is available in the **unreleased review branch**. Published HACS remains v0.4.0; do not expect these controls in that published version yet. When an approved release is published, update through HACS as usual.
+This face is available in the **unreleased review branch**. Published HACS remains v0.4.0. Update through HACS when an approved release becomes available.
 
-1. Open the card editor and choose **Clock theme → astronomical**. This also selects vector artwork and clears a custom face image so the functional face is visible.
-2. Keep your existing people, sensors and locations. The astronomical dials display additional information; the family hands continue to show whereabouts.
-3. Under **Living world → Moon phase**, choose your existing lunar-phase sensor. Named phases, continuous cycle fractions, percentages of a cycle and lunar-age days retain their existing meanings. A sensor reporting only illuminated percentage cannot establish waxing versus waning; use a full phase reading.
-4. Choose the missing-sensor behavior deliberately. **Hide** displays an unavailable indication instead of inventing a reading. **Calculated** uses the existing astronomical calculation when the chosen sensor is missing. The reading records which source supplied it.
-5. The clock uses Home Assistant’s configured time zone; UTC is the fallback when no zone is provided. The large sun dial shows local hours and minutes. Other wheels show weekday, day within the current month, and progress through the calendar year. Month lengths and leap years are respected. The moon shows the live phase and illuminated fraction.
+1. Open the card editor and choose **Clock theme → astronomical**. This selects vector artwork and clears a custom face image so the functional face is visible.
+2. Keep existing people, sensors and locations. Family hands still show whereabouts. Four separate illustrated discs supply additional information through fixed windows; these astronomical windows have no hands or numbered scales.
+3. **Day / night** shows dawn, day, dusk or night using the configured sun data or local solar calculation. Without solar data, the Home Assistant local hour supplies a civil-time fallback: dawn 06:00–08:00, day 08:00–18:00, dusk 18:00–20:00, night otherwise. These fallback hours are not measured sunrise/sunset. UTC is used when no Home Assistant time zone is provided.
+4. **Moon phase** uses **Living world → Moon phase**. Choose the existing lunar sensor, a manual phase, or the calculated source. Named phases, cycle fractions, percentages of a cycle and lunar-age days retain their existing meanings. Illuminated percentage alone does not distinguish waxing from waning. Choose **Hide** or **Calculated** deliberately for unavailable sensor data; Hide shows an unavailable indication.
+5. **Season** shows the selected seasonal landscape. **Weather** shows the current configured condition through a painted scene and appropriate weather marks. Existing automatic sources and manual preview overrides apply. Set overrides back to automatic to resume live readings.
+6. A changed reading rotates the appropriate image carrier to its next picture over 1.8 seconds. With reduced motion or paused scenery, the reading changes immediately instead. Sensor updates remain live. Discs do not spin freely or accelerate natural seasonal/lunar cycles. Family whereabouts hands remain independent of the image carriers.
 
-The calendar wheels advance to their real readings. They do not spin at arbitrary animation speeds. Pausing decorative scenery does not freeze the clock or stop sensor updates. The year/month wheel is a calendar display, not a claim to show measured planetary positions or a complete historical astrolabe. Its illustration, layout and readability remain subject to visual approval.
+[Current F03 stills and mechanism clip](visual-review/REVIEW-ROUND-3.md) use deliberately selected test states. Their rapid succession demonstrates input changes, not real time. This revised appearance is awaiting approval.
 
 ## Review draft: physical name attachments (K09–K12)
 

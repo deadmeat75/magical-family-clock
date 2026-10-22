@@ -4,17 +4,19 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-F02, F04 and F05 are approved. F01 revision 5 remains a lettering placement study. F03 revision 7 is a functional runtime face: real local time, calendar wheels and sensor-driven lunar phase. Both revised faces still require approval. [Current review round](REVIEW-ROUND-2.md).
+F02, F04 and F05 are approved. F01 revision 6 fits full lettering ink inside the gold scallops. F03 revision 8 uses four functional illustrated discs with labeled picture windows, no astronomical hands or numeric dials. Both require review. [Current review round](REVIEW-ROUND-3.md).
 
 ## F01 · Scalloped whereabouts dial
 
-**Revision 5 · awaiting approval.**
+**Revision 6 · awaiting approval.**
 
-[![F01 Scalloped whereabouts dial](items/F01-r5.png)](items/F01-r5.png)
+[![F01 Scalloped whereabouts dial](items/F01-r6.png)](items/F01-r6.png)
 
 Lettering alignment improved but remains unapproved. Fit the flowing letters to each scalloped edge.
 
-Example: individually aligned scallop lettering proposal; production mapping follows approval.
+Example: editable SVG lettering proposal; full painted glyph containment checked.
+
+[Editable scalloped lettering revision 6](concepts/F01-editable-lettering-r6.svg)
 
 ## F02 · Brass finish range
 
@@ -28,19 +30,25 @@ Example: proposed face concept; not integrated into the released renderer.
 
 ## F03 · Astronomical scene wheel
 
-**Revision 7 · awaiting approval.**
+**Revision 8 · awaiting approval.**
 
-[![F03 Astronomical scene wheel](items/F03-r7.png)](items/F03-r7.png)
+[![F03 Astronomical scene wheel](items/F03-r8.gif)](items/F03-r8.gif)
 
-Functional astronomical dials: actual lunar phase from configured sensor or explicit calculation fallback, local time, calendar and annual cycles; no arbitrary decorative wheel rotation. Follow supplied antique astronomical clocks.
+Use functional rotating illustrated discs showing information such as lunar phase, time of day, season and weather. Their meanings must be clear. No astronomical hands, numeric dials or scales; avoid arbitrary decorative rotation. Follow the antique magical-clock aesthetic. Revision 8 remains awaiting review.
 
-Example: implemented runtime rendering.
+Example: implemented runtime picture-disc mechanism using existing painted artwork.
 
-[Functional dial close-up](items/F03-functional-detail-r7.png)
+[Picture disc mechanism close-up; selected test states](items/F03-detail-r8.gif)
 
-[Example: 15 Jan 2026, 12:10 America/Los_Angeles; new moon sensor](items/F03-winter-r7.png)
+[dawn test state](items/F03-dawn-r8.png)
 
-[Example: 20 Jul 2026, 21:45 America/Los_Angeles; full moon sensor](items/F03-summer-r7.png)
+[day test state](items/F03-day-r8.png)
+
+[dusk test state](items/F03-dusk-r8.png)
+
+[night test state](items/F03-night-r8.png)
+
+[Still image](items/F03-r8.png)
 
 ## F04 · whimsical-workshop
 

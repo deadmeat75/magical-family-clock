@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-Revised runtime effects. Open each GIF to judge movement; the PNG is only a still. Clear weather removes painted and moving clouds. Frost is on the outer protective glass; lightning is clipped behind the castle skyline with restrained scene illumination.
+W01–W08 and W10 are approved. W09 revision 5 shows fine needle ice growing continuously inward across the central glass. Open the GIF to judge motion; the PNG shows completed growth.
 
 ## W01 · clear
 
@@ -78,11 +78,11 @@ Example: implemented runtime rendering.
 
 ## W07 · wind
 
-**Revision 4 · awaiting approval.**
+**Approved.**
 
 [![W07 wind](items/W07-r4.gif)](items/W07-r4.gif)
 
-Wind speed should follow sensor data, with varied gusting, curling trajectories and tumbling; avoid straight horizontal leaf streams.
+Revision 4 explicitly approved by the user.
 
 Example: implemented runtime rendering.
 
@@ -102,15 +102,17 @@ Example: implemented runtime rendering.
 
 ## W09 · ice
 
-**Revision 4 · awaiting approval.**
+**Revision 5 · awaiting approval.**
 
-[![W09 ice](items/W09-r4.gif)](items/W09-r4.gif)
+[![W09 ice](items/W09-r5.gif)](items/W09-r5.gif)
 
-Ice belongs only over the central castle opening. Prefer natural growing crystals; a correctly placed static frost treatment is acceptable.
+Ice belongs on the central glass, never the outer location ring. Follow the supplied window-frost photos: fine white feathery/needle crystals rather than leaves, growing continuously from the circle inward without whole-shape pop-in. A correctly placed static ice treatment is also acceptable. Revision 5 remains awaiting review.
 
 Example: implemented runtime rendering.
 
-[Still image](items/W09-r4.png)
+[Central glass close-up, full inward growth at natural speed](items/W09-detail-r5.gif)
+
+[Still image](items/W09-r5.png)
 
 ## W10 · lightning
 

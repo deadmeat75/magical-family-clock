@@ -3,10 +3,10 @@
     "id": "F01",
     "name": "Scalloped whereabouts dial",
     "category": "Faces",
-    "image": "items/F01-r5.png",
+    "image": "items/F01-r6.png",
     "status": "revised; awaiting approval",
-    "kind": "individually aligned scallop lettering proposal; production mapping follows approval",
-    "revision": 5,
+    "kind": "editable SVG lettering proposal; full painted glyph containment checked",
+    "revision": 6,
     "source": "art/scalloped-face-f01-r1.png",
     "sourceRect": [
       0,
@@ -18,7 +18,13 @@
       1254,
       1254
     ],
-    "note": "Revision 5 is another alignment study with taller capitals and refined individual scallop angles. [Editable SVG lettering](concepts/F01-editable-lettering-r5.svg). Final production fitting still follows approval."
+    "note": "Revision 6 moves the complete lettering inward and tightens its span within each painted scallop. Full glyph ink is checked against an independently extracted gold-face mask, with a margin. Editable SVG lettering remains separate from artwork; production dynamic-name mapping follows approval.",
+    "variants": [
+      {
+        "label": "Editable scalloped lettering revision 6",
+        "image": "concepts/F01-editable-lettering-r6.svg"
+      }
+    ]
   },
   {
     "id": "F02",
@@ -39,16 +45,16 @@
       1254,
       1254
     ],
-    "note": "New → lightly aged → antique finish study. Proposed continuous age control, with a shinier default; renderer/editor integration follows artwork approval."
+    "note": "New \u2192 lightly aged \u2192 antique finish study. Proposed continuous age control, with a shinier default; renderer/editor integration follows artwork approval."
   },
   {
     "id": "F03",
     "name": "Astronomical scene wheel",
     "category": "Faces",
-    "image": "items/F03-r7.png",
+    "image": "items/F03-r8.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented runtime rendering",
-    "revision": 7,
+    "kind": "implemented runtime picture-disc mechanism using existing painted artwork",
+    "revision": 8,
     "source": "art/celestial-face-f03-r6.png",
     "sourceRect": [
       0,
@@ -60,21 +66,30 @@
       1254,
       1254
     ],
-    "note": "Functional runtime: real local hours/minutes, day-of-month with leap-year month lengths, weekday, annual calendar and sensor-driven lunar phase. Each calendar wheel advances to its actual reading; it does not spin at an arbitrary animation speed. Review snapshot: 22 Oct 2026, 14:36 America/Los_Angeles; example sensor waxing_gibbous.",
+    "note": "Revision 8 replaces astronomical hands and numeric dials with four labeled rotating illustrated discs: day/night, lunar phase, season and weather. Existing painted artwork is reused. GIF states are deliberately selected test inputs, not accelerated real seasonal cycles. Face finish effects are off in this mechanism study.",
     "variants": [
       {
-        "label": "Functional dial close-up",
-        "image": "items/F03-functional-detail-r7.png"
+        "label": "Picture disc mechanism close-up; selected test states",
+        "animation": "items/F03-detail-r8.gif"
       },
       {
-        "label": "Example: 15 Jan 2026, 12:10 America/Los_Angeles; new moon sensor",
-        "image": "items/F03-winter-r7.png"
+        "label": "dawn test state",
+        "image": "items/F03-dawn-r8.png"
       },
       {
-        "label": "Example: 20 Jul 2026, 21:45 America/Los_Angeles; full moon sensor",
-        "image": "items/F03-summer-r7.png"
+        "label": "day test state",
+        "image": "items/F03-day-r8.png"
+      },
+      {
+        "label": "dusk test state",
+        "image": "items/F03-dusk-r8.png"
+      },
+      {
+        "label": "night test state",
+        "image": "items/F03-night-r8.png"
       }
-    ]
+    ],
+    "animation": "items/F03-r8.gif"
   },
   {
     "id": "F04",
@@ -617,7 +632,7 @@
     "name": "hammered-metal",
     "category": "Location panels",
     "image": "items/P02-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 3
   },
@@ -626,7 +641,7 @@
     "name": "parchment",
     "category": "Location panels",
     "image": "items/P03-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 3
   },
@@ -634,10 +649,11 @@
     "id": "P04",
     "name": "wood",
     "category": "Location panels",
-    "image": "items/P04-r3.png",
+    "image": "items/P04-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4,
+    "note": "Revision 4 uses a newly generated continuous solid-wood grain surface, with irregular growth rings, pores, natural dark/light variation and rounded profile lighting inspired by the supplied wood-frame references. This is a new proposal, not an approved material."
   },
   {
     "id": "P05",
@@ -1292,7 +1308,7 @@
     "name": "wind",
     "category": "Weather",
     "image": "items/W07-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4,
     "animation": "items/W07-r4.gif"
@@ -1311,11 +1327,18 @@
     "id": "W09",
     "name": "ice",
     "category": "Weather",
-    "image": "items/W09-r4.png",
+    "image": "items/W09-r5.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 4,
-    "animation": "items/W09-r4.gif"
+    "revision": 5,
+    "animation": "items/W09-r5.gif",
+    "variants": [
+      {
+        "label": "Central glass close-up, full inward growth at natural speed",
+        "animation": "items/W09-detail-r5.gif"
+      }
+    ],
+    "note": "Revision 5 uses fine white branching needles and small sixfold crystals on the central glass. A continuous mask exposes ice inward from the rim over 28 seconds; whole crystal silhouettes do not fade or pop in. The 32-second clip includes four seconds at the completed state."
   },
   {
     "id": "W10",
@@ -1332,7 +1355,7 @@
     "name": "new_moon",
     "category": "Moon phases",
     "image": "items/N01-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1341,7 +1364,7 @@
     "name": "waxing_crescent",
     "category": "Moon phases",
     "image": "items/N02-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1350,7 +1373,7 @@
     "name": "first_quarter",
     "category": "Moon phases",
     "image": "items/N03-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1359,7 +1382,7 @@
     "name": "waxing_gibbous",
     "category": "Moon phases",
     "image": "items/N04-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1368,7 +1391,7 @@
     "name": "full_moon",
     "category": "Moon phases",
     "image": "items/N05-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1377,7 +1400,7 @@
     "name": "waning_gibbous",
     "category": "Moon phases",
     "image": "items/N06-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1386,7 +1409,7 @@
     "name": "last_quarter",
     "category": "Moon phases",
     "image": "items/N07-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1395,7 +1418,7 @@
     "name": "waning_crescent",
     "category": "Moon phases",
     "image": "items/N08-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4
   },
@@ -1403,28 +1426,31 @@
     "id": "B01",
     "name": "aged-brass information bezel",
     "category": "Bezel",
-    "image": "items/B01-r3.png",
+    "image": "items/B01-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4,
+    "note": "Revision 4 moves upper lettering inward onto the smooth brass band. The accepted lower baseline and approved frame appearance are retained."
   },
   {
     "id": "B02",
     "name": "silver information bezel",
     "category": "Bezel",
-    "image": "items/B02-r3.png",
+    "image": "items/B02-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4,
+    "note": "Revision 4 moves upper lettering substantially down/inward and lower lettering slightly down/outward within the smooth silver band. Frame appearance remains approved."
   },
   {
     "id": "B03",
     "name": "wood information bezel",
     "category": "Bezel",
-    "image": "items/B03-r3.png",
+    "image": "items/B03-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4,
+    "note": "Revision 4 applies the B02 placement correction to the wood frame: upper lettering substantially down/inward; lower lettering slightly down/outward. Frame appearance remains approved."
   },
   {
     "id": "E01",
@@ -1718,6 +1744,14 @@
       {
         "label": "Close-up: approved motion with revised scene registration",
         "animation": "items/L06-context-detail-r1.gif"
+      },
+      {
+        "label": "Four real meteor passages; quiet waiting intervals omitted",
+        "animation": "items/L06-context-r2.gif"
+      },
+      {
+        "label": "Close-up: four real passages at natural speed",
+        "animation": "items/L06-context-detail-r2.gif"
       }
     ]
   },
@@ -1725,16 +1759,16 @@
     "id": "L07",
     "name": "Window lights",
     "category": "Landscape motion",
-    "image": "items/L07-r4.png",
-    "animation": "items/L07-r4.gif",
+    "image": "items/L07-r5.png",
+    "animation": "items/L07-r5.gif",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "note": "New runtime motion and close-up. Window lights modulate actual local brightness independently; green fireflies travel inside the visible foreground opening.",
-    "revision": 4,
+    "note": "Revision 5 restricts illumination to individually identified castle panes and slows independent flicker by 25% relative to revision 4. Full view and close-up show 12 seconds at normal speed.",
+    "revision": 5,
     "variants": [
       {
-        "label": "New close-up, same natural-speed timeline",
-        "animation": "items/L07-detail-r4.gif"
+        "label": "Castle window close-up, 12 seconds at natural speed",
+        "animation": "items/L07-detail-r5.gif"
       }
     ]
   },
@@ -1744,7 +1778,7 @@
     "category": "Landscape motion",
     "image": "items/L08-r4.png",
     "animation": "items/L08-r4.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "note": "New runtime motion and close-up. Window lights modulate actual local brightness independently; green fireflies travel inside the visible foreground opening.",
     "revision": 4,
@@ -2151,7 +2185,7 @@
     "name": "Affixed parchment slip",
     "category": "Lettering and portraits",
     "image": "items/K09-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
     "kind": "implemented runtime rendering",
@@ -2172,7 +2206,7 @@
     "name": "Hanging name tag",
     "category": "Lettering and portraits",
     "image": "items/K10-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
     "kind": "implemented runtime rendering",
@@ -2193,7 +2227,7 @@
     "name": "Oval name brooch",
     "category": "Lettering and portraits",
     "image": "items/K11-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
     "kind": "implemented runtime rendering",
@@ -2214,7 +2248,7 @@
     "name": "Framed portrait attachment",
     "category": "Lettering and portraits",
     "image": "items/K12-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
     "kind": "implemented runtime rendering",

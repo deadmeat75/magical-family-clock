@@ -9,14 +9,19 @@
       "element": "aged-brass information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "notes": "Frame appearance remains approved. User accepts the bottom curved text placement in revision 3. Top curved text is too high and overlaps the decorative outer edge: move it inward onto the smooth brass band with clearance for the full glyph height. Preserve the bottom placement. Revised upper text requires review.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
           "example": "items/B01-r2.png",
           "sha256": "4b5f28510e3bf12cdcfc9446bf125be0f56d72af0886994246360eaf4d630df3"
+        },
+        {
+          "component": "bottom curved text placement",
+          "example": "items/B01-r3.png",
+          "sha256": "df02999fee66c0c84b488ea038c901e8ad436c6f0d00cd421877f7dd23c60c00"
         }
       ]
     },
@@ -25,9 +30,9 @@
       "element": "silver information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "notes": "Frame appearance remains approved. In revision 3, upper curved text is much too high and overlaps the decorative edge: move it substantially down/inward onto the smooth silver band. Lower curved text is slightly too high: move it slightly down/outward within the smooth band. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
@@ -41,9 +46,9 @@
       "element": "wood information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "notes": "Frame appearance remains approved. User reports the same text placement issue as B02 in revision 3: upper curved text is much too high and must move substantially down/inward onto the smooth band; lower curved text is slightly too high and must move slightly down/outward. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
@@ -266,8 +271,8 @@
       "category": "Faces",
       "decision": "revision_requested",
       "notes": "Lettering alignment improved but remains unapproved. Fit the flowing letters to each scalloped edge.",
-      "revision": 5,
-      "revision_status": "revision 5 prepared; awaiting individual approval"
+      "revision": 6,
+      "revision_status": "revision 6 prepared; awaiting individual approval"
     },
     {
       "id": "F02",
@@ -285,9 +290,9 @@
       "element": "Astronomical scene wheel",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Functional astronomical dials: actual lunar phase from configured sensor or explicit calculation fallback, local time, calendar and annual cycles; no arbitrary decorative wheel rotation. Follow supplied antique astronomical clocks.",
-      "revision": 7,
-      "revision_status": "revision 7 prepared; awaiting individual approval"
+      "notes": "Use functional rotating illustrated discs showing information such as lunar phase, time of day, season and weather. Their meanings must be clear. No astronomical hands, numeric dials or scales; avoid arbitrary decorative rotation. Follow the antique magical-clock aesthetic. Revision 8 remains awaiting review.",
+      "revision": 8,
+      "revision_status": "revision 8 prepared; awaiting individual approval"
     },
     {
       "id": "F04",
@@ -685,7 +690,14 @@
       "decision": "approved",
       "notes": "Explicitly approved by the user in chat.",
       "approved_example": "items/L01.gif",
-      "approved_example_sha256": "4ee44d06e86ebe4d5c37282df70c095202a3613d76dee94534ab466b9ed78b78"
+      "approved_example_sha256": "4ee44d06e86ebe4d5c37282df70c095202a3613d76dee94534ab466b9ed78b78",
+      "approved_components": [
+        {
+          "component": "motion with corrected scene context",
+          "example": "items/L01-context-r1.gif",
+          "sha256": "6108c30b4ca2d9cdbbac828916eeceee7239534e6002b2ddf93f2c821c6e12ab"
+        }
+      ]
     },
     {
       "id": "L02",
@@ -695,7 +707,14 @@
       "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 1,
       "approved_example": "items/L02-r3.gif",
-      "approved_example_sha256": "f6c61677ac9b0e75eeb81f0b7e5c628c9b6f0dc3a96f2c245aab885e5c500ec4"
+      "approved_example_sha256": "f6c61677ac9b0e75eeb81f0b7e5c628c9b6f0dc3a96f2c245aab885e5c500ec4",
+      "approved_components": [
+        {
+          "component": "motion with corrected scene context",
+          "example": "items/L02-context-r1.gif",
+          "sha256": "854f1d2226b53060d954138e1a874a7e6ce8b31dc87f8a56dcfba28309edee9f"
+        }
+      ]
     },
     {
       "id": "L03",
@@ -705,7 +724,14 @@
       "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
       "approved_example": "items/L03-r3.gif",
-      "approved_example_sha256": "7d2bad6ce700ce7f3c9b97adcffbde9c0c2d7c47ed7eac69f79987184c771936"
+      "approved_example_sha256": "7d2bad6ce700ce7f3c9b97adcffbde9c0c2d7c47ed7eac69f79987184c771936",
+      "approved_components": [
+        {
+          "component": "motion with corrected scene context",
+          "example": "items/L03-context-r1.gif",
+          "sha256": "8c530604330e80b6e3b5f31fd0b0cac4840038cbcf78ea3955d0f8862138cb09"
+        }
+      ]
     },
     {
       "id": "L04",
@@ -715,7 +741,14 @@
       "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
       "approved_example": "items/L04-r3.gif",
-      "approved_example_sha256": "41408ef1ace5f223eef4f5a71781a9b724c50e380c0ac7f94a01fc2a95a03f15"
+      "approved_example_sha256": "41408ef1ace5f223eef4f5a71781a9b724c50e380c0ac7f94a01fc2a95a03f15",
+      "approved_components": [
+        {
+          "component": "motion with corrected scene context",
+          "example": "items/L04-context-r1.gif",
+          "sha256": "753a07b455550df5843f0a0c6360d3541ecfefb197156a439400cf05363fda44"
+        }
+      ]
     },
     {
       "id": "L05",
@@ -725,7 +758,14 @@
       "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
       "approved_example": "items/L05-r3.gif",
-      "approved_example_sha256": "3fd711bf734d00563b6dbf9840bffb2467fbcb8c26ff59f1efec3ef611ef7091"
+      "approved_example_sha256": "3fd711bf734d00563b6dbf9840bffb2467fbcb8c26ff59f1efec3ef611ef7091",
+      "approved_components": [
+        {
+          "component": "motion with corrected scene context",
+          "example": "items/L05-context-r1.gif",
+          "sha256": "57bb095fc963d0f060b346d80ac602449f5f4cb417c816244903b5f0c4399dff"
+        }
+      ]
     },
     {
       "id": "L06",
@@ -742,18 +782,19 @@
       "element": "Window lights",
       "category": "Landscape motion",
       "decision": "revision_requested",
-      "notes": "Make independent candle/torch fluctuations visibly detectable without fast synchronized pulsing. Correct shared skyline glow and cutout.",
-      "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "notes": "Slow the flicker by about 25%. Illuminate actual castle window panes only; exclude all tree foliage.",
+      "revision": 5,
+      "revision_status": "revision 5 prepared; awaiting individual approval"
     },
     {
       "id": "L08",
       "element": "Fireflies",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Make green foreground firefly movement visibly detectable. Correct shared skyline glow and cutout.",
+      "decision": "approved",
+      "notes": "Revision 4 explicitly approved by the user.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/L08-r4.gif",
+      "approved_example_sha256": "370d7e0508db982ab45627fd99887f63d9126fc9d8000eaf3c5148e075ea23e3"
     },
     {
       "id": "M01",
@@ -902,73 +943,81 @@
       "id": "N01",
       "element": "new_moon",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N01-r4.png",
+      "approved_example_sha256": "30284861fbb8664d65f81a2e46d8cc20cfe06f4ecb561319e41b8037bccd2382"
     },
     {
       "id": "N02",
       "element": "waxing_crescent",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N02-r4.png",
+      "approved_example_sha256": "37abb59d874415e53c79a334fb44bfc9f74d96c47c1f5c1ce2136f6722e16b35"
     },
     {
       "id": "N03",
       "element": "first_quarter",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N03-r4.png",
+      "approved_example_sha256": "1590da56770efeac01d409599d114eec79a5c4959d64121f653987eee2e4ad44"
     },
     {
       "id": "N04",
       "element": "waxing_gibbous",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N04-r4.png",
+      "approved_example_sha256": "7563c43e7944b2ce7c86eb7dcc563dbeac4ed1d1215403e358c0f7b44619130a"
     },
     {
       "id": "N05",
       "element": "full_moon",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N05-r4.png",
+      "approved_example_sha256": "264dacbce8ba23cdb74c6ecf991fdb4ce02985afa45ca82150180d0fa60bcddc"
     },
     {
       "id": "N06",
       "element": "waning_gibbous",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N06-r4.png",
+      "approved_example_sha256": "226a8bceb2a175a325f7570c8e8f2afdb99ff62be4ade98a4acced03bfadb056"
     },
     {
       "id": "N07",
       "element": "last_quarter",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N07-r4.png",
+      "approved_example_sha256": "9103d776f221052a52af9afe32f8a8bfac37845aa96f91b7bda05c74f055fb39"
     },
     {
       "id": "N08",
       "element": "waning_crescent",
       "category": "Moon phases",
-      "decision": "revision_requested",
-      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "decision": "approved",
+      "notes": "Current revised example explicitly approved by the user as part of N01\u2013N08.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/N08-r4.png",
+      "approved_example_sha256": "0567b1e7352d1526f9af82a234bb1a9acf4cd6c863ec8dbf6956b2a92a3f11a5"
     },
     {
       "id": "P01",
@@ -983,28 +1032,30 @@
       "id": "P02",
       "element": "hammered-metal",
       "category": "Location panels",
-      "decision": "revision_requested",
-      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
+      "decision": "approved",
+      "notes": "Revision 3 explicitly approved by the user.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/P02-r3.png",
+      "approved_example_sha256": "bdc9591b084ff31de14af1b20d8fe50059a5ac2c1bcfea3ee3560d8b7c8d0e29"
     },
     {
       "id": "P03",
       "element": "parchment",
       "category": "Location panels",
-      "decision": "revision_requested",
-      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
+      "decision": "approved",
+      "notes": "Revision 3 explicitly approved by the user.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/P03-r3.png",
+      "approved_example_sha256": "c4fec4b84e423499595194a12454e14e023ae2e5c11f7ca54ccf4fe3323dacf7"
     },
     {
       "id": "P04",
       "element": "wood",
       "category": "Location panels",
       "decision": "revision_requested",
-      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Revision 3 rejected as laminate-like. User supplied two real wooden circular frame references: use pronounced irregular flowing grain with natural variation, rounded solid-wood profiles, warm brown or golden tones, and believable polished highlights and depth. Avoid tiled grain, flat printed veneer, and uniform laminate appearance. Revised example requires individual approval.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "P05",
@@ -1363,10 +1414,11 @@
       "id": "W07",
       "element": "wind",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Wind speed should follow sensor data, with varied gusting, curling trajectories and tumbling; avoid straight horizontal leaf streams.",
+      "decision": "approved",
+      "notes": "Revision 4 explicitly approved by the user.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/W07-r4.gif",
+      "approved_example_sha256": "46b17a0aedbe1c0ede8b883a7721fd9cedeafeebaff6ceeae9b9d84eb6832d5f"
     },
     {
       "id": "W08",
@@ -1383,9 +1435,9 @@
       "element": "ice",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Ice belongs only over the central castle opening. Prefer natural growing crystals; a correctly placed static frost treatment is acceptable.",
-      "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "notes": "Ice belongs on the central glass, never the outer location ring. Follow the supplied window-frost photos: fine white feathery/needle crystals rather than leaves, growing continuously from the circle inward without whole-shape pop-in. A correctly placed static ice treatment is also acceptable. Revision 5 remains awaiting review.",
+      "revision": 5,
+      "revision_status": "revision 5 prepared; awaiting individual approval"
     },
     {
       "id": "W10",
@@ -1419,37 +1471,41 @@
       "id": "K09",
       "element": "Affixed parchment slip",
       "category": "Lettering and portraits",
-      "decision": "revision_requested",
-      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment. Handwritten ink on parchment.",
+      "decision": "approved",
+      "notes": "Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/K09-r2.png",
+      "approved_example_sha256": "e4b22d54f04818beeaadbb47644dab7c084ca28a780da264c877169cc050a092"
     },
     {
       "id": "K10",
       "element": "Hanging name tag",
       "category": "Lettering and portraits",
-      "decision": "revision_requested",
-      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "decision": "approved",
+      "notes": "Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/K10-r2.png",
+      "approved_example_sha256": "01d996433dcd3bc0e6e22a80b6cb53e430c08e6bec6c1bf122f59016db306fd3"
     },
     {
       "id": "K11",
       "element": "Oval name brooch",
       "category": "Lettering and portraits",
-      "decision": "revision_requested",
-      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "decision": "approved",
+      "notes": "Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/K11-r2.png",
+      "approved_example_sha256": "4727d74aa1e6d4acca9d74840555de0f471d1136cbe14a3743efc5765e7143ac"
     },
     {
       "id": "K12",
       "element": "Framed portrait attachment",
       "category": "Lettering and portraits",
-      "decision": "revision_requested",
-      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "decision": "approved",
+      "notes": "Revision 2 explicitly approved by the user. Preserve adjustable text font, size, ink color, alignment, position and rotation.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/K12-r2.png",
+      "approved_example_sha256": "d1ab615f82c9538dcd0007b3fc7c7a0d3d592bc3336bb7a55d993fde2b09127e"
     }
   ],
   "rendering_requirements": [
