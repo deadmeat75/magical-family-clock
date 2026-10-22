@@ -1,61 +1,167 @@
 # Characters and props: individual review
 
-[Back to review gallery](README.md)
+[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Decisions below reflect your individual approvals and revision requests.**
+**Release held. Explicit approvals and omissions are preserved.**
 
-All C01–C12 character and boat artwork is approved. C12 retains its required water placement and natural-motion conditions. C13–C16 are omitted. These approved illustrations are not yet integrated into the HACS renderer; final environment-aware character animation still requires review.
 
-| **[C01 · Swallow](items/C01.png)** | **[C02 · Barn owl](items/C02.png)** |
-| --- | --- |
-| [![C01 Swallow](items/C01.png)](items/C01.png) | [![C02 Barn owl](items/C02.png)](items/C02.png) |
-| Approved | Approved |
 
-| **[C03 · Witch on broom](items/C03.png)** | **[C04 · Wizard on broom](items/C04-r1.png)** |
-| --- | --- |
-| [![C03 Witch on broom](items/C03.png)](items/C03.png) | [![C04 Wizard on broom](items/C04-r1.png)](items/C04-r1.png) |
-| Approved | Approved |
+## C01 · Swallow
 
-C04: Cleanly isolated wizard; the neighboring broom fragment is removed without repainting the wizard.
+**Approved.**
 
-| **[C05 · Dragon](items/C05.png)** | **[C06 · Phoenix](items/C06.png)** |
-| --- | --- |
-| [![C05 Dragon](items/C05.png)](items/C05.png) | [![C06 Phoenix](items/C06.png)](items/C06.png) |
-| Approved | Approved |
+[![C01 Swallow](items/C01.png)](items/C01.png)
 
-| **[C07 · Pixie](items/C07-r1.png)** | **[C08 · Lake serpent](items/C08-r1.png)** |
-| --- | --- |
-| [![C07 Pixie](items/C07-r1.png)](items/C07-r1.png) | [![C08 Lake serpent](items/C08-r1.png)](items/C08-r1.png) |
-| Approved | Approved |
+Explicitly approved by the user in chat.
 
-C07: More monstrous blue pixie, shown enlarged for detail and at about 4.5% clock width in a foreground placement study. Small creatures belong in the foreground.
+Example: proposed painted illustration.
 
-C08: All body frills removed; smooth, snake-like neck and tapering tail.
+## C02 · Barn owl
 
-| **[C09 · Mermaid](items/C09-r1.png)** | **[C10 · Merman](items/C10-r1.png)** |
-| --- | --- |
-| [![C09 Mermaid](items/C09-r1.png)](items/C09-r1.png) | [![C10 Merman](items/C10-r1.png)](items/C10-r1.png) |
-| Approved | Approved |
+**Approved.**
 
-C09: Traditional scallop-shell top replaces the corset.
+[![C02 Barn owl](items/C02.png)](items/C02.png)
 
-C10: Vest and chest sash removed entirely.
+Explicitly approved by the user in chat.
 
-| **[C11 · Unicorn](items/C11-r1.png)** | **[C12 · Sailing boat](items/C12.png)** |
-| --- | --- |
-| [![C11 Unicorn](items/C11-r1.png)](items/C11-r1.png) | [![C12 Sailing boat](items/C12.png)](items/C12.png) |
-| Approved | Approved |
+Example: proposed painted illustration.
 
-C11: Unadorned wild unicorn in a natural grounded walking pose. Final ground contact and articulated gait require animation review.
+## C03 · Witch on broom
 
-C12: Artwork approved with appropriate water placement and natural movement required. The approval does not certify an unfinished boat animation.
+**Approved.**
 
-| **[C13 · Floating lantern](items/C13.png)** | **[C14 · Stone cottage](items/C14.png)** |
-| --- | --- |
-| Omitted at your request. | Omitted at your request. |
-| Omitted | Omitted |
+[![C03 Witch on broom](items/C03.png)](items/C03.png)
 
-| **[C15 · Woodland mushrooms](items/C15.png)** | **[C16 · Quartz crystals](items/C16.png)** |
-| --- | --- |
-| Omitted at your request. | Omitted at your request. |
-| Omitted | Omitted |
+Explicitly approved by the user in chat.
+
+Example: proposed painted illustration.
+
+## C04 · Wizard on broom
+
+**Approved.**
+
+[![C04 Wizard on broom](items/C04-r1.png)](items/C04-r1.png)
+
+Revision 1 explicitly approved by the user in chat after removal of the detached artifact behind the cape.
+
+Example: proposed painted illustration.
+
+## C05 · Dragon
+
+**Approved.**
+
+[![C05 Dragon](items/C05.png)](items/C05.png)
+
+Explicitly approved by the user in chat.
+
+Example: proposed painted illustration.
+
+## C06 · Phoenix
+
+**Approved.**
+
+[![C06 Phoenix](items/C06.png)](items/C06.png)
+
+Explicitly approved by the user in chat.
+
+Example: proposed painted illustration.
+
+## C07 · Pixie
+
+**Approved.**
+
+[![C07 Pixie](items/C07-r1.png)](items/C07-r1.png)
+
+Revision 1 pixie artwork explicitly approved by the user in chat. Smaller foreground placement and natural environment-aware creature animation remain required.
+
+Example: proposed painted illustration.
+
+## C08 · Lake serpent
+
+**Approved.**
+
+[![C08 Lake serpent](items/C08-r1.png)](items/C08-r1.png)
+
+Revision 1 lake serpent artwork explicitly approved by the user in chat, with body frills removed and a more snake-like neck.
+
+Example: proposed painted illustration.
+
+## C09 · Mermaid
+
+**Approved.**
+
+[![C09 Mermaid](items/C09-r1.png)](items/C09-r1.png)
+
+Revision 1 mermaid artwork explicitly approved by the user in chat, with the traditional shell-bra top.
+
+Example: proposed painted illustration.
+
+## C10 · Merman
+
+**Approved.**
+
+[![C10 Merman](items/C10-r1.png)](items/C10-r1.png)
+
+Revision 1 merman artwork explicitly approved by the user in chat, with the vest removed entirely.
+
+Example: proposed painted illustration.
+
+## C11 · Unicorn
+
+**Approved.**
+
+[![C11 Unicorn](items/C11-r1.png)](items/C11-r1.png)
+
+Revision 1 unadorned wild unicorn artwork explicitly approved by the user in chat. Natural ground contact, articulated weight-bearing leg movement and environment-aware travel remain required; final animation acceptance is pending.
+
+Example: proposed painted illustration.
+
+## C12 · Sailing boat
+
+**Approved.**
+
+[![C12 Sailing boat](items/C12.png)](items/C12.png)
+
+Artwork explicitly approved, conditional on appropriate water placement and naturalistic movement through the water. Animation acceptance remains required.
+
+Example: proposed painted illustration.
+
+## C13 · Floating lantern
+
+**Omitted.**
+
+[Previous example — archived](items/C13.png)
+
+Explicitly omitted by the user; exclude from the next release artwork set.
+
+Example: proposed painted illustration.
+
+## C14 · Stone cottage
+
+**Omitted.**
+
+[Previous example — archived](items/C14.png)
+
+Explicitly omitted by the user; exclude from the next release artwork set.
+
+Example: proposed painted illustration.
+
+## C15 · Woodland mushrooms
+
+**Omitted.**
+
+[Previous example — archived](items/C15.png)
+
+Explicitly omitted by the user; exclude from the next release artwork set.
+
+Example: proposed painted illustration.
+
+## C16 · Quartz crystals
+
+**Omitted.**
+
+[Previous example — archived](items/C16.png)
+
+Explicitly omitted by the user; exclude from the next release artwork set.
+
+Example: proposed painted illustration.

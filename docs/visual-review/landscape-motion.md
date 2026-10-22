@@ -1,49 +1,113 @@
 # Landscape motion: individual review
 
-[Back to review gallery](README.md)
+[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Decisions below reflect your individual approvals and revision requests.**
+**Release held. Explicit approvals and omissions are preserved.**
 
-Revised normal-speed clips are ready for individual review. Open each GIF to see it full size. Extra seasonal and occlusion studies appear below the main examples. The varied-meteor study skips quiet gaps between encounters; each visible pass runs at normal speed.
+L01 is approved and unchanged. New motion samples use controlled normal-speed renderer frames, with no video compression noise. Close-ups supplement the full-clock view. Meteor studies skip quiet waiting time only.
 
-| **[L01 · Cloud drift](items/L01.gif)** | **[L02 · Foliage sway](items/L02-r1.gif)** |
-| --- | --- |
-| [![L01 Cloud drift](items/L01.gif)](items/L01.gif) | [![L02 Foliage sway](items/L02-r1.gif)](items/L02-r1.gif) |
-| Approved | Revised r1 · awaiting approval |
+## L01 · Cloud drift
 
-L01: Approved original eight-second cloud study; its image and motion remain unchanged.
+**Approved.**
 
-L02: More visible root-anchored canopy sway. Spring petals and autumn leaves follow the scene season; each clip runs at normal speed.
+[![L01 Cloud drift](items/L01.gif)](items/L01.gif)
 
-[Spring petals](items/L02-spring-r1.gif) | [Autumn leaves](items/L02-autumn-r1.gif)
+Explicitly approved by the user in chat.
 
-| **[L03 · Lake reflections](items/L03-r1.gif)** | **[L04 · Waterfall flow and fine spray](items/L04-r1.gif)** |
-| --- | --- |
-| [![L03 Lake reflections](items/L03-r1.gif)](items/L03-r1.gif) | [![L04 Waterfall flow and fine spray](items/L04-r1.gif)](items/L04-r1.gif) |
-| Revised r1 · awaiting approval | Revised r1 · awaiting approval |
+Example: normal-speed motion study.
 
-L03: Stronger fine reflection displacement with a fixed shoreline; no sliding rectangular water bands.
+[Still image](items/L01.png)
 
-L04: Stronger downward flow with visible fine droplets close to the impacts; no filled spray discs or spotlights.
+## L02 · Foliage sway
 
-| **[L05 · Twinkling stars](items/L05-r1.gif)** | **[L06 · Shooting star](items/L06-r1.gif)** |
-| --- | --- |
-| [![L05 Twinkling stars](items/L05-r1.gif)](items/L05-r1.gif) | [![L06 Shooting star](items/L06-r1.gif)](items/L06-r1.gif) |
-| Revised r1 · awaiting approval | Revised r1 · awaiting approval |
+**Revision 1 · awaiting approval.**
 
-L05: Brighter independent twinkling. Moving cloud coverage erases distant stars; the moon, castle and foreground remain in front.
+[![L02 Foliage sway](items/L02-r2.gif)](items/L02-r2.gif)
 
-[Cloud and moon occlusion](items/L05-clouds-r1.gif)
+Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.
 
-L06: Session-random sky origins, flight angles and 20–75 second quiet intervals. Meteors remain behind clouds, moon and foreground. The main clip starts just before an encounter.
+Example: implemented runtime rendering.
 
-[Varied encounters — quiet gaps skipped](items/L06-varied-r1.gif) | [Cloud and moon occlusion](items/L06-clouds-r1.gif)
+[Spring petals](items/L02-spring-r1.gif)
 
-| **[L07 · Window lights](items/L07-r1.gif)** | **[L08 · Fireflies](items/L08-r1.gif)** |
-| --- | --- |
-| [![L07 Window lights](items/L07-r1.gif)](items/L07-r1.gif) | [![L08 Fireflies](items/L08-r1.gif)](items/L08-r1.gif) |
-| Revised r1 · awaiting approval | Revised r1 · awaiting approval |
+[Autumn leaves](items/L02-autumn-r1.gif)
 
-L07: The actual painted window regions have independently varying candle/torch flicker; they no longer breathe together.
+[Close-up of the same normal-speed motion](items/L02-detail-r2.gif)
 
-L08: Greenish bioluminescent fireflies wander and pulse independently near foreground vegetation.
+[spring foliage and seasonal debris](items/L02-spring-r2.gif)
+
+[autumn foliage and seasonal debris](items/L02-autumn-r2.gif)
+
+[Still image](items/L02-r2.png)
+
+## L03 · Lake reflections
+
+**Revision in progress.**
+
+[Previous example — archived](items/L03-r1.gif)
+
+Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.
+
+Example: normal-speed motion study.
+
+[Still image](items/L03-r1.png)
+
+## L04 · Waterfall flow and fine spray
+
+**Revision in progress.**
+
+[Previous example — archived](items/L04-r1.gif)
+
+Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.
+
+Example: normal-speed motion study.
+
+[Still image](items/L04-r1.png)
+
+## L05 · Twinkling stars
+
+**Revision in progress.**
+
+[Previous example — archived](items/L05-r1.gif)
+
+Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.
+
+Example: normal-speed motion study.
+
+[Still image](items/L05-r1.png)
+
+## L06 · Shooting star
+
+**Revision in progress.**
+
+[Previous example — archived](items/L06-r1.gif)
+
+Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.
+
+Example: normal-speed motion study.
+
+[Still image](items/L06-r1.png)
+
+## L07 · Window lights
+
+**Revision in progress.**
+
+[Previous example — archived](items/L07-r1.gif)
+
+Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.
+
+Example: normal-speed motion study.
+
+[Still image](items/L07-r1.png)
+
+## L08 · Fireflies
+
+**Revision in progress.**
+
+[Previous example — archived](items/L08-r1.gif)
+
+Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.
+
+Example: normal-speed motion study.
+
+[Still image](items/L08-r1.png)

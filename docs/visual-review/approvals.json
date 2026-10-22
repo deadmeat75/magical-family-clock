@@ -22,8 +22,10 @@
       "id": "B03",
       "element": "wood information bezel",
       "category": "Bezel",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "C01",
@@ -177,70 +179,84 @@
       "id": "E01",
       "element": "shadow at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "E02",
       "element": "bevel at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "E03",
       "element": "reflection at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "E04",
       "element": "glare at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "E05",
       "element": "patina at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "E06",
       "element": "wear at full strength",
       "category": "Surface effects",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "F01",
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Replace the plain round face with aged irregular scalloped parchment inspired by the supplied reference. Location names must be editable flowing text following curved paths. Revised concept requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "notes": "Lettering must more closely match the supplied reference: tall, thin irregular antique serif letters following flowing scalloped arcs, changing orientation around the face; all text remains editable.",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "F02",
       "element": "Brass finish range",
       "category": "Faces",
-      "decision": "revision_requested",
-      "notes": "Offer a continuous finish/age choice from brand new polished brass to antique; show a slightly shinier default and preserve realistic material detail. Revised concept requires user approval.",
+      "decision": "approved",
+      "notes": "Revision 1 explicitly approved by the user. Retain proposed continuous finish-age control requirement.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/F02-r1.png",
+      "approved_example_sha256": "6ea415ad311ecdaa31a1c24b5bc88b40fb281519c02221d62eb1e697823c2cc9"
     },
     {
       "id": "F03",
       "element": "Astronomical scene wheel",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Completely redesign as an antique astronomical clock inspired by the supplied reference, with separate rotating scene layers responding to time, season and weather. Fixed location lettering and tracking hands remain independent. Revised concept requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "notes": "Old celestial grandfather clock face from a wizarding world. Restrained historical painted colors, aged brass and ivory. No flowers, rainbow palette, airbrushed nebula or modern scientific diagram.",
+      "revision": 5,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "F04",
@@ -264,256 +280,346 @@
       "id": "H01",
       "element": "spoon",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H01-r1.png",
+      "approved_example_sha256": "f6c05eff70b482eab5699aa6a5d8dbca637f165f50ae326f8324b1cdc07c3627"
     },
     {
       "id": "H02",
       "element": "classic",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H02-r1.png",
+      "approved_example_sha256": "9939c86795fe1e1651432897c253cb6a8c7682d98436f410e491488e5ec0ee27"
     },
     {
       "id": "H03",
       "element": "legacy-curved",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H03-r1.png",
+      "approved_example_sha256": "275922031e074bdeb47946e871d86f33586064eb180ddb68195801f8b68b1587"
     },
     {
       "id": "H04",
       "element": "standalone-pointed",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H04-r1.png",
+      "approved_example_sha256": "bf2429f6534401bdbcea317adb05b188abe5fbd4809bfeb3fed8e8156dd24dcc"
     },
     {
       "id": "H05",
       "element": "arrow",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H05-r1.png",
+      "approved_example_sha256": "f7876db86b821c58a7a7742b4e857b84675925d83924e920ce999e4dad48f681"
     },
     {
       "id": "H06",
       "element": "leaf",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H06-r1.png",
+      "approved_example_sha256": "876bd0e18f6bb1f8ce1782049b828340961f09d2ab2e3d6a175410f1762cbbde"
     },
     {
       "id": "H07",
       "element": "sword",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H07-r1.png",
+      "approved_example_sha256": "01c15b8c148c3618197aeaaecc062f431ea43d84dfb2d940a2666def6c749f64"
     },
     {
       "id": "H08",
       "element": "cathedral",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H08-r1.png",
+      "approved_example_sha256": "2bdd5e767b271ba1eb6dac652716289e3eb6fb6be83d5d722bac8e40cd15f3bf"
     },
     {
       "id": "H09",
       "element": "filigree",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H09-r1.png",
+      "approved_example_sha256": "69fe71609d7827ab8a0f2c1e3dbf456ab31fd9680b93be2062f6d4a54e81fe7a"
     },
     {
       "id": "H10",
       "element": "skeleton",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H10-r1.png",
+      "approved_example_sha256": "943d82fb00bdb7881cb97870dd9d3a16fa6944a87f9262c1f480ee383a5c9482"
     },
     {
       "id": "H11",
       "element": "quill",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H11-r1.png",
+      "approved_example_sha256": "d50968e1a6bda916ca5dfb2d5a8094bef7043b6739a5e827133c2146cd798d25"
     },
     {
       "id": "H12",
       "element": "compass",
       "category": "Hand shapes",
-      "decision": "revision_requested",
-      "notes": "Revisit this hand as a realistic crafted clock hand, with finer physical proportions, metal thickness, bevels, texture and reflections; avoid cartoon-like flat shapes. Revised artwork requires user approval.",
+      "decision": "approved",
+      "notes": "Revised hand design explicitly approved by the user in chat. Optional affixed name/portrait attachments are proposed separately to keep names usable on narrow or openwork hands.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 approved by the user",
+      "approved_example": "items/H12-r1.png",
+      "approved_example_sha256": "aaa9820f6658f8d8836e1d85252fc73e4df5bd70b3e2a22440d713c56e7bd4b9"
     },
     {
       "id": "I01",
       "element": "home",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I02",
       "element": "work",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I03",
       "element": "school",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I04",
       "element": "gym",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I05",
       "element": "travel",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I06",
       "element": "away",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I07",
       "element": "hospital",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I08",
       "element": "shop",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I09",
       "element": "family",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I10",
       "element": "garden",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I11",
       "element": "bed",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I12",
       "element": "magic",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "I13",
       "element": "pin",
       "category": "Location symbols",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this location symbol as realistic crafted metalwork with physical relief, bevels, material texture and reflected light. Revised artwork requires review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "K01",
       "element": "stem / parallel",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K01.png",
+      "approved_example_sha256": "3bd7d8214eae2915c8f49c0234fe99a11035d981d6800d16a8f75443d1227550",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K02",
       "element": "stem / perpendicular",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K02.png",
+      "approved_example_sha256": "4ea6fa18dbfba916b5fd2e978a37f6d8f573772ea8827a6977a59590cba3da08",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K03",
       "element": "tip / parallel",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K03.png",
+      "approved_example_sha256": "36e3370742d1a91c3bcd6adf3bfe840d9c12c07e0a659a28fc7f7783ebcacbd5",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K04",
       "element": "tip / perpendicular",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K04.png",
+      "approved_example_sha256": "518320d94cc8d40855155c1d3a38ba3ea664808154fd391e6b41167b8439f58a",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K05",
       "element": "No hand lettering",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K05.png",
+      "approved_example_sha256": "376be0d753492ce7b2b8edf7bd8d98c809636f3abaac356822e93c28280463a6",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K06",
       "element": "oval portrait / brass frame",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K06.png",
+      "approved_example_sha256": "26f9a72b56691747efe3f870fd9d8556fbf669fb5065ae8246c8dbee8380a303",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K07",
       "element": "circle portrait / brass frame",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K07.png",
+      "approved_example_sha256": "9b4c18e7655ca2e16e6fbf84f38bf7c39201d59c8707afe143971fe773c2c3b7",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "K08",
       "element": "oval portrait / none frame",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat, conditional on the ability to change text color in the UI. Preserve text-color control for lettering, initials and future name tags.",
+      "approved_example": "items/K08.png",
+      "approved_example_sha256": "3dae0c6b68887c1fc713a32036364cfb1c16afc28c2a9bbb0a3a0835d6db944a",
+      "approval_conditions": [
+        "Text color can be changed in the UI."
+      ]
     },
     {
       "id": "L01",
@@ -531,7 +637,7 @@
       "decision": "revision_requested",
       "notes": "Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.",
       "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "L03",
@@ -539,8 +645,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "L04",
@@ -548,8 +654,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "L05",
@@ -557,8 +663,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "L06",
@@ -566,17 +672,17 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "L07",
       "element": "Window lights",
       "category": "Landscape motion",
       "decision": "revision_requested",
-      "notes": "Each window has an independent irregular candle or torch flicker; remove synchronized breathing. Revised normal-speed preview requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "notes": "Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.",
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "L08",
@@ -584,393 +690,503 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.",
-      "revision": 1,
-      "revision_status": "revised proposal available; awaiting user approval"
+      "revision": 2,
+      "revision_status": "new revision in progress; older example is archived"
     },
     {
       "id": "M01",
       "element": "color",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M02",
       "element": "brass",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M03",
       "element": "aged-brass",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M04",
       "element": "copper",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M05",
       "element": "silver",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M06",
       "element": "steel",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M07",
       "element": "wood",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M08",
       "element": "ivory",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M09",
       "element": "obsidian",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M10",
       "element": "glass",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M11",
       "element": "Brass finish: polished",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M12",
       "element": "Brass finish: brushed",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "M13",
       "element": "Brass finish: aged",
       "category": "Materials",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Rework this material/finish to look realistic, with appropriate physical texture, depth, reflections and wear rather than a flat colored shape. Revised examples require review.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N01",
       "element": "new_moon",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N02",
       "element": "waxing_crescent",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N03",
       "element": "first_quarter",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N04",
       "element": "waxing_gibbous",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N05",
       "element": "full_moon",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N06",
       "element": "waning_gibbous",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N07",
       "element": "last_quarter",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "N08",
       "element": "waning_crescent",
       "category": "Moon phases",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "P01",
       "element": "cracked-glass",
       "category": "Location panels",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/P01.png",
+      "approved_example_sha256": "8634773e6d77678134aee907c55e431a81a413632ac2f95c24cd7b5df0aa7e03"
     },
     {
       "id": "P02",
       "element": "hammered-metal",
       "category": "Location panels",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace regular spotted pattern with irregular realistic hammered metal: varied overlapping shallow dents and physical reflected highlights; no repeating dots.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "P03",
       "element": "parchment",
       "category": "Location panels",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace line pattern with realistic aged parchment, fibers, mottling and subtle wear.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "P04",
       "element": "wood",
       "category": "Location panels",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Replace drawn lines with realistic natural wood grain and surface detail.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "P05",
       "element": "plain",
       "category": "Location panels",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in chat.",
+      "approved_example": "items/P05.png",
+      "approved_example_sha256": "3801d575db08dc66022d049382ad33f305c267a9e0fc802ba420b9f72edfdb2d"
     },
     {
       "id": "S01",
       "element": "spring / dawn",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S02",
       "element": "spring / day",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S03",
       "element": "spring / dusk",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S04",
       "element": "spring / night",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S05",
       "element": "summer / dawn",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S06",
       "element": "summer / day",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S07",
       "element": "summer / dusk",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S08",
       "element": "summer / night",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S09",
       "element": "autumn / dawn",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S10",
       "element": "autumn / day",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S11",
       "element": "autumn / dusk",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S12",
       "element": "autumn / night",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S13",
       "element": "winter / dawn",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S14",
       "element": "winter / day",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S15",
       "element": "winter / dusk",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "S16",
       "element": "winter / night",
       "category": "Seasons and time",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Brighten and redesign lighting for this season/time. Remove the obscuring grey/translucent overall treatment. Night requires different sky and environmental/window lighting while preserving readable fine scene detail, not merely lower brightness. Revised scene study requires approval.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "T01",
       "element": "Pirata One, Georgia, serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T01.png",
+      "approved_example_sha256": "61d456d16740e82ca7768762432927d5f1591f021b762c749917ee9899817595"
     },
     {
       "id": "T02",
       "element": "Georgia, serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T02.png",
+      "approved_example_sha256": "2c3190f2d4c3b2df1f8a9799d5806427c527bd04af14480178036a9ff64e483a"
     },
     {
       "id": "T03",
       "element": "Palatino, serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T03.png",
+      "approved_example_sha256": "1a32a6bd826ab285840e9a0ad029eb2fbc7376a80cb99df90da311d22a521e94"
     },
     {
       "id": "T04",
       "element": "Garamond, serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T04.png",
+      "approved_example_sha256": "cd4c9c755b36e375378a0a591f0b6b17679019930ee176d0176d59deb72dfdec"
     },
     {
       "id": "T05",
       "element": "Baskerville, serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T05.png",
+      "approved_example_sha256": "76ce8e368fd997c893bcfb0482812ca77aa0b5dbca2639300e4bffacc003f16a"
     },
     {
       "id": "T06",
       "element": "Courier New, monospace",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T06.png",
+      "approved_example_sha256": "27fd6eb1c28643cecb7b3e7896af2fb2ade85492cc2e08a3ed6b2033fd5ae773"
     },
     {
       "id": "T07",
       "element": "Trebuchet MS, sans-serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T07.png",
+      "approved_example_sha256": "706450e8cfd1eb6fa65f0e9d9214fd8beb4db98100b48fea4f9479c5338341e7"
     },
     {
       "id": "T08",
       "element": "Verdana, sans-serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T08.png",
+      "approved_example_sha256": "b07f9920a8ff8bbb0e1c804a9553bd64ec7a3161bc48c6d571e356dc514fcba2"
     },
     {
       "id": "T09",
       "element": "system-ui, sans-serif",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T09.png",
+      "approved_example_sha256": "79abc3408a2ae94b8433ac0276acb0e0d3b893eae459b9f0a115c91ed2a0ed7c"
     },
     {
       "id": "T10",
       "element": "cursive",
       "category": "Typography",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/T10.png",
+      "approved_example_sha256": "756651c55a708d4022918512699e89dd1252fa93f4fe35d1463aa88a0b4b5293"
     },
     {
       "id": "U01",
       "element": "One Home Assistant preview; unobstructed settings",
       "category": "Editor and fullscreen",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/U01.png",
+      "approved_example_sha256": "e73a5c1458595935795c6fec1e74e6ea8e260c45a690c56a87a4a80188240c66"
     },
     {
       "id": "U02",
       "element": "Fullscreen layout",
       "category": "Editor and fullscreen",
-      "decision": "pending",
-      "notes": ""
+      "decision": "approved",
+      "notes": "Explicitly approved by the user in the uploaded continuation instructions. Preserve the reviewed appearance.",
+      "approved_example": "items/U02.png",
+      "approved_example_sha256": "0fbbeef362f232060d8bf16c40acab07c832f716c4e2af473285033d7a6c2140"
     },
     {
       "id": "W01",
       "element": "clear",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W02",
@@ -983,57 +1199,73 @@
       "id": "W03",
       "element": "light-rain",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible gentle animated rain; brighter detailed scene.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W04",
       "element": "rain",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible denser animated rain; brighter detailed scene.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W05",
       "element": "snow",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible falling snow at normal size; brighter detailed scene.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W06",
       "element": "sleet",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible mixed rain and snow/sleet; brighter detailed scene.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W07",
       "element": "wind",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible foliage gusts and loose debris with natural wind paths.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W08",
       "element": "fog",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Visible drifting layered fog that preserves clock readability.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W09",
       "element": "ice",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Completely replace lines with gradually growing fern-like frost on outer watchglass. Restrained translucent highlights; keep all data readable.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W10",
       "element": "lightning",
       "category": "Weather",
-      "decision": "pending",
-      "notes": ""
+      "decision": "revision_requested",
+      "notes": "Irregular branching lightning with bright cores, restrained glow, variable timing and local scene illumination.",
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "X01",
@@ -1052,6 +1284,34 @@
       "notes": "Scene composition explicitly approved. Character-specific revisions and final naturalistic animation acceptance remain required.",
       "approved_example": "items/X02.png",
       "approved_example_sha256": "bb5b17aec18fa5f3716b56fc5963ad2d49ebe88b8cb63f5730db651536202cb0"
+    },
+    {
+      "id": "K09",
+      "element": "Affixed parchment slip",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+    },
+    {
+      "id": "K10",
+      "element": "Hanging name tag",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+    },
+    {
+      "id": "K11",
+      "element": "Oval name brooch",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+    },
+    {
+      "id": "K12",
+      "element": "Framed portrait attachment",
+      "category": "Lettering and portraits",
+      "decision": "pending",
+      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
     }
   ],
   "rendering_requirements": [
@@ -1077,6 +1337,30 @@
       "placement": "navigable lake water",
       "movement": "Hull intersects the waterline; restrained buoyancy, coherent travel, reflection and a wake that follows the hull.",
       "status": "required; final animation acceptance pending"
+    },
+    {
+      "scope": "hand names, portraits and optional data",
+      "requirement": "Offer separate optional affixed parchment slips, small attached name tags, brooches and framed portrait attachments with uploaded person photos. Preserve approved hand artwork. Tags follow their hand and support position/rotation choices; names and all attachments can be hidden.",
+      "status": "attachment proposals pending individual review; implementation pending"
+    },
+    {
+      "scope": "materials M01\u2013M13",
+      "requirement": "All materials and finishes need realistic physical texture, depth, reflections and appropriate wear. Revised material examples require approval.",
+      "status": "revision requested"
+    },
+    {
+      "scope": "all season/time scenes",
+      "requirement": "Use real differences in sky, seasonal foliage and environmental/window lighting. Preserve fine scene detail and readable contrast. Night must not be simulated by a dark or grey translucent veil.",
+      "status": "all S01\u2013S16 revisions requested; new art direction requires approval"
+    }
+  ],
+  "artwork_approvals": [
+    {
+      "id": "lunar-surface-r1",
+      "decision": "approved",
+      "approved_source": "../../src/assets/lunar-surface-r1.png",
+      "approved_source_sha256": "c4635e7f9ddbb1a1aeb175850a106283e61174f5e04d23e4043200b3a318e158",
+      "notes": "User: that moon is good. Approval applies to the generated lunar surface; final phase renderings N01\u2013N08 remain awaiting individual approval."
     }
   ]
 }

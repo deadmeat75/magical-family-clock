@@ -6,11 +6,11 @@
 
 ## Recorded decisions
 
-Approved: **C01–C12, X01, X02, L01, F04, F05**.
+Approved: **C01–C12, X01–X02, L01, F02, F04–F05, H01–H12, K01–K08, P01, P05, T01–T10, U01–U02**, plus the lunar surface artwork. K01–K08 approval requires editable text color; the UI now controls portrait fallback initials as well as hand lettering.
 
 Omitted from the proposed artwork set: **C13, C14, C15, C16**. These examples remain in repository history for reference and are excluded from the new artwork selection.
 
-Revised proposals awaiting approval: ** L02–L08, F01–F03, H01–H12**. Other items remain pending. The gallery links to revision 1; the original examples remain unchanged for comparison.
+See [Latest revisions](LATEST-REVISIONS.md) and the [complete checklist](APPROVALS.md) for current revision numbers and remaining approvals. Earlier examples are archived; revisions never imply approval.
 
 ## Characters must inhabit their environment
 
@@ -46,8 +46,20 @@ The new **Living world → Landscape and motion controls → Seasonal petals and
 - **F03:** complete antique astronomical-clock redesign, with an ivory destination ring, celestial decoration and a miniature landscape. The current picture is a static art-direction proposal. Production needs separate fixed cabinet/dial art, a rotating time/celestial wheel, seasonal landscape layers and independent sensor-driven weather effects. Time, season and weather must compose without rotating destination text or tracking hands. A painted celestial face must not replace the real lunar phase sensor behavior.
 - **F04 and F05:** approved visual examples remain unchanged.
 
-## Hand proposals
+## Approved hand designs and optional attachments
 
-Each of **H01–H12** now has its own realistic crafted-metal proposal, with physical proportions, fine engraving, bevels, openwork and surface detail. They are individually reviewable illustrations, not replacements already wired into the card. After approval, runtime work must establish exact pivot positions, fit optional names and data inside the physical surface, preserve portrait placement and rotation choices, and supply consistent size, width, material and finish controls.
+All **H01–H12** realistic hand designs are approved. Their artwork remains unchanged. Runtime work still needs exact pivots and consistent size, width, material and finish controls.
+
+Names need their own optional physical surface on narrow and openwork hands: an affixed parchment slip, a small attached name tag, or a brooch/small framed portrait that uses the person’s photo. These attachment designs will be reviewed separately. Preserve placement and rotation choices, optional sensor readouts, blank names, and the ability to hide every attachment. Attachments must follow their parent hand and look mechanically affixed.
 
 The approved bitmap and GIF examples have SHA-256 hashes in the decision record so later gallery generation cannot silently change what was approved. All other approvals remain pending until explicitly given.
+
+## Current review pass
+
+New material, metalwork, panel, attachment and season/time studies are individually linked in the latest index. Season/time sheets are lighting proposals, not registered final fullscreen assets. Their final resolution, alignment and motion mapping require further work after artwork approval.
+
+W01 removes both painted and animated clouds for clear weather. Rain, snow, sleet, wind and fog have new animated runtime examples. W09 is branching frost growing inward from the protective glass edge. W10 uses irregular branching discharges with restrained scene illumination. The approved moon surface is reused with calculated spherical lighting across all eight phases; sensor mappings remain unchanged. B03 uses natural wood grain, and E01–E06 have new runtime comparisons.
+
+F03 is being revised toward an old magical celestial grandfather clock: no flowers, rainbow palette, airbrushed nebula or modern scientific diagrams. F01's second lettering study uses tall fine capitals following the reference's curved, changing orientation. F02 is now approved; its continuous age control remains to implement.
+
+All source changes are unreleased. The public release remains 0.4.0.

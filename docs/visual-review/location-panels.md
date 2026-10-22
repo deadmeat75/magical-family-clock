@@ -1,22 +1,57 @@
 # Location panels: individual review
 
-[Back to review gallery](README.md)
+[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Every item below is awaiting your approval.**
+**Release held. Explicit approvals and omissions are preserved.**
 
-The five surface options with a fitted name and graphic.
 
-| **[P01 · cracked-glass](items/P01.png)** | **[P02 · hammered-metal](items/P02.png)** |
-| --- | --- |
-| [![P01 cracked-glass](items/P01.png)](items/P01.png) | [![P02 hammered-metal](items/P02.png)](items/P02.png) |
-| Awaiting approval | Awaiting approval |
 
-| **[P03 · parchment](items/P03.png)** | **[P04 · wood](items/P04.png)** |
-| --- | --- |
-| [![P03 parchment](items/P03.png)](items/P03.png) | [![P04 wood](items/P04.png)](items/P04.png) |
-| Awaiting approval | Awaiting approval |
+## P01 · cracked-glass
 
-| **[P05 · plain](items/P05.png)** |   |
-| --- | --- |
-| [![P05 plain](items/P05.png)](items/P05.png) |   |
-| Awaiting approval |   |
+**Approved.**
+
+[![P01 cracked-glass](items/P01.png)](items/P01.png)
+
+Explicitly approved by the user in chat.
+
+Example: current draft rendering.
+
+## P02 · hammered-metal
+
+**Revision 1 · awaiting approval.**
+
+[![P02 hammered-metal](items/P02-r1.png)](items/P02-r1.png)
+
+Replace regular spotted pattern with irregular realistic hammered metal: varied overlapping shallow dents and physical reflected highlights; no repeating dots.
+
+Example: implemented photographic material pattern; editable panel color preserved.
+
+## P03 · parchment
+
+**Revision 1 · awaiting approval.**
+
+[![P03 parchment](items/P03-r1.png)](items/P03-r1.png)
+
+Replace line pattern with realistic aged parchment, fibers, mottling and subtle wear.
+
+Example: implemented photographic material pattern; editable panel color preserved.
+
+## P04 · wood
+
+**Revision 1 · awaiting approval.**
+
+[![P04 wood](items/P04-r1.png)](items/P04-r1.png)
+
+Replace drawn lines with realistic natural wood grain and surface detail.
+
+Example: implemented photographic material pattern; editable panel color preserved.
+
+## P05 · plain
+
+**Approved.**
+
+[![P05 plain](items/P05.png)](items/P05.png)
+
+Explicitly approved by the user in chat.
+
+Example: current draft rendering.

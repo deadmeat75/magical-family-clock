@@ -1,17 +1,33 @@
 # Bezel: individual review
 
-[Back to review gallery](README.md)
+[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Every item below is awaiting your approval.**
+**Release held. Explicit approvals and omissions are preserved.**
 
-Representative aged brass, silver and wood information bezels.
 
-| **[B01 · aged-brass information bezel](items/B01.png)** | **[B02 · silver information bezel](items/B02.png)** |
-| --- | --- |
-| [![B01 aged-brass information bezel](items/B01.png)](items/B01.png) | [![B02 silver information bezel](items/B02.png)](items/B02.png) |
-| Awaiting approval | Awaiting approval |
 
-| **[B03 · wood information bezel](items/B03.png)** |   |
-| --- | --- |
-| [![B03 wood information bezel](items/B03.png)](items/B03.png) |   |
-| Awaiting approval |   |
+## B01 · aged-brass information bezel
+
+**Awaiting approval.**
+
+[![B01 aged-brass information bezel](items/B01.png)](items/B01.png)
+
+Example: current draft rendering.
+
+## B02 · silver information bezel
+
+**Awaiting approval.**
+
+[![B02 silver information bezel](items/B02.png)](items/B02.png)
+
+Example: current draft rendering.
+
+## B03 · wood information bezel
+
+**Revision 1 · awaiting approval.**
+
+[![B03 wood information bezel](items/B03-r1.png)](items/B03-r1.png)
+
+Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.
+
+Example: implemented runtime natural wood bezel.

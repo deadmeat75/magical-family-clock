@@ -4,9 +4,13 @@
 
 Start with the **[16 proposed painted characters and props](characters-and-props.md)**, then the **[day/night scene concepts](scene-concepts.md)** and **[eight landscape motion examples](landscape-motion.md)**. The other pages show the existing draft visual options so you can review every element individually.
 
-**Current review:** 17 approved; 22 revised proposals awaiting approval; 4 omitted; 94 other items awaiting review.
+**Current review:** 52 approved; 78 revision requests awaiting approval; 4 omitted; 7 other items awaiting review.
 
-Approved: **C01–C12, X01, X02, L01, F04 and F05**. Omitted: **C13–C16**. Revised examples are linked on the character, landscape, face and hand pages. [Requirements and remaining implementation](REVISION-NOTES.md).
+Approved: **C01–C12, X01–X02, L01, F02, F04–F05, H01–H12, K01–K08, P01, P05, T01–T10, U01–U02**, plus the lunar surface artwork. Omitted: **C13–C16**. [Requirements and remaining implementation](REVISION-NOTES.md).
+
+## Latest revisions
+
+**[Open the latest revision index](LATEST-REVISIONS.md)**. This index distinguishes new examples from older samples being replaced.
 
 ## How to approve or request changes
 
@@ -36,7 +40,7 @@ These are static concept compositions. Character illustrations and final movemen
 | [Faces](faces.md) | 5 | F01, F02, F03, F04, F05 |
 | [Hand shapes](hand-shapes.md) | 12 | H01, H02, H03, H04, H05, H06, H07, H08, H09, H10, H11, H12 |
 | [Materials](materials.md) | 13 | M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13 |
-| [Lettering and portraits](lettering-and-portraits.md) | 8 | K01, K02, K03, K04, K05, K06, K07, K08 |
+| [Lettering and portraits](lettering-and-portraits.md) | 12 | K01–K12 |
 | [Location panels](location-panels.md) | 5 | P01, P02, P03, P04, P05 |
 | [Location symbols](location-symbols.md) | 13 | I01, I02, I03, I04, I05, I06, I07, I08, I09, I10, I11, I12, I13 |
 | [Seasons and time](seasons-and-time.md) | 16 | S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16 |
