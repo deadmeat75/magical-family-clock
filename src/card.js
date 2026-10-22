@@ -1,3 +1,7 @@
+import { renderBezelArtwork } from "./bezel-art.js";
+import materialTexturesURL from "./assets/panel-material-textures-r1.png";
+import { setMaterialTextureURL } from "./texture-assets.js";
+setMaterialTextureURL(materialTexturesURL);
 import { ensureFonts } from "./fonts.js";
 import { panelsEnabled, panelMarkup, fitPanelLabels } from "./panels.js";
 import { worldCSS, worldMarkup } from "./world.js";
@@ -407,7 +411,8 @@ export class MagicalFamilyClock extends HTMLElement {
           {
             "text-anchor": "middle",
             y: 5,
-            fill: "#172b2c",
+            fill: m.text_color,
+            class: "portrait-initials",
             "font-size": 17,
             "font-family": "Georgia",
           },
@@ -424,9 +429,10 @@ export class MagicalFamilyClock extends HTMLElement {
     for (const [kind, fill, strength] of [
       [
         "reflection",
-        "url(#glass-glare)",
-        portraitEffects.reflection + portraitEffects.glare,
+        "url(#environment-reflection)",
+        portraitEffects.reflection,
       ],
+      ["glare", "url(#specular-glare)", portraitEffects.glare],
       ["wear", "url(#wear-marks)", portraitEffects.wear],
       ["patina", "url(#patina-marks)", portraitEffects.patina],
     ])
@@ -463,10 +469,7 @@ export class MagicalFamilyClock extends HTMLElement {
         "text",
         {
           class: "legacy-name engraved",
-          fill:
-            c.theme === "brass-clockwork" && m.text_color === "#fff5dc"
-              ? "#3d2915"
-              : m.text_color,
+          fill: m.text_color,
         },
         handName(m),
       );
@@ -601,13 +604,20 @@ export class MagicalFamilyClock extends HTMLElement {
     weather.classList.toggle("still", !c.weather_motion);
     weather.setAttribute(
       "clip-path",
-      c.artwork === "castle" ? "url(#castle-opening)" : "url(#dial-clip)",
+      c.artwork === "castle" && kind !== "ice"
+        ? "url(#castle-opening)"
+        : "url(#dial-clip)",
     );
     if (weatherKey !== this._weatherKey) {
       weather.innerHTML = weatherMarkup(kind, c.weather_intensity, night);
       weather.setAttribute("data-weather", kind);
       this._weatherKey = weatherKey;
     }
+    const clockSVG = this.shadowRoot.querySelector("svg");
+    // Frost belongs to the protective glass above the destination panels.
+    // Other weather belongs to the environment below labels and hands.
+    if (kind === "ice") clockSVG.appendChild(weather);
+    else clockSVG.insertBefore(weather, clockSVG.querySelector(".locations"));
     const background = backgroundFor(c, states);
     const colors = skies[background] || skies.day;
     const stops = this.shadowRoot.querySelectorAll("#sky stop");
@@ -832,7 +842,10 @@ export class MagicalFamilyClock extends HTMLElement {
       );
       this._worldPainter = startWorldPainter(target, c, scene, {
         time: this._worldElapsed || 0,
-        meteorSeed: (this._worldMeteorSeed ??= Math.floor(Math.random() * 4294967296)),
+        weather,
+        meteorSeed: (this._worldMeteorSeed ??= Math.floor(
+          Math.random() * 4294967296,
+        )),
         paused: () =>
           this._reduced() ||
           !c.scene_motion ||
@@ -926,12 +939,17 @@ export class MagicalFamilyClock extends HTMLElement {
         ["reflection", "url(#glass-glare)"],
         ["glare", "url(#glass-glare)"],
       ]) {
+        if (target === "face" && c.artwork === "castle" && key === "patina")
+          continue;
+        const glassWear =
+          target === "face" && c.artwork === "castle" && key === "wear";
         group.appendChild(
           svg("circle", {
             ...shape,
-            fill: target === "face" ? paint : "none",
-            stroke: target === "frame" ? paint : "none",
-            "stroke-width": target === "frame" ? 18 : 0,
+            class: "finish-" + key,
+            fill: target === "face" && !glassWear ? paint : "none",
+            stroke: target === "frame" || glassWear ? paint : "none",
+            "stroke-width": target === "frame" ? 18 : glassWear ? 1 : 0,
             opacity: e[key] * 0.65,
           }),
         );
@@ -976,6 +994,56 @@ export class MagicalFamilyClock extends HTMLElement {
         opacity: c.effects.bezel.bevel,
       }),
     );
+    if (b.material === "wood") {
+      const outer = radius + b.width / 2,
+        inner = radius - b.width / 2;
+      const defs = svg("defs");
+      const gradient = svg("radialGradient", {
+        id: "wood-bezel-profile",
+        gradientUnits: "userSpaceOnUse",
+        cx: 300,
+        cy: 300,
+        r: outer,
+      });
+      for (const [offset, color, opacity] of [
+        [inner / outer, "#170c05", 0.58],
+        [(inner + 3) / outer, "#f5d7a7", 0.2],
+        [(inner + b.width * 0.45) / outer, "#fff", 0],
+        [(outer - 3) / outer, "#ffe4ba", 0.24],
+        [1, "#1a0d04", 0.55],
+      ])
+        gradient.appendChild(
+          svg("stop", { offset, "stop-color": color, "stop-opacity": opacity }),
+        );
+      defs.appendChild(gradient);
+      group.appendChild(defs);
+      group.appendChild(
+        svg("circle", {
+          cx: 300,
+          cy: 300,
+          r: radius,
+          fill: "none",
+          stroke: "url(#wood-bezel-profile)",
+          "stroke-width": b.width,
+        }),
+      );
+    }
+    const bezelOuter = radius + b.width / 2;
+    const craftedBezel = svg("image", {
+      class: "crafted-bezel",
+      x: 300 - bezelOuter,
+      y: 300 - bezelOuter,
+      width: bezelOuter * 2,
+      height: bezelOuter * 2,
+      "pointer-events": "none",
+    });
+    group.appendChild(craftedBezel);
+    this._bezelArtReady = renderBezelArtwork(
+      craftedBezel,
+      b.material,
+      b.width,
+      radius,
+    ).catch(() => {});
     b.items.forEach((item) => {
       const a = (item.angle * Math.PI) / 180;
       const text = svg("text", {

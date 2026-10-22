@@ -412,7 +412,7 @@ export function worldEditor(root) {
     [
       "clouds",
       "Moving clouds",
-      "Cloud layers drift continuously at different wind speeds. The bundled sky replaces its stationary clouds; uploaded scenes retain their own sky beneath the overlay.",
+      "Cloud layers drift continuously at different wind speeds when weather is not Clear. Clear weather removes both painted and moving clouds. The bundled sky replaces its stationary clouds; uploaded scenes retain their own sky beneath the overlay.",
     ],
     [
       "trees",
@@ -490,6 +490,16 @@ export function worldEditor(root) {
     "checkbox",
     null,
     "Draw the moon during dawn, dusk and night, with the actual illuminated portion rather than a fixed crescent.",
+  );
+  field(
+    this,
+    lunar,
+    "Show moon in daylight",
+    moon,
+    "show_in_daylight",
+    "checkbox",
+    null,
+    "Also draw the moon in the daytime scene. Its unlit side is transparent, so your actual blue sky shows through. Phase alone does not determine whether the moon is above your horizon; use this as a display choice.",
   );
   field(
     this,

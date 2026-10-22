@@ -14,7 +14,7 @@ async function boot(page, extra = {}) {
       show_location_labels: true,
       period_override: "day",
       season_override: "summer",
-      weather_effect: "clear",
+      weather_effect: "clouds",
       background_transition: 0,
       ...extra,
     });
@@ -345,8 +345,12 @@ test("twinkling stars and occasional meteors produce visible night-sky changes",
     const { createMeteorTimeline } = await import("/src/meteors.js"),
       event = createMeteorTimeline(c._worldMeteorSeed).at(0);
     c._worldPainter.seek(event.start + event.duration * 0.5);
-    const canvas = c.shadowRoot.querySelector('canvas[data-world-paint="meteors"]'),
-      data = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height).data;
+    const canvas = c.shadowRoot.querySelector(
+        'canvas[data-world-paint="meteors"]',
+      ),
+      data = canvas
+        .getContext("2d")
+        .getImageData(0, 0, canvas.width, canvas.height).data;
     return data.filter((v, i) => i % 4 === 3 && v > 20).length;
   });
   expect(visiblePixels).toBeGreaterThan(10);

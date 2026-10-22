@@ -22,7 +22,7 @@ Example: normal-speed motion study.
 
 **Revision 1 · awaiting approval.**
 
-[![L02 Foliage sway](items/L02-r2.gif)](items/L02-r2.gif)
+[![L02 Foliage sway](items/L02-r3.gif)](items/L02-r3.gif)
 
 Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.
 
@@ -32,82 +32,94 @@ Example: implemented runtime rendering.
 
 [Autumn leaves](items/L02-autumn-r1.gif)
 
-[Close-up of the same normal-speed motion](items/L02-detail-r2.gif)
+[Close-up of the same normal-speed motion](items/L02-detail-r3.gif)
 
-[spring foliage and seasonal debris](items/L02-spring-r2.gif)
+[spring foliage and seasonal debris](items/L02-spring-r3.gif)
 
-[autumn foliage and seasonal debris](items/L02-autumn-r2.gif)
+[autumn foliage and seasonal debris](items/L02-autumn-r3.gif)
 
-[Still image](items/L02-r2.png)
+[Still image](items/L02-r3.png)
 
 ## L03 · Lake reflections
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L03-r2.gif)
+[![L03 Lake reflections](items/L03-r3.gif)](items/L03-r3.gif)
 
 Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L03-r2.png)
+[Close-up of the same normal-speed motion](items/L03-detail-r3.gif)
+
+[Still image](items/L03-r3.png)
 
 ## L04 · Waterfall flow and fine spray
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L04-r2.gif)
+[![L04 Waterfall flow and fine spray](items/L04-r3.gif)](items/L04-r3.gif)
 
 Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L04-r2.png)
+[Close-up of the same normal-speed motion](items/L04-detail-r3.gif)
+
+[Still image](items/L04-r3.png)
 
 ## L05 · Twinkling stars
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L05-r2.gif)
+[![L05 Twinkling stars](items/L05-r3.gif)](items/L05-r3.gif)
 
 Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L05-r2.png)
+[Close-up of the same normal-speed motion](items/L05-detail-r3.gif)
+
+[Still image](items/L05-r3.png)
 
 ## L06 · Shooting star
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L06-r2.gif)
+[![L06 Shooting star](items/L06-r3.gif)](items/L06-r3.gif)
 
 Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L06-r2.png)
+[Close-up of the same normal-speed motion](items/L06-detail-r3.gif)
+
+[Still image](items/L06-r3.png)
 
 ## L07 · Window lights
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L07-r2.gif)
+[![L07 Window lights](items/L07-r3.gif)](items/L07-r3.gif)
 
 Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L07-r2.png)
+[Close-up of the same normal-speed motion](items/L07-detail-r3.gif)
+
+[Still image](items/L07-r3.png)
 
 ## L08 · Fireflies
 
-**Revision in progress.**
+**Revision 3 · awaiting approval.**
 
-[Previous example — archived](items/L08-r2.gif)
+[![L08 Fireflies](items/L08-r3.gif)](items/L08-r3.gif)
 
 Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.
 
 Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L08-r2.png)
+[Close-up of the same normal-speed motion](items/L08-detail-r3.gif)
+
+[Still image](items/L08-r3.png)

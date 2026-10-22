@@ -675,8 +675,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "L04",
@@ -684,8 +684,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "L05",
@@ -693,8 +693,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "L06",
@@ -702,8 +702,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "L07",
@@ -711,8 +711,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "L08",
@@ -720,8 +720,8 @@
       "category": "Landscape motion",
       "decision": "revision_requested",
       "notes": "Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "M01",
@@ -871,72 +871,72 @@
       "element": "new_moon",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N02",
       "element": "waxing_crescent",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N03",
       "element": "first_quarter",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N04",
       "element": "waxing_gibbous",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N05",
       "element": "full_moon",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N06",
       "element": "waning_gibbous",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N07",
       "element": "last_quarter",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "N08",
       "element": "waning_crescent",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Realistic consistent gray lunar surface, spherical lighting and smooth accurate phase geometry; preserve sensor mappings.",
+      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "P01",
@@ -1274,7 +1274,7 @@
       "decision": "revision_requested",
       "notes": "Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "W02",
@@ -1291,8 +1291,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible gentle animated rain; brighter detailed scene.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W04",
@@ -1300,8 +1300,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible denser animated rain; brighter detailed scene.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W05",
@@ -1309,8 +1309,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible falling snow at normal size; brighter detailed scene.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W06",
@@ -1318,8 +1318,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible mixed rain and snow/sleet; brighter detailed scene.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W07",
@@ -1327,8 +1327,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Visible wind: moving loose leaves and gust-bent foliage. Fix leaf trajectories so rotation occurs around the leaf rather than around the scene origin.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W08",
@@ -1336,8 +1336,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Fog must visibly drift in natural depth layers while clock data stays readable.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W09",
@@ -1345,8 +1345,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "Completely replace lines with gradually growing fern-like frost on outer watchglass. Restrained translucent highlights; keep all data readable.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "W10",
@@ -1354,8 +1354,8 @@
       "category": "Weather",
       "decision": "revision_requested",
       "notes": "More irregular branching strikes in different sky positions and both near and distant layers. Lengthen flashes so they can be seen. Keep momentary scene illumination and clock readability.",
-      "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "revision": 1,
+      "revision_status": "revision 1 prepared; awaiting individual approval"
     },
     {
       "id": "X01",

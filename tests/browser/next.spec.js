@@ -133,7 +133,8 @@ test("weather animation can stop independently and empty captions remain empty",
   ).toBe("paused");
   expect(
     await card
-      .locator(".flash")
+      .locator(".lightning-strike")
+      .first()
       .evaluate((e) => getComputedStyle(e).animationName),
   ).toBe("none");
 });

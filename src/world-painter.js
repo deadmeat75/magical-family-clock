@@ -1,5 +1,7 @@
+import { renderMoons } from "./lunar.js";
 import { sceneSource } from "./artwork.js";
 import { createMeteorTimeline } from "./meteors.js";
+import { createFoliagePainter } from "./foliage.js";
 const sources = new Map();
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 function canvas(width, height) {
@@ -9,46 +11,77 @@ function canvas(width, height) {
   return c;
 }
 function windowSources(image) {
-  const size = 768, scale = size / 384,
-    texture = canvas(size, size), ctx = texture.getContext("2d"),
-    castle = new Path2D("M236 308V245H251V202H272V178H300V167H310V140H326V213H344V262H357V309Z");
+  const size = 768,
+    scale = size / 384,
+    texture = canvas(size, size),
+    ctx = texture.getContext("2d"),
+    castle = new Path2D(
+      "M236 308V245H251V202H272V178H300V167H310V140H326V213H344V262H357V309Z",
+    );
   ctx.drawImage(image, 0, 0, size, size);
-  const pixels = ctx.getImageData(0, 0, size, size), d = pixels.data,
-    seen = new Uint8Array(size * size), lights = [];
+  const pixels = ctx.getImageData(0, 0, size, size),
+    d = pixels.data,
+    seen = new Uint8Array(size * size),
+    lights = [];
   for (let y = 0; y < size; y++)
     for (let x = 0; x < size; x++) {
       const i = (y * size + x) * 4;
       d[i + 3] = ctx.isPointInPath(castle, 108 + x / scale, 90 + y / scale)
-        ? 255 * clamp((d[i] - d[i + 2] - 65) / 65, 0, 1)
-          * clamp((d[i + 1] - d[i + 2] - 30) / 55, 0, 1)
+        ? 255 *
+          clamp((d[i] - d[i + 2] - 65) / 65, 0, 1) *
+          clamp((d[i + 1] - d[i + 2] - 30) / 55, 0, 1)
         : 0;
     }
   // Connected warm glass regions retain the actual painted window shapes.
   // Each gets an independent light source rather than one whole-photo pulse.
   for (let n = 0; n < seen.length; n++) {
     if (seen[n] || d[n * 4 + 3] < 35) continue;
-    const queue = [n], members = [];
-    let minX = size, minY = size, maxX = 0, maxY = 0;
+    const queue = [n],
+      members = [];
+    let minX = size,
+      minY = size,
+      maxX = 0,
+      maxY = 0;
     seen[n] = 1;
     for (let head = 0; head < queue.length; head++) {
-      const p = queue[head], x = p % size, y = Math.floor(p / size);
+      const p = queue[head],
+        x = p % size,
+        y = Math.floor(p / size);
       members.push(p);
-      minX = Math.min(minX, x); maxX = Math.max(maxX, x);
-      minY = Math.min(minY, y); maxY = Math.max(maxY, y);
-      for (const q of [x > 0 ? p - 1 : -1, x < size - 1 ? p + 1 : -1, p - size, p + size])
+      minX = Math.min(minX, x);
+      maxX = Math.max(maxX, x);
+      minY = Math.min(minY, y);
+      maxY = Math.max(maxY, y);
+      for (const q of [
+        x > 0 ? p - 1 : -1,
+        x < size - 1 ? p + 1 : -1,
+        p - size,
+        p + size,
+      ])
         if (q >= 0 && q < seen.length && !seen[q] && d[q * 4 + 3] >= 35) {
-          seen[q] = 1; queue.push(q);
+          seen[q] = 1;
+          queue.push(q);
         }
     }
     if (members.length < 3) continue;
-    const w = maxX - minX + 1, h = maxY - minY + 1,
-      tile = canvas(w, h), tc = tile.getContext("2d"), light = tc.createImageData(w, h);
+    const w = maxX - minX + 1,
+      h = maxY - minY + 1,
+      tile = canvas(w, h),
+      tc = tile.getContext("2d"),
+      light = tc.createImageData(w, h);
     for (const p of members) {
-      const target = ((Math.floor(p / size) - minY) * w + p % size - minX) * 4;
+      const target =
+        ((Math.floor(p / size) - minY) * w + (p % size) - minX) * 4;
       light.data.set(d.subarray(p * 4, p * 4 + 4), target);
     }
     tc.putImageData(light, 0, 0);
-    lights.push({ tile, x: 108 + minX / scale, y: 90 + minY / scale, w: w / scale, h: h / scale });
+    lights.push({
+      tile,
+      x: 108 + minX / scale,
+      y: 90 + minY / scale,
+      w: w / scale,
+      h: h / scale,
+    });
   }
   return lights;
 }
@@ -100,9 +133,16 @@ async function loadSource(scene) {
           mask.drawImage(tile, 0, 0);
           const coverage = mask.getImageData(0, 0, 1024, 512);
           for (let i = 3; i < coverage.data.length; i += 4)
-            coverage.data[i] = 255 * clamp((coverage.data[i] / 255 - 0.01) / 0.025, 0, 1);
+            coverage.data[i] =
+              255 * clamp((coverage.data[i] / 255 - 0.001) / 0.003, 0, 1);
           mask.putImageData(coverage, 0, 0);
-          resolve({ image, clouds: tile, cloudMask, windows: windowSources(image) });
+          resolve({
+            image,
+            clouds: tile,
+            cloudMask,
+            windows: windowSources(image),
+            foliage: createFoliagePainter(image),
+          });
         };
         image.onerror = () => {
           sources.delete(url);
@@ -134,7 +174,8 @@ function drawStars(ctx, t, quality) {
   for (let i = 0; i < count; i++) {
     const x = 112 + ((i * 97) % 375),
       y = 92 + ((i * 37) % 136),
-      twinkle = (0.5 + 0.5 * Math.sin(t * (0.9 + (i % 6) * 0.17) + i * 2.41)) ** 1.5,
+      twinkle =
+        (0.5 + 0.5 * Math.sin(t * (0.9 + (i % 6) * 0.17) + i * 2.41)) ** 1.5,
       r = (i % 9 === 0 ? 1.25 : 0.48 + (i % 4) * 0.2) * (0.85 + twinkle * 0.25);
     ctx.globalAlpha = 0.12 + twinkle * 0.88;
     ctx.fillStyle = i % 3 === 0 ? "#fff0bb" : "#edf5ff";
@@ -156,11 +197,16 @@ function drawStars(ctx, t, quality) {
 }
 function drawWindows(ctx, lights, t) {
   for (let i = 0; i < lights.length; i++) {
-    const light = lights[i], phase = i * 2.39996;
-    ctx.globalAlpha = clamp(0.58
-      + 0.21 * Math.sin(t * (7.3 + (i % 7) * 0.91) + phase)
-      + 0.12 * Math.sin(t * (13.1 + (i % 5) * 1.13) + phase * 0.61)
-      + 0.07 * Math.sin(t * (2.6 + (i % 3) * 0.37) + phase * 1.9), 0.2, 0.98);
+    const light = lights[i],
+      phase = i * 2.39996;
+    ctx.globalAlpha = clamp(
+      0.58 +
+        0.21 * Math.sin(t * (1.45 + (i % 7) * 0.19) + phase) +
+        0.12 * Math.sin(t * (2.7 + (i % 5) * 0.23) + phase * 0.61) +
+        0.07 * Math.sin(t * (0.53 + (i % 3) * 0.07) + phase * 1.9),
+      0.2,
+      0.98,
+    );
     ctx.drawImage(light.tile, light.x, light.y, light.w, light.h);
   }
   ctx.globalAlpha = 1;
@@ -169,21 +215,23 @@ function drawFireflies(ctx, t, quality) {
   const count = quality === "light" ? 5 : quality === "balanced" ? 8 : 12;
   for (let i = 0; i < count; i++) {
     const phase = i * 2.39996,
-      x = (i % 2 ? 420 : 173) + (i % 3) * 7
-        + Math.sin(t * (0.29 + (i % 4) * 0.04) + phase) * 6
-        + Math.sin(t * 0.73 + phase * 1.7) * 2,
+      x =
+        (i % 2 ? 420 : 173) +
+        (i % 3) * 7 +
+        Math.sin(t * (0.29 + (i % 4) * 0.04) + phase) * 6 +
+        Math.sin(t * 0.73 + phase * 1.7) * 2,
       y = 397 + (i % 4) * 8 + Math.sin(t * 0.43 + phase) * 4,
       pulse = (0.5 + 0.5 * Math.sin(t * (0.8 + (i % 5) * 0.13) + phase)) ** 4,
-      glow = ctx.createRadialGradient(x, y, 0, x, y, 2.7);
+      glow = ctx.createRadialGradient(x, y, 0, x, y, 4.1);
     ctx.globalAlpha = 0.08 + pulse * 0.92;
     glow.addColorStop(0, "rgba(196,255,151,.65)");
     glow.addColorStop(0.22, "rgba(133,222,100,.28)");
     glow.addColorStop(1, "rgba(91,190,75,0)");
     ctx.fillStyle = glow;
-    ctx.fillRect(x - 2.7, y - 2.7, 5.4, 5.4);
+    ctx.fillRect(x - 4.1, y - 4.1, 8.2, 8.2);
     ctx.fillStyle = "#deffc3";
     ctx.beginPath();
-    ctx.arc(x, y, 0.32, 0, Math.PI * 2);
+    ctx.arc(x, y, 0.62, 0, Math.PI * 2);
     ctx.fill();
   }
   ctx.globalAlpha = 1;
@@ -192,11 +240,11 @@ function drawLake(ctx, image, t, intensity, quality) {
   const step = quality === "light" ? 1 : 0.5;
   for (let y = 353; y < 474; y += step) {
     const depth = clamp((y - 353) / 121, 0, 1),
-      amplitude = (0.04 + 1.35 * depth ** 1.25) * intensity;
+      amplitude = (0.04 + 2.7 * depth ** 1.25) * intensity;
     const dx =
       amplitude *
       (Math.sin(y * 0.73 - t * 1.9) + 0.32 * Math.sin(y * 0.19 + t * 0.83));
-    const dy = 0.2 * depth * Math.sin(y * 0.31 - t * 0.7);
+    const dy = 0.38 * depth * Math.sin(y * 0.31 - t * 0.7);
     const sy = ((y - 90 + dy) * 1254) / 384;
     ctx.drawImage(
       image,
@@ -214,7 +262,12 @@ function drawLake(ctx, image, t, intensity, quality) {
 function drawSeasonalDebris(ctx, t, intensity, season, quality) {
   if (season !== "spring" && season !== "autumn") return;
   const count = quality === "light" ? 5 : quality === "balanced" ? 9 : 14;
-  const origins = [[183, 389], [242, 313], [361, 322], [427, 391]];
+  const origins = [
+    [183, 389],
+    [242, 313],
+    [361, 322],
+    [427, 391],
+  ];
   for (let i = 0; i < count; i++) {
     const [ox, oy] = origins[i % origins.length],
       duration = 16 + (i % 5) * 2.7,
@@ -230,13 +283,21 @@ function drawSeasonalDebris(ctx, t, intensity, season, quality) {
     // New particles emerge within foliage; their repeat point is below the
     // opening. They never reset or disappear in the middle of open water.
     ctx.globalAlpha = Math.min(1, p * 18) * 0.87;
-    ctx.fillStyle = season === "spring"
-      ? ["#f8dce5", "#eeb3c8", "#fff1ed"][i % 3]
-      : ["#ad602b", "#c58e37", "#8c4829"][i % 3];
+    ctx.fillStyle =
+      season === "spring"
+        ? ["#f8dce5", "#eeb3c8", "#fff1ed"][i % 3]
+        : ["#ad602b", "#c58e37", "#8c4829"][i % 3];
     ctx.beginPath();
     ctx.moveTo(-size, 0);
     ctx.bezierCurveTo(-size * 0.4, -size, size * 0.8, -size * 0.8, size, 0);
-    ctx.bezierCurveTo(size * 0.4, size * 0.8, -size * 0.7, size * 0.75, -size, 0);
+    ctx.bezierCurveTo(
+      size * 0.4,
+      size * 0.8,
+      -size * 0.7,
+      size * 0.75,
+      -size,
+      0,
+    );
     ctx.fill();
     if (season === "autumn") {
       ctx.strokeStyle = "#e0b875";
@@ -264,12 +325,18 @@ function drawFalls(ctx, t, intensity, night, quality) {
         spread = width * (0.35 + phase * 0.65);
       const y = y0 + (y1 - y0) * phase ** 1.45,
         x = x0 + (x1 - x0) * phase + lane * spread;
-      ctx.strokeStyle = i % 4 === 0
-        ? (night ? "#65869e" : "#69a8b8")
-        : (night ? "#c1d4e3" : "#f3fcff");
+      ctx.strokeStyle =
+        i % 4 === 0
+          ? night
+            ? "#65869e"
+            : "#387989"
+          : night
+            ? "#c1d4e3"
+            : "#f3fcff";
       ctx.globalAlpha =
-        (0.15 + 0.6 * Math.sin(Math.PI * phase)) * Math.min(1.4, intensity + 0.25);
-      ctx.lineWidth = 0.35 + (i % 3) * 0.18;
+        (0.25 + 0.7 * Math.sin(Math.PI * phase)) *
+        Math.min(1.4, intensity + 0.25);
+      ctx.lineWidth = 0.55 + (i % 3) * 0.23;
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(x + (x1 - x0) * 0.04, Math.min(y1, y + 2.3 + phase * 4.2));
@@ -280,7 +347,8 @@ function drawFalls(ctx, t, intensity, night, quality) {
     for (let i = 0; i < (quality === "light" ? 16 : 34); i++) {
       const p = fraction(t * (0.8 + (i % 4) * 0.08) + i * 0.137),
         v = ((i * 11) % 19) / 9 - 1;
-      ctx.globalAlpha = 0.58 * Math.sin(Math.PI * p) * Math.min(1.4, intensity + 0.35);
+      ctx.globalAlpha =
+        0.58 * Math.sin(Math.PI * p) * Math.min(1.4, intensity + 0.35);
       ctx.beginPath();
       ctx.arc(
         x1 + v * p * 6,
@@ -323,9 +391,12 @@ export function startWorldPainter(
   root,
   config,
   scene,
-  { time = 0, paused = () => false, meteorSeed = 1 } = {},
+  { time = 0, paused = () => false, meteorSeed = 1, weather = "clear" } = {},
 ) {
   const meteors = createMeteorTimeline(meteorSeed);
+  const hasClouds = Boolean(
+    root.querySelector('canvas[data-world-paint="clouds"]'),
+  );
   const entries = [...root.querySelectorAll("canvas[data-world-paint]")].map(
     (c) => {
       const size = config.world.quality === "light" ? 384 : 768;
@@ -343,7 +414,9 @@ export function startWorldPainter(
     source;
   const paint = () => {
     if (!source || ended) return;
-    const intensity = clamp(config.scene_intensity ?? 0.65, 0.15, 1.5);
+    const intensity =
+      clamp(config.scene_intensity ?? 0.65, 0.15, 1.5) *
+      (weather === "wind" ? 1.5 : 1);
     for (const { canvas: c, ctx, kind } of entries) {
       if (!ctx) continue;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -359,13 +432,21 @@ export function startWorldPainter(
       if (kind === "clouds") drawClouds(ctx, source.clouds, t);
       if (kind === "water")
         drawLake(ctx, source.image, t, intensity, config.world.quality);
+      if (kind === "foliage")
+        source.foliage.draw(ctx, t, intensity, config.world.quality);
       if (kind === "seasonal-debris")
-        drawSeasonalDebris(ctx, t, intensity, scene.season, config.world.quality);
+        drawSeasonalDebris(
+          ctx,
+          t,
+          intensity,
+          scene.season,
+          config.world.quality,
+        );
       if (kind === "meteors") drawMeteor(ctx, meteors.at(t), t);
       if (kind === "stars") drawStars(ctx, t, config.world.quality);
       if (kind === "windows") drawWindows(ctx, source.windows, t);
       if (kind === "fireflies") drawFireflies(ctx, t, config.world.quality);
-      if ((kind === "stars" || kind === "meteors") && config.world.clouds) {
+      if ((kind === "stars" || kind === "meteors") && hasClouds) {
         ctx.globalCompositeOperation = "destination-out";
         drawClouds(ctx, source.cloudMask, t, true);
         ctx.globalCompositeOperation = "source-over";
@@ -401,7 +482,7 @@ export function startWorldPainter(
     }
     raf = requestAnimationFrame(step);
   };
-  const ready = entries.length
+  const paintReady = entries.length
     ? loadSource(scene)
         .then((s) => {
           source = s;
@@ -411,7 +492,7 @@ export function startWorldPainter(
         .catch(() => {})
     : Promise.resolve();
   return {
-    ready,
+    ready: Promise.all([paintReady, renderMoons(root)]),
     seek(seconds) {
       t = seconds;
       paint();
@@ -430,12 +511,10 @@ export function captureWorldAnimations(root) {
   const result = new Map();
   if (!root) return result;
   for (const object of root.querySelectorAll(".world-object")) {
-    const values = object
-      .getAnimations({ subtree: true })
-      .map((a) => ({
-        phase: a.effect.getComputedTiming().progress,
-        kind: a.effect.target.getAttribute("class"),
-      }));
+    const values = object.getAnimations({ subtree: true }).map((a) => ({
+      phase: a.effect.getComputedTiming().progress,
+      kind: a.effect.target.getAttribute("class"),
+    }));
     result.set(object.dataset.worldId, values);
   }
   return result;

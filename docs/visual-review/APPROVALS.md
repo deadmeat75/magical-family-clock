@@ -29,13 +29,13 @@
 ## Landscape motion
 
 - [x] [L01 · Cloud drift](items/L01.gif) — approved
-- [ ] [L02 · Foliage sway](items/L02-r2.gif) — revision 1 · awaiting approval
-- [ ] [L03 · Lake reflections](items/L03-r2.gif) — revision in progress
-- [ ] [L04 · Waterfall flow and fine spray](items/L04-r2.gif) — revision in progress
-- [ ] [L05 · Twinkling stars](items/L05-r2.gif) — revision in progress
-- [ ] [L06 · Shooting star](items/L06-r2.gif) — revision in progress
-- [ ] [L07 · Window lights](items/L07-r2.gif) — revision in progress
-- [ ] [L08 · Fireflies](items/L08-r2.gif) — revision in progress
+- [ ] [L02 · Foliage sway](items/L02-r3.gif) — revision 1 · awaiting approval
+- [ ] [L03 · Lake reflections](items/L03-r3.gif) — revision 3 · awaiting approval
+- [ ] [L04 · Waterfall flow and fine spray](items/L04-r3.gif) — revision 3 · awaiting approval
+- [ ] [L05 · Twinkling stars](items/L05-r3.gif) — revision 3 · awaiting approval
+- [ ] [L06 · Shooting star](items/L06-r3.gif) — revision 3 · awaiting approval
+- [ ] [L07 · Window lights](items/L07-r3.gif) — revision 3 · awaiting approval
+- [ ] [L08 · Fireflies](items/L08-r3.gif) — revision 3 · awaiting approval
 
 ## Faces
 
@@ -136,27 +136,27 @@
 
 ## Weather
 
-- [ ] [W01 · clear](items/W01-r2.png) — revision in progress
-- [ ] [W02 · clouds](items/W02-r2.gif) — revision in progress
-- [ ] [W03 · light-rain](items/W03-r2.gif) — revision in progress
-- [ ] [W04 · rain](items/W04-r2.gif) — revision in progress
-- [ ] [W05 · snow](items/W05-r2.gif) — revision in progress
-- [ ] [W06 · sleet](items/W06-r2.gif) — revision in progress
-- [ ] [W07 · wind](items/W07-r2.gif) — revision in progress
-- [ ] [W08 · fog](items/W08-r2.gif) — revision in progress
-- [ ] [W09 · ice](items/W09-r2.gif) — revision in progress
-- [ ] [W10 · lightning](items/W10-r2.gif) — revision in progress
+- [ ] [W01 · clear](items/W01-r3.png) — revision 3 · awaiting approval
+- [ ] [W02 · clouds](items/W02-r3.gif) — awaiting approval
+- [ ] [W03 · light-rain](items/W03-r3.gif) — revision 1 · awaiting approval
+- [ ] [W04 · rain](items/W04-r3.gif) — revision 1 · awaiting approval
+- [ ] [W05 · snow](items/W05-r3.gif) — revision 1 · awaiting approval
+- [ ] [W06 · sleet](items/W06-r3.gif) — revision 1 · awaiting approval
+- [ ] [W07 · wind](items/W07-r3.gif) — revision 1 · awaiting approval
+- [ ] [W08 · fog](items/W08-r3.gif) — revision 1 · awaiting approval
+- [ ] [W09 · ice](items/W09-r3.gif) — revision 1 · awaiting approval
+- [ ] [W10 · lightning](items/W10-r3.gif) — revision 1 · awaiting approval
 
 ## Moon phases
 
-- [ ] [N01 · new_moon](items/N01-r2.png) — revision in progress
-- [ ] [N02 · waxing_crescent](items/N02-r2.png) — revision in progress
-- [ ] [N03 · first_quarter](items/N03-r2.png) — revision in progress
-- [ ] [N04 · waxing_gibbous](items/N04-r2.png) — revision in progress
-- [ ] [N05 · full_moon](items/N05-r2.png) — revision in progress
-- [ ] [N06 · waning_gibbous](items/N06-r2.png) — revision in progress
-- [ ] [N07 · last_quarter](items/N07-r2.png) — revision in progress
-- [ ] [N08 · waning_crescent](items/N08-r2.png) — revision in progress
+- [ ] [N01 · new_moon](items/N01-r3.png) — revision 3 · awaiting approval
+- [ ] [N02 · waxing_crescent](items/N02-r3.png) — revision 3 · awaiting approval
+- [ ] [N03 · first_quarter](items/N03-r3.png) — revision 3 · awaiting approval
+- [ ] [N04 · waxing_gibbous](items/N04-r3.png) — revision 3 · awaiting approval
+- [ ] [N05 · full_moon](items/N05-r3.png) — revision 3 · awaiting approval
+- [ ] [N06 · waning_gibbous](items/N06-r3.png) — revision 3 · awaiting approval
+- [ ] [N07 · last_quarter](items/N07-r3.png) — revision 3 · awaiting approval
+- [ ] [N08 · waning_crescent](items/N08-r3.png) — revision 3 · awaiting approval
 
 ## Bezel
 

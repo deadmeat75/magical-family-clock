@@ -12,11 +12,11 @@
     "panels": 4
   },
   "frontendErrors": [],
-  "status": "unreleased engineering draft; visual approval required",
+  "status": "unreleased engineering draft; individual visual approvals remain required",
   "releaseVersion": "0.4.1",
   "unitAndPackagingChecks": 54,
-  "chromiumBrowserChecks": 53,
-  "compiledBundleSHA256": "2c871b50a5e31cc60c5912fd55e54d3b257c3ca144cbc382f712328373020f88",
+  "chromiumBrowserChecks": 67,
+  "compiledBundleSHA256": "17b753e563892d4adc833558e9d667e1359e5bb011731d199424a311f1672b12",
   "motionChecks": {
     "cloudFeatureAdvectionByImageAlignment": true,
     "fullOffFrameFlightRepeatBoundaries": true,
@@ -32,7 +32,16 @@
     "cloudOcclusionOfDistantStars": true,
     "meteorOriginsAndIntervalsVary": true,
     "independentCandleSources": true,
-    "greenForegroundFireflies": true
+    "greenForegroundFireflies": true,
+    "clearWeatherHasNoPaintedOrMovingClouds": true,
+    "actualWeatherPixelsVisibleAtDashboardSize": true,
+    "protectiveGlassFrostAbovePanels": true,
+    "moonUnlitSideRevealsSky": true,
+    "daylightMoonOption": true,
+    "continuousCraftedBezelMapping": true,
+    "liveBezelSensorUpdatesPreserved": true,
+    "isolatedSurfaceEffectComparisons": true,
+    "referenceStyleLetteringWithinFace": true
   },
   "originalReferencesUnchanged": true,
   "releaseHold": true,
@@ -45,11 +54,26 @@
   "illustrationProposals": "visual-review/characters-and-props.md",
   "illustrationsApproved": false,
   "reviewDecisionRecord": "visual-review/approvals.json",
-  "currentValidationScope": "Current revisions: local unit/packaging and Chromium suite. Native Home Assistant editor observations below are retained from the preceding review draft.",
+  "currentValidationScope": "Current source and compiled bundle: build, 54 unit/packaging checks, 67 Chromium checks, gallery link and approved-artwork hash validation. Retained native Home Assistant observations were obtained on an earlier draft and were not rerun for this pass.",
   "reviewRecordings": {
     "normalSpeed": true,
     "meteorClipsStartBeforeEncounter": true,
     "variedMeteorClipSkipsQuietGaps": true,
-    "reviewedArtworkStillRequiresApproval": true
+    "reviewedArtworkStillRequiresApproval": true,
+    "fullClockAndCloseup": true,
+    "renderedFrameVariationChecked": true
+  },
+  "compiledBundleBytes": 32842574,
+  "visualReview": {
+    "items": 141,
+    "approved": 94,
+    "revisionsAwaitingApproval": 38,
+    "pending": 5,
+    "omitted": 4,
+    "allApprovedHashesUnchanged": true,
+    "allGalleryLinksValid": true,
+    "latestIndex": "visual-review/LATEST-REVISIONS.md",
+    "lunarSurfaceApproved": true,
+    "newPhaseRenderingsAwaitApproval": true
   }
 }

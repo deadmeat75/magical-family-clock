@@ -102,6 +102,7 @@ test("castle motion and high resolution sources persist across season changes", 
       ...c._config,
       artwork: "castle",
       period_override: "day",
+      weather_effect: "clouds",
       season_override: "summer",
       show_location_labels: true,
     }),
@@ -432,4 +433,56 @@ test("failed image has a retry action that recovers without changing configurati
   // The retry must issue a fresh request. Some Chromium versions also fetch
   // again when the preloaded image is assigned to SVG, independently of retries.
   expect(attempts).toBeGreaterThanOrEqual(2);
+});
+
+test("text-color picker updates hand lettering and portrait initials in the live preview", async ({
+  page,
+}) => {
+  await boot(page, true);
+  const editor = page.locator("magical-family-clock-card-editor");
+  await editor.evaluate((e) => {
+    const c = structuredClone(e.config);
+    c.members[0].portrait = "";
+    c.members[0].show_portrait = true;
+    e.setConfig(c);
+  });
+  await editor.getByRole("button", { name: "People", exact: true }).click();
+  await editor
+    .getByText("Customize hand and portrait", { exact: true })
+    .first()
+    .click();
+  await editor
+    .getByLabel("Text color", { exact: true })
+    .first()
+    .fill("#42ccaa");
+  const preview = editor.locator("magical-family-clock-card");
+  await expect(preview.locator(".portrait-initials").first()).toHaveAttribute(
+    "fill",
+    "#42ccaa",
+  );
+  expect(await editor.evaluate((e) => e.config.members[0].text_color)).toBe(
+    "#42ccaa",
+  );
+  await editor.getByRole("button", { name: "General", exact: true }).click();
+  await editor
+    .getByLabel("Clock theme", { exact: true })
+    .selectOption("brass-clockwork");
+  await editor.getByRole("button", { name: "People", exact: true }).click();
+  const customization = editor
+    .getByText("Customize hand and portrait", { exact: true })
+    .first();
+  if ((await customization.locator("..").getAttribute("open")) === null)
+    await customization.click();
+  await editor
+    .getByLabel("Text color", { exact: true })
+    .first()
+    .fill("#fff5dc");
+  await expect(preview.locator(".engraved").first()).toHaveAttribute(
+    "fill",
+    "#fff5dc",
+  );
+  await expect(preview.locator(".portrait-initials").first()).toHaveAttribute(
+    "fill",
+    "#fff5dc",
+  );
 });

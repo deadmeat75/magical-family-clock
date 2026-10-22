@@ -12,6 +12,7 @@ async function boot(page, objects = []) {
         artwork: "castle",
         face_image: "",
         period_override: "day",
+        weather_effect: "clouds",
         background_transition: 0,
         world: { objects, moon: { source: "entity", entity: "sensor.moon" } },
       }),

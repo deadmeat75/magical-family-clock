@@ -9,7 +9,7 @@ For the **unreleased Magical Family Clock 0.4.1 draft**. HACS remains on **0.4.0
 ## Create your first living world
 
 1. Open your clock's visual editor. Home Assistant shows the single clock preview on the right; the left column contains the settings. Keep a private full backup under **Presets** before replacing a layout or population you have customized.
-2. For a new clock, choose **Appearance → Use layered castle artwork**. This applies the six reference destinations and raised pivot; it replaces the location layout while keeping people and colors. Configure tracking in **People** and **Locations** as usual.
+2. For a new clock, choose **Appearance → Use layered castle artwork**. This selects the layered castle while preserving your configured people and destinations. Use the layout controls separately if you want a reference arrangement. Configure tracking in **People** and **Locations** as usual.
 3. For an existing customized clock, open **Living world**. If offered, choose **Use the animated castle for this world**. This selects the layered castle and clears an opaque complete-face image while keeping your destinations and tracking rules.
 4. Open **Locations → Location panel design** and choose **Fit all names and graphics inside panels**. This removes old free-position label coordinates/rotation and restores automatic panel fitting. It does not change matching states or destination angles.
 5. Open **Living world** and choose **Add a quiet lakeside population** for a swallow and boat, or **Add an enchanted-world population** for six visitors/props. These buttons replace the current inhabitant list; they do not append to it.
@@ -169,3 +169,45 @@ A full private JSON backup includes custom artwork and sensor IDs. The default p
 | Changes disappear after reload | Finish with Home Assistant's Save action; saving an account-library copy alone does not save the dashboard. |
 
 The world combines high-resolution illustrated scenery, Canvas 2D landscape animation and layered SVG inhabitants. The recording uses normal-speed playback without seeking encounters. It is not a free-roaming 3D game or a physics simulation. The 1254-pixel source retains a raster-resolution limit; frames, names, icons, hands and inhabitants are vectors. See [validation and practical limits](VALIDATION.md) and the [animation recording](living-world-preview.mp4). Screenshots and video use fictional people and simulated sensors.
+
+## Review draft: weather and glass
+
+The [latest visual review index](visual-review/LATEST-REVISIONS.md) is the place to inspect the current examples. Earlier revisions remain archived. These changes are not a new HACS release yet.
+
+1. In **Appearance**, select a **Weather effect** to inspect it. Start with intensity **1**. Return to **Auto** to follow your existing weather entity.
+2. Enable **Weather animation** to see falling rain, snow, sleet, drifting fog and wind-blown leaves. General reduced motion and your device's accessibility preference can pause decorative movement.
+3. **Clear** gives a cloud-free sky. It removes both the photograph's painted clouds and the moving cloud layer. **Moving clouds** still controls cloud animation for other weather conditions.
+4. **Ice** forms fine frost around the outer protective glass. It grows inward slightly and leaves hands, portraits and destination names readable. Give the growth preview time to develop.
+5. **Lightning** combines distant strikes behind clouds with nearer strikes, different positions, branching channels and brief surrounding illumination. Weather can keep moving while castle scenery is paused.
+6. **Wind** moves loose leaves across the opening and increases canopy gusts. **Fog** drifts in layers across the landscape; it does not darken the entire clock.
+
+Rain and sleet have different densities. Snow has small distant flakes and larger nearby flakes. Each animated review has a still image too; open the GIF to judge movement. A shooting-star review may skip long quiet gaps so several passages can be inspected; the visible passages run at normal speed.
+
+## Review draft: realistic moon
+
+The approved lunar surface stays the same across every phase. Lighting determines which side is visible. The unlit side is transparent so the actual sky color shows through; a dark disc is not painted over blue sky. Stars remain hidden behind the moon's complete outline.
+
+**Living world → Moon phase → Show moon in daylight** also allows a daytime moon. This is a display choice: a phase sensor alone does not establish whether the moon is above your local horizon. The existing sensor formats, manual phases, calculation fallback and unavailable-sensor choices work as before. Return to your selected live source after previewing manual phases.
+
+## Review draft: crafted information bezels
+
+In **Bezel**, select wood, aged brass or silver for the new crafted rim. Wood has carved ornament and continuous grain around the ring. The metal rims have dimensional chased ornament and quiet inset bands for the information. **Width** changes the ring thickness while retaining the artwork; it does not repeat square texture tiles.
+
+Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Saving the dashboard stores the bezel choices with that clock.
+
+## Review draft: understand the six surface effects
+
+Open **Labels & effects**. Each surface—hands, portraits, face, frame and bezel—has independent strengths from **0** (off) to **1** (strongest). Change one effect at a time and inspect your usual dashboard size.
+
+| Effect | What it does | Suggested first value |
+| --- | --- | --- |
+| Shadow | Makes a raised part cast a soft shadow down and right, separating it from the surface beneath. | 0.3 |
+| Bevel | Adds a lit upper-left edge and a shaded lower-right edge, making the existing outline look cut or raised. | 0.35 |
+| Reflection | Reflects cooler sky light and warmer surroundings in curved polished material. Wood and brushed finishes reflect less. | 0.25 |
+| Glare | Adds a concentrated light highlight on polished metal or portrait glass. | 0.15 |
+| Patina | Accumulates darker oxidation along metal edges and crevices. Wood uses darker aging rather than green oxide. | 0.2 |
+| Wear | Adds fine handling scratches and brighter worn edges. | 0.1 |
+
+The revised E01–E06 sheets show **effect off** beside **effect at 85%**, with each comparison isolated so the settings cannot interfere. Use lower strengths for a restrained finished clock. Surface wear and patina do not cover the castle sky with a tiled material layer. Changing these controls does not change tracking, names, sensor rules or saved people.
+
+Approved face, hand, material, symbol and seasonal artwork remains preserved in the decision record. Some approved art still needs final runtime registration, pivots, animation layers or material mapping. The gallery identifies artwork studies separately from implemented runtime examples; an artwork approval alone does not publish a release.

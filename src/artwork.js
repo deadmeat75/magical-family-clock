@@ -30,26 +30,15 @@ export function imageGrade(scene) {
   const grades = {
     spring: "saturate(1.05)",
     summer: "saturate(1.15)",
-    autumn: "sepia(.38) saturate(1.2)",
-    winter: "saturate(.45) brightness(1.1)",
+    autumn: "sepia(.12) saturate(1.12)",
+    winter: "saturate(1.02)",
   };
-  const grade =
-    (grades[scene.season] || "") +
-    (night ? " brightness(.43) saturate(.8) hue-rotate(8deg)" : "");
+  const grade = (grades[scene.season] || "") + (night ? " saturate(.92)" : "");
   return grade;
 }
 export function atlasMarkup(scene) {
-  const night = scene.period === "night",
-    grade = imageGrade(scene);
-  const tint =
-    scene.period === "dawn"
-      ? "#ecac9b"
-      : scene.period === "dusk"
-        ? "#e97e52"
-        : night
-          ? "#0e224b"
-          : null;
-  return `<g class="hd-scene" data-source-resolution="1254" data-scene-key="${scene.key}"><image href="${sceneSource(scene)}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice" style="filter:${grade}"/>${tint ? `<rect x="108" y="90" width="384" height="384" fill="${tint}" opacity=".16"/>` : ""}</g>`;
+  const grade = imageGrade(scene);
+  return `<g class="hd-scene" data-source-resolution="1254" data-scene-key="${scene.key}"><image href="${sceneSource(scene)}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice" style="filter:${grade}"/></g>`;
 }
 export function castleFrame(openingRadius = 180) {
   let out = `<defs><mask id="castle-frame-mask"><rect width="600" height="600" fill="white"/><circle cx="300" cy="282" r="${openingRadius}" fill="black"/></mask></defs><g class="scalable-castle-frame" mask="url(#castle-frame-mask)"><circle cx="300" cy="300" r="285" fill="#102b34"/>`;

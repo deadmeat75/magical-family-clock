@@ -42,7 +42,7 @@ const HELP = {
   color:
     "Choose a custom color. For hands and bezels this applies to the Color material; metallic and wood materials have their own natural shading.",
   text_color:
-    "Color of the hand’s lettering. Keep sufficient contrast with its material; aged brass usually suits a dark engraving.",
+    "Color of the hand’s lettering and portrait fallback initials. Keep sufficient contrast with its material; aged brass usually suits a dark engraving.",
   length:
     "Scale this hand’s length, from 0.5 to 1.1 of the standard length. Use 1 initially; shorten hands when portraits collide with labels.",
   width:
@@ -176,16 +176,16 @@ const HELP = {
   motion_speed:
     "Decorative animation speed multiplier from 0.25 to 3. A value of 1 is normal. Tracking transition duration remains separate.",
   shadow:
-    "Shadow strength from 0 to 1. Adds depth beneath this component; 0 removes it.",
+    "Raise the surface visually with a soft cast shadow falling down and right. 0 removes it; 1 gives the strongest depth.",
   bevel:
-    "Raised edge/highlight strength from 0 to 1. A stronger edge makes materials appear thicker.",
+    "Add a narrow lit upper-left edge and shaded lower-right edge. This makes the existing shape look cut or raised without changing its silhouette.",
   reflection:
-    "Reflective highlight strength from 0 to 1. Hands have a gentle moving glint unless motion is reduced.",
+    "Reflect cool sky light and warmer surroundings in polished surfaces. Rough wood and brushed finishes reflect less strongly.",
   glare:
-    "Glass-like glare over this component, from 0 (none) to 1 (strong). Use a small value to keep labels readable.",
+    "Add a concentrated light highlight on polished metal or portrait glass. Use a low value for a restrained glint.",
   patina:
-    "Aged oxidation strength from 0 to 1. Combines with surface wear and the chosen material.",
-  wear: "Scratches and surface wear strength from 0 to 1. Set to 0 for a cleaner finish.",
+    "Accumulate darker oxidation along metal edges and crevices. Silver tarnishes; wood uses darker aging rather than green metal oxide.",
+  wear: "Fine handling scratches and brighter worn edges, from 0 (clean) to 1 (most worn). This changes the surface only; names and tracking stay intact.",
   kind: "Choose a sensor reading, local time, date, or fixed text. Sensor readings can use a state or attribute.",
   seconds:
     "Include seconds in a time readout. The clock uses Home Assistant’s timezone when available.",

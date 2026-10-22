@@ -116,6 +116,7 @@ export function normalizeWorld(c) {
     x: 74,
     y: 18,
     size: 14,
+    show_in_daylight: false,
     ...incoming.moon,
   };
   const m = w.moon;
