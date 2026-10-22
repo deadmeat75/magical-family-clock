@@ -44,70 +44,70 @@ Example: implemented runtime rendering.
 
 **Revision in progress.**
 
-[Previous example — archived](items/L03-r1.gif)
+[Previous example — archived](items/L03-r2.gif)
 
 Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L03-r1.png)
+[Still image](items/L03-r2.png)
 
 ## L04 · Waterfall flow and fine spray
 
 **Revision in progress.**
 
-[Previous example — archived](items/L04-r1.gif)
+[Previous example — archived](items/L04-r2.gif)
 
 Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L04-r1.png)
+[Still image](items/L04-r2.png)
 
 ## L05 · Twinkling stars
 
 **Revision in progress.**
 
-[Previous example — archived](items/L05-r1.gif)
+[Previous example — archived](items/L05-r2.gif)
 
 Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L05-r1.png)
+[Still image](items/L05-r2.png)
 
 ## L06 · Shooting star
 
 **Revision in progress.**
 
-[Previous example — archived](items/L06-r1.gif)
+[Previous example — archived](items/L06-r2.gif)
 
 Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L06-r1.png)
+[Still image](items/L06-r2.png)
 
 ## L07 · Window lights
 
 **Revision in progress.**
 
-[Previous example — archived](items/L07-r1.gif)
+[Previous example — archived](items/L07-r2.gif)
 
 Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L07-r1.png)
+[Still image](items/L07-r2.png)
 
 ## L08 · Fireflies
 
 **Revision in progress.**
 
-[Previous example — archived](items/L08-r1.gif)
+[Previous example — archived](items/L08-r2.gif)
 
 Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.
 
-Example: normal-speed motion study.
+Example: implemented runtime animation; normal-speed frames.
 
-[Still image](items/L08-r1.png)
+[Still image](items/L08-r2.png)

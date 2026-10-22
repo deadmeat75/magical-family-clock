@@ -8,26 +8,26 @@
 
 ## B01 · aged-brass information bezel
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![B01 aged-brass information bezel](items/B01.png)](items/B01.png)
+[![B01 aged-brass information bezel](items/B01-r2.png)](items/B01-r2.png)
 
-Example: current draft rendering.
+Example: implemented radial mapping of crafted bezel artwork; editable data band.
 
 ## B02 · silver information bezel
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![B02 silver information bezel](items/B02.png)](items/B02.png)
+[![B02 silver information bezel](items/B02-r2.png)](items/B02-r2.png)
 
-Example: current draft rendering.
+Example: implemented radial mapping of crafted bezel artwork; editable data band.
 
 ## B03 · wood information bezel
 
-**Revision 1 · awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![B03 wood information bezel](items/B03-r1.png)](items/B03-r1.png)
+[![B03 wood information bezel](items/B03-r2.png)](items/B03-r2.png)
 
 Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.
 
-Example: implemented runtime natural wood bezel.
+Example: implemented radial mapping of crafted bezel artwork; editable data band.
