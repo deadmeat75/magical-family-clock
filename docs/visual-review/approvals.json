@@ -238,9 +238,9 @@
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Keep tall flowing reference-style lettering inside the scalloped face. Fit every glyph, not only the path centerline. Preserve editable text and UI style choices.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Align each location name along the curved outer edge of its own painted scallop, inset within the gold. Preserve editable text and UI font/color choices.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "F02",

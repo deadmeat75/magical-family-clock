@@ -8,7 +8,7 @@ These links point to new revision filenames. Earlier samples are retained for co
 
 | Review group | Current examples |
 | --- | --- |
-| [Faces](faces.md) | [F01](items/F01-r3.png) · [F03](items/F03-r6.png) |
+| [Faces](faces.md) | [F01](items/F01-r4.png) · [F03](items/F03-r6.png) |
 | [Materials](materials.md) |  |
 | [Lettering and portraits](lettering-and-portraits.md) | [K09](items/K09-r1.png) · [K10](items/K10-r1.png) · [K11](items/K11-r1.png) · [K12](items/K12-r1.png) |
 | [Location panels](location-panels.md) | [P02](items/P02-r1.png) · [P03](items/P03-r1.png) · [P04](items/P04-r1.png) |

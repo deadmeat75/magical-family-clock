@@ -3,10 +3,10 @@
     "id": "F01",
     "name": "Scalloped whereabouts dial",
     "category": "Faces",
-    "image": "items/F01-r3.png",
+    "image": "items/F01-r4.png",
     "status": "revised; awaiting approval",
-    "kind": "face and editable-lettering proposal; production mapping follows approval",
-    "revision": 3,
+    "kind": "individually aligned scallop lettering proposal; production mapping follows approval",
+    "revision": 4,
     "source": "art/scalloped-face-f01-r1.png",
     "sourceRect": [
       0,
@@ -18,7 +18,7 @@
       1254,
       1254
     ],
-    "note": "Scalloped aged parchment with separately editable flowing location lettering. [Editable SVG lettering study](concepts/F01-editable-lettering.svg)."
+    "note": "Each editable location name follows its own painted scallop. [Editable SVG lettering study, revision 4](concepts/F01-editable-lettering-r4.svg)."
   },
   {
     "id": "F02",

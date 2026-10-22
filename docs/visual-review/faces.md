@@ -8,13 +8,13 @@ F02, F04 and F05 are approved. F01 lettering and F03 are separate art-direction 
 
 ## F01 · Scalloped whereabouts dial
 
-**Revision 3 · awaiting approval.**
+**Revision 4 · awaiting approval.**
 
-[![F01 Scalloped whereabouts dial](items/F01-r3.png)](items/F01-r3.png)
+[![F01 Scalloped whereabouts dial](items/F01-r4.png)](items/F01-r4.png)
 
-Keep tall flowing reference-style lettering inside the scalloped face. Fit every glyph, not only the path centerline. Preserve editable text and UI style choices.
+Align each location name along the curved outer edge of its own painted scallop, inset within the gold. Preserve editable text and UI font/color choices.
 
-Example: face and editable-lettering proposal; production mapping follows approval.
+Example: individually aligned scallop lettering proposal; production mapping follows approval.
 
 ## F02 · Brass finish range
 

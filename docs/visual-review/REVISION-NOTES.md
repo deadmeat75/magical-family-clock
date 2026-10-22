@@ -72,6 +72,6 @@ B01–B03 use crafted rim artwork mapped continuously around the ring at editabl
 
 L02–L08 have new normal-speed full-clock and close-up clips. The L06 comparison shows four real seeded passages while skipping quiet gaps, with each visible passage retaining normal speed. L07's independent light variation is roughly five times slower.
 
-F01 revision 3 keeps flowing lettering within the gold face and has a browser check for glyph bounds. F03 revision 6 uses asymmetric layered celestial wheels. These face studies remain artwork proposals; final rotating layers and dynamic-name fitting still require implementation.
+F01 revision 4 aligns each location name to the curved outer edge of its own painted scallop, with an inward margin. The browser check verifies placement within each lobe and samples the underlying gold artwork. Names remain editable SVG text. F03 revision 6 uses asymmetric layered celestial wheels. These face studies remain artwork proposals; final rotating layers and dynamic-name fitting still require implementation.
 
 Remaining visual approvals: F01, F03; L02–L08; P02–P04; K09–K12; W01–W10; N01–N08; B01–B03; E01–E06. See the decision record for conditions and explicit approvals.

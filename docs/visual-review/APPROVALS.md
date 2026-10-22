@@ -39,7 +39,7 @@
 
 ## Faces
 
-- [ ] [F01 · Scalloped whereabouts dial](items/F01-r3.png) — revision 3 · awaiting approval
+- [ ] [F01 · Scalloped whereabouts dial](items/F01-r4.png) — revision 4 · awaiting approval
 - [x] [F02 · Brass finish range](items/F02-r1.png) — approved
 - [ ] [F03 · Astronomical scene wheel](items/F03-r6.png) — revision 6 · awaiting approval
 - [x] [F04 · whimsical-workshop](items/F04.png) — approved
