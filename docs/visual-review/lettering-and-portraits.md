@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-K01–K08 are approved with UI text-color control required. The picker controls hand lettering and portrait fallback initials. K09–K12 are new optional attachment concepts and require separate approval.
+K01–K08 are approved with UI text-color control. K09–K12 revision 2 now use runtime attachment rendering, individual artwork clips and adjustable font, size, ink color, alignment, position and rotation. [Current review round](REVIEW-ROUND-2.md).
 
 ## K01 · stem / parallel
 
@@ -88,40 +88,40 @@ Example: current draft rendering.
 
 ## K09 · Affixed parchment slip
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![K09 Affixed parchment slip](items/K09-r1.png)](items/K09-r1.png)
+[![K09 Affixed parchment slip](items/K09-r2.png)](items/K09-r2.png)
 
-New proposal requested by user. Separate from approved K01–K08. All text must remain editable and color-selectable; optional person photo.
+Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment. Handwritten ink on parchment.
 
-Example: new optional attachment artwork proposal; not approved with K01–K08.
+Example: implemented runtime rendering.
 
 ## K10 · Hanging name tag
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![K10 Hanging name tag](items/K10-r1.png)](items/K10-r1.png)
+[![K10 Hanging name tag](items/K10-r2.png)](items/K10-r2.png)
 
-New proposal requested by user. Separate from approved K01–K08. All text must remain editable and color-selectable; optional person photo.
+Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
 
-Example: new optional attachment artwork proposal; not approved with K01–K08.
+Example: implemented runtime rendering.
 
 ## K11 · Oval name brooch
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![K11 Oval name brooch](items/K11-r1.png)](items/K11-r1.png)
+[![K11 Oval name brooch](items/K11-r2.png)](items/K11-r2.png)
 
-New proposal requested by user. Separate from approved K01–K08. All text must remain editable and color-selectable; optional person photo.
+Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
 
-Example: new optional attachment artwork proposal; not approved with K01–K08.
+Example: implemented runtime rendering.
 
 ## K12 · Framed portrait attachment
 
-**Awaiting approval.**
+**Revision 2 · awaiting approval.**
 
-[![K12 Framed portrait attachment](items/K12-r1.png)](items/K12-r1.png)
+[![K12 Framed portrait attachment](items/K12-r2.png)](items/K12-r2.png)
 
-New proposal requested by user. Separate from approved K01–K08. All text must remain editable and color-selectable; optional person photo.
+Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.
 
-Example: new optional attachment artwork proposal; not approved with K01–K08.
+Example: implemented runtime rendering.

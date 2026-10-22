@@ -9,27 +9,48 @@
       "element": "aged-brass information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "approved_components": [
+        {
+          "component": "frame appearance",
+          "example": "items/B01-r2.png",
+          "sha256": "4b5f28510e3bf12cdcfc9446bf125be0f56d72af0886994246360eaf4d630df3"
+        }
+      ]
     },
     {
       "id": "B02",
       "element": "silver information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "approved_components": [
+        {
+          "component": "frame appearance",
+          "example": "items/B02-r2.png",
+          "sha256": "249c3bb741d774b89d15896fae4897703ce4c7234c0e764379e01cf4726026a1"
+        }
+      ]
     },
     {
       "id": "B03",
       "element": "wood information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.",
-      "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "notes": "Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval",
+      "approved_components": [
+        {
+          "component": "frame appearance",
+          "example": "items/B03-r2.png",
+          "sha256": "f3ff0d74eb696f68ccb872f93f0657be5bb494c3758825bf3aa69a8892df422a"
+        }
+      ]
     },
     {
       "id": "C01",
@@ -183,64 +204,70 @@
       "id": "E01",
       "element": "shadow at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E01-r2.png",
+      "approved_example_sha256": "9493172d08b76c84fe49a4532844013c3a0d9e67ba187251da48d9fa2a543c0d"
     },
     {
       "id": "E02",
       "element": "bevel at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E02-r2.png",
+      "approved_example_sha256": "23320610694649ba777b507f8118e92ff374d4d85cd271d2b1d52e41e133949e"
     },
     {
       "id": "E03",
       "element": "reflection at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E03-r2.png",
+      "approved_example_sha256": "754e552f61b710b8545d7b951ba12019d1b5fdc517fcf0b37e30ed68a18c2635"
     },
     {
       "id": "E04",
       "element": "glare at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E04-r2.png",
+      "approved_example_sha256": "2c20c01b6563b92768a438a6b82458ec1d6a51c46acbfa29b65be3fb041473a9"
     },
     {
       "id": "E05",
       "element": "patina at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E05-r2.png",
+      "approved_example_sha256": "aac0a6a3eef52064a8357a316422eb253bbfedd21fc6833c2c715c4fabfe7bcf"
     },
     {
       "id": "E06",
       "element": "wear at full strength",
       "category": "Surface effects",
-      "decision": "revision_requested",
-      "notes": "Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 2,
-      "revision_status": "revision 2 prepared; awaiting individual approval"
+      "approved_example": "items/E06-r2.png",
+      "approved_example_sha256": "da629550d0126169269f8e097850ce6b62675f57169798fc3a5656404ccfd1c4"
     },
     {
       "id": "F01",
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Align each location name along the curved outer edge of its own painted scallop, inset within the gold. Preserve editable text and UI font/color choices.",
-      "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "notes": "Lettering alignment improved but remains unapproved. Fit the flowing letters to each scalloped edge.",
+      "revision": 5,
+      "revision_status": "revision 5 prepared; awaiting individual approval"
     },
     {
       "id": "F02",
@@ -258,9 +285,9 @@
       "element": "Astronomical scene wheel",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Asymmetric overlapping celestial wheels with varied sizes and offset pivots. Preserve restrained old wizarding grandfather-clock style and blank editable destination ring.",
-      "revision": 6,
-      "revision_status": "revision 6 prepared; awaiting individual approval"
+      "notes": "Functional astronomical dials: actual lunar phase from configured sensor or explicit calculation fallback, local time, calendar and annual cycles; no arbitrary decorative wheel rotation. Follow supplied antique astronomical clocks.",
+      "revision": 7,
+      "revision_status": "revision 7 prepared; awaiting individual approval"
     },
     {
       "id": "F04",
@@ -664,64 +691,69 @@
       "id": "L02",
       "element": "Foliage sway",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/L02-r3.gif",
+      "approved_example_sha256": "f6c61677ac9b0e75eeb81f0b7e5c628c9b6f0dc3a96f2c245aab885e5c500ec4"
     },
     {
       "id": "L03",
       "element": "Lake reflections",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/L03-r3.gif",
+      "approved_example_sha256": "7d2bad6ce700ce7f3c9b97adcffbde9c0c2d7c47ed7eac69f79987184c771936"
     },
     {
       "id": "L04",
       "element": "Waterfall flow and fine spray",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/L04-r3.gif",
+      "approved_example_sha256": "41408ef1ace5f223eef4f5a71781a9b724c50e380c0ac7f94a01fc2a95a03f15"
     },
     {
       "id": "L05",
       "element": "Twinkling stars",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/L05-r3.gif",
+      "approved_example_sha256": "3fd711bf734d00563b6dbf9840bffb2467fbcb8c26ff59f1efec3ef611ef7091"
     },
     {
       "id": "L06",
       "element": "Shooting star",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/L06-r3.gif",
+      "approved_example_sha256": "de46cfd72cfb61accd96823aeffcad39d74d69925eddf871472d70c8651d897f"
     },
     {
       "id": "L07",
       "element": "Window lights",
       "category": "Landscape motion",
       "decision": "revision_requested",
-      "notes": "Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Make independent candle/torch fluctuations visibly detectable without fast synchronized pulsing. Correct shared skyline glow and cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "L08",
       "element": "Fireflies",
       "category": "Landscape motion",
       "decision": "revision_requested",
-      "notes": "Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Make green foreground firefly movement visibly detectable. Correct shared skyline glow and cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "M01",
@@ -871,72 +903,72 @@
       "element": "new_moon",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N02",
       "element": "waxing_crescent",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N03",
       "element": "first_quarter",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N04",
       "element": "waxing_gibbous",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N05",
       "element": "full_moon",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N06",
       "element": "waning_gibbous",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N07",
       "element": "last_quarter",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "N08",
       "element": "waning_crescent",
       "category": "Moon phases",
       "decision": "revision_requested",
-      "notes": "Use the approved lunar surface with physically directed phase lighting. The unlit side is transparent so the actual sky color shows through; stars remain occluded behind the full lunar outline. Existing sensor mappings are preserved.",
-      "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "notes": "Slightly brighter illuminated lunar surface; transparent unlit hemisphere. Remove castle glow and misaligned mountain/castle cutout.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "P01",
@@ -952,27 +984,27 @@
       "element": "hammered-metal",
       "category": "Location panels",
       "decision": "revision_requested",
-      "notes": "Replace regular spotted pattern with irregular realistic hammered metal: varied overlapping shallow dents and physical reflected highlights; no repeating dots.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "P03",
       "element": "parchment",
       "category": "Location panels",
       "decision": "revision_requested",
-      "notes": "Replace line pattern with realistic aged parchment, fibers, mottling and subtle wear.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "P04",
       "element": "wood",
       "category": "Location panels",
       "decision": "revision_requested",
-      "notes": "Replace drawn lines with realistic natural wood grain and surface detail.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.",
+      "revision": 3,
+      "revision_status": "revision 3 prepared; awaiting individual approval"
     },
     {
       "id": "P05",
@@ -1271,91 +1303,99 @@
       "id": "W01",
       "element": "clear",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 3,
-      "revision_status": "revision 3 prepared; awaiting individual approval"
+      "approved_example": "items/W01-r3.png",
+      "approved_example_sha256": "5d5e156ef4cadfd2bae65c0a7d21dc8e40dc02494b8fbcee8455eb2b63fab894"
     },
     {
       "id": "W02",
       "element": "clouds",
       "category": "Weather",
-      "decision": "pending",
-      "notes": "",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 3,
-      "revision_status": "new revision in progress; awaiting individual approval"
+      "approved_example": "items/W02-r3.gif",
+      "approved_example_sha256": "d8c3b006a504eacf92eb476e77659397f13fbfea1652e92b2af86fd1ae30f9b6"
     },
     {
       "id": "W03",
       "element": "light-rain",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Visible gentle animated rain; brighter detailed scene.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W03-r3.gif",
+      "approved_example_sha256": "913d54c936803c20daee1634a3013a0e82a45c81bb986777a176722a416a55cd"
     },
     {
       "id": "W04",
       "element": "rain",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Visible denser animated rain; brighter detailed scene.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W04-r3.gif",
+      "approved_example_sha256": "a0c2bfa7a1874e0516511a9792632f33dae0a975e03aa87d4ae45a8ac5df2a08"
     },
     {
       "id": "W05",
       "element": "snow",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Visible falling snow at normal size; brighter detailed scene.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W05-r3.gif",
+      "approved_example_sha256": "4061c4a05b1f370dffe1d82c36cd07cfa4bc2db00a984a57ccccdf5e401a2513"
     },
     {
       "id": "W06",
       "element": "sleet",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Visible mixed rain and snow/sleet; brighter detailed scene.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W06-r3.gif",
+      "approved_example_sha256": "cd07339c09ff79060d976351f4bae64ff8772e92ab1b9d55dbe20347020f9a41"
     },
     {
       "id": "W07",
       "element": "wind",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Visible wind: moving loose leaves and gust-bent foliage. Fix leaf trajectories so rotation occurs around the leaf rather than around the scene origin.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Wind speed should follow sensor data, with varied gusting, curling trajectories and tumbling; avoid straight horizontal leaf streams.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "W08",
       "element": "fog",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Fog must visibly drift in natural depth layers while clock data stays readable.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W08-r3.gif",
+      "approved_example_sha256": "80554f354c17ce340c312293ea28a0d5d1aa505d11705324dceac8c562c44169"
     },
     {
       "id": "W09",
       "element": "ice",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Completely replace lines with gradually growing fern-like frost on outer watchglass. Restrained translucent highlights; keep all data readable.",
-      "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "notes": "Ice belongs only over the central castle opening. Prefer natural growing crystals; a correctly placed static frost treatment is acceptable.",
+      "revision": 4,
+      "revision_status": "revision 4 prepared; awaiting individual approval"
     },
     {
       "id": "W10",
       "element": "lightning",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "More irregular branching strikes in different sky positions and both near and distant layers. Lengthen flashes so they can be seen. Keep momentary scene illumination and clock readability.",
+      "decision": "approved",
+      "notes": "Explicitly approved in user review.",
       "revision": 1,
-      "revision_status": "revision 1 prepared; awaiting individual approval"
+      "approved_example": "items/W10-r3.gif",
+      "approved_example_sha256": "f4f311fc646e0ac44114e74da84d24532d565421b9595b3c30fa530a96e74e85"
     },
     {
       "id": "X01",
@@ -1379,29 +1419,37 @@
       "id": "K09",
       "element": "Affixed parchment slip",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+      "decision": "revision_requested",
+      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment. Handwritten ink on parchment.",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "K10",
       "element": "Hanging name tag",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+      "decision": "revision_requested",
+      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "K11",
       "element": "Oval name brooch",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+      "decision": "revision_requested",
+      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     },
     {
       "id": "K12",
       "element": "Framed portrait attachment",
       "category": "Lettering and portraits",
-      "decision": "pending",
-      "notes": "New proposal requested by user. Separate from approved K01\u2013K08. All text must remain editable and color-selectable; optional person photo."
+      "decision": "revision_requested",
+      "notes": "Remove neighbouring-tag leakage. Adjustable text font, size, color, position, rotation and alignment.",
+      "revision": 2,
+      "revision_status": "revision 2 prepared; awaiting individual approval"
     }
   ],
   "rendering_requirements": [

@@ -1,4 +1,26 @@
 const HELP = {
+  name_attachment:
+    "Choose engraving or an optional physical tag attached to this hand. A framed portrait uses this person’s photo. Blank hand lettering stays blank.",
+  attachment_scale:
+    "Size multiplier for the complete tag. Start at 1; use 0.5 for half size. The lettering scales with it.",
+  attachment_x:
+    "Move the complete tag left (negative) or right (positive), measured in the clock’s 600-unit drawing coordinates.",
+  attachment_y:
+    "Move the complete tag up (negative) or down (positive) relative to its default position halfway along the hand.",
+  attachment_rotation:
+    "Rotate the whole tag relative to its hand, including the artwork and lettering. Degrees from -180 to 180.",
+  attachment_text_x:
+    "Move only the lettering left or right on the tag. These offsets use the larger source-art coordinates; start with changes of 10–20.",
+  attachment_text_y:
+    "Move only the lettering up or down on the tag. Start at 0 and make changes of 10–20 source-art units.",
+  attachment_text_rotation:
+    "Rotate lettering relative to the tag. Zero follows the tag’s natural baseline; it does not rotate the artwork.",
+  attachment_text_size:
+    "Lettering size in source-art units, before the tag is scaled. Start at 68. Adjust to fit your name; the text is not forced into the hand blade.",
+  attachment_align:
+    "Left, center or right alignment inside the tag’s writing area. Position offsets apply after this alignment.",
+  attachment_font:
+    "Enter a font family. Caveat is bundled for handwritten ink; Georgia gives formal lettering. Blank selects the style’s default. Lettering color comes from the existing text color picker.",
   name_position:
     "Place the name along the stem or at the spoon/pointer tip. Spoon-tip lettering uses the bowl; pointer-tip lettering fits the solid blade near its point. It never changes a portrait image’s rotation.",
   name_orientation:

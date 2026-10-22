@@ -36,6 +36,9 @@ async function boot(page, world, extra = {}) {
     },
     { world, extra },
   );
+  await expect
+    .poll(() => card.evaluate((c) => Boolean(c._worldPainter)))
+    .toBe(true);
   await card.evaluate(async (c) => {
     await c._worldPainter.ready;
     c._config.scene_motion = false;
@@ -192,7 +195,12 @@ test("candle sources flicker independently and green fireflies stay near foregro
           Math.floor((p % canvas.width) / 16) +
           ":" +
           Math.floor(p / canvas.width / 16);
-        cells.set(key, (cells.get(key) || 0) + b[p * 4 + 3] - a[p * 4 + 3]);
+        cells.set(
+          key,
+          (cells.get(key) || 0) +
+            ((b[p * 4] + b[p * 4 + 1] + b[p * 4 + 2]) * b[p * 4 + 3]) / 255 -
+            ((a[p * 4] + a[p * 4 + 1] + a[p * 4 + 2]) * a[p * 4 + 3]) / 255,
+        );
       }
     const changes = [...cells.values()];
     c._worldPainter.seek(2);

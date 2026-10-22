@@ -8,60 +8,60 @@ Each new runtime comparison shows the same material with the effect off and at 8
 
 ## E01 · shadow at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E01 shadow at full strength](items/E01-r2.png)](items/E01-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.
 
 ## E02 · bevel at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E02 bevel at full strength](items/E02-r2.png)](items/E02-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.
 
 ## E03 · reflection at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E03 reflection at full strength](items/E03-r2.png)](items/E03-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.
 
 ## E04 · glare at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E04 glare at full strength](items/E04-r2.png)](items/E04-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.
 
 ## E05 · patina at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E05 patina at full strength](items/E05-r2.png)](items/E05-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.
 
 ## E06 · wear at full strength
 
-**Revision 2 · awaiting approval.**
+**Approved.**
 
 [![E06 wear at full strength](items/E06-r2.png)](items/E06-r2.png)
 
-Physically informed material-aware surface effect. Replace arbitrary shapes with appropriate directional lighting, reflections, oxidation and wear; preserve readability.
+Explicitly approved in user review.
 
 Example: implemented runtime surface effect comparison; isolated SVG definitions.

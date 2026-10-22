@@ -5,15 +5,16 @@ const random = (seed) => () => {
   n ^= n + Math.imul(n ^ (n >>> 7), 61 | n);
   return ((n ^ (n >>> 14)) >>> 0) / 4294967296;
 };
-export function frostMarkup(intensity) {
+export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
+  const { x: centerX, y: centerY, r: radius } = opening;
   const rand = random(919),
     ferns = [];
   for (let n = 0; n < Math.round(25 * intensity); n++) {
     const a = n * 2.399 + rand() * 0.2,
-      r = 260 - rand() * 5,
-      len = 10 + rand() * 16,
-      x = 300 + Math.cos(a) * r,
-      y = 300 + Math.sin(a) * r,
+      r = radius - 3 - rand() * 4,
+      len = 13 + rand() * 21,
+      x = centerX + Math.cos(a) * r,
+      y = centerY + Math.sin(a) * r,
       angle = a + Math.PI + (rand() - 0.5) * 0.5;
     const point = (u, v) =>
       [
@@ -51,7 +52,7 @@ export function frostMarkup(intensity) {
       `<path class="frost-crystal" pathLength="1" d="${d}" style="animation-delay:${(rand() * 8).toFixed(2)}s"/>`,
     );
   }
-  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="300" cy="300" r="264"><stop offset=".88" stop-color="#d6f0ff" stop-opacity="0"/><stop offset=".96" stop-color="#d6f0ff" stop-opacity=".08"/><stop offset="1" stop-color="#e5f6ff" stop-opacity=".22"/></radialGradient></defs><circle class="frost-film" cx="300" cy="300" r="264" fill="url(#frost-glass-edge)"/><g class="watchglass-frost" fill="none" stroke-linecap="round"><g stroke="#346c8c" stroke-width="1.1" opacity=".23">${ferns.join("")}</g><g stroke="#e4f7ff" stroke-width=".42" opacity=".76">${ferns.join("")}</g></g>`;
+  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="${centerX}" cy="${centerY}" r="${radius}"><stop offset=".88" stop-color="#d6f0ff" stop-opacity="0"/><stop offset=".96" stop-color="#d6f0ff" stop-opacity=".08"/><stop offset="1" stop-color="#e5f6ff" stop-opacity=".22"/></radialGradient></defs><circle class="frost-film" cx="${centerX}" cy="${centerY}" r="${radius}" fill="url(#frost-glass-edge)"/><g class="watchglass-frost" fill="none" stroke-linecap="round"><g stroke="#346c8c" stroke-width="1.1" opacity=".23">${ferns.join("")}</g><g stroke="#e4f7ff" stroke-width=".42" opacity=".76">${ferns.join("")}</g></g>`;
 }
 export function lightningMarkup(layer = "near") {
   let out = `<defs><filter id="lightning-halo-${layer}" x="-50%" y="-25%" width="200%" height="150%"><feGaussianBlur stdDeviation="1.5"/></filter></defs>`;

@@ -4,15 +4,15 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-F02, F04 and F05 are approved. F01 lettering and F03 are separate art-direction proposals; their final editable production layers follow approval. F03 revision 6 uses asymmetrical overlapping celestial wheels in a restrained old wizarding grandfather-clock style.
+F02, F04 and F05 are approved. F01 revision 5 remains a lettering placement study. F03 revision 7 is a functional runtime face: real local time, calendar wheels and sensor-driven lunar phase. Both revised faces still require approval. [Current review round](REVIEW-ROUND-2.md).
 
 ## F01 · Scalloped whereabouts dial
 
-**Revision 4 · awaiting approval.**
+**Revision 5 · awaiting approval.**
 
-[![F01 Scalloped whereabouts dial](items/F01-r4.png)](items/F01-r4.png)
+[![F01 Scalloped whereabouts dial](items/F01-r5.png)](items/F01-r5.png)
 
-Align each location name along the curved outer edge of its own painted scallop, inset within the gold. Preserve editable text and UI font/color choices.
+Lettering alignment improved but remains unapproved. Fit the flowing letters to each scalloped edge.
 
 Example: individually aligned scallop lettering proposal; production mapping follows approval.
 
@@ -28,13 +28,19 @@ Example: proposed face concept; not integrated into the released renderer.
 
 ## F03 · Astronomical scene wheel
 
-**Revision 6 · awaiting approval.**
+**Revision 7 · awaiting approval.**
 
-[![F03 Astronomical scene wheel](items/F03-r6.png)](items/F03-r6.png)
+[![F03 Astronomical scene wheel](items/F03-r7.png)](items/F03-r7.png)
 
-Asymmetric overlapping celestial wheels with varied sizes and offset pivots. Preserve restrained old wizarding grandfather-clock style and blank editable destination ring.
+Functional astronomical dials: actual lunar phase from configured sensor or explicit calculation fallback, local time, calendar and annual cycles; no arbitrary decorative wheel rotation. Follow supplied antique astronomical clocks.
 
-Example: historical celestial face artwork proposal; separated rotating layers follow approval.
+Example: implemented runtime rendering.
+
+[Functional dial close-up](items/F03-functional-detail-r7.png)
+
+[Example: 15 Jan 2026, 12:10 America/Los_Angeles; new moon sensor](items/F03-winter-r7.png)
+
+[Example: 20 Jul 2026, 21:45 America/Los_Angeles; full moon sensor](items/F03-summer-r7.png)
 
 ## F04 · whimsical-workshop
 

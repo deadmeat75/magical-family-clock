@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-L01 is approved and unchanged. New motion samples use controlled normal-speed renderer frames, with no video compression noise. Close-ups supplement the full-clock view. Meteor studies skip quiet waiting time only.
+L01–L06 motion effects are approved. Their exact approved files remain preserved; new context variants below use the corrected shared skyline. L07 and L08 revision 4 still require approval. [Current review round](REVIEW-ROUND-2.md) links the fresh full views and close-ups directly.
 
 ## L01 · Cloud drift
 
@@ -16,15 +16,19 @@ Explicitly approved by the user in chat.
 
 Example: normal-speed motion study.
 
+[Approved motion with revised scene registration](items/L01-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L01-context-detail-r1.gif)
+
 [Still image](items/L01.png)
 
 ## L02 · Foliage sway
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![L02 Foliage sway](items/L02-r3.gif)](items/L02-r3.gif)
 
-Tree sway is not detectable. Make gentle sway visible and add windblown autumn leaves and spring blossom petals. Revised normal-speed previews require approval.
+Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.
 
 Example: implemented runtime rendering.
 
@@ -38,88 +42,108 @@ Example: implemented runtime rendering.
 
 [autumn foliage and seasonal debris](items/L02-autumn-r3.gif)
 
+[Approved motion with revised scene registration](items/L02-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L02-context-detail-r1.gif)
+
 [Still image](items/L02-r3.png)
 
 ## L03 · Lake reflections
 
-**Revision 3 · awaiting approval.**
+**Approved.**
 
 [![L03 Lake reflections](items/L03-r3.gif)](items/L03-r3.gif)
 
-Make lake movement a little more visible; current effect is too subtle. Revised normal-speed preview requires approval.
+Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.
 
 Example: implemented runtime animation; normal-speed frames.
 
 [Close-up of the same normal-speed motion](items/L03-detail-r3.gif)
 
+[Approved motion with revised scene registration](items/L03-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L03-context-detail-r1.gif)
+
 [Still image](items/L03-r3.png)
 
 ## L04 · Waterfall flow and fine spray
 
-**Revision 3 · awaiting approval.**
+**Approved.**
 
 [![L04 Waterfall flow and fine spray](items/L04-r3.gif)](items/L04-r3.gif)
 
-Increase visible downward waterfall flow. Restore visible fine spray close to impacts without the earlier round spotlight shapes. Revised normal-speed preview requires user approval.
+Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.
 
 Example: implemented runtime animation; normal-speed frames.
 
 [Close-up of the same normal-speed motion](items/L04-detail-r3.gif)
 
+[Approved motion with revised scene registration](items/L04-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L04-context-detail-r1.gif)
+
 [Still image](items/L04-r3.png)
 
 ## L05 · Twinkling stars
 
-**Revision 3 · awaiting approval.**
+**Approved.**
 
 [![L05 Twinkling stars](items/L05-r3.gif)](items/L05-r3.gif)
 
-Brighter stars with more pronounced twinkling. Stars must always remain behind clouds, moon, castle and foreground elements; clouds hide stars. Revised normal-speed preview requires user approval.
+Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.
 
 Example: implemented runtime animation; normal-speed frames.
 
 [Close-up of the same normal-speed motion](items/L05-detail-r3.gif)
 
+[Approved motion with revised scene registration](items/L05-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L05-context-detail-r1.gif)
+
 [Still image](items/L05-r3.png)
 
 ## L06 · Shooting star
 
-**Revision 3 · awaiting approval.**
+**Approved.**
 
 [![L06 Shooting star](items/L06-r3.gif)](items/L06-r3.gif)
 
-Irregular encounter times, random sky origins and varied realistic directions. Meteors always remain behind clouds, moon, castle and foreground elements. Revised normal-speed preview requires user approval.
+Explicitly approved in user review. Motion effect approved; shared castle/mountain edge registration and glow still require correction.
 
 Example: implemented runtime animation; normal-speed frames.
 
 [Close-up of the same normal-speed motion](items/L06-detail-r3.gif)
 
+[Approved motion with revised scene registration](items/L06-context-r1.gif)
+
+[Close-up: approved motion with revised scene registration](items/L06-context-detail-r1.gif)
+
 [Still image](items/L06-r3.png)
 
 ## L07 · Window lights
 
-**Revision 3 · awaiting approval.**
+**Revision 4 · awaiting approval.**
 
-[![L07 Window lights](items/L07-r3.gif)](items/L07-r3.gif)
+[![L07 Window lights](items/L07-r4.gif)](items/L07-r4.gif)
 
-Slow the independent window light animation substantially; retain candle/torch variation without synchronous breathing.
+Make independent candle/torch fluctuations visibly detectable without fast synchronized pulsing. Correct shared skyline glow and cutout.
 
-Example: implemented runtime animation; normal-speed frames.
+Example: implemented runtime rendering.
 
-[Close-up of the same normal-speed motion](items/L07-detail-r3.gif)
+[New close-up, same natural-speed timeline](items/L07-detail-r4.gif)
 
-[Still image](items/L07-r3.png)
+[Still image](items/L07-r4.png)
 
 ## L08 · Fireflies
 
-**Revision 3 · awaiting approval.**
+**Revision 4 · awaiting approval.**
 
-[![L08 Fireflies](items/L08-r3.gif)](items/L08-r3.gif)
+[![L08 Fireflies](items/L08-r4.gif)](items/L08-r4.gif)
 
-Use a realistic greenish bioluminescent glow and place fireflies in the foreground. Revised normal-speed preview requires user approval.
+Make green foreground firefly movement visibly detectable. Correct shared skyline glow and cutout.
 
-Example: implemented runtime animation; normal-speed frames.
+Example: implemented runtime rendering.
 
-[Close-up of the same normal-speed motion](items/L08-detail-r3.gif)
+[New close-up, same natural-speed timeline](items/L08-detail-r4.gif)
 
-[Still image](items/L08-r3.png)
+[Still image](items/L08-r4.png)

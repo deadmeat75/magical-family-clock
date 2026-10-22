@@ -18,33 +18,33 @@ Example: current draft rendering.
 
 ## P02 · hammered-metal
 
-**Revision 1 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![P02 hammered-metal](items/P02-r1.png)](items/P02-r1.png)
+[![P02 hammered-metal](items/P02-r3.png)](items/P02-r3.png)
 
-Replace regular spotted pattern with irregular realistic hammered metal: varied overlapping shallow dents and physical reflected highlights; no repeating dots.
+Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.
 
-Example: implemented photographic material pattern; editable panel color preserved.
+Example: implemented runtime rendering.
 
 ## P03 · parchment
 
-**Revision 1 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![P03 parchment](items/P03-r1.png)](items/P03-r1.png)
+[![P03 parchment](items/P03-r3.png)](items/P03-r3.png)
 
-Replace line pattern with realistic aged parchment, fibers, mottling and subtle wear.
+Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.
 
-Example: implemented photographic material pattern; editable panel color preserved.
+Example: implemented runtime rendering.
 
 ## P04 · wood
 
-**Revision 1 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![P04 wood](items/P04-r1.png)](items/P04-r1.png)
+[![P04 wood](items/P04-r3.png)](items/P04-r3.png)
 
-Replace drawn lines with realistic natural wood grain and surface detail.
+Visible texture tiling is rejected. Use a continuous, natural material surface without repeated motifs or seams.
 
-Example: implemented photographic material pattern; editable panel color preserved.
+Example: implemented runtime rendering.
 
 ## P05 · plain
 

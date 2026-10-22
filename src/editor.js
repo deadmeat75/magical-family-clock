@@ -164,7 +164,13 @@ export class ClockEditor extends HTMLElement {
               : Number(e.value)
             : e.value;
       if (value === obj[key]) return;
-      this.change(() => (obj[key] = value));
+      this.change(() => {
+        obj[key] = value;
+        if (key === "theme" && value === "astronomical") {
+          obj.artwork = "vector";
+          obj.face_image = "";
+        }
+      });
     };
     if (!["checkbox", "select"].includes(type)) e.oninput = e.onchange;
     this.controlHelp(row, e, settingHelp(key, label, type, options));
@@ -433,6 +439,34 @@ export class ClockEditor extends HTMLElement {
           "name_upright",
           "checkbox",
         );
+        this.field(box, "Name attachment", m, "name_attachment", "select", [
+          ["none", "Engrave on hand"],
+          ["parchment", "Affixed parchment"],
+          ["tag", "Hanging tag"],
+          ["brooch", "Oval brooch"],
+          ["portrait", "Portrait frame"],
+        ]);
+        this.note(
+          box,
+          "Optional physical name tag attached to this hand. Use the lettering color picker for ink. Offsets move the tag or its text; text size is measured in the source tag, so start at 68. Blank lettering stays blank.",
+        );
+        for (const [label, key] of [
+          ["Tag scale", "attachment_scale"],
+          ["Tag horizontal offset", "attachment_x"],
+          ["Tag vertical offset", "attachment_y"],
+          ["Tag rotation", "attachment_rotation"],
+          ["Tag text horizontal offset", "attachment_text_x"],
+          ["Tag text vertical offset", "attachment_text_y"],
+          ["Tag text rotation", "attachment_text_rotation"],
+          ["Tag text size", "attachment_text_size"],
+        ])
+          this.field(box, label, m, key, "number");
+        this.field(box, "Tag text alignment", m, "attachment_align", "select", [
+          ["start", "Left"],
+          ["middle", "Center"],
+          ["end", "Right"],
+        ]);
+        this.field(box, "Tag text font", m, "attachment_font");
         this.field(box, "Display name", m, "name");
         this.field(box, "Nickname", m, "nickname");
         this.field(box, "Enabled", m, "enabled", "checkbox");

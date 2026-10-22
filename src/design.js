@@ -204,9 +204,13 @@ export function textPosition(c, kind) {
           ? kind === "title"
             ? 146
             : 170
-          : kind === "title"
-            ? 410
-            : 380
+          : c.theme === "astronomical"
+            ? kind === "title"
+              ? 522
+              : 546
+            : kind === "title"
+              ? 410
+              : 380
         : c[kind + "_y"] * 6,
   };
 }

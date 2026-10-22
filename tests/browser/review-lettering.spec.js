@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("F01 location names follow their individual gold scallops", async ({
   page,
 }) => {
-  await page.goto("/docs/visual-review/concepts/F01-editable-lettering-r4.svg");
+  await page.goto("/docs/visual-review/concepts/F01-editable-lettering-r5.svg");
   const result = await page.evaluate(async () => {
     const image = new Image();
     image.src = document.querySelector("image").getAttribute("href");

@@ -1,3 +1,5 @@
+import { registeredSkyPath } from "./sky-registration.js";
+import { skyPath } from "./world-paths.js";
 import { renderMoons } from "./lunar.js";
 import { sceneSource } from "./artwork.js";
 import { createMeteorTimeline } from "./meteors.js";
@@ -138,6 +140,7 @@ async function loadSource(scene) {
           mask.putImageData(coverage, 0, 0);
           resolve({
             image,
+            sky: registeredSkyPath(image),
             clouds: tile,
             cloudMask,
             windows: windowSources(image),
@@ -207,7 +210,11 @@ function drawWindows(ctx, lights, t) {
       0.2,
       0.98,
     );
+    const brightness = ctx.globalAlpha;
+    ctx.globalAlpha = 1;
+    ctx.filter = `brightness(${0.38 + brightness * 1.35}) saturate(1.12)`;
     ctx.drawImage(light.tile, light.x, light.y, light.w, light.h);
+    ctx.filter = "none";
   }
   ctx.globalAlpha = 1;
 }
@@ -216,22 +223,22 @@ function drawFireflies(ctx, t, quality) {
   for (let i = 0; i < count; i++) {
     const phase = i * 2.39996,
       x =
-        (i % 2 ? 420 : 173) +
-        (i % 3) * 7 +
-        Math.sin(t * (0.29 + (i % 4) * 0.04) + phase) * 6 +
+        (i % 2 ? 385 : 225) +
+        (i % 3) * 4 +
+        Math.sin(t * (0.29 + (i % 4) * 0.04) + phase) * 12 +
         Math.sin(t * 0.73 + phase * 1.7) * 2,
-      y = 397 + (i % 4) * 8 + Math.sin(t * 0.43 + phase) * 4,
+      y = 408 + (i % 4) * 4 + Math.sin(t * 0.43 + phase) * 7,
       pulse = (0.5 + 0.5 * Math.sin(t * (0.8 + (i % 5) * 0.13) + phase)) ** 4,
       glow = ctx.createRadialGradient(x, y, 0, x, y, 4.1);
-    ctx.globalAlpha = 0.08 + pulse * 0.92;
-    glow.addColorStop(0, "rgba(196,255,151,.65)");
-    glow.addColorStop(0.22, "rgba(133,222,100,.28)");
+    ctx.globalAlpha = 0.22 + pulse * 0.78;
+    glow.addColorStop(0, "rgba(196,255,151,.95)");
+    glow.addColorStop(0.22, "rgba(133,222,100,.48)");
     glow.addColorStop(1, "rgba(91,190,75,0)");
     ctx.fillStyle = glow;
     ctx.fillRect(x - 4.1, y - 4.1, 8.2, 8.2);
     ctx.fillStyle = "#deffc3";
     ctx.beginPath();
-    ctx.arc(x, y, 0.62, 0, Math.PI * 2);
+    ctx.arc(x, y, 0.9, 0, Math.PI * 2);
     ctx.fill();
   }
   ctx.globalAlpha = 1;
@@ -482,15 +489,24 @@ export function startWorldPainter(
     }
     raf = requestAnimationFrame(step);
   };
-  const paintReady = entries.length
-    ? loadSource(scene)
-        .then((s) => {
-          source = s;
-          paint();
-          if (!ended) raf = requestAnimationFrame(step);
-        })
-        .catch(() => {})
-    : Promise.resolve();
+  const paintReady =
+    config.artwork === "castle" && !config.face_image
+      ? loadSource(scene)
+          .then((s) => {
+            source = s;
+            if (ended) return;
+            for (const path of root.querySelectorAll("path[d]"))
+              if (path.getAttribute("d") === skyPath())
+                path.setAttribute("d", s.sky);
+            // Weather and flight occlusion use the same registered silhouette.
+            const card = root.getRootNode();
+            for (const path of card.querySelectorAll("#weather-sky path"))
+              path.setAttribute("d", s.sky);
+            paint();
+            if (!ended && entries.length) raf = requestAnimationFrame(step);
+          })
+          .catch(() => {})
+      : Promise.resolve();
   return {
     ready: Promise.all([paintReady, renderMoons(root)]),
     seek(seconds) {

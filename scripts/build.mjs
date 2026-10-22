@@ -18,6 +18,8 @@ await build({
       readFileSync("docs/SUNCALC-LICENSE.txt", "utf8") +
       "\nPirata One font:\n" +
       readFileSync("docs/PIRATA-ONE-OFL.txt", "utf8") +
+      "\nCaveat font:\n" +
+      readFileSync("docs/CAVEAT-OFL.txt", "utf8") +
       "\n*/",
   },
 });

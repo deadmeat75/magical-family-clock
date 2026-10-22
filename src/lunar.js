@@ -43,7 +43,7 @@ export async function lunarImage(phase) {
         // while the unlit hemisphere reveals the actual sky beneath it.
         shade = 0.18 + 0.82 * Math.pow(light, 0.48);
       for (let k = 0; k < 3; k++)
-        pixels.data[i + k] = Math.min(255, source[i + k] * shade);
+        pixels.data[i + k] = Math.min(255, source[i + k] * shade * 1.12);
       pixels.data[i + 3] =
         Math.min(1, (1 - Math.sqrt(r2)) * 127) *
         Math.min(1, light / 0.025) *

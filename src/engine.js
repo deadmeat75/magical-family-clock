@@ -7,6 +7,7 @@ export const THEMES = [
   "brass-clockwork",
   "living-magical",
   "whimsical-workshop",
+  "astronomical",
 ];
 export const clone = (v) => JSON.parse(JSON.stringify(v));
 export const uid = () =>
@@ -200,6 +201,30 @@ export function normalize(input) {
         name_orientation:
           m.name_orientation === "perpendicular" ? "perpendicular" : "parallel",
         name_rotation: finite(m.name_rotation, 0, -180, 180),
+        name_attachment: ["parchment", "tag", "brooch", "portrait"].includes(
+          m.name_attachment,
+        )
+          ? m.name_attachment
+          : "none",
+        attachment_scale: finite(m.attachment_scale, 1, 0.3, 3),
+        attachment_x: finite(m.attachment_x, 0, -200, 200),
+        attachment_y: finite(m.attachment_y, 0, -200, 200),
+        attachment_rotation: finite(m.attachment_rotation, 0, -180, 180),
+        attachment_text_x: finite(m.attachment_text_x, 0, -200, 200),
+        attachment_text_y: finite(m.attachment_text_y, 0, -150, 150),
+        attachment_text_rotation: finite(
+          m.attachment_text_rotation,
+          0,
+          -180,
+          180,
+        ),
+        attachment_text_size: finite(m.attachment_text_size, 68, 12, 150),
+        attachment_align: ["start", "middle", "end"].includes(
+          m.attachment_align,
+        )
+          ? m.attachment_align
+          : "middle",
+        attachment_font: String(m.attachment_font || "").slice(0, 150),
         length: num(m.length, 1, 0.5, 1.1),
         width: num(m.width, 1, 0.5, 2.5),
         metrics: Array.isArray(m.metrics)

@@ -19,6 +19,15 @@ for (const item of record.items) {
       errors.push("Approved artwork changed: " + item.id);
   }
 }
+for (const item of record.items) {
+  for (const component of item.approved_components || []) {
+    const path = resolve(root, component.example);
+    if (!existsSync(path) || hash(path) !== component.sha256)
+      errors.push(
+        "Approved component changed: " + item.id + " " + component.component,
+      );
+  }
+}
 for (const item of record.artwork_approvals || []) {
   const path = resolve(root, item.approved_source);
   if (!existsSync(path) || hash(path) !== item.approved_source_sha256)
@@ -29,6 +38,12 @@ for (const item of inventory) {
   for (const key of ["image", "animation", "source"])
     if (item[key] && !existsSync(resolve(root, item[key])))
       errors.push(item.id + " missing " + key + ": " + item[key]);
+}
+for (const item of inventory) {
+  for (const variant of item.variants || [])
+    for (const key of ["image", "animation"])
+      if (variant[key] && !existsSync(resolve(root, variant[key])))
+        errors.push(item.id + " missing variant: " + variant[key]);
 }
 for (const file of readdirSync(root).filter((f) => f.endsWith(".md"))) {
   const path = resolve(root, file),

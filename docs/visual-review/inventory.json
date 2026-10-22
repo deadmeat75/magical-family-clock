@@ -3,10 +3,10 @@
     "id": "F01",
     "name": "Scalloped whereabouts dial",
     "category": "Faces",
-    "image": "items/F01-r4.png",
+    "image": "items/F01-r5.png",
     "status": "revised; awaiting approval",
     "kind": "individually aligned scallop lettering proposal; production mapping follows approval",
-    "revision": 4,
+    "revision": 5,
     "source": "art/scalloped-face-f01-r1.png",
     "sourceRect": [
       0,
@@ -18,7 +18,7 @@
       1254,
       1254
     ],
-    "note": "Each editable location name follows its own painted scallop. [Editable SVG lettering study, revision 4](concepts/F01-editable-lettering-r4.svg)."
+    "note": "Revision 5 is another alignment study with taller capitals and refined individual scallop angles. [Editable SVG lettering](concepts/F01-editable-lettering-r5.svg). Final production fitting still follows approval."
   },
   {
     "id": "F02",
@@ -45,10 +45,10 @@
     "id": "F03",
     "name": "Astronomical scene wheel",
     "category": "Faces",
-    "image": "items/F03-r6.png",
+    "image": "items/F03-r7.png",
     "status": "revised; awaiting approval",
-    "kind": "historical celestial face artwork proposal; separated rotating layers follow approval",
-    "revision": 6,
+    "kind": "implemented runtime rendering",
+    "revision": 7,
     "source": "art/celestial-face-f03-r6.png",
     "sourceRect": [
       0,
@@ -60,7 +60,21 @@
       1254,
       1254
     ],
-    "note": "Complete astronomical-clock redesign with an ivory dial, painted celestial decoration and landscape aperture. This is a static art-direction concept; separated rotating time/season wheels and live weather are still to implement."
+    "note": "Functional runtime: real local hours/minutes, day-of-month with leap-year month lengths, weekday, annual calendar and sensor-driven lunar phase. Each calendar wheel advances to its actual reading; it does not spin at an arbitrary animation speed. Review snapshot: 22 Oct 2026, 14:36 America/Los_Angeles; example sensor waxing_gibbous.",
+    "variants": [
+      {
+        "label": "Functional dial close-up",
+        "image": "items/F03-functional-detail-r7.png"
+      },
+      {
+        "label": "Example: 15 Jan 2026, 12:10 America/Los_Angeles; new moon sensor",
+        "image": "items/F03-winter-r7.png"
+      },
+      {
+        "label": "Example: 20 Jul 2026, 21:45 America/Los_Angeles; full moon sensor",
+        "image": "items/F03-summer-r7.png"
+      }
+    ]
   },
   {
     "id": "F04",
@@ -602,28 +616,28 @@
     "id": "P02",
     "name": "hammered-metal",
     "category": "Location panels",
-    "image": "items/P02-r1.png",
+    "image": "items/P02-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented photographic material pattern; editable panel color preserved",
-    "revision": 1
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "P03",
     "name": "parchment",
     "category": "Location panels",
-    "image": "items/P03-r1.png",
+    "image": "items/P03-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented photographic material pattern; editable panel color preserved",
-    "revision": 1
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "P04",
     "name": "wood",
     "category": "Location panels",
-    "image": "items/P04-r1.png",
+    "image": "items/P04-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented photographic material pattern; editable panel color preserved",
-    "revision": 1
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "P05",
@@ -1218,7 +1232,7 @@
     "name": "clear",
     "category": "Weather",
     "image": "items/W01-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "note": "Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.",
     "revision": 3
@@ -1228,7 +1242,7 @@
     "name": "clouds",
     "category": "Weather",
     "image": "items/W02-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W02-r3.gif"
@@ -1238,7 +1252,7 @@
     "name": "light-rain",
     "category": "Weather",
     "image": "items/W03-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W03-r3.gif"
@@ -1248,7 +1262,7 @@
     "name": "rain",
     "category": "Weather",
     "image": "items/W04-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W04-r3.gif"
@@ -1258,7 +1272,7 @@
     "name": "snow",
     "category": "Weather",
     "image": "items/W05-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W05-r3.gif"
@@ -1268,7 +1282,7 @@
     "name": "sleet",
     "category": "Weather",
     "image": "items/W06-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W06-r3.gif"
@@ -1277,18 +1291,18 @@
     "id": "W07",
     "name": "wind",
     "category": "Weather",
-    "image": "items/W07-r3.png",
+    "image": "items/W07-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 1,
-    "animation": "items/W07-r3.gif"
+    "revision": 4,
+    "animation": "items/W07-r4.gif"
   },
   {
     "id": "W08",
     "name": "fog",
     "category": "Weather",
     "image": "items/W08-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W08-r3.gif"
@@ -1297,18 +1311,18 @@
     "id": "W09",
     "name": "ice",
     "category": "Weather",
-    "image": "items/W09-r3.png",
+    "image": "items/W09-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 1,
-    "animation": "items/W09-r3.gif"
+    "revision": 4,
+    "animation": "items/W09-r4.gif"
   },
   {
     "id": "W10",
     "name": "lightning",
     "category": "Weather",
     "image": "items/W10-r3.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 1,
     "animation": "items/W10-r3.gif"
@@ -1317,107 +1331,107 @@
     "id": "N01",
     "name": "new_moon",
     "category": "Moon phases",
-    "image": "items/N01-r3.png",
+    "image": "items/N01-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N02",
     "name": "waxing_crescent",
     "category": "Moon phases",
-    "image": "items/N02-r3.png",
+    "image": "items/N02-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N03",
     "name": "first_quarter",
     "category": "Moon phases",
-    "image": "items/N03-r3.png",
+    "image": "items/N03-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N04",
     "name": "waxing_gibbous",
     "category": "Moon phases",
-    "image": "items/N04-r3.png",
+    "image": "items/N04-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N05",
     "name": "full_moon",
     "category": "Moon phases",
-    "image": "items/N05-r3.png",
+    "image": "items/N05-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N06",
     "name": "waning_gibbous",
     "category": "Moon phases",
-    "image": "items/N06-r3.png",
+    "image": "items/N06-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N07",
     "name": "last_quarter",
     "category": "Moon phases",
-    "image": "items/N07-r3.png",
+    "image": "items/N07-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "N08",
     "name": "waning_crescent",
     "category": "Moon phases",
-    "image": "items/N08-r3.png",
+    "image": "items/N08-r4.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 3
+    "revision": 4
   },
   {
     "id": "B01",
     "name": "aged-brass information bezel",
     "category": "Bezel",
-    "image": "items/B01-r2.png",
+    "image": "items/B01-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented radial mapping of crafted bezel artwork; editable data band",
-    "revision": 2
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "B02",
     "name": "silver information bezel",
     "category": "Bezel",
-    "image": "items/B02-r2.png",
+    "image": "items/B02-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented radial mapping of crafted bezel artwork; editable data band",
-    "revision": 2
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "B03",
     "name": "wood information bezel",
     "category": "Bezel",
-    "image": "items/B03-r2.png",
+    "image": "items/B03-r3.png",
     "status": "revised; awaiting approval",
-    "kind": "implemented radial mapping of crafted bezel artwork; editable data band",
-    "revision": 2
+    "kind": "implemented runtime rendering",
+    "revision": 3
   },
   {
     "id": "E01",
     "name": "shadow at full strength",
     "category": "Surface effects",
     "image": "items/E01-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1426,7 +1440,7 @@
     "name": "bevel at full strength",
     "category": "Surface effects",
     "image": "items/E02-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1435,7 +1449,7 @@
     "name": "reflection at full strength",
     "category": "Surface effects",
     "image": "items/E03-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1444,7 +1458,7 @@
     "name": "glare at full strength",
     "category": "Surface effects",
     "image": "items/E04-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1453,7 +1467,7 @@
     "name": "patina at full strength",
     "category": "Surface effects",
     "image": "items/E05-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1462,7 +1476,7 @@
     "name": "wear at full strength",
     "category": "Surface effects",
     "image": "items/E06-r2.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime surface effect comparison; isolated SVG definitions",
     "revision": 2
   },
@@ -1554,7 +1568,17 @@
     "animation": "items/L01.gif",
     "status": "approved",
     "kind": "normal-speed motion study",
-    "note": "Approved original eight-second cloud study; its image and motion remain unchanged."
+    "note": "Approved original eight-second cloud study; its image and motion remain unchanged.",
+    "variants": [
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L01-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L01-context-detail-r1.gif"
+      }
+    ]
   },
   {
     "id": "L02",
@@ -1562,7 +1586,7 @@
     "category": "Landscape motion",
     "image": "items/L02-r3.png",
     "animation": "items/L02-r3.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "note": "More visible root-anchored canopy sway. Spring petals and autumn leaves follow the scene season; each clip runs at normal speed.",
     "revision": 1,
@@ -1586,6 +1610,14 @@
       {
         "label": "autumn foliage and seasonal debris",
         "animation": "items/L02-autumn-r3.gif"
+      },
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L02-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L02-context-detail-r1.gif"
       }
     ]
   },
@@ -1595,7 +1627,7 @@
     "category": "Landscape motion",
     "image": "items/L03-r3.png",
     "animation": "items/L03-r3.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime animation; normal-speed frames",
     "note": "Stronger fine reflection displacement with a fixed shoreline; no sliding rectangular water bands.",
     "revision": 3,
@@ -1603,6 +1635,14 @@
       {
         "label": "Close-up of the same normal-speed motion",
         "animation": "items/L03-detail-r3.gif"
+      },
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L03-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L03-context-detail-r1.gif"
       }
     ]
   },
@@ -1612,7 +1652,7 @@
     "category": "Landscape motion",
     "image": "items/L04-r3.png",
     "animation": "items/L04-r3.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime animation; normal-speed frames",
     "note": "Stronger downward flow with visible fine droplets close to the impacts; no filled spray discs or spotlights.",
     "revision": 3,
@@ -1620,6 +1660,14 @@
       {
         "label": "Close-up of the same normal-speed motion",
         "animation": "items/L04-detail-r3.gif"
+      },
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L04-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L04-context-detail-r1.gif"
       }
     ]
   },
@@ -1629,7 +1677,7 @@
     "category": "Landscape motion",
     "image": "items/L05-r3.png",
     "animation": "items/L05-r3.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime animation; normal-speed frames",
     "note": "Main sample includes moving clouds and moon to assess star occlusion.",
     "revision": 3,
@@ -1637,6 +1685,14 @@
       {
         "label": "Close-up of the same normal-speed motion",
         "animation": "items/L05-detail-r3.gif"
+      },
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L05-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L05-context-detail-r1.gif"
       }
     ]
   },
@@ -1646,7 +1702,7 @@
     "category": "Landscape motion",
     "image": "items/L06-r3.png",
     "animation": "items/L06-r3.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime animation; normal-speed frames",
     "note": "Four actual seeded meteor passages at normal speed. Quiet gaps are skipped between them so movement can be judged immediately.",
     "revision": 3,
@@ -1654,6 +1710,14 @@
       {
         "label": "Close-up of the same normal-speed motion",
         "animation": "items/L06-detail-r3.gif"
+      },
+      {
+        "label": "Approved motion with revised scene registration",
+        "animation": "items/L06-context-r1.gif"
+      },
+      {
+        "label": "Close-up: approved motion with revised scene registration",
+        "animation": "items/L06-context-detail-r1.gif"
       }
     ]
   },
@@ -1661,16 +1725,16 @@
     "id": "L07",
     "name": "Window lights",
     "category": "Landscape motion",
-    "image": "items/L07-r3.png",
-    "animation": "items/L07-r3.gif",
+    "image": "items/L07-r4.png",
+    "animation": "items/L07-r4.gif",
     "status": "revised; awaiting approval",
-    "kind": "implemented runtime animation; normal-speed frames",
-    "note": "Independent light variation slowed to roughly one fifth of the previous frequency.",
-    "revision": 3,
+    "kind": "implemented runtime rendering",
+    "note": "New runtime motion and close-up. Window lights modulate actual local brightness independently; green fireflies travel inside the visible foreground opening.",
+    "revision": 4,
     "variants": [
       {
-        "label": "Close-up of the same normal-speed motion",
-        "animation": "items/L07-detail-r3.gif"
+        "label": "New close-up, same natural-speed timeline",
+        "animation": "items/L07-detail-r4.gif"
       }
     ]
   },
@@ -1678,16 +1742,16 @@
     "id": "L08",
     "name": "Fireflies",
     "category": "Landscape motion",
-    "image": "items/L08-r3.png",
-    "animation": "items/L08-r3.gif",
+    "image": "items/L08-r4.png",
+    "animation": "items/L08-r4.gif",
     "status": "revised; awaiting approval",
-    "kind": "implemented runtime animation; normal-speed frames",
-    "note": "Greenish bioluminescent fireflies wander and pulse independently near foreground vegetation.",
-    "revision": 3,
+    "kind": "implemented runtime rendering",
+    "note": "New runtime motion and close-up. Window lights modulate actual local brightness independently; green fireflies travel inside the visible foreground opening.",
+    "revision": 4,
     "variants": [
       {
-        "label": "Close-up of the same normal-speed motion",
-        "animation": "items/L08-detail-r3.gif"
+        "label": "New close-up, same natural-speed timeline",
+        "animation": "items/L08-detail-r4.gif"
       }
     ]
   },
@@ -2086,11 +2150,11 @@
     "id": "K09",
     "name": "Affixed parchment slip",
     "category": "Lettering and portraits",
-    "image": "items/K09-r1.png",
+    "image": "items/K09-r2.png",
     "status": "revised; awaiting approval",
-    "revision": 1,
+    "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
-    "kind": "new optional attachment artwork proposal; not approved with K01–K08",
+    "kind": "implemented runtime rendering",
     "sourceRect": [
       0,
       0,
@@ -2100,17 +2164,18 @@
     "sourceSize": [
       1536,
       1024
-    ]
+    ],
+    "note": "Runtime attachment: individual silhouette clip excludes neighbours. UI controls provide font, ink color, size, alignment, text offsets/rotation and tag scale/position/rotation. K09/K10 use bundled Caveat handwriting."
   },
   {
     "id": "K10",
     "name": "Hanging name tag",
     "category": "Lettering and portraits",
-    "image": "items/K10-r1.png",
+    "image": "items/K10-r2.png",
     "status": "revised; awaiting approval",
-    "revision": 1,
+    "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
-    "kind": "new optional attachment artwork proposal; not approved with K01–K08",
+    "kind": "implemented runtime rendering",
     "sourceRect": [
       768,
       0,
@@ -2120,17 +2185,18 @@
     "sourceSize": [
       1536,
       1024
-    ]
+    ],
+    "note": "Runtime attachment: individual silhouette clip excludes neighbours. UI controls provide font, ink color, size, alignment, text offsets/rotation and tag scale/position/rotation. K09/K10 use bundled Caveat handwriting."
   },
   {
     "id": "K11",
     "name": "Oval name brooch",
     "category": "Lettering and portraits",
-    "image": "items/K11-r1.png",
+    "image": "items/K11-r2.png",
     "status": "revised; awaiting approval",
-    "revision": 1,
+    "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
-    "kind": "new optional attachment artwork proposal; not approved with K01–K08",
+    "kind": "implemented runtime rendering",
     "sourceRect": [
       0,
       512,
@@ -2140,17 +2206,18 @@
     "sourceSize": [
       1536,
       1024
-    ]
+    ],
+    "note": "Runtime attachment: individual silhouette clip excludes neighbours. UI controls provide font, ink color, size, alignment, text offsets/rotation and tag scale/position/rotation. K09/K10 use bundled Caveat handwriting."
   },
   {
     "id": "K12",
     "name": "Framed portrait attachment",
     "category": "Lettering and portraits",
-    "image": "items/K12-r1.png",
+    "image": "items/K12-r2.png",
     "status": "revised; awaiting approval",
-    "revision": 1,
+    "revision": 2,
     "source": "art/hand-attachments-k09-k12-r1.png",
-    "kind": "new optional attachment artwork proposal; not approved with K01–K08",
+    "kind": "implemented runtime rendering",
     "sourceRect": [
       768,
       512,
@@ -2160,6 +2227,7 @@
     "sourceSize": [
       1536,
       1024
-    ]
+    ],
+    "note": "Runtime attachment: individual silhouette clip excludes neighbours. UI controls provide font, ink color, size, alignment, text offsets/rotation and tag scale/position/rotation. K09/K10 use bundled Caveat handwriting."
   }
 ]

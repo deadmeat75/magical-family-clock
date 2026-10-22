@@ -8,26 +8,30 @@
 
 ## B01 · aged-brass information bezel
 
-**Revision 2 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![B01 aged-brass information bezel](items/B01-r2.png)](items/B01-r2.png)
+[![B01 aged-brass information bezel](items/B01-r3.png)](items/B01-r3.png)
 
-Example: implemented radial mapping of crafted bezel artwork; editable data band.
+Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.
+
+Example: implemented runtime rendering.
 
 ## B02 · silver information bezel
 
-**Revision 2 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![B02 silver information bezel](items/B02-r2.png)](items/B02-r2.png)
+[![B02 silver information bezel](items/B02-r3.png)](items/B02-r3.png)
 
-Example: implemented radial mapping of crafted bezel artwork; editable data band.
+Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.
+
+Example: implemented runtime rendering.
 
 ## B03 · wood information bezel
 
-**Revision 2 · awaiting approval.**
+**Revision 3 · awaiting approval.**
 
-[![B03 wood information bezel](items/B03-r2.png)](items/B03-r2.png)
+[![B03 wood information bezel](items/B03-r3.png)](items/B03-r3.png)
 
-Natural handcrafted wood grain with knots, material depth, directional lighting and readable bezel information.
+Frame appearance approved. Text must curve and fit within the frame; complete readout rendering remains awaiting review.
 
-Example: implemented radial mapping of crafted bezel artwork; editable data band.
+Example: implemented runtime rendering.

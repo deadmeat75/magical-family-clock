@@ -75,3 +75,11 @@ L02–L08 have new normal-speed full-clock and close-up clips. The L06 compariso
 F01 revision 4 aligns each location name to the curved outer edge of its own painted scallop, with an inward margin. The browser check verifies placement within each lobe and samples the underlying gold artwork. Names remain editable SVG text. F03 revision 6 uses asymmetric layered celestial wheels. These face studies remain artwork proposals; final rotating layers and dynamic-name fitting still require implementation.
 
 Remaining visual approvals: F01, F03; L02–L08; P02–P04; K09–K12; W01–W10; N01–N08; B01–B03; E01–E06. See the decision record for conditions and explicit approvals.
+
+## Current revision pass
+
+[Fresh review examples](REVIEW-ROUND-2.md) preserve all explicit approvals. W01–W06, W08, W10, E01–E06 and L01–L06 effects are approved. B01–B03 frame appearance is approved, with curved readouts still to review. P02–P04 all require non-tiled textures.
+
+F03 revision 7 is implemented as a functional astronomical theme, with real local time, calendar wheels and existing moon-source/fallback handling. F01 revision 5 remains a lettering placement proposal. K09–K12 revision 2 now render as individually clipped physical attachments with GUI lettering controls. Wind uses weather speed units and varied paths; frost is confined to the central scene. Moon brightness, curved bezel text, local lamp variation and visible foreground fireflies have new runtime examples. New context clips for approved landscape effects use the retraced mountain guide and continuous source edge fit.
+
+Earlier art-direction notes above describe previous stages. The current review page identifies what is newly implemented and what still requires visual approval. Release remains held at published HACS v0.4.0.

@@ -177,7 +177,7 @@ The [latest visual review index](visual-review/LATEST-REVISIONS.md) is the place
 1. In **Appearance**, select a **Weather effect** to inspect it. Start with intensity **1**. Return to **Auto** to follow your existing weather entity.
 2. Enable **Weather animation** to see falling rain, snow, sleet, drifting fog and wind-blown leaves. General reduced motion and your device's accessibility preference can pause decorative movement.
 3. **Clear** gives a cloud-free sky. It removes both the photograph's painted clouds and the moving cloud layer. **Moving clouds** still controls cloud animation for other weather conditions.
-4. **Ice** forms fine frost around the outer protective glass. It grows inward slightly and leaves hands, portraits and destination names readable. Give the growth preview time to develop.
+4. **Ice** grows fine frost inward from the edge of the central castle opening. It is clipped away from the outer destination ring. Give the growth preview time to develop.
 5. **Lightning** combines distant strikes behind clouds with nearer strikes, different positions, branching channels and brief surrounding illumination. Weather can keep moving while castle scenery is paused.
 6. **Wind** moves loose leaves across the opening and increases canopy gusts. **Fog** drifts in layers across the landscape; it does not darken the entire clock.
 
@@ -211,3 +211,67 @@ Open **Labels & effects**. Each surface—hands, portraits, face, frame and beze
 The revised E01–E06 sheets show **effect off** beside **effect at 85%**, with each comparison isolated so the settings cannot interfere. Use lower strengths for a restrained finished clock. Surface wear and patina do not cover the castle sky with a tiled material layer. Changing these controls does not change tracking, names, sensor rules or saved people.
 
 Approved face, hand, material, symbol and seasonal artwork remains preserved in the decision record. Some approved art still needs final runtime registration, pivots, animation layers or material mapping. The gallery identifies artwork studies separately from implemented runtime examples; an artwork approval alone does not publish a release.
+
+## Review draft: functional astronomical face (F03)
+
+This face is available in the **unreleased review branch**. Published HACS remains v0.4.0; do not expect these controls in that published version yet. When an approved release is published, update through HACS as usual.
+
+1. Open the card editor and choose **Clock theme → astronomical**. This also selects vector artwork and clears a custom face image so the functional face is visible.
+2. Keep your existing people, sensors and locations. The astronomical dials display additional information; the family hands continue to show whereabouts.
+3. Under **Living world → Moon phase**, choose your existing lunar-phase sensor. Named phases, continuous cycle fractions, percentages of a cycle and lunar-age days retain their existing meanings. A sensor reporting only illuminated percentage cannot establish waxing versus waning; use a full phase reading.
+4. Choose the missing-sensor behavior deliberately. **Hide** displays an unavailable indication instead of inventing a reading. **Calculated** uses the existing astronomical calculation when the chosen sensor is missing. The reading records which source supplied it.
+5. The clock uses Home Assistant’s configured time zone; UTC is the fallback when no zone is provided. The large sun dial shows local hours and minutes. Other wheels show weekday, day within the current month, and progress through the calendar year. Month lengths and leap years are respected. The moon shows the live phase and illuminated fraction.
+
+The calendar wheels advance to their real readings. They do not spin at arbitrary animation speeds. Pausing decorative scenery does not freeze the clock or stop sensor updates. The year/month wheel is a calendar display, not a claim to show measured planetary positions or a complete historical astrolabe. Its illustration, layout and readability remain subject to visual approval.
+
+## Review draft: physical name attachments (K09–K12)
+
+In **People**, open **Customize hand and portrait** for the person and select **Name attachment**. Choose affixed parchment, a hanging tag, an oval brooch or a portrait frame. **Engrave on hand** retains the existing engraved-name behavior. These settings are saved with the person’s configuration and therefore also travel through the saved-people library.
+
+Start with a short name, **Tag scale = 1**, all offsets and rotations at **0**, **Tag text size = 68**, and centered alignment. The tag follows its parent hand instead of occupying an unrelated place on the face.
+
+| Setting | How to use it |
+| --- | --- |
+| Hand lettering | Exact text on the attachment. An empty value stays empty. |
+| Lettering color | Choose dark brown or black for parchment ink, or another color for your design. The same existing picker controls attachment lettering. |
+| Tag scale | Scales the complete attachment and its lettering together. 0.5 is half size; 2 is twice size. |
+| Tag horizontal / vertical offset | Moves the whole tag relative to its default position along the hand. Negative values move left/up; positive values move right/down in the hand’s own coordinates. |
+| Tag rotation | Rotates the complete tag relative to the hand. |
+| Tag text horizontal / vertical offset | Moves only the text on its writing surface. These use source-art coordinates, so start with increments of 10–20. |
+| Tag text rotation | Rotates only the text. Zero follows the natural baseline, including the hanging tag’s sloping edge. |
+| Tag text size | Source-art font size, before scaling the tag. Increase or decrease from 68 to fit your name. |
+| Tag text alignment | Aligns text left, center or right within the writing area. Offsets then fine-tune placement. |
+| Tag text font | `Caveat` is bundled for handwriting; `Georgia, serif` gives formal lettering. Blank uses the attachment’s default. |
+| Portrait image | The portrait attachment uses this person’s configured photo. Without a photo it has an ivory backing. Use lettering offsets, size and color to suit the portrait. To show only the attached portrait, turn off the separate Show portrait setting; the attachment still uses the configured photo. |
+
+Example person settings:
+
+```yaml
+name_attachment: parchment
+hand_label: Rowan
+text_color: '#37271b'
+attachment_font: Caveat
+attachment_scale: 1
+attachment_text_size: 68
+attachment_align: middle
+attachment_x: 0
+attachment_y: 0
+attachment_rotation: 0
+attachment_text_x: 0
+attachment_text_y: 0
+attachment_text_rotation: 0
+```
+
+This is a person-level fragment, not a complete card configuration. The GUI provides these settings; editing YAML is optional. Long names require fitting with the size and offset controls. Changing a tag does not alter the person’s sensor mappings.
+
+## Review draft: material panels, wind and central frost
+
+**Location panels:** hammered metal, parchment and wood now use one continuous source texture spanning the full dial. There is no repeating 190-unit texture grid. Panel background color, graphic and name remain independent. Inspect at your normal dashboard size and in fullscreen; the revised material examples remain awaiting approval.
+
+**Wind:** choose the existing weather entity under weather settings. When it exposes `wind_speed`, the effect converts `wind_speed_unit` to meters per second before controlling travel speed. Supported units include km/h, mph, knots (`kn`), m/s and ft/s. Numeric `wind_bearing` determines east/west drift using the meteorological “from” direction. Zero speed removes airborne wind debris; missing speed data uses the manual visual fallback. Leaves follow varied rising/falling gust paths and tumble individually; they do not all follow one horizontal route.
+
+**Ice:** frost is clipped to the central castle opening, using the configured opening radius. It no longer sits around the destination ring. Give the preview roughly 25 seconds to show the full staggered growth. With decorative motion reduced or weather animation disabled, the completed frost remains visible as a still effect.
+
+**Bezel readings:** text now follows the ring. Each reading is allocated the arc between neighbouring readings and scales down when necessary. Bottom readings turn to remain upright. Space readings apart, use a wider bezel for larger text, and keep sensor labels concise. The approved frame appearance remains unchanged.
+
+**Scene edges and light:** the mountain guide has been retraced against the source photograph, and a continuous source-pixel edge fit is shared by the sky and its depth masks. New day/night close-ups are provided for judging remaining halos or cutout edges. Window animation changes each lamp’s actual brightness independently; fireflies move near foreground planting with a green pulse. Their revised appearance still needs your review.

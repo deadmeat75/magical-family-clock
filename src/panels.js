@@ -224,8 +224,8 @@ const graphics = {
   pin: '<path d="M0 22C-6 10-18 0-17-10A17 17 0 1 1 17-10C18 0 6 10 0 22Z"/><circle cy="-8" r="6" fill="#49301a"/>',
 };
 function materialPatterns() {
-  // Each crop uses a different photographic texture. A large tile avoids the
-  // regular repeated dots/stripes of the former procedural patterns.
+  // One continuous source crop spans the complete 600-unit dial. No tile
+  // boundary or repeated motif can occur within a destination panel.
   return [
     ["hammered-metal", 0, 0],
     ["parchment", 627, 0],
@@ -233,7 +233,7 @@ function materialPatterns() {
   ]
     .map(
       ([id, x, y]) =>
-        `<pattern id="${id}" width="190" height="190" patternUnits="userSpaceOnUse"><svg width="190" height="190" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${panelTexturesURL}" width="1254" height="1254"/></svg></pattern>`,
+        `<pattern id="${id}" width="600" height="600" patternUnits="userSpaceOnUse"><svg width="600" height="600" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${panelTexturesURL}" width="1254" height="1254"/></svg></pattern>`,
     )
     .join("");
 }

@@ -8,19 +8,21 @@ Revised runtime effects. Open each GIF to judge movement; the PNG is only a stil
 
 ## W01 · clear
 
-**Revision 3 · awaiting approval.**
+**Approved.**
 
 [![W01 clear](items/W01-r3.png)](items/W01-r3.png)
 
-Clear weather must have no clouds in either the underlying sky artwork or the moving cloud layer. Preserve time-of-day sky colors and other appropriate effects.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
 ## W02 · clouds
 
-**Awaiting approval.**
+**Approved.**
 
 [![W02 clouds](items/W02-r3.gif)](items/W02-r3.gif)
+
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -28,11 +30,11 @@ Example: implemented runtime rendering.
 
 ## W03 · light-rain
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W03 light-rain](items/W03-r3.gif)](items/W03-r3.gif)
 
-Visible gentle animated rain; brighter detailed scene.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -40,11 +42,11 @@ Example: implemented runtime rendering.
 
 ## W04 · rain
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W04 rain](items/W04-r3.gif)](items/W04-r3.gif)
 
-Visible denser animated rain; brighter detailed scene.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -52,11 +54,11 @@ Example: implemented runtime rendering.
 
 ## W05 · snow
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W05 snow](items/W05-r3.gif)](items/W05-r3.gif)
 
-Visible falling snow at normal size; brighter detailed scene.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -64,11 +66,11 @@ Example: implemented runtime rendering.
 
 ## W06 · sleet
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W06 sleet](items/W06-r3.gif)](items/W06-r3.gif)
 
-Visible mixed rain and snow/sleet; brighter detailed scene.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -76,23 +78,23 @@ Example: implemented runtime rendering.
 
 ## W07 · wind
 
-**Revision 1 · awaiting approval.**
+**Revision 4 · awaiting approval.**
 
-[![W07 wind](items/W07-r3.gif)](items/W07-r3.gif)
+[![W07 wind](items/W07-r4.gif)](items/W07-r4.gif)
 
-Visible wind: moving loose leaves and gust-bent foliage. Fix leaf trajectories so rotation occurs around the leaf rather than around the scene origin.
+Wind speed should follow sensor data, with varied gusting, curling trajectories and tumbling; avoid straight horizontal leaf streams.
 
 Example: implemented runtime rendering.
 
-[Still image](items/W07-r3.png)
+[Still image](items/W07-r4.png)
 
 ## W08 · fog
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W08 fog](items/W08-r3.gif)](items/W08-r3.gif)
 
-Fog must visibly drift in natural depth layers while clock data stays readable.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 
@@ -100,23 +102,23 @@ Example: implemented runtime rendering.
 
 ## W09 · ice
 
-**Revision 1 · awaiting approval.**
+**Revision 4 · awaiting approval.**
 
-[![W09 ice](items/W09-r3.gif)](items/W09-r3.gif)
+[![W09 ice](items/W09-r4.gif)](items/W09-r4.gif)
 
-Completely replace lines with gradually growing fern-like frost on outer watchglass. Restrained translucent highlights; keep all data readable.
+Ice belongs only over the central castle opening. Prefer natural growing crystals; a correctly placed static frost treatment is acceptable.
 
 Example: implemented runtime rendering.
 
-[Still image](items/W09-r3.png)
+[Still image](items/W09-r4.png)
 
 ## W10 · lightning
 
-**Revision 1 · awaiting approval.**
+**Approved.**
 
 [![W10 lightning](items/W10-r3.gif)](items/W10-r3.gif)
 
-More irregular branching strikes in different sky positions and both near and distant layers. Lengthen flashes so they can be seen. Keep momentary scene illumination and clock readability.
+Explicitly approved in user review.
 
 Example: implemented runtime rendering.
 

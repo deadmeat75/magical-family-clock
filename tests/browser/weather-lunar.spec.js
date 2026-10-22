@@ -148,13 +148,13 @@ test("lunar waxing and waning illuminate opposite sides while full and new moon 
     (phases[2].left + phases[2].right) * 0.05,
   );
 });
-test("frost is visible at the protective glass edge and scene pauses do not create a dark entry overlay", async ({
+test("frost follows the central opening edge and scene pauses do not create a dark entry overlay", async ({
   page,
 }) => {
   const card = await boot(page, { weather_effect: "ice" });
   await expect(card.locator(".weather")).toHaveAttribute(
     "clip-path",
-    "url(#dial-clip)",
+    "url(#castle-opening)",
   );
   await expect(card.locator(".watchglass-frost")).toBeVisible();
   expect(
@@ -166,8 +166,9 @@ test("frost is visible at the protective glass edge and scene pauses do not crea
     const b = e.getBBox();
     return { x: b.x, y: b.y, width: b.width, height: b.height };
   });
-  expect(bounds.width).toBeGreaterThan(480);
-  expect(bounds.x).toBeGreaterThan(25);
+  expect(bounds.width).toBeGreaterThan(320);
+  expect(bounds.width).toBeLessThan(360);
+  expect(bounds.x).toBeGreaterThan(120);
 });
 test("moon shadow is transparent in both blue daylight and indigo night skies", async ({
   page,
