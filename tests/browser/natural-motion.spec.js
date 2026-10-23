@@ -275,9 +275,9 @@ test("castle motion continues in native fullscreen and fixed expansion when its 
     expect(first.equals(await page.screenshot())).toBe(false);
   };
   await card.getByRole("button", { name: "Expand clock", exact: true }).click();
-  expect(
-    await card.evaluate((c) => Boolean(c.shadowRoot.fullscreenElement)),
-  ).toBe(true);
+  await expect
+    .poll(() => card.evaluate((c) => Boolean(c.shadowRoot.fullscreenElement)))
+    .toBe(true);
   await page.waitForTimeout(250);
   await checkMotion();
   await page.evaluate(() => document.exitFullscreen());
