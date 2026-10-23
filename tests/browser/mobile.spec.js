@@ -128,7 +128,13 @@ test("production water, foreground and fog stay inside the castle on phone and t
         (x - geometry.x) / geometry.a - 300,
         (y - geometry.y) / geometry.d - 282,
       );
-      if (radius > geometry.r + 9) {
+      const faceRadius = Math.hypot(
+        (x - geometry.x) / geometry.a - 300,
+        (y - geometry.y) / geometry.d - 300,
+      );
+      // Check destination-panel interiors. The unrelated beveled outer rim
+      // can rerasterize when a composited layer is hidden between screenshots.
+      if (radius > geometry.r + 9 && faceRadius < 270) {
         // Compositing may change edge antialiasing by one pixel. Detect filled
         // escaped areas, rather than thin edge changes on the unchanged frame.
         if (
