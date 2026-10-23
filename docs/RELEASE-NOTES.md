@@ -1,28 +1,18 @@
-# Magical Family Clock 0.4.1 — Crafted Living World
+# Magical Family Clock 0.4.2 — iPhone and iPad rendering correction
 
-The approved artwork is now integrated into the card, with clearer natural scenery, physical hands and a simpler editor. Install or update through HACS as usual.
+Fix oversized moving-water/foreground rectangles and displaced fog on WebKit, as reported on iPhone 16 Pro Max and 2024 iPad Air. The failure was reproduced with the production bundle and corrected with native SVG image surfaces that obey the face's scaling and clipping.
 
-- Twelve realistic hand silhouettes with registered pivots and openwork cutouts; approved material detail, finishes and optional affixed parchment, tags, brooches and photo frames.
-- Polished Brass Clockwork with a continuous new-to-antique age control and its connected meshing gear train.
-- Thirteen metalwork location symbols; natural panel textures; approved brass, silver and carved-wood bezels with corrected curved text and per-reading text color.
-- Twelve painted inhabitants with separately animated parts. Flying routes enter/exit beyond the opening; aquatic figures and boats meet the waterline. Small pixies render in the foreground. The wild unicorn uses grounded idle motion with planted hooves.
-- Moving clouds, visible tree sway, seasonal petals/leaves, lake ripples, fine waterfall flow/spray, independent castle lamps, foreground fireflies and varied shooting-star passages.
-- Brighter seasonal/time lighting preserves the registered HD scene. Rain, snow, gusts, drifting fog, denser inward-growing frost and varied lightning remain independently configurable.
-- Sensor-driven moon phases preserve the approved lunar surface, with a transparent shadow that shows the real sky beneath it.
-- One Home Assistant-owned preview, live updates and continued motion in fullscreen. Reusable people/clocks, image uploads, sensor rules, captions, optional readings and face switching remain included.
-
-F01/F03 face proposals and C13–C16 props were omitted by request. Omitted prop entries are removed when loading a configuration; people and tracking settings are retained. The abandoned review-only astronomical theme falls back to Living Magical.
+- Preserve live motion in expanded view and after rotation; keep the HD castle base image.
+- Share bundled image URLs, use binary registered-scene images, reduce decoded image caches, lazily prepare foliage/lamps, and release temporary frame URLs/canvases after navigation.
+- Add phone/tablet WebKit production regression checks for rendered clipping, rotation, expanded-view motion/pause and repeated dashboard remounts.
+- Make meteor visibility checks deterministic and avoid duplicate review-branch/tag push CI runs. Required Chromium/WebKit release checks remain enabled.
 
 ## Update through HACS
 
-1. Open **HACS → Magical Family Clock → Download/update → 0.4.1**.
-2. Reload the Home Assistant frontend; hard-refresh if an old bundle remains cached.
-3. For narrow hands, open **People → Customize hand and portrait → Use a readable parchment name**. For old free-position location labels, use **Locations → Fit all names and graphics inside panels**.
+Open **HACS → Magical Family Clock → Download/update → 0.4.2**, reload Home Assistant, and fully close/reopen the iOS app if cached artwork remains. Your existing clock configuration and people are retained.
 
-[Detailed installation guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.1/docs/USER-GUIDE.md) · [Living World and every new control](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.1/docs/WORLD-GUIDE.md) · [Publication and validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md)
+[Detailed iOS correction and verification](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.2/docs/IOS-COMPATIBILITY.md) · [Full user guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.2/docs/USER-GUIDE.md) · [Living World controls](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.2/docs/WORLD-GUIDE.md) · [Publication and validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md)
 
-Approved originals remain unchanged. Optimized deployment derivatives preserve native image dimensions and keep the release self-contained. Runtime limits and installation verification are documented in the guides.
+Automated mobile-viewport WebKit checks are not physical iOS companion-app acceptance. The user's live Home Assistant installation was not modified. Repository About description/topics still require owner permissions; HACS metadata validation remains enabled and documented separately from package checks.
 
-## Verification
-
-63 unit/packaging and 80 Chromium browser checks cover the approved asset manifests, registered hand pivots, physical bowl lettering, source-consistent lighting refresh, independent text colors, responsive fitting, weather, motion, fullscreen and the existing card behavior. The installed bundle passed isolated Home Assistant 2026.10.2 acceptance with zero frontend exceptions. GitHub workflow and downloaded-asset verification are recorded in publication status.
+Verification: 63 unit/packaging checks and 89 browser checks passed (83 Chromium and six phone/tablet WebKit). The installed Home Assistant 2026.10.2 dashboard passed WebKit surface, motion and live-moon checks with six hands, six inhabitants and zero frontend exceptions. [Evidence](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.2/docs/IOS-ACCEPTANCE.json).

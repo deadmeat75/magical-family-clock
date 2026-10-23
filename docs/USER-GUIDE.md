@@ -2,7 +2,7 @@
 
 The [Living World guide](WORLD-GUIDE.md) covers fitted location panels, large graphics and textures, the creature-placement map, moving scenery and the sensor-driven moon. The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.
 
-This guide covers **version 0.4.1 — Living World**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
+This guide covers **version 0.4.2 — iPhone/iPad correction**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
 
 The card shows **where people are**, rather than hours and minutes. Each person has a hand pointing to a location. Several people can share a location, and several independent clocks can use the same Home Assistant entities.
 
@@ -49,7 +49,7 @@ You need Home Assistant, HACS configured with its GitHub connection, and permiss
 
 For a first test, use a separate dashboard or add a separate card. Keep the old clock resource and any existing standalone page in place.
 
-The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.1). See [current publishing status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification, HACS results and repository-owner metadata tasks. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
+The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.2). See [current publishing status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification, HACS results and repository-owner metadata tasks. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
 
 If you are only installing the card, repository metadata is the repository owner’s task. Do not change your working Home Assistant configuration to try to fix a GitHub metadata error.
 
@@ -60,7 +60,7 @@ If you are only installing the card, repository metadata is the repository owner
 3. Enter `https://github.com/deadmeat75/magical-family-clock`.
 4. Choose **Dashboard** as the category and add the repository.
 5. Find **Magical Family Clock** and open its download/install dialog.
-6. Select version **0.4.1** (or a newer published version). This release does not require enabling prereleases.
+6. Select version **0.4.2** (or a newer published version). This release does not require enabling prereleases.
 7. Download, then reload the Home Assistant frontend when prompted.
 
 HACS normally manages the JavaScript resource. Routine installation should not require copying a JavaScript file or registering a resource manually. If HACS does not register it, first check the troubleshooting section and your HACS installation status.
@@ -298,6 +298,8 @@ To uninstall, remove the new cards you no longer want, then remove this new pack
 
 ## 16. Troubleshooting
 
+For oversized water, foreground rectangles or misplaced fog on iPhone/iPad, update to 0.4.2 through HACS, reload the frontend and fully reopen the companion app if needed. [iOS correction and verification details](IOS-COMPATIBILITY.md).
+
 | Symptom | What to check |
 | --- | --- |
 | Repository cannot be added | Correct URL and Dashboard category; HACS GitHub connection; current repository metadata status in publishing notes |
@@ -319,7 +321,7 @@ When reporting a problem, include the card version, Home Assistant/HACS/browser 
 
 ## 17. What has been verified
 
-Version 0.4.1 passed **53 unit/packaging checks and 50 Chromium browser checks**, including actual rendered-pixel motion, panel fitting, live moon phases, creature filters/placement and the existing hand, gear, saved-people, bezel and preview coverage. See [motion correction acceptance](MOTION-ACCEPTANCE.json) and [Living World acceptance](WORLD-ACCEPTANCE.json) and the previous [Design Studio acceptance](DESIGN-STUDIO-ACCEPTANCE.json). Version 0.2.0 account-storage and image-upload persistence checks remain covered by the regression suite; see [previous version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. Release-download verification is recorded in [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+Version 0.4.2 passes **63 unit/packaging checks and 89 browser checks (83 Chromium, six phone/tablet WebKit)**, including actual rendered-pixel motion, panel fitting, live moon phases, creature filters/placement and the existing hand, gear, saved-people, bezel and preview coverage. See [motion correction acceptance](MOTION-ACCEPTANCE.json) and [Living World acceptance](WORLD-ACCEPTANCE.json) and the previous [Design Studio acceptance](DESIGN-STUDIO-ACCEPTANCE.json). Version 0.2.0 account-storage and image-upload persistence checks remain covered by the regression suite; see [previous version validation](NEXT-VERSION.md). In a separate Home Assistant 2026.10.2 test instance, dashboard saving/reload, live entity state movement, native entity selection and independent cards were verified without frontend exceptions. Release-download verification is recorded in [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
 HACS 2.0.5 was installed in that disposable instance and its setup form loaded. Authenticated custom-repository installation/update remains unverified. No existing user installation was modified. The latest outstanding repository-owner tasks and workflow results are recorded in [publishing status](PUBLISHING-STATUS.md), with further detail in [validation](VALIDATION.md).
 

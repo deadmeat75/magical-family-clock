@@ -1,6 +1,11 @@
-import brass from "./assets/optimized/bezel-brass-r2.webp";
-import silver from "./assets/optimized/bezel-silver-r2.webp";
-import wood from "./assets/optimized/bezel-carved-wood-r2.webp";
+import { sharedImageURL } from "./image-url.js";
+import brassEmbedded from "./assets/optimized/bezel-brass-r2.webp";
+import silverEmbedded from "./assets/optimized/bezel-silver-r2.webp";
+import woodEmbedded from "./assets/optimized/bezel-carved-wood-r2.webp";
+
+const brass = sharedImageURL(brassEmbedded);
+const silver = sharedImageURL(silverEmbedded);
+const wood = sharedImageURL(woodEmbedded);
 const sources = { brass, "aged-brass": brass, silver, wood },
   loads = new Map(),
   cache = new Map();

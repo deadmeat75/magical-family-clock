@@ -1,0 +1,80 @@
+{
+  "version": "0.4.2",
+  "physicalIOSCompanionAppVerified": false,
+  "userLiveInstallationChanged": false,
+  "checks": {
+    "unitPackaging": 63,
+    "chromium": 83,
+    "webkitPhone": 3,
+    "webkitTablet": 3,
+    "browserTotal": 89
+  },
+  "productionWebKitExamples": {
+    "phoneViewport": {
+      "width": 440,
+      "height": 956
+    },
+    "tabletViewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "markupCharacters": 250290,
+    "landscapeSurfaces": 1,
+    "foreignObjects": 0
+  },
+  "installedHomeAssistantChromium": {
+    "homeAssistantVersion": "2026.10.2",
+    "version": "0.4.2",
+    "nativeMoonSelection": true,
+    "liveMoonSensorUpdate": true,
+    "savedClockLibrary": true,
+    "dashboardReload": true,
+    "persisted": {
+      "objects": 6,
+      "moon": "sensor.clock_world_moon",
+      "panelTexture": "hammered-metal",
+      "panels": 4
+    },
+    "artwork": {
+      "hands": 6,
+      "symbols": 4,
+      "paintedInhabitants": 6
+    },
+    "frontendErrors": []
+  },
+  "installedHomeAssistantWebKitDashboard": {
+    "homeAssistantVersion": "2026.10.2",
+    "version": "0.4.2",
+    "engine": "WebKit",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "installedSVGSurfaces": true,
+    "motion": true,
+    "liveMoonSensorUpdate": true,
+    "metrics": {
+      "hands": 6,
+      "inhabitants": 6,
+      "surfaces": 4,
+      "markupCharacters": 1683883
+    },
+    "frontendErrors": [],
+    "physicalDevice": false
+  },
+  "nativeEditorChromium": {
+    "homeAssistantVersion": "2026.10.2",
+    "nativeEditorSinglePreview": true,
+    "nativePreviewUpdates": true,
+    "nativeEncounterPreviewAction": true
+  },
+  "bundle": {
+    "bytes": 25743684,
+    "sha256": "7bb074aeaf70a66931f3efaeb50c06f47ace6ab20e7318382ae725c45641c261"
+  },
+  "limitations": [
+    "WebKit automation uses Linux WebKit with mobile viewports; physical iPhone/iPad app behavior needs user confirmation.",
+    "Home Assistant native entity-selector editing is verified in Chromium; the separate WebKit editor harness did not establish that check.",
+    "Repository description/topics remain blocked by GitHub integration permissions."
+  ]
+}

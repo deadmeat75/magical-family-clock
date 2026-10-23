@@ -92,9 +92,9 @@ export function weatherMarkup(
     }
   }
   if (kind === "fog") {
-    out += `<defs><filter id="fog-wisps" x="-25%" y="-60%" width="150%" height="220%"><feTurbulence type="fractalNoise" baseFrequency=".008 .025" numOctaves="2" seed="13" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="36"/><feGaussianBlur stdDeviation="7"/></filter><radialGradient id="fog-density"><stop stop-color="#e3edf0" stop-opacity=".55"/><stop offset=".55" stop-color="#d9e5e9" stop-opacity=".3"/><stop offset="1" stop-color="#d9e5e9" stop-opacity="0"/></radialGradient></defs>`;
+    out += `<defs><radialGradient id="fog-density"><stop stop-color="#e3edf0" stop-opacity=".55"/><stop offset=".55" stop-color="#d9e5e9" stop-opacity=".3"/><stop offset="1" stop-color="#d9e5e9" stop-opacity="0"/></radialGradient></defs>`;
     for (let i = 0; i < 3; i++)
-      out += `<path class="fog-bank" d="M30 ${285 + i * 47}Q155 ${230 + i * 45} 285 ${282 + i * 44}T560 ${274 + i * 46}L590 ${345 + i * 47}Q300 ${400 + i * 20} 30 ${345 + i * 47}Z" fill="url(#fog-density)" filter="url(#fog-wisps)" style="animation-delay:-${i * 9}s;animation-duration:${23 + i * 5}s"/>`;
+      out += `<path class="fog-bank" d="M30 ${285 + i * 47}Q155 ${230 + i * 45} 285 ${282 + i * 44}T560 ${274 + i * 46}L590 ${345 + i * 47}Q300 ${400 + i * 20} 30 ${345 + i * 47}Z" fill="url(#fog-density)" style="animation-delay:-${i * 9}s;animation-duration:${23 + i * 5}s"/>`;
   }
   if (kind === "wind" && options.speed !== 0) {
     const speed =

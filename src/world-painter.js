@@ -1,6 +1,7 @@
+import { svgSurface, needsSVGSurface } from "./canvas-surface.js";
 import { castleWindowPath } from "./castle-windows.js";
 import { registeredSkyPath } from "./sky-registration.js";
-import { skyPath } from "./world-paths.js";
+import { skyPath, lakePath } from "./world-paths.js";
 import { renderMoons } from "./lunar.js";
 import { sceneSource } from "./artwork.js";
 import { createMeteorTimeline } from "./meteors.js";
@@ -89,7 +90,7 @@ function windowSources(image) {
 async function loadSource(scene) {
   const url = sceneSource(scene);
   if (!sources.has(url)) {
-    if (sources.size >= 4) sources.delete(sources.keys().next().value);
+    if (sources.size >= 2) sources.delete(sources.keys().next().value);
     sources.set(
       url,
       new Promise((resolve, reject) => {
@@ -143,8 +144,8 @@ async function loadSource(scene) {
             sky: registeredSkyPath(image),
             clouds: tile,
             cloudMask,
-            windows: windowSources(image),
-            foliage: createFoliagePainter(image),
+            windows: null,
+            foliage: null,
           });
         };
         image.onerror = () => {
@@ -404,16 +405,28 @@ export function startWorldPainter(
 ) {
   const meteors = createMeteorTimeline(meteorSeed);
   const hasClouds = Boolean(
-    root.querySelector('canvas[data-world-paint="clouds"]'),
+    root.querySelector(
+      '[data-world-paint="clouds"], [data-world-surface~="clouds"]',
+    ),
   );
-  const entries = [...root.querySelectorAll("canvas[data-world-paint]")].map(
-    (c) => {
-      const size = config.world.quality === "light" ? 384 : 768;
-      c.width = size;
-      c.height = size;
-      return { canvas: c, kind: c.dataset.worldPaint, ctx: c.getContext("2d") };
-    },
-  );
+  const entries = [
+    ...root.querySelectorAll(
+      "canvas[data-world-paint], image[data-world-surface]",
+    ),
+  ].map((c) => {
+    const bridged = c.hasAttribute("data-world-surface"),
+      size = bridged || config.world.quality === "light" ? 384 : 768,
+      surface = bridged ? canvas(size, size) : c;
+    surface.width = size;
+    surface.height = size;
+    return {
+      canvas: surface,
+      node: c,
+      kinds: (c.dataset.worldPaint || c.dataset.worldSurface).split(" "),
+      ctx: surface.getContext("2d"),
+      bridge: bridged ? svgSurface(c, surface) : null,
+    };
+  });
   let raf = 0,
     ended = false,
     last = performance.now(),
@@ -426,7 +439,7 @@ export function startWorldPainter(
     const intensity =
       clamp(config.scene_intensity ?? 0.65, 0.15, 1.5) *
       (weather === "wind" ? 1.5 : 1);
-    for (const { canvas: c, ctx, kind } of entries) {
+    for (const { canvas: c, node, ctx, kinds, bridge } of entries) {
       if (!ctx) continue;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, c.width, c.height);
@@ -438,38 +451,51 @@ export function startWorldPainter(
         (-108 * c.width) / 384,
         (-90 * c.height) / 384,
       );
-      if (kind === "clouds") drawClouds(ctx, source.clouds, t);
-      if (kind === "water")
-        drawLake(ctx, source.image, t, intensity, config.world.quality);
-      if (kind === "foliage")
-        source.foliage.draw(ctx, t, intensity, config.world.quality);
-      if (kind === "seasonal-debris")
-        drawSeasonalDebris(
-          ctx,
-          t,
-          intensity,
-          scene.season,
-          config.world.quality,
-        );
-      if (kind === "meteors") drawMeteor(ctx, meteors.at(t), t);
-      if (kind === "stars") drawStars(ctx, t, config.world.quality);
-      if (kind === "windows") drawWindows(ctx, source.windows, t);
-      if (kind === "fireflies") drawFireflies(ctx, t, config.world.quality);
-      if ((kind === "stars" || kind === "meteors") && hasClouds) {
-        ctx.globalCompositeOperation = "destination-out";
-        drawClouds(ctx, source.cloudMask, t, true);
-        ctx.globalCompositeOperation = "source-over";
+      for (const kind of kinds) {
+        ctx.save();
+        if (kind === "clouds") ctx.clip(new Path2D(source.sky));
+        if (kind === "water") ctx.clip(new Path2D(lakePath));
+        if (kind === "clouds") drawClouds(ctx, source.clouds, t);
+        if (kind === "water")
+          drawLake(ctx, source.image, t, intensity, config.world.quality);
+        if (kind === "foliage")
+          (source.foliage ??= createFoliagePainter(source.image)).draw(
+            ctx,
+            t,
+            intensity,
+            config.world.quality,
+          );
+        if (kind === "seasonal-debris")
+          drawSeasonalDebris(
+            ctx,
+            t,
+            intensity,
+            scene.season,
+            config.world.quality,
+          );
+        if (kind === "meteors") drawMeteor(ctx, meteors.at(t), t);
+        if (kind === "stars") drawStars(ctx, t, config.world.quality);
+        if (kind === "windows")
+          drawWindows(ctx, (source.windows ??= windowSources(source.image)), t);
+        if (kind === "fireflies") drawFireflies(ctx, t, config.world.quality);
+        if ((kind === "stars" || kind === "meteors") && hasClouds) {
+          ctx.globalCompositeOperation = "destination-out";
+          drawClouds(ctx, source.cloudMask, t, true);
+          ctx.globalCompositeOperation = "source-over";
+        }
+        if (kind === "waterfalls")
+          drawFalls(
+            ctx,
+            t,
+            intensity,
+            scene.period === "night",
+            config.world.quality,
+          );
+        ctx.restore();
       }
-      if (kind === "waterfalls")
-        drawFalls(
-          ctx,
-          t,
-          intensity,
-          scene.period === "night",
-          config.world.quality,
-        );
-      c.dataset.paintTick = String(++tick);
-      c.dataset.worldTime = t.toFixed(3);
+      node.dataset.paintTick = String(++tick);
+      node.dataset.worldTime = t.toFixed(3);
+      bridge?.publish();
     }
   };
   const step = (now) => {
@@ -479,7 +505,7 @@ export function startWorldPainter(
     if (!paused()) {
       t += delta * (config.motion_speed || 1);
       const fps =
-        config.world.quality === "light"
+        needsSVGSurface() || config.world.quality === "light"
           ? 12
           : config.world.quality === "balanced"
             ? 18
@@ -507,10 +533,15 @@ export function startWorldPainter(
             paint();
             if (!ended && entries.length) raf = requestAnimationFrame(step);
           })
-          .catch(() => {})
+          .catch(() => {
+            for (const e of entries) e.bridge?.stop();
+          })
       : Promise.resolve();
   return {
-    ready: Promise.all([paintReady, renderMoons(root)]),
+    ready: Promise.all([
+      paintReady.then(() => Promise.all(entries.map((e) => e.bridge?.ready))),
+      renderMoons(root),
+    ]),
     seek(seconds) {
       t = seconds;
       paint();
@@ -518,6 +549,7 @@ export function startWorldPainter(
     stop() {
       ended = true;
       cancelAnimationFrame(raf);
+      for (const e of entries) e.bridge?.stop();
       return t;
     },
     get time() {

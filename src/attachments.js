@@ -1,5 +1,8 @@
-import atlas from "./assets/optimized/hand-attachments.webp";
+import { sharedImageURL } from "./image-url.js";
+import atlasEmbedded from "./assets/optimized/hand-attachments.webp";
 import { escapeXML } from "./panels.js";
+
+const atlas = sharedImageURL(atlasEmbedded);
 // Separate source coordinates and silhouette clips exclude neighbouring artwork,
 // including the letterboxed area that leaked adjacent tags in earlier previews.
 export const ATTACHMENTS = {

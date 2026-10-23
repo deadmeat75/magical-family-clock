@@ -1,3 +1,4 @@
+import { canvasImageURL, sharedImageURL } from "./image-url.js";
 import { approvedAssets } from "./approved-art.js";
 import { lightingTransfer, sampleSky } from "./registered-lighting.js";
 import winterURL from "./assets/optimized/castle-winter-hd.webp";
@@ -21,13 +22,13 @@ export function preloadImage(url) {
     image.src = url;
   });
   cache.set(url, promise);
-  if (cache.size > 24) cache.delete(cache.keys().next().value);
+  if (cache.size > 8) cache.delete(cache.keys().next().value);
   return promise;
 }
 export function sceneSource(scene) {
   return (
     registered.get(scene?.key) ||
-    (scene?.season === "winter" ? winterURL : dayURL)
+    sharedImageURL(scene?.season === "winter" ? winterURL : dayURL)
   );
 }
 export function preloadArtwork(scene) {
@@ -40,16 +41,19 @@ export function preloadArtwork(scene) {
   const reference = approvedAssets["S" + String(index).padStart(2, "0")];
   if (!reference) return preloadImage(sceneSource(scene));
   const promise = Promise.all([
-    preloadImage(scene.season === "winter" ? winterURL : dayURL),
+    preloadImage(
+      sharedImageURL(scene.season === "winter" ? winterURL : dayURL),
+    ),
     preloadImage(reference),
   ])
-    .then(([base, study]) => {
+    .then(async ([base, study]) => {
       const c = document.createElement("canvas");
       c.width = c.height = 1254;
       c.getContext("2d").drawImage(base, 0, 0, 1254, 1254);
       lightingTransfer(c, scene);
       skyColors.set(scene.key, sampleSky(study));
-      const url = c.toDataURL("image/webp", 0.96);
+      const url = await canvasImageURL(c);
+      c.width = c.height = 0;
       registered.set(scene.key, url);
       loading.delete(scene.key);
       return preloadImage(url);

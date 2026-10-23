@@ -1,8 +1,16 @@
+import { sharedImageURL } from "./image-url.js";
 // Asset-free registry keeps configuration/import validation usable in Node.
 import { approvedShapes } from "./approved-shapes.js";
 export let approvedAssets = {};
 export function setApprovedAssets(assets) {
-  approvedAssets = assets;
+  approvedAssets = Object.fromEntries(
+    Object.entries(assets).map(([key, value]) => [key, value]),
+  );
+  for (const [key, value] of Object.entries(assets))
+    Object.defineProperty(approvedAssets, key, {
+      enumerable: true,
+      get: () => sharedImageURL(value),
+    });
 }
 export const handIds = {
   spoon: "H01",

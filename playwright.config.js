@@ -1,4 +1,4 @@
-import { defineConfig } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "tests/browser",
   fullyParallel: false,
@@ -13,6 +13,24 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
   },
   projects: [
+    {
+      name: "webkit-iphone",
+      testMatch: "**/mobile.spec.js",
+      use: {
+        ...devices["iPhone 13 Pro Max"],
+        browserName: "webkit",
+        viewport: { width: 440, height: 956 },
+      },
+    },
+    {
+      name: "webkit-ipad",
+      testMatch: "**/mobile.spec.js",
+      use: {
+        ...devices["iPad Pro 11"],
+        browserName: "webkit",
+        viewport: { width: 820, height: 1180 },
+      },
+    },
     {
       name: "chromium",
       use: {

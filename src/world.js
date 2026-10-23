@@ -1,3 +1,4 @@
+import { canvasSurface, needsSVGSurface } from "./canvas-surface.js";
 import { paintedCSS } from "./painted-creatures.js";
 import { lightningMarkup } from "./weather-art.js";
 import { sceneSource, imageGrade, sceneSkyColors } from "./artwork.js";
@@ -50,8 +51,7 @@ function moonMarkup(world, reading, opening = 180) {
     path = litMoonPath(reading.phase, r);
   return `<g class="world-moon-depth" mask="url(#world-flight-sky)"><g class="world-moon" data-phase="${reading.phase}" data-moon-source="${escapeXML(reading.source)}" transform="translate(${x} ${y})"><title>${escapeXML(reading.label.replace(/_/g, " "))}${reading.fallback ? " (calculated fallback)" : ""}</title><image class="lunar-surface" data-lunar-phase="${reading.phase}" x="${-r}" y="${-r}" width="${r * 2}" height="${r * 2}"/><path class="moon-lit-area" d="${path}" fill="none"/></g></g>`;
 }
-const paintLayer = (kind, cls, grade) =>
-  `<foreignObject x="108" y="90" width="384" height="384" class="${cls}" style="filter:${grade}"><canvas xmlns="http://www.w3.org/1999/xhtml" class="world-paint" data-world-paint="${kind}" aria-hidden="true"></canvas></foreignObject>`;
+const paintLayer = canvasSurface;
 function skyBackground(scene) {
   const colors = sceneSkyColors(scene) ||
     {
@@ -64,25 +64,39 @@ function skyBackground(scene) {
 }
 function landscapeMotion(c, scene, custom, weather) {
   const w = c.world,
-    grade = imageGrade(scene);
+    grade = imageGrade(scene),
+    grouped = needsSVGSurface(),
+    kinds = [],
+    classes = [];
+  const paint = (kind, cls, grade) => {
+    if (!grouped) return paintLayer(kind, cls, grade);
+    kinds.push(kind);
+    classes.push(cls);
+    return "";
+  };
   let out = `<defs>${!custom ? `<image id="world-photo-source" href="${escapeXML(sceneSource(scene))}" x="108" y="90" width="384" height="384" preserveAspectRatio="xMidYMid slice"/>` : ""}<clipPath id="world-cloud-sky"><path d="${skyPath()}"/></clipPath><radialGradient id="world-feather"><stop offset=".3" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient></defs>`;
   if (w.clouds && weather !== "clear")
-    out += `<g clip-path="url(#world-cloud-sky)">${paintLayer("clouds", "scene-cloud", grade)}</g>`;
+    out += `<g clip-path="url(#world-cloud-sky)">${paint("clouds", "scene-cloud", grade)}</g>`;
   if (w.water && !custom)
-    out += `<defs><clipPath id="world-lake"><path d="${lakePath}"/></clipPath></defs><g clip-path="url(#world-lake)">${paintLayer("water", "water-ripple", grade)}</g>`;
+    out += `<defs><clipPath id="world-lake"><path d="${lakePath}"/></clipPath></defs><g clip-path="url(#world-lake)">${paint("water", "water-ripple", grade)}</g>`;
   if (!custom && w.windows && ["night", "dusk"].includes(scene.period))
-    out += paintLayer("windows", "world-window-lights", "");
+    out += paint("windows", "world-window-lights", "");
   if (w.trees && !custom && w.quality !== "light")
-    out += paintLayer("foliage", "world-foliage", grade);
+    out += paint("foliage", "world-foliage", grade);
   if (
     w.seasonal_debris &&
     !custom &&
     ["spring", "autumn"].includes(scene.season)
   )
-    out += paintLayer("seasonal-debris", "world-seasonal-debris", grade);
+    out += paint("seasonal-debris", "world-seasonal-debris", grade);
   if (w.waterfalls && !custom)
-    out += paintLayer("waterfalls", "world-waterfalls", "");
-  return out;
+    out += paint("waterfalls", "world-waterfalls", "");
+  return (
+    out +
+    (grouped && kinds.length
+      ? canvasSurface(kinds.join(" "), classes.join(" "), grade)
+      : "")
+  );
 }
 function nightSky(world, reading, opening) {
   const p = moonPlacement(world, opening);

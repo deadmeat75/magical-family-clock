@@ -1,15 +1,14 @@
+import { sharedImageURL } from "./image-url.js";
 import "./approved-art-assets.js";
 import { craftedHandPattern, craftedHandFill } from "./approved-art.js";
 import { attachmentMarkup } from "./attachments.js";
 import { renderBezelArtwork } from "./bezel-art.js";
-import materialTexturesURL from "./assets/optimized/panel-material-textures-r1.webp";
-import solidWoodTextureURL from "./assets/optimized/panel-solid-wood-r4.webp";
+import materialTexturesURLEmbedded from "./assets/optimized/panel-material-textures-r1.webp";
+import solidWoodTextureURLEmbedded from "./assets/optimized/panel-solid-wood-r4.webp";
 import {
   setMaterialTextureURL,
   setSolidWoodTextureURL,
 } from "./texture-assets.js";
-setMaterialTextureURL(materialTexturesURL);
-setSolidWoodTextureURL(solidWoodTextureURL);
 import { ensureFonts } from "./fonts.js";
 import { panelsEnabled, panelMarkup, fitPanelLabels } from "./panels.js";
 import { worldCSS, worldMarkup } from "./world.js";
@@ -56,6 +55,11 @@ import {
   registeredLightingVersion,
 } from "./artwork.js";
 import { handStyle, handRadius, handPath } from "./hands.js";
+
+const materialTexturesURL = sharedImageURL(materialTexturesURLEmbedded);
+const solidWoodTextureURL = sharedImageURL(solidWoodTextureURLEmbedded);
+setMaterialTextureURL(materialTexturesURL);
+setSolidWoodTextureURL(solidWoodTextureURL);
 const NS = "http://www.w3.org/2000/svg";
 function svg(tag, attrs = {}, text) {
   const e = document.createElementNS(NS, tag);

@@ -328,12 +328,13 @@ test("twinkling stars and occasional meteors produce visible night-sky changes",
   await page.waitForTimeout(450);
   const second = await card.screenshot();
   expect(first.equals(second), "stars must change rendered pixels").toBe(false);
-  await card.evaluate((c) =>
+  await card.evaluate((c) => {
+    c._worldMeteorSeed = 137; // A known visible passage; arbitrary random events can be outside the opening.
     c.setConfig({
       ...c._baseConfig,
       world: { ...c._baseConfig.world, stars: false, shooting_stars: true },
-    }),
-  );
+    });
+  });
   await page.waitForTimeout(700);
   await card.evaluate(async (c) => {
     await c._worldPainter.ready;

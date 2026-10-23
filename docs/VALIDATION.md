@@ -1,6 +1,12 @@
 # Validation and known limits
 
-## Version 0.4.1 — Living World
+## Version 0.4.2 — iOS rendering correction
+
+The production bundle passes 63 unit/packaging checks and 89 browser checks: 83 Chromium and six mobile-viewport WebKit checks. New regressions compare rendered pixels outside the central opening, verify rotation and expanded-view animation/pause, and exercise six dashboard remounts with image URL cleanup and compact markup assertions. WebKit reproduction confirmed that correctly reported canvas bounds did not guarantee correct painted clipping. See [iOS compatibility details](IOS-COMPATIBILITY.md).
+
+Physical iPhone/iPad Home Assistant companion-app acceptance remains unverified. Browser automation cannot establish that every device-specific process crash is eliminated.
+
+## Version 0.4.1 — Living World (historical evidence)
 
 The 0.4.1 release candidate passes **63 unit/packaging checks and 80 Chromium browser checks** locally. Remote results are recorded in publication status. The local run included the exact supplied legacy card. New checks verify asset provenance, real hand pivots, omitted selections, painted rigs, grounded idle, brass age and independent bezel text colors. The suite includes the existing Design Studio coverage and living-world and motion-specific regression checks. See [Motion correction acceptance](MOTION-ACCEPTANCE.json) and [0.4.0 Living World acceptance](WORLD-ACCEPTANCE.json), the [detailed guide](WORLD-GUIDE.md), and [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for remote workflow results and release-download verification. [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json) preserves version 0.3.0's acceptance.
 

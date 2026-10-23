@@ -1,6 +1,8 @@
 # Magical Family Clock
 
-**Version 0.4.1 — Crafted Living World:** realistic hands and materials, painted inhabitants, flowing scenery, ornate metalwork symbols, adjustable brass age and crafted information bezels. Build an animated miniature world inside your whereabouts clock. The [detailed guide](docs/WORLD-GUIDE.md) explains every new control, placement, optional name tag and moon/weather setting.
+**Version 0.4.2 — iPhone/iPad correction:** fixes oversized water/foreground layers and fog clipping on WebKit, reduces image memory, and adds phone/tablet regression coverage. [iOS update and compatibility notes](docs/IOS-COMPATIBILITY.md).
+
+**Crafted Living World:** realistic hands and materials, painted inhabitants, flowing scenery, ornate metalwork symbols, adjustable brass age and crafted information bezels. Build an animated miniature world inside your whereabouts clock. The [detailed guide](docs/WORLD-GUIDE.md) explains every new control, placement, optional name tag and moon/weather setting.
 
 Reusable people and clocks, dimensional hands, meshing gears, sensor rules, image uploads, effects, the information bezel and face switching remain included. Install and update through HACS as a Dashboard custom repository. Start with the [installation guide](docs/USER-GUIDE.md) or the [Design Studio guide](docs/DESIGN-STUDIO.md).
 
@@ -14,7 +16,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 **Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
 
-**Validation:** 63 unit/packaging and 80 Chromium browser checks passed. Release-download verification is recorded in publication status. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. WebKit and older-iPad testing are outside release requirements; compatibility remains unverified.
+**Validation:** 63 unit/packaging and 89 browser checks passed (83 Chromium, six phone/tablet WebKit). Release-download verification is recorded in publication status. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. Mobile WebKit is included in automated regression checks; physical-device companion-app acceptance remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
 | --- | --- | --- |

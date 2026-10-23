@@ -1,7 +1,11 @@
+import { sharedImageURL } from "./image-url.js";
 import { approvedAssets } from "./approved-art.js";
 import { gearTrain } from "./motion.js";
-import whimsicalURL from "./assets/optimized/whimsical-workshop-dial.webp";
-import agedBrassURL from "./assets/optimized/aged-brass-dial.webp";
+import whimsicalURLEmbedded from "./assets/optimized/whimsical-workshop-dial.webp";
+import agedBrassURLEmbedded from "./assets/optimized/aged-brass-dial.webp";
+
+const whimsicalURL = sharedImageURL(whimsicalURLEmbedded);
+const agedBrassURL = sharedImageURL(agedBrassURLEmbedded);
 // Original vector artwork; no remote fonts, images, or runtime libraries.
 export const palettes = {
   "whimsical-workshop": {

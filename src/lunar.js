@@ -1,4 +1,7 @@
-import textureURL from "./assets/optimized/lunar-surface-r1.webp";
+import { sharedImageURL } from "./image-url.js";
+import textureURLEmbedded from "./assets/optimized/lunar-surface-r1.webp";
+
+const textureURL = sharedImageURL(textureURLEmbedded);
 let texture;
 const cache = new Map();
 async function lunarTexture() {

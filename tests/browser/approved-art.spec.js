@@ -163,9 +163,7 @@ test("early sensor refresh cannot leave moving scenery on an older lighting sour
           motion = c.shadowRoot
             .querySelector("#world-photo-source")
             ?.getAttribute("href");
-        return Boolean(
-          photo?.startsWith("data:image/webp") && photo === motion,
-        );
+        return Boolean(photo?.startsWith("blob:") && photo === motion);
       }),
     )
     .toBe(true);

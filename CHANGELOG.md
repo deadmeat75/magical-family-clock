@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.2 — iPhone and iPad rendering correction
+
+- Replace WebKit canvas-in-SVG foreign objects with native SVG image surfaces so moving water, foreground foliage and clouds obey the face transform and circular clipping. Keep live motion in expanded view and after rotation.
+- Remove the fog displacement-filter path that can composite outside its bounds on WebKit; retain drifting transparent fog.
+- Share bundled image URLs instead of repeating base64 artwork throughout the DOM. Encode registered scenery as binary blobs, reduce decoded-source caches, prepare foliage/window sources lazily, and release temporary frame URLs and canvases on teardown.
+- Add production-bundle phone/tablet WebKit regression checks for actual rendered clipping, rotation/expansion, motion pause and repeated dashboard remounts. Physical iOS Home Assistant testing remains unverified.
+- Pin the meteor visibility test to a known visible encounter. Run normal push CI on main and PRs, cancel superseded runs, and keep Chromium/WebKit checks in the release gate.
+
 ## 0.4.1 — Crafted Living World
 
 - Integrate the 135 approved visual examples; omit F01/F03 and C13–C16 as requested. Preserve approved source/review bytes and record runtime-asset provenance.

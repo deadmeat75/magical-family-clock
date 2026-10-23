@@ -1,5 +1,7 @@
 # Publication status
 
+**0.4.2 iOS rendering correction is tested and being published.** [Compatibility details](IOS-COMPATIBILITY.md) · [Acceptance evidence](IOS-ACCEPTANCE.json). The verified published stable release below remains 0.4.1 until publication verification is completed.
+
 **[v0.4.1 — Crafted Living World](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.1) is published and verified as the latest stable release.** It is neither a draft nor a prerelease. Visual review is complete: 135 approved, six omitted, and no pending decisions. F01, F03 and C13–C16 are excluded as requested.
 
 The self-contained `magical-family-clock.js` release asset was independently downloaded and matches the tested bundle byte for byte (**25,741,644 bytes**).
