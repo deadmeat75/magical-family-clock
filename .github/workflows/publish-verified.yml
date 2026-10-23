@@ -1,0 +1,61 @@
+name: Publish verified HACS release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Stable tag whose exact commit passed main CI
+        required: true
+        type: string
+      ci_run_id:
+        description: Successful Test and package run on main for that commit
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: publish-verified-${{ inputs.tag }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ inputs.tag }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Require full CI success for this exact tagged commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          CI_RUN_ID: ${{ inputs.ci_run_id }}
+        run: |
+          node -e 'if (!/^v\d+\.\d+\.\d+$/.test(process.env.RELEASE_TAG) || !/^\d+$/.test(process.env.CI_RUN_ID)) throw Error("Invalid stable tag or CI run"); if (process.env.RELEASE_TAG !== "v" + require("./package.json").version) throw Error("Tag/package mismatch")'
+          gh run view "$CI_RUN_ID" --repo "$GITHUB_REPOSITORY" --json headSha,headBranch,event,conclusion,workflowDatabaseId,url > "$RUNNER_TEMP/mfc-verified-ci.json"
+          export VERIFIED_HEAD="$(git rev-parse HEAD)"
+          export VERIFIED_WORKFLOW="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/ci.yml" --jq .id)"
+          node --input-type=module <<'NODE'
+          import {readFileSync,appendFileSync} from 'node:fs';
+          const run=JSON.parse(readFileSync(process.env.RUNNER_TEMP+'/mfc-verified-ci.json'));
+          if(run.headSha!==process.env.VERIFIED_HEAD || run.headBranch!=='main' || run.event!=='push' || run.conclusion!=='success' || String(run.workflowDatabaseId)!==process.env.VERIFIED_WORKFLOW) throw Error('Exact tagged commit must have successful full main CI');
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,`Verified complete unit/Chromium/WebKit CI: ${run.url}\n`);
+          NODE
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: git diff --exit-code -- magical-family-clock.js
+      - name: Publish the verified self-contained bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          sha256sum magical-family-clock.js
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" magical-family-clock.js --clobber
+            gh release edit "$RELEASE_TAG" --draft=false --latest
+          else
+            gh release create "$RELEASE_TAG" magical-family-clock.js --verify-tag --notes-file docs/RELEASE-NOTES.md --title "Magical Family Clock $RELEASE_TAG" --latest
+          fi
