@@ -191,6 +191,36 @@ test("production motion survives rotation and expanded view and stops when pause
     changedPixels,
     "the displayed scenery must move, not just its frame counters",
   ).toBeGreaterThan(50);
+  if (await layer.getAttribute("data-world-surface")) {
+    await page.evaluate(() => {
+      window.heldEncodes = [];
+      window.originalFrameEncoder = HTMLCanvasElement.prototype.toBlob;
+      HTMLCanvasElement.prototype.toBlob = function (callback, ...options) {
+        return originalFrameEncoder.call(
+          this,
+          (blob) => heldEncodes.push(() => callback(blob)),
+          ...options,
+        );
+      };
+    });
+    await expect
+      .poll(() => page.evaluate(() => heldEncodes.length))
+      .toBeGreaterThan(0);
+    const waiting = await layer.getAttribute("data-paint-tick");
+    await page.waitForTimeout(200);
+    expect(
+      await layer.getAttribute("data-paint-tick"),
+      "do not repaint a surface whose previous frame is still encoding",
+    ).toBe(waiting);
+    await page.evaluate(() => {
+      HTMLCanvasElement.prototype.toBlob = originalFrameEncoder;
+      heldEncodes.splice(0).forEach((finish) => finish());
+    });
+    await expect
+      .poll(() => layer.getAttribute("data-paint-tick"))
+      .not.toBe(waiting);
+    await expect(layer).toHaveAttribute("data-display-tick", /\d+/);
+  }
   const size = page.viewportSize();
   await page.setViewportSize({ width: size.height, height: size.width });
   await expect
@@ -353,4 +383,59 @@ test("animation check explains card and device pauses and verifies moving frames
   ).toHaveText(/Animation is running/, {
     timeout: 10000,
   });
+});
+
+test("Randomize sits opposite Fullscreen and preserves household data through repeated shuffles and expansion", async ({
+  page,
+}) => {
+  const { card, errors } = await boot(page);
+  await card.evaluate((c) =>
+    c.setConfig({
+      ...c._baseConfig,
+      members: [{ id: "rowan", name: "Rowan", entity: "person.rowan" }],
+      weather_entity: "weather.home",
+      world: {
+        ...c._baseConfig.world,
+        moon: { source: "entity", entity: "sensor.moon" },
+      },
+    }),
+  );
+  const base = await card.evaluate((c) => JSON.stringify(c._baseConfig));
+  const random = card.getByRole("button", {
+    name: "Randomize appearance",
+    exact: true,
+  });
+  const full = card.getByRole("button", { name: "Expand clock", exact: true });
+  const a = await random.boundingBox(),
+    b = await full.boundingBox();
+  expect(a.x + a.width).toBeLessThan(b.x);
+  expect(Math.abs(a.y - b.y)).toBeLessThan(2);
+  for (let i = 0; i < 5; i++) {
+    const theme = await card.evaluate((c) => c._config.theme);
+    await random.click();
+    expect(await card.evaluate((c) => c._config.theme)).not.toBe(theme);
+    expect(await card.evaluate((c) => JSON.stringify(c._baseConfig))).toBe(
+      base,
+    );
+    expect(await card.evaluate((c) => c._config.members)).toEqual(
+      JSON.parse(base).members,
+    );
+    expect(await card.evaluate((c) => c._config.locations)).toEqual(
+      JSON.parse(base).locations,
+    );
+    expect(await card.evaluate((c) => c._config.world.moon)).toEqual(
+      JSON.parse(base).world.moon,
+    );
+    await expect(card.locator(".hand")).toHaveCount(1);
+  }
+  await card.evaluate(
+    (c) =>
+      (c.shadowRoot.querySelector("ha-card").requestFullscreen = undefined),
+  );
+  await full.click();
+  await random.click();
+  await expect(card.locator("ha-card")).toHaveClass(/expanded/);
+  await full.click();
+  await expect(card.locator("ha-card")).not.toHaveClass(/expanded/);
+  expect(errors).toEqual([]);
 });

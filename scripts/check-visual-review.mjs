@@ -62,7 +62,7 @@ if (!record.release_hold && (pending.length || !record.release_authorized))
   errors.push(
     "Release requires complete visual decisions and recorded authorization",
   );
-if (!["0.4.0", "0.4.1", "0.4.2", "0.4.3"].includes(record.published_release))
+if (!["0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4"].includes(record.published_release))
   errors.push("Unexpected published release");
 if (errors.length) {
   process.stderr.write(errors.join("\n") + "\n");

@@ -1,0 +1,72 @@
+{
+  "version": "0.4.4",
+  "userFeedback": {
+    "iosAnimationWorking": true,
+    "iosMotionReportedChoppy": true
+  },
+  "physicalIOSPerformanceVerified": false,
+  "userLiveInstallationChanged": false,
+  "renderer": {
+    "nativeSVGClippingRetained": true,
+    "duplicateHTMLImagePredecodeRemoved": true,
+    "busySurfacesNotRepainted": true,
+    "stableDeadlinesFor60And120Hz": true,
+    "webkitTargetsFPS": {
+      "rich": 30,
+      "balanced": 30,
+      "light": 20
+    },
+    "HDBaseImageRetained": true,
+    "motionPreferencesRetained": true
+  },
+  "randomize": {
+    "lowerLeftOppositeFullscreen": true,
+    "temporaryPerCardAppearance": true,
+    "savedHouseholdConfigurationUnchanged": true,
+    "sensorMoonAndBezelSourcesUnchanged": true,
+    "visitorsMaximum": 3,
+    "automaticFaceCyclingPausedUntilManualSelectionOrReload": true
+  },
+  "developmentMeasurements": {
+    "engine": "desktop WebKit software rendering",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "scene": "day/summer/clouds, rich, no inhabitants, one landscape surface",
+    "sampleSeconds": 4,
+    "before": {
+      "sampleSeconds": 4,
+      "frames": 8,
+      "fps": 2,
+      "medianGapMs": 453.00000000000364,
+      "p95GapMs": 801,
+      "encodes": 8,
+      "explicitDecodes": 9,
+      "surfaces": 1
+    },
+    "prototypeAfter": {
+      "sampleSeconds": 4,
+      "frames": 76,
+      "fps": 19,
+      "medianGapMs": 49,
+      "p95GapMs": 62,
+      "encodes": 76,
+      "explicitDecodes": 0,
+      "surfaces": 1
+    },
+    "limitations": "Development samples, not a physical iPhone benchmark or a guaranteed frame rate. Final exact-commit validation is recorded separately."
+  },
+  "checks": {
+    "unitPackaging": 69,
+    "fullBrowserMatrix": 98,
+    "chromium": 86,
+    "webkitPhone": 6,
+    "webkitTablet": 6,
+    "finalExactCommitCI": "pending"
+  },
+  "bundle": {
+    "bytes": 25749953,
+    "sha256": "fae868a64daf392487a48732776eeda8c73d9c19300bcb97d88cbbe8efb82719"
+  }
+}

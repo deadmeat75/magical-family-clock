@@ -16,61 +16,79 @@ export function canvasSurface(kind, cls, grade = "") {
 export function svgSurface(node, canvas) {
   let ended = false,
     pending = false,
+    encoding = false,
     current,
-    queued = false;
+    next,
+    queued = false,
+    displayed = 0;
   let settle;
   const ready = new Promise((resolve) => {
     settle = resolve;
   });
+  const release = (url) => {
+    if (url) URL.revokeObjectURL(url);
+  };
+  const finish = (success) => {
+    if (!next || ended) return;
+    node.removeEventListener("load", loaded);
+    node.removeEventListener("error", failed);
+    if (success) {
+      release(current);
+      current = next;
+      node.dataset.displayTick = String(++displayed);
+    } else {
+      release(next);
+      if (current) node.setAttribute("href", current);
+      else node.removeAttribute("href");
+    }
+    next = undefined;
+    pending = false;
+    settle();
+    if (queued) {
+      queued = false;
+      publish();
+    }
+  };
+  const loaded = () => finish(true),
+    failed = () => finish(false);
   const publish = () => {
     if (ended) return;
     if (pending) {
       queued = true;
       return;
     }
-    pending = true;
-    canvas.toBlob(async (blob) => {
+    pending = encoding = true;
+    canvas.toBlob((blob) => {
+      encoding = false;
       if (!blob || ended) {
         pending = false;
         if (ended) canvas.width = canvas.height = 0;
         settle();
         return;
       }
-      const url = URL.createObjectURL(blob),
-        image = new Image();
-      try {
-        image.src = url;
-        await image.decode();
-        if (ended) {
-          URL.revokeObjectURL(url);
-          return;
-        }
-        const previous = current;
-        node.setAttribute("href", url);
-        current = url;
-        if (previous) URL.revokeObjectURL(previous);
-      } catch {
-        URL.revokeObjectURL(url);
-      } finally {
-        pending = false;
-        if (ended) canvas.width = canvas.height = 0;
-        settle();
-        if (queued && !ended) {
-          queued = false;
-          publish();
-        }
-      }
+      // Let the SVG image decode its own frame once. Pre-decoding the same PNG
+      // in a second HTML Image added work and did not prove SVG had displayed it.
+      next = URL.createObjectURL(blob);
+      node.addEventListener("load", loaded);
+      node.addEventListener("error", failed);
+      node.setAttribute("href", next);
     }, "image/png");
   };
   return {
     ready,
     publish,
+    get busy() {
+      return pending;
+    },
     stop() {
       ended = true;
-      if (current) URL.revokeObjectURL(current);
+      node.removeEventListener("load", loaded);
+      node.removeEventListener("error", failed);
+      release(current);
+      release(next);
+      current = next = undefined;
       settle();
-      // An in-flight encoder still owns its canvas until its callback returns.
-      if (!pending) canvas.width = canvas.height = 0;
+      if (!encoding) canvas.width = canvas.height = 0;
     },
   };
 }

@@ -108,7 +108,7 @@ Expand **Landscape and motion controls**:
 - **Seasonal petals and leaves** drifts blossom petals in spring and leaves in autumn, independently of tree sway. Summer and winter add neither. The active season follows Appearance settings.
 - **Warm castle window lights** gives identified castle panes independent irregular candle or torch flicker at dusk/night. The approved lamp effect slows the time scale by 25% from revision 4 and excludes surrounding trees. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
 - **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Cloud coverage erases stars and meteors behind it, and the moon, castle and foreground stay in front. Meteors have varied origins and flight angles, with irregular 20–75 second quiet intervals.
-- **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. On WebKit, scenery uses bounded SVG image surfaces at up to 12 fps in 384-pixel buffers, while retaining the HD base photograph. Use fewer inhabitants too on slower displays. [iPhone/iPad rendering correction](IOS-COMPATIBILITY.md).
+- **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. On WebKit in 0.4.4, scenery uses bounded SVG image surfaces targeting 30 fps (Rich/Balanced) or 20 fps (Light), in 384-pixel buffers, while retaining the HD base photograph. Use fewer inhabitants too on slower displays. [iPhone/iPad rendering correction](IOS-COMPATIBILITY.md).
 - **Scene time** previews dawn/day/dusk/night. Auto uses Home Assistant sun data and local solar calculations. Season and weather remain controlled in Appearance and can be combined with inhabitants' filters.
 
 **Appearance → Decorative motion speed** changes decorative motion speed; inhabitant cycle values remain their base settings. Castle motion intensity controls landscape movement strength. Weather has its own animation switch and effects. Tracking hands still respond to entity state changes independently.
@@ -282,3 +282,8 @@ Use **Living world → Check animation** when a fitted clock is still. The same 
 Returning to the app re-arms the scenery loop. A watchdog also recovers a lost frame callback without restarting the world or ignoring saved motion settings. This recovery passes automated WebKit phone/tablet tests; physical companion-app confirmation remains pending.
 
 Flying creatures follow individual curves with visible climbs and descents, modest changes in forward speed and banking along the route. Saved creature identities keep their route stable through sensor updates; separate creatures receive different curves. Each journey still begins/ends beyond the opening. These changes apply to flight, not to a grounded unicorn or an inhabitant constrained to the lake.
+
+
+## Randomize (0.4.4)
+
+The lower-left Randomize button temporarily shuffles the face, palette, season, time, weather and one to three visitors. It preserves people, locations, all tracking sources, live moon data, bezel data and motion/detail preferences. Reload to restore your saved design. [Detailed guide](RANDOMIZE.md).

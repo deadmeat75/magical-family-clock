@@ -6,6 +6,7 @@ import { renderMoons } from "./lunar.js";
 import { sceneSource } from "./artwork.js";
 import { createMeteorTimeline } from "./meteors.js";
 import { createFoliagePainter } from "./foliage.js";
+import { nextPaintDeadline, sceneryFPS } from "./frame-pacing.js";
 const sources = new Map();
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 function canvas(width, height) {
@@ -255,13 +256,13 @@ function drawLake(ctx, image, t, intensity, quality) {
       amplitude *
       (Math.sin(y * 0.73 - t * 1.9) + 0.32 * Math.sin(y * 0.19 + t * 0.83));
     const dy = 0.38 * depth * Math.sin(y * 0.31 - t * 0.7);
-    const sy = ((y - 90 + dy) * 1254) / 384;
+    const sy = ((y - 90 + dy) * image.width) / 384;
     ctx.drawImage(
       image,
       0,
       sy,
-      1254,
-      (step * 1254) / 384,
+      image.width,
+      (step * image.width) / 384,
       108 + dx,
       y,
       384,
@@ -430,17 +431,17 @@ export function startWorldPainter(
   let raf = 0,
     ended = false,
     last = performance.now(),
-    lastPaint = 0,
+    paintDue = performance.now(),
     t = time,
     tick = 0,
     source;
-  const paint = () => {
+  const paint = (force = true) => {
     if (!source || ended) return;
     const intensity =
       clamp(config.scene_intensity ?? 0.65, 0.15, 1.5) *
       (weather === "wind" ? 1.5 : 1);
     for (const { canvas: c, node, ctx, kinds, bridge } of entries) {
-      if (!ctx) continue;
+      if (!ctx || (!force && bridge?.busy)) continue;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, c.width, c.height);
       ctx.setTransform(
@@ -453,11 +454,24 @@ export function startWorldPainter(
       );
       for (const kind of kinds) {
         ctx.save();
-        if (kind === "clouds") ctx.clip(new Path2D(source.sky));
-        if (kind === "water") ctx.clip(new Path2D(lakePath));
-        if (kind === "clouds") drawClouds(ctx, source.clouds, t);
+        if (kind === "clouds")
+          ctx.clip((source.skyClip ??= new Path2D(source.sky)));
         if (kind === "water")
-          drawLake(ctx, source.image, t, intensity, config.world.quality);
+          ctx.clip((source.lakeClip ??= new Path2D(lakePath)));
+        if (kind === "clouds") drawClouds(ctx, source.clouds, t);
+        if (kind === "water") {
+          let image = source.image;
+          if (bridge) {
+            if (!source.mobileWater) {
+              source.mobileWater = canvas(384, 384);
+              source.mobileWater
+                .getContext("2d")
+                .drawImage(source.image, 0, 0, 384, 384);
+            }
+            image = source.mobileWater;
+          }
+          drawLake(ctx, image, t, intensity, config.world.quality);
+        }
         if (kind === "foliage")
           (source.foliage ??= createFoliagePainter(source.image)).draw(
             ctx,
@@ -505,15 +519,14 @@ export function startWorldPainter(
     last = now;
     if (!paused()) {
       t += delta * (config.motion_speed || 1);
-      const fps =
-        needsSVGSurface() || config.world.quality === "light"
-          ? 12
-          : config.world.quality === "balanced"
-            ? 18
-            : 24;
-      if (now - lastPaint > 1000 / fps) {
-        paint();
-        lastPaint = now;
+      const due = nextPaintDeadline(
+        now,
+        paintDue,
+        sceneryFPS(config.world.quality, needsSVGSurface()),
+      );
+      if (due !== null) {
+        paint(false);
+        paintDue = due;
       }
     }
     raf = requestAnimationFrame(step);

@@ -1,10 +1,10 @@
-# iPhone and iPad compatibility — 0.4.3
+# iPhone and iPad compatibility — 0.4.4
 
 The reported failure was reproduced with the production bundle in WebKit: moving water and foreground foliage appeared as oversized rectangles across the lower clock, and fog could escape its intended bounds. Element dimensions alone looked correct; pixel comparisons exposed the incorrect composition.
 
 ## Update with HACS
 
-1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.3** or newer.
+1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.4** or newer.
 2. Reload the Home Assistant frontend. Fully close and reopen the iPhone/iPad companion app if it still displays cached artwork. If necessary, use **Settings → Companion app → Debugging → Reset frontend cache**, then reopen it (menu wording can vary).
 3. Keep your saved people, tracking rules and clock configuration. No YAML conversion or dashboard reconstruction is required.
 4. Check water and fog, rotate the device, then open and close **Fullscreen**. The moving scene should remain inside the central opening.
@@ -13,9 +13,9 @@ If still using 0.4.1 while updating, turn **Living world → Show miniature worl
 
 ## If the picture fits but does not move
 
-Version 0.4.3 adds animation recovery after returning to Home Assistant and a check that explains the effective motion settings. The user confirmed that reloading cleared the oversized overlays on iOS, but reported no motion with iOS Reduce Motion off. That remaining physical-device failure has not been reproduced or confirmed fixed; the recovery tests simulate dropped callbacks in WebKit.
+Version 0.4.3 adds animation recovery after returning to Home Assistant and a check that explains the effective motion settings. The user confirmed that animation is now working on iOS, but reported choppy motion. Version 0.4.4 reduces the frame workload and improves pacing; physical-device smoothness remains unverified. The recovery tests simulate dropped callbacks in WebKit.
 
-1. Edit the card and open **Living world**. Confirm **Installed card version: 0.4.3** (or newer). If it still shows an older version or has no **Check animation** button, reload the frontend/reset the companion frontend cache after the HACS update.
+1. Edit the card and open **Living world**. Confirm **Installed card version: 0.4.4** (or newer). If it still shows an older version or has no **Check animation** button, reload the frontend/reset the companion frontend cache after the HACS update.
 2. Press **Check animation** with the right-hand clock preview visible. It checks actual scenery frame publication as well as elapsed animation time.
 3. If it names **General → Reduced motion**, turn that card setting off if you want animation. This setting is independent of the iOS accessibility preference.
 4. If it names **Animate castle scenery**, enable that setting under **Living world**. Enable **Show miniature world** and at least one landscape effect such as water, trees or waterfalls too. Clouds are intentionally absent in Clear weather.
@@ -27,7 +27,9 @@ Flying visitors now follow individual rising/falling curves with gentle speed ch
 
 ## What changed
 
-On WebKit, the animation painter now draws to offscreen canvases and publishes bounded native SVG image surfaces. SVG performs their scaling, masking and circular clipping. Consecutive landscape effects share one composited surface, with their sky/lake clips applied while painting. Each surface has at most one image encode/decode in flight and one displayed frame; temporary URLs are revoked on replacement or teardown. Moving scenery runs at up to 12 frames per second in 384-pixel buffers on this path; the underlying castle photograph retains its 1254-pixel resolution, and SVG hands and creature movement continue independently.
+On WebKit, the animation painter now draws to offscreen canvases and publishes bounded native SVG image surfaces. SVG performs their scaling, masking and circular clipping. Consecutive landscape effects share one composited surface, with their sky/lake clips applied while painting. Each surface has at most one pending frame and one displayed frame; the native SVG image decodes its own frame, without a second HTML-image pre-decode; temporary URLs are revoked on replacement or teardown. As of 0.4.4, moving scenery targets 30 fps in Rich/Balanced and 20 fps in Light, using 384-pixel buffers on this path; the underlying castle photograph retains its 1254-pixel resolution, and SVG hands and creature movement continue independently.
+
+Tree patches and mobile water pixels are prepared at animation resolution once, avoiding repeated full-image strip scaling. Stable deadlines avoid refresh-rate rounding losses. A busy surface is not repainted until its previous image finishes loading. Frame-rate targets are not guarantees of physical-device performance.
 
 Chromium retains direct canvas painting. Both paths use the same painted scene, silhouette and effect settings. Fog uses drifting shapes with transparent gradients without the displacement-filter composition problem.
 
@@ -51,3 +53,8 @@ This is desktop WebKit automation with mobile viewport/touch settings, not a phy
 The email naming review commit `a140cec` corresponds to a meteor pixel test that selected a random event outside the visible clock opening. That check now uses a known visible trajectory. Fullscreen checks already wait for the asynchronous transition. Normal CI runs on main and pull requests, and superseded runs are cancelled; duplicate review-branch and tag push test workflows are avoided. Release builds still run all required tests.
 
 HACS validation also reports missing repository About description and topics. GitHub's connected integration returns HTTP 403 when attempting to edit those owner-level fields. The owner can set the description and topics listed in [publication status](PUBLISHING-STATUS.md), then rerun HACS validation. These checks remain enabled; changing your Home Assistant settings will not fix repository metadata errors.
+
+
+## Smoother motion and Randomize (0.4.4)
+
+The user reports that iOS animation is working after the recovery update. This release addresses choppiness by reducing per-frame work and improving deadline scheduling. For a busy clock, try **World detail → Balanced** first, then Light if needed. These retain the HD base image. The new **Randomize** button is opposite Fullscreen and preserves saved household data. [Detailed guide](RANDOMIZE.md) · [Current acceptance](SMOOTH-MOTION-ACCEPTANCE.json).

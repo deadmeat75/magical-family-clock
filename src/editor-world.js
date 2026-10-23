@@ -404,6 +404,7 @@ export function worldEditor(root) {
         "[data-world-surface], [data-world-paint]",
       ),
       imageBefore = layer?.getAttribute("href"),
+      displayBefore = layer?.dataset.displayTick,
       tickBefore = layer?.dataset.paintTick;
     // Image encoding can take longer on a busy mobile webview. Observe a
     // published frame rather than treating a fixed short delay as a failure.
@@ -412,7 +413,8 @@ export function worldEditor(root) {
       clock._worldPainter?.time > before &&
       layer?.dataset.paintTick !== tickBefore &&
       (!layer?.hasAttribute("data-world-surface") ||
-        layer.getAttribute("href") !== imageBefore);
+        (layer.getAttribute("href") !== imageBefore &&
+          layer.dataset.displayTick !== displayBefore));
     for (let i = 0; i < 24 && !advanced() && !clock.motionStatus(); i++)
       await new Promise((resolve) => setTimeout(resolve, 250));
     const after = clock._worldPainter?.time;
@@ -518,7 +520,7 @@ export function worldEditor(root) {
       ["balanced", "Balanced"],
       ["light", "Light"],
     ],
-    "Rich keeps the most foliage/stars and paints landscape motion at 24 fps. Balanced uses fewer foliage layers and 18 fps. Light uses lower resolution, fewer stars, no moving foliage, and 12 fps.",
+    "Rich keeps the most foliage/stars; Balanced reduces foliage layers. On iPhone/iPad, both target 30 fps with bounded frame buffers; Light targets 20 fps with fewer stars and no moving foliage. Other browsers target 24/18/12 fps respectively. Actual speed depends on device workload.",
   );
   field(
     this,

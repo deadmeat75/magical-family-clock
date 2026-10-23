@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.4 — Smoother scenery and Randomize
+
+- Add Randomize opposite Fullscreen. Shuffle supported faces, colors, season, time, weather and one to three visitors without changing saved people, locations, tracking sensors, moon sources or bezel data. Changes are temporary; reloading restores the saved design.
+- Remove duplicate WebKit frame pre-decoding, wait for the native SVG image load, and avoid repainting busy frame surfaces. Keep bounded buffers and image URL cleanup.
+- Prepare tree patches and mobile water pixels once instead of rescaling full-resolution imagery for every animation strip. Preserve the HD base image and circular clipping.
+- Use stable frame deadlines with mobile targets of 30 fps (Rich/Balanced) or 20 fps (Light), preserving motion preferences, foreground recovery and offscreen pauses. Actual physical-device smoothness still needs confirmation.
+
 ## 0.4.3 — Motion recovery and natural flight
 
 - Re-arm scenery animation on foreground/page restoration and recover lost frame callbacks without resetting elapsed scene time. Respect card and device motion preferences and keep offscreen/background cards paused.

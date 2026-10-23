@@ -70,8 +70,25 @@ export function createFoliagePainter(image) {
         pixels.data[p + 3] = 255 * edge * edge * (3 - 2 * edge);
       }
     mc.putImageData(pixels, 0, 0);
-    return { region, sx, sy, width, height, tile, mask, ctx };
+    const padding = 24,
+      texture = surface(width + padding * 2, height);
+    texture
+      .getContext("2d")
+      .drawImage(
+        foliage,
+        sx - padding * sourceScale,
+        sy,
+        (width + padding * 2) * sourceScale,
+        height * sourceScale,
+        0,
+        0,
+        texture.width,
+        texture.height,
+      );
+    return { region, sx, sy, width, height, tile, mask, ctx, texture, padding };
   });
+  // The small prepared patches now own all pixels needed for animation.
+  foliage.width = foliage.height = 0;
   return {
     draw(target, time, intensity, quality) {
       const count = quality === "balanced" ? 4 : patches.length;
@@ -89,11 +106,11 @@ export function createFoliagePainter(image) {
           const sy = p.sy + y * sourceScale,
             dx = foliageOffset(p.region, i, sy, time, intensity);
           ctx.drawImage(
-            foliage,
-            p.sx - dx * sourceScale,
-            sy,
-            width * sourceScale,
-            0.5 * sourceScale,
+            p.texture,
+            ((p.padding - dx) * p.texture.width) / (width + p.padding * 2),
+            y * scaleY,
+            (width * p.texture.width) / (width + p.padding * 2),
+            0.5 * scaleY,
             0,
             y,
             width,
