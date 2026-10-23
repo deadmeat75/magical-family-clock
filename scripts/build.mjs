@@ -7,7 +7,7 @@ await build({
   format: "iife",
   target: ["es2018", "safari12"],
   minify: true,
-  loader: { ".png": "dataurl", ".ttf": "dataurl" },
+  loader: { ".png": "dataurl", ".webp": "dataurl", ".ttf": "dataurl" },
   legalComments: "inline",
   banner: {
     js: "/*! Includes SunCalc, copyright 2014 Vladimir Agafonkin, BSD-2-Clause. See the license notice appended below. */",

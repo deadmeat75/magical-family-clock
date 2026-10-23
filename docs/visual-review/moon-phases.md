@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Moon phases: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 N01–N08 revision 4 are approved. Their exact examples and approved lunar source artwork are preserved.
 

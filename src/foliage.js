@@ -31,6 +31,21 @@ function surface(w, h) {
   return c;
 }
 export function createFoliagePainter(image) {
+  // Extract foliage before bending it. Rectangular photo patches also contain
+  // stationary sky and mountains, which must never move with a tree crown.
+  const foliage = document.createElement("canvas");
+  foliage.width = foliage.height = 1254;
+  const source = foliage.getContext("2d", { willReadFrequently: true });
+  source.drawImage(image, 0, 0, 1254, 1254);
+  const vegetation = source.getImageData(0, 0, 1254, 1254);
+  for (let i = 0; i < vegetation.data.length; i += 4) {
+    const r = vegetation.data[i],
+      g = vegetation.data[i + 1],
+      b = vegetation.data[i + 2];
+    const green = Math.min(g - r * 0.9, g - b * 1.08);
+    vegetation.data[i + 3] *= clamp(green / 12, 0, 1);
+  }
+  source.putImageData(vegetation, 0, 0);
   const patches = FOLIAGE_REGIONS.map((region) => {
     const sx = region.x - region.halfWidth,
       sy = region.top - 10,
@@ -74,7 +89,7 @@ export function createFoliagePainter(image) {
           const sy = p.sy + y * sourceScale,
             dx = foliageOffset(p.region, i, sy, time, intensity);
           ctx.drawImage(
-            image,
+            foliage,
             p.sx - dx * sourceScale,
             sy,
             width * sourceScale,

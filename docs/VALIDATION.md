@@ -2,7 +2,7 @@
 
 ## Version 0.4.1 — Living World
 
-The unreleased engineering draft passed **53 unit/packaging checks and 50 Chromium browser checks** locally. Remote results are recorded in publication status. The local run included the exact supplied legacy card. The suite includes the existing Design Studio coverage and living-world and motion-specific regression checks. See [Motion correction acceptance](MOTION-ACCEPTANCE.json) and [0.4.0 Living World acceptance](WORLD-ACCEPTANCE.json), the [detailed guide](WORLD-GUIDE.md), and [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for remote workflow results and release-download verification. [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json) preserves version 0.3.0's acceptance.
+The 0.4.1 release candidate passes **63 unit/packaging checks and 80 Chromium browser checks** locally. Remote results are recorded in publication status. The local run included the exact supplied legacy card. New checks verify asset provenance, real hand pivots, omitted selections, painted rigs, grounded idle, brass age and independent bezel text colors. The suite includes the existing Design Studio coverage and living-world and motion-specific regression checks. See [Motion correction acceptance](MOTION-ACCEPTANCE.json) and [0.4.0 Living World acceptance](WORLD-ACCEPTANCE.json), the [detailed guide](WORLD-GUIDE.md), and [current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for remote workflow results and release-download verification. [Design Studio evidence](DESIGN-STUDIO-ACCEPTANCE.json) preserves version 0.3.0's acceptance.
 
 Motion-specific checks verify cloud-feature advection by image alignment, constant-opacity flight with fully off-frame repeat boundaries, full waterline submersion, removal of spray discs, preserved time/progress through moon updates and reduced-motion painter pause. Route geometry covers both directions, short spans and large figures.
 
@@ -23,6 +23,8 @@ The added checks inspect actual rendered label/graphic bounds inside panel paths
 Screenshots use fictional people and simulated sensor states. No user source attachment was redistributed; the originals remain outside the public checkout and match their recorded checksums. CI uses a legacy-element stand-in when the private original file is unavailable.
 
 ## Isolated Home Assistant evidence
+
+The installed 0.4.1 bundle passed native moon selection, live phase changes, saved-clock storage and dashboard reload in Home Assistant 2026.10.2, with the new hand, symbol and creature artwork present and zero frontend exceptions. The actual HA editor retained one right-hand preview, live edits and the encounter-preview action. [Current release acceptance](RELEASE-ACCEPTANCE.json).
 
 A disposable Home Assistant **2026.10.2** instance verified native entity selection, live state movement, independent clocks, uploaded-image persistence, saved-clock account storage, saved people and independent profile additions, completely blank lettering, title positioning, bezel, template switching and dashboard save/reload. These checks observed **zero frontend exceptions**. Living World acceptance additionally verified native moon entity selection, real state changes from full moon to waning crescent, panel controls, complete-clock library storage and dashboard reload with the new population and sensor settings. It observed zero frontend exceptions; see [Living World evidence](WORLD-ACCEPTANCE.json).
 

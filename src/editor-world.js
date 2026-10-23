@@ -655,12 +655,22 @@ export function worldEditor(root) {
     field(
       this,
       box,
+      "Tint painted inhabitant",
+      o,
+      "tint",
+      "checkbox",
+      null,
+      "Off preserves the approved artwork colors. Turn on to apply the chosen tint to the whole figure while retaining its painted shading. Custom uploads keep their original colors.",
+    );
+    field(
+      this,
+      box,
       "Inhabitant color",
       o,
       "color",
       "color",
       null,
-      "Tint the built-in creature’s body, cloth or prop. Small details retain their shading. Uploaded custom images keep their original colors.",
+      "Optional whole-figure tint color, used when Tint painted inhabitant is enabled. Leave tint off for the original painted appearance.",
     );
     for (const [key, label, help] of [
       [
@@ -697,14 +707,20 @@ export function worldEditor(root) {
       o,
       "motion",
       "select",
-      [
-        ["fly", "Fly past, then rest"],
-        ["surface", "Surface, linger, then submerge"],
-        ["drift", "Drift back and forth"],
-        ["bob", "Gently bob"],
-        ["still", "Still prop"],
-      ],
-      "Flying creatures cross their chosen route. Surfacing clips the figure below its chosen waterline. Drift, bob and still keep a prop visible continuously.",
+      o.kind === "unicorn"
+        ? [
+            ["idle", "Grounded idle"],
+            ["still", "Completely still"],
+          ]
+        : [
+            ["fly", "Fly past, then rest"],
+            ["surface", "Surface, linger, then submerge"],
+            ["drift", "Drift back and forth"],
+            ["bob", "Gently bob"],
+            ["still", "Still prop"],
+            ["idle", "Idle on the ground"],
+          ],
+      "Flying creatures cross their chosen route. Surfacing clips the figure below its chosen waterline. Drift, bob and still keep a prop visible continuously. The wild unicorn uses grounded idle motion with planted hooves; choose a land position around x 41%, y 61% on the bundled castle. Pixies render in the foreground.",
     );
     field(
       this,
@@ -716,16 +732,17 @@ export function worldEditor(root) {
       ["right", "left"],
       "Face left or right. Flying encounters travel in that direction; drifting props still move gently back and forth.",
     );
-    field(
-      this,
-      box,
-      "Pass behind the castle",
-      o,
-      "behind_castle",
-      "checkbox",
-      null,
-      "Mask this inhabitant behind the tower silhouette while it crosses the sky. Turn off for a foreground visitor or a route outside the default sky region.",
-    );
+    if (!["fairy", "unicorn"].includes(o.kind))
+      field(
+        this,
+        box,
+        "Pass behind the castle",
+        o,
+        "behind_castle",
+        "checkbox",
+        null,
+        "Mask this inhabitant behind the tower silhouette while it crosses the sky. Turn off for a foreground visitor or a route outside the default sky region.",
+      );
     field(
       this,
       box,

@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Scene concepts: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 
 

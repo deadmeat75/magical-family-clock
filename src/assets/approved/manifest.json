@@ -1,0 +1,1476 @@
+[
+  {
+    "id": "F02",
+    "name": "Brass finish range",
+    "source": "art/polished-brass-f02-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "source_sha256": "01473f3e523444115ba3c66c12a029c4f768675888cb70f9798578f07e968f5e",
+    "width": 1254,
+    "height": 1254,
+    "crop": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "runtime": "src/assets/approved/F02.webp",
+    "sha256": "d6582a03a2399488a6bf353e814c03c5807c44f2b49dbac305f29cc98a5ed2ce"
+  },
+  {
+    "id": "H01",
+    "name": "spoon",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "898b0ec9a5d02d2f91302aa1c4342b6fa5e0c5f5439a946c358aa1d25587276c",
+    "width": 108,
+    "height": 688,
+    "crop": [
+      222,
+      55,
+      108,
+      688
+    ],
+    "runtime": "src/assets/approved/H01.webp",
+    "sha256": "ae50ba6ae389a6072fe1a1a952f9e67875ee6a83df3e5e5c9065eca956f9ebd0"
+  },
+  {
+    "id": "H02",
+    "name": "classic",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "898b0ec9a5d02d2f91302aa1c4342b6fa5e0c5f5439a946c358aa1d25587276c",
+    "width": 114,
+    "height": 704,
+    "crop": [
+      193,
+      38,
+      114,
+      704
+    ],
+    "runtime": "src/assets/approved/H02.webp",
+    "sha256": "6cf68d981b79db8155f7841f5bfd882ac0cb3adb589f912c7aa000fc37bc3831"
+  },
+  {
+    "id": "H03",
+    "name": "legacy-curved",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "898b0ec9a5d02d2f91302aa1c4342b6fa5e0c5f5439a946c358aa1d25587276c",
+    "width": 100,
+    "height": 701,
+    "crop": [
+      236,
+      22,
+      100,
+      701
+    ],
+    "runtime": "src/assets/approved/H03.webp",
+    "sha256": "017a6cd5d8c1ac7eebe49b2fd6832fb4ef9fee440b2ef5e8413f188ab25ce966"
+  },
+  {
+    "id": "H04",
+    "name": "standalone-pointed",
+    "source": "art/hands-h01-h04-r1.png",
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "898b0ec9a5d02d2f91302aa1c4342b6fa5e0c5f5439a946c358aa1d25587276c",
+    "width": 82,
+    "height": 713,
+    "crop": [
+      217,
+      9,
+      82,
+      713
+    ],
+    "runtime": "src/assets/approved/H04.webp",
+    "sha256": "7fc2da9220aa4b1157e983828a1ac508242a8ce78cad628f8a06283d5059e7be"
+  },
+  {
+    "id": "H05",
+    "name": "arrow",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "acdc6fb72b849361f029e221c63911eb0dfcd0d4a8def05315e458824d3f31f2",
+    "width": 81,
+    "height": 714,
+    "crop": [
+      220,
+      28,
+      81,
+      714
+    ],
+    "runtime": "src/assets/approved/H05.webp",
+    "sha256": "883443c377f185e39ba3887927360682d988c8f0ae8fd847367afff3b5caaf14"
+  },
+  {
+    "id": "H06",
+    "name": "leaf",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "acdc6fb72b849361f029e221c63911eb0dfcd0d4a8def05315e458824d3f31f2",
+    "width": 104,
+    "height": 733,
+    "crop": [
+      211,
+      19,
+      104,
+      733
+    ],
+    "runtime": "src/assets/approved/H06.webp",
+    "sha256": "c22ab33786d98813c820133c679d42eabad404e07725c2e79621100905c3da0e"
+  },
+  {
+    "id": "H07",
+    "name": "sword",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "acdc6fb72b849361f029e221c63911eb0dfcd0d4a8def05315e458824d3f31f2",
+    "width": 162,
+    "height": 725,
+    "crop": [
+      179,
+      13,
+      162,
+      725
+    ],
+    "runtime": "src/assets/approved/H07.webp",
+    "sha256": "a3842501945c7f1e07d01d4dc2551c150546e7ddaad9ef4108761db9adacc624"
+  },
+  {
+    "id": "H08",
+    "name": "cathedral",
+    "source": "art/hands-h05-h08-r1.png",
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "acdc6fb72b849361f029e221c63911eb0dfcd0d4a8def05315e458824d3f31f2",
+    "width": 150,
+    "height": 726,
+    "crop": [
+      187,
+      11,
+      150,
+      726
+    ],
+    "runtime": "src/assets/approved/H08.webp",
+    "sha256": "cc21d28530820f562c17b3766f02e2c45c423118c68971bf414065699393e762"
+  },
+  {
+    "id": "H09",
+    "name": "filigree",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "e7c0610cf62ed5a366c38e623bf280a6ea25815b36f991b41d21ffb01a04262f",
+    "width": 197,
+    "height": 740,
+    "crop": [
+      182,
+      14,
+      197,
+      740
+    ],
+    "runtime": "src/assets/approved/H09.webp",
+    "sha256": "2a5f65d1e01af8c7a1c6c42dd8b1c31e401f2a176b7ad0d7d014d3e52f17e8f2"
+  },
+  {
+    "id": "H10",
+    "name": "skeleton",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "e7c0610cf62ed5a366c38e623bf280a6ea25815b36f991b41d21ffb01a04262f",
+    "width": 143,
+    "height": 736,
+    "crop": [
+      169,
+      14,
+      143,
+      736
+    ],
+    "runtime": "src/assets/approved/H10.webp",
+    "sha256": "125a79209c2fceba2697a1a81bed537f09e54ac38c635eab77eee6163b6bc208"
+  },
+  {
+    "id": "H11",
+    "name": "quill",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "e7c0610cf62ed5a366c38e623bf280a6ea25815b36f991b41d21ffb01a04262f",
+    "width": 138,
+    "height": 730,
+    "crop": [
+      204,
+      5,
+      138,
+      730
+    ],
+    "runtime": "src/assets/approved/H11.webp",
+    "sha256": "d4279403f43e23630f5b9a53b21d903bce560436186170a1b676d5edea8c3466"
+  },
+  {
+    "id": "H12",
+    "name": "compass",
+    "source": "art/hands-h09-h12-r1.png",
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "e7c0610cf62ed5a366c38e623bf280a6ea25815b36f991b41d21ffb01a04262f",
+    "width": 123,
+    "height": 731,
+    "crop": [
+      184,
+      5,
+      123,
+      731
+    ],
+    "runtime": "src/assets/approved/H12.webp",
+    "sha256": "69038a982a7c3a6d1257d9e3aaf00279d47371142837e843bed2e4465d55464d"
+  },
+  {
+    "id": "M01",
+    "name": "color",
+    "source": "art/materials-m01-m04-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "6438aeade7f26ebaa044ae30281c164a4cb5663dd685e27983e8a616194ef7fd",
+    "width": 124,
+    "height": 729,
+    "crop": [
+      223,
+      30,
+      124,
+      729
+    ],
+    "runtime": "src/assets/approved/M01.webp",
+    "sha256": "167c621985d7e710bbf3c755849bbd92234666ff949ad9e7eb6357248de9ccd1"
+  },
+  {
+    "id": "M02",
+    "name": "brass",
+    "source": "art/materials-m01-m04-r1.png",
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "6438aeade7f26ebaa044ae30281c164a4cb5663dd685e27983e8a616194ef7fd",
+    "width": 126,
+    "height": 730,
+    "crop": [
+      170,
+      30,
+      126,
+      730
+    ],
+    "runtime": "src/assets/approved/M02.webp",
+    "sha256": "7c66ddcb6dab2b3d0010f24c9aacf4eb755d7c2f380880c4e832fd4be1f9e020"
+  },
+  {
+    "id": "M03",
+    "name": "aged-brass",
+    "source": "art/materials-m01-m04-r1.png",
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "6438aeade7f26ebaa044ae30281c164a4cb5663dd685e27983e8a616194ef7fd",
+    "width": 127,
+    "height": 723,
+    "crop": [
+      224,
+      13,
+      127,
+      723
+    ],
+    "runtime": "src/assets/approved/M03.webp",
+    "sha256": "0c808a0eaf2ef91da3b8586b3d54bfce4be5ca81e572c5c81ae17530d1ad27ef"
+  },
+  {
+    "id": "M04",
+    "name": "copper",
+    "source": "art/materials-m01-m04-r1.png",
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "6438aeade7f26ebaa044ae30281c164a4cb5663dd685e27983e8a616194ef7fd",
+    "width": 126,
+    "height": 722,
+    "crop": [
+      168,
+      14,
+      126,
+      722
+    ],
+    "runtime": "src/assets/approved/M04.webp",
+    "sha256": "227b9e3801b333df477353ead9a81780024ccd117ce0cbe91419ad84e13b3c61"
+  },
+  {
+    "id": "M05",
+    "name": "silver",
+    "source": "art/materials-m05-m08-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "b48dd9b1c96f50dddbee23c94e7d40729d355624d797f3f9b4442da5f8e6cd52",
+    "width": 103,
+    "height": 579,
+    "crop": [
+      288,
+      21,
+      103,
+      579
+    ],
+    "runtime": "src/assets/approved/M05.webp",
+    "sha256": "ffcec159dba253b246098cf7167175f26ed0453fda7877778ff7159c2eb7d9ec"
+  },
+  {
+    "id": "M06",
+    "name": "steel",
+    "source": "art/materials-m05-m08-r1.png",
+    "sourceRect": [
+      656,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "b48dd9b1c96f50dddbee23c94e7d40729d355624d797f3f9b4442da5f8e6cd52",
+    "width": 104,
+    "height": 579,
+    "crop": [
+      257,
+      21,
+      104,
+      579
+    ],
+    "runtime": "src/assets/approved/M06.webp",
+    "sha256": "bc8b68d20353fb9f2ee64e0b2f1b4bd81f8814ff5a9c835154963091dcb1ea22"
+  },
+  {
+    "id": "M07",
+    "name": "wood",
+    "source": "art/materials-m05-m08-r1.png",
+    "sourceRect": [
+      0,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "b48dd9b1c96f50dddbee23c94e7d40729d355624d797f3f9b4442da5f8e6cd52",
+    "width": 105,
+    "height": 586,
+    "crop": [
+      289,
+      0,
+      105,
+      586
+    ],
+    "runtime": "src/assets/approved/M07.webp",
+    "sha256": "6ccf6b688be4a0e83c73b2e80435bef5d200435d94ac6111bd60d3b62aeecb9e"
+  },
+  {
+    "id": "M08",
+    "name": "ivory",
+    "source": "art/materials-m05-m08-r1.png",
+    "sourceRect": [
+      656,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "b48dd9b1c96f50dddbee23c94e7d40729d355624d797f3f9b4442da5f8e6cd52",
+    "width": 106,
+    "height": 586,
+    "crop": [
+      260,
+      0,
+      106,
+      586
+    ],
+    "runtime": "src/assets/approved/M08.webp",
+    "sha256": "43120263143610517a59f5c5eabcc97a90854d9910bfa39ace8e070be148843e"
+  },
+  {
+    "id": "M09",
+    "name": "obsidian",
+    "source": "art/materials-m09-m12-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "c5ce484353c4b87302fa4c910a9b391c6be01f11d7ebb75a2f62c3da4e300dae",
+    "width": 123,
+    "height": 722,
+    "crop": [
+      234,
+      46,
+      123,
+      722
+    ],
+    "runtime": "src/assets/approved/M09.webp",
+    "sha256": "550823246b955c5e1443891bcecb4cc52d7a4fdbdde9e7f4502c6ab135c671fb"
+  },
+  {
+    "id": "M10",
+    "name": "glass",
+    "source": "art/materials-m09-m12-r1.png",
+    "sourceRect": [
+      512,
+      0,
+      512,
+      768
+    ],
+    "source_sha256": "c5ce484353c4b87302fa4c910a9b391c6be01f11d7ebb75a2f62c3da4e300dae",
+    "width": 122,
+    "height": 721,
+    "crop": [
+      151,
+      47,
+      122,
+      721
+    ],
+    "runtime": "src/assets/approved/M10.webp",
+    "sha256": "ac9cce48605cc79f415c42b3063210839e34a2eff4f3f3696ef3ca0c31c53cd4"
+  },
+  {
+    "id": "M11",
+    "name": "Brass finish: polished",
+    "source": "art/materials-m09-m12-r1.png",
+    "sourceRect": [
+      0,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "c5ce484353c4b87302fa4c910a9b391c6be01f11d7ebb75a2f62c3da4e300dae",
+    "width": 122,
+    "height": 737,
+    "crop": [
+      232,
+      0,
+      122,
+      737
+    ],
+    "runtime": "src/assets/approved/M11.webp",
+    "sha256": "5a589579a9977c8cf7680fc27efd418769b5c6b9fa7d5fc2fc422756bf3a64d4"
+  },
+  {
+    "id": "M12",
+    "name": "Brass finish: brushed",
+    "source": "art/materials-m09-m12-r1.png",
+    "sourceRect": [
+      512,
+      768,
+      512,
+      768
+    ],
+    "source_sha256": "c5ce484353c4b87302fa4c910a9b391c6be01f11d7ebb75a2f62c3da4e300dae",
+    "width": 122,
+    "height": 737,
+    "crop": [
+      152,
+      0,
+      122,
+      737
+    ],
+    "runtime": "src/assets/approved/M12.webp",
+    "sha256": "aefa48a9a258ddc0521c635c0f7126badf9f81e59bfbafbfe9b5bafb5eb09ffe"
+  },
+  {
+    "id": "M13",
+    "name": "Brass finish: aged",
+    "source": "art/material-m13-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      980,
+      1605
+    ],
+    "source_sha256": "582ca9d0b9e4c7660042fe46900d380b4b78b41d2eab125aa784fbe112628146",
+    "width": 227,
+    "height": 1504,
+    "crop": [
+      377,
+      32,
+      227,
+      1504
+    ],
+    "runtime": "src/assets/approved/M13.webp",
+    "sha256": "93ec73d0b56363552c7c357952417a37905446c2dfc953cd84f13408472e8e7b"
+  },
+  {
+    "id": "I01",
+    "name": "home",
+    "source": "art/symbols-i01-i04-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "36658edaa9778793e0a5c4c3f16d8215800fd199943d294c52b885526fb875cf",
+    "width": 522,
+    "height": 470,
+    "crop": [
+      67,
+      86,
+      522,
+      470
+    ],
+    "runtime": "src/assets/approved/I01.webp",
+    "sha256": "8315f8bfa1e12e6d3ad297cec767a1750c97bc5995fb612be9fb8c23e1225111"
+  },
+  {
+    "id": "I02",
+    "name": "work",
+    "source": "art/symbols-i01-i04-r1.png",
+    "sourceRect": [
+      656,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "36658edaa9778793e0a5c4c3f16d8215800fd199943d294c52b885526fb875cf",
+    "width": 506,
+    "height": 450,
+    "crop": [
+      96,
+      99,
+      506,
+      450
+    ],
+    "runtime": "src/assets/approved/I02.webp",
+    "sha256": "dd38808ffd1657479f0c1ee52a13991452fde73d90eb5dc2ae5d2a416b587623"
+  },
+  {
+    "id": "I03",
+    "name": "school",
+    "source": "art/symbols-i01-i04-r1.png",
+    "sourceRect": [
+      0,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "36658edaa9778793e0a5c4c3f16d8215800fd199943d294c52b885526fb875cf",
+    "width": 552,
+    "height": 543,
+    "crop": [
+      63,
+      3,
+      552,
+      543
+    ],
+    "runtime": "src/assets/approved/I03.webp",
+    "sha256": "eb81688a64a83196685aecd004144b456b59de239ac6d1be7be082fda9e1f9e8"
+  },
+  {
+    "id": "I04",
+    "name": "gym",
+    "source": "art/symbols-i01-i04-r1.png",
+    "sourceRect": [
+      656,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "36658edaa9778793e0a5c4c3f16d8215800fd199943d294c52b885526fb875cf",
+    "width": 596,
+    "height": 311,
+    "crop": [
+      52,
+      186,
+      596,
+      311
+    ],
+    "runtime": "src/assets/approved/I04.webp",
+    "sha256": "adc2b8b133f84aaaf6e633d393c9938f618024192f520408e14c26d67ccae67f"
+  },
+  {
+    "id": "I05",
+    "name": "travel",
+    "source": "art/symbols-i05-i08-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "81128ba91f3671ed4265b9ad70c0c9a7d9bcb7a90b0ab45363932716f30168cc",
+    "width": 578,
+    "height": 551,
+    "crop": [
+      58,
+      25,
+      578,
+      551
+    ],
+    "runtime": "src/assets/approved/I05.webp",
+    "sha256": "033261b5b33d60d0bdd82a3b26ba874906ee12ad4f2da039ce8dcda7ef7212af"
+  },
+  {
+    "id": "I06",
+    "name": "away",
+    "source": "art/symbols-i05-i08-r1.png",
+    "sourceRect": [
+      656,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "81128ba91f3671ed4265b9ad70c0c9a7d9bcb7a90b0ab45363932716f30168cc",
+    "width": 410,
+    "height": 595,
+    "crop": [
+      127,
+      5,
+      410,
+      595
+    ],
+    "runtime": "src/assets/approved/I06.webp",
+    "sha256": "f3732e252f19a268b9af0c903591f0c88fcd88b1efe33ce482da529928e49c92"
+  },
+  {
+    "id": "I07",
+    "name": "hospital",
+    "source": "art/symbols-i05-i08-r1.png",
+    "sourceRect": [
+      0,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "81128ba91f3671ed4265b9ad70c0c9a7d9bcb7a90b0ab45363932716f30168cc",
+    "width": 636,
+    "height": 517,
+    "crop": [
+      20,
+      22,
+      636,
+      517
+    ],
+    "runtime": "src/assets/approved/I07.webp",
+    "sha256": "bdf67ce8db15b807bf6ad1dd4a2748023142c1481d8005c4ed80d7a87a0cb5d0"
+  },
+  {
+    "id": "I08",
+    "name": "shop",
+    "source": "art/symbols-i05-i08-r1.png",
+    "sourceRect": [
+      656,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "81128ba91f3671ed4265b9ad70c0c9a7d9bcb7a90b0ab45363932716f30168cc",
+    "width": 622,
+    "height": 553,
+    "crop": [
+      0,
+      0,
+      622,
+      553
+    ],
+    "runtime": "src/assets/approved/I08.webp",
+    "sha256": "21eb6ac0b3ecde1411a2be1df6a013b26001e7e3928e60d08b65396bea917d3b"
+  },
+  {
+    "id": "I09",
+    "name": "family",
+    "source": "art/symbols-i09-i12-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "8c2c7d036ebf0260d3c8a1e3b219ef800e88789ce023bb4dc4c31f43661140ad",
+    "width": 414,
+    "height": 547,
+    "crop": [
+      146,
+      53,
+      414,
+      547
+    ],
+    "runtime": "src/assets/approved/I09.webp",
+    "sha256": "ca625e27b1d5bcc28a890b41a676bfeb0eea2108843c383086960eb669821367"
+  },
+  {
+    "id": "I10",
+    "name": "garden",
+    "source": "art/symbols-i09-i12-r1.png",
+    "sourceRect": [
+      656,
+      0,
+      656,
+      599.5
+    ],
+    "source_sha256": "8c2c7d036ebf0260d3c8a1e3b219ef800e88789ce023bb4dc4c31f43661140ad",
+    "width": 528,
+    "height": 537,
+    "crop": [
+      67,
+      60,
+      528,
+      537
+    ],
+    "runtime": "src/assets/approved/I10.webp",
+    "sha256": "cd518b42e9f3f66ba0f4d802e645c520ba61add9b571f9e06d315b2b92a39d6f"
+  },
+  {
+    "id": "I11",
+    "name": "bed",
+    "source": "art/symbols-i09-i12-r1.png",
+    "sourceRect": [
+      0,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "8c2c7d036ebf0260d3c8a1e3b219ef800e88789ce023bb4dc4c31f43661140ad",
+    "width": 576,
+    "height": 521,
+    "crop": [
+      80,
+      0,
+      576,
+      521
+    ],
+    "runtime": "src/assets/approved/I11.webp",
+    "sha256": "82de56fb64eeb9db8c21c3c1167ec7ed49a77a4715a07b7d5e7de4faf75248c5"
+  },
+  {
+    "id": "I12",
+    "name": "magic",
+    "source": "art/symbols-i09-i12-r1.png",
+    "sourceRect": [
+      656,
+      599.5,
+      656,
+      599.5
+    ],
+    "source_sha256": "8c2c7d036ebf0260d3c8a1e3b219ef800e88789ce023bb4dc4c31f43661140ad",
+    "width": 507,
+    "height": 468,
+    "crop": [
+      75,
+      54,
+      507,
+      468
+    ],
+    "runtime": "src/assets/approved/I12.webp",
+    "sha256": "2568473256d91e4dc5b983955c822b2e8d0d7958d1667bcd181cd3a71e3bcd25"
+  },
+  {
+    "id": "I13",
+    "name": "pin",
+    "source": "art/symbol-i13-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1214,
+      1295
+    ],
+    "source_sha256": "2b7a741fa2be2f6fa2c1fef5a0aea2bb468e0467bafa15e9c0945a76bfcc65ee",
+    "width": 735,
+    "height": 1100,
+    "crop": [
+      239,
+      85,
+      735,
+      1100
+    ],
+    "runtime": "src/assets/approved/I13.webp",
+    "sha256": "e3b7dfc034fa5fb235bc5a4eda64edccd0113fd3d579f521de5436b9a1005831"
+  },
+  {
+    "id": "S01",
+    "name": "spring / dawn",
+    "source": "art/spring-lighting-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "eb58d280d770b7cb0383e5777493a80e0c00804efca56c6cb0fbc325ce0c727e",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S01.webp",
+    "sha256": "caf22007a73fe1ec34ae0979201cbcb042475cfe2afa60ccee5617d0c52d5912"
+  },
+  {
+    "id": "S02",
+    "name": "spring / day",
+    "source": "art/spring-lighting-r1.png",
+    "sourceRect": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "eb58d280d770b7cb0383e5777493a80e0c00804efca56c6cb0fbc325ce0c727e",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S02.webp",
+    "sha256": "a70210aeb81fa6eacbe59ff97842d517e5b5b6a5715bbd8ddce4fae2c9358b70"
+  },
+  {
+    "id": "S03",
+    "name": "spring / dusk",
+    "source": "art/spring-lighting-r1.png",
+    "sourceRect": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "eb58d280d770b7cb0383e5777493a80e0c00804efca56c6cb0fbc325ce0c727e",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S03.webp",
+    "sha256": "5cc130af20ede0916e14fc39d0c5bbcb791ac1adc369518ac770c761285697ef"
+  },
+  {
+    "id": "S04",
+    "name": "spring / night",
+    "source": "art/spring-lighting-r1.png",
+    "sourceRect": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "eb58d280d770b7cb0383e5777493a80e0c00804efca56c6cb0fbc325ce0c727e",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S04.webp",
+    "sha256": "e544619ba0eb506b6301e8ca9fb7041dcc3cc1fb55f03ab28e193317b3be529b"
+  },
+  {
+    "id": "S05",
+    "name": "summer / dawn",
+    "source": "art/summer-lighting-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "14a0a6d2433ff5e65cbaaefaca906f1d2d8e0c8131ae13921ed8fc42f8e50bbd",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S05.webp",
+    "sha256": "2a432870a26ddfddf1ad192754c660ccdf7e07895c26a85a49ca1d5006d0ed54"
+  },
+  {
+    "id": "S06",
+    "name": "summer / day",
+    "source": "art/summer-lighting-r1.png",
+    "sourceRect": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "14a0a6d2433ff5e65cbaaefaca906f1d2d8e0c8131ae13921ed8fc42f8e50bbd",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S06.webp",
+    "sha256": "ebbd74f6b9523c369731a76e8155b90ea07175c1f7c0ebd2827ebb3b945e9df8"
+  },
+  {
+    "id": "S07",
+    "name": "summer / dusk",
+    "source": "art/summer-lighting-r1.png",
+    "sourceRect": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "14a0a6d2433ff5e65cbaaefaca906f1d2d8e0c8131ae13921ed8fc42f8e50bbd",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S07.webp",
+    "sha256": "eaf70b70b91f2b1a8082838b05e3a9882bbcc99de63da5a37747ca7f519d7fde"
+  },
+  {
+    "id": "S08",
+    "name": "summer / night",
+    "source": "art/summer-lighting-r1.png",
+    "sourceRect": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "14a0a6d2433ff5e65cbaaefaca906f1d2d8e0c8131ae13921ed8fc42f8e50bbd",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S08.webp",
+    "sha256": "a3c6cf6793bdf2c107a70a478bb3dd3a301691be9d5b43bcf3eef7de37305f85"
+  },
+  {
+    "id": "S09",
+    "name": "autumn / dawn",
+    "source": "art/autumn-lighting-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "8e65ad2720d941815be85b15c83f5d687da6275b6e1e4d3e38e8130d95eb9979",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S09.webp",
+    "sha256": "e2586e36cdb6a368e42952fe2f00b463fcb1e2611926118ea6adc3b139ebba39"
+  },
+  {
+    "id": "S10",
+    "name": "autumn / day",
+    "source": "art/autumn-lighting-r1.png",
+    "sourceRect": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "8e65ad2720d941815be85b15c83f5d687da6275b6e1e4d3e38e8130d95eb9979",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S10.webp",
+    "sha256": "b373baa6474acaaca75bfd06ac9131dcd34edfbbe17a7526fc04feb39535d2cb"
+  },
+  {
+    "id": "S11",
+    "name": "autumn / dusk",
+    "source": "art/autumn-lighting-r1.png",
+    "sourceRect": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "8e65ad2720d941815be85b15c83f5d687da6275b6e1e4d3e38e8130d95eb9979",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S11.webp",
+    "sha256": "53de9e64e33cd371cc3ae7c937d96c1349b2eb73772c59db015eceffa2a07f58"
+  },
+  {
+    "id": "S12",
+    "name": "autumn / night",
+    "source": "art/autumn-lighting-r1.png",
+    "sourceRect": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "8e65ad2720d941815be85b15c83f5d687da6275b6e1e4d3e38e8130d95eb9979",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S12.webp",
+    "sha256": "87e8b3f2401f0478f620f4007901f5cbd2726cdb0089bda07822f93c1ba3de91"
+  },
+  {
+    "id": "S13",
+    "name": "winter / dawn",
+    "source": "art/winter-lighting-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "78ffac83d0e9851a86035a907aabe5e54d2fd7fb5c02ea8b7f79be818540ac75",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S13.webp",
+    "sha256": "03ca4e870d3625b14b77fcd7968c3571f99efce77240e48928c485edadce9b9a"
+  },
+  {
+    "id": "S14",
+    "name": "winter / day",
+    "source": "art/winter-lighting-r1.png",
+    "sourceRect": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "source_sha256": "78ffac83d0e9851a86035a907aabe5e54d2fd7fb5c02ea8b7f79be818540ac75",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S14.webp",
+    "sha256": "88cbc45d8536268161b2025a3685120f91d1fe520fb54759a38619d3147d88c7"
+  },
+  {
+    "id": "S15",
+    "name": "winter / dusk",
+    "source": "art/winter-lighting-r1.png",
+    "sourceRect": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "78ffac83d0e9851a86035a907aabe5e54d2fd7fb5c02ea8b7f79be818540ac75",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S15.webp",
+    "sha256": "1c7f68f6e6ef8079d3abaa72f8766ba001eba87fd283fe97efccb751679f3572"
+  },
+  {
+    "id": "S16",
+    "name": "winter / night",
+    "source": "art/winter-lighting-r1.png",
+    "sourceRect": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "source_sha256": "78ffac83d0e9851a86035a907aabe5e54d2fd7fb5c02ea8b7f79be818540ac75",
+    "width": 627,
+    "height": 627,
+    "crop": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "runtime": "src/assets/approved/S16.webp",
+    "sha256": "7ef5a8e533de788089b120edc3c9671c9083c45f005efaa285baa7dcfb3eec33"
+  },
+  {
+    "id": "C01",
+    "name": "Swallow",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      0,
+      0,
+      680,
+      620
+    ],
+    "source_sha256": "792175df863b6dbd9d9d0d63f2c9b4c4a373f782a380db8c8bbf79f73b7dd606",
+    "width": 603,
+    "height": 543,
+    "crop": [
+      40,
+      44,
+      603,
+      543
+    ],
+    "runtime": "src/assets/approved/C01.webp",
+    "sha256": "8b6cd96be6d357cbb2ffab33421c5e8a92c1fee2db23dfb4642e65e286c3ef94"
+  },
+  {
+    "id": "C02",
+    "name": "Barn owl",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      690,
+      0,
+      564,
+      620
+    ],
+    "source_sha256": "792175df863b6dbd9d9d0d63f2c9b4c4a373f782a380db8c8bbf79f73b7dd606",
+    "width": 518,
+    "height": 481,
+    "crop": [
+      16,
+      53,
+      518,
+      481
+    ],
+    "runtime": "src/assets/approved/C02.webp",
+    "sha256": "b5b02330f1b540bb119f17baa171f85de1ece27466e800d23195b0fc2605c1f6"
+  },
+  {
+    "id": "C03",
+    "name": "Witch on broom",
+    "source": "art/avian-riders.png",
+    "sourceRect": [
+      0,
+      625,
+      645,
+      629
+    ],
+    "source_sha256": "792175df863b6dbd9d9d0d63f2c9b4c4a373f782a380db8c8bbf79f73b7dd606",
+    "width": 623,
+    "height": 515,
+    "crop": [
+      21,
+      34,
+      623,
+      515
+    ],
+    "runtime": "src/assets/approved/C03.webp",
+    "sha256": "59d8f58eae743faffab315ef3f3ce7bb89b9b84953471f9bababa7eee68298d1"
+  },
+  {
+    "id": "C04",
+    "name": "Wizard on broom",
+    "source": "art/wizard-c04-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      606,
+      629
+    ],
+    "source_sha256": "67d122221635a9d1743b72b5c49d1b70a50ca3a6aed8bf7489a9f92e65e91551",
+    "width": 587,
+    "height": 534,
+    "crop": [
+      6,
+      19,
+      587,
+      534
+    ],
+    "runtime": "src/assets/approved/C04.webp",
+    "sha256": "e67144979160b9f05caf5ddccca71991e7dee3da124979c34d741b555cf3e2ef"
+  },
+  {
+    "id": "C05",
+    "name": "Dragon",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      0,
+      0,
+      700,
+      610
+    ],
+    "source_sha256": "15abd8dec1bd6c4c2f87c6025ef01d3ed0279883f656d37d9842f09ef67ca504",
+    "width": 686,
+    "height": 495,
+    "crop": [
+      14,
+      47,
+      686,
+      495
+    ],
+    "runtime": "src/assets/approved/C05.webp",
+    "sha256": "06be7f05eef797d913d9dad160943d8752bbf8c6f7953336c3ba3098976c8961"
+  },
+  {
+    "id": "C06",
+    "name": "Phoenix",
+    "source": "art/mythical.png",
+    "sourceRect": [
+      650,
+      0,
+      604,
+      625
+    ],
+    "source_sha256": "15abd8dec1bd6c4c2f87c6025ef01d3ed0279883f656d37d9842f09ef67ca504",
+    "width": 576,
+    "height": 541,
+    "crop": [
+      0,
+      52,
+      576,
+      541
+    ],
+    "runtime": "src/assets/approved/C06.webp",
+    "sha256": "ff5ebbebd0c0c191be5b675fffd6fa209c686cec566db51c332028ef88acc3dc"
+  },
+  {
+    "id": "C07",
+    "name": "Pixie",
+    "source": "art/pixie-c07-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "source_sha256": "624d384e990437fc7b602a24d85960f0429b8a3b047144421bd3ca57516c6186",
+    "width": 1134,
+    "height": 967,
+    "crop": [
+      291,
+      25,
+      1134,
+      967
+    ],
+    "runtime": "src/assets/approved/C07.webp",
+    "sha256": "be8084480a7c3bf595fb96bd8ebcf46d61abe5fe1d866e84caf03f35ad76ff75"
+  },
+  {
+    "id": "C08",
+    "name": "Lake serpent",
+    "source": "art/serpent-c08-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "source_sha256": "7acd3cf628924e6684b4c70b64d565f6a1f426cec4e2d40803b34da4bbd7f6b0",
+    "width": 1127,
+    "height": 1014,
+    "crop": [
+      98,
+      168,
+      1127,
+      1014
+    ],
+    "runtime": "src/assets/approved/C08.webp",
+    "sha256": "1998394cb53e6da4cf4ca1110ca06e4619b8dc5805bbb7cbdfed9172586cccb7"
+  },
+  {
+    "id": "C09",
+    "name": "Mermaid",
+    "source": "art/mermaid-c09-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1293,
+      1216
+    ],
+    "source_sha256": "21ff1c71b53897a2ce6755d66627dd72bca97ab1436edb4c89335985e744e6c0",
+    "width": 1205,
+    "height": 954,
+    "crop": [
+      39,
+      141,
+      1205,
+      954
+    ],
+    "runtime": "src/assets/approved/C09.webp",
+    "sha256": "20dede759fdc7846f6e64ab064a5ed81b4568c0132f05b080704a271a7d94d0c"
+  },
+  {
+    "id": "C10",
+    "name": "Merman",
+    "source": "art/merman-c10-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1290,
+      1219
+    ],
+    "source_sha256": "e8a1b82d8679ffa3fe02385d455080bc9b31d3511ee11561e052d61a0acdb5ec",
+    "width": 1237,
+    "height": 898,
+    "crop": [
+      6,
+      154,
+      1237,
+      898
+    ],
+    "runtime": "src/assets/approved/C10.webp",
+    "sha256": "e4be28dc1116486a39fc7d2345e3ab72927c02567ff4b6f40e70a077b06f2936"
+  },
+  {
+    "id": "C11",
+    "name": "Unicorn",
+    "source": "art/unicorn-c11-r1.png",
+    "sourceRect": [
+      0,
+      0,
+      1288,
+      1221
+    ],
+    "source_sha256": "43b464d821fe11ef7faa9265f33bfc247192fea43353eab8dc0158c405f04bf8",
+    "width": 1244,
+    "height": 1056,
+    "crop": [
+      26,
+      76,
+      1244,
+      1056
+    ],
+    "runtime": "src/assets/approved/C11.webp",
+    "sha256": "c6516f2e43f0444fa7bb60b2582d57700d5563d2722bb952337f773b13bd5ca6"
+  },
+  {
+    "id": "C12",
+    "name": "Sailing boat",
+    "source": "art/lake-shore.png",
+    "sourceRect": [
+      645,
+      580,
+      609,
+      674
+    ],
+    "source_sha256": "99b5058da65fbf5a9fcd922556159e9c2c4ca665f7e3632e6650b8a7a724a547",
+    "width": 596,
+    "height": 603,
+    "crop": [
+      0,
+      0,
+      596,
+      603
+    ],
+    "runtime": "src/assets/approved/C12.webp",
+    "sha256": "81d17c288b28f9ed8ce30dc70b63dfa7f45e47d44f58db1120964cad394f0c77"
+  }
+]

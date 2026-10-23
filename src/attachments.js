@@ -1,4 +1,4 @@
-import atlas from "./assets/hand-attachments.png";
+import atlas from "./assets/optimized/hand-attachments.webp";
 import { escapeXML } from "./panels.js";
 // Separate source coordinates and silhouette clips exclude neighbouring artwork,
 // including the letterboxed area that leaked adjacent tags in earlier previews.

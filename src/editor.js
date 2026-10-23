@@ -444,7 +444,13 @@ export class ClockEditor extends HTMLElement {
         ]);
         this.note(
           box,
-          "Optional physical name tag attached to this hand. Use the lettering color picker for ink. Offsets move the tag or its text; text size is measured in the source tag, so start at 68. Blank lettering stays blank.",
+          "Narrow hands may not have room for an engraved name. Choose an affixed name tag for readable lettering, or keep engraving to fit it into the metal. Use the lettering color picker for ink. Offsets move the tag or its text; text size is measured in the source tag, so start at 68. Blank lettering stays blank.",
+        );
+        this.button(box, "Use a readable parchment name", () =>
+          this.change(() => {
+            m.name_attachment = "parchment";
+            m.show_name = true;
+          }, true),
         );
         for (const [label, key] of [
           ["Tag scale", "attachment_scale"],
@@ -857,6 +863,11 @@ export class ClockEditor extends HTMLElement {
       );
       this.field(root, "Decorative motion speed", c, "motion_speed", "number");
       this.field(root, "Gear revolution (seconds)", c, "gear_speed", "number");
+      this.field(root, "Brass age (0 new–1 antique)", c, "brass_age", "number");
+      this.note(
+        root,
+        "Brass Clockwork age blends the polished rim into its antique finish. Use 0 for new brass, 0.25 for lightly aged, or 1 for antique. Gears keep their connected motion.",
+      );
       this.field(
         root,
         "Background opacity (0–1)",

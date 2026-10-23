@@ -139,8 +139,8 @@ test("portraits remain clipped and upright, stacking recomputes on state changes
     card.setConfig(c);
   });
   const card = page.locator("section magical-family-clock-card").first();
-  await expect(card.locator(".hand image")).toHaveCount(1);
-  await expect(card.locator(".hand image")).toHaveAttribute(
+  await expect(card.locator(".hand .counter image")).toHaveCount(1);
+  await expect(card.locator(".hand .counter image")).toHaveAttribute(
     "transform",
     "rotate(20)",
   );

@@ -76,6 +76,7 @@ export function normalizeDesign(c) {
     c[kind + "_color"] = color(c[kind + "_color"]);
     c[kind + "_font"] = String(c[kind + "_font"] || c.font);
   }
+  c.brass_age = finite(c.brass_age, 0.25, 0, 1);
   c.scene_motion = c.scene_motion !== false;
   c.scene_intensity = finite(c.scene_intensity, 0.65, 0, 1);
   c.motion_speed = finite(c.motion_speed, 1, 0.25, 3);

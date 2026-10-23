@@ -61,8 +61,10 @@ test("engraving bounds fit the filled hand at different widths and text orientat
                     box.y + (box.height * y) / 4,
                   ).matrixTransform(matrix);
                   const inside = hand.bowlRadius
-                    ? Math.hypot(point.x - 300, point.y - (300 - hand.r)) <=
-                      hand.bowlRadius
+                    ? Math.hypot(
+                        point.x - 300,
+                        point.y - (300 - hand.r * hand.headFraction),
+                      ) <= hand.bowlRadius
                     : hand.path.isPointInFill(
                         new DOMPoint(
                           300 + (point.x - 300) / hand.member.width,
@@ -209,12 +211,12 @@ test("GUI puts text on a spoon bowl and changes only lettering orientation and r
     const h = [...c._hands.values()][0];
     return {
       y: h.engraving.y,
-      expected: 300 - h.r,
+      expected: h.head.transform.baseVal.getItem(0).matrix.f,
       transform: h.nameGroup.getAttribute("transform"),
       portrait: h.member.portrait_rotation,
     };
   });
-  expect(details.y).toBe(details.expected);
+  expect(details.y).toBeCloseTo(details.expected, 3);
   expect(details.transform).toMatch(/rotate\((0|180)\)/);
   await editor
     .getByText("Customize hand and portrait", { exact: true })

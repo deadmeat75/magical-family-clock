@@ -17,15 +17,11 @@ export const CREATURES = [
   ["wizard", "Wizard on a broom"],
   ["dragon", "Dragon"],
   ["phoenix", "Phoenix"],
-  ["fairy", "Fairy"],
+  ["fairy", "Pixie"],
   ["sea-monster", "Lake serpent"],
   ["mermaid", "Mermaid"],
   ["merman", "Merman"],
   ["sailboat", "Sailing boat"],
-  ["lantern", "Floating lantern"],
-  ["cottage", "Enchanted cottage"],
-  ["mushrooms", "Glowing mushrooms"],
-  ["crystals", "Crystal cluster"],
   ["unicorn", "Unicorn"],
   ["custom", "Custom image prop"],
 ];
@@ -37,21 +33,27 @@ export function worldObject(kind = "bird", id = "world-bird") {
     kind,
     name: CREATURES.find((x) => x[0] === kind)?.[1] || kind,
     enabled: true,
+    tint: false,
     behind_castle:
       !aquatic.includes(kind) &&
       !stationary.includes(kind) &&
       !["sailboat", "lantern"].includes(kind),
-    x: 50,
-    y: aquatic.includes(kind)
-      ? 77
-      : stationary.includes(kind)
-        ? 66
-        : kind === "sailboat"
-          ? 85
-          : kind === "lantern"
-            ? 40
-            : 20,
-    scale: kind === "dragon" ? 1.2 : 1,
+    x: kind === "unicorn" ? 41 : 50,
+    y:
+      kind === "fairy"
+        ? 60
+        : kind === "unicorn"
+          ? 61
+          : aquatic.includes(kind)
+            ? 77
+            : stationary.includes(kind)
+              ? 66
+              : kind === "sailboat"
+                ? 85
+                : kind === "lantern"
+                  ? 40
+                  : 20,
+    scale: kind === "dragon" ? 1.2 : kind === "fairy" ? 0.65 : 1,
     color:
       {
         dragon: "#599b87",
@@ -73,7 +75,9 @@ export function worldObject(kind = "bird", id = "world-bird") {
     motion: aquatic.includes(kind)
       ? "surface"
       : stationary.includes(kind)
-        ? "still"
+        ? kind === "unicorn"
+          ? "idle"
+          : "still"
         : ["sailboat", "lantern"].includes(kind)
           ? "drift"
           : "fly",
@@ -144,16 +148,24 @@ export function normalizeWorld(c) {
       v.id = String(v.id || base.id).slice(0, 100);
       v.name = String(v.name || base.name).slice(0, 80);
       v.enabled = v.enabled !== false;
-      v.behind_castle = v.behind_castle === true;
+      v.tint = v.tint === true;
+      v.behind_castle =
+        v.kind === "fairy" || v.kind === "unicorn"
+          ? false
+          : v.behind_castle === true;
       v.x = finite(v.x, base.x, 0, 100);
       v.y = finite(v.y, base.y, 0, 100);
       v.scale = finite(v.scale, 1, 0.25, 3);
       v.color = color(v.color, base.color);
       v.interval = finite(v.interval, base.interval, 8, 240);
       v.span = finite(v.span, base.span, 0, 180);
-      v.motion = ["fly", "surface", "drift", "bob", "still"].includes(v.motion)
+      v.motion = ["fly", "surface", "drift", "bob", "still", "idle"].includes(
+        v.motion,
+      )
         ? v.motion
         : base.motion;
+      if (v.kind === "unicorn")
+        v.motion = v.motion === "still" ? "still" : "idle";
       v.period = ["any", "day", "night", "dawn", "dusk"].includes(v.period)
         ? v.period
         : "any";
@@ -275,12 +287,12 @@ export function worldPreset(name) {
       y: 79,
       interval: 46,
     },
-    { ...worldObject("lantern", "world-lantern"), x: 36, y: 56, scale: 0.7 },
+    { ...worldObject("fairy", "world-pixie"), x: 34, y: 57, scale: 1.25 },
     {
-      ...worldObject("mushrooms", "world-mushrooms"),
-      x: 15,
-      y: 88,
-      scale: 0.65,
+      ...worldObject("unicorn", "world-unicorn"),
+      x: 41,
+      y: 61,
+      scale: 0.85,
     },
   ];
 }

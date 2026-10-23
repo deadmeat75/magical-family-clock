@@ -2,9 +2,9 @@
 
 [Current review round](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
-W01–W08 and W10 are approved. W09 growth is accepted; revision 6 appearance awaits approval.
+W01–W10 are approved. W09 revision 6 appearance and continuous growth are preserved.
 
 ## W01 · clear
 
@@ -86,9 +86,9 @@ Explicitly approved in user review.
 
 ## W09 · ice
 
-**Revision 6 · awaiting approval.**
+**Approved · revision 6.**
 
-Revision 5 reviewed: growth behavior is good and should be preserved. Appearance still resembles leaves. Increase fine ice-crystal density and reduce opacity by 15% relative to revision 5 (multiply existing opacity by 0.85), while keeping the continuous inward growth and central-glass placement. Overall W09 appearance remains unapproved.
+Revision 6 explicitly approved by the user: denser fine angular frost, 15% lower layer opacity and preserved continuous inward growth.
 
 [![W09](items/W09-r6.gif)](items/W09-r6.gif)
 

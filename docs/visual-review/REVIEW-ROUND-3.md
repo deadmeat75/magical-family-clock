@@ -1,3 +1,5 @@
+> **Archived review round. Visual review is complete.** [Final decisions and integration](REVISION-NOTES.md) supersede the historical pending-review notes below.
+
 > Archived review round. [Open the three newest revisions](REVIEW-ROUND-4.md).
 
 > **B03 update:** Revision 4 approved and preserved. Remaining revisions: F01, W09 and B01.

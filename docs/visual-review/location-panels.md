@@ -2,7 +2,7 @@
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 P01–P05 are approved. P04 revision 4 follows the supplied real-wood references. Approved textures remain unchanged.
 

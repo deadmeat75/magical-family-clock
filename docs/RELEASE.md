@@ -1,8 +1,6 @@
-> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](visual-review/README.md). HACS remains on 0.4.0.
-
 # Release checklist
 
-The current package version is **0.4.1 — Living World**. Record verification accurately; publication does not establish acceptance on every browser or a user's HACS instance.
+The current package version is **0.4.1 — Crafted Living World**. Visual review is complete and the user authorized proceeding after omitting F01. Record verification accurately; publication does not establish acceptance on every browser or a user's HACS instance.
 
 1. Install from the lockfile with `npm ci`, then run `npm run build`, `npm test` and `npm run test:browser`. System Chromium may be selected with `MFC_CHROMIUM=/usr/bin/chromium`.
 2. Check the production bundle is deterministic and self-contained. Confirm `hacs.json` points to the root `magical-family-clock.js`.

@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Materials: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 M01–M13 artwork is approved. Applying these finishes consistently to every hand silhouette remains runtime integration work.
 

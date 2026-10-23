@@ -1,17 +1,16 @@
 {
-  "release_hold": true,
+  "release_hold": false,
   "published_release": "0.4.0",
   "review_branch": "review-visual-elements",
-  "status": "awaiting individual user approval",
+  "status": "visual review complete; release authorized; final validation and publication in progress",
   "items": [
     {
       "id": "B01",
       "element": "aged-brass information bezel",
       "category": "Bezel",
-      "decision": "revision_requested",
-      "notes": "Revision 4 reviewed: lower both the top and bottom curved text just a hair. Apply a very small downward visual adjustment to each line, retaining current size, curvature, approved frame appearance and clearance from ornament. This supersedes retaining the exact previously accepted lower baseline; preserve its earlier reference artifact.",
+      "decision": "approved",
+      "notes": "Revision 5 explicitly approved by the user. Preserve the brass frame and both slightly lowered curved text lines.",
       "revision": 5,
-      "revision_status": "revision 5 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
@@ -22,8 +21,20 @@
           "component": "bottom curved text placement",
           "example": "items/B01-r3.png",
           "sha256": "df02999fee66c0c84b488ea038c901e8ad436c6f0d00cd421877f7dd23c60c00"
+        },
+        {
+          "component": "Upper readout close-up",
+          "example": "items/B01-top-r5.png",
+          "sha256": "ee7e62132cf470471ae016f285f0e04f9ef259a8841eba158d355952de894f66"
+        },
+        {
+          "component": "Lower readout close-up",
+          "example": "items/B01-bottom-r5.png",
+          "sha256": "57ca649c0651ba719364de1d8d43829cf8390a8bb864f97cfa2f5889fbc690ec"
         }
-      ]
+      ],
+      "approved_example": "items/B01-r5.png",
+      "approved_example_sha256": "97ca9f68769d69939df282a5425b336d6f2848f4576404536f2245216749f085"
     },
     {
       "id": "B02",
@@ -271,10 +282,9 @@
       "id": "F01",
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
-      "decision": "revision_requested",
-      "notes": "User reviewed revision 6: closer, but still not perfectly aligned. Refine the individual lettering curves, offsets and orientation to follow each painted scalloped edge more accurately while keeping every glyph fully inside the gold face with clearance. Revision 6 is not approved.",
-      "revision": 7,
-      "revision_status": "revision 7 prepared; awaiting individual approval"
+      "decision": "omitted",
+      "notes": "User explicitly requested omission of F01 and to proceed. Exclude the scalloped face proposal and its lettering studies from release; retain studies as archival references.",
+      "revision": 7
     },
     {
       "id": "F02",
@@ -1449,17 +1459,28 @@
       "id": "W09",
       "element": "ice",
       "category": "Weather",
-      "decision": "revision_requested",
-      "notes": "Revision 5 reviewed: growth behavior is good and should be preserved. Appearance still resembles leaves. Increase fine ice-crystal density and reduce opacity by 15% relative to revision 5 (multiply existing opacity by 0.85), while keeping the continuous inward growth and central-glass placement. Overall W09 appearance remains unapproved.",
+      "decision": "approved",
+      "notes": "Revision 6 explicitly approved by the user: denser fine angular frost, 15% lower layer opacity and preserved continuous inward growth.",
       "revision": 6,
-      "revision_status": "revision 6 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "continuous inward growth behavior",
           "example": "items/W09-r5.gif",
           "sha256": "8481a3c7826a26f69a406b7ef093360880ae157520731a496a0440c3b9f485ff"
+        },
+        {
+          "component": "completed frost still",
+          "example": "items/W09-r6.png",
+          "sha256": "c1bbce5d9d9846742c1281b45241a2cbda5151d322ec8fba8ea23e9d5dd29319"
+        },
+        {
+          "component": "Close-up: denser fine ice, same continuous growth",
+          "example": "items/W09-detail-r6.gif",
+          "sha256": "1e26eb7aaeb7b2aa56412b49f57e65833f875c945b18ccae057c6230dab42ae5"
         }
-      ]
+      ],
+      "approved_example": "items/W09-r6.gif",
+      "approved_example_sha256": "ce8fde746c396c8c07f2a995c53d0d99604484d56eb22d0d41140c96e6e594d8"
     },
     {
       "id": "W10",
@@ -1578,5 +1599,8 @@
       "approved_source_sha256": "c4635e7f9ddbb1a1aeb175850a106283e61174f5e04d23e4043200b3a318e158",
       "notes": "User: that moon is good. Approval applies to the generated lunar surface; final phase renderings N01\u2013N08 remain awaiting individual approval."
     }
-  ]
+  ],
+  "release_authorized": true,
+  "target_release": "0.4.1",
+  "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready."
 }

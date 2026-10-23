@@ -10,8 +10,8 @@ const metals = {
   obsidian: ["#060a16", "#28334b", "#667a99", "#141b2b"],
   glass: ["#1c4657", "#8ab8bb", "#e4fffb", "#478591"],
 };
-function texturePattern(id, x, y, size = 180) {
-  return `<pattern id="${id}" width="${size}" height="${size}" patternUnits="userSpaceOnUse" ${id === "material-wood" ? 'x="-200" y="-200"' : ""}><svg width="${size}" height="${size}" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${textureURL}" width="1254" height="1254"/></svg></pattern>`;
+function texturePattern(id, x, y, size = 1000) {
+  return `<pattern id="${id}" width="${size}" height="${size}" patternUnits="userSpaceOnUse" x="-200" y="-200" viewBox="0 0 ${size} ${size}" preserveAspectRatio="none"><svg width="${size}" height="${size}" viewBox="${x} ${y} 627 627" overflow="hidden"><image href="${textureURL}" width="1254" height="1254"/></svg></pattern>`;
 }
 export function finishDefs(effects) {
   let out = `<linearGradient id="hand-sheen" x1="0" x2="1"><stop stop-color="#fff" stop-opacity=".65"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset=".65" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".65"/></linearGradient><linearGradient id="glass-glare" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".6"/><stop offset=".4" stop-color="#fff" stop-opacity=".05"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".18"/></linearGradient><pattern id="brushed-grain" width="7" height="70" patternUnits="userSpaceOnUse"><path d="M1 0V70M4 10V65M6 0V50" stroke="#091420" opacity=".2" stroke-width=".45"/></pattern>${texturePattern("wood-grain", 0, 627)}${texturePattern("patina-marks", 627, 627)}${texturePattern("wear-marks", 627, 627)}`;

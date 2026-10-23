@@ -1,0 +1,90 @@
+[
+  {
+    "source": "src/assets/aged-brass-dial.png",
+    "source_sha256": "21af751c52a4d6ff797f588399c64dcd1ad1b2dcdd3ec3c7369438fe9e2d50db",
+    "runtime": "src/assets/optimized/aged-brass-dial.webp",
+    "sha256": "1caaed117665d5fc91fe2df352424abd450d30e166891b9ec0e811802203b75f",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/bezel-brass-r2.png",
+    "source_sha256": "332cec806e6bc6e7c48444d7aa8a5a843ba5547e5133291fdc42773f27906e3f",
+    "runtime": "src/assets/optimized/bezel-brass-r2.webp",
+    "sha256": "5eb95089f9d3496af886668ef11b2e5328e4efa4b6fc104e04dc8560b546b56c",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/bezel-carved-wood-r2.png",
+    "source_sha256": "d08c4ce5906381362d2133a3430e34d1843b98a21ea4f7ea662e230331cb7bf8",
+    "runtime": "src/assets/optimized/bezel-carved-wood-r2.webp",
+    "sha256": "609a21bc51cdc1a677b4ff802ca6d4ccd05de22f7dafb9a34cce9b481e52e433",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/bezel-silver-r2.png",
+    "source_sha256": "18822c5eff9232d181b4a322d16b5a6bd9e7caab2c0e00e54be26c849b173f27",
+    "runtime": "src/assets/optimized/bezel-silver-r2.webp",
+    "sha256": "f2ce749adf56932d4f6338482b84ba3dc66c6a8591f0cfa544dc8ee7714e6cb8",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/castle-day-hd.png",
+    "source_sha256": "f0c120cd9c8390ea7c04e8d36ef560db6fc0bc2bdf806e43f59039051fc7a6b6",
+    "runtime": "src/assets/optimized/castle-day-hd.webp",
+    "sha256": "bacdef8faf4f8b5ceadf9a1fbad7cf21cd76a760aeb297f45eaed4890d797833",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/castle-winter-hd.png",
+    "source_sha256": "76152e1277ca7841c1ae4659536483ab056295e15eae0b1d5d5c839c91f47f4f",
+    "runtime": "src/assets/optimized/castle-winter-hd.webp",
+    "sha256": "6850deff43bd844da283efe67cbb9ff57b381dc6212025df496e54a7ce52f065",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/hand-attachments.png",
+    "source_sha256": "5b930ae81d30cd36cf12ba595debcf6b588c2d19a9ee5e841b6b5b70b60a3445",
+    "runtime": "src/assets/optimized/hand-attachments.webp",
+    "sha256": "2892c2fda8ac0dfd4f40f1f343f123091242b630ba3fae1b2d844bebbc7c2908",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "src/assets/lunar-surface-r1.png",
+    "source_sha256": "c4635e7f9ddbb1a1aeb175850a106283e61174f5e04d23e4043200b3a318e158",
+    "runtime": "src/assets/optimized/lunar-surface-r1.webp",
+    "sha256": "5b5cd367967304b59b5d2a92cfe95c8a1f51104557e26797e8780393a7910b62",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/panel-material-textures-r1.png",
+    "source_sha256": "2158656e5ee31bfbe26f9286fefc012a91f0850999e06b2d404c4f7caad04958",
+    "runtime": "src/assets/optimized/panel-material-textures-r1.webp",
+    "sha256": "252b9445e722927a59fb604d7905d60d60144d84280c491b5ac76240ddeadc01",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/panel-solid-wood-r4.png",
+    "source_sha256": "1a4925a3d5b6c1d8d2fda6b6876912316153ff5d568476a97445201405ced6ec",
+    "runtime": "src/assets/optimized/panel-solid-wood-r4.webp",
+    "sha256": "8505c781213b001615d6602ab9500040328f5106253caee0c09484fbf8f01d41",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "source": "src/assets/whimsical-workshop-dial.png",
+    "source_sha256": "8a55651f7827c867374fd4e81e3c21148b313ea44342e4de8225816a3b50192b",
+    "runtime": "src/assets/optimized/whimsical-workshop-dial.webp",
+    "sha256": "e157da7784203dd001a59e03eab0e49ae3831d9c56e48472a1dd25dd3ed225b7",
+    "width": 1254,
+    "height": 1254
+  }
+]

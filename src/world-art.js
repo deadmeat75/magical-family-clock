@@ -1,3 +1,4 @@
+import { paintedCreature } from "./painted-creatures.js";
 // Small, shaded vector inhabitants. Geometry is original and remains crisp at dashboard sizes.
 const wing =
   '<path class="creature-wing near-wing" d="M-1-3Q-8-23-25-23L-20-11-10-8-17-5Z" fill="currentColor"/><path class="creature-wing far-wing" d="M0-3Q8-24 24-22L19-11 9-7 16-5Z" fill="currentColor"/>';
@@ -17,7 +18,9 @@ const mushrooms = `<path d="M-16 26L-14 6M5 25L9-8M20 28L22 15" stroke="#d5c5ab"
 const crystals = `<path d="M-8 25L-15-17-6-33 4-19 7 25ZM8 25L11-5 24-20 30-11 20 25ZM-24 26L-33 4-28-8-16 2-10 26Z" fill="url(#crystal-sheen)" stroke="#d8e7f0" stroke-width=".5"/><path d="M-6-33L-2 23M24-20L18 24M-28-8L-20 23" stroke="#b0d5ea" opacity=".7"/>`;
 const lantern = `<path d="M-8-11Q-12-3-7 10H7Q12-3 8-11Z" fill="currentColor" stroke="#7b4e2e" stroke-width="1"/><path d="M-6-13H6M-6 12H6M-4-10L-3 10M4-10L3 10" stroke="#9d6e36" fill="none"/><ellipse class="creature-glow" ry="5" rx="2" fill="#fff2b8"/><path d="M-3 14L-2 21M3 14L5 19" stroke="#c38c66"/>`;
 const unicorn = `<path d="M-19 4Q-13-10 5-8L15-22 20-21 25-6 18 2 9 1 5 13H-14Z" fill="#ebe2cc"/><path d="M-17 8L-20 25M-8 10L-6 26M5 8L11 24M-17-1Q-32-9-28 16" stroke="#d3c6c9" stroke-width="3.5" fill="none"/><path d="M19-23L25-37 24-19" fill="#ebce8b"/><path d="M12-20Q5-17 5-8L11-10 9-2 17-8" fill="currentColor"/><circle cx="20" cy="-14" r="1" fill="#2c2c39"/>`;
-export function inhabitantArt(kind) {
+export function inhabitantArt(kind, tint = "") {
+  const painted = paintedCreature(kind, tint);
+  if (painted) return painted;
   switch (kind) {
     case "bird":
       return bird();

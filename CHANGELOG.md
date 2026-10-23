@@ -1,17 +1,15 @@
 # Changelog
 
-## 0.4.1 — Unreleased visual review and motion correction
+## 0.4.1 — Crafted Living World
 
-- Replace near-static cloud patches with two continuously drifting cloud decks over a separate sky, sharing a detailed tower/mountain occlusion path.
-- Replace rigid sliding lake bands with small continuous reflection waves, keeping the shoreline fixed.
-- Remove solid waterfall spray ellipses; add fine downward flow threads and short, low-opacity impact droplets.
-- Make flying visitors follow curved routes that begin/end beyond the opening, without fading or resetting in open sky. Lake inhabitants submerge completely without opacity cuts.
-- Add species-appropriate flap/glide cadence, quieter prop motion, gentle tail movement and irregular foliage sway.
-- Preserve world time and creature progress through moon/weather refreshes; honor reduced motion and visibility for the new Canvas 2D landscape layers.
-- Preserve visible animation in native fullscreen and fixed expansion by tracking the actual displayed card.
-- Prepare individually identified painted character/prop proposals and a complete visual gallery; hold publication for user approval.
-- Remove the duplicate sticky preview from the Home Assistant settings column; encounter actions use its existing preview.
-- Replace the preview recording with normal-speed footage without encounter seeking, and add motion-specific regression checks.
+- Integrate the 135 approved visual examples; omit F01/F03 and C13–C16 as requested. Preserve approved source/review bytes and record runtime-asset provenance.
+- Render twelve realistic hand silhouettes from registered pivot/matte data, with material detail, finish controls, physical name attachments and adjustable lettering. Add polished-to-antique brass age.
+- Install thirteen metalwork symbols, natural panel textures and crafted bezels with approved curved text placement and editable readout colors.
+- Install all twelve painted inhabitants, independently animated source parts, natural route boundaries, foreground pixies, waterline clipping and a grounded idle unicorn.
+- Improve cloud advection, foliage, water, waterfall spray, independent lamp flicker, foreground fireflies, meteor variation, weather and sky-matching lunar shadows.
+- Transfer approved seasonal/time palettes onto the registered HD composition rather than shifting moving layers between unrelated low-resolution crops.
+- Retain one Home Assistant preview and continuous fullscreen motion. Preserve live scene/encounter progress through sensor refreshes.
+- Package optimized, native-resolution runtime derivatives in the self-contained HACS bundle. Expand guides and acceptance evidence.
 
 ## 0.4.0 — Living World
 

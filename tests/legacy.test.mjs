@@ -10,7 +10,7 @@ import {
 import {
   handStyle,
   handRadius,
-  handPath,
+  legacyHandPath as handPath,
   legacyTextRotation,
   LEGACY_SCALE,
 } from "../src/hands.js";

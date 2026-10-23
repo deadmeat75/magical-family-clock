@@ -1,3 +1,5 @@
+> **Archived review round. Visual review is complete.** [Final decisions and integration](REVISION-NOTES.md) supersede the historical pending-review notes below.
+
 > Archived review round. [Open the current eight revised examples](REVIEW-ROUND-3.md) for the latest versions and decisions.
 
 # Current revision review

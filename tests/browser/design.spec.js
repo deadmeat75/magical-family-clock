@@ -362,7 +362,7 @@ test("surface effects respond independently and a hidden portrait leaves a plain
   await expect(card.locator(".hand-head").first()).toBeHidden();
   await expect(card.locator(".hand > path").first()).toHaveAttribute(
     "fill",
-    "url(#material-wood)",
+    /url\(#crafted-hand-/,
   );
   expect(
     await card

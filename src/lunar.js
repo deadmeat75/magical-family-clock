@@ -1,4 +1,4 @@
-import textureURL from "./assets/lunar-surface-r1.png";
+import textureURL from "./assets/optimized/lunar-surface-r1.webp";
 let texture;
 const cache = new Map();
 async function lunarTexture() {

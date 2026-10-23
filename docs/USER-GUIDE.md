@@ -1,5 +1,3 @@
-> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](visual-review/README.md). HACS remains on 0.4.0.
-
 # Magical Family Clock: installation and user guide
 
 The [Living World guide](WORLD-GUIDE.md) covers fitted location panels, large graphics and textures, the creature-placement map, moving scenery and the sensor-driven moon. The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.

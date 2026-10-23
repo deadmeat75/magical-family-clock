@@ -1,6 +1,6 @@
-import brass from "./assets/bezel-brass-r2.png";
-import silver from "./assets/bezel-silver-r2.png";
-import wood from "./assets/bezel-carved-wood-r2.png";
+import brass from "./assets/optimized/bezel-brass-r2.webp";
+import silver from "./assets/optimized/bezel-silver-r2.webp";
+import wood from "./assets/optimized/bezel-carved-wood-r2.webp";
 const sources = { brass, "aged-brass": brass, silver, wood },
   loads = new Map(),
   cache = new Map();

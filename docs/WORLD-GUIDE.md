@@ -1,8 +1,6 @@
-> **Unreleased review draft.** Publication is held for individual visual approval. See the [review gallery](visual-review/README.md). HACS remains on 0.4.0.
-
 # Living World: detailed setup guide
 
-For the **unreleased Magical Family Clock 0.4.1 draft**. HACS remains on **0.4.0** while the visual review is in progress. The features below describe the engineering draft; install the next version through HACS only after it is published. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+For **Magical Family Clock 0.4.1 — Crafted Living World**. Install and update through HACS. First installation is covered in the [user guide](USER-GUIDE.md#2-install-with-hacs). [Current publication and HACS validation status](PUBLISHING-STATUS.md).
 
 ![Living castle with framed destinations and inhabitants](living-world-day.png)
 
@@ -56,13 +54,13 @@ Open **Living world → Creatures and props**. There are **17 choices** and room
 
 | Category | Choices |
 | --- | --- |
-| Sky visitors | Swallow, owl, witch on a broom, wizard on a broom, dragon, phoenix, fairy |
+| Sky visitors | Swallow, owl, witch on a broom, wizard on a broom, dragon, phoenix, pixie |
 | Lake inhabitants | Lake serpent, mermaid, merman |
-| Floating props | Sailing boat, floating lantern |
-| Shore props | Enchanted cottage, glowing mushrooms, crystal cluster, unicorn |
+| Lake prop | Sailing boat |
+| Grounded visitor | Wild unicorn, with planted hooves and gentle mane/tail motion |
 | Your artwork | Custom image prop |
 
-Choose **Creature or prop to add**, then **Add selected inhabitant**. Each has its own settings, position and movement; you can add multiple of the same kind. Owls and lanterns initially use a night filter. Starter populations are editable examples, not a separate fixed scene.
+Choose **Creature or prop to add**, then **Add selected inhabitant**. Each has its own settings, position and movement; you can add multiple of the same kind. Owls initially use a night filter. Starter populations are editable examples, not a separate fixed scene.
 
 ### Place inhabitants with the map
 
@@ -82,19 +80,19 @@ Expand **Edit inhabitant settings**. The first inhabitant starts expanded; other
 | --- | --- |
 | Inhabitant name | Editor/accessibility description. It is not a floating name drawn above the creature. |
 | Show this inhabitant | Hide temporarily without deleting settings. |
-| Inhabitant color | Tint the built-in body, cloth or prop while retaining shaded details. Custom images retain their original colors. |
+| Tint painted inhabitant / Inhabitant color | Tint is off by default, preserving the approved painted colors. Enable it to apply the chosen color while retaining shading. Custom uploads retain their original colors. |
 | Horizontal/vertical position | Route midpoint, stationary center or surfacing waterline, in scene percentages. |
 | Inhabitant scale | 0.25–3 times the base size. Start at 1. Small figures give a stronger sense of a large castle. |
 | Movement cycle | Full 8–240 second repeat, including quiet time between flying/surfacing appearances. It is not just time on screen. |
 | Travel span | Requested route width in scene percentages. Routes extend beyond the opening when necessary so figures never appear or reset in open sky. |
-| Inhabitant movement | Fly past then rest; surface/linger/submerge; drift back and forth; gently bob; or remain still. |
+| Inhabitant movement | Fly past then rest; surface/linger/submerge; drift back and forth; gently bob; remain still, or use grounded idle. The unicorn uses grounded idle or completely still, rather than flying/drifting. |
 | Facing direction | Mirror the figure left/right. Flying visitors travel in that direction. Drifting props move back and forth. |
-| Pass behind the castle | Hide a sky visitor behind the bundled tower silhouette. Disable for foreground routes or custom scene geometry. |
+| Pass behind the castle | Hide a sky visitor behind the bundled tower silhouette. Disable for foreground routes or custom scene geometry. Pixies and unicorns always use the foreground. |
 | Visible at time/in season/in weather | All selected filters must match. Any leaves that filter unrestricted. |
 
-Surfacing creatures disappear below their configured waterline and leave animated rings. Flying figures enter and leave beyond the opening along curved routes; they do not fade out in the open sky. Wings use flap/glide cadences, with cloth and tail movement where appropriate. The cottage has chimney smoke, and glowing props have light effects. A custom uploaded prop moves as one image; it does not acquire separately animated limbs.
+Surfacing creatures disappear below their configured waterline and leave animated rings. Flying figures enter and leave beyond the opening along curved routes; they do not fade out in the open sky. Wings use flap/glide cadences, with cloth and tail movement where appropriate. The wild unicorn stays planted on land while its mane and tail move; it does not slide across the lake. Place its feet near **x = 41%, y = 61%** on the bundled castle, then adjust with the placement map. It does not offer a walking route. Pixies are smaller foreground visitors. A custom uploaded prop moves as one image; it does not acquire separately animated limbs.
 
-**Visual review:** the revised painted character and hand proposals are not integrated into this renderer yet. Natural environment contact, species-specific animation and the new face controls must be completed and reviewed before release. See the [recorded requirements](visual-review/REVISION-NOTES.md).
+**Approved artwork:** all twelve painted inhabitants now use the reviewed artwork, with independently animated wings, cloth, tails or necks. Boats and aquatic visitors are clipped at their waterline. F01/F03 face proposals and C13–C16 props were omitted by request and are not offered. [Decision record](visual-review/approvals.json).
 
 **Duplicate inhabitant** creates an independent copy with a new ID. **Move inhabitant forward** moves it ahead of the next inhabitant in drawing order; tower masking remains separate. **Remove inhabitant** deletes just that entry. **Remove all inhabitants** keeps the landscape and moon settings.
 
@@ -108,7 +106,7 @@ Expand **Landscape and motion controls**:
 - **Animate castle scenery** pauses/resumes the landscape and inhabitants together. A paused world stays visible.
 - **Moving clouds**, **Swaying trees**, **Rippling lake** and **Running waterfalls** use separate drifting cloud decks, visible root-anchored canopy sway, continuous reflection waves and downward flow threads with fine impact spray. Clouds replace the bundled stationary sky beneath them. Waterfall spray has no solid glowing discs.
 - **Seasonal petals and leaves** drifts blossom petals in spring and leaves in autumn, independently of tree sway. Summer and winter add neither. The active season follows Appearance settings.
-- **Warm castle window lights** gives identified castle panes independent irregular candle or torch flicker at dusk/night. Revision 5 slows the time scale by 25% from revision 4 and excludes surrounding trees. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
+- **Warm castle window lights** gives identified castle panes independent irregular candle or torch flicker at dusk/night. The approved lamp effect slows the time scale by 25% from revision 4 and excludes surrounding trees. **Evening fireflies** adds small green-glowing lights near foreground vegetation, with independent paths and pulses.
 - **Twinkling stars** and **Occasional shooting stars** show during dawn/dusk/night. Cloud coverage erases stars and meteors behind it, and the moon, castle and foreground stay in front. Meteors have varied origins and flight angles, with irregular 20–75 second quiet intervals.
 - **World detail → Rich** uses the most foliage/stars and a 24-fps landscape painter. **Balanced** reduces foliage and paints at 18 fps. **Light** paints at 12 fps with lower resolution, fewer stars and no moving foliage regions. Use fewer inhabitants too on slower displays.
 - **Scene time** previews dawn/day/dusk/night. Auto uses Home Assistant sun data and local solar calculations. Season and weather remain controlled in Appearance and can be combined with inhabitants' filters.
@@ -170,32 +168,32 @@ A full private JSON backup includes custom artwork and sensor IDs. The default p
 
 The world combines high-resolution illustrated scenery, Canvas 2D landscape animation and layered SVG inhabitants. The recording uses normal-speed playback without seeking encounters. It is not a free-roaming 3D game or a physics simulation. The 1254-pixel source retains a raster-resolution limit; frames, names, icons, hands and inhabitants are vectors. See [validation and practical limits](VALIDATION.md) and the [animation recording](living-world-preview.mp4). Screenshots and video use fictional people and simulated sensors.
 
-## Review draft: weather and glass
+##  weather and glass
 
 The [latest visual review index](visual-review/LATEST-REVISIONS.md) is the place to inspect the current examples. Earlier revisions remain archived. These changes are not a new HACS release yet.
 
 1. In **Appearance**, select a **Weather effect** to inspect it. Start with intensity **1**. Return to **Auto** to follow your existing weather entity.
 2. Enable **Weather animation** to see falling rain, snow, sleet, drifting fog and wind-blown leaves. General reduced motion and your device's accessibility preference can pause decorative movement.
 3. **Clear** gives a cloud-free sky. It removes both the photograph's painted clouds and the moving cloud layer. **Moving clouds** still controls cloud animation for other weather conditions.
-4. **Ice** reveals fine white branching needles continuously inward from the central glass rim over 28 seconds, then holds the completed frost. A single growth front prevents whole crystals popping in. It is clipped away from the outer destination ring. Reduced motion shows the completed pattern without growth. Revision 6 adds denser, finer angular crystals and reduces the frost layer opacity by 15% while retaining that growth behavior.
+4. **Ice** reveals fine white branching needles continuously inward from the central glass rim over 28 seconds, then holds the completed frost. A single growth front prevents whole crystals popping in. It is clipped away from the outer destination ring. Reduced motion shows the completed pattern without growth. The approved ice adds denser, finer angular crystals and reduces the frost layer opacity by 15% while retaining that growth behavior.
 5. **Lightning** combines distant strikes behind clouds with nearer strikes, different positions, branching channels and brief surrounding illumination. Weather can keep moving while castle scenery is paused.
 6. **Wind** moves loose leaves across the opening and increases canopy gusts. **Fog** drifts in layers across the landscape; it does not darken the entire clock.
 
 Rain and sleet have different densities. Snow has small distant flakes and larger nearby flakes. Each animated review has a still image too; open the GIF to judge movement. A shooting-star review may skip long quiet gaps so several passages can be inspected; the visible passages run at normal speed.
 
-## Review draft: realistic moon
+##  realistic moon
 
 The approved lunar surface stays the same across every phase. Lighting determines which side is visible. The unlit side is transparent so the actual sky color shows through; a dark disc is not painted over blue sky. Stars remain hidden behind the moon's complete outline.
 
 **Living world → Moon phase → Show moon in daylight** also allows a daytime moon. This is a display choice: a phase sensor alone does not establish whether the moon is above your local horizon. The existing sensor formats, manual phases, calculation fallback and unavailable-sensor choices work as before. Return to your selected live source after previewing manual phases.
 
-## Review draft: crafted information bezels
+##  crafted information bezels
 
 In **Bezel**, select wood, aged brass or silver for the new crafted rim. Wood has carved ornament and continuous grain around the ring. The metal rims have dimensional chased ornament and quiet inset bands for the information. **Width** changes the ring thickness while retaining the artwork; it does not repeat square texture tiles.
 
-Readings follow curved paths on the smooth information band. Upper baselines are inset to clear the decorative outer edge; silver and wood lower baselines sit slightly farther outward. B01 revision 5 lowers both brass text lines a little further; the approved silver/wood placements are preserved. Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Use **Bezel → Readout color** inside each reading to change its text color independently; this does not recolor the bezel material or other readings. Saving the dashboard stores the bezel choices with that clock.
+Readings follow curved paths on the smooth information band. Upper baselines are inset to clear the decorative outer edge; silver and wood lower baselines sit slightly farther outward. The approved brass bezel lowers both text lines a little further; the approved silver/wood placements are preserved. Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Use **Bezel → Readout color** inside each reading to change its text color independently; this does not recolor the bezel material or other readings. Saving the dashboard stores the bezel choices with that clock.
 
-## Review draft: understand the six surface effects
+##  understand the six surface effects
 
 Open **Labels & effects**. Each surface—hands, portraits, face, frame and bezel—has independent strengths from **0** (off) to **1** (strongest). Change one effect at a time and inspect your usual dashboard size.
 
@@ -210,13 +208,13 @@ Open **Labels & effects**. Each surface—hands, portraits, face, frame and beze
 
 The revised E01–E06 sheets show **effect off** beside **effect at 85%**, with each comparison isolated so the settings cannot interfere. Use lower strengths for a restrained finished clock. Surface wear and patina do not cover the castle sky with a tiled material layer. Changing these controls does not change tracking, names, sensor rules or saved people.
 
-Approved face, hand, material, symbol and seasonal artwork remains preserved in the decision record. Some approved art still needs final runtime registration, pivots, animation layers or material mapping. The gallery identifies artwork studies separately from implemented runtime examples; an artwork approval alone does not publish a release.
+Approved source artwork remains preserved in the decision record. Runtime derivatives register the hand pivot holes and matte contours, use the metalwork symbols, and retain the HD castle geometry while transferring seasonal and time-of-day lighting. Palette transfer keeps the moving trees, waterfalls, windows and skyline aligned; it does not substitute an unregistered low-resolution seasonal crop.
 
 ## Abandoned face: F03
 
 F03 has been abandoned at the user’s request. It is no longer a selectable theme and its picture-disc artwork and code are excluded from the runtime bundle. Existing review-only configurations using `theme: astronomical` fall back to `living-magical`, retaining people, sensors and other settings. Archived F03 examples are not release candidates. The separate moon-phase feature remains available on supported clocks.
 
-## Review draft: physical name attachments (K09–K12)
+##  physical name attachments (K09–K12)
 
 In **People**, open **Customize hand and portrait** for the person and select **Name attachment**. Choose affixed parchment, a hanging tag, an oval brooch or a portrait frame. **Engrave on hand** retains the existing engraved-name behavior. These settings are saved with the person’s configuration and therefore also travel through the saved-people library.
 
@@ -256,7 +254,7 @@ attachment_text_rotation: 0
 
 This is a person-level fragment, not a complete card configuration. The GUI provides these settings; editing YAML is optional. Long names require fitting with the size and offset controls. Changing a tag does not alter the person’s sensor mappings.
 
-## Review draft: material panels, wind and central frost
+##  material panels, wind and central frost
 
 **Location panels:** hammered metal, parchment and wood now use one continuous source texture spanning the full dial. There is no repeating 190-unit texture grid. Panel background color, graphic and name remain independent. Inspect at your normal dashboard size and in fullscreen; the revised material examples remain awaiting approval.
 
@@ -267,3 +265,11 @@ This is a person-level fragment, not a complete card configuration. The GUI prov
 **Bezel readings:** text now follows the ring. Each reading is allocated the arc between neighbouring readings and scales down when necessary. Bottom readings turn to remain upright. Space readings apart, use a wider bezel for larger text, and keep sensor labels concise. The approved frame appearance remains unchanged.
 
 **Scene edges and light:** the mountain guide has been retraced against the source photograph, and a continuous source-pixel edge fit is shared by the sky and its depth masks. New day/night close-ups are provided for judging remaining halos or cutout edges. Window animation changes each lamp’s actual brightness independently; fireflies move near foreground planting with a green pulse. Their revised appearance still needs your review.
+
+## Realistic hands, materials and readable names
+
+In **People → Customize hand and portrait**, choose a hand shape and material. The twelve shapes use the approved physical silhouettes, including openwork cutouts and their actual pivot holes. Width, length, material, finish, ink color and text rotation remain independent. Engraving shrinks to fit the solid material; a narrow or openwork hand may have too little room for a readable name.
+
+Choose **Use a readable parchment name** for a quick affixed tag, or select **Name attachment → Hanging tag / Oval brooch / Portrait frame**. The portrait frame uses that person’s configured photo. Then adjust tag scale, position, rotation and lettering. Empty names remain empty. Choosing an attachment does not alter the person’s sensors.
+
+For Brass Clockwork, open **Appearance → Brass age (0 new–1 antique)**. Use **0** for new polished brass, **0.25** for lightly aged, or **1** for antique. The finish changes continuously while the meshing gear model keeps its tooth-count-based directions and speeds.

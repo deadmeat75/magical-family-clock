@@ -55,8 +55,15 @@ for (const file of readdirSync(root).filter((f) => f.endsWith(".md"))) {
       errors.push(file + " broken link: " + target);
   }
 }
-if (!record.release_hold || record.published_release !== "0.4.0")
-  errors.push("Release hold changed");
+const pending = record.items.filter(
+  (i) => !["approved", "omitted"].includes(i.decision),
+);
+if (!record.release_hold && (pending.length || !record.release_authorized))
+  errors.push(
+    "Release requires complete visual decisions and recorded authorization",
+  );
+if (!["0.4.0", "0.4.1"].includes(record.published_release))
+  errors.push("Unexpected published release");
 if (errors.length) {
   process.stderr.write(errors.join("\n") + "\n");
   process.exitCode = 1;

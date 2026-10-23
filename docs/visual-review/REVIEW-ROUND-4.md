@@ -1,3 +1,13 @@
+> **Archived review round. Visual review is complete.** [Final decisions and integration](REVISION-NOTES.md) supersede the historical pending-review notes below.
+
+> **Visual review complete:** F01 and F03 are omitted. All remaining examples are approved. Implementation and release validation are now in progress.
+
+> **B01 update:** Revision 5 is approved and preserved. F01 is the only remaining visual revision. Release remains on hold.
+
+> **W09 update:** Revision 6 is approved and preserved. Remaining visual work: F01 and B01.
+
+> **F01 update:** Revision 7 was rejected as worse. [Revision 6](items/F01-r6.png) is the working baseline for further small corrections; it remains unapproved.
+
 # Three remaining visual revisions
 
 **Review branch only. Release held. Published HACS remains v0.4.0.** These links point to the newest examples. Approved examples are unchanged.
@@ -14,7 +24,7 @@ F01 remains separate editable lettering over the preserved source artwork. This 
 
 ## Preserved decisions
 
-**133 approved, three awaiting review, five omitted.** L07 revision 5, P04 revision 4, B02 revision 4 and B03 revision 4 are approved. W09 growth behavior is accepted separately from its pending appearance. B02 retains the requirement for editable text color: use **Bezel → Readout color** for each reading. All eight moon examples remain approved.
+**135 approved, none awaiting visual approval, six omitted.** L07 revision 5, P04 revision 4, B02 revision 4 and B03 revision 4 are approved. W09 growth behavior is accepted separately from its pending appearance. B02 retains the requirement for editable text color: use **Bezel → Readout color** for each reading. All eight moon examples remain approved.
 
 **F03 is abandoned.** It is no longer selectable and its face code/artwork is excluded from the runtime bundle. Existing review-only configurations using its old theme fall back to Living Magical while retaining people, sensors and other settings. F03 studies remain archived; they do not need approval.
 

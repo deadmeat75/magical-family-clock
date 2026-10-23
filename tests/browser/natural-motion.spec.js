@@ -264,7 +264,7 @@ test("castle motion continues in native fullscreen and fixed expansion when its 
     await expect
       .poll(() => canvas.getAttribute("data-paint-tick"))
       .not.toBe(tick);
-    await expect(card.locator(".dragon-near-wing")).toHaveCSS(
+    await expect(card.locator('[data-kind="dragon"] .painted-wing')).toHaveCSS(
       "animation-play-state",
       "running",
     );

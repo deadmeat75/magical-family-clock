@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Hand shapes: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 All twelve hand silhouettes are approved and preserved. See the separate K09–K12 attachment proposals for optional affixed names and portraits.
 

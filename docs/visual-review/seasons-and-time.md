@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Seasons and time: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 New clear-sky environmental lighting studies preserve detail through dawn, day, dusk and night. S01–S16 artwork is approved. These are atlas crops; full-resolution registered runtime layers and motion alignment remain integration work. They are not claimed as finished fullscreen assets.
 

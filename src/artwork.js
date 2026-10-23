@@ -1,8 +1,13 @@
-import winterURL from "./assets/castle-winter-hd.png";
-import dayURL from "./assets/castle-day-hd.png";
+import { approvedAssets } from "./approved-art.js";
+import { lightingTransfer, sampleSky } from "./registered-lighting.js";
+import winterURL from "./assets/optimized/castle-winter-hd.webp";
+import dayURL from "./assets/optimized/castle-day-hd.webp";
 export const frameURL = ""; // The new frame is scalable vector artwork, with no baked-in lettering.
 export const atlasURL = dayURL; // Kept as a compatibility export for integrations importing the old asset module.
-const cache = new Map();
+const cache = new Map(),
+  registered = new Map(),
+  loading = new Map(),
+  skyColors = new Map();
 export function preloadImage(url) {
   if (!url) return Promise.resolve();
   if (cache.has(url)) return cache.get(url);
@@ -20,12 +25,48 @@ export function preloadImage(url) {
   return promise;
 }
 export function sceneSource(scene) {
-  return scene?.season === "winter" ? winterURL : dayURL;
+  return (
+    registered.get(scene?.key) ||
+    (scene?.season === "winter" ? winterURL : dayURL)
+  );
 }
 export function preloadArtwork(scene) {
-  return preloadImage(sceneSource(scene));
+  if (registered.has(scene.key)) return preloadImage(registered.get(scene.key));
+  if (loading.has(scene.key)) return loading.get(scene.key);
+  const index =
+    ["spring", "summer", "autumn", "winter"].indexOf(scene.season) * 4 +
+    ["dawn", "day", "dusk", "night"].indexOf(scene.period) +
+    1;
+  const reference = approvedAssets["S" + String(index).padStart(2, "0")];
+  if (!reference) return preloadImage(sceneSource(scene));
+  const promise = Promise.all([
+    preloadImage(scene.season === "winter" ? winterURL : dayURL),
+    preloadImage(reference),
+  ])
+    .then(([base, study]) => {
+      const c = document.createElement("canvas");
+      c.width = c.height = 1254;
+      c.getContext("2d").drawImage(base, 0, 0, 1254, 1254);
+      lightingTransfer(c, scene);
+      skyColors.set(scene.key, sampleSky(study));
+      const url = c.toDataURL("image/webp", 0.96);
+      registered.set(scene.key, url);
+      loading.delete(scene.key);
+      return preloadImage(url);
+    })
+    .catch((error) => {
+      loading.delete(scene.key);
+      throw error;
+    });
+  loading.set(scene.key, promise);
+  return promise;
 }
+export function sceneSkyColors(scene) {
+  return skyColors.get(scene.key);
+}
+
 export function imageGrade(scene) {
+  if (registered.has(scene.key)) return "";
   const night = scene.period === "night";
   const grades = {
     spring: "saturate(1.05)",
@@ -77,4 +118,8 @@ export function castleFrame(openingRadius = 180) {
     out += `<circle cx="${300 + Math.cos(a) * 282}" cy="${300 + Math.sin(a) * 282}" r=".85" fill="${i % 2 ? "#6c4a1e" : "#ffe9a6"}" opacity=".8"/>`;
   }
   return out + "</g>";
+}
+
+export function registeredLightingVersion(scene) {
+  return registered.has(scene.key);
 }

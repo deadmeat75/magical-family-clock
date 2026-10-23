@@ -1,0 +1,31 @@
+{
+  "homeAssistantVersion": "2026.10.2",
+  "version": "0.4.1",
+  "nativeMoonSelection": true,
+  "liveMoonSensorUpdate": true,
+  "savedClockLibrary": true,
+  "dashboardReload": true,
+  "persisted": {
+    "objects": 6,
+    "moon": "sensor.clock_world_moon",
+    "panelTexture": "hammered-metal",
+    "panels": 4
+  },
+  "artwork": {
+    "hands": 6,
+    "symbols": 4,
+    "paintedInhabitants": 6
+  },
+  "frontendErrors": [],
+  "nativeEditor": {
+    "homeAssistantVersion": "2026.10.2",
+    "nativeEditorSinglePreview": true,
+    "nativePreviewUpdates": true,
+    "nativeEncounterPreviewAction": true
+  },
+  "userLiveInstallationChanged": false,
+  "localChecks": {
+    "unitPackaging": 63,
+    "chromiumBrowser": 80
+  }
+}

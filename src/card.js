@@ -1,7 +1,9 @@
+import "./approved-art-assets.js";
+import { craftedHandPattern, craftedHandFill } from "./approved-art.js";
 import { attachmentMarkup } from "./attachments.js";
 import { renderBezelArtwork } from "./bezel-art.js";
-import materialTexturesURL from "./assets/panel-material-textures-r1.png";
-import solidWoodTextureURL from "./assets/panel-solid-wood-r4.png";
+import materialTexturesURL from "./assets/optimized/panel-material-textures-r1.webp";
+import solidWoodTextureURL from "./assets/optimized/panel-solid-wood-r4.webp";
 import {
   setMaterialTextureURL,
   setSolidWoodTextureURL,
@@ -51,6 +53,7 @@ import {
   atlasMarkup,
   preloadImage,
   preloadArtwork,
+  registeredLightingVersion,
 } from "./artwork.js";
 import { handStyle, handRadius, handPath } from "./hands.js";
 const NS = "http://www.w3.org/2000/svg";
@@ -199,7 +202,7 @@ export class MagicalFamilyClock extends HTMLElement {
     this._weatherKey = null;
     this._locationKey = null;
     this._worldKey = null;
-    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}${motionCSS}${worldCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.25px;filter:drop-shadow(0px .35px .1px #fff7);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}.image-status{position:absolute;left:12px;bottom:8px;max-width:65%;font:12px system-ui;background:#101c29e8;color:#eddcb9;padding:5px 9px;border-radius:8px}.template-navigation{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 140px 12px 12px;min-height:56px}.template-name{font:14px system-ui}.template-navigation button{font-size:20px}.frame{touch-action:pan-y}.bezel-value{paint-order:stroke;stroke:#101b20;stroke-width:.35px;stroke-linejoin:round}.portrait-surface{filter:url(#effect-portraits)}.face{filter:url(#effect-face)}.hands{filter:url(#effect-hands)}.bezel{filter:url(#effect-bezel)}.castle-frame,.frame-finish{filter:url(#effect-frame)}.frame-glare{pointer-events:none}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}${finishDefs(c.effects)}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="${c.location_panels.inner_radius}"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><g class="castle-frame"></g><g class="scene-animation"></g></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="url(#material-brass)" stroke="url(#material-aged-brass)" stroke-width="2"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="url(#material-aged-brass)" stroke="#ffe1a0" stroke-width=".7"/></svg><div class="empty" hidden></div><div class="image-status" role="status" hidden></div></div><div class="template-navigation" hidden><button class="template-previous" aria-label="Previous clock face">‹</button><span class="template-name" aria-live="polite"></span><button class="template-next" aria-label="Next clock face">›</button></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
+    this.shadowRoot.innerHTML = `<style>${style}${weatherCSS}${motionCSS}${worldCSS}.engraved{paint-order:stroke;stroke:#170f0970;stroke-width:.25px;filter:drop-shadow(0px .35px .1px #fff7);font-family:var(--name-font);font-size:var(--name-size)}.metric{font:10px system-ui;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px}.label{font-family:var(--location-font);font-size:var(--location-size)}.caption{font-family:var(--caption-font);font-size:var(--caption-size)}.caption,.title{paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}.image-status{position:absolute;left:12px;bottom:8px;max-width:65%;font:12px system-ui;background:#101c29e8;color:#eddcb9;padding:5px 9px;border-radius:8px}.template-navigation{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 140px 12px 12px;min-height:56px}.template-name{font:14px system-ui}.template-navigation button{font-size:20px}.frame{touch-action:pan-y}.bezel-value{paint-order:stroke;stroke:#101b20;stroke-width:.35px;stroke-linejoin:round}.portrait-surface{filter:url(#effect-portraits)}.face{filter:url(#effect-face)}.hands{filter:url(#effect-hands)}.bezel{filter:url(#effect-bezel)}.castle-frame,.frame-finish{filter:url(#effect-frame)}.frame-glare{pointer-events:none}</style><ha-card><div class="frame"><svg viewBox="0 0 600 600" role="img" aria-label="Family whereabouts clock"><defs>${metalDefs()}${finishDefs(c.effects)}<clipPath id="dial-clip"><circle cx="300" cy="300" r="266"/></clipPath><clipPath id="castle-opening"><circle cx="300" cy="282" r="${c.location_panels.inner_radius}"/></clipPath><linearGradient id="sky" x2="0" y2="1"><stop/><stop offset="1"/></linearGradient></defs><g class="face">${face(c.theme, c.brass_age)}</g><g class="scenery" clip-path="url(#dial-clip)"><circle cx="300" cy="300" r="235" fill="url(#sky)" opacity=".5"/>${landscape()}</g><image class="background-image" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity=".4"/><image class="background-image background-old" x="65" y="65" width="470" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#dial-clip)" opacity="0"/><g class="castle-artwork" style="display:none"><g class="castle-scenes" clip-path="url(#castle-opening)"><g class="scene-layer" style="opacity:0"></g><g class="scene-layer" style="opacity:0"></g></g><g class="castle-frame"></g><g class="scene-animation"></g></g><image class="face-image" x="0" y="0" width="600" height="600" preserveAspectRatio="none" style="display:none"/><g class="weather" clip-path="url(#dial-clip)"></g><g class="locations"></g><text class="caption" x="300" y="380" text-anchor="middle">MAGICAL FAMILY CLOCK</text><text class="title" x="300" y="410" text-anchor="middle"></text><image class="center-image" x="255" y="255" width="90" height="90"/><g class="hands"></g><circle class="hub-outer" cx="300" cy="300" r="13" fill="url(#material-brass)" stroke="url(#material-aged-brass)" stroke-width="2"/><circle class="hub-inner" cx="300" cy="300" r="4" fill="url(#material-aged-brass)" stroke="#ffe1a0" stroke-width=".7"/></svg><div class="empty" hidden></div><div class="image-status" role="status" hidden></div></div><div class="template-navigation" hidden><button class="template-previous" aria-label="Previous clock face">‹</button><span class="template-name" aria-live="polite"></span><button class="template-next" aria-label="Next clock face">›</button></div><button class="fullscreen" aria-label="Expand clock">⛶ Fullscreen</button></ha-card>`;
     const card = this.shadowRoot.querySelector("ha-card");
     Object.keys(p).forEach((k) => card.style.setProperty("--" + k, p[k]));
     card.style.setProperty("--duration", c.duration + "ms");
@@ -360,11 +363,16 @@ export class MagicalFamilyClock extends HTMLElement {
     const legacy =
       design === "legacy-curved" || design === "standalone-pointed";
     const r = handRadius(m, c, p.radius);
+    const craftedDefs = svg("defs");
+    craftedDefs.innerHTML = craftedHandPattern(design, r, m);
+    g.appendChild(craftedDefs);
     const path = svg("path", {
       d: handPath(design, r),
-      fill: materialFill(m.material, m.color),
+      fill: craftedDefs.innerHTML
+        ? craftedHandFill(m)
+        : materialFill(m.material, m.color),
       "fill-rule": "evenodd",
-      stroke: legacy ? "none" : "#382c22",
+      stroke: craftedDefs.innerHTML || legacy ? "none" : "#382c22",
       "stroke-width": 2,
       class: legacy ? "legacy-hand" : "",
     });
@@ -380,14 +388,15 @@ export class MagicalFamilyClock extends HTMLElement {
     });
     surface.innerHTML = surfaceMarkup(handPath(design, r), m, c.effects.hands);
     g.appendChild(surface);
+    const headFraction = design === "spoon" ? 0.84 : 1;
     const head = svg("g", {
       class: "hand-head",
-      transform: `translate(300 ${300 - r})`,
+      transform: `translate(300 ${300 - r * headFraction})`,
     });
     const counter = svg("g", { class: "counter portrait-surface" });
     head.appendChild(counter);
     g.appendChild(head);
-    const size = 23 * m.head_size;
+    const size = (design === "spoon" ? r * 0.075 : 23) * m.head_size;
     const ry = m.portrait_shape === "circle" ? size : size * 1.3;
     counter.appendChild(
       svg("ellipse", {
@@ -494,7 +503,7 @@ export class MagicalFamilyClock extends HTMLElement {
       });
       engravingClipPath =
         m.name_position === "tip" && design === "spoon"
-          ? svg("circle", { cx: 300, cy: 300 - r, r: size - 2 })
+          ? svg("circle", { cx: 300, cy: 300 - r * headFraction, r: size - 2 })
           : svg("path", {
               d: handPath(design, r),
               transform: path.getAttribute("transform"),
@@ -550,7 +559,12 @@ export class MagicalFamilyClock extends HTMLElement {
       title,
       path,
       surface,
+      craftedDefs,
       head,
+      headFraction,
+      headBaseRadius: r,
+      baseBowlRadius:
+        m.name_position === "tip" && design === "spoon" ? size - 2 : 0,
       r,
       design,
       nameGroup,
@@ -710,8 +724,19 @@ export class MagicalFamilyClock extends HTMLElement {
       const hand = this._hands.get(p.member.id) || this._makeHand(p);
       const r = handRadius(p.member, c, p.radius);
       if (r !== hand.r) {
-        hand.head.setAttribute("transform", `translate(300 ${300 - r})`);
+        hand.head.setAttribute(
+          "transform",
+          `translate(300 ${300 - r * hand.headFraction})${hand.design === "spoon" ? ` scale(${r / hand.headBaseRadius})` : ""}`,
+        );
+        hand.bowlRadius =
+          hand.baseBowlRadius *
+          (hand.design === "spoon" ? r / hand.headBaseRadius : 1);
         hand.path.setAttribute("d", handPath(hand.design, r));
+        hand.craftedDefs.innerHTML = craftedHandPattern(
+          hand.design,
+          r,
+          p.member,
+        );
         hand.surface.innerHTML = surfaceMarkup(
           handPath(hand.design, r),
           p.member,
@@ -719,9 +744,13 @@ export class MagicalFamilyClock extends HTMLElement {
         );
         hand.r = r;
         if (hand.engravingClipPath) {
-          if (hand.bowlRadius)
-            hand.engravingClipPath.setAttribute("cy", 300 - r);
-          else
+          if (hand.bowlRadius) {
+            hand.engravingClipPath.setAttribute(
+              "cy",
+              300 - r * hand.headFraction,
+            );
+            hand.engravingClipPath.setAttribute("r", hand.bowlRadius);
+          } else
             hand.engravingClipPath.setAttribute("d", handPath(hand.design, r));
         }
         hand.fitPending = !!hand.name;
@@ -847,6 +876,7 @@ export class MagicalFamilyClock extends HTMLElement {
       c.world,
       scene.key,
       source,
+      registeredLightingVersion(scene),
       weather,
       reading.visible,
       reading.phase == null ? null : Number(reading.phase.toFixed(3)),
@@ -1242,13 +1272,16 @@ export class MagicalFamilyClock extends HTMLElement {
     const point = this.shadowRoot.querySelector("svg").createSVGPoint();
     const contains = (x, y) => {
       if (hand.bowlRadius)
-        return Math.hypot(x - 300, y - (300 - hand.r)) <= hand.bowlRadius;
+        return (
+          Math.hypot(x - 300, y - (300 - hand.r * hand.headFraction)) <=
+          hand.bowlRadius
+        );
       point.x = 300 + (x - 300) / hand.member.width;
       point.y = y;
       return hand.path.isPointInFill(point);
     };
     const fit = fitEngraving({
-      length: hand.r,
+      length: hand.bowlRadius ? hand.r * hand.headFraction : hand.r,
       width: hand.member.width,
       box,
       size: requested,

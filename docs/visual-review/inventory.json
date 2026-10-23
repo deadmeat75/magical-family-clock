@@ -4,7 +4,7 @@
     "name": "Scalloped whereabouts dial",
     "category": "Faces",
     "image": "items/F01-r7.png",
-    "status": "revised; awaiting approval",
+    "status": "omitted",
     "kind": "editable SVG lettering proposal; full painted glyph containment checked",
     "revision": 7,
     "source": "art/scalloped-face-f01-r1.png",
@@ -18,13 +18,14 @@
       1254,
       1254
     ],
-    "note": "Revision 7 fits a separate smooth contour to each painted scallop, then offsets the baseline inward and fits the name to its available arc. Full lettering ink remains inside the painted gold with clearance. This is a lettering proposal; production dynamic-name mapping follows approval.",
+    "note": "Omitted at the user\u2019s request. Exclude from release; studies are archived.",
     "variants": [
       {
         "label": "Editable contour-fitted lettering",
         "image": "concepts/F01-editable-lettering-r7.svg"
       }
-    ]
+    ],
+    "working_baseline": "items/F01-r6.png"
   },
   {
     "id": "F02",
@@ -1328,7 +1329,7 @@
     "name": "ice",
     "category": "Weather",
     "image": "items/W09-r6.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 6,
     "animation": "items/W09-r6.gif",
@@ -1338,7 +1339,7 @@
         "animation": "items/W09-detail-r6.gif"
       }
     ],
-    "note": "Revision 6 increases rim crystal seeds from 34 to 100 and small crystals from 18 to 62 per intensity unit, with smaller asymmetric branching needles and additional angular crystal axes. Entire frost layer opacity is multiplied by 0.85. Accepted 28-second continuous inward growth and central-glass placement are retained."
+    "note": "Revision 6 explicitly approved. Preserve the frost appearance, opacity, full growth clip, close-up and completed still."
   },
   {
     "id": "W10",
@@ -1427,10 +1428,10 @@
     "name": "aged-brass information bezel",
     "category": "Bezel",
     "image": "items/B01-r5.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 5,
-    "note": "Revision 5 lowers both curved text lines by 1.5 drawing units (about 1.2 pixels at the 600px review size), preserving size and curvature. Approved silver and wood bezel baselines remain unchanged.",
+    "note": "Revision 5 explicitly approved; preserve frame, lowered text placement and both close-ups.",
     "variants": [
       {
         "label": "Upper readout close-up",

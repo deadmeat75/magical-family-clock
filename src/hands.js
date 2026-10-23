@@ -1,3 +1,4 @@
+import { approvedShapes } from "./approved-shapes.js";
 // The curved style transcribes the supplied Home Assistant canvas geometry.
 // Scale its 700×700 coordinates to this card's 600×600 viewBox.
 export const LEGACY_SCALE = 6 / 7;
@@ -23,6 +24,25 @@ export function handRadius(member, config, radius = 1) {
   );
 }
 export function handPath(style, length) {
+  const crafted = approvedShapes[style];
+  if (crafted)
+    return crafted.contours
+      .map(
+        (points) =>
+          points
+            .map(
+              ([x, y], i) =>
+                (i ? "L" : "M") +
+                (300 + x * length).toFixed(3) +
+                " " +
+                (300 + y * length).toFixed(3),
+            )
+            .join("") + "Z",
+      )
+      .join("");
+  return legacyHandPath(style, length);
+}
+export function legacyHandPath(style, length) {
   if (style === "standalone-pointed") {
     // Original standalone silhouette, with length scaling about its common pivot.
     const f = length / 258;

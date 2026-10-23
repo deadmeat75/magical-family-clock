@@ -195,6 +195,8 @@ const HELP = {
     "Animate clouds, water, window lights and seasonal details independently of weather. Disable for a still castle; live sensor updates continue.",
   scene_intensity:
     "Strength of the castle’s ambient motion from 0 (invisible) to 1 (strong). Start at 0.65.",
+  brass_age:
+    "Brass Clockwork rim age: 0 is polished new brass, 0.25 lightly aged, 1 antique. This changes its finish without changing gear movement.",
   motion_speed:
     "Decorative animation speed multiplier from 0.25 to 3. A value of 1 is normal. Tracking transition duration remains separate.",
   shadow:

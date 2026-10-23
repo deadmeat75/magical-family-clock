@@ -1,8 +1,10 @@
+> Original approved review examples. Current runtime integration is described in the [final integration record](REVISION-NOTES.md).
+
 # Landscape motion: individual review
 
 [Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
 L01–L08 are approved. Approved L07 revision 5 slows the flicker by 25% and restricts lighting to identified castle panes. A supplemental L06 clip shows four actual seeded passages at natural speed, omitting quiet gaps only. [Current review round](REVIEW-ROUND-3.md).
 

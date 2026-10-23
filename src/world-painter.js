@@ -88,7 +88,8 @@ function windowSources(image) {
 }
 async function loadSource(scene) {
   const url = sceneSource(scene);
-  if (!sources.has(url))
+  if (!sources.has(url)) {
+    if (sources.size >= 4) sources.delete(sources.keys().next().value);
     sources.set(
       url,
       new Promise((resolve, reject) => {
@@ -153,6 +154,7 @@ async function loadSource(scene) {
         image.src = url;
       }),
     );
+  }
   return sources.get(url);
 }
 const fraction = (v) => v - Math.floor(v);

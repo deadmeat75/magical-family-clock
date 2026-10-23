@@ -1,6 +1,6 @@
 # Publication status
 
-**0.4.1 is an unreleased engineering and visual-review draft. Publication is held for individual user approval.** See the [review gallery](visual-review/README.md). Main and the published HACS release remain on 0.4.0.
+**0.4.1 is the validated release candidate; publication is in progress.** Visual review is complete (135 approved, six omitted), and the user authorized proceeding. [Current release acceptance](RELEASE-ACCEPTANCE.json). Published stable remains v0.4.0 until release verification below is updated.
 
 Published stable release: [Magical Family Clock v0.4.0 — Living World](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.0). It is the latest release, with draft and prerelease flags both false. Enabling prereleases is unnecessary.
 

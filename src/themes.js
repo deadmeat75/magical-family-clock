@@ -1,6 +1,7 @@
+import { approvedAssets } from "./approved-art.js";
 import { gearTrain } from "./motion.js";
-import whimsicalURL from "./assets/whimsical-workshop-dial.png";
-import agedBrassURL from "./assets/aged-brass-dial.png";
+import whimsicalURL from "./assets/optimized/whimsical-workshop-dial.webp";
+import agedBrassURL from "./assets/optimized/aged-brass-dial.webp";
 // Original vector artwork; no remote fonts, images, or runtime libraries.
 export const palettes = {
   "whimsical-workshop": {
@@ -42,7 +43,7 @@ export const skies = {
 export function metalDefs() {
   return `<linearGradient id="aged-brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35291a"/><stop offset=".18" stop-color="#b88a43"/><stop offset=".32" stop-color="#f2d18a"/><stop offset=".48" stop-color="#785324"/><stop offset=".64" stop-color="#cfaa61"/><stop offset=".82" stop-color="#5e4829"/><stop offset="1" stop-color="#d0a45c"/></linearGradient><radialGradient id="aged-dial"><stop stop-color="#b39657"/><stop offset=".7" stop-color="#87703e"/><stop offset="1" stop-color="#342d20"/></radialGradient><filter id="metal-grain"><feTurbulence type="fractalNoise" baseFrequency=".9 .025" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".09"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>`;
 }
-export function face(theme) {
+export function face(theme, age = 0.25) {
   if (theme === "whimsical-workshop")
     return `<image class="material-art" href="${whimsicalURL}" x="12" y="12" width="576" height="576"/>`;
   let marks = "";
@@ -69,7 +70,8 @@ export function face(theme) {
     }
   const aged = theme === "brass-clockwork";
   if (aged)
-    return `<defs><mask id="clockwork-rim"><circle cx="300" cy="300" r="300" fill="white"/><circle cx="300" cy="300" r="201" fill="black"/></mask></defs><circle cx="300" cy="300" r="280" fill="#131f22"/><image class="material-art" href="${agedBrassURL}" x="12" y="12" width="576" height="576" mask="url(#clockwork-rim)"/>${gearTrain()}`;
+    return `<defs><mask id="clockwork-rim"><circle cx="300" cy="300" r="300" fill="white"/><circle cx="300" cy="300" r="174" fill="black"/></mask><filter id="clockwork-age" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="${1 - age * 0.28}"/><feComponentTransfer><feFuncR type="linear" slope="${1 - age * 0.22}"/><feFuncG type="linear" slope="${1 - age * 0.29}"/><feFuncB type="linear" slope="${1 - age * 0.38}"/></feComponentTransfer></filter></defs><circle cx="300" cy="300" r="280" fill="#131f22"/><g filter="url(#clockwork-age)"><image class="material-art" href="${approvedAssets.F02 || agedBrassURL}" x="12" y="12" width="576" height="576" mask="url(#clockwork-rim)"/><g transform="translate(42 42) scale(.86)">${gearTrain()}</g></g>`;
+
   return `<circle cx="300" cy="300" r="288" class="outer" style="${aged ? "fill:url(#aged-brass);filter:url(#metal-grain)" : ""}"/><circle cx="300" cy="300" r="273" class="dial" style="${aged ? "fill:url(#aged-dial);filter:url(#metal-grain)" : ""}"/><g class="filigree">${filigree}</g><circle cx="300" cy="300" r="260" class="ring"/><g class="ticks">${marks}</g><g class="gears" style="${aged ? "opacity:.65;fill:url(#aged-brass);stroke:#dab778;filter:url(#metal-grain)" : ""}">${gears}</g><circle cx="300" cy="300" r="168" class="ring inner"/>`;
 }
 export function landscape() {

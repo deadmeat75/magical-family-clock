@@ -2,21 +2,13 @@
 
 [Current review round](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
-F02, F04 and F05 are approved. F03 is abandoned. F01 revision 7 is the only face proposal still awaiting review.
+F02, F04 and F05 are approved. F01 and F03 are omitted. No face proposals remain pending.
 
-## F01 · Scalloped whereabouts dial
+## F01 · Omitted
 
-**Revision 7 · awaiting approval.**
-
-User reviewed revision 6: closer, but still not perfectly aligned. Refine the individual lettering curves, offsets and orientation to follow each painted scalloped edge more accurately while keeping every glyph fully inside the gold face with clearance. Revision 6 is not approved.
-
-[![F01](items/F01-r7.png)](items/F01-r7.png)
-
-[Editable contour-fitted lettering](concepts/F01-editable-lettering-r7.svg)
-
-Revision 7 fits a separate smooth contour to each painted scallop, then offsets the baseline inward and fits the name to its available arc. Full lettering ink remains inside the painted gold with clearance. This is a lettering proposal; production dynamic-name mapping follows approval.
+**Omitted at the user’s request.** No further alignment work or approval is required. Earlier studies remain archived.
 
 ## F02 · Brass finish range
 

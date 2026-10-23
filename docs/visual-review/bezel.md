@@ -2,15 +2,15 @@
 
 [Current review round](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
 
-**Release held. Explicit approvals and omissions are preserved.**
+**Visual review complete. Explicit approvals and omissions are preserved.**
 
-All three frame appearances are approved. B02 and B03 revision 4 are approved, with editable text color available. Only B01 revision 5 text placement remains awaiting review.
+All three frame appearances are approved. B02 and B03 revision 4 are approved, with editable text color available. B01 revision 5 text placement is also approved. All three bezels are approved.
 
 ## B01 · aged-brass information bezel
 
-**Revision 5 · awaiting approval.**
+**Approved · revision 5.**
 
-Revision 4 reviewed: lower both the top and bottom curved text just a hair. Apply a very small downward visual adjustment to each line, retaining current size, curvature, approved frame appearance and clearance from ornament. This supersedes retaining the exact previously accepted lower baseline; preserve its earlier reference artifact.
+Revision 5 explicitly approved by the user. Preserve the brass frame and both slightly lowered curved text lines.
 
 [![B01](items/B01-r5.png)](items/B01-r5.png)
 

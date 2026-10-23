@@ -1,12 +1,45 @@
-# Individual visual approvals
+# Individual visual decisions
 
-[Current review](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
+**135 approved; no pending items; six omitted.** Release preparation is authorized. [Integration record](REVISION-NOTES.md) · [Publication status](../PUBLISHING-STATUS.md).
 
-133 approved; 3 revision requests awaiting approval; 5 omitted. Release remains held.
+## Characters and props
+
+- [x] [C01 · Swallow](items/C01.png) — approved
+- [x] [C02 · Barn owl](items/C02.png) — approved
+- [x] [C03 · Witch on broom](items/C03.png) — approved
+- [x] [C04 · Wizard on broom](items/C04-r1.png) — approved
+- [x] [C05 · Dragon](items/C05.png) — approved
+- [x] [C06 · Phoenix](items/C06.png) — approved
+- [x] [C07 · Pixie](items/C07-r1.png) — approved
+- [x] [C08 · Lake serpent](items/C08-r1.png) — approved
+- [x] [C09 · Mermaid](items/C09-r1.png) — approved
+- [x] [C10 · Merman](items/C10-r1.png) — approved
+- [x] [C11 · Unicorn](items/C11-r1.png) — approved
+- [x] [C12 · Sailing boat](items/C12.png) — approved
+- [ ] [C13 · Floating lantern](items/C13.png) — omitted
+- [ ] [C14 · Stone cottage](items/C14.png) — omitted
+- [ ] [C15 · Woodland mushrooms](items/C15.png) — omitted
+- [ ] [C16 · Quartz crystals](items/C16.png) — omitted
+
+## Scene concepts
+
+- [x] [X01 · Painted inhabitants in the day castle](items/X01.png) — approved
+- [x] [X02 · Painted inhabitants in the night castle](items/X02.png) — approved
+
+## Landscape motion
+
+- [x] [L01 · Cloud drift](items/L01.gif) — approved
+- [x] [L02 · Foliage sway](items/L02-r3.gif) — approved
+- [x] [L03 · Lake reflections](items/L03-r3.gif) — approved
+- [x] [L04 · Waterfall flow and fine spray](items/L04-r3.gif) — approved
+- [x] [L05 · Twinkling stars](items/L05-r3.gif) — approved
+- [x] [L06 · Shooting star](items/L06-r3.gif) — approved
+- [x] [L07 · Window lights](items/L07-r5.gif) — approved
+- [x] [L08 · Fireflies](items/L08-r4.gif) — approved
 
 ## Faces
 
-- [ ] [F01 · Scalloped whereabouts dial](items/F01-r7.png) — revision 7 awaiting approval
+- [ ] [F01 · Scalloped whereabouts dial](items/F01-r7.png) — omitted
 - [x] [F02 · Brass finish range](items/F02-r1.png) — approved
 - [ ] [F03 · Astronomical scene wheel](items/F03-r8.gif) — omitted
 - [x] [F04 · whimsical-workshop](items/F04.png) — approved
@@ -42,6 +75,21 @@
 - [x] [M11 · Brass finish: polished](items/M11-r1.png) — approved
 - [x] [M12 · Brass finish: brushed](items/M12-r1.png) — approved
 - [x] [M13 · Brass finish: aged](items/M13-r1.png) — approved
+
+## Lettering and portraits
+
+- [x] [K01 · stem / parallel](items/K01.png) — approved
+- [x] [K02 · stem / perpendicular](items/K02.png) — approved
+- [x] [K03 · tip / parallel](items/K03.png) — approved
+- [x] [K04 · tip / perpendicular](items/K04.png) — approved
+- [x] [K05 · No hand lettering](items/K05.png) — approved
+- [x] [K06 · oval portrait / brass frame](items/K06.png) — approved
+- [x] [K07 · circle portrait / brass frame](items/K07.png) — approved
+- [x] [K08 · oval portrait / none frame](items/K08.png) — approved
+- [x] [K09 · Affixed parchment slip](items/K09-r2.png) — approved
+- [x] [K10 · Hanging name tag](items/K10-r2.png) — approved
+- [x] [K11 · Oval name brooch](items/K11-r2.png) — approved
+- [x] [K12 · Framed portrait attachment](items/K12-r2.png) — approved
 
 ## Location panels
 
@@ -96,7 +144,7 @@
 - [x] [W06 · sleet](items/W06-r3.gif) — approved
 - [x] [W07 · wind](items/W07-r4.gif) — approved
 - [x] [W08 · fog](items/W08-r3.gif) — approved
-- [ ] [W09 · ice](items/W09-r6.gif) — revision 6 awaiting approval
+- [x] [W09 · ice](items/W09-r6.gif) — approved
 - [x] [W10 · lightning](items/W10-r3.gif) — approved
 
 ## Moon phases
@@ -112,7 +160,7 @@
 
 ## Bezel
 
-- [ ] [B01 · aged-brass information bezel](items/B01-r5.png) — revision 5 awaiting approval
+- [x] [B01 · aged-brass information bezel](items/B01-r5.png) — approved
 - [x] [B02 · silver information bezel](items/B02-r4.png) — approved
 - [x] [B03 · wood information bezel](items/B03-r4.png) — approved
 
@@ -137,56 +185,6 @@
 - [x] [T08 · Verdana, sans-serif](items/T08.png) — approved
 - [x] [T09 · system-ui, sans-serif](items/T09.png) — approved
 - [x] [T10 · cursive](items/T10.png) — approved
-
-## Landscape motion
-
-- [x] [L01 · Cloud drift](items/L01.gif) — approved
-- [x] [L02 · Foliage sway](items/L02-r3.gif) — approved
-- [x] [L03 · Lake reflections](items/L03-r3.gif) — approved
-- [x] [L04 · Waterfall flow and fine spray](items/L04-r3.gif) — approved
-- [x] [L05 · Twinkling stars](items/L05-r3.gif) — approved
-- [x] [L06 · Shooting star](items/L06-r3.gif) — approved
-- [x] [L07 · Window lights](items/L07-r5.gif) — approved
-- [x] [L08 · Fireflies](items/L08-r4.gif) — approved
-
-## Lettering and portraits
-
-- [x] [K01 · stem / parallel](items/K01.png) — approved
-- [x] [K02 · stem / perpendicular](items/K02.png) — approved
-- [x] [K03 · tip / parallel](items/K03.png) — approved
-- [x] [K04 · tip / perpendicular](items/K04.png) — approved
-- [x] [K05 · No hand lettering](items/K05.png) — approved
-- [x] [K06 · oval portrait / brass frame](items/K06.png) — approved
-- [x] [K07 · circle portrait / brass frame](items/K07.png) — approved
-- [x] [K08 · oval portrait / none frame](items/K08.png) — approved
-- [x] [K09 · Affixed parchment slip](items/K09-r2.png) — approved
-- [x] [K10 · Hanging name tag](items/K10-r2.png) — approved
-- [x] [K11 · Oval name brooch](items/K11-r2.png) — approved
-- [x] [K12 · Framed portrait attachment](items/K12-r2.png) — approved
-
-## Characters and props
-
-- [x] [C01 · Swallow](items/C01.png) — approved
-- [x] [C02 · Barn owl](items/C02.png) — approved
-- [x] [C03 · Witch on broom](items/C03.png) — approved
-- [x] [C04 · Wizard on broom](items/C04-r1.png) — approved
-- [x] [C05 · Dragon](items/C05.png) — approved
-- [x] [C06 · Phoenix](items/C06.png) — approved
-- [x] [C07 · Pixie](items/C07-r1.png) — approved
-- [x] [C08 · Lake serpent](items/C08-r1.png) — approved
-- [x] [C09 · Mermaid](items/C09-r1.png) — approved
-- [x] [C10 · Merman](items/C10-r1.png) — approved
-- [x] [C11 · Unicorn](items/C11-r1.png) — approved
-- [x] [C12 · Sailing boat](items/C12.png) — approved
-- [ ] [C13 · Floating lantern](items/C13.png) — omitted
-- [ ] [C14 · Stone cottage](items/C14.png) — omitted
-- [ ] [C15 · Woodland mushrooms](items/C15.png) — omitted
-- [ ] [C16 · Quartz crystals](items/C16.png) — omitted
-
-## Scene concepts
-
-- [x] [X01 · Painted inhabitants in the day castle](items/X01.png) — approved
-- [x] [X02 · Painted inhabitants in the night castle](items/X02.png) — approved
 
 ## Editor and fullscreen
 
