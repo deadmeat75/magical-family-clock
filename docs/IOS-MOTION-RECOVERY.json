@@ -24,8 +24,11 @@
     "chromium": 85,
     "webkitPhone": 5,
     "webkitTablet": 5,
-    "finalExactCommitCI": "pending",
-    "targetedFinalLocalChecks": 4
+    "finalExactCommitCI": "passed",
+    "targetedFinalLocalChecks": 4,
+    "localFullBrowserPassed": 95,
+    "fullBrowserPassed": 95,
+    "ciURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40015639279"
   },
   "localHomeAssistant": {
     "version": "2026.10.2",
@@ -41,5 +44,42 @@
   "limitations": [
     "Dropped frame callbacks are simulated; the reported physical companion-app freeze is not reproduced or confirmed fixed.",
     "WebKit tests use desktop WebKit with mobile viewport/touch settings, not physical iOS devices."
-  ]
+  ],
+  "localHomeAssistantWebKit": {
+    "homeAssistantVersion": "2026.10.2",
+    "version": "0.4.3",
+    "engine": "WebKit",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "installedSVGSurfaces": true,
+    "motion": true,
+    "liveMoonSensorUpdate": true,
+    "metrics": {
+      "hands": 6,
+      "inhabitants": 6,
+      "surfaces": 4,
+      "markupCharacters": 1691143
+    },
+    "frontendErrors": [],
+    "physicalDevice": false
+  },
+  "publication": {
+    "tag": "v0.4.3",
+    "sourceCommit": "95a7608ca5d6b90363b85cde82e4feafc91a1a6f",
+    "publisherURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40016548913",
+    "latestStable": true,
+    "downloadedAssetMatches": true
+  },
+  "hacsValidation": {
+    "runURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40016546404",
+    "passed": 6,
+    "total": 8,
+    "failed": [
+      "repository topics",
+      "repository description"
+    ],
+    "ownerMetadataUpdateRequired": true
+  }
 }

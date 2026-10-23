@@ -1,8 +1,8 @@
 {
   "release_hold": false,
-  "published_release": "0.4.2",
+  "published_release": "0.4.3",
   "review_branch": "review-visual-elements",
-  "status": "visual decisions preserved; stable maintenance v0.4.2 published and downloaded bundle verified",
+  "status": "visual decisions preserved; stable maintenance v0.4.3 published and downloaded bundle verified",
   "items": [
     {
       "id": "B01",
@@ -1603,5 +1603,5 @@
   "release_authorized": true,
   "target_release": "0.4.3",
   "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready.",
-  "maintenance_note": "Motion recovery, animation diagnostics and curved flight paths are being prepared without changing approved artwork; physical iOS freeze resolution is not yet confirmed."
+  "maintenance_note": "Motion recovery, animation diagnostics and curved flight paths published without changing approved artwork. Physical iOS freeze resolution is not yet confirmed."
 }

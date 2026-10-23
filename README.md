@@ -16,7 +16,7 @@ An original Home Assistant dashboard card showing your household’s whereabouts
 
 **Start here: [Detailed installation and user guide](docs/USER-GUIDE.md)** — step-by-step setup, portraits, state mappings, castle scenes, backups, updates and troubleshooting.
 
-**Validation:** 63 unit/packaging and 89 browser checks passed (83 Chromium, six phone/tablet WebKit). Release-download verification is recorded in publication status. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. Mobile WebKit is included in automated regression checks; physical-device companion-app acceptance remains unverified.
+**Validation:** 64 unit/packaging and 95 browser checks passed (85 Chromium, ten phone/tablet WebKit). Release-download verification is recorded in publication status. See [publication status](docs/PUBLISHING-STATUS.md) for release artifact verification. Real Home Assistant 2026.10.2 dashboard saving/reload, live state updates and native selector loading have been verified in an isolated instance. Authenticated HACS custom-repository installation/update remains pending. This project has not been approved for the HACS default store. Mobile WebKit is included in automated regression checks; physical-device companion-app acceptance remains unverified.
 
 | Enchanted Spoons | Brass Clockwork | Living Magical |
 | --- | --- | --- |

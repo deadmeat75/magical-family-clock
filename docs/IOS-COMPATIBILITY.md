@@ -35,7 +35,7 @@ Bundled bitmaps use shared document URLs rather than duplicated base64 text in e
 
 ## Verification and limits
 
-[0.4.3 motion recovery acceptance](IOS-MOTION-RECOVERY.json) records the new callback-recovery, frame-pixel and diagnostic coverage. Physical iOS motion confirmation remains pending.
+Version 0.4.3 passes **64 unit/packaging and 95 browser checks** locally and in exact-commit GitHub CI (85 Chromium, five phone WebKit and five tablet WebKit). The installed Home Assistant WebKit dashboard passes motion/live moon checks with six hands and six inhabitants, and its Chromium native editor passes the animation-check action. [0.4.3 acceptance](IOS-MOTION-RECOVERY.json). Physical iOS motion confirmation remains pending.
 
 The 0.4.2 baseline passed all 63 unit/packaging checks and 89 browser checks (83 Chromium, three WebKit phone and three WebKit tablet). The installed Home Assistant 2026.10.2 dashboard also passed WebKit surface, motion and live-moon updates with six hands, six inhabitants and zero frontend exceptions. [Machine-readable evidence](IOS-ACCEPTANCE.json).
 

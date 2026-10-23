@@ -2,6 +2,8 @@
 
 ## Version 0.4.3 — Motion recovery and natural flight
 
+64 unit/packaging checks and 95 browser checks pass locally and in exact-commit main CI: 85 Chromium, five WebKit phone and five WebKit tablet. Installed Home Assistant dashboard/editor acceptance and release-download verification are recorded in the current acceptance and publication records.
+
 Adds production tests that deliberately drop frame callbacks, then verify recovery on page restoration, foreground visibility and the automatic watchdog. Intentional pauses remain respected. The animation check distinguishes card/device motion preferences and verifies both time and frame publication. Existing mobile motion coverage now compares actual displayed pixels with CSS animation paused, so changing counters alone cannot pass. Unit coverage checks visible vertical travel, climbs/descents, smooth banking, identity variation and repeatability through sensor refreshes. Offscreen route boundaries remain covered.
 
 [Current acceptance record](IOS-MOTION-RECOVERY.json) · [iOS troubleshooting](IOS-COMPATIBILITY.md). The user's reload cleared oversized overlays, but physical-device no-motion remains unconfirmed; dropped-callback tests are a simulation, not proof of the reported cause.
