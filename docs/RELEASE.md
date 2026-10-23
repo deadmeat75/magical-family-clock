@@ -13,3 +13,7 @@ The current package version is **0.4.2 — iOS rendering correction**. Visual re
 9. Install/update through HACS in an authorized connected instance when available. Default-store submission is separate; do not claim HACS approval or an authenticated update without evidence.
 
 Git push and GitHub API reads work through platform authentication. Repository metadata writes return HTTP 403 (integration permissions); never put credentials in source or documentation. A pushed tag alone is not proof that release publication succeeded.
+
+## Recovery when browser installation stalls in the publishing job
+
+Use **Actions → Publish verified HACS release → Run workflow** with the stable tag and a successful **Test and package** CI run ID for that exact tagged commit on `main`. The job rejects a different SHA, branch, event, workflow ID, unsuccessful run, or tag/package mismatch. It rebuilds and runs unit checks, verifies the compiled bundle is unchanged, and uploads the HACS asset using the repository token. Full Chromium/WebKit checks must already have passed in the verified main CI run. Cancel an obsolete publishing attempt before starting recovery, then independently verify the uploaded asset and stable/latest flags.

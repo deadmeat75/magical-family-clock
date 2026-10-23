@@ -76,5 +76,14 @@
     "WebKit automation uses Linux WebKit with mobile viewports; physical iPhone/iPad app behavior needs user confirmation.",
     "Home Assistant native entity-selector editing is verified in Chromium; the separate WebKit editor harness did not establish that check.",
     "Repository description/topics remain blocked by GitHub integration permissions."
-  ]
+  ],
+  "publication": {
+    "stableRelease": "v0.4.2",
+    "latest": true,
+    "draft": false,
+    "prerelease": false,
+    "independentlyDownloadedBundleMatches": true,
+    "mainCIRun": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40004796647",
+    "publisherRun": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40008118519"
+  }
 }

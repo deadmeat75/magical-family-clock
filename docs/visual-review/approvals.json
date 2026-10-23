@@ -1,8 +1,8 @@
 {
   "release_hold": false,
-  "published_release": "0.4.1",
+  "published_release": "0.4.2",
   "review_branch": "review-visual-elements",
-  "status": "visual review complete; authorized stable v0.4.1 published and downloaded bundle verified",
+  "status": "visual decisions preserved; stable maintenance v0.4.2 published and downloaded bundle verified",
   "items": [
     {
       "id": "B01",
@@ -1601,6 +1601,7 @@
     }
   ],
   "release_authorized": true,
-  "target_release": "0.4.1",
-  "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready."
+  "target_release": "0.4.2",
+  "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready.",
+  "maintenance_note": "The reported WebKit rendering defect and image-memory handling were corrected without changing approved artwork."
 }

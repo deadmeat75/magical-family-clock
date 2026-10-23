@@ -5,7 +5,7 @@ The reported failure was reproduced with the production bundle in WebKit: moving
 ## Update with HACS
 
 1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.2** or newer.
-2. Reload the Home Assistant frontend. Fully close and reopen the iPhone/iPad companion app if it still displays cached artwork.
+2. Reload the Home Assistant frontend. Fully close and reopen the iPhone/iPad companion app if it still displays cached artwork. If necessary, use **Settings → Companion app → Debugging → Reset frontend cache**, then reopen it (menu wording can vary).
 3. Keep your saved people, tracking rules and clock configuration. No YAML conversion or dashboard reconstruction is required.
 4. Check water and fog, rotate the device, then open and close **Fullscreen**. The moving scene should remain inside the central opening.
 
