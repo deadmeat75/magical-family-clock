@@ -37,7 +37,9 @@ Bundled bitmaps use shared document URLs rather than duplicated base64 text in e
 
 ## Verification and limits
 
-Version 0.4.3 passes **64 unit/packaging and 95 browser checks** locally and in exact-commit GitHub CI (85 Chromium, five phone WebKit and five tablet WebKit). The installed Home Assistant WebKit dashboard passes motion/live moon checks with six hands and six inhabitants, and its Chromium native editor passes the animation-check action. [0.4.3 acceptance](IOS-MOTION-RECOVERY.json). Physical iOS motion confirmation remains pending.
+Version 0.4.4 passes **69 unit/packaging and 98 browser checks** locally and in exact-commit main CI (86 Chromium, six phone WebKit and six tablet WebKit). The installed Home Assistant WebKit dashboard also verifies Randomize preserves household data and reload restores the saved design. A fixed desktop software-WebKit sample improved from 2 to 19.5 published scenery fps, with no duplicate HTML-image frame decodes. Physical iPhone/iPad smoothness is not yet verified. [Current acceptance](SMOOTH-MOTION-ACCEPTANCE.json).
+
+Version 0.4.3 passes **64 unit/packaging and 95 browser checks** locally and in exact-commit GitHub CI (85 Chromium, five phone WebKit and five tablet WebKit). The installed Home Assistant WebKit dashboard passes motion/live moon checks with six hands and six inhabitants, and its Chromium native editor passes the animation-check action. [0.4.3 acceptance](IOS-MOTION-RECOVERY.json). The user now reports that iOS animation works; physical-device smoothness still needs confirmation.
 
 The 0.4.2 baseline passed all 63 unit/packaging checks and 89 browser checks (83 Chromium, three WebKit phone and three WebKit tablet). The installed Home Assistant 2026.10.2 dashboard also passed WebKit surface, motion and live-moon updates with six hands, six inhabitants and zero frontend exceptions. [Machine-readable evidence](IOS-ACCEPTANCE.json).
 
@@ -49,6 +51,8 @@ The browser matrix includes Chromium and WebKit with a 440 × 956 phone viewport
 This is desktop WebKit automation with mobile viewport/touch settings, not a physical iPhone 16 Pro Max, 2024 iPad Air, or authenticated iOS Home Assistant companion-app test. The identified rendering failure is reproduced and corrected; device-specific app crashes still need confirmation on the user's devices after updating.
 
 ## GitHub emails
+
+The animation-check regression on documentation commit `4e112ca` checked a preview that had scrolled outside the viewport. That test now explicitly scrolls the clock into view and waits for visibility before asserting motion. Required browser checks remain enabled.
 
 The email naming review commit `a140cec` corresponds to a meteor pixel test that selected a random event outside the visible clock opening. That check now uses a known visible trajectory. Fullscreen checks already wait for the asynchronous transition. Normal CI runs on main and pull requests, and superseded runs are cancelled; duplicate review-branch and tag push test workflows are avoided. Release builds still run all required tests.
 

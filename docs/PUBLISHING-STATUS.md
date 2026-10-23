@@ -1,34 +1,38 @@
 # Publication status
 
-**[v0.4.3 — Motion recovery and natural flight](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.3) is published and verified as the latest stable release.** It is neither a draft nor a prerelease. Adds foreground/lost-callback recovery, a beginner-friendly animation check and individual curved creature routes. Keeps the 0.4.2 native SVG clipping correction.
+**[v0.4.4 — Smoother scenery and Randomize](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.4) is published and verified as the latest stable release.** It is neither a draft nor a prerelease.
 
-The user confirmed that reloading cleared the misplaced iOS overlays, but still reports no motion with iOS Reduce Motion off. The recovery and diagnostics pass automated checks; the physical-device cause and resolution remain unconfirmed. [Troubleshooting and update guide](IOS-COMPATIBILITY.md) · [Acceptance record](IOS-MOTION-RECOVERY.json).
+Randomize appears at the lower left, opposite Fullscreen. It temporarily shuffles supported faces, palettes, season/time/weather and one to three visitors, preserving saved people, locations, tracking sensors, live moon and bezel sources. Reload restores the saved design. [Detailed guide](RANDOMIZE.md).
 
-The self-contained `magical-family-clock.js` release asset was independently downloaded and matches the tested bundle byte for byte (**25,747,040 bytes**).
+WebKit scenery now avoids duplicate image decoding and busy-frame redraws, prepares small tree/water textures once, and uses stable frame deadlines. It preserves native SVG clipping, the HD base image and motion preferences. The user reports iOS animation is working but choppy; physical-device smoothness after this update is still unverified. [Compatibility guide](IOS-COMPATIBILITY.md) · [Acceptance](SMOOTH-MOTION-ACCEPTANCE.json).
 
-SHA-256: `23fa6f006600a747cc2d6accdb596ce690f95508639302400123b094921f6076`
+The release asset was independently downloaded and matches the tested bundle byte for byte (**25,749,953 bytes**).
 
-Release commit: `95a7608ca5d6b90363b85cde82e4feafc91a1a6f`.
+SHA-256: `fae868a64daf392487a48732776eeda8c73d9c19300bcb97d88cbbe8efb82719`
 
-- [Full main CI passed](https://github.com/deadmeat75/magical-family-clock/actions/runs/40015639279): deterministic build, **64 unit/packaging and 95 browser checks** (85 Chromium, five phone WebKit and five tablet WebKit). The same 95 browser checks passed locally.
-- [Verified publication passed](https://github.com/deadmeat75/magical-family-clock/actions/runs/40016548913): required successful full CI for the exact tagged commit, rebuilt/tested the package and checked the compiled bundle was unchanged before publishing.
-- The redundant standard tag-release run was cancelled in favor of that verified publication workflow. Required browser checks passed in full CI; they were not skipped.
+Release commit: `810beba5b4e6677a528d82e36c2f5714383816f9`.
 
-The installed Home Assistant 2026.10.2 WebKit dashboard passed surface, motion and live-moon updates with six hands, six inhabitants and zero frontend exceptions. Its Chromium native editor passed single-preview, live-update, encounter-preview and animation-check actions. These were isolated test instances; the user's installation was unchanged and physical iOS companion-app acceptance remains pending. The temporary instance was stopped afterward.
+- [Full main CI passed](https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354): deterministic build, **69 unit/packaging and 98 browser checks** (86 Chromium, six phone WebKit and six tablet WebKit). The same 98 browser checks passed locally.
+- [Verified publication passed](https://github.com/deadmeat75/magical-family-clock/actions/runs/40040711887): required successful full CI for the exact tagged commit, rebuilt/tested the package and checked the compiled bundle was unchanged before publishing. The redundant standard tag-release job was cancelled; required browser checks were not skipped.
+- The earlier documentation-commit animation test false failure was corrected by keeping its preview in view before testing motion. All checks remain enabled.
 
-The 135 approved visual decisions and six omissions are preserved. No approved artwork was modified; F01, F03 and C13–C16 remain excluded.
+Installed Home Assistant 2026.10.2 passed WebKit surface, motion, live-moon, Randomize household preservation and reload-restoration checks with zero frontend exceptions. Its served bundle hash matched the tested asset. The user's installation was unchanged; the isolated test instance was stopped afterward.
+
+A fixed four-second desktop software-WebKit sample improved from 2 to 19.5 published scenery fps, with median publication gaps falling from 453 to 50 ms. These are development measurements, not physical-device performance promises.
+
+All 135 approved visual decisions and six omissions remain intact. No approved artwork changed; F01, F03 and C13–C16 remain excluded.
 
 ## Install or update through HACS
 
-Open **HACS → Magical Family Clock → Download/update → 0.4.3**, reload the frontend and fully close/reopen the iOS app. If **Living world** still shows an older installed version or lacks **Check animation**, reset the companion frontend cache. Keep your existing clocks, people and sensor configuration.
+Open **HACS → Magical Family Clock → Download/update → 0.4.4**, reload Home Assistant and fully close/reopen the iOS app. No manual file copying, clock reconstruction or people/sensor reset is required. If the installed version remains old, reset the companion frontend cache.
 
-If the clock is still motionless, open **Living world → Check animation** with the preview visible. It distinguishes the card's Reduced motion setting from the device preference, scenery disabled, and a scene that is not advancing. Report its exact result if the problem persists. A running result with a still image is useful evidence too.
+Click **Randomize** at the lower left to explore a temporary design. For a busy iOS clock, try **Living world → World detail → Balanced**, then Light if needed. If animation stops completely, use **Check animation** and report its exact result.
 
-For first installation add `https://github.com/deadmeat75/magical-family-clock` under **HACS → Custom repositories**, category **Dashboard**. HACS manages the resource. No prerelease setting or manual file installation is needed.
-
-[Detailed user guide](USER-GUIDE.md) · [Living World guide](WORLD-GUIDE.md). The original 0.4.2 clipping-fix evidence remains in [its acceptance record](IOS-ACCEPTANCE.json).
+For first installation add `https://github.com/deadmeat75/magical-family-clock` under **HACS → Custom repositories**, category **Dashboard**. Prereleases are unnecessary. [Full user guide](USER-GUIDE.md) · [Randomize guide](RANDOMIZE.md).
 
 ## Repository metadata and validation
+
+The [v0.4.4 HACS run](https://github.com/deadmeat75/magical-family-clock/actions/runs/40040712020) passed **6/8 checks**. Its annotations identify only missing repository description and topics. Owner-level metadata permissions remain required; no new package-validation failure is reported.
 
 The [v0.4.3 HACS run](https://github.com/deadmeat75/magical-family-clock/actions/runs/40016546404) also passed **6/8 checks**. Its annotations identify the same missing repository description and topics; there are no new package-validation failures. Those owner-level fields still need to be set.
 

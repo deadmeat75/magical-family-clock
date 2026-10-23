@@ -8,7 +8,7 @@ Your people, their photos/names, tracking sensors and rules, destinations, fixed
 
 ## Return to your saved clock
 
-These changes are temporary and apply only to the card you clicked. The button does not save to Home Assistant or overwrite a stored clock/person profile. Reload the dashboard to restore the saved design. Selecting another saved face in Face cycling, or editing and saving the card, also applies its configured appearance. Automatic face cycling pauses while a randomized view is displayed, so it does not immediately replace your selection.
+These changes are temporary and apply only to the card you clicked. The button does not save to Home Assistant or overwrite a stored clock/person profile. Reload the dashboard to restore the saved design. Selecting another saved face in Face cycling, or applying a changed card configuration, also applies its configured appearance. Automatic face cycling pauses while a randomized view is displayed, so it does not immediately replace your selection.
 
 If your saved design uses an uploaded face, randomization temporarily uses the bundled faces; reloading restores your uploaded image and all its settings. It does not delete an uploaded asset.
 

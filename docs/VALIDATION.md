@@ -1,5 +1,14 @@
 # Validation and known limits
 
+## Version 0.4.4 — Smoother scenery and Randomize
+
+**69 unit/packaging and 98 browser checks pass locally and in [exact-commit main CI](https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354)**: 86 Chromium, six WebKit phone and six WebKit tablet. Coverage includes native SVG image load/failure cleanup, one pending frame, stopping during encoding, stable 60/120 Hz scheduling, blocked-encoder backpressure, unchanged saved people/locations/sensors, repeat shuffles, expanded view and the existing clipping/motion/remount suite.
+
+The installed Home Assistant 2026.10.2 WebKit dashboard passed motion/live-moon checks and Randomize data preservation and reload restoration with no frontend exceptions. Its served bundle hash matched the release candidate. The isolated instance was stopped after verification.
+
+A four-second desktop software-WebKit scene at 820 × 1180 (day/summer/clouds, Rich, no inhabitants, one scenery surface) published 2 fps before and 19.5 fps with the final code. Median publication gaps fell from 453 to 50 ms; the final sample made no duplicate HTML-image decode calls. These are development samples, not physical-iPhone frame rates or guaranteed performance. The user reports iOS animation works; physical smoothness remains unverified. [Acceptance](SMOOTH-MOTION-ACCEPTANCE.json) · [Randomize guide](RANDOMIZE.md).
+
+
 ## Version 0.4.3 — Motion recovery and natural flight
 
 64 unit/packaging checks and 95 browser checks pass locally and in exact-commit main CI: 85 Chromium, five WebKit phone and five WebKit tablet. Installed Home Assistant dashboard/editor acceptance and release-download verification are recorded in the current acceptance and publication records.

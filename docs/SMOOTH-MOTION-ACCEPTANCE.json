@@ -63,10 +63,64 @@
     "chromium": 86,
     "webkitPhone": 6,
     "webkitTablet": 6,
-    "finalExactCommitCI": "pending"
+    "finalExactCommitCI": "passed",
+    "fullBrowserPassed": 98,
+    "localFullBrowserPassed": 98,
+    "ciURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354"
   },
   "bundle": {
     "bytes": 25749953,
     "sha256": "fae868a64daf392487a48732776eeda8c73d9c19300bcb97d88cbbe8efb82719"
+  },
+  "finalSoftwareMeasurement": {
+    "sampleSeconds": 4,
+    "frames": 78,
+    "fps": 19.5,
+    "medianGapMs": 50,
+    "p95GapMs": 65,
+    "encodes": 77,
+    "explicitDecodes": 0,
+    "surfaces": 1
+  },
+  "installedHomeAssistantWebKit": {
+    "homeAssistantVersion": "2026.10.2",
+    "version": "0.4.4",
+    "engine": "WebKit",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "installedSVGSurfaces": true,
+    "motion": true,
+    "liveMoonSensorUpdate": true,
+    "randomizePreservesSavedConfiguration": true,
+    "randomizePreservesHouseholdSources": true,
+    "randomizeChangesAppearance": true,
+    "reloadRestoresSavedAppearance": true,
+    "metrics": {
+      "hands": 6,
+      "inhabitants": 6,
+      "surfaces": 4,
+      "markupCharacters": 1691579
+    },
+    "frontendErrors": [],
+    "physicalDevice": false
+  },
+  "publication": {
+    "tag": "v0.4.4",
+    "sourceCommit": "810beba5b4e6677a528d82e36c2f5714383816f9",
+    "publisherURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40040711887",
+    "latestStable": true,
+    "downloadedAssetMatches": true
+  },
+  "hacsValidation": {
+    "runURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40040712020",
+    "passed": 6,
+    "total": 8,
+    "failed": [
+      "repository topics",
+      "repository description"
+    ],
+    "ownerMetadataUpdateRequired": true
   }
 }

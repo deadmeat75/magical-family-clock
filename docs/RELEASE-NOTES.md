@@ -9,3 +9,5 @@ Update using **HACS → Magical Family Clock → Download/update → 0.4.4**, re
 [Randomize and smooth-motion guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.4/docs/RANDOMIZE.md) · [Full guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.4/docs/USER-GUIDE.md) · [Current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
 The user reports that iOS animation now works but is choppy. Software WebKit development measurements improved; physical iPhone/iPad frame rates and smoothness remain unverified. Repository About description/topics remain a separate owner-permission HACS validation issue.
+
+Verification: **69 unit/packaging and 98 browser checks** passed locally and in [exact-commit CI](https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354). Installed Home Assistant WebKit checks verify motion, live moon updates, Randomize data preservation and reload restoration. [Acceptance](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/SMOOTH-MOTION-ACCEPTANCE.json).
