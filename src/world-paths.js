@@ -133,20 +133,35 @@ export function flightFrames(object, opening = 180) {
     right = Math.max(300 + half, x + half);
   const start = object.facing === "left" ? right : left,
     end = object.facing === "left" ? left : right;
-  const bend = object.kind === "bird" ? 9 : object.kind === "fairy" ? 12 : 5;
+  // Distinct, smoothly curved routes: broad glides for larger creatures and
+  // shorter rising/falling arcs for small birds and pixies. The saved identity
+  // supplies variation without changing a route on a sensor refresh.
+  let seed = 0;
+  for (const char of String(object.id || object.kind))
+    seed = (Math.imul(seed, 31) + char.charCodeAt(0)) >>> 0;
+  const phase = ((seed % 997) / 997) * Math.PI * 2,
+    bend =
+      ({ bird: 26, fairy: 30, phoenix: 26, owl: 23, dragon: 25 }[object.kind] ||
+        23) *
+      (0.85 + (seed % 101) / 335),
+    height = (u) =>
+      y +
+      bend *
+        (-0.6 * Math.sin(Math.PI * u) +
+          0.7 * Math.sin(2 * Math.PI * u + phase) * Math.sin(Math.PI * u) +
+          0.23 * Math.sin(4 * Math.PI * u + phase) * Math.sin(Math.PI * u));
   const frames = [];
-  for (let i = 0; i <= 20; i++) {
-    const u = i / 20,
-      px = start + (end - start) * u;
-    const py =
-      y -
-      bend * Math.sin(Math.PI * u) +
-      Math.sin(u * Math.PI * 2) * bend * 0.22;
-    const slope =
-      (-bend * Math.PI * Math.cos(Math.PI * u) +
-        bend * 0.44 * Math.PI * Math.cos(u * Math.PI * 2)) /
-      (end - start);
-    const bank = ((Math.atan(slope) * 180) / Math.PI) * 0.55;
+  for (let i = 0; i <= 48; i++) {
+    const u = i / 48,
+      travel = u + 0.045 * Math.sin(2 * Math.PI * u),
+      px = start + (end - start) * travel,
+      py = height(u),
+      slope =
+        (height(u + 0.0001) - height(u - 0.0001)) /
+        (0.0002 *
+          (end - start) *
+          (1 + 0.09 * Math.PI * Math.cos(2 * Math.PI * u))),
+      bank = ((Math.atan(slope) * 180) / Math.PI) * 0.8;
     frames.push({
       offset: u * 0.72,
       x: (px - x) / scale,

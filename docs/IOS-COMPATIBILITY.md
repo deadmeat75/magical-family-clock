@@ -1,15 +1,29 @@
-# iPhone and iPad rendering correction — 0.4.2
+# iPhone and iPad compatibility — 0.4.3
 
 The reported failure was reproduced with the production bundle in WebKit: moving water and foreground foliage appeared as oversized rectangles across the lower clock, and fog could escape its intended bounds. Element dimensions alone looked correct; pixel comparisons exposed the incorrect composition.
 
 ## Update with HACS
 
-1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.2** or newer.
+1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.3** or newer.
 2. Reload the Home Assistant frontend. Fully close and reopen the iPhone/iPad companion app if it still displays cached artwork. If necessary, use **Settings → Companion app → Debugging → Reset frontend cache**, then reopen it (menu wording can vary).
 3. Keep your saved people, tracking rules and clock configuration. No YAML conversion or dashboard reconstruction is required.
 4. Check water and fog, rotate the device, then open and close **Fullscreen**. The moving scene should remain inside the central opening.
 
 If still using 0.4.1 while updating, turn **Living world → Show miniature world** off and select **Clear** weather. Merely pausing motion leaves the original canvas surfaces present, so it does not reliably avoid the rendering defect. Restore your preferred effects after updating.
+
+## If the picture fits but does not move
+
+Version 0.4.3 adds animation recovery after returning to Home Assistant and a check that explains the effective motion settings. The user confirmed that reloading cleared the oversized overlays on iOS, but reported no motion with iOS Reduce Motion off. That remaining physical-device failure has not been reproduced or confirmed fixed; the recovery tests simulate dropped callbacks in WebKit.
+
+1. Edit the card and open **Living world**. Confirm **Installed card version: 0.4.3** (or newer). If it still shows an older version or has no **Check animation** button, reload the frontend/reset the companion frontend cache after the HACS update.
+2. Press **Check animation** with the right-hand clock preview visible. It checks actual scenery frame publication as well as elapsed animation time.
+3. If it names **General → Reduced motion**, turn that card setting off if you want animation. This setting is independent of the iOS accessibility preference.
+4. If it names **Animate castle scenery**, enable that setting under **Living world**. Enable **Show miniature world** and at least one landscape effect such as water, trees or waterfalls too. Clouds are intentionally absent in Clear weather.
+5. A device-preference message means the browser itself reports Reduce Motion, even if the setting appears off in iOS. The clock continues to honor that preference.
+6. If the check reports **Animation is running** but the picture is still, report that exact result. If it reports **The scenery did not advance**, save the card, return to the dashboard, reopen the editor and check once more; report the result if it persists. A separate **scene clock is running, but no new picture was published** message identifies a frame-publication problem.
+7. Switch away from Home Assistant, return, and try expanded view. Recovery preserves the scene's elapsed time instead of restarting encounters. It never enables motion settings you have disabled.
+
+Flying visitors now follow individual rising/falling curves with gentle speed changes and banking. Entry and exit remain beyond the circular face. Grounded and aquatic inhabitants retain their appropriate placement.
 
 ## What changed
 
@@ -21,7 +35,9 @@ Bundled bitmaps use shared document URLs rather than duplicated base64 text in e
 
 ## Verification and limits
 
-All 63 unit/packaging checks and 89 browser checks passed (83 Chromium, three WebKit phone and three WebKit tablet). The installed Home Assistant 2026.10.2 dashboard also passed WebKit surface, motion and live-moon updates with six hands, six inhabitants and zero frontend exceptions. [Machine-readable evidence](IOS-ACCEPTANCE.json).
+[0.4.3 motion recovery acceptance](IOS-MOTION-RECOVERY.json) records the new callback-recovery, frame-pixel and diagnostic coverage. Physical iOS motion confirmation remains pending.
+
+The 0.4.2 baseline passed all 63 unit/packaging checks and 89 browser checks (83 Chromium, three WebKit phone and three WebKit tablet). The installed Home Assistant 2026.10.2 dashboard also passed WebKit surface, motion and live-moon updates with six hands, six inhabitants and zero frontend exceptions. [Machine-readable evidence](IOS-ACCEPTANCE.json).
 
 [WebKit phone example](ios-webkit-phone.png) · [WebKit tablet example](ios-webkit-tablet.png). These are browser-automation screenshots, not physical-device photographs.
 

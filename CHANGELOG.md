@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.3 — Motion recovery and natural flight
+
+- Re-arm scenery animation on foreground/page restoration and recover lost frame callbacks without resetting elapsed scene time. Respect card and device motion preferences and keep offscreen/background cards paused.
+- Add Living world → Check animation with separate explanations for card/device pauses, disabled scenery, and a stalled scene. Show the installed version and verify changing scenery frames, not just the animation clock.
+- Give flying creatures identity-specific climbs, descents, gentle speed variation and banking. Preserve offscreen encounter boundaries and keep ground/water inhabitants on their existing routes.
+- Extend production Chromium/WebKit regression coverage for lost callbacks, automatic recovery, pause explanations and changing displayed scenery pixels. Physical iOS companion-app freeze resolution still needs confirmation; the user reports that reloading cleared the oversized overlays.
+
 ## 0.4.2 — iPhone and iPad rendering correction
 
 - Replace WebKit canvas-in-SVG foreign objects with native SVG image surfaces so moving water, foreground foliage and clouds obey the face transform and circular clipping. Keep live motion in expanded view and after rotation.

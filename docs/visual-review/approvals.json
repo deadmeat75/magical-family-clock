@@ -1601,7 +1601,7 @@
     }
   ],
   "release_authorized": true,
-  "target_release": "0.4.2",
+  "target_release": "0.4.3",
   "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready.",
-  "maintenance_note": "The reported WebKit rendering defect and image-memory handling were corrected without changing approved artwork."
+  "maintenance_note": "Motion recovery, animation diagnostics and curved flight paths are being prepared without changing approved artwork; physical iOS freeze resolution is not yet confirmed."
 }

@@ -499,6 +499,7 @@ export function startWorldPainter(
     }
   };
   const step = (now) => {
+    raf = 0;
     if (ended || !root.isConnected) return;
     const delta = Math.min((now - last) / 1000, 0.1);
     last = now;
@@ -517,6 +518,16 @@ export function startWorldPainter(
     }
     raf = requestAnimationFrame(step);
   };
+  // A webview can suspend its frame callbacks while the app is backgrounded.
+  // Re-arm a lost callback without resetting the scene's elapsed time.
+  const resume = (force = false) => {
+    if (ended || !source || !entries.length || !root.isConnected) return;
+    const now = performance.now();
+    if (!force && raf && now - last < 2000) return;
+    cancelAnimationFrame(raf);
+    last = now;
+    raf = requestAnimationFrame(step);
+  };
   const paintReady =
     config.artwork === "castle" && !config.face_image
       ? loadSource(scene)
@@ -531,13 +542,14 @@ export function startWorldPainter(
             for (const path of card.querySelectorAll("#weather-sky path"))
               path.setAttribute("d", s.sky);
             paint();
-            if (!ended && entries.length) raf = requestAnimationFrame(step);
+            resume();
           })
           .catch(() => {
             for (const e of entries) e.bridge?.stop();
           })
       : Promise.resolve();
   return {
+    resume,
     ready: Promise.all([
       paintReady.then(() => Promise.all(entries.map((e) => e.bridge?.ready))),
       renderMoons(root),

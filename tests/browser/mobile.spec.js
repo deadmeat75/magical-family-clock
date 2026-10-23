@@ -167,6 +167,30 @@ test("production motion survives rotation and expanded view and stops when pause
   }
   const tick = await layer.getAttribute("data-paint-tick");
   await expect.poll(() => layer.getAttribute("data-paint-tick")).not.toBe(tick);
+  // A changing href or timestamp alone does not prove that WebKit repainted.
+  // Pause CSS effects and verify the displayed landscape pixels also change.
+  await card.evaluate((c) => {
+    for (const animation of c.shadowRoot
+      .querySelector("ha-card")
+      .getAnimations({ subtree: true }))
+      animation.pause();
+  });
+  const beforePixels = PNG.sync.read(await card.screenshot({ scale: "css" }));
+  await page.waitForTimeout(1200);
+  const afterPixels = PNG.sync.read(await card.screenshot({ scale: "css" }));
+  let changedPixels = 0;
+  for (let i = 0; i < beforePixels.data.length; i += 4)
+    if (
+      Math.abs(beforePixels.data[i] - afterPixels.data[i]) +
+        Math.abs(beforePixels.data[i + 1] - afterPixels.data[i + 1]) +
+        Math.abs(beforePixels.data[i + 2] - afterPixels.data[i + 2]) >
+      15
+    )
+      changedPixels++;
+  expect(
+    changedPixels,
+    "the displayed scenery must move, not just its frame counters",
+  ).toBeGreaterThan(50);
   const size = page.viewportSize();
   await page.setViewportSize({ width: size.height, height: size.width });
   await expect
@@ -231,4 +255,102 @@ test("production dashboard remounts release moving-image URLs and retain compact
     expect(await page.evaluate(() => testImageURLs.size)).toBeLessThan(before);
   }
   expect(errors).toEqual([]);
+});
+test("lost animation callbacks recover on app resume and without a page reload", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    const frame = window.requestAnimationFrame.bind(window);
+    window.requestAnimationFrame = (callback) =>
+      frame((time) => {
+        if (!window.dropMotionFrame) callback(time);
+      });
+  });
+  const { card, errors } = await boot(page);
+  const layer = card.locator(
+    '[data-world-surface~="water"],canvas[data-world-paint="water"]',
+  );
+  for (const event of ["pageshow", "visibilitychange", "watchdog"]) {
+    await page.evaluate(() => {
+      window.dropMotionFrame = true;
+    });
+    await page.waitForTimeout(250);
+    const tick = await layer.getAttribute("data-paint-tick");
+    await page.evaluate((event) => {
+      window.dropMotionFrame = false;
+      if (event === "pageshow") window.dispatchEvent(new Event(event));
+      if (event === "visibilitychange")
+        document.dispatchEvent(new Event(event));
+    }, event);
+    await expect
+      .poll(() => layer.getAttribute("data-paint-tick"), { timeout: 7000 })
+      .not.toBe(tick);
+  }
+  await card.evaluate((c) => {
+    c._config.scene_motion = false;
+  });
+  await page.waitForTimeout(200);
+  const tick = await layer.getAttribute("data-paint-tick");
+  await page.evaluate(() => window.dispatchEvent(new Event("pageshow")));
+  await page.waitForTimeout(350);
+  expect(await layer.getAttribute("data-paint-tick")).toBe(tick);
+  expect(errors).toEqual([]);
+});
+test("animation check explains card and device pauses and verifies moving frames", async ({
+  page,
+}) => {
+  await boot(page);
+  await page.evaluate(() => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    host.appendChild(mobileCard);
+    const editor = document.createElement("magical-family-clock-card-editor");
+    editor.setConfig(mobileCard._baseConfig);
+    editor.tab = "Living world";
+    host.appendChild(editor);
+    editor.render();
+    window.motionEditor = editor;
+  });
+  const editor = page.locator("magical-family-clock-card-editor");
+  const check = () =>
+    page.evaluate(() => {
+      [...motionEditor.shadowRoot.querySelectorAll("button")]
+        .find((b) => b.textContent === "Check animation")
+        .click();
+    });
+  await page.evaluate(() => {
+    mobileCard._config.reduced_motion = true;
+  });
+  await check();
+  await expect(
+    editor.getByRole("status", { name: "Animation status" }),
+  ).toHaveText(/General → Reduced motion/);
+  await page.evaluate(() => {
+    mobileCard._config.reduced_motion = false;
+  });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await check();
+  await expect(
+    editor.getByRole("status", { name: "Animation status" }),
+  ).toHaveText(/browser reports.*Reduce Motion/);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.evaluate(() => {
+    mobileCard._config.scene_motion = false;
+  });
+  await check();
+  await expect(
+    editor.getByRole("status", { name: "Animation status" }),
+  ).toHaveText(/Animate castle scenery is off/);
+  await page.evaluate(() => {
+    mobileCard._config.scene_motion = true;
+  });
+  await page.evaluate(async () => {
+    await mobileCard._worldPainter.ready;
+  });
+  await check();
+  await expect(
+    editor.getByRole("status", { name: "Animation status" }),
+  ).toHaveText(/Animation is running/, {
+    timeout: 10000,
+  });
 });

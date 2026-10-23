@@ -248,9 +248,9 @@ test("Home Assistant editor has one host-owned preview and no sticky clock over 
   await editor
     .getByRole("button", { name: "Preview encounter now", exact: true })
     .click();
-  await expect(editor.getByRole("status")).toContainText(
-    "Showing an active moment.",
-  );
+  await expect(
+    editor.getByRole("status").filter({ hasText: "Showing an active moment." }),
+  ).toContainText("Showing an active moment.");
 });
 
 test("castle motion continues in native fullscreen and fixed expansion when its dashboard host leaves view", async ({

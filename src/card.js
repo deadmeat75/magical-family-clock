@@ -78,6 +78,11 @@ export class MagicalFamilyClock extends HTMLElement {
     this._sceneToken = 0;
     this._visible = true;
     this._fullscreenChanged = () => this._syncVisibility();
+    this._resumeMotion = () => {
+      if (!this.isConnected || document.hidden) return;
+      this._syncVisibility();
+      this._worldPainter?.resume(true);
+    };
     this._templateIndex = null;
   }
   static getConfigElement() {
@@ -132,9 +137,12 @@ export class MagicalFamilyClock extends HTMLElement {
       this._observer.observe(this.shadowRoot.querySelector("ha-card"));
     }
     document.addEventListener("fullscreenchange", this._fullscreenChanged);
+    document.addEventListener("visibilitychange", this._resumeMotion);
+    window.addEventListener("pageshow", this._resumeMotion);
     clearInterval(this._timer);
     this._timer = window.setInterval(() => {
       if (!this._visible) return;
+      if (!document.hidden) this._worldPainter?.resume();
       this._updateBezel();
       if (Date.now() - (this._lastSceneTick || 0) > 60000) {
         this._lastSceneTick = Date.now();
@@ -165,6 +173,8 @@ export class MagicalFamilyClock extends HTMLElement {
   }
   disconnectedCallback() {
     document.removeEventListener("fullscreenchange", this._fullscreenChanged);
+    document.removeEventListener("visibilitychange", this._resumeMotion);
+    window.removeEventListener("pageshow", this._resumeMotion);
     if (this._worldPainter) this._worldElapsed = this._worldPainter.stop();
     this._needsReconnectRender = true;
     this._imageToken = (this._imageToken || 0) + 1;
@@ -353,7 +363,24 @@ export class MagicalFamilyClock extends HTMLElement {
     const wasVisible = this._visible;
     this._visible = expanded || this._intersecting !== false;
     card.classList.toggle("paused", !this._visible);
+    if (this._visible) this._worldPainter?.resume();
     if (this._visible && !wasVisible) this._update();
+  }
+  motionStatus() {
+    if (this._config?.reduced_motion)
+      return "Paused: General → Reduced motion is enabled.";
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches)
+      return "Paused: this browser reports the device’s Reduce Motion preference.";
+    if (!this._config?.scene_motion)
+      return "Paused: Living world → Animate castle scenery is off.";
+    if (document.hidden) return "Paused: Home Assistant is in the background.";
+    if (!this._visible)
+      return "Paused: the clock is outside the visible dashboard area.";
+    if (!this._config?.world.enabled)
+      return "Living world → Show miniature world is off.";
+    if (this._config?.artwork !== "castle" || this._config?.face_image)
+      return "Animated scenery requires the bundled castle face.";
+    return null;
   }
   _makeHand(p) {
     const m = p.member,

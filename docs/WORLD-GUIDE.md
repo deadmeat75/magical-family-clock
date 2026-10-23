@@ -273,3 +273,12 @@ In **People → Customize hand and portrait**, choose a hand shape and material.
 Choose **Use a readable parchment name** for a quick affixed tag, or select **Name attachment → Hanging tag / Oval brooch / Portrait frame**. The portrait frame uses that person’s configured photo. Then adjust tag scale, position, rotation and lettering. Empty names remain empty. Choosing an attachment does not alter the person’s sensors.
 
 For Brass Clockwork, open **Appearance → Brass age (0 new–1 antique)**. Use **0** for new polished brass, **0.25** for lightly aged, or **1** for antique. The finish changes continuously while the meshing gear model keeps its tooth-count-based directions and speeds.
+
+
+## Motion checks and natural flight (0.4.3)
+
+Use **Living world → Check animation** when a fitted clock is still. The same section displays the installed version, making a cached older frontend easy to identify. The check explains card-level Reduced motion, the browser/device preference, scenery disabled, hidden/offscreen clocks, missing animated layers, or scenery that has not advanced. A running result verifies the published scenery frame too. If it says running while your image remains still, report that exact result. See the [iOS step-by-step guide](IOS-COMPATIBILITY.md#if-the-picture-fits-but-does-not-move).
+
+Returning to the app re-arms the scenery loop. A watchdog also recovers a lost frame callback without restarting the world or ignoring saved motion settings. This recovery passes automated WebKit phone/tablet tests; physical companion-app confirmation remains pending.
+
+Flying creatures follow individual curves with visible climbs and descents, modest changes in forward speed and banking along the route. Saved creature identities keep their route stable through sensor updates; separate creatures receive different curves. Each journey still begins/ends beyond the opening. These changes apply to flight, not to a grounded unicorn or an inhabitant constrained to the lake.

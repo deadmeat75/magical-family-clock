@@ -1331,9 +1331,9 @@ export class ClockEditor extends HTMLElement {
       status.className = "error";
     });
   }
-  previewEncounter(id) {
+  previewClock() {
     if (this.standalonePreview && this._preview?.isConnected)
-      return this._preview.previewWorldEncounter(id);
+      return this._preview;
     // Home Assistant owns the visible preview. Search the nearest composed
     // ancestor first, so another dashboard card is never preferred to the
     // sibling preview inside its editing dialog.
@@ -1353,10 +1353,13 @@ export class ClockEditor extends HTMLElement {
     let scope = this.parentNode;
     while (scope) {
       const preview = find(scope);
-      if (preview) return preview.previewWorldEncounter(id);
+      if (preview) return preview;
       scope = scope.parentNode || scope.host;
     }
-    return false;
+    return null;
+  }
+  previewEncounter(id) {
+    return this.previewClock()?.previewWorldEncounter(id) || false;
   }
   updatePreview() {
     cancelAnimationFrame(this._previewFrame);

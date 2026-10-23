@@ -11,6 +11,7 @@ import {
 import { LOCATION_GRAPHICS, PANEL_TEXTURES } from "./panels.js";
 import { uid, clone } from "./engine.js";
 import { WEATHER } from "./weather.js";
+import { version } from "../package.json";
 const node = (tag, text) => {
   const e = document.createElement(tag);
   if (text !== undefined) e.textContent = text;
@@ -377,6 +378,55 @@ export function worldEditor(root) {
       root,
       "Animation is currently paused by Reduced motion. Check General → Reduced motion and the viewing device’s accessibility preference to see motion. Props and the moon remain visible.",
     );
+  const animationStatus = node("p");
+  this.note(
+    root,
+    `Installed card version: ${version}. If scenery is still, Check animation explains whether motion is paused or the scene is advancing.`,
+  );
+  animationStatus.setAttribute("role", "status");
+  animationStatus.setAttribute("aria-label", "Animation status");
+  this.button(root, "Check animation", async () => {
+    const clock = this.previewClock();
+    if (!clock) {
+      animationStatus.textContent =
+        "Open the clock’s dashboard preview to check animation.";
+      return;
+    }
+    const paused = clock.motionStatus();
+    if (paused) {
+      animationStatus.textContent = paused;
+      return;
+    }
+    clock._resumeMotion();
+    animationStatus.textContent = "Checking moving scenery…";
+    const before = clock._worldPainter?.time,
+      layer = clock.shadowRoot.querySelector(
+        "[data-world-surface], [data-world-paint]",
+      ),
+      imageBefore = layer?.getAttribute("href"),
+      tickBefore = layer?.dataset.paintTick;
+    // Image encoding can take longer on a busy mobile webview. Observe a
+    // published frame rather than treating a fixed short delay as a failure.
+    const advanced = () =>
+      Number.isFinite(before) &&
+      clock._worldPainter?.time > before &&
+      layer?.dataset.paintTick !== tickBefore &&
+      (!layer?.hasAttribute("data-world-surface") ||
+        layer.getAttribute("href") !== imageBefore);
+    for (let i = 0; i < 24 && !advanced() && !clock.motionStatus(); i++)
+      await new Promise((resolve) => setTimeout(resolve, 250));
+    const after = clock._worldPainter?.time;
+    animationStatus.textContent =
+      clock.motionStatus() ||
+      (!layer
+        ? "No animated scenery layers are selected. Enable water, clouds, trees or another landscape effect below."
+        : advanced()
+          ? "Animation is running. If the picture remains still, report that the animation check passed but the image did not move."
+          : after > before
+            ? "The scene clock is running, but no new picture was published. Report this message if the image remains still after saving and reopening the dashboard."
+            : "The scenery did not advance. Save the clock, return to the dashboard and check again; if it remains still, report this message.");
+  });
+  root.appendChild(animationStatus);
   const nature = this.box(root, "Landscape and sky");
   field(
     this,

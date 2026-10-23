@@ -1,5 +1,12 @@
 # Validation and known limits
 
+## Version 0.4.3 — Motion recovery and natural flight
+
+Adds production tests that deliberately drop frame callbacks, then verify recovery on page restoration, foreground visibility and the automatic watchdog. Intentional pauses remain respected. The animation check distinguishes card/device motion preferences and verifies both time and frame publication. Existing mobile motion coverage now compares actual displayed pixels with CSS animation paused, so changing counters alone cannot pass. Unit coverage checks visible vertical travel, climbs/descents, smooth banking, identity variation and repeatability through sensor refreshes. Offscreen route boundaries remain covered.
+
+[Current acceptance record](IOS-MOTION-RECOVERY.json) · [iOS troubleshooting](IOS-COMPATIBILITY.md). The user's reload cleared oversized overlays, but physical-device no-motion remains unconfirmed; dropped-callback tests are a simulation, not proof of the reported cause.
+
+
 ## Version 0.4.2 — iOS rendering correction
 
 The production bundle passes 63 unit/packaging checks and 89 browser checks: 83 Chromium and six mobile-viewport WebKit checks. New regressions compare rendered pixels outside the central opening, verify rotation and expanded-view animation/pause, and exercise six dashboard remounts with image URL cleanup and compact markup assertions. WebKit reproduction confirmed that correctly reported canvas bounds did not guarantee correct painted clipping. See [iOS compatibility details](IOS-COMPATIBILITY.md).

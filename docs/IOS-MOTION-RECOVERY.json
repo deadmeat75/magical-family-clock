@@ -1,0 +1,45 @@
+{
+  "version": "0.4.3",
+  "physicalIOSCompanionAppVerified": false,
+  "userLiveInstallationChanged": false,
+  "userFeedback": {
+    "overlaysClearedAfterReload": true,
+    "noMotionStillReported": true,
+    "iosReduceMotion": "off",
+    "confirmedCauseOfPhysicalFreeze": null
+  },
+  "implementation": {
+    "foregroundAndPageRestoreRecovery": true,
+    "lostCallbackWatchdog": true,
+    "retainsElapsedSceneTime": true,
+    "respectsIntentionalPauses": true,
+    "animationCheckVerifiesFramesAndTime": true,
+    "installedVersionDisplayed": true,
+    "naturalCurvedFlight": true,
+    "approvedArtworkChanged": false
+  },
+  "checks": {
+    "unitPackaging": 64,
+    "fullBrowserMatrix": 95,
+    "chromium": 85,
+    "webkitPhone": 5,
+    "webkitTablet": 5,
+    "finalExactCommitCI": "pending",
+    "targetedFinalLocalChecks": 4
+  },
+  "localHomeAssistant": {
+    "version": "2026.10.2",
+    "engine": "Chromium",
+    "nativeSinglePreview": true,
+    "nativeAnimationCheck": true,
+    "physicalDevice": false
+  },
+  "bundle": {
+    "bytes": 25747040,
+    "sha256": "23fa6f006600a747cc2d6accdb596ce690f95508639302400123b094921f6076"
+  },
+  "limitations": [
+    "Dropped frame callbacks are simulated; the reported physical companion-app freeze is not reproduced or confirmed fixed.",
+    "WebKit tests use desktop WebKit with mobile viewport/touch settings, not physical iOS devices."
+  ]
+}

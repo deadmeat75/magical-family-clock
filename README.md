@@ -1,6 +1,6 @@
 # Magical Family Clock
 
-**Version 0.4.2 — iPhone/iPad correction:** fixes oversized water/foreground layers and fog clipping on WebKit, reduces image memory, and adds phone/tablet regression coverage. [iOS update and compatibility notes](docs/IOS-COMPATIBILITY.md).
+**Version 0.4.3 — Motion recovery and natural flight:** recovers lost animation callbacks, adds a beginner-friendly animation check, and gives flying creatures individual climbs, dips and banking. Retains the iPhone/iPad clipping correction. Physical iOS motion recovery still needs confirmation. [iOS update and compatibility notes](docs/IOS-COMPATIBILITY.md).
 
 **Crafted Living World:** realistic hands and materials, painted inhabitants, flowing scenery, ornate metalwork symbols, adjustable brass age and crafted information bezels. Build an animated miniature world inside your whereabouts clock. The [detailed guide](docs/WORLD-GUIDE.md) explains every new control, placement, optional name tag and moon/weather setting.
 
