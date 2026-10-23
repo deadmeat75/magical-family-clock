@@ -1,25 +1,13 @@
 # Latest visual revisions
 
-**Review branch only. No release. Published HACS remains v0.4.0.**
+**[Open the three current revisions](REVIEW-ROUND-4.md).** Review branch only; release remains held at HACS v0.4.0.
 
-129 approved; 8 revision requests awaiting approval; 4 omitted; 0 other items awaiting review.
+133 approved; 3 revision requests awaiting approval; 5 omitted.
 
-[Open the current review round](REVIEW-ROUND-3.md) for eight fresh revision proposals with stills, close-ups and motion clips. Earlier samples remain archived. Revised examples require explicit approval.
-
-| Review group | Current examples |
+| ID | Newest example |
 | --- | --- |
-| [Faces](faces.md) | [F01](items/F01-r6.png) · [F03](items/F03-r8.gif) |
-| [Materials](materials.md) | All examples approved. |
-| [Lettering and portraits](lettering-and-portraits.md) | All examples approved. |
-| [Location panels](location-panels.md) | [P04](items/P04-r4.png) |
-| [Location symbols](location-symbols.md) | All examples approved. |
-| [Seasons and time](seasons-and-time.md) | All examples approved. |
-| [Weather](weather.md) | [W09](items/W09-r5.gif) |
-| [Moon phases](moon-phases.md) | All examples approved. |
-| [Bezel](bezel.md) | [B01](items/B01-r4.png) · [B02](items/B02-r4.png) · [B03](items/B03-r4.png) |
-| [Surface effects](surface-effects.md) | All examples approved. |
-| [Landscape motion](landscape-motion.md) | [L07](items/L07-r5.gif) |
+| F01 | [Revision 7 scalloped lettering](items/F01-r7.png) · [editable SVG](concepts/F01-editable-lettering-r7.svg) |
+| W09 | [Revision 6 ice growth](items/W09-r6.gif) · [close-up](items/W09-detail-r6.gif) |
+| B01 | [Revision 5 brass readouts](items/B01-r5.png) · [top](items/B01-top-r5.png) · [bottom](items/B01-bottom-r5.png) |
 
-The approved moon surface is used in N01–N08. F02 and all existing hand shapes are approved. T01–T10 and U01–U02 are approved. K09–K12, P02–P03, W07, L08 and N01–N08 are now approved and preserved.
-
-Artwork concepts and runtime captures are identified on each review page. Character movement, final scene registration, rotating celestial layers, and attachment integration are not claimed as finished by an artwork approval.
+F03 is abandoned. L07, P04, B02 and B03 are approved; their reviewed files are preserved. B02 text color remains editable through Bezel → Readout color. [All decisions](APPROVALS.md).

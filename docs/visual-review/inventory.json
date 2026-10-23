@@ -3,10 +3,10 @@
     "id": "F01",
     "name": "Scalloped whereabouts dial",
     "category": "Faces",
-    "image": "items/F01-r6.png",
+    "image": "items/F01-r7.png",
     "status": "revised; awaiting approval",
     "kind": "editable SVG lettering proposal; full painted glyph containment checked",
-    "revision": 6,
+    "revision": 7,
     "source": "art/scalloped-face-f01-r1.png",
     "sourceRect": [
       0,
@@ -18,11 +18,11 @@
       1254,
       1254
     ],
-    "note": "Revision 6 moves the complete lettering inward and tightens its span within each painted scallop. Full glyph ink is checked against an independently extracted gold-face mask, with a margin. Editable SVG lettering remains separate from artwork; production dynamic-name mapping follows approval.",
+    "note": "Revision 7 fits a separate smooth contour to each painted scallop, then offsets the baseline inward and fits the name to its available arc. Full lettering ink remains inside the painted gold with clearance. This is a lettering proposal; production dynamic-name mapping follows approval.",
     "variants": [
       {
-        "label": "Editable scalloped lettering revision 6",
-        "image": "concepts/F01-editable-lettering-r6.svg"
+        "label": "Editable contour-fitted lettering",
+        "image": "concepts/F01-editable-lettering-r7.svg"
       }
     ]
   },
@@ -52,7 +52,7 @@
     "name": "Astronomical scene wheel",
     "category": "Faces",
     "image": "items/F03-r8.png",
-    "status": "revised; awaiting approval",
+    "status": "omitted",
     "kind": "implemented runtime picture-disc mechanism using existing painted artwork",
     "revision": 8,
     "source": "art/celestial-face-f03-r6.png",
@@ -66,7 +66,7 @@
       1254,
       1254
     ],
-    "note": "Revision 8 replaces astronomical hands and numeric dials with four labeled rotating illustrated discs: day/night, lunar phase, season and weather. Existing painted artwork is reused. GIF states are deliberately selected test inputs, not accelerated real seasonal cycles. Face finish effects are off in this mechanism study.",
+    "note": "Abandoned at the user\u2019s request. Excluded from the planned release and further review; examples are archival only.",
     "variants": [
       {
         "label": "Picture disc mechanism close-up; selected test states",
@@ -650,10 +650,10 @@
     "name": "wood",
     "category": "Location panels",
     "image": "items/P04-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4,
-    "note": "Revision 4 uses a newly generated continuous solid-wood grain surface, with irregular growth rings, pores, natural dark/light variation and rounded profile lighting inspired by the supplied wood-frame references. This is a new proposal, not an approved material."
+    "note": "Revision 4 solid-wood example approved; preserve the reviewed rendering."
   },
   {
     "id": "P05",
@@ -1327,18 +1327,18 @@
     "id": "W09",
     "name": "ice",
     "category": "Weather",
-    "image": "items/W09-r5.png",
+    "image": "items/W09-r6.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 5,
-    "animation": "items/W09-r5.gif",
+    "revision": 6,
+    "animation": "items/W09-r6.gif",
     "variants": [
       {
-        "label": "Central glass close-up, full inward growth at natural speed",
-        "animation": "items/W09-detail-r5.gif"
+        "label": "Close-up: denser fine ice, same continuous growth",
+        "animation": "items/W09-detail-r6.gif"
       }
     ],
-    "note": "Revision 5 uses fine white branching needles and small sixfold crystals on the central glass. A continuous mask exposes ice inward from the rim over 28 seconds; whole crystal silhouettes do not fade or pop in. The 32-second clip includes four seconds at the completed state."
+    "note": "Revision 6 increases rim crystal seeds from 34 to 100 and small crystals from 18 to 62 per intensity unit, with smaller asymmetric branching needles and additional angular crystal axes. Entire frost layer opacity is multiplied by 0.85. Accepted 28-second continuous inward growth and central-glass placement are retained."
   },
   {
     "id": "W10",
@@ -1426,31 +1426,41 @@
     "id": "B01",
     "name": "aged-brass information bezel",
     "category": "Bezel",
-    "image": "items/B01-r4.png",
+    "image": "items/B01-r5.png",
     "status": "revised; awaiting approval",
     "kind": "implemented runtime rendering",
-    "revision": 4,
-    "note": "Revision 4 moves upper lettering inward onto the smooth brass band. The accepted lower baseline and approved frame appearance are retained."
+    "revision": 5,
+    "note": "Revision 5 lowers both curved text lines by 1.5 drawing units (about 1.2 pixels at the 600px review size), preserving size and curvature. Approved silver and wood bezel baselines remain unchanged.",
+    "variants": [
+      {
+        "label": "Upper readout close-up",
+        "image": "items/B01-top-r5.png"
+      },
+      {
+        "label": "Lower readout close-up",
+        "image": "items/B01-bottom-r5.png"
+      }
+    ]
   },
   {
     "id": "B02",
     "name": "silver information bezel",
     "category": "Bezel",
     "image": "items/B02-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4,
-    "note": "Revision 4 moves upper lettering substantially down/inward and lower lettering slightly down/outward within the smooth silver band. Frame appearance remains approved."
+    "note": "Revision 4 approved with editable text color required. Bezel \u2192 Readout color provides the existing per-reading color control."
   },
   {
     "id": "B03",
     "name": "wood information bezel",
     "category": "Bezel",
     "image": "items/B03-r4.png",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
     "revision": 4,
-    "note": "Revision 4 applies the B02 placement correction to the wood frame: upper lettering substantially down/inward; lower lettering slightly down/outward. Frame appearance remains approved."
+    "note": "Revision 4 explicitly approved; preserve the reviewed frame and curved text placement."
   },
   {
     "id": "E01",
@@ -1761,9 +1771,9 @@
     "category": "Landscape motion",
     "image": "items/L07-r5.png",
     "animation": "items/L07-r5.gif",
-    "status": "revised; awaiting approval",
+    "status": "approved",
     "kind": "implemented runtime rendering",
-    "note": "Revision 5 restricts illumination to individually identified castle panes and slows independent flicker by 25% relative to revision 4. Full view and close-up show 12 seconds at normal speed.",
+    "note": "Revision 5 explicitly approved. Preserve full view, castle close-up and still.",
     "revision": 5,
     "variants": [
       {

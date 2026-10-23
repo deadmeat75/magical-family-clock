@@ -1,4 +1,3 @@
-import { updateAstronomical } from "./astronomical.js";
 import { attachmentMarkup } from "./attachments.js";
 import { renderBezelArtwork } from "./bezel-art.js";
 import materialTexturesURL from "./assets/panel-material-textures-r1.png";
@@ -130,7 +129,6 @@ export class MagicalFamilyClock extends HTMLElement {
     this._timer = window.setInterval(() => {
       if (!this._visible) return;
       this._updateBezel();
-      this._updateAstronomical();
       if (Date.now() - (this._lastSceneTick || 0) > 60000) {
         this._lastSceneTick = Date.now();
         this._update();
@@ -628,10 +626,6 @@ export class MagicalFamilyClock extends HTMLElement {
         JSON.stringify(wind);
     const weather = this.shadowRoot.querySelector(".weather");
     weather.classList.toggle("still", !c.weather_motion);
-    weather.style.display =
-      c.theme === "astronomical" && c.artwork !== "castle" && !c.face_image
-        ? "none"
-        : "";
     weather.setAttribute(
       "clip-path",
       c.artwork === "castle" ? "url(#castle-opening)" : "url(#dial-clip)",
@@ -710,7 +704,6 @@ export class MagicalFamilyClock extends HTMLElement {
         });
     }
     this._updateBezel();
-    this._updateAstronomical();
     let changedLegacy = false,
       maxDuration = 0;
     positions(c, states).forEach((p) => {
@@ -1125,19 +1118,6 @@ export class MagicalFamilyClock extends HTMLElement {
       ratio >= 1
         ? `${300 - (300 + margin) * ratio} ${-margin} ${(600 + margin * 2) * ratio} ${600 + margin * 2}`
         : `${-margin} ${300 - (300 + margin) / ratio} ${600 + margin * 2} ${(600 + margin * 2) / ratio}`,
-    );
-  }
-  _updateAstronomical() {
-    const c = this._config;
-    if (c?.theme !== "astronomical" || c.artwork === "castle" || c.face_image)
-      return;
-    this._astronomicalReady = updateAstronomical(
-      this.shadowRoot,
-      c,
-      c.demo ? demoStates() : this._hass?.states || {},
-      new Date(),
-      this._hass?.config?.time_zone,
-      this._hass?.config || {},
     );
   }
   _updateBezel() {

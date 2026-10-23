@@ -9,9 +9,9 @@
       "element": "aged-brass information bezel",
       "category": "Bezel",
       "decision": "revision_requested",
-      "notes": "Frame appearance remains approved. User accepts the bottom curved text placement in revision 3. Top curved text is too high and overlaps the decorative outer edge: move it inward onto the smooth brass band with clearance for the full glyph height. Preserve the bottom placement. Revised upper text requires review.",
-      "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval",
+      "notes": "Revision 4 reviewed: lower both the top and bottom curved text just a hair. Apply a very small downward visual adjustment to each line, retaining current size, curvature, approved frame appearance and clearance from ornament. This supersedes retaining the exact previously accepted lower baseline; preserve its earlier reference artifact.",
+      "revision": 5,
+      "revision_status": "revision 5 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
@@ -29,33 +29,35 @@
       "id": "B02",
       "element": "silver information bezel",
       "category": "Bezel",
-      "decision": "revision_requested",
-      "notes": "Frame appearance remains approved. In revision 3, upper curved text is much too high and overlaps the decorative edge: move it substantially down/inward onto the smooth silver band. Lower curved text is slightly too high: move it slightly down/outward within the smooth band. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.",
+      "decision": "approved",
+      "notes": "Revision 4 explicitly approved by the user, conditional on editable bezel text color in the UI. Existing Bezel \u2192 Readout color picker controls each reading independently; renderer uses item.color.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
           "example": "items/B02-r2.png",
           "sha256": "249c3bb741d774b89d15896fae4897703ce4c7234c0e764379e01cf4726026a1"
         }
-      ]
+      ],
+      "approved_example": "items/B02-r4.png",
+      "approved_example_sha256": "20ed36d59ad885165e9899ed28e34f629a8d4a4b5e2dd66dd04ab7a4c2da0fea"
     },
     {
       "id": "B03",
       "element": "wood information bezel",
       "category": "Bezel",
-      "decision": "revision_requested",
-      "notes": "Frame appearance remains approved. User reports the same text placement issue as B02 in revision 3: upper curved text is much too high and must move substantially down/inward onto the smooth band; lower curved text is slightly too high and must move slightly down/outward. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.",
+      "decision": "approved",
+      "notes": "Revision 4 explicitly approved by the user. Reviewed frame and curved text placement are preserved.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval",
       "approved_components": [
         {
           "component": "frame appearance",
           "example": "items/B03-r2.png",
           "sha256": "f3ff0d74eb696f68ccb872f93f0657be5bb494c3758825bf3aa69a8892df422a"
         }
-      ]
+      ],
+      "approved_example": "items/B03-r4.png",
+      "approved_example_sha256": "b65d510234ba71b1b0e48833c7246a098ca01bd275620b29bbc3f4388f5d7810"
     },
     {
       "id": "C01",
@@ -270,9 +272,9 @@
       "element": "Scalloped whereabouts dial",
       "category": "Faces",
       "decision": "revision_requested",
-      "notes": "Lettering alignment improved but remains unapproved. Fit the flowing letters to each scalloped edge.",
-      "revision": 6,
-      "revision_status": "revision 6 prepared; awaiting individual approval"
+      "notes": "User reviewed revision 6: closer, but still not perfectly aligned. Refine the individual lettering curves, offsets and orientation to follow each painted scalloped edge more accurately while keeping every glyph fully inside the gold face with clearance. Revision 6 is not approved.",
+      "revision": 7,
+      "revision_status": "revision 7 prepared; awaiting individual approval"
     },
     {
       "id": "F02",
@@ -289,10 +291,9 @@
       "id": "F03",
       "element": "Astronomical scene wheel",
       "category": "Faces",
-      "decision": "revision_requested",
-      "notes": "Use functional rotating illustrated discs showing information such as lunar phase, time of day, season and weather. Their meanings must be clear. No astronomical hands, numeric dials or scales; avoid arbitrary decorative rotation. Follow the antique magical-clock aesthetic. Revision 8 remains awaiting review.",
-      "revision": 8,
-      "revision_status": "revision 8 prepared; awaiting individual approval"
+      "decision": "omitted",
+      "notes": "User explicitly requested that F03 be abandoned. Exclude the astronomical/picture-disc face from the planned release and further review. Existing studies remain archived for reference.",
+      "revision": 8
     },
     {
       "id": "F04",
@@ -781,10 +782,23 @@
       "id": "L07",
       "element": "Window lights",
       "category": "Landscape motion",
-      "decision": "revision_requested",
-      "notes": "Slow the flicker by about 25%. Illuminate actual castle window panes only; exclude all tree foliage.",
+      "decision": "approved",
+      "notes": "Revision 5 explicitly approved by the user: independent castle window lighting, slowed by 25% relative to revision 4, restricted to identified panes and excluding trees.",
       "revision": 5,
-      "revision_status": "revision 5 prepared; awaiting individual approval"
+      "approved_example": "items/L07-r5.gif",
+      "approved_example_sha256": "d4678edb5ce160c8f2b8df8b6cdc34ebe86f25519401ca9866761ce08932fb67",
+      "approved_components": [
+        {
+          "component": "window-lighting still",
+          "example": "items/L07-r5.png",
+          "sha256": "17a45bd97d6073ec10d4e3607f481f2b102351e8d510373cdd7d268a833585ff"
+        },
+        {
+          "component": "Castle window close-up, 12 seconds at natural speed",
+          "example": "items/L07-detail-r5.gif",
+          "sha256": "a0910181234543f8e2954f90e5e233953462ad97ca7d110df8e132aea9926def"
+        }
+      ]
     },
     {
       "id": "L08",
@@ -1052,10 +1066,11 @@
       "id": "P04",
       "element": "wood",
       "category": "Location panels",
-      "decision": "revision_requested",
-      "notes": "Revision 3 rejected as laminate-like. User supplied two real wooden circular frame references: use pronounced irregular flowing grain with natural variation, rounded solid-wood profiles, warm brown or golden tones, and believable polished highlights and depth. Avoid tiled grain, flat printed veneer, and uniform laminate appearance. Revised example requires individual approval.",
+      "decision": "approved",
+      "notes": "Revision 4 solid-wood example explicitly approved by the user.",
       "revision": 4,
-      "revision_status": "revision 4 prepared; awaiting individual approval"
+      "approved_example": "items/P04-r4.png",
+      "approved_example_sha256": "727009ceb34eb0f5df266f41cfe4923a03da945eadd311b530254470758bf3d4"
     },
     {
       "id": "P05",
@@ -1435,9 +1450,16 @@
       "element": "ice",
       "category": "Weather",
       "decision": "revision_requested",
-      "notes": "Ice belongs on the central glass, never the outer location ring. Follow the supplied window-frost photos: fine white feathery/needle crystals rather than leaves, growing continuously from the circle inward without whole-shape pop-in. A correctly placed static ice treatment is also acceptable. Revision 5 remains awaiting review.",
-      "revision": 5,
-      "revision_status": "revision 5 prepared; awaiting individual approval"
+      "notes": "Revision 5 reviewed: growth behavior is good and should be preserved. Appearance still resembles leaves. Increase fine ice-crystal density and reduce opacity by 15% relative to revision 5 (multiply existing opacity by 0.85), while keeping the continuous inward growth and central-glass placement. Overall W09 appearance remains unapproved.",
+      "revision": 6,
+      "revision_status": "revision 6 prepared; awaiting individual approval",
+      "approved_components": [
+        {
+          "component": "continuous inward growth behavior",
+          "example": "items/W09-r5.gif",
+          "sha256": "8481a3c7826a26f69a406b7ef093360880ae157520731a496a0440c3b9f485ff"
+        }
+      ]
     },
     {
       "id": "W10",

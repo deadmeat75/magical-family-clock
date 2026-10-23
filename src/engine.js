@@ -7,7 +7,6 @@ export const THEMES = [
   "brass-clockwork",
   "living-magical",
   "whimsical-workshop",
-  "astronomical",
 ];
 export const clone = (v) => JSON.parse(JSON.stringify(v));
 export const uid = () =>
@@ -133,6 +132,8 @@ export function normalize(input) {
   const c = Object.assign(defaults(), clone(input));
   c.type = "custom:magical-family-clock-card";
   c.version = 1;
+  // Migrate the abandoned review-only face without dropping people or sensors.
+  if (c.theme === "astronomical") c.theme = "living-magical";
   if (!THEMES.includes(c.theme)) throw Error("Select a supported theme.");
   if (!Array.isArray(c.members) || !Array.isArray(c.locations))
     throw Error("People and locations must be lists.");

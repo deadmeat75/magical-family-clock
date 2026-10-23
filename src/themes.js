@@ -1,15 +1,8 @@
-import { astronomicalFace } from "./astronomical.js";
 import { gearTrain } from "./motion.js";
 import whimsicalURL from "./assets/whimsical-workshop-dial.png";
 import agedBrassURL from "./assets/aged-brass-dial.png";
 // Original vector artwork; no remote fonts, images, or runtime libraries.
 export const palettes = {
-  astronomical: {
-    paper: "#e2d0a5",
-    ink: "#402d1b",
-    metal: "#bb9554",
-    rim: "#33271b",
-  },
   "whimsical-workshop": {
     paper: "#baa16c",
     ink: "#392818",
@@ -50,7 +43,6 @@ export function metalDefs() {
   return `<linearGradient id="aged-brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35291a"/><stop offset=".18" stop-color="#b88a43"/><stop offset=".32" stop-color="#f2d18a"/><stop offset=".48" stop-color="#785324"/><stop offset=".64" stop-color="#cfaa61"/><stop offset=".82" stop-color="#5e4829"/><stop offset="1" stop-color="#d0a45c"/></linearGradient><radialGradient id="aged-dial"><stop stop-color="#b39657"/><stop offset=".7" stop-color="#87703e"/><stop offset="1" stop-color="#342d20"/></radialGradient><filter id="metal-grain"><feTurbulence type="fractalNoise" baseFrequency=".9 .025" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".09"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>`;
 }
 export function face(theme) {
-  if (theme === "astronomical") return astronomicalFace();
   if (theme === "whimsical-workshop")
     return `<image class="material-art" href="${whimsicalURL}" x="12" y="12" width="576" height="576"/>`;
   let marks = "";

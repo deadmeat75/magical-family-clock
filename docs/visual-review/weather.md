@@ -1,127 +1,109 @@
 # Weather: individual review
 
-[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
+[Current review round](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-W01–W08 and W10 are approved. W09 revision 5 shows fine needle ice growing continuously inward across the central glass. Open the GIF to judge motion; the PNG shows completed growth.
+W01–W08 and W10 are approved. W09 growth is accepted; revision 6 appearance awaits approval.
 
 ## W01 · clear
 
 **Approved.**
 
-[![W01 clear](items/W01-r3.png)](items/W01-r3.png)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W01](items/W01-r3.png)](items/W01-r3.png)
 
 ## W02 · clouds
 
 **Approved.**
 
-[![W02 clouds](items/W02-r3.gif)](items/W02-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W02](items/W02-r3.gif)](items/W02-r3.gif)
 
-[Still image](items/W02-r3.png)
+[Still](items/W02-r3.png)
 
 ## W03 · light-rain
 
 **Approved.**
 
-[![W03 light-rain](items/W03-r3.gif)](items/W03-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W03](items/W03-r3.gif)](items/W03-r3.gif)
 
-[Still image](items/W03-r3.png)
+[Still](items/W03-r3.png)
 
 ## W04 · rain
 
 **Approved.**
 
-[![W04 rain](items/W04-r3.gif)](items/W04-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W04](items/W04-r3.gif)](items/W04-r3.gif)
 
-[Still image](items/W04-r3.png)
+[Still](items/W04-r3.png)
 
 ## W05 · snow
 
 **Approved.**
 
-[![W05 snow](items/W05-r3.gif)](items/W05-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W05](items/W05-r3.gif)](items/W05-r3.gif)
 
-[Still image](items/W05-r3.png)
+[Still](items/W05-r3.png)
 
 ## W06 · sleet
 
 **Approved.**
 
-[![W06 sleet](items/W06-r3.gif)](items/W06-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W06](items/W06-r3.gif)](items/W06-r3.gif)
 
-[Still image](items/W06-r3.png)
+[Still](items/W06-r3.png)
 
 ## W07 · wind
 
 **Approved.**
 
-[![W07 wind](items/W07-r4.gif)](items/W07-r4.gif)
-
 Revision 4 explicitly approved by the user.
 
-Example: implemented runtime rendering.
+[![W07](items/W07-r4.gif)](items/W07-r4.gif)
 
-[Still image](items/W07-r4.png)
+[Still](items/W07-r4.png)
 
 ## W08 · fog
 
 **Approved.**
 
-[![W08 fog](items/W08-r3.gif)](items/W08-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W08](items/W08-r3.gif)](items/W08-r3.gif)
 
-[Still image](items/W08-r3.png)
+[Still](items/W08-r3.png)
 
 ## W09 · ice
 
-**Revision 5 · awaiting approval.**
+**Revision 6 · awaiting approval.**
 
-[![W09 ice](items/W09-r5.gif)](items/W09-r5.gif)
+Revision 5 reviewed: growth behavior is good and should be preserved. Appearance still resembles leaves. Increase fine ice-crystal density and reduce opacity by 15% relative to revision 5 (multiply existing opacity by 0.85), while keeping the continuous inward growth and central-glass placement. Overall W09 appearance remains unapproved.
 
-Ice belongs on the central glass, never the outer location ring. Follow the supplied window-frost photos: fine white feathery/needle crystals rather than leaves, growing continuously from the circle inward without whole-shape pop-in. A correctly placed static ice treatment is also acceptable. Revision 5 remains awaiting review.
+[![W09](items/W09-r6.gif)](items/W09-r6.gif)
 
-Example: implemented runtime rendering.
+[Close-up: denser fine ice, same continuous growth](items/W09-detail-r6.gif)
 
-[Central glass close-up, full inward growth at natural speed](items/W09-detail-r5.gif)
+[Still](items/W09-r6.png)
 
-[Still image](items/W09-r5.png)
+Revision 6 increases rim crystal seeds from 34 to 100 and small crystals from 18 to 62 per intensity unit, with smaller asymmetric branching needles and additional angular crystal axes. Entire frost layer opacity is multiplied by 0.85. Accepted 28-second continuous inward growth and central-glass placement are retained.
 
 ## W10 · lightning
 
 **Approved.**
 
-[![W10 lightning](items/W10-r3.gif)](items/W10-r3.gif)
-
 Explicitly approved in user review.
 
-Example: implemented runtime rendering.
+[![W10](items/W10-r3.gif)](items/W10-r3.gif)
 
-[Still image](items/W10-r3.png)
+[Still](items/W10-r3.png)

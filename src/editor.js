@@ -166,10 +166,6 @@ export class ClockEditor extends HTMLElement {
       if (value === obj[key]) return;
       this.change(() => {
         obj[key] = value;
-        if (key === "theme" && value === "astronomical") {
-          obj.artwork = "vector";
-          obj.face_image = "";
-        }
       });
     };
     if (!["checkbox", "select"].includes(type)) e.oninput = e.onchange;

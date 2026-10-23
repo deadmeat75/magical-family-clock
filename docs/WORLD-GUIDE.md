@@ -177,7 +177,7 @@ The [latest visual review index](visual-review/LATEST-REVISIONS.md) is the place
 1. In **Appearance**, select a **Weather effect** to inspect it. Start with intensity **1**. Return to **Auto** to follow your existing weather entity.
 2. Enable **Weather animation** to see falling rain, snow, sleet, drifting fog and wind-blown leaves. General reduced motion and your device's accessibility preference can pause decorative movement.
 3. **Clear** gives a cloud-free sky. It removes both the photograph's painted clouds and the moving cloud layer. **Moving clouds** still controls cloud animation for other weather conditions.
-4. **Ice** reveals fine white branching needles continuously inward from the central glass rim over 28 seconds, then holds the completed frost. A single growth front prevents whole crystals popping in. It is clipped away from the outer destination ring. Reduced motion shows the completed pattern without growth.
+4. **Ice** reveals fine white branching needles continuously inward from the central glass rim over 28 seconds, then holds the completed frost. A single growth front prevents whole crystals popping in. It is clipped away from the outer destination ring. Reduced motion shows the completed pattern without growth. Revision 6 adds denser, finer angular crystals and reduces the frost layer opacity by 15% while retaining that growth behavior.
 5. **Lightning** combines distant strikes behind clouds with nearer strikes, different positions, branching channels and brief surrounding illumination. Weather can keep moving while castle scenery is paused.
 6. **Wind** moves loose leaves across the opening and increases canopy gusts. **Fog** drifts in layers across the landscape; it does not darken the entire clock.
 
@@ -193,7 +193,7 @@ The approved lunar surface stays the same across every phase. Lighting determine
 
 In **Bezel**, select wood, aged brass or silver for the new crafted rim. Wood has carved ornament and continuous grain around the ring. The metal rims have dimensional chased ornament and quiet inset bands for the information. **Width** changes the ring thickness while retaining the artwork; it does not repeat square texture tiles.
 
-Readings follow curved paths on the smooth information band. Upper baselines are inset to clear the decorative outer edge; silver and wood lower baselines sit slightly farther outward. Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Saving the dashboard stores the bezel choices with that clock.
+Readings follow curved paths on the smooth information band. Upper baselines are inset to clear the decorative outer edge; silver and wood lower baselines sit slightly farther outward. B01 revision 5 lowers both brass text lines a little further; the approved silver/wood placements are preserved. Add a few readings first, give each its own angle, and choose a readable font, size and color. Existing sensors, time, date, labels and fallback text remain editable. A wider bezel gives longer readouts more room. Use **Bezel → Readout color** inside each reading to change its text color independently; this does not recolor the bezel material or other readings. Saving the dashboard stores the bezel choices with that clock.
 
 ## Review draft: understand the six surface effects
 
@@ -212,18 +212,9 @@ The revised E01–E06 sheets show **effect off** beside **effect at 85%**, with 
 
 Approved face, hand, material, symbol and seasonal artwork remains preserved in the decision record. Some approved art still needs final runtime registration, pivots, animation layers or material mapping. The gallery identifies artwork studies separately from implemented runtime examples; an artwork approval alone does not publish a release.
 
-## Review draft: functional picture-disc face (F03)
+## Abandoned face: F03
 
-This face is available in the **unreleased review branch**. Published HACS remains v0.4.0. Update through HACS when an approved release becomes available.
-
-1. Open the card editor and choose **Clock theme → astronomical**. This selects vector artwork and clears a custom face image so the functional face is visible.
-2. Keep existing people, sensors and locations. Family hands still show whereabouts. Four separate illustrated discs supply additional information through fixed windows; these astronomical windows have no hands or numbered scales.
-3. **Day / night** shows dawn, day, dusk or night using the configured sun data or local solar calculation. Without solar data, the Home Assistant local hour supplies a civil-time fallback: dawn 06:00–08:00, day 08:00–18:00, dusk 18:00–20:00, night otherwise. These fallback hours are not measured sunrise/sunset. UTC is used when no Home Assistant time zone is provided.
-4. **Moon phase** uses **Living world → Moon phase**. Choose the existing lunar sensor, a manual phase, or the calculated source. Named phases, cycle fractions, percentages of a cycle and lunar-age days retain their existing meanings. Illuminated percentage alone does not distinguish waxing from waning. Choose **Hide** or **Calculated** deliberately for unavailable sensor data; Hide shows an unavailable indication.
-5. **Season** shows the selected seasonal landscape. **Weather** shows the current configured condition through a painted scene and appropriate weather marks. Existing automatic sources and manual preview overrides apply. Set overrides back to automatic to resume live readings.
-6. A changed reading rotates the appropriate image carrier to its next picture over 1.8 seconds. With reduced motion or paused scenery, the reading changes immediately instead. Sensor updates remain live. Discs do not spin freely or accelerate natural seasonal/lunar cycles. Family whereabouts hands remain independent of the image carriers.
-
-[Current F03 stills and mechanism clip](visual-review/REVIEW-ROUND-3.md) use deliberately selected test states. Their rapid succession demonstrates input changes, not real time. This revised appearance is awaiting approval.
+F03 has been abandoned at the user’s request. It is no longer a selectable theme and its picture-disc artwork and code are excluded from the runtime bundle. Existing review-only configurations using `theme: astronomical` fall back to `living-magical`, retaining people, sensors and other settings. Archived F03 examples are not release candidates. The separate moon-phase feature remains available on supported clocks.
 
 ## Review draft: physical name attachments (K09–K12)
 

@@ -4,7 +4,7 @@
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-L01–L06 and L08 are approved. L07 revision 5 slows the flicker by 25% and restricts lighting to identified castle panes. A supplemental L06 clip shows four actual seeded passages at natural speed, omitting quiet gaps only. [Current review round](REVIEW-ROUND-3.md).
+L01–L08 are approved. Approved L07 revision 5 slows the flicker by 25% and restricts lighting to identified castle panes. A supplemental L06 clip shows four actual seeded passages at natural speed, omitting quiet gaps only. [Current review round](REVIEW-ROUND-3.md).
 
 ## L01 · Cloud drift
 
@@ -126,7 +126,7 @@ Example: implemented runtime animation; normal-speed frames.
 
 ## L07 · Window lights
 
-**Revision 5 · awaiting approval.**
+**Approved · revision 5.**
 
 [![L07 Window lights](items/L07-r5.gif)](items/L07-r5.gif)
 
@@ -137,6 +137,8 @@ Example: implemented runtime rendering.
 [Castle window close-up, 12 seconds at natural speed](items/L07-detail-r5.gif)
 
 [Still image](items/L07-r5.png)
+
+Revision 5 explicitly approved by the user; full view and close-up are preserved.
 
 ## L08 · Fireflies
 

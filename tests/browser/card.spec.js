@@ -253,8 +253,8 @@ test("all themes render all four coincident hands and move independently", async
   await page.goto("/");
   await page.waitForSelector("section magical-family-clock-card");
   const cards = page.locator("section magical-family-clock-card");
-  await expect(cards).toHaveCount(5);
-  for (let i = 0; i < 5; i++) {
+  await expect(cards).toHaveCount(4);
+  for (let i = 0; i < 4; i++) {
     await expect(cards.nth(i).locator(".hand")).toHaveCount(4);
     await expect(cards.nth(i).locator(".empty")).toBeHidden();
     const transforms = await cards

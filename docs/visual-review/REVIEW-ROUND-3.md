@@ -1,8 +1,20 @@
+> Archived review round. [Open the three newest revisions](REVIEW-ROUND-4.md).
+
+> **B03 update:** Revision 4 approved and preserved. Remaining revisions: F01, W09 and B01.
+
+> **B02 update:** Revision 4 approved with editable text color. The Bezel tab provides a Readout color picker for each reading.
+
+> **P04 update:** Revision 4 solid wood is approved and preserved.
+
+> **L07 update:** Revision 5 is approved; its motion examples are preserved.
+
+> **Review update:** F03 has been abandoned and is excluded from the planned release. F01 revision 6 needs further alignment. The F03 examples below are archived; they no longer require review.
+
 # Eight revised examples for review
 
 **Review branch only. Release held. Published HACS remains v0.4.0.** These are the current examples; older rounds remain archived. There is no need to review the already approved examples again.
 
-129 items are approved, eight require review, and C13–C16 remain omitted. N01–N08 revision 4, P02–P03 revision 3, K09–K12 revision 2, W07 revision 4 and L08 revision 4 are recorded as approved. Approved source files are protected by SHA-256 checks.
+133 items are approved, three require revision or review, and F03 plus C13–C16 are omitted. N01–N08 revision 4, P02–P03 revision 3, K09–K12 revision 2, W07 revision 4 and L08 revision 4 are recorded as approved. Approved source files are protected by SHA-256 checks.
 
 | ID | Current example | What to inspect |
 | --- | --- | --- |

@@ -486,3 +486,55 @@ test("text-color picker updates hand lettering and portrait initials in the live
     "#fff5dc",
   );
 });
+
+test("bezel readout text colors can be edited independently in the GUI", async ({
+  page,
+}) => {
+  await boot(page, true);
+  const editor = page.locator("magical-family-clock-card-editor");
+  await editor.evaluate((e) =>
+    e.setConfig({
+      ...e.config,
+      bezel: {
+        enabled: true,
+        width: 64,
+        material: "silver",
+        items: [
+          {
+            id: "top",
+            kind: "text",
+            text: "CLEAR SKIES",
+            angle: -90,
+            color: "#eeeecc",
+          },
+          {
+            id: "bottom",
+            kind: "text",
+            text: "HOME",
+            angle: 90,
+            color: "#ddeecc",
+          },
+        ],
+      },
+    }),
+  );
+  await editor.getByRole("button", { name: "Bezel", exact: true }).click();
+  await editor
+    .getByLabel("Readout color", { exact: true })
+    .first()
+    .fill("#3873c4");
+  expect(await editor.evaluate((e) => e.config.bezel.items[0].color)).toBe(
+    "#3873c4",
+  );
+  expect(await editor.evaluate((e) => e.config.bezel.items[1].color)).toBe(
+    "#ddeecc",
+  );
+  await expect(editor.locator(".bezel-value").first()).toHaveAttribute(
+    "fill",
+    "#3873c4",
+  );
+  await expect(editor.locator(".bezel-value").nth(1)).toHaveAttribute(
+    "fill",
+    "#ddeecc",
+  );
+});

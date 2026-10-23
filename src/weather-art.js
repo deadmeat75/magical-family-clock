@@ -12,14 +12,14 @@ export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
   // All crystal geometry already exists on the glass. A continuous inward
   // growth front reveals the attached branches in spatial order, never by
   // fading complete fern/leaf silhouettes into view.
-  for (let n = 0; n < Math.round(34 * intensity); n++) {
+  for (let n = 0; n < Math.round(100 * intensity); n++) {
     const a = n * 2.399 + rand() * 0.13,
       r = radius - 1 - rand() * 3;
     const x = cx + Math.cos(a) * r,
       y = cy + Math.sin(a) * r;
     const direction = a + Math.PI + (rand() - 0.5) * 0.38,
-      length = 28 + rand() * 40,
-      bend = (rand() - 0.5) * 11;
+      length = 18 + rand() * 34,
+      bend = (rand() - 0.5) * 3;
     const point = (u, v) => {
       v += Math.sin((u / length) * Math.PI) * bend;
       return [
@@ -34,8 +34,8 @@ export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
     for (let j = 1; j < 18; j++)
       for (const side of [-1, 1]) {
         const u = (length * j) / 20,
-          branch = (1 - j / 21) * length * (0.17 + rand() * 0.13),
-          slant = 0.48 + rand() * 0.3;
+          branch = length * (0.045 + rand() * 0.22) * (1 - j / 25),
+          slant = 0.55 + rand() * 0.055;
         d += "M" + point(u, 0) + "L" + point(u + branch * slant, side * branch);
         for (let k = 1; k <= 5; k++) {
           const t = k / 6,
@@ -50,14 +50,34 @@ export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
             );
         }
       }
+    // Additional crystal axes form angular dendrite fans rather than a single
+    // tapered leaf outline. All axes stay attached to the same rim seed.
+    for (const side of [-1, 1]) {
+      const axis = length * (0.45 + rand() * 0.25);
+      d += "M" + point(0, 0) + "L" + point(axis * 0.5, side * axis * 0.866);
+      for (let k = 1; k < 8; k++) {
+        const u = (axis * k) / 8,
+          twig = axis * (0.08 + rand() * 0.12);
+        d +=
+          "M" +
+          point(u * 0.5, side * u * 0.866) +
+          "L" +
+          point(u * 0.5 + twig, side * u * 0.866);
+        d +=
+          "M" +
+          point(u * 0.5, side * u * 0.866) +
+          "L" +
+          point(u * 0.5 - twig * 0.5, side * (u + twig) * 0.866);
+      }
+    }
     paths.push(
-      `<path d="${d}" stroke-width="${(0.25 + rand() * 0.2).toFixed(2)}" opacity="${(0.68 + rand() * 0.3).toFixed(2)}"/>`,
+      `<path d="${d}" stroke-width="${(0.2 + rand() * 0.16).toFixed(2)}" opacity="${(0.68 + rand() * 0.3).toFixed(2)}"/>`,
     );
   }
   // Six-fold needle crystals add the angular anatomy of real window ice.
-  for (let n = 0; n < 18 * intensity; n++) {
+  for (let n = 0; n < 62 * intensity; n++) {
     const a = rand() * Math.PI * 2,
-      size = 3 + rand() * 7,
+      size = 2 + rand() * 5,
       r = radius - size - 2 - rand() * 30,
       x = cx + Math.cos(a) * r,
       y = cy + Math.sin(a) * r;
@@ -77,7 +97,7 @@ export function frostMarkup(intensity, opening = { x: 300, y: 282, r: 180 }) {
     }
     paths.push(`<path d="${d}" stroke-width=".19" opacity=".7"/>`);
   }
-  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="${cx}" cy="${cy}" r="${radius}"><stop offset=".65" stop-color="#e4f1f4" stop-opacity="0"/><stop offset="1" stop-color="#e4f1f4" stop-opacity=".18"/></radialGradient><filter id="frost-front-softness" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.15"/></filter><mask id="frost-growth-mask" maskUnits="userSpaceOnUse" x="${cx - radius}" y="${cy - radius}" width="${radius * 2}" height="${radius * 2}"><circle cx="${cx}" cy="${cy}" r="${radius + 2}" fill="white"/><circle class="frost-growth-front" cx="${cx}" cy="${cy}" r="${radius + 2}" fill="black" filter="url(#frost-front-softness)" style="transform-origin:${cx}px ${cy}px"/></mask></defs><g class="watchglass-frost" mask="url(#frost-growth-mask)"><circle class="frost-film" cx="${cx}" cy="${cy}" r="${radius}" fill="url(#frost-glass-edge)"/><g class="frost-needles" fill="none" stroke="#edfaff" stroke-linecap="round">${paths.join("")}</g></g>`;
+  return `<defs><radialGradient id="frost-glass-edge" gradientUnits="userSpaceOnUse" cx="${cx}" cy="${cy}" r="${radius}"><stop offset=".65" stop-color="#e4f1f4" stop-opacity="0"/><stop offset="1" stop-color="#e4f1f4" stop-opacity=".18"/></radialGradient><filter id="frost-front-softness" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.15"/></filter><mask id="frost-growth-mask" maskUnits="userSpaceOnUse" x="${cx - radius}" y="${cy - radius}" width="${radius * 2}" height="${radius * 2}"><circle cx="${cx}" cy="${cy}" r="${radius + 2}" fill="white"/><circle class="frost-growth-front" cx="${cx}" cy="${cy}" r="${radius + 2}" fill="black" filter="url(#frost-front-softness)" style="transform-origin:${cx}px ${cy}px"/></mask></defs><g class="watchglass-frost" opacity=".85" mask="url(#frost-growth-mask)"><circle class="frost-film" cx="${cx}" cy="${cy}" r="${radius}" fill="url(#frost-glass-edge)"/><g class="frost-needles" fill="none" stroke="#edfaff" stroke-linecap="round">${paths.join("")}</g></g>`;
 }
 export function lightningMarkup(layer = "near") {
   let out = `<defs><filter id="lightning-halo-${layer}" x="-50%" y="-25%" width="200%" height="150%"><feGaussianBlur stdDeviation="1.5"/></filter></defs>`;

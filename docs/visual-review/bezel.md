@@ -1,37 +1,37 @@
 # Bezel: individual review
 
-[Latest revisions](LATEST-REVISIONS.md) · [Complete gallery](README.md)
+[Current review round](REVIEW-ROUND-4.md) · [Complete gallery](README.md)
 
 **Release held. Explicit approvals and omissions are preserved.**
 
-All three frame appearances are approved. B01 lower text placement is also accepted. Revision 4 lowers the upper readouts on B01–B03 and slightly lowers the bottom text on B02–B03. Text placement remains awaiting review.
+All three frame appearances are approved. B02 and B03 revision 4 are approved, with editable text color available. Only B01 revision 5 text placement remains awaiting review.
 
 ## B01 · aged-brass information bezel
 
-**Revision 4 · awaiting approval.**
+**Revision 5 · awaiting approval.**
 
-[![B01 aged-brass information bezel](items/B01-r4.png)](items/B01-r4.png)
+Revision 4 reviewed: lower both the top and bottom curved text just a hair. Apply a very small downward visual adjustment to each line, retaining current size, curvature, approved frame appearance and clearance from ornament. This supersedes retaining the exact previously accepted lower baseline; preserve its earlier reference artifact.
 
-Frame appearance remains approved. User accepts the bottom curved text placement in revision 3. Top curved text is too high and overlaps the decorative outer edge: move it inward onto the smooth brass band with clearance for the full glyph height. Preserve the bottom placement. Revised upper text requires review.
+[![B01](items/B01-r5.png)](items/B01-r5.png)
 
-Example: implemented runtime rendering.
+[Upper readout close-up](items/B01-top-r5.png)
+
+[Lower readout close-up](items/B01-bottom-r5.png)
+
+Revision 5 lowers both curved text lines by 1.5 drawing units (about 1.2 pixels at the 600px review size), preserving size and curvature. Approved silver and wood bezel baselines remain unchanged.
 
 ## B02 · silver information bezel
 
-**Revision 4 · awaiting approval.**
+**Approved.**
 
-[![B02 silver information bezel](items/B02-r4.png)](items/B02-r4.png)
+Revision 4 explicitly approved by the user, conditional on editable bezel text color in the UI. Existing Bezel → Readout color picker controls each reading independently; renderer uses item.color.
 
-Frame appearance remains approved. In revision 3, upper curved text is much too high and overlaps the decorative edge: move it substantially down/inward onto the smooth silver band. Lower curved text is slightly too high: move it slightly down/outward within the smooth band. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.
-
-Example: implemented runtime rendering.
+[![B02](items/B02-r4.png)](items/B02-r4.png)
 
 ## B03 · wood information bezel
 
-**Revision 4 · awaiting approval.**
+**Approved.**
 
-[![B03 wood information bezel](items/B03-r4.png)](items/B03-r4.png)
+Revision 4 explicitly approved by the user. Reviewed frame and curved text placement are preserved.
 
-Frame appearance remains approved. User reports the same text placement issue as B02 in revision 3: upper curved text is much too high and must move substantially down/inward onto the smooth band; lower curved text is slightly too high and must move slightly down/outward. Keep complete glyphs clear of both decorative borders. Revised text placement requires review.
-
-Example: implemented runtime rendering.
+[![B03](items/B03-r4.png)](items/B03-r4.png)

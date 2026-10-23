@@ -8,7 +8,7 @@ async function card(page, extra = {}) {
         ...c._baseConfig,
         demo: false,
         artwork: "vector",
-        theme: "astronomical",
+        theme: "brass-clockwork",
         show_branding: false,
         background_transition: 0,
         ...extra,
@@ -17,60 +17,25 @@ async function card(page, extra = {}) {
   );
   return c;
 }
-test("illustrated discs respond to sensors without astronomical hands or scales", async ({
+test("abandoned F03 is excluded while existing review configs retain people", async ({
   page,
 }) => {
-  const c = await card(page, {
-    members: [],
-    weather_effect: "auto",
-    weather_entity: "weather.home",
-    sun_entity: "sun.sun",
-    season_override: "summer",
-    world: {
-      moon: {
-        enabled: true,
-        source: "entity",
-        entity: "sensor.moon",
-        fallback: "hide",
-      },
-    },
-    scene_motion: false,
+  const c = await card(page);
+  const result = await c.evaluate(async (c) => {
+    const { THEMES, normalize } = await import("/src/engine.js");
+    const old = { ...c._config, theme: "astronomical" };
+    const next = normalize(old);
+    return {
+      themes: THEMES,
+      theme: next.theme,
+      members: next.members.length,
+      original: old.members.length,
+    };
   });
-  const update = (phase) =>
-    c.evaluate(
-      (c, phase) =>
-        (c.hass = {
-          states: {
-            "sensor.moon": { state: phase },
-            "sun.sun": { state: "below_horizon" },
-            "weather.home": { state: "snowy" },
-          },
-          config: { time_zone: "America/Los_Angeles" },
-        }),
-      phase,
-    );
-  await update("first_quarter");
-  await expect(c.locator('[data-moon-cell="2"]')).toHaveAttribute(
-    "data-lunar-phase",
-    "0.25",
-  );
-  await expect(c.locator('[data-reading="moon"]')).toHaveText("FIRST QUARTER");
-  await expect(c.locator('[data-reading="period"]')).toHaveText("NIGHT");
-  await expect(c.locator('[data-reading="season"]')).toHaveText("SUMMER");
-  await expect(c.locator('[data-reading="weather"]')).toHaveText("SNOW");
-  await expect(c.locator(".astronomical-disc")).toHaveCount(4);
-  await expect(
-    c.locator(".astro-clock,.astro-hour,.astro-minute,[data-scale]"),
-  ).toHaveCount(0);
-  await update("waning_crescent");
-  const before = await c
-    .locator('[data-rotor="moon"]')
-    .getAttribute("data-index");
-  await update("new_moon");
-  const after = await c
-    .locator('[data-rotor="moon"]')
-    .getAttribute("data-index");
-  expect(Number(after) - Number(before)).toBe(1);
+  expect(result.themes).not.toContain("astronomical");
+  expect(result.theme).toBe("living-magical");
+  expect(result.members).toBe(result.original);
+  await expect(c.locator(".astronomical-face")).toHaveCount(0);
 });
 test("attachment lettering preserves blank labels and responds to alignment and font controls", async ({
   page,

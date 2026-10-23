@@ -59,3 +59,19 @@ The approved bitmap and GIF examples have SHA-256 hashes in the decision record 
 [Eight revised examples](REVIEW-ROUND-3.md) supersede previous proposals for F01, F03, L07, W09, P04 and B01–B03. F01 now checks full glyph ink inside the painted scallops. F03 is a working illustrated-disc mechanism. L07 is 25% slower than revision 4 and limited to identified panes. W09 uses fine needles revealed by one continuous inward growth front. P04 has a new irregular solid-wood surface and rounded lighting. Upper bezel text is lower on all three rims; B01 keeps the accepted lower baseline and B02/B03 lower their bottom baseline slightly. Approved artwork and examples remain unchanged.
 
 The additional L06 context clip presents four real seeded passages with waiting gaps removed. It does not alter the approved motion behavior. Earlier iteration examples remain archived in the previous review rounds; the current decision record is authoritative.
+
+## F03 abandoned
+
+The user has explicitly abandoned F03. Exclude its astronomical/picture-disc face from the planned release and further review. Existing source and studies are archival until runtime removal/integration cleanup; this decision is not a release authorization. Remaining visual work: F01, W09 and B01.
+
+## W09 follow-up
+
+Revision 5 inward growth behavior is accepted and preserved. The ice still looks leaf-like: increase fine crystal density and lower existing opacity by 15% (factor 0.85). Appearance remains unapproved.
+
+## B01 follow-up
+
+Revision 4 needs both the top and bottom text lowered just a hair. Keep current size and curvature. This supersedes keeping the exact earlier accepted bottom baseline; the previously accepted reference remains preserved.
+
+## Current review: round 4
+
+[Three revised examples](REVIEW-ROUND-4.md) supersede earlier F01, W09 and B01 studies. F01 revision 7 fits smooth contours per scallop, W09 revision 6 increases fine crystal density at 85% of the previous opacity while preserving growth, and B01 revision 5 lowers both lines slightly. B02/B03, L07 and P04 are approved. F03 is omitted and excluded from the runtime. The earlier source files and illustrations remain archived. No release is authorized by these review preparations.

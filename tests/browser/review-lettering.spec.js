@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("every F01 letter stays inside the painted gold scallops with a margin", async ({
   page,
 }) => {
-  await page.goto("/docs/visual-review/concepts/F01-editable-lettering-r6.svg");
+  await page.goto("/docs/visual-review/concepts/F01-editable-lettering-r7.svg");
   const result = await page.evaluate(async () => {
     const size = 1200,
       makeCanvas = () => {

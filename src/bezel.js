@@ -38,14 +38,19 @@ export function bezelArc(item, items, radius, width, material = "aged-brass") {
   const lower = Math.sin((angle * Math.PI) / 180) > 0.15;
   const size = Math.min(item.size, Math.max(6, width * 0.5));
   // The baseline must account for the full capital height, not just the arc.
-  // Brass retains its accepted lower baseline; silver/wood need a little more
+  // Silver/wood keep their approved baselines and need a little more
   // outward clearance from their inner carved border.
   const r =
     radius +
     (lower
       ? -size * 0.3 +
         (material === "aged-brass" || material === "brass" ? 0 : width * 0.065)
-      : -size * 0.65);
+      : -size * 0.65) +
+    (material === "aged-brass" || material === "brass"
+      ? lower
+        ? 1.5
+        : -1.5
+      : 0);
   const point = (a) =>
     `${300 + r * Math.cos((a * Math.PI) / 180)} ${300 + r * Math.sin((a * Math.PI) / 180)}`;
   return {

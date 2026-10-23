@@ -1,6 +1,10 @@
 # Clock artwork and animation
 
-## Unreleased round 3 visual review
+## Unreleased round 4 visual review
+
+[Current review](visual-review/REVIEW-ROUND-4.md) contains three pending examples. F01 uses separate fitted scallop contours; W09 increases fine angular crystal density with 15% lower layer opacity and unchanged growth; B01 slightly lowers both curved readouts. F03 is abandoned and excluded from the runtime bundle; its atlas and source below are archival only. Approved artwork remains preserved.
+
+## Archived round 3 visual studies
 
 [Current examples](visual-review/REVIEW-ROUND-3.md) are held for individual approval. `panel-solid-wood-r4.png` is original generated solid-wood material artwork with irregular grain and pores, mapped once across the dial with rounded profile lighting. It replaces only the proposed P04 wood surface; approved hammered metal and parchment assets are unchanged. `astronomical-pictures.png` is a browser-rendered atlas of crops from existing generated sky, seasonal landscape, mountain and antique sun artwork. Four physical image carriers rotate behind fixed apertures; these illustrations do not introduce external assets or runtime services.
 

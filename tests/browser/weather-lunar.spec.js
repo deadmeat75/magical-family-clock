@@ -241,55 +241,49 @@ test("ice coverage grows continuously inward instead of fading separate crystals
     reduced_motion: false,
     weather_motion: true,
   });
-  await card.evaluate(async (c) => {
-    await c._worldPainter?.ready;
-    for (let i = 0; i < 100 && !c._sceneLoaded; i++)
-      await new Promise((r) => setTimeout(r, 20));
-  });
-  await card
-    .locator(".weather")
-    .evaluate((w) => (w.style.visibility = "hidden"));
-  const baseline = (await card.screenshot()).toString("base64");
-  await card.locator(".weather").evaluate((w) => (w.style.visibility = ""));
   const counts = [];
-  for (const t of [0, 7000, 14000, 28000]) {
-    await card.locator(".weather").evaluate((w, t) => {
-      for (const a of w.getAnimations({ subtree: true })) {
-        a.pause();
-        a.currentTime = t;
-      }
-    }, t);
-    const shown = (await card.screenshot()).toString("base64");
+  for (const time of [0, 7000, 14000, 28000]) {
     counts.push(
-      await page.evaluate(
-        async ({ baseline, shown }) => {
-          const images = await Promise.all(
-            [baseline, shown].map(async (png) => {
-              const i = new Image();
-              i.src = "data:image/png;base64," + png;
-              await i.decode();
-              const c = document.createElement("canvas");
-              c.width = i.width;
-              c.height = i.height;
-              const x = c.getContext("2d");
-              x.drawImage(i, 0, 0);
-              return x.getImageData(0, 0, c.width, c.height).data;
-            }),
-          );
-          let count = 0;
-          for (let p = 0; p < images[0].length; p += 4)
-            if (
-              Math.max(
-                ...[0, 1, 2].map((k) =>
-                  Math.abs(images[0][p + k] - images[1][p + k]),
-                ),
-              ) > 24
-            )
-              count++;
-          return count;
-        },
-        { baseline, shown },
-      ),
+      await card.evaluate(async (c, time) => {
+        const weather = c.shadowRoot.querySelector(".weather");
+        for (const a of weather.getAnimations({ subtree: true })) {
+          a.pause();
+          a.currentTime = time;
+        }
+        const live = weather.querySelector(".frost-growth-front"),
+          matrix = getComputedStyle(live).transform;
+        const ns = "http://www.w3.org/2000/svg",
+          root = document.createElementNS(ns, "svg");
+        root.setAttribute("viewBox", "0 0 600 600");
+        root.setAttribute("width", "600");
+        root.setAttribute("height", "600");
+        root.appendChild(
+          c.shadowRoot.querySelector(".frame>svg>defs").cloneNode(true),
+        );
+        const clone = weather.cloneNode(true),
+          front = clone.querySelector(".frost-growth-front");
+        front.style.animation = "none";
+        front.style.transform = matrix;
+        front.style.transformOrigin = getComputedStyle(live).transformOrigin;
+        root.appendChild(clone);
+        const url = URL.createObjectURL(
+          new Blob([new XMLSerializer().serializeToString(root)], {
+            type: "image/svg+xml",
+          }),
+        );
+        const i = new Image();
+        i.src = url;
+        await i.decode();
+        const canvas = document.createElement("canvas");
+        canvas.width = canvas.height = 600;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(i, 0, 0);
+        URL.revokeObjectURL(url);
+        const data = ctx.getImageData(0, 0, 600, 600).data;
+        let count = 0;
+        for (let p = 3; p < data.length; p += 4) if (data[p] > 16) count++;
+        return count;
+      }, time),
     );
   }
   expect(counts[1]).toBeGreaterThan(counts[0] + 50);

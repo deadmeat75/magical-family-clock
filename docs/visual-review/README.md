@@ -2,13 +2,13 @@
 
 **Release is on hold for your individual approval.** The published HACS release remains **0.4.0**. This branch is a review draft; no new release or release tag has been created.
 
-Start with the **[16 proposed painted characters and props](characters-and-props.md)**, then the **[day/night scene concepts](scene-concepts.md)** and **[eight landscape motion examples](landscape-motion.md)**. The other pages show the existing draft visual options so you can review every element individually.
+Start with the **[three current revisions: F01, W09 and B01](REVIEW-ROUND-4.md)**. Approved examples remain available in the category galleries below for reference; they do not need another approval.
 
-**Current review:** 129 approved; 8 revision requests awaiting approval; 4 omitted; 0 other items awaiting review.
+**Current review:** 133 approved; 3 revision requests awaiting approval; 5 omitted; 0 other items awaiting review.
 
-Approved: **C01–C12, X01–X02, L01–L06, L08, F02, F04–F05, H01–H12, K01–K12, P01–P03, P05, M01–M13, S01–S16, I01–I13, T01–T10, U01–U02, W01–W08, W10, N01–N08, E01–E06**, plus the lunar surface artwork. Omitted: **C13–C16**. [Requirements and remaining implementation](REVISION-NOTES.md).
+Approved: **C01–C12, X01–X02, L01–L08, F02, F04–F05, H01–H12, K01–K12, P01–P05, M01–M13, S01–S16, I01–I13, T01–T10, U01–U02, W01–W08, W10, N01–N08, E01–E06, B02–B03**, plus the lunar surface artwork. Omitted: **F03, C13–C16**. [Requirements and remaining implementation](REVISION-NOTES.md).
 
-**[Open the current review round with fresh examples](REVIEW-ROUND-3.md)**
+**[Open the current review round with fresh examples](REVIEW-ROUND-4.md)**
 
 ## Latest revisions
 
