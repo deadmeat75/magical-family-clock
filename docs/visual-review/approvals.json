@@ -1,8 +1,8 @@
 {
   "release_hold": false,
-  "published_release": "0.4.0",
+  "published_release": "0.4.1",
   "review_branch": "review-visual-elements",
-  "status": "visual review complete; release authorized; final validation and publication in progress",
+  "status": "visual review complete; authorized stable v0.4.1 published and downloaded bundle verified",
   "items": [
     {
       "id": "B01",
