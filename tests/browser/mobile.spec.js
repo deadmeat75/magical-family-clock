@@ -374,6 +374,8 @@ test("animation check explains card and device pauses and verifies moving frames
   await page.evaluate(() => {
     mobileCard._config.scene_motion = true;
   });
+  await page.locator("magical-family-clock-card").scrollIntoViewIfNeeded();
+  await expect.poll(() => page.evaluate(() => mobileCard._visible)).toBe(true);
   await page.evaluate(async () => {
     await mobileCard._worldPainter.ready;
   });
