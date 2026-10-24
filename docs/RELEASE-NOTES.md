@@ -2,7 +2,7 @@
 
 Fix HACS downloads failing with **Got more than 8190 bytes when reading**. GitHub’s release redirect policy header exceeds HACS/aiohttp’s default field limit, causing the request to fail before downloading the card.
 
-This release has no attached assets, allowing HACS to use the tested root JavaScript file at the version tag instead. Historical assets are preserved. The installed filename and resource path remain unchanged. Clock features, Randomize, iOS rendering and saved configuration are unchanged from 0.4.4.
+This release has no attached assets, allowing HACS to use the tested root JavaScript file at the version tag instead. Historical assets are preserved. The installed filename and resource path remain unchanged. Clock features, Randomize, the lighter iOS renderer and saved configuration are retained. Two lifecycle corrections prevent old visibility observers from pausing a remounted clock and prevent resume/frame timestamp skew from reversing elapsed scene time.
 
 ## Update through HACS
 

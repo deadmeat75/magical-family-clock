@@ -16,3 +16,8 @@ export function sceneryFPS(quality, webkit) {
         ? 18
         : 24;
 }
+// RAF timestamps can precede performance.now() used by a resume callback.
+// They must never subtract elapsed scene time or replay a long background gap.
+export function frameSeconds(now, previous) {
+  return Math.max(0, Math.min((now - previous) / 1000, 0.1));
+}

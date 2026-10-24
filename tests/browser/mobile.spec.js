@@ -19,6 +19,26 @@ async function boot(page) {
       testImageURLs.delete(url);
       return revoke(url);
     };
+    window.testActiveObservers = new Map();
+    window.testObserverHistory = [];
+    const NativeObserver = window.IntersectionObserver;
+    window.IntersectionObserver = class extends NativeObserver {
+      constructor(callback, options) {
+        super(callback, options);
+        this.testRecord = { observer: this, callback };
+        testObserverHistory.push(this.testRecord);
+      }
+      observe(target) {
+        this.testRecord.target = target;
+        this.testRecord.owner = target.getRootNode().host;
+        testActiveObservers.set(this, target);
+        super.observe(target);
+      }
+      disconnect() {
+        testActiveObservers.delete(this);
+        super.disconnect();
+      }
+    };
   });
   await page.goto("/?production");
   await page.waitForSelector("section magical-family-clock-card");
@@ -278,6 +298,26 @@ test("production dashboard remounts release moving-image URLs and retain compact
   expect(
     await card.evaluate((c) => c.shadowRoot.innerHTML.length),
   ).toBeLessThan(1000000);
+  expect(
+    await page.evaluate(() => testActiveObservers.size),
+    "one active visibility observer per mounted clock",
+  ).toBe(1);
+  await card.scrollIntoViewIfNeeded();
+  await expect.poll(() => card.evaluate((c) => c._visible)).toBe(true);
+  await card.evaluate((c) => {
+    const stale = testObserverHistory.find(
+      (record) => record.owner === c && record.observer !== c._observer,
+    );
+    if (!stale) throw Error("Expected a retired observer after remounting");
+    stale.callback(
+      [{ target: stale.target, isIntersecting: false }],
+      stale.observer,
+    );
+  });
+  expect(
+    await card.evaluate((c) => c._visible),
+    "a retired observer cannot pause the current clock",
+  ).toBe(true);
   if (browserName === "webkit") {
     const before = await page.evaluate(() => testImageURLs.size);
     await card.evaluate((c) => c.remove());

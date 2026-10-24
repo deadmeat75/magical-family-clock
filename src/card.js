@@ -126,17 +126,27 @@ export class MagicalFamilyClock extends HTMLElement {
     this._update();
   }
   connectedCallback() {
+    this._observer?.disconnect();
+    this._observer = null;
+    this._intersecting = undefined;
+    this._visible = true;
     if (!this._config) this.setConfig(defaults());
     if (this._needsReconnectRender) {
       this._needsReconnectRender = false;
       this._render();
     }
     if (window.IntersectionObserver) {
-      this._observer = new IntersectionObserver((entries) => {
-        this._intersecting = entries[0].isIntersecting;
+      const observer = new IntersectionObserver((entries) => {
+        if (this._observer !== observer || !this.isConnected) return;
+        const card = this.shadowRoot.querySelector("ha-card");
+        let latest;
+        for (const entry of entries) if (entry.target === card) latest = entry;
+        if (!latest) return;
+        this._intersecting = latest.isIntersecting;
         this._syncVisibility();
       });
-      this._observer.observe(this.shadowRoot.querySelector("ha-card"));
+      this._observer = observer;
+      observer.observe(this.shadowRoot.querySelector("ha-card"));
     }
     document.addEventListener("fullscreenchange", this._fullscreenChanged);
     document.addEventListener("visibilitychange", this._resumeMotion);
@@ -185,6 +195,8 @@ export class MagicalFamilyClock extends HTMLElement {
     this._sceneToken++;
     this._sceneRequest = null;
     if (this._observer) this._observer.disconnect();
+    this._observer = null;
+    this._intersecting = undefined;
     clearInterval(this._timer);
     clearTimeout(this._sceneBoundaryTimer);
     cancelAnimationFrame(this._labelFrame);

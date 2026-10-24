@@ -19,17 +19,24 @@
     "sha256": "fae868a64daf392487a48732776eeda8c73d9c19300bcb97d88cbbe8efb82719"
   },
   "checks": {
-    "unitPackaging": 72,
+    "unitPackaging": 73,
     "browserMatrix": 98,
     "finalExactCommitCI": "pending",
-    "livePublishedHACSResolverAndHTTPProbe": "pending"
+    "livePublishedHACSResolverAndHTTPProbe": "pending",
+    "localChromiumLifecycleChecksPassed": 3
   },
   "bundle": {
-    "bytes": 25749953,
-    "sha256": "dd77dea2edf524412ad96428104049f147f516259914416629708a594d373298"
+    "bytes": 25750291,
+    "sha256": "53e99a1ab3e836c369f8865c44c7e255b5863a5a10c04e2e4cb06e7641acbb58"
   },
   "limits": [
     "Full authenticated HACS UI installation on the user\u2019s Home Assistant is not claimed.",
     "No new physical iOS performance verification."
-  ]
+  ],
+  "lifecycleCorrections": {
+    "activeObserversBeforeAfterSixRemounts": 8,
+    "activeObserversAfterFix": 1,
+    "retiredObserverCannotPauseCurrentClock": true,
+    "elapsedSceneTimeCannotReverseOnResume": true
+  }
 }

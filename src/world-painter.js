@@ -6,7 +6,7 @@ import { renderMoons } from "./lunar.js";
 import { sceneSource } from "./artwork.js";
 import { createMeteorTimeline } from "./meteors.js";
 import { createFoliagePainter } from "./foliage.js";
-import { nextPaintDeadline, sceneryFPS } from "./frame-pacing.js";
+import { nextPaintDeadline, sceneryFPS, frameSeconds } from "./frame-pacing.js";
 const sources = new Map();
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 function canvas(width, height) {
@@ -515,8 +515,8 @@ export function startWorldPainter(
   const step = (now) => {
     raf = 0;
     if (ended || !root.isConnected) return;
-    const delta = Math.min((now - last) / 1000, 0.1);
-    last = now;
+    const delta = frameSeconds(now, last);
+    last = Math.max(last, now);
     if (!paused()) {
       t += delta * (config.motion_speed || 1);
       const due = nextPaintDeadline(

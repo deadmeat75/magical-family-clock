@@ -4,7 +4,9 @@
 
 - Publish releases without attached assets so HACS downloads the committed, version-tagged root JavaScript file. This avoids GitHub release redirect headers exceeding the default HACS/aiohttp 8 KB field limit.
 - Preserve existing release assets and refuse to republish an asset-bearing historical release automatically. Keep tag/package checks and exact-commit full CI gates.
-- Keep the installed filename, resource path, clock configuration and v0.4.4 functionality unchanged. Only delivery packaging and the displayed version change.
+- Keep the installed filename, resource path, clock configuration and v0.4.4 features.
+- Retire visibility observers during remounts and ignore notifications from replaced cards, preventing an onscreen clock from being paused by an old observer.
+- Keep elapsed scene time monotonic when a frame timestamp precedes the resume callback clock.
 
 ## 0.4.4 — Smoother scenery and Randomize
 

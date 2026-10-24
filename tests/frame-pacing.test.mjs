@@ -1,7 +1,22 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { nextPaintDeadline, sceneryFPS } from "../src/frame-pacing.js";
+import {
+  nextPaintDeadline,
+  sceneryFPS,
+  frameSeconds,
+} from "../src/frame-pacing.js";
 import { svgSurface } from "../src/canvas-surface.js";
+test("resume/frame timestamp skew never reverses or double-counts scene time", () => {
+  assert.equal(frameSeconds(95, 100), 0);
+  assert.equal(frameSeconds(1100, 100), 0.1);
+  let previous = 100,
+    time = 0;
+  for (const now of [95, 110, 107, 120]) {
+    time += frameSeconds(now, previous);
+    previous = Math.max(previous, now);
+  }
+  assert.equal(time, 0.02);
+});
 test("scenery pacing holds its frame grid on 60 and 120 Hz displays without catch-up bursts", () => {
   for (const refresh of [60, 120]) {
     let due = 0,

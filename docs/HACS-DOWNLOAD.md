@@ -24,4 +24,4 @@ The repository already contains the tested self-contained JavaScript file at its
 
 GitHub may still show its automatic Source code archives; those are expected and are not attached release assets. Existing historical assets are retained. The publisher refuses to remove or replace them automatically. The installed resource remains `/hacsfiles/magical-family-clock/magical-family-clock.js` with HACS’s version query.
 
-The clock functionality is unchanged from 0.4.4, including Randomize and the lighter iOS rendering path. Physical iOS smoothness still needs confirmation after a successful update. [Full guide](USER-GUIDE.md) · [Randomize guide](RANDOMIZE.md) · [Delivery acceptance](HACS-DOWNLOAD-ACCEPTANCE.json).
+The clock features from 0.4.4 are retained, including Randomize and the lighter iOS rendering path. The update also retires stale visibility observers after remounting and keeps elapsed scene time monotonic on resume. Physical iOS smoothness still needs confirmation after a successful update. [Full guide](USER-GUIDE.md) · [Randomize guide](RANDOMIZE.md) · [Delivery acceptance](HACS-DOWNLOAD-ACCEPTANCE.json).
