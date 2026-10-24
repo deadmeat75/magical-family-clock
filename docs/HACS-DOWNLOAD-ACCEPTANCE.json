@@ -21,9 +21,15 @@
   "checks": {
     "unitPackaging": 73,
     "browserMatrix": 98,
-    "finalExactCommitCI": "pending",
-    "livePublishedHACSResolverAndHTTPProbe": "pending",
-    "localChromiumLifecycleChecksPassed": 3
+    "finalExactCommitCI": "passed",
+    "livePublishedHACSResolverAndHTTPProbe": "passed",
+    "localChromiumLifecycleChecksPassed": 3,
+    "browserPassed": 98,
+    "chromium": 86,
+    "webkitPhone": 6,
+    "webkitTablet": 6,
+    "ciURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40044126265",
+    "moonPreservationRepeatChecksPassed": 3
   },
   "bundle": {
     "bytes": 25750291,
@@ -38,5 +44,42 @@
     "activeObserversAfterFix": 1,
     "retiredObserverCannotPauseCurrentClock": true,
     "elapsedSceneTimeCannotReverseOnResume": true
+  },
+  "livePublishedProbe": {
+    "version": "0.4.5",
+    "hacsVersion": "2.0.5",
+    "upstreamSourceSHA256": {
+      "repository": "17aeee13aa48153f17c0de654ce6d4cd03495f21be3c57a218bf1909fefc4d2e",
+      "plugin": "6e6ff3a9ccee66479ee6d66a170561996f78eeb21bb3b9aa582dab7073e6395f",
+      "downloader": "a9b7bc5980114f9fecb532a01819d13385175340b2ff0d7044b7dc91cf3d1bd8"
+    },
+    "actualUpstreamFileSelectionUsed": true,
+    "actualUpstreamDownloadMethodUsed": true,
+    "cachedSingleFileModeAlsoUsesTaggedRoot": true,
+    "releaseAssets": 0,
+    "selectedURL": "https://raw.githubusercontent.com/deadmeat75/magical-family-clock/v0.4.5/magical-family-clock.js",
+    "default8190ByteHeaderFieldLimitUnchanged": true,
+    "bytes": 25750291,
+    "sha256": "53e99a1ab3e836c369f8865c44c7e255b5863a5a10c04e2e4cb06e7641acbb58",
+    "matchesTestedBundle": true,
+    "authenticatedHacsUIInstall": false
+  },
+  "publication": {
+    "tag": "v0.4.5",
+    "sourceCommit": "491a64a4ccb3d1787375cfe4d46e818d76e9ca99",
+    "publisherURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40044742386",
+    "latestStable": true,
+    "attachedAssets": 0,
+    "rawTaggedFileMatchesTestedBundle": true
+  },
+  "hacsValidation": {
+    "runURL": "https://github.com/deadmeat75/magical-family-clock/actions/runs/40044742591",
+    "passed": 6,
+    "total": 8,
+    "failed": [
+      "repository topics",
+      "repository description"
+    ],
+    "ownerMetadataUpdateRequired": true
   }
 }

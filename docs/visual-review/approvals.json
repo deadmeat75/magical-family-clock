@@ -1,8 +1,8 @@
 {
   "release_hold": false,
-  "published_release": "0.4.4",
+  "published_release": "0.4.5",
   "review_branch": "review-visual-elements",
-  "status": "visual decisions preserved; stable maintenance v0.4.4 published and downloaded bundle verified",
+  "status": "visual decisions preserved; stable maintenance v0.4.5 published and raw tagged bundle verified",
   "items": [
     {
       "id": "B01",
@@ -1603,5 +1603,5 @@
   "release_authorized": true,
   "target_release": "0.4.5",
   "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready.",
-  "maintenance_note": "User confirms iOS animation is working. Smoother frame publishing and Randomize shipped without changing approved artwork. Physical iOS smoothness remains unverified."
+  "maintenance_note": "HACS source-file delivery verified with unchanged HACS 2.0.5 methods. Clock features and approved artwork unchanged from 0.4.4. Physical iOS smoothness remains unverified."
 }

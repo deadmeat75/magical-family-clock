@@ -1,5 +1,14 @@
 # Validation and known limits
 
+## Version 0.4.5 — HACS download compatibility
+
+**73 unit/packaging and 98 browser checks passed in [exact-commit CI](https://github.com/deadmeat75/magical-family-clock/actions/runs/40044126265)**: 86 Chromium, six phone WebKit and six tablet WebKit. The new publisher checks create a source-only release, accept an existing source-only release, and refuse to delete historical assets. The live moon-preservation regression now waits for startup and freezes only creature CSS during replacement, avoiding a wall-time timing assumption while retaining active-painter and reduced-motion checks; three repeated local runs passed.
+
+The original release-redirect failure was reproduced using aiohttp’s default 8,190-byte header-field limit. The identical 0.4.4 raw tagged file downloaded successfully and matched its release checksum.
+
+After publication, the unmodified HACS 2.0.5 `update_filenames`, `gather_files_to_download`, `should_try_releases` and `async_download_file` methods were exercised with the actual 0.4.5 manifest/tree/release metadata. They selected the raw tagged file and downloaded **25,750,291 bytes**, matching the tested SHA-256 with the default header limit unchanged. No user HACS installation was modified; full authenticated HACS UI installation is not claimed. [Delivery evidence](HACS-DOWNLOAD-ACCEPTANCE.json) · [Troubleshooting](HACS-DOWNLOAD.md).
+
+
 ## Version 0.4.4 — Smoother scenery and Randomize
 
 **69 unit/packaging and 98 browser checks pass locally and in [exact-commit main CI](https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354)**: 86 Chromium, six WebKit phone and six WebKit tablet. Coverage includes native SVG image load/failure cleanup, one pending frame, stopping during encoding, stable 60/120 Hz scheduling, blocked-encoder backpressure, unchanged saved people/locations/sensors, repeat shuffles, expanded view and the existing clipping/motion/remount suite.

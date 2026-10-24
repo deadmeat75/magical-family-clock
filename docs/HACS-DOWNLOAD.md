@@ -25,3 +25,11 @@ The repository already contains the tested self-contained JavaScript file at its
 GitHub may still show its automatic Source code archives; those are expected and are not attached release assets. Existing historical assets are retained. The publisher refuses to remove or replace them automatically. The installed resource remains `/hacsfiles/magical-family-clock/magical-family-clock.js` with HACS’s version query.
 
 The clock features from 0.4.4 are retained, including Randomize and the lighter iOS rendering path. The update also retires stale visibility observers after remounting and keeps elapsed scene time monotonic on resume. Physical iOS smoothness still needs confirmation after a successful update. [Full guide](USER-GUIDE.md) · [Randomize guide](RANDOMIZE.md) · [Delivery acceptance](HACS-DOWNLOAD-ACCEPTANCE.json).
+
+## Published-download verification
+
+Version 0.4.5 is published with no attached assets. Its actual manifest, tree and release metadata were passed to the unchanged HACS 2.0.5 filename resolver and file-selection methods. HACS selected `https://raw.githubusercontent.com/deadmeat75/magical-family-clock/v0.4.5/magical-family-clock.js`. Its unchanged downloader fetched **25,750,291 bytes** with the default 8,190-byte header-field limit and returned a byte-for-byte match for the tested bundle.
+
+SHA-256: `53e99a1ab3e836c369f8865c44c7e255b5863a5a10c04e2e4cb06e7641acbb58`.
+
+The full CI run passed 73 unit/packaging and 98 browser checks. No HACS files on the user's installation were modified. This tests actual HACS download methods and live network delivery; it does not claim a complete authenticated HACS UI installation. [Evidence](HACS-DOWNLOAD-ACCEPTANCE.json).
