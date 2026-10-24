@@ -2,7 +2,7 @@
 
 The [Living World guide](WORLD-GUIDE.md) covers fitted location panels, large graphics and textures, the creature-placement map, moving scenery and the sensor-driven moon. The [Design Studio guide](DESIGN-STUDIO.md) gives detailed instructions for saved people, dimensional hands, lettering placement/rotation, movable text, sensor-driven labels, the information bezel, effects, face switching and the live preview.
 
-This guide covers **version 0.4.4 — smoother scenery and Randomize**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
+This guide covers **version 0.4.5 — HACS download compatibility**. Install and update through HACS. Ordinary card setup uses Home Assistant’s visual editor; YAML, npm, SSH and custom helpers are not required.
 
 The card shows **where people are**, rather than hours and minutes. Each person has a hand pointing to a location. Several people can share a location, and several independent clocks can use the same Home Assistant entities.
 
@@ -49,7 +49,7 @@ You need Home Assistant, HACS configured with its GitHub connection, and permiss
 
 For a first test, use a separate dashboard or add a separate card. Keep the old clock resource and any existing standalone page in place.
 
-The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.4). See [current publishing status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification, HACS results and repository-owner metadata tasks. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
+The release is [available on GitHub](https://github.com/deadmeat75/magical-family-clock/releases/tag/v0.4.5). See [current publishing status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md) for artifact verification, HACS results and repository-owner metadata tasks. End-to-end authenticated HACS installation/update has not yet been verified, and public default-store approval is not claimed.
 
 If you are only installing the card, repository metadata is the repository owner’s task. Do not change your working Home Assistant configuration to try to fix a GitHub metadata error.
 
@@ -60,7 +60,7 @@ If you are only installing the card, repository metadata is the repository owner
 3. Enter `https://github.com/deadmeat75/magical-family-clock`.
 4. Choose **Dashboard** as the category and add the repository.
 5. Find **Magical Family Clock** and open its download/install dialog.
-6. Select version **0.4.4** (or a newer published version). This release does not require enabling prereleases.
+6. Select version **0.4.5** (or a newer published version). This release does not require enabling prereleases.
 7. Download, then reload the Home Assistant frontend when prompted.
 
 HACS normally manages the JavaScript resource. Routine installation should not require copying a JavaScript file or registering a resource manually. If HACS does not register it, first check the troubleshooting section and your HACS installation status.
@@ -433,3 +433,8 @@ For battery, choose the phone battery sensor, label “Battery”, unit `%` and 
 ## Randomize appearance (0.4.4)
 
 Use **Randomize** at the bottom left, opposite Fullscreen, to shuffle the face, colors, time, season, weather and visitors. It keeps people, locations, tracking sensors, live moon sources and bezel data. The appearance is temporary and independent for each card; reload to restore your saved design. It pauses automatic face cycling until another configured face is selected. [Detailed Randomize and iOS performance guide](RANDOMIZE.md).
+
+
+## HACS download error: 8190 bytes
+
+If HACS rejects a GitHub header with **Got more than 8190 bytes when reading**, refresh repository information and select **0.4.5** or newer in Download/Redownload. Wait for success before reloading the frontend. This release uses HACS’s tagged root-file download path and retains all clock features and configuration. [Step-by-step troubleshooting](HACS-DOWNLOAD.md).

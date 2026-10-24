@@ -21,10 +21,8 @@ jobs:
         run: node -e 'if (process.env.GITHUB_REF_NAME !== "v" + JSON.parse(require("fs").readFileSync("package.json")).version) process.exit(1)'
       - run: npx playwright install --with-deps chromium webkit
       - run: npm run test:browser -- --reporter=line,github
-      - name: Publish bundle
+      - name: Publish tagged root bundle for HACS
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          release_flags=()
-          if [[ "$GITHUB_REF_NAME" == *-* ]]; then release_flags+=(--prerelease); fi
-          gh release create "$GITHUB_REF_NAME" magical-family-clock.js --verify-tag --notes-file docs/RELEASE-NOTES.md --title "Magical Family Clock $GITHUB_REF_NAME" "${release_flags[@]}"
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: bash scripts/publish-hacs-release.sh

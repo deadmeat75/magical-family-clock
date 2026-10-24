@@ -9,11 +9,16 @@ The current package version is **0.4.2 — iOS rendering correction**. Visual re
 5. Update package/lockfile versions, changelog and release notes. Commit source, assets, tests, guides, evidence and the compiled bundle together.
 6. Push the reviewed commit to `main` and run/check its **Test and package** workflow.
 7. With the user's release authorization, push the matching `v0.4.2` tag. The **Release** workflow verifies version equality and the compiled artifact, runs unit/browser checks and attaches `magical-family-clock.js` to a stable GitHub release using its workflow token.
-8. Verify the release is published, not a draft/prerelease, and that the downloaded asset matches the tested bundle byte for byte. Record workflow URLs, release commit and SHA-256 in `PUBLISHING-STATUS.md`.
+8. Verify the release is published, not a draft/prerelease, has no attached assets, and that the raw tagged root JavaScript download matches the tested bundle byte for byte. Record workflow URLs, release commit and SHA-256 in `PUBLISHING-STATUS.md`.
 9. Install/update through HACS in an authorized connected instance when available. Default-store submission is separate; do not claim HACS approval or an authenticated update without evidence.
 
 Git push and GitHub API reads work through platform authentication. Repository metadata writes return HTTP 403 (integration permissions); never put credentials in source or documentation. A pushed tag alone is not proof that release publication succeeded.
 
 ## Recovery when browser installation stalls in the publishing job
 
-Use **Actions → Publish verified HACS release → Run workflow** with the stable tag and a successful **Test and package** CI run ID for that exact tagged commit on `main`. The job rejects a different SHA, branch, event, workflow ID, unsuccessful run, or tag/package mismatch. It rebuilds and runs unit checks, verifies the compiled bundle is unchanged, and uploads the HACS asset using the repository token. Full Chromium/WebKit checks must already have passed in the verified main CI run. Cancel an obsolete publishing attempt before starting recovery, then independently verify the uploaded asset and stable/latest flags.
+Use **Actions → Publish verified HACS release → Run workflow** with the stable tag and a successful **Test and package** CI run ID for that exact tagged commit on `main`. The job rejects a different SHA, branch, event, workflow ID, unsuccessful run, or tag/package mismatch. It rebuilds and runs unit checks, verifies the compiled bundle is unchanged, and publishes a source-only release using the repository token. Full Chromium/WebKit checks must already have passed in the verified main CI run. Cancel an obsolete publishing attempt before starting recovery, then independently verify the raw tagged file, empty attached-asset list and stable/latest flags.
+
+
+## HACS header compatibility (0.4.5 onward)
+
+Both workflows call `scripts/publish-hacs-release.sh`. Never attach assets to a new stable release while this delivery mode is required: HACS prefers matching release assets and its default HTTP parser rejects GitHub’s oversized redirect policy header. With no attached assets it selects the root file at the release tag. Keep `content_in_root: true`, the existing filename and committed compiled bundle. The publisher refuses to mutate an existing asset-bearing release; historical assets remain intact. [Diagnosis and acceptance](HACS-DOWNLOAD.md).

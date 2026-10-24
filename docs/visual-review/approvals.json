@@ -1601,7 +1601,7 @@
     }
   ],
   "release_authorized": true,
-  "target_release": "0.4.4",
+  "target_release": "0.4.5",
   "release_authorization": "User: omit f01 and proceed; earlier instruction: build and release this all as soon as it is ready.",
   "maintenance_note": "User confirms iOS animation is working. Smoother frame publishing and Randomize shipped without changing approved artwork. Physical iOS smoothness remains unverified."
 }

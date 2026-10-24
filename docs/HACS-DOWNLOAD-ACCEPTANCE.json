@@ -1,0 +1,35 @@
+{
+  "version": "0.4.5",
+  "cause": "HACS HTTP parser rejects GitHub release redirect policy header before asset download",
+  "headerFieldDefaultLimitBytes": 8190,
+  "observedPolicyValueBytes": 9217,
+  "upstreamIssue": "https://github.com/hacs/integration/issues/5643",
+  "upstreamFix": "https://github.com/hacs/integration/pull/5644",
+  "upstreamFixMergedWhenChecked": false,
+  "route": "tagged root JavaScript on raw.githubusercontent.com",
+  "publishedAttachedAssetCountRequired": 0,
+  "existingHistoricalAssetsPreserved": true,
+  "hacsInstallationOrUserClockModified": false,
+  "livePreReleaseProbe": {
+    "version": "0.4.4",
+    "defaultHeaderLimits": true,
+    "releaseAssetFailsWithReportedError": true,
+    "rawTaggedSourceHTTPStatus": 200,
+    "bytes": 25749953,
+    "sha256": "fae868a64daf392487a48732776eeda8c73d9c19300bcb97d88cbbe8efb82719"
+  },
+  "checks": {
+    "unitPackaging": 72,
+    "browserMatrix": 98,
+    "finalExactCommitCI": "pending",
+    "livePublishedHACSResolverAndHTTPProbe": "pending"
+  },
+  "bundle": {
+    "bytes": 25749953,
+    "sha256": "dd77dea2edf524412ad96428104049f147f516259914416629708a594d373298"
+  },
+  "limits": [
+    "Full authenticated HACS UI installation on the user\u2019s Home Assistant is not claimed.",
+    "No new physical iOS performance verification."
+  ]
+}

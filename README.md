@@ -1,6 +1,6 @@
 # Magical Family Clock
 
-**Version 0.4.4 — Smoother scenery and Randomize:** reduce iOS frame work and uneven pacing, and add a lower-left Randomize button that shuffles the appearance while retaining saved people, locations and sensors. [Randomize guide](docs/RANDOMIZE.md) · [iOS notes](docs/IOS-COMPATIBILITY.md).
+**Version 0.4.5 — HACS download compatibility:** keep Randomize and the lighter iOS renderer while avoiding GitHub release headers that exceed HACS’s HTTP limit. HACS downloads the tested bundle from the release tag’s root file. [Download troubleshooting](docs/HACS-DOWNLOAD.md) · [Randomize guide](docs/RANDOMIZE.md).
 
 **Crafted Living World:** realistic hands and materials, painted inhabitants, flowing scenery, ornate metalwork symbols, adjustable brass age and crafted information bezels. Build an animated miniature world inside your whereabouts clock. The [detailed guide](docs/WORLD-GUIDE.md) explains every new control, placement, optional name tag and moon/weather setting.
 

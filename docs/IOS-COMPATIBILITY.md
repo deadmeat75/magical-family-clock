@@ -1,10 +1,12 @@
-# iPhone and iPad compatibility — 0.4.4
+# iPhone and iPad compatibility — 0.4.5
 
 The reported failure was reproduced with the production bundle in WebKit: moving water and foreground foliage appeared as oversized rectangles across the lower clock, and fog could escape its intended bounds. Element dimensions alone looked correct; pixel comparisons exposed the incorrect composition.
 
 ## Update with HACS
 
-1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.4** or newer.
+If HACS reports **Got more than 8190 bytes when reading**, first follow the [0.4.5 download correction](HACS-DOWNLOAD.md). That error prevents installation; frontend cache clearing alone cannot fix it.
+
+1. Open **HACS → Magical Family Clock → Download/update** and select **0.4.5** or newer.
 2. Reload the Home Assistant frontend. Fully close and reopen the iPhone/iPad companion app if it still displays cached artwork. If necessary, use **Settings → Companion app → Debugging → Reset frontend cache**, then reopen it (menu wording can vary).
 3. Keep your saved people, tracking rules and clock configuration. No YAML conversion or dashboard reconstruction is required.
 4. Check water and fog, rotate the device, then open and close **Fullscreen**. The moving scene should remain inside the central opening.
@@ -15,7 +17,7 @@ If still using 0.4.1 while updating, turn **Living world → Show miniature worl
 
 Version 0.4.3 adds animation recovery after returning to Home Assistant and a check that explains the effective motion settings. The user confirmed that animation is now working on iOS, but reported choppy motion. Version 0.4.4 reduces the frame workload and improves pacing; physical-device smoothness remains unverified. The recovery tests simulate dropped callbacks in WebKit.
 
-1. Edit the card and open **Living world**. Confirm **Installed card version: 0.4.4** (or newer). If it still shows an older version or has no **Check animation** button, reload the frontend/reset the companion frontend cache after the HACS update.
+1. Edit the card and open **Living world**. Confirm **Installed card version: 0.4.5** (or newer). If it still shows an older version or has no **Check animation** button, reload the frontend/reset the companion frontend cache after the HACS update.
 2. Press **Check animation** with the right-hand clock preview visible. It checks actual scenery frame publication as well as elapsed animation time.
 3. If it names **General → Reduced motion**, turn that card setting off if you want animation. This setting is independent of the iOS accessibility preference.
 4. If it names **Animate castle scenery**, enable that setting under **Living world**. Enable **Show miniature world** and at least one landscape effect such as water, trees or waterfalls too. Clouds are intentionally absent in Clear weather.

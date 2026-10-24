@@ -5,6 +5,8 @@ import { parse } from "acorn";
 test("HACS manifest points to self-contained matching compiled bundle", () => {
   const hacs = JSON.parse(readFileSync("hacs.json"));
   assert.equal(hacs.filename, "magical-family-clock.js");
+  assert.equal(hacs.content_in_root, true);
+  assert.ok(!hacs.zip_release);
   assert.ok(existsSync(hacs.filename));
   const code = readFileSync(hacs.filename, "utf8");
   assert.ok(code.includes("magical-family-clock-card-editor"));

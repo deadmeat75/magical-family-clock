@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.5 — HACS download compatibility
+
+- Publish releases without attached assets so HACS downloads the committed, version-tagged root JavaScript file. This avoids GitHub release redirect headers exceeding the default HACS/aiohttp 8 KB field limit.
+- Preserve existing release assets and refuse to republish an asset-bearing historical release automatically. Keep tag/package checks and exact-commit full CI gates.
+- Keep the installed filename, resource path, clock configuration and v0.4.4 functionality unchanged. Only delivery packaging and the displayed version change.
+
 ## 0.4.4 — Smoother scenery and Randomize
 
 - Add Randomize opposite Fullscreen. Shuffle supported faces, colors, season, time, weather and one to three visitors without changing saved people, locations, tracking sensors, moon sources or bezel data. Changes are temporary; reloading restores the saved design.

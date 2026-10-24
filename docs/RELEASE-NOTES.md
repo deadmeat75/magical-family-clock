@@ -1,13 +1,13 @@
-# Magical Family Clock 0.4.4 — Smoother scenery and Randomize
+# Magical Family Clock 0.4.5 — HACS download compatibility
 
-Add **Randomize** opposite Fullscreen: temporarily shuffle supported faces, colors, season, time, weather and one to three visitors while preserving people, locations, sensor mappings, moon sources and bezel data. Reload to restore the saved design; automatic face cycling pauses during a randomized view.
+Fix HACS downloads failing with **Got more than 8190 bytes when reading**. GitHub’s release redirect policy header exceeds HACS/aiohttp’s default field limit, causing the request to fail before downloading the card.
 
-Reduce the iOS scenery workload: prepare small foliage/water textures once, remove duplicate per-frame image decoding, wait for native SVG image loading and skip busy surfaces. Keep the clipping correction, HD base photograph, bounded buffers, URL cleanup, motion preferences and app-return recovery. Stable frame deadlines target 30 fps in Rich/Balanced and 20 in Light on WebKit; actual speed depends on the device and workload.
+This release has no attached assets, allowing HACS to use the tested root JavaScript file at the version tag instead. Historical assets are preserved. The installed filename and resource path remain unchanged. Clock features, Randomize, iOS rendering and saved configuration are unchanged from 0.4.4.
 
-Update using **HACS → Magical Family Clock → Download/update → 0.4.4**, reload Home Assistant and reopen the iOS app. Your saved clocks and people are retained.
+## Update through HACS
 
-[Randomize and smooth-motion guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.4/docs/RANDOMIZE.md) · [Full guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.4/docs/USER-GUIDE.md) · [Current publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
+Refresh the repository information, open Download/Redownload, select **0.4.5**, and wait for a successful download. Then reload Home Assistant and reopen the iOS app. Confirm the installed version in **Living world**. No manual copying or HACS patch is required.
 
-The user reports that iOS animation now works but is choppy. Software WebKit development measurements improved; physical iPhone/iPad frame rates and smoothness remain unverified. Repository About description/topics remain a separate owner-permission HACS validation issue.
+[Detailed HACS troubleshooting](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.5/docs/HACS-DOWNLOAD.md) · [Full guide](https://github.com/deadmeat75/magical-family-clock/blob/v0.4.5/docs/USER-GUIDE.md) · [Publication status](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/PUBLISHING-STATUS.md).
 
-Verification: **69 unit/packaging and 98 browser checks** passed locally and in [exact-commit CI](https://github.com/deadmeat75/magical-family-clock/actions/runs/40032792354). Installed Home Assistant WebKit checks verify motion, live moon updates, Randomize data preservation and reload restoration. [Acceptance](https://github.com/deadmeat75/magical-family-clock/blob/main/docs/SMOOTH-MOTION-ACCEPTANCE.json).
+The oversized-header issue is tracked in [HACS #5643](https://github.com/hacs/integration/issues/5643); its upstream fix was still open when checked. This release uses a supported repository-side download route while preserving default HTTP limits. Repository About metadata warnings and physical iOS smoothness remain separate issues.
