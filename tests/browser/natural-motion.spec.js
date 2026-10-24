@@ -166,7 +166,22 @@ test("moon refresh preserves encounter progress and painter time, and reduced mo
     "data-phase",
     "0.5",
   );
+  await expect.poll(() => card.evaluate((c) => c._sceneLoaded)).toBe(true);
+  await card.evaluate(async (c) => {
+    await c._worldPainter.ready;
+    await new Promise((resolve) =>
+      requestAnimationFrame(() => requestAnimationFrame(resolve)),
+    );
+  });
   const before = await card.evaluate((c) => {
+    // Freeze only encounter CSS while its DOM is replaced. The scenery painter
+    // stays live, so a loaded runner cannot turn elapsed travel into a false
+    // report that the sensor update reset the encounter.
+    const style = document.createElement("style");
+    style.dataset.testEncounterPause = "";
+    style.textContent =
+      ".world-encounter{animation-play-state:paused!important}";
+    c.shadowRoot.appendChild(style);
     const a = c.shadowRoot.querySelector(".world-encounter").getAnimations()[0],
       timing = a.effect.getTiming();
     a.currentTime =
@@ -185,7 +200,17 @@ test("moon refresh preserves encounter progress and painter time, and reduced mo
     "data-phase",
     "0.75",
   );
-  await page.waitForTimeout(100);
+  await expect
+    .poll(() =>
+      card.evaluate(
+        (c) =>
+          c.shadowRoot
+            .querySelector(".world-encounter")
+            .getAnimations()[0]
+            .effect.getComputedTiming().progress,
+      ),
+    )
+    .toBeCloseTo(before.progress, 5);
   const after = await card.evaluate((c) => ({
     progress: c.shadowRoot
       .querySelector(".world-encounter")
@@ -193,12 +218,19 @@ test("moon refresh preserves encounter progress and painter time, and reduced mo
       .effect.getComputedTiming().progress,
     time: c._worldPainter.time,
   }));
-  expect(Math.abs(after.progress - before.progress)).toBeLessThan(0.03);
+  expect(after.progress).toBeCloseTo(before.progress, 5);
   expect(after.time).toBeGreaterThanOrEqual(before.time);
+  await card.evaluate((c) =>
+    c.shadowRoot.querySelector("[data-test-encounter-pause]").remove(),
+  );
+  const canvas = card.locator('canvas[data-world-paint="clouds"]');
+  const movingTick = await canvas.getAttribute("data-paint-tick");
+  await expect
+    .poll(() => canvas.getAttribute("data-paint-tick"))
+    .not.toBe(movingTick);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.waitForTimeout(100);
-  const canvas = card.locator('canvas[data-world-paint="clouds"]'),
-    tick = await canvas.getAttribute("data-paint-tick");
+  const tick = await canvas.getAttribute("data-paint-tick");
   await page.waitForTimeout(180);
   expect(await canvas.getAttribute("data-paint-tick")).toBe(tick);
 });
